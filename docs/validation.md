@@ -1,0 +1,13 @@
+# Approved model and validation limits
+
+Approved engine model: v1.0.0. Artifact SHA256: `789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233`. The runtime registry checks status, workspace containment and exact artifact bytes before use. Binaries and historical datasets are not included in this repository.
+
+The original deployment fit used 163,072 public player-match records across 2020/21–2025/26. Core development/selection preceded expanding-window audits on 2024/25 and 2025/26; the deployed all-season fit is not itself a holdout. Strictly lagged player/team features have four-/twelve-match half-lives, and training records have a two-year age half-life. Player identity and same-match outcomes are excluded from predictors.
+
+Original pooled candidate core RMSE was 2.900 versus last-five 3.175 and recency 2.982; MAE 2.101 versus 2.365 and 2.108. These are historical core-point measurements, not guaranteed contemporary full-score performance. The separate contemporary defensive-contribution/full-score test covers only eleven gameweeks. Historical assist/BPS/rule changes and incomplete as-of archives remain limitations.
+
+A captain-bonus replay had +56 versus last-five and -19 versus recency across seventy gameweeks; uncertainty intervals included zero. No reliable captaincy or full season-management advantage was established. Forecast-error improvements do not imply the same percentage increase in FPL points.
+
+Twenty-one development challengers were not promoted. A newer experiment filename or merged source commit is never sufficient to replace the champion. Promotion requires the explicit gates in model_registry.py and future independent evidence. Published audit outcomes must not be repeatedly searched and still labelled untouched.
+
+Repository tests validate leakage resistance, legal selection, metadata/artifact integrity, frozen outcomes, runtime isolation and privacy checks. Four optional local-data integration checks are not exercised on a source-only checkout. They require explicitly prepared local datasets/artifacts; no such data or real squad is downloaded in CI. Packaging introduces no retraining, model promotion or current-gameweek forecast.
