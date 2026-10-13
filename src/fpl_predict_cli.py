@@ -7,7 +7,8 @@ from runtime import initialise, install_approved_model
 COMMANDS = {"refresh": "refresh", "download-history": "download_history",
             "build-features": "build_features", "train": "train", "forecast": "forecast",
             "score": "score_forecast", "decision-trial": "decision_trial",
-            "search-improvements": "search_improvements", "search-quality": "search_quality_targets"}
+            "search-improvements": "search_improvements", "search-quality": "search_quality_targets",
+            "search-lightweight": "search_lightweight"}
 
 def main():
     parser = argparse.ArgumentParser(description="Local leakage-aware FPL prediction engine")
