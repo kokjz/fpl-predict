@@ -12,14 +12,20 @@ COMMANDS = {"refresh": "refresh", "download-history": "download_history",
 def main():
     parser = argparse.ArgumentParser(description="Local leakage-aware FPL prediction engine")
     parser.add_argument("command", choices=["init", "install-model", *COMMANDS])
-    args, rest = parser.parse_known_args()
+    argv = sys.argv[1:]
+    if not argv or argv[0] in ("-h", "--help"):
+        parser.parse_args(argv)
+        return
+    args = parser.parse_args(argv[:1])
+    rest = argv[1:]
     if args.command == "init":
         if rest: parser.error("init accepts no extra arguments")
         print(initialise()); return
     if args.command == "install-model":
         if len(rest) != 1: parser.error("install-model requires one trusted artifact path")
         print(install_approved_model(rest[0])); return
-    initialise()
+    if not any(flag in rest for flag in ("-h", "--help")):
+        initialise()
     sys.argv = [COMMANDS[args.command], *rest]
     runpy.run_module(COMMANDS[args.command], run_name="__main__")
 
