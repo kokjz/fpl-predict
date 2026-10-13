@@ -7,3 +7,4 @@
 - Run pytest and tools/check_repository.py, inspect staged diff, and verify privacy before every commit/push.
 - Never rewrite published substantive history, delete validation evidence, or execute model training/account actions as part of routine repository maintenance.
 - Report skipped integration checks and unmeasured performance honestly. Do not introduce CI data downloads or automatic retraining/model promotion.
+- Clean up both remote and local branches after their last dependent PR has merged into main. Check open PR head/base dependencies first; never delete a branch still needed by dependent work.

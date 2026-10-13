@@ -4,7 +4,7 @@
 2. Make coherent commits as changes are completed. Run tests and `python tools/check_repository.py` after staging, before each push. Push regularly to the corresponding branch.
 3. Open a pull request for each significant set of changes. Describe the problem, final behavior, validation and material limitations.
 4. Review the full diff, source/data boundaries, staged contents and test results. Resolve findings before merging. Required checks must pass; no automatic merges.
-5. Prefer squash merges and delete merged branches. Keep the original approved model available for rollback.
+5. Prefer squash merges. After the last PR depending on a branch has merged into `main`, verify no open PR uses it as head or base, then delete both its remote and local branch. Keep branches while dependent work remains open. Switch to `main` and check for unmerged work before local deletion. Keep the original approved model available for rollback.
 
 Merging code does not approve a trained model. Model changes require predeclared development/audit/points/integrity gates, chronological evaluation and later independent evidence. No guaranteed monotonically improving real-world performance is claimed. Preserve failed experiments locally, not in ordinary Git history.
 
