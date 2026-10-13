@@ -1,0 +1,201 @@
+[
+  {
+    "repository": "daniegr/OpenFPL",
+    "commit": "ad055ba7270145ce8ecc1f19581423493b1357e7",
+    "url": "https://github.com/daniegr/OpenFPL",
+    "license": "MIT",
+    "retrieved_utc": "2026-10-13T19:59:17.689562+00:00",
+    "files": [
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/daniegr/OpenFPL/ad055ba7270145ce8ecc1f19581423493b1357e7/LICENSE",
+        "sha256": "407ff3d876783cd9bfdb4fcdee2355d3005d1eecc24dfb6f250461ed86ccfa1c"
+      },
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/daniegr/OpenFPL/ad055ba7270145ce8ecc1f19581423493b1357e7/README.md",
+        "sha256": "5a6abd7336951c200076d660dbd7e4bc04d46f9e55068d518bced587fab4ab77"
+      },
+      {
+        "path": "data/predictions.csv",
+        "url": "https://raw.githubusercontent.com/daniegr/OpenFPL/ad055ba7270145ce8ecc1f19581423493b1357e7/data/predictions.csv",
+        "sha256": "a3740ed818d3143304a9ff73ef5d7dce467c42dc5c7d444aa1b9c3fa7a591230"
+      },
+      {
+        "path": "data/samples.csv",
+        "url": "https://raw.githubusercontent.com/daniegr/OpenFPL/ad055ba7270145ce8ecc1f19581423493b1357e7/data/samples.csv",
+        "sha256": "a06653f707779762e895aff0e63b91174eae6b36f9101fe1c7065566a2e28efa"
+      },
+      {
+        "path": "play.ipynb",
+        "url": "https://raw.githubusercontent.com/daniegr/OpenFPL/ad055ba7270145ce8ecc1f19581423493b1357e7/play.ipynb",
+        "sha256": "efa00fc8c7cab9816ff69b50c04b37d311d9568f3e8d98ff112a548dfb303f58"
+      }
+    ]
+  },
+  {
+    "repository": "alan-turing-institute/AIrsenal",
+    "commit": "d384e8a9cf09a92bfba9b1ca79846fbef0c780c4",
+    "url": "https://github.com/alan-turing-institute/AIrsenal",
+    "license": "MIT",
+    "retrieved_utc": "2026-10-13T19:59:19.939560+00:00",
+    "files": [
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/alan-turing-institute/AIrsenal/d384e8a9cf09a92bfba9b1ca79846fbef0c780c4/LICENSE",
+        "sha256": "644b91befc95e0020d89e05df03487974ba0567d5624f9724c4fe667ddee3826"
+      },
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/alan-turing-institute/AIrsenal/d384e8a9cf09a92bfba9b1ca79846fbef0c780c4/README.md",
+        "sha256": "429c72f92598fc0ecf53f8b878e0414f61c12648119a990e3e42dd110c636f72"
+      },
+      {
+        "path": "tests/prediction/test_xg_player_model.py",
+        "url": "https://raw.githubusercontent.com/alan-turing-institute/AIrsenal/d384e8a9cf09a92bfba9b1ca79846fbef0c780c4/tests/prediction/test_xg_player_model.py",
+        "sha256": "3f807a6b5cedff9c1830339544797479c102c03f31d2a58a6ac624a62695942b"
+      },
+      {
+        "path": "tests/remote/transfermarkt_pages/README.md",
+        "url": "https://raw.githubusercontent.com/alan-turing-institute/AIrsenal/d384e8a9cf09a92bfba9b1ca79846fbef0c780c4/tests/remote/transfermarkt_pages/README.md",
+        "sha256": "f2e409fb7f3974d6e879eaf3f093e41c0b21061f474794bbd4ba21096c8d8800"
+      },
+      {
+        "path": "src/airsenal/prediction/player_models/conjugate.py",
+        "url": "https://raw.githubusercontent.com/alan-turing-institute/AIrsenal/d384e8a9cf09a92bfba9b1ca79846fbef0c780c4/src/airsenal/prediction/player_models/conjugate.py",
+        "sha256": "5ac99838abd1b64869371c0a7d741fb6f9339b22a69abc2ca09d23e7321f197c"
+      },
+      {
+        "path": "src/airsenal/prediction/player_models/mcmc.py",
+        "url": "https://raw.githubusercontent.com/alan-turing-institute/AIrsenal/d384e8a9cf09a92bfba9b1ca79846fbef0c780c4/src/airsenal/prediction/player_models/mcmc.py",
+        "sha256": "e61b31c88d4f6c5cd87360b5d770b796e8ccb7befd4b57a382482348644569fd"
+      },
+      {
+        "path": "src/airsenal/prediction/minutes_models/recent.py",
+        "url": "https://raw.githubusercontent.com/alan-turing-institute/AIrsenal/d384e8a9cf09a92bfba9b1ca79846fbef0c780c4/src/airsenal/prediction/minutes_models/recent.py",
+        "sha256": "26249337cc4b2a4fc6ee3cc5a6e9837c1d0c94e31e065671b7aa4d61c3318b4c"
+      }
+    ]
+  },
+  {
+    "repository": "qazybekb/smartplayfpl-dastan",
+    "commit": "758db9247e8b3a9a870c991064f74d8339d61cd0",
+    "url": "https://github.com/qazybekb/smartplayfpl-dastan",
+    "license": "MIT",
+    "retrieved_utc": "2026-10-13T19:59:22.515136+00:00",
+    "files": [
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/qazybekb/smartplayfpl-dastan/758db9247e8b3a9a870c991064f74d8339d61cd0/LICENSE",
+        "sha256": "c6272c01d9c3b7787eeba4754e4caedd3e39b51647aa379b0320e098221df90f"
+      },
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/qazybekb/smartplayfpl-dastan/758db9247e8b3a9a870c991064f74d8339d61cd0/README.md",
+        "sha256": "19d938b2b8954c01ae6d47636f8a6bd0d40ff095db01c33a9377ea44135d4018"
+      },
+      {
+        "path": "dastan/predictor.py",
+        "url": "https://raw.githubusercontent.com/qazybekb/smartplayfpl-dastan/758db9247e8b3a9a870c991064f74d8339d61cd0/dastan/predictor.py",
+        "sha256": "791debbfa89e14b0e86c9cead99a17740f3a7cf0195a336f684f605e8b2431d8"
+      },
+      {
+        "path": "data/mappings/README.md",
+        "url": "https://raw.githubusercontent.com/qazybekb/smartplayfpl-dastan/758db9247e8b3a9a870c991064f74d8339d61cd0/data/mappings/README.md",
+        "sha256": "b9bef377b3e161bfe4402fbf1024e63a2926096943fb7efe9e75b6b6bfeab3c4"
+      },
+      {
+        "path": "docs/BASELINES.md",
+        "url": "https://raw.githubusercontent.com/qazybekb/smartplayfpl-dastan/758db9247e8b3a9a870c991064f74d8339d61cd0/docs/BASELINES.md",
+        "sha256": "0b4dc356c8026e8b9702a5fb698582540d0fd200d21a6b56a40ac554f7e471c0"
+      },
+      {
+        "path": "docs/METHODOLOGY.md",
+        "url": "https://raw.githubusercontent.com/qazybekb/smartplayfpl-dastan/758db9247e8b3a9a870c991064f74d8339d61cd0/docs/METHODOLOGY.md",
+        "sha256": "23808e03ab8ee25220350dd8be6ad00d8f0813a1d4ffce6f2eb4aa7ff2b8ff5f"
+      },
+      {
+        "path": "dastan/model.py",
+        "url": "https://raw.githubusercontent.com/qazybekb/smartplayfpl-dastan/758db9247e8b3a9a870c991064f74d8339d61cd0/dastan/model.py",
+        "sha256": "a2830cc7e0422dce72562ccc33d2ca4a0b12b5ab8ac0f1cf66e66f93034c48a8"
+      },
+      {
+        "path": "dastan/evaluate.py",
+        "url": "https://raw.githubusercontent.com/qazybekb/smartplayfpl-dastan/758db9247e8b3a9a870c991064f74d8339d61cd0/dastan/evaluate.py",
+        "sha256": "43ab9d22c5db34d184dd6d6fc113f3d965a70844aa1877ff85059f792a138180"
+      },
+      {
+        "path": "docs/openfpl_benchmark.json",
+        "url": "https://raw.githubusercontent.com/qazybekb/smartplayfpl-dastan/758db9247e8b3a9a870c991064f74d8339d61cd0/docs/openfpl_benchmark.json",
+        "sha256": "0e525018f4a30cbb8a955a8542b0276891ebfc1898931201524dc65e5650f990"
+      },
+      {
+        "path": "docs/evaluation.json",
+        "url": "https://raw.githubusercontent.com/qazybekb/smartplayfpl-dastan/758db9247e8b3a9a870c991064f74d8339d61cd0/docs/evaluation.json",
+        "sha256": "b7b46967d5520963df474efae0c876254bdff718bd0b888988ae19b7da521718"
+      },
+      {
+        "path": "docs/walkforward_predictions.parquet",
+        "url": "https://raw.githubusercontent.com/qazybekb/smartplayfpl-dastan/758db9247e8b3a9a870c991064f74d8339d61cd0/docs/walkforward_predictions.parquet",
+        "sha256": "5f650afc0d3ba056e696987ae908caf2dd51864cc82ab150e6a96af3d3d36637"
+      }
+    ]
+  },
+  {
+    "repository": "elcaiseri/OpenFPL-Scout-AI",
+    "commit": "6f03815f392ce1714043a2e14b171fa264364d5c",
+    "url": "https://github.com/elcaiseri/OpenFPL-Scout-AI",
+    "license": "MIT",
+    "retrieved_utc": "2026-10-13T19:59:26.054895+00:00",
+    "files": [
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/elcaiseri/OpenFPL-Scout-AI/6f03815f392ce1714043a2e14b171fa264364d5c/LICENSE",
+        "sha256": "c1406e09313dde919280cb3fcef790f2b71094b925b98ea95b3b976987fe202c"
+      },
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/elcaiseri/OpenFPL-Scout-AI/6f03815f392ce1714043a2e14b171fa264364d5c/README.md",
+        "sha256": "385168581c60184ff0db3c5dc0956ae5d19881956655dc4a7aa04f26251b756b"
+      },
+      {
+        "path": "static/report/data.js",
+        "url": "https://raw.githubusercontent.com/elcaiseri/OpenFPL-Scout-AI/6f03815f392ce1714043a2e14b171fa264364d5c/static/report/data.js",
+        "sha256": "ba6719e4c8b90b8ef1c09f716e88fb9f5266aef1e4eb35cd1034ab64d40ef62d"
+      }
+    ]
+  },
+  {
+    "repository": "jotohow/lionel",
+    "commit": "cc0b743fd70f16df414948fd88547a24de5ceb2b",
+    "url": "https://github.com/jotohow/lionel",
+    "license": "MIT",
+    "retrieved_utc": "2026-10-13T19:59:28.828961+00:00",
+    "files": [
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/jotohow/lionel/cc0b743fd70f16df414948fd88547a24de5ceb2b/LICENSE",
+        "sha256": "ff3019ae3bb1251c47eeab283ef29310ae03df5b51740333c0a424c8ee8ad0a2"
+      },
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/jotohow/lionel/cc0b743fd70f16df414948fd88547a24de5ceb2b/README.md",
+        "sha256": "cb5b1187b4467a0bcc2ad6c9259a79fd2fb2a030a1a678aa2640d04ef3b81eaa"
+      }
+    ]
+  },
+  {
+    "repository": "Linus-J/FPL-decision-engine",
+    "commit": "779552e992a7e53714143e79a41d12840adf95fb",
+    "url": "https://github.com/Linus-J/FPL-decision-engine",
+    "license": "No license identified; do not copy code",
+    "retrieved_utc": "2026-10-13T19:59:30.787258+00:00",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/Linus-J/FPL-decision-engine/779552e992a7e53714143e79a41d12840adf95fb/README.md",
+        "sha256": "4f1a86868a33a97c7b948ae33934fde9875da2d5508c9daefe801810996d725f"
+      }
+    ]
+  }
+]

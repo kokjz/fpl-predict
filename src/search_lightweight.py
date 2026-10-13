@@ -1,5 +1,6 @@
 """Bounded I3 search. Runs only on explicit invocation, never promotes a model."""
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
@@ -69,7 +70,8 @@ def run(root, output):
     if not protocol.exists():
         from importlib.resources import files
         protocol = files("fpl_predict_resources").joinpath("I3_PROTOCOL.md")
-    lock = {"protocol_sha256": hashlib.sha256(protocol.read_bytes()).hexdigest(),
+    lock = {"created_at_utc": datetime.now(timezone.utc).isoformat(),
+            "protocol_sha256": hashlib.sha256(protocol.read_bytes()).hexdigest(),
             "input_sha256": {name: digest(root / "artifacts" / name)
                              for name in ("history.pkl", "features.pkl")},
             "source_sha256": {name: digest(Path(__file__).with_name(name)) for name in
@@ -144,7 +146,7 @@ def run(root, output):
                 if np.mean([r["pooled"]["rmse"] for r in seed_records]) > .995 * records[0]["pooled"]["rmse"]:
                     finalist = None
             check_budget()
-        lock.update(status="development_complete", finalist=finalist,
+        lock.update(status="development_complete", completed_at_utc=datetime.now(timezone.utc).isoformat(), finalist=finalist,
                     candidate_count=6, seconds=time.perf_counter() - started, peak_rss_gib=peak_gib(),
                     next_step="single locked promotion audit" if finalist else "stop; retain approved champion")
         joblib.dump({"predictions": predictions}, output / "development_predictions.joblib")

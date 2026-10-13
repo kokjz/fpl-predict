@@ -37,6 +37,19 @@
         "bias": -0.034883250806817326
       },
       "reason": "Chance-quality target smoothing did not meet the unchanged development gate."
+    },
+    "I3": {
+      "status": "not_promoted",
+      "evidence": "docs/I3_RESULTS.json",
+      "candidate_count": 6,
+      "best_candidate": "extra_trees_blend50",
+      "development_metrics": {
+        "n": 15323,
+        "rmse": 2.9908710394462497,
+        "mae": 2.1534915137516313,
+        "bias": -0.024724202207676765
+      },
+      "reason": "Best development RMSE reduction 0.1067%, below predeclared 0.5% gate; retain v1.0.0."
     }
   }
 }

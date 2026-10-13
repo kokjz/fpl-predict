@@ -56,6 +56,24 @@ These commands are examples, not scheduled jobs or permission to change an FPL a
 
 Freeze forecasts before deadlines. Score only when official results are finished and checked, and retain model/last-five/recency comparisons on identical eligible players. Never retune on already-seen outcomes and describe them as untouched tests. [Development workflow](CONTRIBUTING.md), [security and privacy](SECURITY.md), [data provenance](docs/data.md).
 
+## Lightweight research and external comparisons
+
+The [open-source comparison](docs/open_source_comparison_2026-10-14.md) inspects six
+systems, reports a matched retrospective Dastan benchmark, and preserves six
+rejected lightweight adaptations. Approved v1.0.0 remains the default. Research
+tooling is opt-in, uses two computation threads and checks a soft runtime/memory
+budget; no automatic retraining or model promotion is performed.
+
+```sh
+.venv/bin/fpl-predict search-lightweight --output-dir "$FPL_PREDICT_HOME/experiments/I3_new"
+.venv/bin/python tools/compare_dastan.py --help
+```
+
+The search requires this project's trusted historical caches and a fresh output
+directory. The archived-export comparator optionally needs a Parquet reader;
+routine forecasts do not. All data, fitted artifacts and individual predictions
+stay in the ignored/external workspace. See the predeclared [I3 protocol](docs/I3_PROTOCOL.md).
+
 ## Repository layout
 
 - `src/`: engine modules and CLI; public registry/protocol resources.
