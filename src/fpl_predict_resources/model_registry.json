@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "champion": "1.0.0",
+  "selection_policy": "Latest approved best model; rejected/newer experiments never become default",
+  "versions": {
+    "1.0.0": {
+      "status": "approved",
+      "artifact": "artifacts/models/789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233.joblib",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+      "evidence": "docs/validation.md",
+      "approval_scope": "Initial historical forecast-error gates; no established season-points advantage"
+    }
+  },
+  "experiments": {
+    "I1": {
+      "status": "not_promoted",
+      "evidence": "Local experiment outputs; see docs/validation.md",
+      "candidate_count": 17,
+      "best_candidate": "blend_v1_0.5",
+      "development_metrics": {
+        "n": 15323,
+        "rmse": 2.990071395451589,
+        "mae": 2.1482747494548637,
+        "bias": -0.03277495217573637
+      },
+      "reason": "No candidate met the predeclared 0.5% development RMSE improvement gate; I1 best also lost points in exploratory fixed-squad replay."
+    },
+    "I2": {
+      "status": "not_promoted",
+      "evidence": "Local experiment outputs; see docs/validation.md",
+      "candidate_count": 4,
+      "best_candidate": "xg_target_0.25_original",
+      "development_metrics": {
+        "n": 15323,
+        "rmse": 2.993190933102299,
+        "mae": 2.1505538549776557,
+        "bias": -0.034883250806817326
+      },
+      "reason": "Chance-quality target smoothing did not meet the unchanged development gate."
+    }
+  }
+}
