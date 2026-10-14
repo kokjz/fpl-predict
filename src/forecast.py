@@ -11,6 +11,7 @@ import pandas as pd
 from threadpoolctl import threadpool_limits
 from fpl_model import FeatureStore,normalise
 from model_registry import resolve_champion
+from availability_evidence import observations, scoped_overrides, official_baselines
 
 from runtime import workspace_root
 ROOT = workspace_root()
@@ -84,9 +85,17 @@ def run(args):
     if model.metadata['version']!=champion_version:raise ValueError('Registry/model version mismatch')
     pred=model.predict(x,target.pos)
     overrides=json.loads(Path(args.overrides).read_text()) if args.overrides else {}
+    review_path=getattr(args,'availability_review',None)
+    review=json.loads(Path(review_path).read_text()) if review_path else None
+    scoped={};review_gw=None
+    if review:
+        review_gw,recorded,scoped=scoped_overrides(review,b,dt.datetime.now(dt.timezone.utc))
+        if review_gw!=nextgw:raise ValueError('Availability review must target the next gameweek')
+        if set(map(int,overrides))&set(scoped):raise ValueError('Conflicting legacy and reviewed overrides')
+        now=max(now,recorded)
     out=[]
     for i,r in target.iterrows():
-        v=pred.loc[i].to_dict();override=overrides.get(str(r.element),{})
+        v=pred.loc[i].to_dict();override=scoped.get(int(r.element),{}) if int(r.GW)==review_gw and int(r.element) in scoped else overrides.get(str(r.element),{})
         dc_base=0. if r.pos==1 else 2*float(x.loc[i,'dc_rate4'])
         v['last5_xp']=float(x.loc[i,'last5_points'])+dc_base
         v['ewm_xp']=float(x.loc[i,'ew4_points_core'])+dc_base
@@ -104,6 +113,9 @@ def run(args):
         lo,hi=model.residual_intervals[str(int(r.pos))]
         out.append({'id':int(r.element),'GW':int(r.GW),'fixture':int(r.fixture),'opponent':r.opponent,**v,'core_interval80_low':max(-3,v['core_xp']+lo) if factor else 0.,'core_interval80_high':v['core_xp']+hi if factor else 0.,'n_history':int(x.loc[i,'n_history']),'candidate_pool':bool(x.loc[i,'n_history']>=3 and x.loc[i,'last5_minutes']>=45),'override':override})
     aggregate=aggregate_fixture_predictions(out,players,gws)
+    official=official_baselines(b)
+    for row in aggregate:
+        row['official_ep_next']=official.get((row['id'],row['GW']))
     state=json.loads(Path(args.team_state).read_text());ids=[p['id'] for p in state['players']]
     indexed={(r['id'],r['GW']):r for r in aggregate};meta={p['id']:p for p in players}
     owned=[{**meta[i],'selling_price_tenths':next(p['selling_price_tenths'] for p in state['players'] if p['id']==i)} for i in ids]
@@ -123,10 +135,17 @@ def run(args):
             hit=0 if state['free_transfers']>=1 else 4
             transfers.append({'out':old['id'],'in':new['id'],'out_name':old['name'],'in_name':new['name'],'six_gw_gross_gain':total-base,'hit':hit,'net_gain':total-base-hit,'remaining_bank_tenths':state['bank_tenths']+old['selling_price_tenths']-new['price_tenths']})
     transfers.sort(key=lambda z:z['net_gain'],reverse=True)
-    runid=tag+'-'+hashlib.sha256(model_path.read_bytes()).hexdigest()[:8]+('-'+hashlib.sha256(json.dumps(overrides,sort_keys=True).encode()).hexdigest()[:8] if overrides else '')
+    assumptions={'legacy':overrides,'review':review}
+    runid=tag+'-'+hashlib.sha256(model_path.read_bytes()).hexdigest()[:8]+('-'+hashlib.sha256(json.dumps(assumptions,sort_keys=True).encode()).hexdigest()[:8] if overrides or review else '')
     dest=ROOT/'forecasts'/runid;dest.mkdir(parents=True,exist_ok=False)
-    provenance={'snapshot':tag,'as_of_utc':now.isoformat(),'model':model.metadata,'champion_registry_version':champion_version,'model_sha256':hashlib.sha256(model_path.read_bytes()).hexdigest(),'source_sha256':{name:hashlib.sha256((Path(__file__).resolve().parent/name).read_bytes()).hexdigest() for name in ['fpl_model.py','forecast.py','model_registry.py']},'inputs_manifest_sha256':hashlib.sha256((root/'manifest.json').read_bytes()).hexdigest(),'overrides':overrides,'start_gw':nextgw,'through_gw':gws[-1],'current_history_rows':len(hist),'supported_horizon':'one-GW empirical test; all further horizons are unvalidated planning approximations','caveats':['Current forecasts use this-season form and pooled historical patterns; no individual carryover across seasons.','Doubtful/injured status requires scenario review; official percentage is not used as a start probability.','No news-adjusted forecast unless an explicit documented override is supplied.','Six-GW transfer comparison holds the rest of the squad and roles fixed, allows captain changes, and excludes autosubs, future transfers and banked-FT option value. It is not a globally optimal season strategy.','XI objective omits vice-captain fallback and autosub expectation; captain/vice pair is a practical ranking.','Double-GW appearance probability assumes independent matches and is approximate.','Selling prices come from the last manager-confirmed state; reconfirm affordability before action.','Direct core-point model carries historical assist/BPS changes; exact current BPS outcome prediction is not established.','Empirical 80% intervals apply to core match points only; they exclude current DC/fitness uncertainty and are not summed into a multiweek confidence interval.']}
+    provenance={'snapshot':tag,'as_of_utc':now.isoformat(),'model':model.metadata,'champion_registry_version':champion_version,'model_sha256':hashlib.sha256(model_path.read_bytes()).hexdigest(),'source_sha256':{name:hashlib.sha256((Path(__file__).resolve().parent/name).read_bytes()).hexdigest() for name in ['fpl_model.py','forecast.py','model_registry.py','availability_evidence.py']},'inputs_manifest_sha256':hashlib.sha256((root/'manifest.json').read_bytes()).hexdigest(),'overrides':overrides,'start_gw':nextgw,'through_gw':gws[-1],'current_history_rows':len(hist),'supported_horizon':'one-GW empirical test; all further horizons are unvalidated planning approximations','caveats':['Current forecasts use this-season form and pooled historical patterns; no individual carryover across seasons.','Doubtful/injured status requires scenario review; official percentage is not used as a start probability.','No news-adjusted forecast unless an explicit documented override is supplied.','Six-GW transfer comparison holds the rest of the squad and roles fixed, allows captain changes, and excludes autosubs, future transfers and banked-FT option value. It is not a globally optimal season strategy.','XI objective omits vice-captain fallback and autosub expectation; captain/vice pair is a practical ranking.','Double-GW appearance probability assumes independent matches and is approximate.','Selling prices come from the last manager-confirmed state; reconfirm affordability before action.','Direct core-point model carries historical assist/BPS changes; exact current BPS outcome prediction is not established.','Empirical 80% intervals apply to core match points only; they exclude current DC/fitness uncertainty and are not summed into a multiweek confidence interval.']}
     provenance['timing_note']='as_of_utc is the input snapshot; created_at_utc is when this forecast was generated.'
+    provenance['availability_review']=review
+    provenance['snapshot_as_of_utc']=manifest['retrieved_utc']
+    provenance['timing_note']='as_of_utc includes any recorded availability review; snapshot_as_of_utc dates API inputs; created_at_utc dates generation.'
+    provenance['official_ep_next_scope']='Unadjusted official next-GW projection only; no extrapolation or missing-value imputation.'
+    source=next((v for v in manifest['files'] if v['file']=='bootstrap.json'),None)
+    if source:(dest/'availability_observations.json').write_text(json.dumps(observations(b,source),indent=2)+'\n')
     for filename,data in [('fixture_predictions.json',out),('player_gameweek_predictions.json',aggregate),('planning.json',{'lineups':plans,'single_transfer_comparisons':transfers[:30],'first_half_chip_windows':{'triple_captain':sorted([{'GW':g,'increment':plans[g]['triple_captain_increment']} for g in gws if g<=19],key=lambda x:-x['increment']),'bench_boost':sorted([{'GW':g,'increment':plans[g]['bench_boost_increment']} for g in gws if g<=19],key=lambda x:-x['increment'])}})]:
         (dest/filename).write_text(json.dumps(data,indent=2,default=str)+'\n')
     names=lambda ii:', '.join(meta[i]['name'] for i in ii)
@@ -140,9 +159,9 @@ def run(args):
     (dest/'REPORT.md').write_text('\n'.join(lines)+'\n')
     provenance['created_at_utc']=dt.datetime.now(dt.timezone.utc).isoformat()
     (dest/'manifest.json').write_text(json.dumps(provenance,indent=2,default=str)+'\n')
-    if not overrides:(ROOT/'forecasts'/'LATEST').write_text(runid+'\n')
+    if not overrides and not review:(ROOT/'forecasts'/'LATEST').write_text(runid+'\n')
     print('Forecast saved',dest,flush=True);print('Captain',meta[plan['captain']]['name'],'vice',meta[plan['vice']]['name'],flush=True)
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--snapshot');p.add_argument('--through-gw',type=int);p.add_argument('--team-state',required=True);p.add_argument('--overrides');args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--snapshot');p.add_argument('--through-gw',type=int);p.add_argument('--team-state',required=True);p.add_argument('--overrides');p.add_argument('--availability-review');args=p.parse_args()
     with threadpool_limits(limits=4):run(args)

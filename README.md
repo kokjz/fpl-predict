@@ -74,6 +74,12 @@ directory. The archived-export comparator optionally needs a Parquet reader;
 routine forecasts do not. All data, fitted artifacts and individual predictions
 stay in the ignored/external workspace. See the predeclared [I3 protocol](docs/I3_PROTOCOL.md).
 
+Normal refreshes now preserve structured availability observations. Documented
+minutes scenarios can target one GW via `--availability-review`; finalised scoring
+reports minute/appearance diagnostics and a paired official projection baseline.
+Read the [evidence workflow](docs/availability_workflow.md) for timestamps, scope
+and limitations. These additions leave the approved model unchanged.
+
 ## Repository layout
 
 - `src/`: engine modules and CLI; public registry/protocol resources.

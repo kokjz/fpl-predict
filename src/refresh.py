@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import time
 import urllib.request
+from availability_evidence import observations
 
 from runtime import workspace_root
 ROOT = workspace_root()
@@ -28,6 +29,11 @@ def main():
         raw=fetch(url);obj=json.loads(raw);(root/name).write_bytes(raw)
         return obj,{'file':name,'url':url,'sha256':hashlib.sha256(raw).hexdigest(),'retrieved_utc':dt.datetime.now(dt.timezone.utc).isoformat()}
     b,m=save('bootstrap-static','bootstrap.json');log.append(m)
+    evidence=observations(b,m)
+    raw=(json.dumps(evidence,indent=2)+'\n').encode()
+    (root/'availability_observations.json').write_bytes(raw)
+    log.append({'file':'availability_observations.json','derived_from':'bootstrap.json',
+                'sha256':hashlib.sha256(raw).hexdigest(),'retrieved_utc':m['retrieved_utc']})
     f,m=save('fixtures','fixtures.json');log.append(m)
     # All listed players, including zero-minute reserves, to avoid selection/survivorship filtering.
     (root/'players').mkdir()
