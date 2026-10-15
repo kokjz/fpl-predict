@@ -74,3 +74,13 @@ exports for results/started flags on matches not yet begun. Unknown GW assignmen
 and kickoff times stay unknown. A clean but old schedule is not proof it remained
 current at a later deadline. This audit is a necessary consistency screen, not
 an independent provenance certificate or a complete historical schedule rebuild.
+
+`replay_event_assignments(base, captured_at, updates, deadline)` replays reviewed
+fixture-ID/GW updates strictly before a selected deadline. Each update declares
+`fixture`, nullable `event`, aware `available_at` and public HTTPS `source_url`.
+Unknown assignments remain unknown until an eligible announcement; duplicate or
+pre-base updates fail. Use a conservative availability bound (for example, the
+following day's00:00UTC) when an article only supplies a publication date.
+The result contains only fixture-ID/GW membership, not verified kickoff times.
+Callers must establish announcement-history completeness separately; a replay
+cannot certify that missing source evidence never existed.

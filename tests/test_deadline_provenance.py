@@ -107,6 +107,8 @@ def test_explicit_zero_history_is_distinct_from_missing_provenance():
     assert result["history_contract_passed"] and not result["independent_lineage_certified"]
     lineage.loc[1, "source_max_ts"] = "2026-02-27T15:30:00Z"
     assert not audit.audit_history_sources(rows, lineage, deadlines)["history_contract_passed"]
+    lineage["source_count"] = 0; lineage["source_max_ts"] = None
+    assert audit.audit_history_sources(rows, lineage, deadlines)["history_contract_passed"]
 
 
 def test_fixture_capture_rejects_future_results_and_preserves_unknown_schedule():
@@ -119,3 +121,16 @@ def test_fixture_capture_rejects_future_results_and_preserves_unknown_schedule()
     assert not result["fixture_knowledge_certified"]
     frame.loc[0, "team_h_score"] = 2
     assert audit.audit_fixture_snapshot(frame, "2026-02-27T13:00:00Z")["future_result_conflicts"] == 1
+
+
+def test_assignment_replay_uses_only_published_changes_and_retains_unknowns():
+    frame = pd.DataFrame([dict(id=1, event=None, kickoff_time=None, finished=False,
+                               started=False, team_h_score=None, team_a_score=None)])
+    updates = [dict(fixture=1, event=36, available_at="2026-04-29T00:00:00Z",
+                    source_url="https://example.org/announcement")]
+    before = audit.replay_event_assignments(frame, "2026-03-13T01:00:00Z", updates, "2026-04-24T17:30:00Z")
+    assert pd.isna(before.event.iloc[0]) and pd.isna(frame.event.iloc[0])
+    after = audit.replay_event_assignments(frame, "2026-03-13T01:00:00Z", updates, "2026-05-09T10:00:00Z")
+    assert after.event.iloc[0] == 36
+    with pytest.raises(ValueError):
+        audit.replay_event_assignments(frame, "2026-03-13T01:00:00Z", updates*2, "2026-05-09T10:00:00Z")

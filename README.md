@@ -67,6 +67,8 @@ can measure full-score baseline errors and fitting cost without changing the app
 The optional [deadline/provenance audit](docs/deadline_provenance.md) checks
 historical bootstrap captures and player/team/opponent source-time contracts
 separately from accuracy scoring.
+See the [dated provenance findings](docs/PROVENANCE_FINDINGS_2026-10-15.md) for
+verified inputs, observed temporal concerns and remaining reference-fit gates.
 
 ## Install
 

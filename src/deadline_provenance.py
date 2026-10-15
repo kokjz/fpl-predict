@@ -154,7 +154,7 @@ def audit_history_sources(rows, lineage, deadlines):
     missing = joined.source_max_ts.isna()
     if (missing != joined.source_count.eq(0)).any():
         raise ValueError("Missing source evidence is not an explicit cold start")
-    joined["source_max_ts"] = joined.source_max_ts.map(lambda t: pd.NaT if pd.isna(t) else _timestamp(t))
+    joined["source_max_ts"] = pd.to_datetime(joined.source_max_ts.map(lambda t: pd.NaT if pd.isna(t) else _timestamp(t)), utc=True)
     # All are match-history features: allow the same3h completion buffer as pilot.
     late = joined.source_max_ts.notna() & joined.source_max_ts.ge(joined.deadline - pd.Timedelta(hours=3))
     return {"schema_version": 1, "history_contract_passed": not bool(late.any()),
@@ -182,7 +182,7 @@ def audit_fixture_snapshot(frame, captured_at):
     events = d.loc[assigned, ["event"]].copy()
     _numeric(events, ["event"], integer=True, minimum=1)
     if not events.event.le(38).all(): raise ValueError("Invalid fixture GW")
-    kickoff = d.kickoff_time.map(lambda t: pd.NaT if pd.isna(t) else _timestamp(t))
+    kickoff = pd.to_datetime(d.kickoff_time.map(lambda t: pd.NaT if pd.isna(t) else _timestamp(t)), utc=True)
     for flag in ("finished", "started"):
         if not d[flag].map(lambda v: pd.isna(v) or isinstance(v, (bool, np.bool_))).all():
             raise ValueError("Fixture flags must be booleans or unknown")
@@ -196,6 +196,38 @@ def audit_fixture_snapshot(frame, captured_at):
             "unknown_event_rows": int(d.event.isna().sum()),
             "unknown_kickoff_rows": int(kickoff.isna().sum()),
             "fixture_knowledge_certified": False, "benchmark_eligible": False}
+
+
+def replay_event_assignments(base, captured_at, updates, deadline):
+    """Replay reviewed announcements; never backfill unknown GWs from final data.
+
+    Caller must establish completeness of the source/update history. This only
+    returns fixture ID/GW membership, not verified kickoff times or model inputs.
+    Use a conservative availability bound for articles with a date but no time.
+    """
+    captured = _timestamp(captured_at); cutoff = _timestamp(deadline)
+    if captured >= cutoff: raise ValueError("Base schedule was unavailable at deadline")
+    if not audit_fixture_snapshot(base, captured_at)["asof_result_screen_passed"]:
+        raise ValueError("Base schedule contains future results")
+    result = base[["id", "event"]].copy()
+    _numeric(result, ["id"], integer=True, minimum=1)
+    result["event"] = pd.to_numeric(result.event, errors="raise")
+    result = result.set_index("id")
+    seen = set(); ordered = []
+    for entry in updates:
+        _required(entry, ["fixture", "event", "available_at", "source_url"], "update")
+        fixture = entry["fixture"]; event = entry["event"]
+        if type(fixture) is not int or fixture not in result.index or (event is not None and (type(event) is not int or not 1 <= event <= 38)):
+            raise ValueError("Invalid fixture/GW update")
+        stamp = _timestamp(entry["available_at"]); url = urlsplit(entry["source_url"])
+        if url.scheme != "https" or not url.hostname or url.username or url.password or url.query or url.fragment:
+            raise ValueError("Update needs a public HTTPS source URL")
+        if stamp <= captured or (fixture, stamp) in seen:
+            raise ValueError("Duplicate/ambiguous or pre-base update")
+        seen.add((fixture, stamp)); ordered.append((stamp, fixture, event))
+    for stamp, fixture, event in sorted(ordered):
+        if stamp < cutoff: result.loc[fixture, "event"] = np.nan if event is None else event
+    return result.reset_index()
 
 
 def main():
