@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "declared_on": "2026-10-15",
+  "primary_cohort": "predeadline_candidates",
+  "uncertainty": {
+    "draws": 1000,
+    "seed": 20261015,
+    "block_gameweeks": 4,
+    "method": "paired circular GW blocks within season and contiguous coverage segments",
+    "minimum_longest_segment": 8,
+    "metrics": ["pooled_rmse_difference", "pooled_mae_difference"],
+    "scope": "descriptive fixed predictions; no selection-bias or training uncertainty correction"
+  },
+  "fixed_squads": {
+    "source": "supplied panel, never chosen from realised returns by evaluator",
+    "budget_tenths": 1000,
+    "missing_predictions": "entire panel ineligible across all methods",
+    "transfers_or_chips": false,
+    "promotion": false
+  }
+}

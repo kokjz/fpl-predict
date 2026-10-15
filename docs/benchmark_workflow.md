@@ -120,9 +120,10 @@ No output file is created on validation failure. Existing reports are never
 overwritten. Keep all exports, manifests and generated reports outside Git; review
 aggregate/source metadata before choosing to publish any report.
 
-This first package has no confidence intervals, squad replay, historical source
-reconstruction or runtime profiler. Those belong to later explicitly scoped
-work; none of the current output establishes season-point gain or model promotion.
+The [evaluation extension](benchmark_evaluation.md) now supplies paired error
+intervals, declared auxiliary diagnostics and optional fixed-squad panels.
+Historical reconstruction and reference fitting remain separate work; none of
+the output alone establishes season-point gains or model promotion.
 
 
 ## Preflight before scoring

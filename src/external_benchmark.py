@@ -109,6 +109,16 @@ def prepare_outcomes(frame):
     played = d.loc[~blanks]
     if not played.groupby(["season", "fixture"]).gameweek.nunique().le(1).all():
         raise ValueError("Fixture assigned to multiple gameweeks")
+    for col in ('position', 'minutes', 'n_history'):
+        if col not in d: continue
+        _numeric(d, [col], integer=True, minimum=0 if col != 'position' else 1)
+        if col == 'position' and not d[col].le(4).all(): raise ValueError('Invalid position')
+        if col == 'minutes' and (not d[col].le(90).all() or not d.loc[blanks,col].eq(0).all()):
+            raise ValueError('Invalid fixture minutes')
+        if col in ('position','n_history') and not d.groupby(KEYS)[col].nunique().eq(1).all():
+            raise ValueError('Conflicting predeadline metadata within player-gameweek')
+    if 'n_history' in d and (d.candidate & d.n_history.lt(3)).any():
+        raise ValueError('Candidate conflicts with declared prior history')
     return d
 
 
@@ -224,7 +234,7 @@ def normalise_forecast(frame, manifest, outcomes):
     return result, timing
 
 
-def compare(outcomes, exports):
+def compare(outcomes, exports, *, squads=None):
     """Return aggregate reports; `exports` is [(raw_frame, manifest), ...]."""
     truth = prepare_outcomes(outcomes)
     if len(exports) < 2 or len(exports) > 12:
@@ -233,6 +243,10 @@ def compare(outcomes, exports):
         actual=("actual", "sum"), candidate=("candidate", "first"))
     if not np.isfinite(base.actual).all():
         raise ValueError("Nonfinite aggregate outcomes")
+    for col in ('position','minutes','n_history'):
+        if col in truth:
+            extra=truth.groupby(KEYS,as_index=False)[col].agg('sum' if col=='minutes' else 'first')
+            base=base.merge(extra,on=KEYS,validate='one_to_one')
     joined = base.copy()
     provenance = {}
     prediction_columns = {}
@@ -254,7 +268,11 @@ def compare(outcomes, exports):
     def section(selected):
         cols = [prediction_columns[n] for n in selected]
         matched = joined.loc[joined[cols].notna().all(axis=1)]
+        from benchmark_evaluation import uncertainty, diagnostics
+        selected_columns={name:prediction_columns[name] for name in selected}
         return {
+            "paired_candidate_error_uncertainty": uncertainty(matched.loc[matched.candidate],selected_columns),
+            "diagnostics": diagnostics(matched,selected_columns),
             "rows": len(matched),
             "coverage": len(matched) / len(base),
             "candidate_coverage": float(matched.candidate.sum() / base.candidate.sum()) if base.candidate.any() else None,
@@ -264,8 +282,10 @@ def compare(outcomes, exports):
                 for label, subset in (("predeadline_candidates", matched.loc[matched.candidate]),
                                       ("all_matched", matched))}}
 
-    return {
-        "schema_version": 1,
+    from benchmark_evaluation import fixed_squad_report
+    result = {
+        "schema_version": 2,
+        "evaluation_protocol_sha256": digest(files('fpl_predict_resources').joinpath('benchmark_evaluation_protocol.json').read_bytes()),
         "protocol_id": protocol()["protocol_id"],
         "protocol_sha256": digest(files("fpl_predict_resources").joinpath("benchmark_protocol.json").read_bytes()),
         "scope": "retrospective comparison; provenance declared, not independently certified",
@@ -283,6 +303,8 @@ def compare(outcomes, exports):
         "pairwise_intersections": [{"models": list(pair), **section(pair)}
                                    for pair in itertools.combinations(names, 2)],
     }
+    if squads is not None: result['fixed_squads']=fixed_squad_report(joined,truth,prediction_columns,squads)
+    return result
 
 
 def _json(raw):
@@ -368,6 +390,7 @@ def main():
     parser.add_argument("--manifest", required=True, action="append", type=Path,
                         help="Repeat per model; local export path relative to each manifest")
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--squads", type=Path, help="Optional private fixed-squad panel specification")
     args = parser.parse_args()
     try:
         if not 2 <= len(args.manifest) <= 12:
@@ -375,7 +398,9 @@ def main():
         if args.output.exists():
             raise ValueError("Output already exists; use a new report filename")
         outcomes, exports, hashes = load_inputs(args.outcomes, args.outcomes_sha256, args.manifest)
-        result = {**compare(outcomes, exports), **hashes}
+        squad_raw=_read(args.squads) if args.squads else None
+        result = {**compare(outcomes, exports, squads=_json(squad_raw) if squad_raw else None), **hashes}
+        if squad_raw is not None: result['squad_spec_sha256']=digest(squad_raw)
         serialised = json.dumps(result, indent=2, allow_nan=False) + "\n"
         args.output.parent.mkdir(parents=True, exist_ok=True)
         with args.output.open("x") as stream:
