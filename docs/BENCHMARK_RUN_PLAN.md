@@ -84,3 +84,11 @@ also completed on explicitly modified inputs; original-system admission remains
 unresolved. The [prospective handoff](PROSPECTIVE_VALIDATION_HANDOFF.md) records
 the remaining evidence and pre-deadline comparison procedure. Neither code merges
 nor retrospective benchmark wins promote an operational model.
+
+The subsequent [external-method package](HISTORICAL_EXTERNAL_RESULTS_2026-10-15.md)
+adds independently retrained OpenFPL cv1 and AIrsenal-inspired references, plus a
+separate original archived external GW6comparison. These named adaptations and
+unequal-cutoff single-GW evidence do not retroactively satisfy the stricter
+original-system admission conditions above. Their measured results and explicit
+source-family closure replace an indefinite implementation wait; future weekly
+validation remains separate maintenance.

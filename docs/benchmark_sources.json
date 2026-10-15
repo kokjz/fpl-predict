@@ -101,9 +101,12 @@
   },
   "historical_methods_followup": {
     "protocol": "HISTORICAL_EXTERNAL_PROTOCOL.md",
-    "status": "protocol_frozen_before_new_fits",
+    "status": "completed_no_promotion",
     "openfpl": "independent40membercv1chronological adaptation, not original released weights",
     "airsenal": "independent conjugate/Poisson component adaptation, not complete original system",
-    "other_families": "pinned source triage; no automatic admission from published aggregate scores"
+    "other_families": "pinned source triage; no automatic admission from published aggregate scores",
+    "report": "HISTORICAL_EXTERNAL_RESULTS_2026-10-15.md",
+    "admission_report": "EXTERNAL_MODEL_ADMISSION_2026-10-15.md",
+    "archived_public_forecast": "fpl-forecastGW6hash-verified single-week post-hoc comparison, different capture dates"
   }
 }
