@@ -1,39 +1,86 @@
 # fpl-predict
 
-Local, leakage-aware Fantasy Premier League forecasting and evaluation. This repository contains the engine, synthetic tests, public model metadata and experiment protocols. It contains no manager squad, screenshots, credentials, downloaded datasets, forecasts or model binaries.
+An open-source Python engine for forecasting Fantasy Premier League points and evaluating FPL decisions against historical results.
+
+fpl-predict combines recent player form, playing-time patterns and fixture context in small tree-based models. It produces expected points and participation estimates, supports squad-level comparisons, and keeps forecast evaluation separate from model selection. It is intended for FPL analysis and reproducible research; it does not make transfers or operate an FPL account.
+
+**Project status:** experimental, with a command-line interface. Python 3.12 is required. Source, tests and evaluation protocols are included; historical datasets and trained model binaries are not distributed. A fresh installation can run the tests and reproduce training experiments. Forecasting additionally requires a trusted model artifact approved by the runtime registry; see [model setup](#model-setup).
+
+## What it does
+
+- Predicts fixture-level core points, defensive-contribution points, expected minutes, appearance probability and probability of playing at least 60 minutes.
+- Aggregates fixtures into gameweeks, including blanks and doubles.
+- Compares legal starting XIs, captain/vice-captain choices, bench order, individual transfers and conditional Triple Captain/Bench Boost opportunities for a supplied squad.
+- Supports documented, gameweek-specific minutes and availability scenarios.
+- Scores forecasts saved before the deadline against finalised results, with points error, playing-time diagnostics and a matched official FPL projection baseline where available.
+
+It is a forecasting and decision-support engine, not a complete season optimiser. Transfer chains, saved-transfer option value, expected automatic substitutions and joint chip scheduling are not fully optimised.
+
+## How the engine works
+
+1. **Collect data.** Public FPL endpoints provide player metadata, fixtures and match histories. Historical training data come from the [Vaastav FPL archive](https://github.com/vaastav/Fantasy-Premier-League). Downloads retain source revisions, timestamps and file hashes.
+2. **Build features available before the deadline.** Player, team and opponent statistics use four- and twelve-match half-lives. Features include position, venue, playing time, attacking statistics, saves and team results. Player names/IDs, same-match outcomes and archived lookahead projections are excluded from model inputs. Double-gameweek fixtures share a history cutoff.
+3. **Fit pooled models.** Histogram gradient-boosted trees learn patterns shared across players. Separate estimators cover core points, minutes, participation and defensive-contribution awards. Training examples have a two-year age half-life. The core model uses shallow seven-leaf trees; no GPU or hosted inference service is required.
+4. **Forecast and evaluate.** Fixture forecasts are summed into gameweeks and optionally compared within a squad. The model registry checks approval status and artifact hashes. Evaluation uses chronological splits; a merged code change or a newer experiment does not automatically replace the approved model.
+
+Official injury percentages are retained as observations, not treated as calibrated start probabilities. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).
+
+## Performance and other options
+
+The published v1 historical evaluation used 163,072 player-match records from 2020/21–2025/26. On 15,308 eligible candidate records across the 2024/25 and 2025/26 expanding-window tests:
+
+| Method | Core-points RMSE ↓ | Core-points MAE ↓ |
+|---|---:|---:|
+| fpl-predict v1 | **2.900** | **2.101** |
+| Last-five average | 3.175 | 2.365 |
+| Recency average | 2.982 | 2.108 |
+
+Eligibility uses prior history and lagged minutes, rather than selecting players by their eventual performance. Core points exclude the separately modelled defensive-contribution award. These results do not establish a captaincy or full-season points advantage. [Validation details and limitations](docs/validation.md).
+
+Related open-source projects take different approaches:
+
+| Project | Approach | Relationship to fpl-predict |
+|---|---|---|
+| [OpenFPL](https://github.com/daniegr/OpenFPL) | Position-specific tree ensembles using FPL and Understat features | A broader ensemble approach; its published test window and cohorts differ, so headline errors are not directly comparable. |
+| [Dastan](https://github.com/qazybekb/smartplayfpl-dastan) | Participation and conditional-return models blended with direct point predictions | A richer forecasting benchmark with retained historical predictions. |
+| [AIrsenal](https://github.com/alan-turing-institute/AIrsenal) | Team-scoreline and player-involvement models connected to squad/transfer optimisation | A broader team-management framework using event-based forecasting. |
+
+A separate matched retrospective comparison against Dastan covers 17,622 player-gameweeks in 2024/25 GW15–38. On the 5,145 players/gameweeks meeting fpl-predict's pre-deadline candidate criteria:
+
+| Method | Full-points RMSE ↓ | Full-points MAE ↓ |
+|---|---:|---:|
+| fpl-predict v1 | 2.9765 | 2.1354 |
+| Dastan | **2.8910** | **2.0204** |
+
+Dastan had about 2.9% lower RMSE on those matched records. Training policies and feature sets differ, and this is an archived retrospective comparison, not a prospective competition. Do not compare this table directly with the core-points table above: the periods and targets differ. [Comparison methods, provenance and aggregate results](docs/open_source_comparison_2026-10-14.md).
 
 ## Install
 
-Python 3.12 is required. From a clean checkout:
+The commands below require Git, Python 3.12 and a POSIX shell:
 
 ```sh
+git clone https://github.com/kokjz/fpl-predict.git
+cd fpl-predict
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -e '.[dev]'
 .venv/bin/python -m pytest -q
 ```
 
-Use an editable checkout for development; standard wheels also bundle the registry and protocols. No credentials are needed to fetch public FPL data. GitHub credentials are supplied by your local Git client, never by project configuration.
+The default tests use synthetic fixtures and run offline. Four integration checks require separately prepared data/artifacts and are skipped on a fresh checkout. Python and numerical dependencies are pinned in [pyproject.toml](pyproject.toml).
 
-## Runtime workspace
+Initialise a workspace for downloaded data, model artifacts and generated reports:
 
 ```sh
 export FPL_PREDICT_HOME="$PWD/var"
 .venv/bin/fpl-predict init
+.venv/bin/fpl-predict --help
 ```
 
-The default is `var/` in the current working directory. It is ignored by Git; an external private directory can also be selected. Imports never create directories. Keep real team files in this workspace or another private location, never in source/examples/tests. Do not run data refreshes or training in CI.
+`FPL_PREDICT_HOME` defaults to `var/` under the current working directory. Keep the variable set when running commands from another directory. `var/` is excluded from Git; another directory can be used instead. Public FPL data retrieval does not require FPL login credentials or a paid API key.
 
-## Approved model
+## Model setup
 
-The engine registry identifies the approved v1.0.0 artifact by SHA256. Model binaries are intentionally excluded from Git. If you already hold the matching trusted artifact:
-
-```sh
-.venv/bin/fpl-predict install-model /path/to/trusted-model.joblib
-```
-
-Installation checks the expected hash before copying, without deserializing. Prediction subsequently uses trusted executable serialization; do not load arbitrary downloaded model files. The public metadata does not establish a season-points or captaincy advantage. See [validation](docs/validation.md).
-
-## Data, training and evaluation
+### Reproduce training and evaluation
 
 ```sh
 .venv/bin/fpl-predict download-history
@@ -41,52 +88,89 @@ Installation checks the expected hash before copying, without deserializing. Pre
 .venv/bin/fpl-predict train --reproduce
 ```
 
-Historical downloads pin a source revision and check hashes. Training is an explicit local operation and writes experimental outputs; it does **not** promote a model to the approved registry. Existing evaluated artifacts are never silently overwritten. The experiment protocols are bundled in `src/fpl_predict_resources/`.
+These commands download the historical dataset, build lagged feature caches, and run the documented training/evaluation protocol. Outputs go under `$FPL_PREDICT_HOME/artifacts/`; repeats with an existing evaluated artifact use a separate reproduction directory. Training is an explicit operation, not part of a normal data refresh.
 
-The optional planning and evaluation commands are:
+**Training does not install or approve its output for forecasting.** A newly trained file is not guaranteed to match the published artifact hash. Model promotion requires evidence against the [promotion gates](src/model_registry.py), an immutable version/artifact record and a corresponding runtime registry update. There is currently no one-command promotion workflow or bundled model download.
+
+### Install a matching approved artifact
+
+If you have obtained a trusted artifact matching the approved registry entry:
+
+```sh
+.venv/bin/fpl-predict install-model /path/to/trusted-model.joblib
+```
+
+Installation verifies the expected SHA256 before copying the file. Forecasting verifies the registered artifact again before loading it. The default model version and expected hash are documented in [validation](docs/validation.md). Do not load arbitrary downloaded Joblib/Pickle model files: their deserialisation can execute code.
+
+## Forecast for a squad
+
+Once an approved artifact is installed, refresh the public data:
 
 ```sh
 .venv/bin/fpl-predict refresh
-.venv/bin/fpl-predict forecast --team-state /path/to/private/team.json
-.venv/bin/fpl-predict score --forecast /path/to/frozen/forecast --gw GAMEWEEK
-.venv/bin/fpl-predict decision-trial --help
 ```
 
-These commands are examples, not scheduled jobs or permission to change an FPL account. Forecasting currently checks the 2026/27 schema and refuses another season until reviewed. Predictions use completed matches, recent-season form and pooled historical patterns. Current injury/role information requires documented review; optional minute scaling is illustrative, not a calibrated conditional model. Longer horizons and one-transfer/chip comparisons are planning approximations.
+Create your squad JSON at `$FPL_PREDICT_HOME/squad.json` with these fields:
 
-Freeze forecasts before deadlines. Score only when official results are finished and checked, and retain model/last-five/recency comparisons on identical eligible players. Never retune on already-seen outcomes and describe them as untouched tests. [Development workflow](CONTRIBUTING.md), [security and privacy](SECURITY.md), [data provenance](docs/data.md).
+| Field | Required content |
+|---|---|
+| `players` | Exactly 15 objects, each with the current FPL `id` and `selling_price_tenths` |
+| `bank_tenths` | Available bank balance in tenths of a million; `10` means £1.0m |
+| `free_transfers` | Number of available free transfers |
 
-## Lightweight research and external comparisons
-
-The [open-source comparison](docs/open_source_comparison_2026-10-14.md) inspects six
-systems, reports a matched retrospective Dastan benchmark, and preserves six
-rejected lightweight adaptations. Approved v1.0.0 remains the default. Research
-tooling is opt-in, uses two computation threads and checks a soft runtime/memory
-budget; no automatic retraining or model promotion is performed.
+Use current player IDs from the bootstrap snapshot and your actual selling prices, which may differ from market prices. The squad must have two goalkeepers, five defenders, five midfielders and three forwards, with at most three players per club. Store account-specific inputs outside tracked source.
 
 ```sh
-.venv/bin/fpl-predict search-lightweight --output-dir "$FPL_PREDICT_HOME/experiments/I3_new"
+.venv/bin/fpl-predict forecast --team-state "$FPL_PREDICT_HOME/squad.json"
+```
+
+Each run writes a new directory under `$FPL_PREDICT_HOME/forecasts/` containing:
+
+- `fixture_predictions.json` and `player_gameweek_predictions.json`: points, minutes, probabilities and baseline estimates.
+- `planning.json`: lineup and transfer/chip comparisons for the supplied squad.
+- `REPORT.md`: a readable forecast summary.
+- `manifest.json`: input/model provenance, timestamps and assumptions.
+
+`forecasts/LATEST` identifies the latest base forecast. Optional sourced scenarios use `--availability-review /path/to/review.json`; scenario runs preserve the base pointer. See the [review schema](docs/availability_workflow.md) and `forecast --help` for details.
+
+**Season support:** live forecasting currently checks the 2026/27 data schema. Another season requires a rules/schema review before use. Forecasts beyond the next gameweek are planning approximations, not equally validated multiweek predictions.
+
+## Evaluate a saved forecast
+
+Keep the forecast created before the relevant deadline. After all results are officially finished and checked, refresh the outcomes and score that saved directory:
+
+```sh
+.venv/bin/fpl-predict refresh
+.venv/bin/fpl-predict score --forecast /path/to/saved/forecast --gw 7
+```
+
+Replace the example directory and gameweek with the saved run being evaluated. Scoring rejects late-generated forecasts and unfinished/unchecked outcomes, and refuses to overwrite an existing outcome report for the same snapshot. Reports include points errors, minutes errors, appearance diagnostics and official-projection coverage. Missing official projections remain missing; paired methods use identical rows.
+
+Additional research commands expose their options through:
+
+```sh
+.venv/bin/fpl-predict decision-trial --help
+.venv/bin/fpl-predict search-lightweight --help
 .venv/bin/python tools/compare_dastan.py --help
 ```
 
-The search requires this project's trusted historical caches and a fresh output
-directory. The archived-export comparator optionally needs a Parquet reader;
-routine forecasts do not. All data, fitted artifacts and individual predictions
-stay in the ignored/external workspace. See the predeclared [I3 protocol](docs/I3_PROTOCOL.md).
+Research and model-selection data must remain separate from later evaluation data. Previously inspected test seasons are not untouched holdouts for new adaptive experiments.
 
-Normal refreshes now preserve structured availability observations. Documented
-minutes scenarios can target one GW via `--availability-review`; finalised scoring
-reports minute/appearance diagnostics and a paired official projection baseline.
-Read the [evidence workflow](docs/availability_workflow.md) for timestamps, scope
-and limitations. These additions leave the approved model unchanged.
+## Limitations
 
-## Repository layout
+- Historical archives contain corrected outcomes, not complete pre-deadline news, schedule and selling-price snapshots.
+- Current rules, fitness, expected roles and fixture changes require review; the model does not independently verify news sources.
+- Minute scaling and double-gameweek appearance independence are approximations. Empirical point intervals do not capture every source of uncertainty.
+- Lower prediction error does not guarantee more FPL points. Transfer/chip comparisons are conditional, and the engine does not execute decisions.
 
-- `src/`: engine modules and CLI; public registry/protocol resources.
-- `tests/`: offline synthetic leakage, formation, scoring, registry and runtime checks.
-- `tools/check_repository.py`: Git-index privacy audit.
-- `docs/`: methodology, validation limits and third-party data provenance.
-- `.github/`: pinned, read-only test workflow and dependency-update configuration.
-- `var/`: ignored private runtime, never tracked.
+## Documentation and contributing
 
-The flat engine module names preserve compatibility with the existing approved artifact. Feature definitions and learned model weights are unchanged by packaging. The MIT license covers this repository's code, not third-party datasets or Premier League trademarks; this project is unaffiliated with the Premier League.
+- [Validation](docs/validation.md), [data sources](docs/data.md) and [availability reviews](docs/availability_workflow.md)
+- [Open-source comparisons](docs/open_source_comparison_2026-10-14.md) and [bounded experiment protocol](docs/I3_PROTOCOL.md)
+- [Contributing](CONTRIBUTING.md) and [security](SECURITY.md)
+
+Source is in `src/`, offline tests in `tests/`, and repository utilities in `tools/`. Contributions should include relevant validation and preserve chronological evaluation, artifact integrity and the distinction between code changes and model approval.
+
+## License
+
+[MIT](LICENSE) for the code. External datasets and Premier League trademarks retain their own terms. This project is unaffiliated with the Premier League.
