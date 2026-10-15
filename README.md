@@ -61,6 +61,9 @@ and [local import workflow](docs/benchmark_workflow.md). The optional
 coverage/error/ranking reports and [bounded evaluation diagnostics](docs/benchmark_evaluation.md).
 An explicit [resource-controlled runner](docs/experiment_runner.md) is available
 for separately authorised experiments. These tools do not promote models.
+The [reference source audit](docs/REFERENCE_SOURCE_AUDIT.md) distinguishes verified
+inputs from unresolved provenance. An explicit [retrospective reference pilot](docs/reference_pilot.md)
+can measure full-score baseline errors and fitting cost without changing the approved model.
 
 ## Install
 
