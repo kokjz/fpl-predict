@@ -10,8 +10,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from scipy.stats import spearmanr
-from sklearn.metrics import ndcg_score
+from benchmark_metrics import point_scores
 
 KEYS = ["season", "gameweek", "fpl_code"]
 
@@ -51,18 +50,10 @@ def align(ours, external, mapping):
 
 
 def score(frame, column):
-    error = frame[column] - frame.actual
-    ranking = []
-    for _, week in frame.groupby(["season", "gameweek"]):
-        if len(week) < 2 or week.actual.nunique() < 2:
-            continue
-        rho = float(spearmanr(week.actual, week[column]).statistic) if week[column].nunique() > 1 else 0.
-        ranking.append((rho, float(ndcg_score(np.maximum(week.actual.to_numpy(), 0)[None, :],
-                       week[column].to_numpy()[None, :], k=min(10, len(week))))))
-    return {"n": len(frame), "rmse": float(np.sqrt(np.mean(error ** 2))),
-            "mae": float(np.mean(abs(error))), "bias": float(np.mean(error)),
-            "mean_within_gw_spearman": float(np.mean([r[0] for r in ranking])) if ranking else None,
-            "mean_within_gw_ndcg10": float(np.mean([r[1] for r in ranking])) if ranking else None}
+    result = point_scores(frame, column)
+    # Preserve the original comparator's public report schema.
+    result.pop("ranking_weeks")
+    return result
 
 
 def report(ours, external, mapping):
