@@ -8,7 +8,12 @@ they do not reproduce the original model binaries or all original semantics.
 - [OpenFPL](https://github.com/daniegr/OpenFPL), copyright(c)2025 Daniel Groos.
 - [Dastan](https://github.com/qazybekb/smartplayfpl-dastan/tree/758db9247e8b3a9a870c991064f74d8339d61cd0), copyright(c)2026 SmartPlayFPL.
 
-Both works use the MIT License. The notice below is retained for their feature
+The historical component reference also adapts AIrsenal's closed-form minute-scaled
+Dirichlet update (https://github.com/alan-turing-institute/AIrsenal), copyright(c)2018
+The Alan Turing Institute. Its team-goal and residual-points layers are separate
+adaptations, not the original AIrsenal system.
+
+These works use the MIT License. The notice below is retained for their feature
 definitions. Source-code licensing does not grant rights to redistribute
 third-party FPL/Understat/raw snapshot datasets; no such datasets are included.
 
@@ -16,6 +21,7 @@ MIT License
 
 Copyright (c) 2025 Daniel Groos
 Copyright (c) 2026 SmartPlayFPL
+Copyright (c) 2018 The Alan Turing Institute
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

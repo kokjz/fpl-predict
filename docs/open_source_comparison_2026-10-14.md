@@ -125,3 +125,13 @@ No current-gameweek forecast or squad plan is created by this research.
 metrics and provenance. The original run used source commit
 `3d01957280f18d6a936f2d2552be3f7547529b30`; later metadata-only timestamp support
 does not change the fitted maths. Code merges do not establish model approval.
+
+## 15 October external-method follow-up
+
+The [bounded historical package](HISTORICAL_EXTERNAL_RESULTS_2026-10-15.md) now
+compares five named methods on common2025/26rows and separately scores an original
+versioned external forecast for completed2026/27GW6. OpenFPL and AIrsenal-inspired
+adaptations did not beat the incumbent-method reference; neither represents its
+original full system. The single-GW archived result is mixed and uses different
+information cutoffs. Source dispositions, timing/coverage constraints and measured
+resource costs are explicit; the approved forecasting model is unchanged.
