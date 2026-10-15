@@ -100,3 +100,20 @@ identical neutral policy. No external retraining is needed. Original2024/25Dasta
 cannot receive fabricated news from a source starting2025: keep those results
 separate. A point-error win without legal selection support or existing
 multi-season evidence will not replace the approved champion.
+
+### Reproduce the external comparison
+
+`fpl-predict availability-benchmark --help` accepts points predictions/report,
+head manifest, retained five-method fixture forecasts and original listed market,
+each with SHA256. It rejects target, position, candidate, coverage, control and
+market-total conflicts. Only verified blanks receive zero forecasts. Every arm
+uses identical neutral scenarios, selector, price quotes and owned/reset/rolling
+policies; adding a model leaves the other methods' decisions unchanged. Outputs
+include errors, uncertainty, scores/actions and the complete scenario schedule.
+
+News was newer than the price snapshot in three evaluation weeks, but still
+predeadline. The adapter retains `quote_as_of` and advances `inputs_as_of` to the
+latest admitted source: it does not claim news existed at the earlier quote time.
+Prices remain the same retrospective execution approximation for all methods.
+Compare at a common deadline with unequal source feeds; extra source value does
+not establish equal-input architecture superiority. Historical source limits remain.
