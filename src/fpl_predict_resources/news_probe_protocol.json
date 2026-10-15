@@ -1,0 +1,15 @@
+{
+ "version":1,
+ "scope":"Fixed low-cost 2025/26 appearance experiment; inspected/reused outcomes, no promotion or point-gain claim",
+ "source":"AIrsenal exact predeadline historical CSV prefixes: official FPL news/chance observations, not independent club news",
+ "chronology":{"train":"GW4-19","validation_report_only":"GW20-27","test_descriptive":"GW28-38"},
+ "target":"Any minutes in the whole gameweek",
+ "arms":["form","form_chance","form_text","form_chance_text"],
+ "features":"Past-only last/five-match minutes/appearance, record count/days/position; chance normalized as covariate plus missing indicator; training-only TFIDF256 maxfeatures, min_df2, unigram/bigram",
+ "estimator":{"type":"LogisticRegression","C":1,"solver":"liblinear","max_iter":300,"seed":20261016},
+ "primary":"candidate mean per-GW Brier: form_chance_text minus form; whole-GW block4/4000-replicate descriptive interval",
+ "other_metrics":"all/candidate Brier, fixed reliability bins, false high-probability counts; report every arm, no winner tuning",
+ "rules":"No same-GW history; all match features before exact-prefix publication minus3h; common sourced/known player universe, no hindsight eligibility or zero fill for missing targets",
+ "resources":{"threads":2,"memory_mib":4096,"seconds":900,"project_mib":2048,"growth_mib":256,"free_mib":5120},
+ "integration":"Experimental only; no binaries saved, no multiplication of production points by p_play, no automatic overrides or weekly forecasts"
+}

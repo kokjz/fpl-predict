@@ -9,6 +9,11 @@ beat the incumbent-method reference. A separate real archived external forecast
 was also scored, with mixed metrics and different capture dates. None of these
 results establishes an original-system overall ranking or a model promotion.
 
+The [decision-relevance interpretation](comparison_interpretation.md) explains
+v1's original-Dastan top-10 ranking win, the complete candidate-pool
+non-appearance error decomposition, and why outcome-based exclusions cannot
+establish general superiority. Original figures below remain unchanged.
+
 ## Shared 2025/26 retrospective reference fits
 
 Frozen protocol: [HISTORICAL_EXTERNAL_PROTOCOL.md](HISTORICAL_EXTERNAL_PROTOCOL.md).

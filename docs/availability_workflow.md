@@ -73,3 +73,6 @@ Primary grounding:
 - https://github.com/qazybekb/smartplayfpl-dastan/blob/main/docs/METHODOLOGY.md (deadline anchoring and evaluation boundaries)
 - https://github.com/qazybekb/smartplayfpl-dastan/blob/main/docs/BASELINES.md (paired FPL projection and participation diagnostics)
 - https://fantasy.premierleague.com/api/bootstrap-static/ (official observations and projection source)
+
+
+The optional [participation audit](participation_audit.md) adds actual-point error attribution and fixed predeadline evidence checks without changing forecasts. Its external-evidence schema records direct club/league/press observations separately from numerical assumptions. The [news/availability probe](NEWS_AVAILABILITY_RESULTS_2026-10-16.md) measures source value against a fixed recent-form appearance control; it does not promote a model or validate a points multiplier.

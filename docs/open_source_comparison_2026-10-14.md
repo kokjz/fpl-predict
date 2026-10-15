@@ -29,6 +29,11 @@ retrieval dates, URLs and file hashes: [source manifest](open_source_sources_202
 Methods were assessed from code as well as README claims; absence of a comparable
 archive in the inspected material is not proof one exists nowhere.
 
+The [decision-relevance interpretation](comparison_interpretation.md) explains
+v1's original-Dastan top-10 ranking win, the complete candidate-pool
+non-appearance error decomposition, and why outcome-based exclusions cannot
+establish general superiority. Original figures below remain unchanged.
+
 ## Matched comparison against an existing external model
 
 Dastan's retained 2024/25 GW15–38 walk-forward table matches **all 17,622** of the

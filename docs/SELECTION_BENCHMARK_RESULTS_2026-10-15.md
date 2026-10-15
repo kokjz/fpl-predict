@@ -4,6 +4,11 @@
 
 This study uses the [fixed protocol and reproduction workflow](selection_benchmark.md). It reuses already inspected historical forecasts/outcomes; it is retrospective, conditional and descriptive. No parameters were searched, no models were fitted, and no approved weights or weekly forecasts changed. [Machine-readable aggregates, intervals, decomposition and evidence hashes](SELECTION_BENCHMARK_RESULTS_2026-10-15.json) accompany this report.
 
+The [decision-relevance interpretation](comparison_interpretation.md) explains
+v1's original-Dastan top-10 ranking win, the complete candidate-pool
+non-appearance error decomposition, and why outcome-based exclusions cannot
+establish general superiority. Original figures below remain unchanged.
+
 ## Shared 2025/26 window: GW28–38
 
 Five forecast methods use the same reconstructed market, common rules and selection policy. Twelve neutral owned squads are held for eleven GWs, giving **132 paired squad-weeks per method**. Verified predeadline roster captures cover 9,099 listed player-weeks; club-calendar evidence establishes blanks, while played-club forecasts require complete fixture coverage. Doubles are summed. Every declared panel completed.

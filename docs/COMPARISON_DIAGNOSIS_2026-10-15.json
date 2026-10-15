@@ -1,0 +1,55 @@
+{
+  "scope": "Post-hoc diagnosis of original archived predictions, no new predictions or fits; descriptive uncertainty and no multiplicity-adjusted claim",
+  "input_sha256": "722fedeee8e76c3a1cfb1f3aa6fc80cb0875d3de2ef844f5def70513ac591990",
+  "rows": 5145,
+  "gameweeks": 24,
+  "ndcg": {
+    "v1": 0.4937017607180792,
+    "dastan": 0.487806821991279,
+    "difference": 0.00589493872680025,
+    "v1_wins": 13,
+    "dastan_wins": 11,
+    "ties": 0,
+    "paired_circular_block_intervals": {
+      "2": [
+        -0.01943197848272774,
+        0.031546328122432965
+      ],
+      "4": [
+        -0.014988111604011181,
+        0.025828167470480924
+      ],
+      "6": [
+        -0.013372685686364646,
+        0.023961672147664755
+      ]
+    },
+    "interval_method": "paired season-local circular block percentile bootstrap; 4000 replicates, seed20261015, sequential RNG for lengths2/4/6; posthoc, no multiplicity adjustment"
+  },
+  "error_by_actual_minutes_diagnostic_only": [
+    {
+      "group": "no_minutes",
+      "n": 685,
+      "v1_rmse": 2.299219592220339,
+      "dastan_rmse": 1.7885755369882457,
+      "contribution_to_overall_mse_gap": 0.277915388336228
+    },
+    {
+      "group": "one_to_59_minutes",
+      "n": 697,
+      "v1_rmse": 2.0563315437955545,
+      "dastan_rmse": 2.084854126199116,
+      "contribution_to_overall_mse_gap": -0.01600150918096141
+    },
+    {
+      "group": "60plus_minutes",
+      "n": 3763,
+      "v1_rmse": 3.219904221657607,
+      "dastan_rmse": 3.1685509576955897,
+      "contribution_to_overall_mse_gap": 0.23994557406849523
+    }
+  ],
+  "overall_mse_gap": 0.5018594532237615,
+  "note": "Actual minutes bins are outcome-conditioned diagnostics, never predeadline selectors or causal attribution. Block intervals are post-hoc single-metric descriptive sensitivities, not equivalence/superiority gates.",
+  "as_of": "2026-10-15"
+}
