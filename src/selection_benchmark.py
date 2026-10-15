@@ -6,6 +6,7 @@ from itertools import combinations
 import json
 from pathlib import Path
 import time
+import warnings
 
 import numpy as np
 import pandas as pd
@@ -172,9 +173,13 @@ def optimise(week, model, *, owned=None, bank=1000, free_transfers=1, seconds=10
     row = vector(); row[:n] = costs; constraint(row, -np.inf, funds)
     bounds_hi = np.ones(size); bounds_hi[-1] = 15 if owned is not None else 0
     started = time.monotonic()
-    answer = milp(objective, integrality=np.ones(size), bounds=Bounds(np.zeros(size), bounds_hi),
-                  constraints=LinearConstraint(csr_matrix(np.array(rows)), lower, upper),
-                  options={'time_limit': seconds, 'mip_rel_gap': 1e-8})
+    # SciPy forwards this native HiGHS option but warns because it is not in
+    # its smaller documented wrapper list. Limit the actual solver pool too.
+    with warnings.catch_warnings():
+        warnings.filterwarnings('ignore', message="Unrecognized options detected:.*threads.*", category=RuntimeWarning)
+        answer = milp(objective, integrality=np.ones(size), bounds=Bounds(np.zeros(size), bounds_hi),
+                      constraints=LinearConstraint(csr_matrix(np.array(rows)), lower, upper),
+                      options={'time_limit': seconds, 'mip_rel_gap': 1e-8, 'threads': 2})
     if answer.status != 0 or answer.x is None: raise ValueError(f'No proven optimal solution: {answer.message}')
     ids = [int(market.fpl_code.iloc[i]) for i in range(n) if answer.x[i] > .5]
     squad = choices(market, ids, model)

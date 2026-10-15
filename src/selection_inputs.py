@@ -121,3 +121,39 @@ def dastan_market(archive, players, models, lagged_prices):
         caveats=['Reconstructed cutoff, unequal original training/information history',
                  'Earlier fixture prices used only to sample panels, not historical execution quotes',
                  'Lagged club/appearance data; omitted players/blanks not zero-filled; no complete market claim'])
+
+
+def archived_market(csv, frozen, forecast, forecast_bootstrap, outcome, gameweek):
+    """One-GW original-export diagnostic, explicitly unequal information cutoffs.
+
+    Reuse the established adapter's hash, timing, stable-ID and finalisation
+    checks. Do not expose an actual manager squad or pool this with other years.
+    """
+    from archived_reference import admitted_export, compare
+    report = compare(csv,frozen,forecast,forecast_bootstrap,outcome,gameweek)
+    origin = json.loads(Path(forecast_bootstrap).read_text())
+    final = json.loads((Path(outcome)/'bootstrap.json').read_text())
+    external, _ = admitted_export(csv,frozen,pd.Timestamp(report['deadline']),report['season'],gameweek)
+    external = external.set_index('fpl_code')
+    local = pd.DataFrame(json.loads((Path(forecast)/'player_gameweek_predictions.json').read_text()))
+    teams = {t['id']:t['name'] for t in origin['teams']}
+    ids = {p['id']:p for p in origin['elements']}
+    finished_ids = {p['id']:p for p in final['elements']}
+    result = []
+    for r in local[local.GW.eq(gameweek)].itertuples():
+        p = ids[r.id]; code = p['code']
+        if code not in external.index: continue
+        if finished_ids[r.id]['code'] != code or external.loc[code,'position'] != p['element_type']:
+            raise ValueError('Archived identity conflict')
+        history = json.loads((Path(outcome)/'players'/f'{r.id}.json').read_text())['history']
+        week = [x for x in history if x['round'] == gameweek]
+        result.append(dict(season=report['season'],gameweek=gameweek,deadline=report['deadline'],inputs_as_of=report['local_as_of'],
+            fpl_code=code,position=p['element_type'],team=teams[p['team']],price_tenths=p['now_cost'],
+            can_buy=int(p.get('can_select',True)),prior_minutes=p['minutes']/max(1,gameweek-1),
+            ownership=float(p['selected_by_percent']),actual=sum(x['total_points'] for x in week),
+            minutes=sum(x['minutes'] for x in week),cards=sum(x['yellow_cards']+x['red_cards'] for x in week),
+            reference=float(r.expected_points),external=float(external.loc[code,'expected_points'])))
+    report['selection_caveats'] = ['Common exported subset, not full listed market',
+        'Local predeadline ownership/prices/cumulative mean minutes used for neutral scenarios',
+        'External forecast earlier information cutoff; single GW, retrospective; no inferential ranking']
+    return pd.DataFrame(result),report

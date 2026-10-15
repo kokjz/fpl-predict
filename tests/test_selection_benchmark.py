@@ -215,3 +215,22 @@ def test_native_adapter_positive_blank_and_missing_forecast(tmp_path):
     path.write_text('{}')
     with pytest.raises(ValueError,match='checksum'):
         native_market(pred,raw,manifest,tmp_path,calendar,tmp_path,['reference'])
+
+
+def test_original_single_week_adapter_preserves_cutoff_disclosure(tmp_path):
+    import json
+    from test_archived_reference import fixture
+    from selection_inputs import archived_market
+    paths=fixture(tmp_path); _,_,_,origin,outcome=paths
+    boot=json.loads(origin.read_text()); boot['teams']=[dict(id=1,name='A')]
+    for p in boot['elements']:
+        p.update(team=1,element_type=3,now_cost=50,can_select=True,minutes=450,selected_by_percent='2.0')
+    origin.write_text(json.dumps(boot))
+    for i in (1,2):
+        p=outcome/'players'/f'{i}.json'; payload=json.loads(p.read_text())
+        payload['history'][0].update(minutes=90,yellow_cards=0,red_cards=0); p.write_text(json.dumps(payload))
+    frame,report=archived_market(*paths,6)
+    assert frame.fpl_code.tolist()==[101]
+    assert frame.actual.iloc[0]==5 and frame.reference.iloc[0]==2 and frame.external.iloc[0]==4
+    assert report['external_generated']!=report['local_generated']
+    assert 'single GW' in report['selection_caveats'][-1]
