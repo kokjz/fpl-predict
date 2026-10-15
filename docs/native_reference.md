@@ -5,6 +5,8 @@ fixed lightweight learner on four position indicators. It is a named retrospecti
 feature pilot, not original Dastan/OpenFPL, a production replacement or automatic
 promotion. Read the immutable [protocol](NATIVE_REFERENCE_PROTOCOL.md), including
 the explicit two-row training gap mask and missing older snapshot history.
+The [first measured result](NATIVE_REFERENCE_RESULTS_2026-10-15.md) shows a small
+error reduction but worse top-player ranking; the approved model remains unchanged.
 
 ## Canonical, private inputs
 
