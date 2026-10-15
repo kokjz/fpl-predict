@@ -337,6 +337,30 @@ def load_table(path):
     return frame, digest(raw)
 
 
+
+def load_inputs(outcomes_path, expected_sha, manifest_paths):
+    """Verify supplied bytes once for scoring or non-scoring admission checks."""
+    if not 2 <= len(manifest_paths) <= 12:
+        raise ValueError("Supply between two and twelve model manifests")
+    outcomes, outcome_hash = load_table(outcomes_path)
+    if outcome_hash != expected_sha:
+        raise ValueError("Outcome checksum mismatch")
+    exports = []; manifest_hashes = {}
+    for path in map(Path, manifest_paths):
+        raw = _read(path); manifest = _json(raw)
+        validate_manifest(manifest)
+        if manifest["model_id"] in manifest_hashes:
+            raise ValueError("Duplicate model IDs")
+        _required(manifest, ["file"], "manifest")
+        if not isinstance(manifest["file"], str) or not manifest["file"]:
+            raise ValueError("Missing local export path")
+        table, export_hash = load_table(path.parent / manifest["file"])
+        if export_hash != manifest["input_sha256"]:
+            raise ValueError("Forecast checksum mismatch")
+        exports.append((table, manifest))
+        manifest_hashes[manifest["model_id"]] = digest(raw)
+    return outcomes, exports, {"outcomes_sha256": outcome_hash, "manifest_sha256": manifest_hashes}
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--outcomes", required=True, type=Path)
@@ -350,26 +374,8 @@ def main():
             raise ValueError("Supply between two and twelve model manifests")
         if args.output.exists():
             raise ValueError("Output already exists; use a new report filename")
-        outcomes, outcome_hash = load_table(args.outcomes)
-        if outcome_hash != args.outcomes_sha256:
-            raise ValueError("Outcome checksum mismatch")
-        exports = []
-        manifest_hashes = {}
-        for path in args.manifest:
-            raw = _read(path)
-            manifest = _json(raw)
-            validate_manifest(manifest)
-            _required(manifest, ["file"], "manifest")
-            if not isinstance(manifest["file"], str) or not manifest["file"]:
-                raise ValueError("Missing local export path")
-            table, export_hash = load_table(path.parent / manifest["file"])
-            if export_hash != manifest["input_sha256"]:
-                raise ValueError("Forecast checksum mismatch")
-            exports.append((table, manifest))
-            manifest_hashes[manifest["model_id"]] = digest(raw)
-        result = compare(outcomes, exports)
-        result["outcomes_sha256"] = outcome_hash
-        result["manifest_sha256"] = manifest_hashes
+        outcomes, exports, hashes = load_inputs(args.outcomes, args.outcomes_sha256, args.manifest)
+        result = {**compare(outcomes, exports), **hashes}
         serialised = json.dumps(result, indent=2, allow_nan=False) + "\n"
         args.output.parent.mkdir(parents=True, exist_ok=True)
         with args.output.open("x") as stream:

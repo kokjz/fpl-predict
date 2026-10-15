@@ -123,3 +123,29 @@ aggregate/source metadata before choosing to publish any report.
 This first package has no confidence intervals, squad replay, historical source
 reconstruction or runtime profiler. Those belong to later explicitly scoped
 work; none of the current output establishes season-point gain or model promotion.
+
+
+## Preflight before scoring
+
+`fpl-predict benchmark-preflight` accepts the same input/output arguments as
+`benchmark` and records contract failures without calculating accuracy metrics.
+`all_contracts_valid` means the declared schema/timing/target contracts passed;
+it never certifies the actual training provenance or grants model promotion.
+Malformed files/checksums still fail before a report is created.
+
+A library adapter `benchmark_readiness.join_seasonal_bridge` converts an
+OpenFPL-labelled element/GW CSV using an explicit one-season fixture/code bridge.
+It requires exact key coverage and rejects ambiguous doubles and conflicting IDs.
+It adds no dates, model identity or missing predictions. Review and provide those
+separately in the manifest before using the generic importer.
+
+On 15 October 2026, an alternative GitHub contents endpoint supplied the complete
+pinned OpenFPL-labelled CSV. Its publisher checksum matches; all18,173 rows join
+the bridge and the independent historical full-score table without conflicts.
+922 rows differ from core points, confirming that target alignment is material.
+This closes file retrieval/integrity only. Training/exporter lineage, capture
+provenance and a comparable incumbent full-score window remain open. The CSV is
+not redistributed and no model scores were calculated by this readiness audit.
+
+The next full-score fit design is specified in [the pilot run plan](BENCHMARK_RUN_PLAN.md).
+It resolves the proposed scoring window without claiming new forecasts exist.
