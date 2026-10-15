@@ -98,5 +98,12 @@
     "benchmark_eligible": false,
     "model_promoted": false,
     "original_system_admission": "unresolved; modified inputs/environment and retrospective timing limits"
+  },
+  "historical_methods_followup": {
+    "protocol": "HISTORICAL_EXTERNAL_PROTOCOL.md",
+    "status": "protocol_frozen_before_new_fits",
+    "openfpl": "independent40membercv1chronological adaptation, not original released weights",
+    "airsenal": "independent conjugate/Poisson component adaptation, not complete original system",
+    "other_families": "pinned source triage; no automatic admission from published aggregate scores"
   }
 }

@@ -201,3 +201,7 @@ Source is in `src/`, offline tests in `tests/`, and repository utilities in `too
 ## License
 
 [MIT](LICENSE) for the code. External datasets and Premier League trademarks retain their own terms. This project is unaffiliated with the Premier League.
+
+For independently fitted, bounded external-method research references, see the
+[historical comparison workflow](docs/historical_references.md). These optional
+experiments do not replace the approved forecasting model.
