@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "Leakage-aware local Fantasy Premier League forecasting and evaluation"
 requires-python = ">=3.12,<3.13"
 license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
 dependencies = ["numpy==2.5.3", "pandas==3.0.6", "scikit-learn==1.9.1", "scipy==1.18.1", "joblib==1.6.0", "threadpoolctl==3.7.0"]
 
 [project.optional-dependencies]
@@ -19,7 +20,7 @@ fpl-predict = "fpl_predict_cli:main"
 [tool.setuptools]
 package-dir = {"" = "src"}
 packages = ["fpl_predict_resources"]
-py-modules = ["fpl_model", "forecast", "model_registry", "points_replay", "candidate_models", "refresh", "download_history", "build_features", "train", "decision_trial", "score_forecast", "search_improvements", "search_quality_targets", "lightweight_candidates", "benchmark_metrics", "external_benchmark", "benchmark_readiness", "benchmark_evaluation", "reference_pilot", "deadline_provenance", "experiment_runner", "search_lightweight", "availability_evidence", "runtime", "fpl_predict_cli"]
+py-modules = ["fpl_model", "forecast", "model_registry", "points_replay", "candidate_models", "refresh", "download_history", "build_features", "train", "decision_trial", "score_forecast", "search_improvements", "search_quality_targets", "lightweight_candidates", "benchmark_metrics", "external_benchmark", "benchmark_readiness", "benchmark_evaluation", "reference_pilot", "deadline_provenance", "native_history", "native_sources", "native_reference", "experiment_runner", "search_lightweight", "availability_evidence", "runtime", "fpl_predict_cli"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src", "tests"]
