@@ -24,7 +24,7 @@ from conditional_reference import environment
 KEYS = ["season", "gameweek", "fixture", "fpl_code"]
 METHODS = ["reference", "native_reference", "conditional_reference",
            "openfpl_cv1_refit", "conjugate_poisson"]
-POLICY = dict(schema_version=1, method="historical-external-adaptations-v1",
+POLICY = dict(schema_version=1, method="historical-external-adaptations-v2",
               train="through2025-26GW19", validation=[20, 27], test=[28, 38],
               target="actual2025-26fullpoints", seed=42, threads=2,
               openfpl="40 cv1 published members, chronological refits, median10/position",
@@ -34,7 +34,8 @@ POLICY = dict(schema_version=1, method="historical-external-adaptations-v1",
               component=dict(team_alpha=1., team_half_life_days=365.25,
                              prior_goals=35., epsilon_per_year=.2,
                              recent_minutes=3, residual_prior_minutes=900.,
-                             cold_start_minutes=[45.,42.,38.,35.]),
+                             cold_start_minutes=[45.,42.,38.,35.],
+                             goalkeeper_goal_points={"through2023-24":6,"since2024-25":10}),
               panels=20, panel_seed=20261015, panel_budget=1000,
               benchmark_eligible=False, original_system=False, promotion=False)
 
@@ -127,8 +128,10 @@ def residual_points(frame):
     """All special returns remain in a declared empirical residual, including DC."""
     minutes = frame.minutes.to_numpy(); pos = frame.position.to_numpy()
     gf = frame.goals_scored.to_numpy(); ga = frame.goals_conceded.to_numpy()
+    goalkeeper_goal = np.where(frame.season.ge("2024-25"),10,6)
+    goal_points = np.where(pos==1,goalkeeper_goal,np.choose(pos-1,[6,6,5,4]))
     standard = ((minutes > 0).astype(int)+(minutes >= 60).astype(int)
-                + np.choose(pos-1, [6,6,5,4])*gf+3*frame.assists.to_numpy()
+                + goal_points*gf+3*frame.assists.to_numpy()
                 + np.choose(pos-1, [4,4,1,0])*((minutes >= 60)&(ga == 0))
                 - (pos <= 2)*np.floor(ga/2)+(pos == 1)*np.floor(frame.saves.to_numpy()/3))
     return frame.total_points.to_numpy()-standard
@@ -140,7 +143,7 @@ def minute_points(minutes, scored, conceded, involvement, residual90, save90, po
     fractions = m/90; active = m > 0; sixty = m >= 60
     gc = conceded*fractions
     result = active.astype(float)+sixty.astype(float)
-    result += ((6 if position <= 2 else 5 if position == 3 else 4)*involvement[0]
+    result += ((10 if position == 1 else 6 if position == 2 else 5 if position == 3 else 4)*involvement[0]
                +3*involvement[1])*scored*fractions
     result += (4 if position <= 2 else 1 if position == 3 else 0)*sixty*np.exp(-gc)
     if position <= 2:
@@ -238,6 +241,24 @@ def matched_inputs(entries):
     if teams.home.isna().any():
         raise ValueError("Missing team venue")
     frames["teams"] = teams
+    if {"frozen_openfpl","parent_manifest","parent_run"}&set(entries):
+        if not {"frozen_openfpl","parent_manifest","parent_run"}<=set(entries):
+            raise ValueError("Reuse requires frozen predictions, parent manifest and completed run")
+        old=json.loads(Path(entries["parent_manifest"]["path"]).read_text())
+        completed=json.loads(Path(entries["parent_run"]["path"]).read_text())
+        if completed.get("status")!="completed" or completed.get("output_sha256",{}).get("predictions.csv")!=entries["frozen_openfpl"]["sha256"] or entries["parent_manifest"]["sha256"] not in completed.get("input_sha256",[]):
+            raise ValueError("Parent completed-run hashes differ")
+        prior_policy={**POLICY,"method":"historical-external-adaptations-v1",
+                      "component":{k:v for k,v in POLICY["component"].items() if k!="goalkeeper_goal_points"}}
+        original_inputs={k:v for k,v in entries.items() if k not in ("frozen_openfpl","parent_manifest","parent_run")}
+        if old["policy"]!=prior_policy or old["recipe"]!=recipe() or old["inputs"]!=original_inputs:
+            raise ValueError("Parent policy/recipe/input evidence differs")
+        preserved=pd.read_csv(entries["frozen_openfpl"]["path"])
+        joined=frames["reference"].merge(preserved[KEYS+["actual","candidate","openfpl_cv1_refit"]],
+                  on=KEYS,how="outer",validate="one_to_one",indicator=True,suffixes=("","_parent"))
+        if not joined._merge.eq("both").all() or not joined.actual.eq(joined.actual_parent).all() or not joined.candidate.eq(joined.candidate_parent).all() or not np.isfinite(joined.openfpl_cv1_refit).all():
+            raise ValueError("Parent OpenFPL prediction coverage/targets differ")
+        frames["preserved_openfpl"]=preserved
     return frames, masks, proof
 
 
@@ -303,11 +324,19 @@ def run(manifest, expected, directory):
         def progress(record):
             log.write(json.dumps(record)+"\n");log.flush()
             print("Completed "+record["method"]+" "+str(record.get("position", ""))+" "+str(record.get("member", "")), flush=True)
-        for pos in range(1,5):
-            train=masks["train"]&p.position.eq(pos);val=masks["validation"]&p.position.eq(pos);query=test&p.position.eq(pos)
-            names=recipe()["feature_schema"][str(pos)]
-            matrix=openfpl_matrix(x, names)
-            prediction.loc[p.index[query]]=fit_openfpl(p[train], p[val], matrix[train], matrix[val], matrix[query], pos, progress)
+        if "preserved_openfpl" in frames:
+            preserved=frames["preserved_openfpl"]
+            aligned=p.loc[test,KEYS].merge(preserved[KEYS+["openfpl_cv1_refit"]],on=KEYS,validate="one_to_one")
+            if not aligned[KEYS].equals(p.loc[test,KEYS].reset_index(drop=True)):
+                raise ValueError("Parent OpenFPL key order differs")
+            prediction.iloc[:]=aligned.openfpl_cv1_refit.to_numpy()
+            result["openfpl_reused_sha256"]=spec["inputs"]["frozen_openfpl"]["sha256"]
+        else:
+            for pos in range(1,5):
+                train=masks["train"]&p.position.eq(pos);val=masks["validation"]&p.position.eq(pos);query=test&p.position.eq(pos)
+                names=recipe()["feature_schema"][str(pos)]
+                matrix=openfpl_matrix(x, names)
+                prediction.loc[p.index[query]]=fit_openfpl(p[train], p[val], matrix[train], matrix[val], matrix[query], pos, progress)
         if not np.isfinite(prediction).all():
             raise ValueError("Incomplete OpenFPL coverage")
         augmented=p.merge(frames["teams"][["season", "fixture", "team_name", "goals_scored"]],
@@ -362,13 +391,15 @@ def main():
     a=sub.add_parser("prepare")
     for n in ("players", "teams", "snapshots", "reference", "provenance", "native-predictions", "conditional-predictions", "output"):
         a.add_argument("--"+n, required=True, type=Path)
+    for n in ("frozen-openfpl","parent-manifest","parent-run"):
+        a.add_argument("--"+n,type=Path)
     b=sub.add_parser("run")
     for n in ("manifest", "manifest-sha256", "directory"):
         b.add_argument("--"+n, required=True)
     args=vars(parser.parse_args());action=args.pop("action")
     try:
         if action=="prepare":
-            prepare({k:v for k,v in args.items() if k!="output"},args["output"])
+            prepare({k:v for k,v in args.items() if k!="output" and v is not None},args["output"])
         else:
             run(args["manifest"],args["manifest_sha256"],args["directory"])
     except (ValueError,KeyError,TypeError,OSError,ImportError) as exc:

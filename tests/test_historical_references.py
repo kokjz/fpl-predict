@@ -102,3 +102,34 @@ def test_recipe_has_four_positions_and_fixed_member_definitions():
     assert {k:len(v) for k,v in recipe["feature_schema"].items()}=={"1":196,"2":206,"3":206,"4":206}
     assert all(len(v)==10 for v in recipe["members"].values())
     assert ref.POLICY["promotion"] is False and ref.POLICY["original_system"] is False
+
+
+def test_goalkeeper_scoring_uses_the_correct_season_and_residual_decomposition():
+    p,_=toy();p=p.iloc[:2].copy()
+    p["season"]=["2023-24","2024-25"];p["position"]=1;p["goals_scored"]=1
+    p["minutes"]=90;p["assists"]=0;p["goals_conceded"]=0;p["saves"]=0
+    p["total_points"]=[12,16]  # appearance2 + clean4 + goal6/10
+    np.testing.assert_allclose(ref.residual_points(p),0)
+    np.testing.assert_allclose(ref.minute_points([90],1,0,np.array([1,0,0]),0,0,1),16)
+
+
+def test_reuse_requires_completed_parent_hashes_and_identical_inputs(tmp_path,monkeypatch):
+    p,t=toy();p=p.iloc[:1];t=t.iloc[:1]
+    core=p[ref.KEYS].copy();core["actual"]=3.;core["candidate"]=True;core["reference"]=2.
+    frames=dict(players=p,teams=t.drop(columns="home"),reference=core)
+    monkeypatch.setattr(ref,"load_inputs",lambda entries:(dict(frames),{},{}))
+    entries={}
+    for key,column in [("native_predictions","native_reference"),("conditional_predictions","conditional_reference"),("frozen_openfpl","openfpl_cv1_refit")]:
+        path=tmp_path/(key+".csv");core.assign(**{column:2.}) .to_csv(path,index=False)
+        entries[key]=dict(path=str(path),sha256=ref.file_hash(path))
+    prior={**ref.POLICY,"method":"historical-external-adaptations-v1",
+           "component":{k:v for k,v in ref.POLICY["component"].items() if k!="goalkeeper_goal_points"}}
+    path=tmp_path/"parent.json";path.write_text(json.dumps(dict(policy=prior,recipe=ref.recipe(),inputs={k:v for k,v in entries.items() if k!="frozen_openfpl"})))
+    entries["parent_manifest"]=dict(path=str(path),sha256=ref.file_hash(path))
+    path=tmp_path/"completed.json";path.write_text(json.dumps(dict(status="completed",input_sha256=[entries["parent_manifest"]["sha256"]],output_sha256={"predictions.csv":entries["frozen_openfpl"]["sha256"]})))
+    entries["parent_run"]=dict(path=str(path),sha256=ref.file_hash(path))
+    result,_,_=ref.matched_inputs(entries)
+    assert len(result["preserved_openfpl"])==1
+    path.write_text(json.dumps(dict(status="failed")))
+    with pytest.raises(ValueError,match="completed-run"):
+        ref.matched_inputs(entries)

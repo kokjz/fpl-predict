@@ -94,3 +94,23 @@ Sources: https://arxiv.org/html/2508.09992v1 ,
 https://github.com/daniegr/OpenFPL/tree/ad055ba7270145ce8ecc1f19581423493b1357e7 ,
 https://github.com/alan-turing-institute/AIrsenal/tree/212a0aa478fe885808355dc5f08f81f8f9822893 .
 MIT attribution is in THIRD_PARTY_NOTICES.md; raw data/binaries stay outside Git.
+
+## Engineering amendment v2: goalkeeper scoring, before corrected fit
+
+Final review found the component decomposition used6points for goalkeeper goals
+in every season. Official rules changed to10from2024/25:
+https://www.premierleague.com/en/news/4059044 . Correct historical residuals by
+season (6through2023/24,10since2024/25) and use10for the2025/26forecast component.
+This is a scoring defect repair, not a parameter/feature search after test results.
+The original completed run and outputs stay immutable; its component scores are
+superseded for this defect regardless of whether the repair improves metrics.
+
+Retain the original OpenFPL predictions exactly, bound to the original frozen
+manifest, completed supervisor record/output checksum and identical seven base
+input entries/recipe/policy (only the declared component scoring amendment may
+differ). A new write-once v2manifest precedes the one corrected component fit.
+No40member refit, new seed, changed prior, calibration or selection is allowed.
+The CLI accepts frozen-openfpl/parent-manifest/parent-run together for this explicit
+reuse; parent hash/coverage/target/cohort checks fail closed. Re-score all methods
+and the same deterministic squads. Record both jobs' resources and preserve the
+first run as invalid component evidence, not as a selectable alternative.
