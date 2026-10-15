@@ -1,5 +1,9 @@
 # Historical external-method results — 15 October 2026
 
+A later [practical selection study](SELECTION_BENCHMARK_RESULTS_2026-10-15.md) adds
+calendar-verified 220-panel replay, neutral owned squads, budgeted resets and
+rolling transfers. This original forecast-error/181-panel report is preserved.
+
 **Keep the approved model.** Two new independently fitted adaptations did not
 beat the incumbent-method reference. A separate real archived external forecast
 was also scored, with mixed metrics and different capture dates. None of these

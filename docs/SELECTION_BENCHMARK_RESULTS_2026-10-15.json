@@ -1,0 +1,1075 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-15",
+  "pre_scoring_source_commit": "caed44fb22f3f266f6c7eeeab2c075399afebbfd",
+  "protocol_sha256": "6f9b56c7d4129df7113046f40255eb87e8776f98c090d27a04174f22a51db788",
+  "interpretation": "Retrospective conditional common-policy comparisons; no original-system overall ranking, full-season/chip advantage, untouched holdout or promotion.",
+  "studies": {
+    "native-run-02": {
+      "models": [
+        "reference",
+        "native_reference",
+        "conditional_reference",
+        "openfpl_cv1_refit",
+        "conjugate_poisson"
+      ],
+      "summaries": {
+        "owned": {
+          "2": {
+            "gameweeks": 11,
+            "panels": 132,
+            "means": {
+              "reference": 37.17424242424243,
+              "native_reference": 36.84090909090909,
+              "conditional_reference": 36.56818181818182,
+              "openfpl_cv1_refit": 36.6060606060606,
+              "conjugate_poisson": 37.128787878787875
+            },
+            "comparisons": {
+              "native_reference": {
+                "challenger_minus_reference": -0.3333333333333328,
+                "simultaneous_interval": [
+                  -1.280303030303029,
+                  0.6136363636363632
+                ],
+                "verdict": "inconclusive"
+              },
+              "conditional_reference": {
+                "challenger_minus_reference": -0.6060606060606049,
+                "simultaneous_interval": [
+                  -1.553030303030301,
+                  0.34090909090909116
+                ],
+                "verdict": "inconclusive"
+              },
+              "openfpl_cv1_refit": {
+                "challenger_minus_reference": -0.5681818181818176,
+                "simultaneous_interval": [
+                  -1.5151515151515136,
+                  0.37878787878787845
+                ],
+                "verdict": "inconclusive"
+              },
+              "conjugate_poisson": {
+                "challenger_minus_reference": -0.04545454545454513,
+                "simultaneous_interval": [
+                  -0.9924242424242411,
+                  0.9015151515151509
+                ],
+                "verdict": "inconclusive"
+              }
+            },
+            "block": 2,
+            "repetitions": 4000,
+            "margin": 0.25,
+            "interpretation": "retrospective descriptive; not model promotion"
+          },
+          "4": {
+            "gameweeks": 11,
+            "panels": 132,
+            "means": {
+              "reference": 37.17424242424243,
+              "native_reference": 36.84090909090909,
+              "conditional_reference": 36.56818181818182,
+              "openfpl_cv1_refit": 36.6060606060606,
+              "conjugate_poisson": 37.128787878787875
+            },
+            "comparisons": {
+              "native_reference": {
+                "challenger_minus_reference": -0.3333333333333328,
+                "simultaneous_interval": [
+                  -1.1969696969696946,
+                  0.5303030303030289
+                ],
+                "verdict": "inconclusive"
+              },
+              "conditional_reference": {
+                "challenger_minus_reference": -0.6060606060606049,
+                "simultaneous_interval": [
+                  -1.4696969696969666,
+                  0.2575757575757569
+                ],
+                "verdict": "inconclusive"
+              },
+              "openfpl_cv1_refit": {
+                "challenger_minus_reference": -0.5681818181818176,
+                "simultaneous_interval": [
+                  -1.4318181818181794,
+                  0.2954545454545442
+                ],
+                "verdict": "inconclusive"
+              },
+              "conjugate_poisson": {
+                "challenger_minus_reference": -0.04545454545454513,
+                "simultaneous_interval": [
+                  -0.9090909090909068,
+                  0.8181818181818167
+                ],
+                "verdict": "inconclusive"
+              }
+            },
+            "block": 4,
+            "repetitions": 4000,
+            "margin": 0.25,
+            "interpretation": "retrospective descriptive; not model promotion"
+          },
+          "6": {
+            "gameweeks": 11,
+            "panels": 132,
+            "means": {
+              "reference": 37.17424242424243,
+              "native_reference": 36.84090909090909,
+              "conditional_reference": 36.56818181818182,
+              "openfpl_cv1_refit": 36.6060606060606,
+              "conjugate_poisson": 37.128787878787875
+            },
+            "comparisons": {
+              "native_reference": {
+                "challenger_minus_reference": -0.3333333333333328,
+                "simultaneous_interval": [
+                  -1.0606060606060588,
+                  0.39393939393939303
+                ],
+                "verdict": "inconclusive"
+              },
+              "conditional_reference": {
+                "challenger_minus_reference": -0.6060606060606049,
+                "simultaneous_interval": [
+                  -1.3333333333333308,
+                  0.121212121212121
+                ],
+                "verdict": "inconclusive"
+              },
+              "openfpl_cv1_refit": {
+                "challenger_minus_reference": -0.5681818181818176,
+                "simultaneous_interval": [
+                  -1.2954545454545434,
+                  0.15909090909090828
+                ],
+                "verdict": "inconclusive"
+              },
+              "conjugate_poisson": {
+                "challenger_minus_reference": -0.04545454545454513,
+                "simultaneous_interval": [
+                  -0.7727272727272709,
+                  0.6818181818181808
+                ],
+                "verdict": "inconclusive"
+              }
+            },
+            "block": 6,
+            "repetitions": 4000,
+            "margin": 0.25,
+            "interpretation": "retrospective descriptive; not model promotion"
+          }
+        },
+        "reset": {
+          "2": {
+            "gameweeks": 11,
+            "panels": 11,
+            "means": {
+              "reference": 69.18181818181819,
+              "native_reference": 63.90909090909091,
+              "conditional_reference": 59.27272727272727,
+              "openfpl_cv1_refit": 58.63636363636363,
+              "conjugate_poisson": 60.90909090909091
+            },
+            "comparisons": {
+              "native_reference": {
+                "challenger_minus_reference": -5.2727272727272725,
+                "simultaneous_interval": [
+                  -16.18181818181818,
+                  5.636363636363636
+                ],
+                "verdict": "inconclusive"
+              },
+              "conditional_reference": {
+                "challenger_minus_reference": -9.909090909090908,
+                "simultaneous_interval": [
+                  -20.818181818181817,
+                  1.0
+                ],
+                "verdict": "inconclusive"
+              },
+              "openfpl_cv1_refit": {
+                "challenger_minus_reference": -10.545454545454545,
+                "simultaneous_interval": [
+                  -21.454545454545453,
+                  0.3636363636363633
+                ],
+                "verdict": "inconclusive"
+              },
+              "conjugate_poisson": {
+                "challenger_minus_reference": -8.272727272727273,
+                "simultaneous_interval": [
+                  -19.18181818181818,
+                  2.636363636363635
+                ],
+                "verdict": "inconclusive"
+              }
+            },
+            "block": 2,
+            "repetitions": 4000,
+            "margin": 0.25,
+            "interpretation": "retrospective descriptive; not model promotion"
+          },
+          "4": {
+            "gameweeks": 11,
+            "panels": 11,
+            "means": {
+              "reference": 69.18181818181819,
+              "native_reference": 63.90909090909091,
+              "conditional_reference": 59.27272727272727,
+              "openfpl_cv1_refit": 58.63636363636363,
+              "conjugate_poisson": 60.90909090909091
+            },
+            "comparisons": {
+              "native_reference": {
+                "challenger_minus_reference": -5.2727272727272725,
+                "simultaneous_interval": [
+                  -14.368181818181792,
+                  3.8227272727272466
+                ],
+                "verdict": "inconclusive"
+              },
+              "conditional_reference": {
+                "challenger_minus_reference": -9.909090909090908,
+                "simultaneous_interval": [
+                  -19.00454545454543,
+                  -0.8136363636363892
+                ],
+                "verdict": "reference advantage"
+              },
+              "openfpl_cv1_refit": {
+                "challenger_minus_reference": -10.545454545454545,
+                "simultaneous_interval": [
+                  -19.640909090909062,
+                  -1.450000000000026
+                ],
+                "verdict": "reference advantage"
+              },
+              "conjugate_poisson": {
+                "challenger_minus_reference": -8.272727272727273,
+                "simultaneous_interval": [
+                  -17.368181818181792,
+                  0.8227272727272457
+                ],
+                "verdict": "inconclusive"
+              }
+            },
+            "block": 4,
+            "repetitions": 4000,
+            "margin": 0.25,
+            "interpretation": "retrospective descriptive; not model promotion"
+          },
+          "6": {
+            "gameweeks": 11,
+            "panels": 11,
+            "means": {
+              "reference": 69.18181818181819,
+              "native_reference": 63.90909090909091,
+              "conditional_reference": 59.27272727272727,
+              "openfpl_cv1_refit": 58.63636363636363,
+              "conjugate_poisson": 60.90909090909091
+            },
+            "comparisons": {
+              "native_reference": {
+                "challenger_minus_reference": -5.2727272727272725,
+                "simultaneous_interval": [
+                  -12.272727272727273,
+                  1.7272727272727284
+                ],
+                "verdict": "inconclusive"
+              },
+              "conditional_reference": {
+                "challenger_minus_reference": -9.909090909090908,
+                "simultaneous_interval": [
+                  -16.90909090909091,
+                  -2.9090909090909074
+                ],
+                "verdict": "reference advantage"
+              },
+              "openfpl_cv1_refit": {
+                "challenger_minus_reference": -10.545454545454545,
+                "simultaneous_interval": [
+                  -17.545454545454547,
+                  -3.545454545454544
+                ],
+                "verdict": "reference advantage"
+              },
+              "conjugate_poisson": {
+                "challenger_minus_reference": -8.272727272727273,
+                "simultaneous_interval": [
+                  -15.272727272727273,
+                  -1.2727272727272725
+                ],
+                "verdict": "reference advantage"
+              }
+            },
+            "block": 6,
+            "repetitions": 4000,
+            "margin": 0.25,
+            "interpretation": "retrospective descriptive; not model promotion"
+          }
+        },
+        "rolling": {
+          "mean_episode_points": {
+            "conditional_reference": 547.6666666666666,
+            "conjugate_poisson": 552.8333333333334,
+            "native_reference": 557.5,
+            "openfpl_cv1_refit": 537.5,
+            "reference": 624.6666666666666
+          },
+          "mean_episode_difference": {
+            "conditional_reference": -77.0,
+            "conjugate_poisson": -71.83333333333333,
+            "native_reference": -67.16666666666667,
+            "openfpl_cv1_refit": -87.16666666666667,
+            "reference": 0.0
+          },
+          "inference": "One path-dependent window; no independent-episode CI",
+          "path_difference_ranges": {
+            "conditional_reference": [
+              -116.0,
+              -22.0
+            ],
+            "conjugate_poisson": [
+              -154.0,
+              -10.0
+            ],
+            "native_reference": [
+              -137.0,
+              38.0
+            ],
+            "openfpl_cv1_refit": [
+              -154.0,
+              -3.0
+            ]
+          },
+          "paths_ahead_of_reference": {
+            "conditional_reference": 0,
+            "conjugate_poisson": 0,
+            "native_reference": 1,
+            "openfpl_cv1_refit": 0
+          },
+          "scenarios_per_method": 6
+        }
+      },
+      "mean_score_decomposition": [
+        {
+          "layer": "owned",
+          "model": "conditional_reference",
+          "base_xi": 29.863636363636363,
+          "autosub_delta": 0.8712121212121212,
+          "captain_bonus": 5.833333333333333,
+          "hits": 0.0,
+          "net_points": 36.56818181818182
+        },
+        {
+          "layer": "owned",
+          "model": "conjugate_poisson",
+          "base_xi": 29.65909090909091,
+          "autosub_delta": 0.9545454545454546,
+          "captain_bonus": 6.515151515151516,
+          "hits": 0.0,
+          "net_points": 37.128787878787875
+        },
+        {
+          "layer": "owned",
+          "model": "native_reference",
+          "base_xi": 29.954545454545453,
+          "autosub_delta": 0.6893939393939394,
+          "captain_bonus": 6.196969696969697,
+          "hits": 0.0,
+          "net_points": 36.84090909090909
+        },
+        {
+          "layer": "owned",
+          "model": "openfpl_cv1_refit",
+          "base_xi": 29.772727272727273,
+          "autosub_delta": 0.8939393939393939,
+          "captain_bonus": 5.9393939393939394,
+          "hits": 0.0,
+          "net_points": 36.60606060606061
+        },
+        {
+          "layer": "owned",
+          "model": "reference",
+          "base_xi": 29.803030303030305,
+          "autosub_delta": 0.9242424242424242,
+          "captain_bonus": 6.446969696969697,
+          "hits": 0.0,
+          "net_points": 37.17424242424242
+        },
+        {
+          "layer": "reset",
+          "model": "conditional_reference",
+          "base_xi": 53.27272727272727,
+          "autosub_delta": 1.0909090909090908,
+          "captain_bonus": 4.909090909090909,
+          "hits": 0.0,
+          "net_points": 59.27272727272727
+        },
+        {
+          "layer": "reset",
+          "model": "conjugate_poisson",
+          "base_xi": 49.72727272727273,
+          "autosub_delta": 4.7272727272727275,
+          "captain_bonus": 6.454545454545454,
+          "hits": 0.0,
+          "net_points": 60.90909090909091
+        },
+        {
+          "layer": "reset",
+          "model": "native_reference",
+          "base_xi": 55.09090909090909,
+          "autosub_delta": 1.5454545454545454,
+          "captain_bonus": 7.2727272727272725,
+          "hits": 0.0,
+          "net_points": 63.90909090909091
+        },
+        {
+          "layer": "reset",
+          "model": "openfpl_cv1_refit",
+          "base_xi": 50.36363636363637,
+          "autosub_delta": 2.1818181818181817,
+          "captain_bonus": 6.090909090909091,
+          "hits": 0.0,
+          "net_points": 58.63636363636363
+        },
+        {
+          "layer": "reset",
+          "model": "reference",
+          "base_xi": 59.54545454545455,
+          "autosub_delta": 2.3636363636363638,
+          "captain_bonus": 7.2727272727272725,
+          "hits": 0.0,
+          "net_points": 69.18181818181819
+        },
+        {
+          "layer": "rolling",
+          "model": "conditional_reference",
+          "base_xi": 46.59090909090909,
+          "autosub_delta": 1.5909090909090908,
+          "captain_bonus": 5.0,
+          "hits": 3.393939393939394,
+          "net_points": 49.78787878787879
+        },
+        {
+          "layer": "rolling",
+          "model": "conjugate_poisson",
+          "base_xi": 46.303030303030305,
+          "autosub_delta": 2.015151515151515,
+          "captain_bonus": 6.909090909090909,
+          "hits": 4.96969696969697,
+          "net_points": 50.25757575757576
+        },
+        {
+          "layer": "rolling",
+          "model": "native_reference",
+          "base_xi": 46.53030303030303,
+          "autosub_delta": 1.7727272727272727,
+          "captain_bonus": 7.287878787878788,
+          "hits": 4.909090909090909,
+          "net_points": 50.68181818181818
+        },
+        {
+          "layer": "rolling",
+          "model": "openfpl_cv1_refit",
+          "base_xi": 43.984848484848484,
+          "autosub_delta": 2.303030303030303,
+          "captain_bonus": 5.7272727272727275,
+          "hits": 3.1515151515151514,
+          "net_points": 48.86363636363637
+        },
+        {
+          "layer": "rolling",
+          "model": "reference",
+          "base_xi": 51.57575757575758,
+          "autosub_delta": 2.6818181818181817,
+          "captain_bonus": 6.651515151515151,
+          "hits": 4.121212121212121,
+          "net_points": 56.78787878787879
+        }
+      ],
+      "evidence": {
+        "independently_rescored": 1045,
+        "zero_minute_cards": 0,
+        "inputs_sha256": "2ec582f748ca2847ff7e8f9811e7bcd6fcbd0e67c303d79178d0a2cba39df5c6",
+        "manifest_sha256": "c7ba8763cc896cb3547f957e5d6ede8253da80047a6a8fe965ab15af54f0d72a",
+        "scores_sha256": "7dddab1d1da7272be481b157f26c2f9aca62c55db71bf76435f6c2a852e81fc9",
+        "report_sha256": "c75dc8f7ea7144080bd73e9301a027e6c5d1403ad2286643402fb9d59afd80f6"
+      },
+      "scenario_validation": {
+        "verified_owned_model_panels": 660,
+        "actual_scenario_schedule_sha256": "ddefeebf2c3599007265e3c33f18e168b581fe39543e3b814714b3bd1beb2034",
+        "schedule_origin": "frozen manifest scenario IDs"
+      },
+      "elapsed_seconds": 31.226144541054964,
+      "peak_sampled_rss_bytes": 288636928,
+      "max_solve_seconds": 1.2886710420716554
+    },
+    "original-run-01": {
+      "models": [
+        "v1",
+        "dastan",
+        "dastan_without_ep_next",
+        "last5",
+        "ewm"
+      ],
+      "summaries": {
+        "owned": {
+          "2": {
+            "gameweeks": 24,
+            "panels": 288,
+            "means": {
+              "v1": 21.847222222222225,
+              "dastan": 22.04513888888889,
+              "dastan_without_ep_next": 22.072916666666668,
+              "last5": 21.628472222222225,
+              "ewm": 21.5625
+            },
+            "comparisons": {
+              "dastan": {
+                "challenger_minus_reference": 0.19791666666666718,
+                "simultaneous_interval": [
+                  -0.2916666666666663,
+                  0.6875000000000007
+                ],
+                "verdict": "inconclusive"
+              },
+              "dastan_without_ep_next": {
+                "challenger_minus_reference": 0.22569444444444473,
+                "simultaneous_interval": [
+                  -0.26388888888888873,
+                  0.7152777777777782
+                ],
+                "verdict": "inconclusive"
+              },
+              "last5": {
+                "challenger_minus_reference": -0.21874999999999986,
+                "simultaneous_interval": [
+                  -0.7083333333333334,
+                  0.2708333333333336
+                ],
+                "verdict": "inconclusive"
+              },
+              "ewm": {
+                "challenger_minus_reference": -0.2847222222222223,
+                "simultaneous_interval": [
+                  -0.7743055555555558,
+                  0.20486111111111116
+                ],
+                "verdict": "inconclusive"
+              }
+            },
+            "block": 2,
+            "repetitions": 4000,
+            "margin": 0.25,
+            "interpretation": "retrospective descriptive; not model promotion"
+          },
+          "4": {
+            "gameweeks": 24,
+            "panels": 288,
+            "means": {
+              "v1": 21.847222222222225,
+              "dastan": 22.04513888888889,
+              "dastan_without_ep_next": 22.072916666666668,
+              "last5": 21.628472222222225,
+              "ewm": 21.5625
+            },
+            "comparisons": {
+              "dastan": {
+                "challenger_minus_reference": 0.19791666666666718,
+                "simultaneous_interval": [
+                  -0.2951388888888886,
+                  0.690972222222223
+                ],
+                "verdict": "inconclusive"
+              },
+              "dastan_without_ep_next": {
+                "challenger_minus_reference": 0.22569444444444473,
+                "simultaneous_interval": [
+                  -0.26736111111111105,
+                  0.7187500000000006
+                ],
+                "verdict": "inconclusive"
+              },
+              "last5": {
+                "challenger_minus_reference": -0.21874999999999986,
+                "simultaneous_interval": [
+                  -0.7118055555555557,
+                  0.2743055555555559
+                ],
+                "verdict": "inconclusive"
+              },
+              "ewm": {
+                "challenger_minus_reference": -0.2847222222222223,
+                "simultaneous_interval": [
+                  -0.7777777777777781,
+                  0.20833333333333348
+                ],
+                "verdict": "inconclusive"
+              }
+            },
+            "block": 4,
+            "repetitions": 4000,
+            "margin": 0.25,
+            "interpretation": "retrospective descriptive; not model promotion"
+          },
+          "6": {
+            "gameweeks": 24,
+            "panels": 288,
+            "means": {
+              "v1": 21.847222222222225,
+              "dastan": 22.04513888888889,
+              "dastan_without_ep_next": 22.072916666666668,
+              "last5": 21.628472222222225,
+              "ewm": 21.5625
+            },
+            "comparisons": {
+              "dastan": {
+                "challenger_minus_reference": 0.19791666666666718,
+                "simultaneous_interval": [
+                  -0.2604166666666663,
+                  0.6562500000000007
+                ],
+                "verdict": "inconclusive"
+              },
+              "dastan_without_ep_next": {
+                "challenger_minus_reference": 0.22569444444444473,
+                "simultaneous_interval": [
+                  -0.23263888888888876,
+                  0.6840277777777782
+                ],
+                "verdict": "inconclusive"
+              },
+              "last5": {
+                "challenger_minus_reference": -0.21874999999999986,
+                "simultaneous_interval": [
+                  -0.6770833333333334,
+                  0.23958333333333362
+                ],
+                "verdict": "inconclusive"
+              },
+              "ewm": {
+                "challenger_minus_reference": -0.2847222222222223,
+                "simultaneous_interval": [
+                  -0.7430555555555558,
+                  0.17361111111111116
+                ],
+                "verdict": "inconclusive"
+              }
+            },
+            "block": 6,
+            "repetitions": 4000,
+            "margin": 0.25,
+            "interpretation": "retrospective descriptive; not model promotion"
+          }
+        }
+      },
+      "mean_score_decomposition": [
+        {
+          "layer": "owned",
+          "model": "dastan",
+          "base_xi": 17.27777777777778,
+          "autosub_delta": 0.041666666666666664,
+          "captain_bonus": 4.725694444444445,
+          "hits": 0.0,
+          "net_points": 22.04513888888889
+        },
+        {
+          "layer": "owned",
+          "model": "dastan_without_ep_next",
+          "base_xi": 17.25347222222222,
+          "autosub_delta": 0.06597222222222222,
+          "captain_bonus": 4.753472222222222,
+          "hits": 0.0,
+          "net_points": 22.072916666666668
+        },
+        {
+          "layer": "owned",
+          "model": "ewm",
+          "base_xi": 17.208333333333332,
+          "autosub_delta": 0.14930555555555555,
+          "captain_bonus": 4.204861111111111,
+          "hits": 0.0,
+          "net_points": 21.5625
+        },
+        {
+          "layer": "owned",
+          "model": "last5",
+          "base_xi": 17.072916666666668,
+          "autosub_delta": 0.2777777777777778,
+          "captain_bonus": 4.277777777777778,
+          "hits": 0.0,
+          "net_points": 21.62847222222222
+        },
+        {
+          "layer": "owned",
+          "model": "v1",
+          "base_xi": 17.225694444444443,
+          "autosub_delta": 0.1076388888888889,
+          "captain_bonus": 4.513888888888889,
+          "hits": 0.0,
+          "net_points": 21.84722222222222
+        }
+      ],
+      "evidence": {
+        "independently_rescored": 1440,
+        "zero_minute_cards": 0,
+        "inputs_sha256": "42c6d139e32dd50a0f314e5e1134b6846bf3b993bd42f09707bb2e87769b134d",
+        "manifest_sha256": "b7e88eb224525a867f5213d410303bb938fa4ae743a8d5a0a62938bdfc71d2a5",
+        "scores_sha256": "e9211890f95e8cb856e0da971158aa07bd27986c698a563f0d70d57d5fae7e6f",
+        "report_sha256": "1cd7a7a62243edc47d179f7cfc06e1a96403dd684702e2d75aeb5d182b0b8d2d"
+      },
+      "scenario_validation": {
+        "verified_owned_model_panels": 1440,
+        "actual_scenario_schedule_sha256": "4a98bf233fd9197b1d428c9cc22759d328eb126f4fbe8e9d7880bd7eb723521a",
+        "schedule_origin": "committed source-only seed+GW formula",
+        "metadata_correction": "Original manifest preliminary sample unused; actual weekly scenarios reconstructed from committed algorithm and checked against every action. Original manifest preserved."
+      },
+      "elapsed_seconds": 3.7695895419456065,
+      "peak_sampled_rss_bytes": 194494464,
+      "max_solve_seconds": null
+    },
+    "legacy-run-01": {
+      "models": [
+        "reference",
+        "native_reference",
+        "conditional_reference",
+        "openfpl_cv1_refit",
+        "conjugate_poisson"
+      ],
+      "summaries": {
+        "owned": {
+          "2": {
+            "gameweeks": 11,
+            "panels": 220,
+            "means": {
+              "reference": 41.954545454545446,
+              "native_reference": 41.53181818181818,
+              "conditional_reference": 41.28636363636363,
+              "openfpl_cv1_refit": 41.58636363636364,
+              "conjugate_poisson": 41.131818181818176
+            },
+            "comparisons": {
+              "native_reference": {
+                "challenger_minus_reference": -0.42272727272727323,
+                "simultaneous_interval": [
+                  -1.0590909090909095,
+                  0.21363636363636312
+                ],
+                "verdict": "inconclusive"
+              },
+              "conditional_reference": {
+                "challenger_minus_reference": -0.6681818181818183,
+                "simultaneous_interval": [
+                  -1.3045454545454547,
+                  -0.03181818181818197
+                ],
+                "verdict": "inconclusive"
+              },
+              "openfpl_cv1_refit": {
+                "challenger_minus_reference": -0.3681818181818205,
+                "simultaneous_interval": [
+                  -1.0045454545454569,
+                  0.26818181818181586
+                ],
+                "verdict": "inconclusive"
+              },
+              "conjugate_poisson": {
+                "challenger_minus_reference": -0.8227272727272731,
+                "simultaneous_interval": [
+                  -1.4590909090909094,
+                  -0.18636363636363673
+                ],
+                "verdict": "inconclusive"
+              }
+            },
+            "block": 2,
+            "repetitions": 4000,
+            "margin": 0.25,
+            "interpretation": "retrospective descriptive; not model promotion"
+          },
+          "4": {
+            "gameweeks": 11,
+            "panels": 220,
+            "means": {
+              "reference": 41.954545454545446,
+              "native_reference": 41.53181818181818,
+              "conditional_reference": 41.28636363636363,
+              "openfpl_cv1_refit": 41.58636363636364,
+              "conjugate_poisson": 41.131818181818176
+            },
+            "comparisons": {
+              "native_reference": {
+                "challenger_minus_reference": -0.42272727272727323,
+                "simultaneous_interval": [
+                  -0.9727272727272729,
+                  0.12727272727272648
+                ],
+                "verdict": "inconclusive"
+              },
+              "conditional_reference": {
+                "challenger_minus_reference": -0.6681818181818183,
+                "simultaneous_interval": [
+                  -1.218181818181818,
+                  -0.11818181818181861
+                ],
+                "verdict": "inconclusive"
+              },
+              "openfpl_cv1_refit": {
+                "challenger_minus_reference": -0.3681818181818205,
+                "simultaneous_interval": [
+                  -0.9181818181818202,
+                  0.18181818181817921
+                ],
+                "verdict": "inconclusive"
+              },
+              "conjugate_poisson": {
+                "challenger_minus_reference": -0.8227272727272731,
+                "simultaneous_interval": [
+                  -1.3727272727272728,
+                  -0.2727272727272734
+                ],
+                "verdict": "reference advantage"
+              }
+            },
+            "block": 4,
+            "repetitions": 4000,
+            "margin": 0.25,
+            "interpretation": "retrospective descriptive; not model promotion"
+          },
+          "6": {
+            "gameweeks": 11,
+            "panels": 220,
+            "means": {
+              "reference": 41.954545454545446,
+              "native_reference": 41.53181818181818,
+              "conditional_reference": 41.28636363636363,
+              "openfpl_cv1_refit": 41.58636363636364,
+              "conjugate_poisson": 41.131818181818176
+            },
+            "comparisons": {
+              "native_reference": {
+                "challenger_minus_reference": -0.42272727272727323,
+                "simultaneous_interval": [
+                  -0.9136363636363634,
+                  0.06818181818181696
+                ],
+                "verdict": "inconclusive"
+              },
+              "conditional_reference": {
+                "challenger_minus_reference": -0.6681818181818183,
+                "simultaneous_interval": [
+                  -1.1590909090909085,
+                  -0.17727272727272814
+                ],
+                "verdict": "inconclusive"
+              },
+              "openfpl_cv1_refit": {
+                "challenger_minus_reference": -0.3681818181818205,
+                "simultaneous_interval": [
+                  -0.8590909090909107,
+                  0.12272727272726969
+                ],
+                "verdict": "inconclusive"
+              },
+              "conjugate_poisson": {
+                "challenger_minus_reference": -0.8227272727272731,
+                "simultaneous_interval": [
+                  -1.3136363636363633,
+                  -0.3318181818181829
+                ],
+                "verdict": "reference advantage"
+              }
+            },
+            "block": 6,
+            "repetitions": 4000,
+            "margin": 0.25,
+            "interpretation": "retrospective descriptive; not model promotion"
+          }
+        }
+      },
+      "mean_score_decomposition": [
+        {
+          "layer": "owned",
+          "model": "conditional_reference",
+          "base_xi": 35.45454545454545,
+          "autosub_delta": 1.1181818181818182,
+          "captain_bonus": 4.713636363636364,
+          "hits": 0.0,
+          "net_points": 41.28636363636364
+        },
+        {
+          "layer": "owned",
+          "model": "conjugate_poisson",
+          "base_xi": 34.91818181818182,
+          "autosub_delta": 1.4863636363636363,
+          "captain_bonus": 4.7272727272727275,
+          "hits": 0.0,
+          "net_points": 41.13181818181818
+        },
+        {
+          "layer": "owned",
+          "model": "native_reference",
+          "base_xi": 35.24545454545454,
+          "autosub_delta": 1.1409090909090909,
+          "captain_bonus": 5.1454545454545455,
+          "hits": 0.0,
+          "net_points": 41.53181818181818
+        },
+        {
+          "layer": "owned",
+          "model": "openfpl_cv1_refit",
+          "base_xi": 34.736363636363635,
+          "autosub_delta": 1.7772727272727273,
+          "captain_bonus": 5.072727272727272,
+          "hits": 0.0,
+          "net_points": 41.586363636363636
+        },
+        {
+          "layer": "owned",
+          "model": "reference",
+          "base_xi": 34.845454545454544,
+          "autosub_delta": 1.6090909090909091,
+          "captain_bonus": 5.5,
+          "hits": 0.0,
+          "net_points": 41.95454545454545
+        }
+      ],
+      "evidence": {
+        "independently_rescored": 1100,
+        "zero_minute_cards": 0,
+        "inputs_sha256": "2ec582f748ca2847ff7e8f9811e7bcd6fcbd0e67c303d79178d0a2cba39df5c6",
+        "manifest_sha256": "2634f18900c00f0987ac0cf16833469160cbfb0ae382ef498d008a7f35836044",
+        "scores_sha256": "aef0e8316ad2810f5f2793f2d556d810b052cf9bb38db72ae83ea3c2fe316be8",
+        "report_sha256": "2e20ad4a0659ba65743d9d49209cfafb80b382b744145a450ee7c45c831ea60d"
+      },
+      "scenario_validation": {
+        "verified_owned_model_panels": 1100,
+        "actual_scenario_schedule_sha256": "1021694fc9095b9e2b783eee32e179a550acbdca00f860f327d4338aecf2e07d",
+        "schedule_origin": "frozen manifest scenario IDs"
+      },
+      "elapsed_seconds": 3.2475939579308033,
+      "peak_sampled_rss_bytes": 182157312,
+      "max_solve_seconds": null
+    },
+    "archive-run-01": {
+      "models": [
+        "reference",
+        "external"
+      ],
+      "summaries": {
+        "owned": {
+          "2": {
+            "gameweeks": 1,
+            "means": {
+              "reference": 36.166666666666664,
+              "external": 36.666666666666664
+            },
+            "comparisons": {},
+            "intervals": "insufficient gameweeks"
+          },
+          "4": {
+            "gameweeks": 1,
+            "means": {
+              "reference": 36.166666666666664,
+              "external": 36.666666666666664
+            },
+            "comparisons": {},
+            "intervals": "insufficient gameweeks"
+          },
+          "6": {
+            "gameweeks": 1,
+            "means": {
+              "reference": 36.166666666666664,
+              "external": 36.666666666666664
+            },
+            "comparisons": {},
+            "intervals": "insufficient gameweeks"
+          }
+        }
+      },
+      "mean_score_decomposition": [
+        {
+          "layer": "owned",
+          "model": "external",
+          "base_xi": 30.25,
+          "autosub_delta": 0.8333333333333334,
+          "captain_bonus": 5.583333333333333,
+          "hits": 0.0,
+          "net_points": 36.666666666666664
+        },
+        {
+          "layer": "owned",
+          "model": "reference",
+          "base_xi": 30.0,
+          "autosub_delta": 1.0,
+          "captain_bonus": 5.166666666666667,
+          "hits": 0.0,
+          "net_points": 36.166666666666664
+        }
+      ],
+      "evidence": {
+        "independently_rescored": 24,
+        "zero_minute_cards": 0,
+        "inputs_sha256": "aa95c0a45c02ac72ae03ca27c2b5d0327b26258bdd04c51cf4c3dc241d9b9845",
+        "manifest_sha256": "35455c422bd209535b1204c88c01492e7a19a7fc035212bebb9927f6258d6467",
+        "scores_sha256": "9be124f6d4f0f1a314126683e610d7fa51756ae0f7becc57d115650f8a6e1293",
+        "report_sha256": "26f69130be100e4f1c28b3e5f189410daef28dfd5069372718f1030567b4e736"
+      },
+      "scenario_validation": {
+        "verified_owned_model_panels": 24,
+        "actual_scenario_schedule_sha256": "d45cc373c6f7634a73a2455b94878865a445c2491ae710ec26884e69af86db2c",
+        "schedule_origin": "frozen manifest scenario IDs"
+      },
+      "elapsed_seconds": 1.9279493340291083,
+      "peak_sampled_rss_bytes": 165806080,
+      "max_solve_seconds": null
+    }
+  },
+  "evaluation_code_sha256": {
+    "selection_benchmark.py": "a1f7021d5566e06c5d6505996bb65f2fd96c066ba5125d7750b5d695038053c4",
+    "selection_inputs.py": "92cd306414436a42bfcad3ce27113f0f7d7deb841f995eca8ab810d0d4bc72d4",
+    "forecast.py": "272ee077a86b3df8264a4caaa09dc9267f392d7add4a0a6158c0a9abde7a764e",
+    "selection_protocol.json": "6f9b56c7d4129df7113046f40255eb87e8776f98c090d27a04174f22a51db788"
+  },
+  "environment": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  },
+  "python": "3.12.14",
+  "validation": {
+    "independently_rescored": 3609,
+    "rolling_paths_checked": 30,
+    "transactions_checked": 669
+  },
+  "resources": {
+    "completed_benchmark_seconds": 40.17127737496048,
+    "total_including_probe_and_failed_sampler_seconds": 55.43450800003484,
+    "peak_sampled_rss_bytes": 288636928,
+    "threads": 2,
+    "training_runs": 0
+  },
+  "failures": [
+    {
+      "run": "native-run-01",
+      "stage": "scenario sampling before scoring",
+      "reason": "budget band not populated within bounded attempts",
+      "disposition": "preserved; source-only price-tilt correction published before replacement scoring"
+    }
+  ],
+  "limits": [
+    "Original archive capture/training and historical source correction limitations remain",
+    "Original 2024 analysis boundary is reconstructed, not verified forecast capture",
+    "2024 original archive universe conditional on exported forecasts and earlier metadata; lagged clubs may lag a transfer",
+    "Broad sampled rosters include inactive players; these are stress scenarios, not representative strong-manager squads",
+    "Intervals condition on these scenarios; between-squad-population and training-selection uncertainty are not estimated",
+    "Layer/block sensitivity results are not family-wide confirmatory evidence",
+    "Single original external GW6 has unequal information cutoffs and no interval"
+  ]
+}
