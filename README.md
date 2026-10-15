@@ -23,7 +23,9 @@ It is a forecasting and decision-support engine, not a complete season optimiser
 3. **Fit pooled models.** Histogram gradient-boosted trees learn patterns shared across players. Separate estimators cover core points, minutes, participation and defensive-contribution awards. Training examples have a two-year age half-life. The core model uses shallow seven-leaf trees; no GPU or hosted inference service is required.
 4. **Forecast and evaluate.** Fixture forecasts are summed into gameweeks and optionally compared within a squad. The model registry checks approval status and artifact hashes. Evaluation uses chronological splits; a merged code change or a newer experiment does not automatically replace the approved model.
 
-Official injury percentages are retained as observations, not treated as calibrated start probabilities. A [fixed news/availability experiment](docs/NEWS_AVAILABILITY_RESULTS_2026-10-16.md) found useful appearance information in timely published availability fields, with no extra Brier benefit from combining news text with structured labels. This is a component research result against a recent-form control, not a production-model or points-gain claim. The optional [participation audit](docs/participation_audit.md) checks frozen point-risk diagnostics and predeadline evidence, including sourced club/press reports, without applying overrides. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).
+Official injury percentages are retained as observations, not treated as calibrated start probabilities. A [controlled historical availability study](docs/INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md) found 20.6% lower candidate appearance Brier error against a matched refit of the full incumbent method. Adding the same signals to points forecasting reduced audit RMSE by 0.61%, but worsened MAE and slightly reduced ranking quality. Squad-selection results were mixed, so **v1.0.0 remains approved**. These component/error changes are not percentages of FPL points gained. The earlier [text experiment](docs/NEWS_AVAILABILITY_RESULTS_2026-10-16.md) found no extra Brier benefit from combining news text with structured labels.
+
+The optional [participation audit](docs/participation_audit.md) checks frozen point-risk diagnostics and predeadline evidence, including sourced club/press reports, without applying overrides. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).
 
 ## Performance and other options
 
@@ -78,6 +80,12 @@ These retrospective results do not establish parity or superiority over the
 original external systems, and no model was promoted. The report includes
 coverage, uncertainty, source distinctions and measured execution cost; the
 [workflow](docs/selection_benchmark.md) explains how to test your own forecasts.
+
+The [availability follow-up and six-method rebenchmark](docs/INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md)
+adds a tested research challenger on the same historical market and policy. It
+improves weekly reset scores but slightly loses owned-squad and rolling-transfer
+scores against the incumbent control; it is not promoted. Original Dastan results
+above remain separate from this 2025/26 Dastan-architecture adaptation.
 
 For shared-row comparisons against other systems, see the [external benchmark
 protocol](docs/BENCHMARK_PROTOCOL.md), [source readiness inventory](docs/benchmark_sources.json)
@@ -206,6 +214,9 @@ Additional research commands expose their options through:
 .venv/bin/fpl-predict selection-benchmark --help
 .venv/bin/fpl-predict participation-audit --help
 .venv/bin/fpl-predict news-probe --help
+.venv/bin/fpl-predict incumbent-availability --help
+.venv/bin/fpl-predict availability-points --help
+.venv/bin/fpl-predict availability-benchmark --help
 .venv/bin/python tools/compare_dastan.py --help
 ```
 

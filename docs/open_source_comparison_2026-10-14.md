@@ -140,3 +140,13 @@ adaptations did not beat the incumbent-method reference; neither represents its
 original full system. The single-GW archived result is mixed and uses different
 information cutoffs. Source dispositions, timing/coverage constraints and measured
 resource costs are explicit; the approved forecasting model is unchanged.
+
+
+## Availability follow-up — 16 October 2026
+
+The [matched incumbent availability study and six-method rebenchmark](INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md)
+now tests structured labels against the full participation method, followed by
+unconditional points-feature augmentation on historical data. Appearance error
+improves, but points MAE/ranking and owned/rolling decisions do not jointly pass
+the progression checks. The challenger is unapproved; original-system comparisons
+in this report remain unchanged. New aggregates/provenance/cost are linked above.

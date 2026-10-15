@@ -146,3 +146,13 @@ Corrected pre-fit source commitb78077b; full revision is recorded privately.
 | progress.jsonl | `cb246cf8507655ae1dd5543e21d28a398b25ccc0ffe757907f0f311560f575c5` |
 | predictions.csv | `862eab96bc6411ced5b990c80bb08397d8ad013ea243a69a7b1d81706dd7a916` |
 | results.json | `b3a71e16dce4f84e2d798dbb7f25bed64be1f9cc64c793d618183c72fdbe54d2` |
+
+
+## Availability follow-up — 16 October 2026
+
+The [matched incumbent availability study and six-method rebenchmark](INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md)
+now tests structured labels against the full participation method, followed by
+unconditional points-feature augmentation on historical data. Appearance error
+improves, but points MAE/ranking and owned/rolling decisions do not jointly pass
+the progression checks. The challenger is unapproved; original-system comparisons
+in this report remain unchanged. New aggregates/provenance/cost are linked above.

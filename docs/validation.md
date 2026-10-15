@@ -11,3 +11,15 @@ A captain-bonus replay had +56 versus last-five and -19 versus recency across se
 Twenty-one development challengers were not promoted. A newer experiment filename or merged source commit is never sufficient to replace the champion. Promotion requires the explicit gates in model_registry.py and future independent evidence. Published audit outcomes must not be repeatedly searched and still labelled untouched.
 
 Repository tests validate leakage resistance, legal selection, metadata/artifact integrity, frozen outcomes, runtime isolation and privacy checks. Four optional local-data integration checks are not exercised on a source-only checkout. They require explicitly prepared local datasets/artifacts; no such data or real squad is downloaded in CI. Packaging introduces no retraining, model promotion or current-gameweek forecast.
+
+
+## Availability study — 16 October 2026
+
+[Results and complete gates](INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md): a fixed
+source augmentation improves appearance Brier against the full incumbent method,
+but the full-points challenger fails audit MAE/ranking and loses owned/rolling
+point means. Retain v1.0.0. This is historical research on already inspected
+windows, not an untouched test or proof of general superiority. Historical
+training/testing and external replay complete the package; future frozen weekly
+evaluation is ongoing maintenance, not a completion dependency. No automatic
+retraining, model installation or migration follows from these commands.

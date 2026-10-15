@@ -54,3 +54,13 @@ No production forecasting weights or approved registry entry changes because of 
 The retained matched CSV SHA256 is `722fedeee8e76c3a1cfb1f3aa6fc80cb0875d3de2ef844f5def70513ac591990`. Values above use the original paired forecasts without refitting; the private diagnostic input/output is retained rather than overwriting the earlier reports. [Aggregate diagnostic evidence](COMPARISON_DIAGNOSIS_2026-10-15.json) records the decomposition and exploratory interval settings. No individual forecasts or manager data are redistributed.
 
 Research checked 15 October 2026: [scikit-learn probability-calibration guidance](https://scikit-learn.org/stable/modules/calibration.html) explains why Brier score alone does not isolate calibration and why fitting a calibrator requires separate data. [Official FPL team management](https://www.premierleague.com/en/news/2174899) explains bench priority, formation and captain fallback. These support the evaluation/review procedure, not an observed model gain.
+
+
+## Availability follow-up — 16 October 2026
+
+The [matched incumbent availability study and six-method rebenchmark](INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md)
+now tests structured labels against the full participation method, followed by
+unconditional points-feature augmentation on historical data. Appearance error
+improves, but points MAE/ranking and owned/rolling decisions do not jointly pass
+the progression checks. The challenger is unapproved; original-system comparisons
+in this report remain unchanged. New aggregates/provenance/cost are linked above.
