@@ -72,6 +72,8 @@ verified inputs, observed temporal concerns and remaining reference-fit gates.
 A separately named [native-window reference pilot](docs/native_reference.md)
 rebuilds histories at common deadlines under a [pre-fit protocol](docs/NATIVE_REFERENCE_PROTOCOL.md).
 It is research tooling; merged code does not replace approved forecasting weights.
+The optional [native development study](docs/native_development.md) tests a fixed
+set of richer-history challengers with chronological error and decision gates.
 
 ## Install
 

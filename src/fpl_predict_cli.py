@@ -8,7 +8,7 @@ COMMANDS = {"refresh": "refresh", "download-history": "download_history",
             "build-features": "build_features", "train": "train", "forecast": "forecast",
             "score": "score_forecast", "decision-trial": "decision_trial",
             "search-improvements": "search_improvements", "search-quality": "search_quality_targets",
-            "search-lightweight": "search_lightweight", "benchmark": "external_benchmark", "benchmark-preflight": "benchmark_readiness", "run-experiment": "experiment_runner", "reference-pilot": "reference_pilot", "audit-deadlines": "deadline_provenance", "native-reference": "native_reference"}
+            "search-lightweight": "search_lightweight", "benchmark": "external_benchmark", "benchmark-preflight": "benchmark_readiness", "run-experiment": "experiment_runner", "reference-pilot": "reference_pilot", "audit-deadlines": "deadline_provenance", "native-reference": "native_reference", "native-development": "native_development"}
 
 def main():
     parser = argparse.ArgumentParser(description="Local leakage-aware FPL prediction engine")
@@ -25,7 +25,7 @@ def main():
     if args.command == "install-model":
         if len(rest) != 1: parser.error("install-model requires one trusted artifact path")
         print(install_approved_model(rest[0])); return
-    if args.command not in ("benchmark", "benchmark-preflight", "run-experiment", "reference-pilot", "audit-deadlines", "native-reference") and not any(flag in rest for flag in ("-h", "--help")):
+    if args.command not in ("benchmark", "benchmark-preflight", "run-experiment", "reference-pilot", "audit-deadlines", "native-reference", "native-development") and not any(flag in rest for flag in ("-h", "--help")):
         initialise()
     sys.argv = [COMMANDS[args.command], *rest]
     runpy.run_module(COMMANDS[args.command], run_name="__main__")

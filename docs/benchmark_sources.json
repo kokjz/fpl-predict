@@ -1,6 +1,6 @@
 {
   "assessed_on": "2026-10-15",
-  "scope": "readiness audit only; no new model scores",
+  "scope": "source readiness with separately named retrospective pilots; original-system admission remains conditional",
   "sources": [
     {
       "model": "incumbent_v1",
@@ -73,5 +73,12 @@
     "ep_next_rows_reconciled": 29645,
     "event_memberships_reconstructed_GW28_38": 109,
     "automatic_full_benchmark_admission": false
+  },
+  "native_variant_update": {
+    "report": "NATIVE_REFERENCE_RESULTS_2026-10-15.md",
+    "method": "native-window-cutoff-hgb7-gapmask-v1",
+    "status": "one fixed HGB feature-bundle pilot executed; not original Dastan architecture",
+    "benchmark_eligible": false,
+    "promoted": false
   }
 }
