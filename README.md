@@ -78,6 +78,8 @@ An offline [availability source audit](docs/AVAILABILITY_SOURCE_AUDIT_2026-10-15
 checks exact historical CSV prefixes against pre-deadline Git publication records.
 The optional [conditional architecture reference](docs/conditional_reference.md)
 uses an explicitly installed research dependency and a separately frozen protocol.
+The [prospective validation handoff](docs/PROSPECTIVE_VALIDATION_HANDOFF.md)
+describes pre-deadline comparison locks and read-only reviews of finalised trials.
 
 ## Install
 

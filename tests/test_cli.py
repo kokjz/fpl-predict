@@ -24,3 +24,12 @@ def test_research_dispatch_does_not_initialise_operational_runtime(tmp_path, mon
     main()
     assert seen == [(module, ["example-argument"])]
     assert not root.exists()
+
+
+def test_trial_review_never_initialises_runtime(tmp_path,monkeypatch):
+    root=tmp_path/'unused';monkeypatch.setenv('FPL_PREDICT_HOME',str(root))
+    monkeypatch.setattr(sys,'argv',['fpl-predict','decision-trial','review','--root',str(root),'--output',str(tmp_path/'review.json')])
+    monkeypatch.setattr('fpl_predict_cli.initialise',lambda:(_ for _ in ()).throw(AssertionError('runtime write')))
+    seen=[];monkeypatch.setattr('fpl_predict_cli.runpy.run_module',lambda module,run_name:seen.append(module))
+    main()
+    assert seen==['decision_trial'] and not root.exists()
