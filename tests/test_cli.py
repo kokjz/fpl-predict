@@ -13,7 +13,7 @@ def test_subcommand_help_is_forwarded_without_workspace_writes(tmp_path, monkeyp
     assert not root.exists()
 
 
-@pytest.mark.parametrize("command,module", [("reference-pilot", "reference_pilot"), ("audit-deadlines", "deadline_provenance"), ("native-reference", "native_reference"), ("native-development", "native_development")])
+@pytest.mark.parametrize("command,module", [("reference-pilot", "reference_pilot"), ("audit-deadlines", "deadline_provenance"), ("native-reference", "native_reference"), ("native-development", "native_development"), ("audit-availability", "availability_history")])
 def test_research_dispatch_does_not_initialise_operational_runtime(tmp_path, monkeypatch, command, module):
     root = tmp_path / "unused"
     monkeypatch.setenv("FPL_PREDICT_HOME", str(root))
