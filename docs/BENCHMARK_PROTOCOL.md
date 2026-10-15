@@ -84,11 +84,13 @@ release. SHA fields for code/training data are declarations unless those assets
 have also been independently audited; export and supplied outcome bytes are
 verified directly by the CLI.
 
-This foundation does not calculate confidence intervals, actual-starter slices,
-resource measurements, or legal squad replays. Before accuracy/promotion claims,
-add predeclared gameweek-block uncertainty and identical constrained squad
-comparisons, and validate the source predictions independently. A merged benchmark
-implementation neither certifies input provenance nor promotes a model.
+The [evaluation extension](benchmark_evaluation.md) adds descriptive paired
+four-GW-block RMSE/MAE intervals, optional position/history/minute diagnostics and
+supplied fixed-squad replays. Its settings are separately versioned and hashed;
+the original admission protocol remains unchanged. Resource supervision is an
+explicit separate [runner](experiment_runner.md), never automatic training.
+Promotion/season-gain claims still require valid provenance and independent
+validation; these tools do not supply that evidence by themselves.
 
 ## Later pilot and promotion
 

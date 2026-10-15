@@ -58,7 +58,9 @@ For shared-row comparisons against other systems, see the [external benchmark
 protocol](docs/BENCHMARK_PROTOCOL.md), [source readiness inventory](docs/benchmark_sources.json)
 and [local import workflow](docs/benchmark_workflow.md). The optional
 `fpl-predict benchmark` command validates local exports and produces aggregate
-coverage/error/ranking reports; it does not train or promote models.
+coverage/error/ranking reports and [bounded evaluation diagnostics](docs/benchmark_evaluation.md).
+An explicit [resource-controlled runner](docs/experiment_runner.md) is available
+for separately authorised experiments. These tools do not promote models.
 
 ## Install
 
