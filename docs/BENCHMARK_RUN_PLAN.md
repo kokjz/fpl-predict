@@ -8,9 +8,10 @@ pipeline cost/baseline errors. It does not relax this plan's eligibility rules.
 
 Subsequent [byte-level provenance findings](PROVENANCE_FINDINGS_2026-10-15.md)
 verify deadlines and reconstruct evaluation fixture membership, but identify
-post-deadline opponent-history values in the native external release. The next
-fit must use a separately named, audited deadline-safe variant with a new frozen
-protocol; the unchanged native release is not admitted by this plan. No old
+post-deadline opponent-history values in the native external release. A separately named
+[cutoff-safe HGB feature variant](NATIVE_REFERENCE_RESULTS_2026-10-15.md) has now
+been run under its own frozen protocol. It is not the original Dastan architecture;
+the unchanged native release is not admitted by this plan. No old
 pilot/output is retroactively upgraded or relabelled.
 
 Declared 15 October 2026 before any reference fitting in this package. Historical
@@ -72,3 +73,12 @@ Any practical promotion still requires the unchanged development, point-relevanc
 and integrity gates plus independent future evidence. Shared historical data is
 not a new source of untouched tests. The user-triggered weekly workflow remains
 the place to freeze prospective forecasts; this file enables no background jobs.
+
+
+## Current follow-up
+
+The [I4 development study](NATIVE_DEVELOPMENT_PROTOCOL.md) isolates richer inputs
+and participation composition without scoring the reused GW28–38 audit. A true
+external-method architecture comparison and archived-forecast lineage review
+remain conditional. Neither a code merge nor the pilot admits an original system
+or promotes an operational model.

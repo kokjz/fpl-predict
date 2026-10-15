@@ -1,6 +1,13 @@
 # Open-source FPL comparison and bounded I3 results
 
-Research/evaluation: 14 October 2026. **Retain approved v1.0.0.** No lightweight
+Research/evaluation: 14 October 2026.
+
+Later [provenance findings](PROVENANCE_FINDINGS_2026-10-15.md) identify temporal
+issues in the native 2025/26 release. The older 2024/25 table below remains its
+original retrospective calculation, not proof of clean historical availability or
+current external superiority. A [rebuilt-input pilot](NATIVE_REFERENCE_RESULTS_2026-10-15.md)
+is a separately named method variant, not a replacement original-system score.
+ **Retain approved v1.0.0.** No lightweight
 challenger passed the predeclared gate. This does not claim parity with the best
 external systems: a matched retrospective Dastan comparison reveals a real gap.
 
