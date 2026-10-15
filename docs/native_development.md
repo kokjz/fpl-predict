@@ -4,6 +4,8 @@
 It compares 146 FPL-window or 256 richer-window inputs and one participation
 composition with a refitted incumbent control, on two early development seasons.
 No historical later audit, operational model, current squad or registry is used.
+The [completed I4 results](I4_RESULTS_2026-10-15.md) retain the approved champion:
+none of the three challengers passed the frozen development gates.
 
 Provide explicit private CSV paths: canonical players/teams as documented for
 [native-reference](native_reference.md), plus a control CSV and provenance JSON.
