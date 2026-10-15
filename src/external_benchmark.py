@@ -135,12 +135,14 @@ def _mapped(frame, manifest):
 
 def validate_manifest(manifest):
     _required(manifest, ["schema_version", "model_id", "grain", "prediction_kind",
-                        "target_by_season", "source_url", "source_revision",
+                        "horizon_gameweeks", "target_by_season", "source_url", "source_revision",
                         "code_sha256", "data_sha256", "input_sha256"], "manifest")
     if manifest["schema_version"] != 1:
         raise ValueError("Unsupported manifest version")
     if not isinstance(manifest["model_id"], str) or not MODEL_ID.fullmatch(manifest["model_id"]):
         raise ValueError("Invalid model_id")
+    if type(manifest["horizon_gameweeks"]) is not int or manifest["horizon_gameweeks"] != 1:
+        raise ValueError("Only one-gameweek forecast horizons are supported")
     if manifest["grain"] not in ("fixture", "player_gameweek"):
         raise ValueError("Unknown prediction grain")
     if manifest["prediction_kind"] not in ("archived_predeadline", "retrospective"):
@@ -242,7 +244,7 @@ def compare(outcomes, exports):
         column = f"prediction_{i}"
         prediction_columns[name] = column
         provenance[name] = {k: manifest[k] for k in (
-            "grain", "prediction_kind", "target_by_season", "source_url", "source_revision",
+            "grain", "prediction_kind", "horizon_gameweeks", "target_by_season", "source_url", "source_revision",
             "code_sha256", "data_sha256", "input_sha256")}
         provenance[name]["declared_timing_ranges"] = timing
         joined = joined.merge(normal.rename(columns={"prediction": column}), on=KEYS,
@@ -255,6 +257,7 @@ def compare(outcomes, exports):
         return {
             "rows": len(matched),
             "coverage": len(matched) / len(base),
+            "candidate_coverage": float(matched.candidate.sum() / base.candidate.sum()) if base.candidate.any() else None,
             "cohorts": {
                 label: {"rows": len(subset), "models": {
                     name: point_scores(subset, prediction_columns[name]) for name in selected}}

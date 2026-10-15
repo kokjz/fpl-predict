@@ -25,7 +25,7 @@ def outcomes():
 
 
 def manifest(name="first", grain="player_gameweek", kind="archived_predeadline"):
-    return dict(schema_version=1, model_id=name, grain=grain, prediction_kind=kind,
+    return dict(schema_version=1, model_id=name, grain=grain, prediction_kind=kind, horizon_gameweeks=1,
                 target_by_season={"2025-26": "fpl-total-2025-26"},
                 source_url="https://example.org/reference", source_revision="a" * 40,
                 code_sha256="b" * 64, data_sha256="c" * 64, input_sha256="d" * 64,
@@ -270,3 +270,10 @@ def test_benchmark_dispatch_does_not_initialise_operational_workspace(tmp_path, 
     main()
     assert seen == ["external_benchmark"]
     assert not (tmp_path / "unused").exists()
+
+
+@pytest.mark.parametrize("horizon", [2, 3, True, "1"])
+def test_incompatible_horizons_rejected(horizon):
+    m = manifest(); m["horizon_gameweeks"] = horizon
+    with pytest.raises(ValueError, match="one-gameweek"):
+        benchmark.compare(outcomes(), [(forecast(), m), (forecast(), manifest("second"))])

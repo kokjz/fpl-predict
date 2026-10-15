@@ -60,7 +60,6 @@ and [local import workflow](docs/benchmark_workflow.md). The optional
 `fpl-predict benchmark` command validates local exports and produces aggregate
 coverage/error/ranking reports; it does not train or promote models.
 
-
 ## Install
 
 The commands below require Git, Python 3.12 and a POSIX shell:

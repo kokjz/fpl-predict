@@ -49,6 +49,7 @@ Example manifest structure (replace every illustrative value with verified ones)
   "file": "forecast.csv",
   "grain": "player_gameweek",
   "prediction_kind": "retrospective",
+  "horizon_gameweeks": 1,
   "target_by_season": {"2025-26": "fpl-total-2025-26"},
   "source_url": "https://example.org/reference",
   "source_revision": "0000000000000000000000000000000000000000",
@@ -64,6 +65,9 @@ Example manifest structure (replace every illustrative value with verified ones)
   }
 }
 ```
+
+Only one-gameweek forecasts are admitted; multi-gameweek totals must not be
+relabeled as next-GW forecasts.
 
 The example is structural, not evidence of an admissible real model. Source
 revision must be an immutable 40-character commit or 64-character content hash.
