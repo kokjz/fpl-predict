@@ -117,3 +117,12 @@ latest admitted source: it does not claim news existed at the earlier quote time
 Prices remain the same retrospective execution approximation for all methods.
 Compare at a common deadline with unequal source feeds; extra source value does
 not establish equal-input architecture superiority. Historical source limits remain.
+
+A first external-replay attempt stopped **before scoring** because fixture-history
+forecasts include23 player-gameweeks absent from the retained predeadline listed
+market. These rows stay in every method's error metrics; all methods use the same
+original listed roster for selection. The adapter now reports this uniform
+source-based restriction explicitly instead of requiring the future fixture-history
+universe to equal the earlier published roster. Missing listed nonblank forecasts
+still fail; missing listings are never inferred from realised minutes or points.
+The initial failure is retained and no forecast, outcome or scenario changed.

@@ -40,7 +40,11 @@ def align(points,external,market,source_audits):
         if not np.allclose(check[name],check[name+'_sum'],rtol=0,atol=1e-10):
             raise ValueError('Retained market/fixture totals conflict')
     result=m.merge(update,on=keys,how='outer',indicator=True,validate='one_to_one')
-    if result._merge.eq('right_only').any():raise ValueError('Forecast absent from retained market')
+    # Retained market is the admitted predeadline listed roster, not the
+    # union of players subsequently appearing in corrected fixture histories.
+    # Uniformly exclude unlisted forecasts from selection only, never errors.
+    unlisted=int(result._merge.eq('right_only').sum())
+    result=result[~result._merge.eq('right_only')].copy()
     missing=result._merge.eq('left_only')
     if not {'blank_verified','fixture_count'}<=set(result):raise ValueError('Missing blank proof')
     if not (result.loc[missing,'blank_verified'].eq(1)&result.loc[missing,'fixture_count'].eq(0)).all():
@@ -61,6 +65,7 @@ def align(points,external,market,source_audits):
     metrics={m:dict(candidates=point_scores(grouped[grouped.candidate],m),all=point_scores(grouped,m)) for m in MODELS}
     return result,dict(metrics=metrics,fixture_rows=len(output),player_gw_rows=len(grouped),
         candidate_player_gws=int(grouped.candidate.sum()),market_rows=len(result),verified_blanks_filled=int(missing.sum()),
+        forecast_player_gws_outside_listed_market=unlisted,
         control_max_absolute_difference=float(np.max(np.abs(joined.reference-joined.control))),
         source_times=updates,scope='same deadline and retained quote-market; unequal source feeds; named external adaptations, not originals')
 

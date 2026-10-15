@@ -46,3 +46,10 @@ def test_alignment_rejects_conflicts(kind):
     if kind=='blank':m.loc[1,'blank_verified']=0
     if kind=='late':s[0]['published_at']='2026-01-01T10:00Z'
     with pytest.raises(ValueError):align(p,e,m,s)
+
+
+def test_unlisted_forecasts_remain_in_error_cohort_but_not_selection():
+    p,e,m,s=fixtures();m=m[~(m.gameweek.eq(28)&m.fpl_code.eq(1))]
+    result,audit=align(p,e,m,s)
+    assert len(result)==21 and audit['forecast_player_gws_outside_listed_market']==1
+    assert audit['candidate_player_gws']==11  # no error rows removed
