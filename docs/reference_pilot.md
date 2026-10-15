@@ -6,6 +6,9 @@ defensive-contribution probability) with the incumbent's 730.5-day recency
 weights and prediction caps. It does not fit unused minutes/60-minute models,
 select hyperparameters, refit on validation or save/promote a model binary.
 
+The first bounded execution is recorded in the
+[15 October aggregate results](REFERENCE_PILOT_RESULTS_2026-10-15.md).
+
 The fixed policy trains on 2020/21–2024/25 plus 2025/26 GW1–19, reserves GW20–27,
 and reports full-score GW28–38 errors. DC uses training observations only.
 Primary scores aggregate double fixtures into player-gameweeks and use the
