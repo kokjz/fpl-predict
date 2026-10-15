@@ -44,6 +44,13 @@ deadline−3h cutoffs, including opponent/global league context. Snapshot frame 
 empty by design. Required mapped played observations cannot have unknown source
 statistics; unmapped people retain unknowns and remain in the evaluation universe.
 
+Pre-score engineering amendment: the first supervised run failed in the installed
+tree library when a training column was entirelyNaN (three old starts windows).
+Keep that failed run and original manifest. Before rerunning the same specifications,
+omit entirely unobserved columns **using each fitted head's training rows only**;
+apply its exact selected columns at prediction time. No raw zero imputation,
+validation-selected feature admission, changed parameters or outcome-driven search.
+
 ## Evaluation, gates and stop
 
 Primary pooled candidate player-GW RMSE, requiring>=3prior season-history records

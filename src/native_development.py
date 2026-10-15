@@ -39,6 +39,7 @@ POLICY = dict(schema_version=1, method="I4-native-development-v1", folds=FOLDS,
               primary="candidate player-GW RMSE", promotion=False,
               no_later_audits=True, missing_snapshots="excluded", raw_missing="NaN",
               training_half_life_days=730.5, threads=2, no_search=True,
+              empty_training_features="omit per fitted head using training only; never impute unknown raw values",
               permitted_empty_gws={"2022-23": [7]},
               error_gain=.005, max_fold_or_mae_loss=.005,
               points_gate="pooled mean squad delta>=0", ranking_gate="pooled NDCG10>=control",
@@ -127,6 +128,9 @@ def fit_predict(kind, features, rows, train, valid, timing=None):
     weights = sample_weights(rows.loc[train])
     y = rows.loc[train, "total_points"]
     cols = CORE_FEATURES if kind == "control" else FPL if kind == "fpl_windows" else RICH
+    cols = [name for name in cols if features.loc[train, name].notna().any()]
+    if not cols: raise ValueError("No observed training features")
+    timing["selected_feature_count"] = len(cols)
     a, b = features.loc[train, cols], features.loc[valid, cols]
     if kind != "rich_participation":
         model = estimator("hgb7"); model.fit(a, y, sample_weight=weights)
@@ -145,12 +149,15 @@ def fit_predict(kind, features, rows, train, valid, timing=None):
     models = {}
     for state in (1, 2):
         mask = states == state; model = estimator("hgb7")
-        model.fit(a.loc[mask], y.loc[mask], sample_weight=weights[mask])
-        models[state] = model
+        head_cols = [name for name in cols if a.loc[mask, name].notna().any()]
+        if not head_cols: raise ValueError("No observed conditional training features")
+        timing[f"conditional_{state}_feature_count"] = len(head_cols)
+        model.fit(a.loc[mask, head_cols], y.loc[mask], sample_weight=weights[mask])
+        models[state] = (model, head_cols)
     timing["fit_seconds"] = time.monotonic()-started
     tick = time.monotonic(); probabilities = classifier.predict_proba(b); prediction = np.zeros(len(b))
-    for state, model in models.items():
-        prediction += probabilities[:, list(classifier.classes_).index(state)] * model.predict(b)
+    for state, (model, head_cols) in models.items():
+        prediction += probabilities[:, list(classifier.classes_).index(state)] * model.predict(b[head_cols])
     timing["prediction_seconds"] = time.monotonic()-tick
     return np.clip(prediction, 0, 20)
 
@@ -213,6 +220,7 @@ def run(manifest, expected, directory):
                 result["timings"][fold][method] = timing
                 d = c.loc[valid].rename(columns={"gameweek": "GW"})
                 scores[method] = evaluate(d, c.loc[valid], z[method].to_numpy())
+                print(f"Completed {fold} {method}", flush=True)
             result["folds"][fold] = scores
             result["points"][fold] = replay(z, spec["panels"][fold], METHODS)
             exports.append(z)

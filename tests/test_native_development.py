@@ -112,6 +112,21 @@ def test_feature_isolation_and_failed_point_rank_gates():
     assert not study.gate(candidate,control,new,old,10.)
 
 
+def test_all_missing_column_selection_uses_training_only(monkeypatch):
+    seen=[]
+    class Regressor:
+        def fit(self,x,y,sample_weight):seen.append(list(x));return self
+        def predict(self,x):assert list(x)==seen[-1];return np.ones(len(x))
+    monkeypatch.setattr(study,"estimator",lambda _:Regressor())
+    x=pd.DataFrame(1.,index=range(6),columns=study.FPL)
+    x.loc[:3,"ar_starts_3"]=np.nan
+    x.loc[4:,"ar_starts_3"]=999.  # observed only in validation must not admit it
+    rows=pd.DataFrame({"ts":pd.date_range("2020-01-01",periods=6,tz="UTC"),
+                       "minutes":90.,"total_points":2.})
+    study.fit_predict("fpl_windows",x,rows,rows.index<4,rows.index>=4)
+    assert "ar_starts_3" not in seen[0] and "ar_starts_5" in seen[0]
+
+
 def test_manifest_is_frozen_before_training(tmp_path,monkeypatch):
     paths=source_inputs(tmp_path);manifest=tmp_path/"manifest.json"
     monkeypatch.setattr(study,"panels",lambda c:{"synthetic":"frozen before fit"})
