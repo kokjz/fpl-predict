@@ -62,3 +62,41 @@ Grounding checked 16 October 2026: [probability calibration](https://scikit-lear
 distinguishes reliability from discrimination and requires disjoint calibration
 data; [temporal cross-validation](https://scikit-learn.org/stable/modules/cross_validation.html#time-series-split)
 supports chronological boundaries. No random calibration CV is used.
+
+## Measured head result and locked points extension — 16 October 2026
+
+[Aggregate head results](INCUMBENT_AVAILABILITY_HEAD_RESULTS_2026-10-16.json)
+were measured after protocol commit `07214b9`: 147,500 identical training rows,
+6,529 validation and 9,043 audit fixture rows; every original row retained.
+
+| Candidate fixture Brier | Control | + availability | Relative reduction |
+|---|---:|---:|---:|
+| GW20–27 development | 0.096781 | 0.069681 | 28.0% |
+| GW28–38 reused audit | 0.102229 | 0.081202 | 20.6% |
+
+Both fixed progression gates passed. Audit mean per-GW difference −0.020696,
+descriptive four-GW interval [−0.024059, −0.018069]. At exactly matched coverage,
+nonappearances fell from166 to136 across1,973 candidate fixture selections.
+These are fixture selections, not distinct owned players or realised squad points.
+This establishes incremental historical component value over the **full method**,
+not production promotion or proof of superior calibration at every band.
+
+Preparation and fitting took41.87s, peak sampled RSS1.43GiB, two threads. Each
+head fit took about12s and15,572-row inference0.02–0.03s. Actual environment:
+Python3.12.14/NumPy2.3.5/pandas2.2.3/scikit-learn1.9.1, differing from current
+package NumPy/pandas pins.
+
+The [points protocol](../src/fpl_predict_resources/incumbent_availability_points_protocol.json)
+is fixed before points scoring. `availability-points` fits the original unconditional
+core target with/without the same two features and fixed HGB7/weights. The DC
+learner is shared, capped at each arm's own appearance probability. Minutes/p60
+models are not refitted. No conditional model, post-hoc probability multiplier,
+calibration search or fitted-binary save. Supply original manifest, qualified head
+report and predictions with checksums; see `fpl-predict availability-points --help`.
+
+Report both windows' player-GW errors/rankings, all arms, and matched historical
+external/practical comparisons onGW28–38 with retained external forecasts and
+identical neutral policy. No external retraining is needed. Original2024/25Dastan
+cannot receive fabricated news from a source starting2025: keep those results
+separate. A point-error win without legal selection support or existing
+multi-season evidence will not replace the approved champion.

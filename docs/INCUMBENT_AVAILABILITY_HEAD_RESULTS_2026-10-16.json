@@ -1,0 +1,580 @@
+{
+  "policy": {
+    "schema_version": 1,
+    "method": "incumbent-availability-ablation-v1",
+    "training": "2020-21 through 2024-25 plus 2025-26 GW1-19",
+    "validation": [
+      20,
+      27
+    ],
+    "audit": [
+      28,
+      38
+    ],
+    "news_scope": [
+      4,
+      38
+    ],
+    "estimator": "fixed incumbent hgb7 squared-error regressor, clipped [0,1]",
+    "features": [
+      "home",
+      "n_history",
+      "days_since_last",
+      "last_minutes",
+      "last_points",
+      "last5_minutes",
+      "last5_points",
+      "pos_1",
+      "pos_2",
+      "pos_3",
+      "pos_4",
+      "ew4_minutes",
+      "ew4_points_core",
+      "ew4_goals_scored",
+      "ew4_assists",
+      "ew4_clean_sheets",
+      "ew4_bonus",
+      "ew4_bps",
+      "ew4_threat",
+      "ew4_creativity",
+      "ew4_saves",
+      "ew4_expected_goals",
+      "ew4_expected_assists",
+      "ew4_expected_goals_conceded",
+      "ew4_played",
+      "ew4_sixty",
+      "ew12_minutes",
+      "ew12_points_core",
+      "ew12_goals_scored",
+      "ew12_assists",
+      "ew12_clean_sheets",
+      "ew12_bonus",
+      "ew12_bps",
+      "ew12_threat",
+      "ew12_creativity",
+      "ew12_saves",
+      "ew12_expected_goals",
+      "ew12_expected_assists",
+      "ew12_expected_goals_conceded",
+      "ew12_played",
+      "ew12_sixty",
+      "team_ew4_gf",
+      "team_ew4_ga",
+      "team_ew12_gf",
+      "team_ew12_ga",
+      "opp_ew4_gf",
+      "opp_ew4_ga",
+      "opp_ew12_gf",
+      "opp_ew12_ga"
+    ],
+    "augmentation": [
+      "availability_chance",
+      "availability_missing"
+    ],
+    "weights": "identical incumbent 730.5-day recency weights",
+    "refit_after_validation": false,
+    "text_or_return_gw_used": false,
+    "primary": "candidate fixture-level mean per-GW Brier, structured minus control",
+    "block": 4,
+    "bootstrap_draws": 4000,
+    "bootstrap_seed": 20261016,
+    "head_gate": {
+      "candidate_brier_relative_improvement": 0.005,
+      "all_brier_no_worse": true,
+      "block4_difference_upper_below_zero": true,
+      "both_validation_and_reused_audit": true
+    },
+    "follow_up": "only if head gate passes: fixed unconditional core feature augmentation; no probability multiplication",
+    "promotion": false,
+    "limits": [
+      "already inspected retrospective windows, not untouched",
+      "same architecture and training schedule, not the saved champion predictions",
+      "older feature-cache cutoffs/schedules reconstructed; upstream statistics mutable",
+      "official FPL syndicated availability, not independent club NLP",
+      "fixture-level probabilities; no independent-fixture assumption for DGW any-appearance",
+      "one season of news cannot satisfy existing multi-season promotion gates"
+    ]
+  },
+  "training_rows": 147500,
+  "evaluation": {
+    "validation": {
+      "metrics": {
+        "control": {
+          "all": {
+            "n": 6529,
+            "brier": 0.08194358821497824,
+            "reliability": [
+              {
+                "lower": 0,
+                "upper": 0.5,
+                "n": 4082,
+                "mean_probability": 0.09703436420633166,
+                "actual_rate": 0.08304752572268496
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.8,
+                "n": 734,
+                "mean_probability": 0.664206392535703,
+                "actual_rate": 0.6880108991825613
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.95,
+                "n": 1360,
+                "mean_probability": 0.8968067784647721,
+                "actual_rate": 0.9102941176470588
+              },
+              {
+                "lower": 0.95,
+                "upper": 1,
+                "n": 353,
+                "mean_probability": 0.9604206694298123,
+                "actual_rate": 0.9490084985835694
+              }
+            ],
+            "high_probability_n": 1713,
+            "high_probability_misses": 140
+          },
+          "candidates": {
+            "n": 1762,
+            "brier": 0.09678095399417165,
+            "reliability": [
+              {
+                "lower": 0,
+                "upper": 0.5,
+                "n": 106,
+                "mean_probability": 0.39645331087029567,
+                "actual_rate": 0.33962264150943394
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.8,
+                "n": 205,
+                "mean_probability": 0.6687730627672486,
+                "actual_rate": 0.6487804878048781
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.95,
+                "n": 1104,
+                "mean_probability": 0.9046449690287179,
+                "actual_rate": 0.9112318840579711
+              },
+              {
+                "lower": 0.95,
+                "upper": 1,
+                "n": 347,
+                "mean_probability": 0.9604642011092096,
+                "actual_rate": 0.9510086455331412
+              }
+            ],
+            "high_probability_n": 1451,
+            "high_probability_misses": 115
+          }
+        },
+        "structured": {
+          "all": {
+            "n": 6529,
+            "brier": 0.06593780737277266,
+            "reliability": [
+              {
+                "lower": 0,
+                "upper": 0.5,
+                "n": 3962,
+                "mean_probability": 0.06618151588528125,
+                "actual_rate": 0.05906108026249369
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.8,
+                "n": 720,
+                "mean_probability": 0.6658712373835785,
+                "actual_rate": 0.6347222222222222
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.95,
+                "n": 1005,
+                "mean_probability": 0.8965730141767109,
+                "actual_rate": 0.9104477611940298
+              },
+              {
+                "lower": 0.95,
+                "upper": 1,
+                "n": 842,
+                "mean_probability": 0.9743343955584318,
+                "actual_rate": 0.9631828978622328
+              }
+            ],
+            "high_probability_n": 1847,
+            "high_probability_misses": 121
+          },
+          "candidates": {
+            "n": 1762,
+            "brier": 0.06968065664002236,
+            "reliability": [
+              {
+                "lower": 0,
+                "upper": 0.5,
+                "n": 144,
+                "mean_probability": 0.23694502894098501,
+                "actual_rate": 0.1388888888888889
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.8,
+                "n": 176,
+                "mean_probability": 0.6795916609236785,
+                "actual_rate": 0.6818181818181818
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.95,
+                "n": 658,
+                "mean_probability": 0.9097379907325689,
+                "actual_rate": 0.9270516717325228
+              },
+              {
+                "lower": 0.95,
+                "upper": 1,
+                "n": 784,
+                "mean_probability": 0.9740975109965083,
+                "actual_rate": 0.9630102040816326
+              }
+            ],
+            "high_probability_n": 1442,
+            "high_probability_misses": 77
+          }
+        }
+      },
+      "primary": {
+        "difference": -0.02715922142778247,
+        "block4_interval": [
+          -0.031155807293230475,
+          -0.023162635562334465
+        ],
+        "gameweeks": 8
+      },
+      "equal_coverage": {
+        "weeks": [
+          {
+            "gameweek": 20,
+            "n": 176,
+            "control_misses": 11,
+            "structured_misses": 9
+          },
+          {
+            "gameweek": 21,
+            "n": 179,
+            "control_misses": 8,
+            "structured_misses": 7
+          },
+          {
+            "gameweek": 22,
+            "n": 190,
+            "control_misses": 24,
+            "structured_misses": 14
+          },
+          {
+            "gameweek": 23,
+            "n": 185,
+            "control_misses": 16,
+            "structured_misses": 12
+          },
+          {
+            "gameweek": 24,
+            "n": 175,
+            "control_misses": 17,
+            "structured_misses": 12
+          },
+          {
+            "gameweek": 25,
+            "n": 172,
+            "control_misses": 11,
+            "structured_misses": 8
+          },
+          {
+            "gameweek": 26,
+            "n": 193,
+            "control_misses": 15,
+            "structured_misses": 12
+          },
+          {
+            "gameweek": 27,
+            "n": 181,
+            "control_misses": 13,
+            "structured_misses": 6
+          }
+        ],
+        "n": 1451,
+        "control_misses": 115,
+        "structured_misses": 80
+      },
+      "gate": {
+        "passed": true,
+        "relative_candidate_reduction": 0.2800168445930108,
+        "checks": {
+          "candidate_relative_reduction_at_least_half_percent": true,
+          "all_brier_no_worse": true,
+          "descriptive_block4_upper_below_zero": true
+        }
+      }
+    },
+    "audit": {
+      "metrics": {
+        "control": {
+          "all": {
+            "n": 9043,
+            "brier": 0.08245916660012158,
+            "reliability": [
+              {
+                "lower": 0,
+                "upper": 0.5,
+                "n": 5763,
+                "mean_probability": 0.09081324920808007,
+                "actual_rate": 0.09023078257851813
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.8,
+                "n": 946,
+                "mean_probability": 0.6792106916983598,
+                "actual_rate": 0.6976744186046512
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.95,
+                "n": 1915,
+                "mean_probability": 0.8964497918387757,
+                "actual_rate": 0.8976501305483029
+              },
+              {
+                "lower": 0.95,
+                "upper": 1,
+                "n": 419,
+                "mean_probability": 0.9610291091125197,
+                "actual_rate": 0.9403341288782816
+              }
+            ],
+            "high_probability_n": 2334,
+            "high_probability_misses": 221
+          },
+          "candidates": {
+            "n": 2403,
+            "brier": 0.10222949069344621,
+            "reliability": [
+              {
+                "lower": 0,
+                "upper": 0.5,
+                "n": 182,
+                "mean_probability": 0.4003569107636267,
+                "actual_rate": 0.4065934065934066
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.8,
+                "n": 248,
+                "mean_probability": 0.6940352948936315,
+                "actual_rate": 0.6532258064516129
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.95,
+                "n": 1557,
+                "mean_probability": 0.9045524169346754,
+                "actual_rate": 0.9094412331406551
+              },
+              {
+                "lower": 0.95,
+                "upper": 1,
+                "n": 416,
+                "mean_probability": 0.9610426346218726,
+                "actual_rate": 0.9399038461538461
+              }
+            ],
+            "high_probability_n": 1973,
+            "high_probability_misses": 166
+          }
+        },
+        "structured": {
+          "all": {
+            "n": 9043,
+            "brier": 0.07167956659584726,
+            "reliability": [
+              {
+                "lower": 0,
+                "upper": 0.5,
+                "n": 5438,
+                "mean_probability": 0.0629172930444173,
+                "actual_rate": 0.0522250827510114
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.8,
+                "n": 997,
+                "mean_probability": 0.6627115469199726,
+                "actual_rate": 0.6409227683049148
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.95,
+                "n": 1373,
+                "mean_probability": 0.8952769539836856,
+                "actual_rate": 0.8747268754552076
+              },
+              {
+                "lower": 0.95,
+                "upper": 1,
+                "n": 1235,
+                "mean_probability": 0.9747139364867138,
+                "actual_rate": 0.9465587044534413
+              }
+            ],
+            "high_probability_n": 2608,
+            "high_probability_misses": 238
+          },
+          "candidates": {
+            "n": 2403,
+            "brier": 0.08120171144453396,
+            "reliability": [
+              {
+                "lower": 0,
+                "upper": 0.5,
+                "n": 159,
+                "mean_probability": 0.22932691264157173,
+                "actual_rate": 0.11949685534591195
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.8,
+                "n": 229,
+                "mean_probability": 0.6549109085368923,
+                "actual_rate": 0.6681222707423581
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.95,
+                "n": 873,
+                "mean_probability": 0.9091212673781697,
+                "actual_rate": 0.8980526918671249
+              },
+              {
+                "lower": 0.95,
+                "upper": 1,
+                "n": 1142,
+                "mean_probability": 0.9745512274696018,
+                "actual_rate": 0.9518388791593695
+              }
+            ],
+            "high_probability_n": 2015,
+            "high_probability_misses": 144
+          }
+        }
+      },
+      "primary": {
+        "difference": -0.020695811147097513,
+        "block4_interval": [
+          -0.024059264710203844,
+          -0.018068654897798384
+        ],
+        "gameweeks": 11
+      },
+      "equal_coverage": {
+        "weeks": [
+          {
+            "gameweek": 28,
+            "n": 182,
+            "control_misses": 8,
+            "structured_misses": 7
+          },
+          {
+            "gameweek": 29,
+            "n": 183,
+            "control_misses": 11,
+            "structured_misses": 10
+          },
+          {
+            "gameweek": 30,
+            "n": 179,
+            "control_misses": 17,
+            "structured_misses": 13
+          },
+          {
+            "gameweek": 31,
+            "n": 144,
+            "control_misses": 10,
+            "structured_misses": 6
+          },
+          {
+            "gameweek": 32,
+            "n": 189,
+            "control_misses": 22,
+            "structured_misses": 18
+          },
+          {
+            "gameweek": 33,
+            "n": 239,
+            "control_misses": 16,
+            "structured_misses": 15
+          },
+          {
+            "gameweek": 34,
+            "n": 126,
+            "control_misses": 10,
+            "structured_misses": 8
+          },
+          {
+            "gameweek": 35,
+            "n": 185,
+            "control_misses": 18,
+            "structured_misses": 14
+          },
+          {
+            "gameweek": 36,
+            "n": 194,
+            "control_misses": 20,
+            "structured_misses": 14
+          },
+          {
+            "gameweek": 37,
+            "n": 176,
+            "control_misses": 8,
+            "structured_misses": 7
+          },
+          {
+            "gameweek": 38,
+            "n": 176,
+            "control_misses": 26,
+            "structured_misses": 24
+          }
+        ],
+        "n": 1973,
+        "control_misses": 166,
+        "structured_misses": 136
+      },
+      "gate": {
+        "passed": true,
+        "relative_candidate_reduction": 0.20569191048762914,
+        "checks": {
+          "candidate_relative_reduction_at_least_half_percent": true,
+          "all_brier_no_worse": true,
+          "descriptive_block4_upper_below_zero": true
+        }
+      }
+    }
+  },
+  "timing": {
+    "control_fit_seconds": 12.340883458033204,
+    "control_predict_seconds": 0.02828641701489687,
+    "structured_fit_seconds": 12.12618716689758,
+    "structured_predict_seconds": 0.0234974161721766
+  },
+  "integration_eligible": true,
+  "model_promotion": false,
+  "points_gain_measured": false,
+  "minutes_change": "None: minutes and p60 learners unchanged in this ablation",
+  "manifest_sha256": "b1fa38097c49607687bd3999660de94e7371f2023d62c95dd1981f45ab8825e5",
+  "predictions_sha256": "d9f89369fce2befaf93273d9891cb66117670d467117198246a84b49a74ba49a",
+  "prefit_commit": "07214b9ea50469a026de8785bf8bc48be8ffbca1"
+}

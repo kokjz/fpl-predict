@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "method": "incumbent-availability-unconditional-points-v1",
+  "arms": [
+    "control",
+    "structured"
+  ],
+  "training": "identical head study rows/weights, through GW19; no validation refit",
+  "core": "fixed hgb7, clip [0,20], blend1; structured arm adds chance and missingness",
+  "dc": "same fixed hgb7 training on observed DC; each arm caps at its own appearance probability",
+  "minutes": "unchanged; no minutes/p60 refit",
+  "interpretation": "direct unconditional target training including zero outcomes; never multiply core points by p_play",
+  "qualification": {
+    "candidate_rmse_relative_improvement": 0.005,
+    "mae_max_relative_worsening": 0.005,
+    "candidate_ndcg_no_worse": true,
+    "both_windows": true,
+    "owned_points_nonnegative_required": true
+  },
+  "external_replay": "Compare both arms and retained external adaptations on identical 2025/26 GW28-38 market and original policy/scenarios",
+  "no_original_2024_dastan_backcast": "News starts2025; no fabricated historical articles/labels",
+  "promotion": false,
+  "limits": [
+    "reused historical outcomes",
+    "source and schedule limitations inherited from head manifest",
+    "single availability season cannot satisfy multi-season promotion gates",
+    "adaptations are not original external systems"
+  ]
+}
