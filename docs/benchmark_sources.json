@@ -80,5 +80,15 @@
     "status": "one fixed HGB feature-bundle pilot executed; not original Dastan architecture",
     "benchmark_eligible": false,
     "promoted": false
+  },
+  "availability_source_audit": {
+    "source": "AIrsenal historical attributes",
+    "revision": "212a0aa478fe885808355dc5f08f81f8f9822893",
+    "report": "AVAILABILITY_SOURCE_AUDIT_2026-10-15.md",
+    "scope": "2025/26 GW4,20-28,38",
+    "verified_prefixes": 11,
+    "identity_rows_reconciled": 8823,
+    "model_admitted": false,
+    "limitation": "sampled Git-history evidence, not certified capture or full-season coverage"
   }
 }

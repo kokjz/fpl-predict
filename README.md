@@ -74,6 +74,8 @@ rebuilds histories at common deadlines under a [pre-fit protocol](docs/NATIVE_RE
 It is research tooling; merged code does not replace approved forecasting weights.
 The optional [native development study](docs/native_development.md) tests a fixed
 set of richer-history challengers with chronological error and decision gates.
+An offline [availability source audit](docs/AVAILABILITY_SOURCE_AUDIT_2026-10-15.md)
+checks exact historical CSV prefixes against pre-deadline Git publication records.
 
 ## Install
 
