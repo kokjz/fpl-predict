@@ -1,11 +1,11 @@
 # Engine repository instructions
 
 - This repository is public-ready source only. Never copy parent-project context, squad/team files, screenshots, credentials or personal decision/history into Git.
-- Create a purpose-specific branch for each change. Test coherent changes before pushing; commit and push regularly. Significant changes require a PR, diff/review/check validation, resolved findings and merge only after checks pass.
+- Create a purpose-specific branch/PR for each coherent logical change set, not for each commit or subtask. Keep closely related or tightly dependent implementation, tests, docs and migrations together; use separate commits for meaningful reviewable steps. Split branches/PRs when changes can be reviewed, validated and merged independently, or explicit staged delivery materially improves review/risk. If stacked PRs are necessary, document dependencies and merge order. Test before pushing; commit/push regularly and merge only after review, resolved findings and required checks.
 - A code merge does not promote a trained model. Preserve the approved registry and chronological evaluation/promotion gates. Do not tune on inspected holdouts and call them untouched.
 - Keep all mutable runtime artifacts under the ignored workspace selected by FPL_PREDICT_HOME. Test with synthetic data, not a real team.
 - Run pytest and tools/check_repository.py, inspect staged diff, and verify privacy before every commit/push.
 - Never rewrite published substantive history, delete validation evidence, or execute model training/account actions as part of routine repository maintenance.
 - Report skipped integration checks and unmeasured performance honestly. Do not introduce CI data downloads or automatic retraining/model promotion.
 - Clean up both remote and local branches after their last dependent PR has merged into main. Check open PR head/base dependencies first; never delete a branch still needed by dependent work.
-- Publish each completed, tested engine/model change promptly on its fresh branch with a new PR. Resolve all existing PRs before declaring synchronisation complete; fetch and fast-forward local main, verify it matches remote main and is clean. Preserve unrelated work and model-promotion gates.
+- Publish each completed, tested logical engine/model change set promptly on its purpose-specific branch/PR; additional commits within that scope belong on the same branch/PR. Resolve all existing PRs before declaring synchronisation complete; fetch and fast-forward local main, verify it matches remote main and is clean. Preserve unrelated work and model-promotion gates.
