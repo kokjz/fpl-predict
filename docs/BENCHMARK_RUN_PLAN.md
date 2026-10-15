@@ -1,5 +1,11 @@
 # Next full-score reference pilot: locked design, not an executed benchmark
 
+Update 15 October: the stricter common-window benchmark below remains pending.
+The source audit identified missing archived schedule knowledge and incomplete
+external feature provenance. A separately declared, explicitly ineligible
+[retrospective incumbent-method pilot](reference_pilot.md) can measure local
+pipeline cost/baseline errors. It does not relax this plan's eligibility rules.
+
 Declared 15 October 2026 before any reference fitting in this package. Historical
 outcomes have already been inspected: this is retrospective method research,
 not a newly untouched holdout. No engine/model promotion is authorised by this file.
