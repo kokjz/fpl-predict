@@ -4,6 +4,8 @@ This is one fixed retrospective Dastan-architecture **adaptation on rebuilt
 inputs**, not an original-system reproduction or an approved model. Read the
 [immutable pre-fit protocol](CONDITIONAL_REFERENCE_PROTOCOL.md), the source
 [native contracts](native_reference.md), and [attribution](../THIRD_PARTY_NOTICES.md).
+The [completed reference results](CONDITIONAL_REFERENCE_RESULTS_2026-10-15.md)
+show a modest error reduction with worse top-player ranking; no promotion follows.
 
 The default package/weekly workflow does not require XGBoost. Use an isolated
 research environment and explicitly install the `reference` extra if running this
