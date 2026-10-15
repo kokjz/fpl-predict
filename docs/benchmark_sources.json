@@ -1,0 +1,56 @@
+{
+  "assessed_on": "2026-10-15",
+  "scope": "readiness audit only; no new model scores",
+  "sources": [
+    {
+      "model": "incumbent_v1",
+      "status": "blocked_for_2025-26_full_score_archive_join",
+      "reason": "Original OOF exports are core points; independent full-score DC evaluation is GW28-38, outside OpenFPL GW1-24 archive. A future-trained DC component is inadmissible."
+    },
+    {
+      "model": "dastan",
+      "revision": "758db9247e8b3a9a870c991064f74d8339d61cd0",
+      "url": "https://github.com/qazybekb/smartplayfpl-dastan",
+      "status": "2024-25_archived_comparison_available",
+      "reason": "Existing matched reference is retrospective; 2025-26 OpenFPL benchmark requires separately fitted Dastan forecasts, not current deployment weights."
+    },
+    {
+      "model": "original_openfpl_via_dastan",
+      "revision": "758db9247e8b3a9a870c991064f74d8339d61cd0",
+      "url": "https://github.com/qazybekb/smartplayfpl-dastan/blob/758db9247e8b3a9a870c991064f74d8339d61cd0/docs/DATA.md",
+      "status": "partial_archive_integrity_verified",
+      "bridge": {
+        "sha256": "8d11c37a7f7134a93324fdac979d38c3136f8831d3f627dbed8a4eabc5b8b492",
+        "hash_verified": true,
+        "rows": 18173,
+        "unique_player_gameweeks": 18173,
+        "season": "2025-26",
+        "gameweeks": "1-24"
+      },
+      "predictions": {
+        "publisher_sha256": "8113cb86392d98000e84ae0b383c7871cf35bf74a08cd3042cb5c8d81eab3849",
+        "hash_verified": false,
+        "reason": "Prediction CSV not retrieved: direct URL unavailable and connected file reader size/format limit. Published metadata is not independently verified prediction evidence."
+      },
+      "remaining": "Verify actual prediction bytes, exporter/model identity, training/selection provenance, full-score target and permissions before admission."
+    },
+    {
+      "model": "openfpl_scout_ai",
+      "url": "https://github.com/elcaiseri/OpenFPL-Scout-AI",
+      "status": "needs_row_exports_and_provenance_review",
+      "reason": "Frozen flag alone does not prove predeadline capture. Older technical report discloses selection leakage; verify exact model version, data permissions and cutoff history."
+    },
+    {
+      "model": "airsenal",
+      "url": "https://github.com/alan-turing-institute/AIrsenal",
+      "status": "needs_named_configuration_and_asof_inputs",
+      "reason": "No compatible forecast archive identified in inspected material. Consider closed-form configuration before MCMC."
+    },
+    {
+      "model": "lionel",
+      "url": "https://github.com/jotohow/lionel",
+      "status": "deferred",
+      "reason": "Source-based reproduction requires historical reconstruction and fitting; lower priority than reusable archives."
+    }
+  ]
+}
