@@ -76,6 +76,8 @@ The optional [native development study](docs/native_development.md) tests a fixe
 set of richer-history challengers with chronological error and decision gates.
 An offline [availability source audit](docs/AVAILABILITY_SOURCE_AUDIT_2026-10-15.md)
 checks exact historical CSV prefixes against pre-deadline Git publication records.
+The optional [conditional architecture reference](docs/conditional_reference.md)
+uses an explicitly installed research dependency and a separately frozen protocol.
 
 ## Install
 

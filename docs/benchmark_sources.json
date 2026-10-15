@@ -90,5 +90,13 @@
     "identity_rows_reconciled": 8823,
     "model_admitted": false,
     "limitation": "sampled Git-history evidence, not certified capture or full-season coverage"
+  },
+  "architecture_variant_update": {
+    "report": "CONDITIONAL_REFERENCE_RESULTS_2026-10-15.md",
+    "method": "dastan-architecture-cutoff-gapmask-xgb320-v1",
+    "heads_completed": 32,
+    "benchmark_eligible": false,
+    "model_promoted": false,
+    "original_system_admission": "unresolved; modified inputs/environment and retrospective timing limits"
   }
 }
