@@ -4,6 +4,23 @@ Declared15October2026 before fitting. This is a separately named retrospective
 feature-bundle pilot, `native-window-cutoff-hgb7-v1`, not original Dastan or
 OpenFPL predictions, a32-head ensemble reproduction, or an approved model.
 
+## Pre-fit amendment: explicit training-gap variant
+
+The initial strict readiness check failed on two mapped2025/26GW9 appearances:
+fixture83/FPLcodes155408 and168636, missing from both player profiles and the
+inspected match roster. **No model had been fitted or new accuracy scored.**
+The executed variant is named `native-window-cutoff-hgb7-gapmask-v1` and retains
+these two rows with six Understat numeric fields as NaN. No zeros, predicted
+values, row exclusions or incumbent features fill them. Preparation independently
+checks this exact frozen training-key mask; no other mapped appearance gaps,
+particularly validation/test gaps, pass. The original strict failure is retained.
+This changes the data-completeness policy, not observed outcomes or hyperparameters.
+
+Pre-fit learner conditioning clarification: the native systems fit by position,
+whereas this deliberately pooled learner needs explicit role context. Append four
+fixed position indicators to286 rebuilt predictors (290 learner inputs). No extra
+fit, tuning or error-driven selection is involved; this was fixed before fitting.
+
 ## Fixed experiment
 
 - Full native window/statistic names:286 predictors. Rebuild from canonical raw
@@ -40,7 +57,8 @@ Rest and14-day congestion are measured at the common deadline, not a final or
 unverified future kickoff. Missing defensive actions remain unknown, not zero.
 
 Raw unmapped/missing numeric observations remain NaN. Known non-appearance event
-statistics can be zero; unavailable mapped appearance records fail preparation.
+statistics can be zero; mapped appearance gaps outside the exact predeclared
+training mask fail preparation.
 No prediction row is dropped because its outcome or minutes are inconvenient.
 
 Snapshot features use only the38 verified2025/26 bootstrap captures. **All seven

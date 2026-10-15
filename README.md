@@ -69,6 +69,9 @@ historical bootstrap captures and player/team/opponent source-time contracts
 separately from accuracy scoring.
 See the [dated provenance findings](docs/PROVENANCE_FINDINGS_2026-10-15.md) for
 verified inputs, observed temporal concerns and remaining reference-fit gates.
+A separately named [native-window reference pilot](docs/native_reference.md)
+rebuilds histories at common deadlines under a [pre-fit protocol](docs/NATIVE_REFERENCE_PROTOCOL.md).
+It is research tooling; merged code does not replace approved forecasting weights.
 
 ## Install
 
