@@ -63,7 +63,7 @@ def validate(frame):
     for k in ('gameweek','fpl_code'):
         a=d[k].to_numpy(float)
         if not np.isfinite(a).all() or (a<1).any() or not (a==a.astype(int)).all():raise ValueError('Invalid identity')
-    if not d.gameweek.between(4,38).all() or not d.candidate.isin([True,False]).all():raise ValueError('Invalid window/cohort')
+    if set(d.gameweek)!=set(range(4,39)) or not d.candidate.isin([True,False]).all():raise ValueError('Incomplete fixed window/cohort')
     for k in FORM+['actual_minutes']:
         a=d[k].to_numpy(float)
         if not np.isfinite(a).all() or (a<0).any():raise ValueError('Invalid numeric probe input')
@@ -119,7 +119,9 @@ def run(frame):
             v=model.predict_proba(features[1][arm])[:,1];p=model.predict_proba(features[2][arm])[:,1]
             summary[arm]=dict(validation=metrics(validation,v),test=metrics(test,p));predictions[arm]=p
     # Paired whole-GW resampling for the one declared source-rich versus form contrast.
-    candidates=predictions[predictions.candidate]; yy=candidates.actual_minutes.gt(0).astype(float)
+    candidates=predictions[predictions.candidate]
+    if set(candidates.gameweek)!=set(range(28,39)):raise ValueError('Incomplete test candidate GW coverage')
+    yy=candidates.actual_minutes.gt(0).astype(float)
     gap=(candidates.form_chance_text-yy)**2-(candidates.form-yy)**2
     weekly=pd.DataFrame({'gw':candidates.gameweek,'gap':gap}).groupby('gw').gap.mean()
     rng=np.random.default_rng(20261016);n=len(weekly);length=min(4,n)

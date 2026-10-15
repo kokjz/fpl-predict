@@ -6,7 +6,7 @@ from news_availability_probe import FORM,prepare_frame,run,train_features,valida
 
 def data():
     rows=[]
-    for gw in (4,5,19,20,27,28,29,38):
+    for gw in range(4,39):
         for i in range(12):
             row={k:float(i%3) for k in FORM}
             row.update(season='2025-26',gameweek=gw,fpl_code=i+1,deadline='2026-05-01T10:00Z',
@@ -19,7 +19,7 @@ def data():
 def test_chronological_probe_keeps_all_arms_and_never_promotes():
     report,pred=run(data())
     assert set(report['arms'])=={'form','form_chance','form_text','form_chance_text'}
-    assert report['test_rows']==36 and report['declared_primary']['gameweeks']==3
+    assert report['test_rows']==132 and report['declared_primary']['gameweeks']==11
     assert not report['model_promotion'] and not report['points_or_squad_gain_measured']
     assert np.isfinite(pred[list(report['arms'])]).all().all()
 
@@ -53,3 +53,13 @@ def test_prepare_excludes_future_and_same_gw_outcomes_from_features():
     b,_=prepare_frame(p,obs)
     assert a[FORM].equals(b[FORM]) and a.last_minutes.iloc[0]==90
     assert not a.candidate.iloc[0] and coverage[0]['admitted']==1
+
+
+def test_probe_rejects_missing_weeks_instead_of_stitching_blocks():
+    d=data();d=d[d.gameweek.ne(30)]
+    with pytest.raises(ValueError,match="Incomplete"):validate(d)
+
+
+def test_probe_requires_candidate_coverage_for_every_test_week():
+    d=data();d.loc[d.gameweek.eq(38),"candidate"]=False
+    with pytest.raises(ValueError,match="candidate GW"):run(d)
