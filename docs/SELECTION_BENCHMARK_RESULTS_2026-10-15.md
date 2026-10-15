@@ -90,3 +90,13 @@ The watchdog monitored disk growth/free space throughout each job. There were no
 Pre-scoring implementation: `caed44f`; exact source/input/output hashes are in the aggregate JSON. Later input-guard hardening does not alter these retained predictions, admitted input bytes or actions. Data sources include the pinned [Vaastav archive](https://github.com/vaastav/Fantasy-Premier-League), [Dastan revision](https://github.com/qazybekb/smartplayfpl-dastan/tree/758db9247e8b3a9a870c991064f74d8339d61cd0), the [fpl-forecast frozen publication](https://github.com/daniel-mehta/fpl-forecast/tree/f76514676147dad7e6d7e247576c9d19ce90b330/data), archived bootstraps and the [dated fixture-source audit](PROVENANCE_FINDINGS_2026-10-15.md). Publisher capture claims, manual calendar transcription, historical corrections and reused-test selection remain limitations.
 
 The approved model remains unchanged. This benchmark improves the evidence and tooling; it does not prove a future points gain or automatically select a new champion.
+
+
+## Availability follow-up — 16 October 2026
+
+The [matched incumbent availability study and six-method rebenchmark](INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md)
+now tests structured labels against the full participation method, followed by
+unconditional points-feature augmentation on historical data. Appearance error
+improves, but points MAE/ranking and owned/rolling decisions do not jointly pass
+the progression checks. The challenger is unapproved; original-system comparisons
+in this report remain unchanged. New aggregates/provenance/cost are linked above.

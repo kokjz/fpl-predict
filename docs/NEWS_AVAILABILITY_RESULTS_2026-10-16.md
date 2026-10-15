@@ -40,3 +40,13 @@ The control here is a deliberately small prior-form component, **not** a matched
 All35prefix admissions/input preparation took **11.58seconds**, peak sampled RSS **1.665GiB**. The four fixed fits, reporting and a separate retained all-player completed-GW diagnostic took **2.47seconds**, peak **0.349GiB**, two threads. Time includes orchestration and diagnostics, not just fitting. No GPU/cloud/PC/paid feed was needed. Resource and disk limits were monitored continuously during these jobs, with no breaches. No raw archive, fitted binary, private manager data or individual predictions are committed.
 
 Sources checked15OctoberUTC/16OctoberSingapore: [pinned AIrsenal exporter](https://github.com/alan-turing-institute/AIrsenal/blob/212a0aa478fe885808355dc5f08f81f8f9822893/src/airsenal/export/attributes.py), [pinned Dastan README and ablations](https://github.com/qazybekb/smartplayfpl-dastan/blob/758db9247e8b3a9a870c991064f74d8339d61cd0/README.md), and [calibration guidance](https://scikit-learn.org/stable/modules/calibration.html). Existing provenance limits and promotion gates remain in effect.
+
+
+## Availability follow-up — 16 October 2026
+
+The [matched incumbent availability study and six-method rebenchmark](INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md)
+now tests structured labels against the full participation method, followed by
+unconditional points-feature augmentation on historical data. Appearance error
+improves, but points MAE/ranking and owned/rolling decisions do not jointly pass
+the progression checks. The challenger is unapproved; original-system comparisons
+in this report remain unchanged. New aggregates/provenance/cost are linked above.

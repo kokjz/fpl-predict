@@ -28,7 +28,7 @@ fpl-predict incumbent-availability prepare \
   --proof /path/to/reviewed-prefix-proof.json --output /path/to/new-manifest.json \
   --trust-local-cache
 fpl-predict incumbent-availability run \
-  --manifest /path/to/new-manifest.json --sha256 MANIFEST_SHA256 \
+  --manifest /path/to/new-manifest.json --sha 256 MANIFEST_SHA256 \
   --output /path/to/new-results --trust-local-cache
 ```
 
@@ -76,14 +76,14 @@ were measured after protocol commit `07214b9`: 147,500 identical training rows,
 
 Both fixed progression gates passed. Audit mean per-GW difference −0.020696,
 descriptive four-GW interval [−0.024059, −0.018069]. At exactly matched coverage,
-nonappearances fell from166 to136 across1,973 candidate fixture selections.
+nonappearances fell from 166 to 136 across 1,973 candidate fixture selections.
 These are fixture selections, not distinct owned players or realised squad points.
 This establishes incremental historical component value over the **full method**,
 not production promotion or proof of superior calibration at every band.
 
-Preparation and fitting took41.87s, peak sampled RSS1.43GiB, two threads. Each
-head fit took about12s and15,572-row inference0.02–0.03s. Actual environment:
-Python3.12.14/NumPy2.3.5/pandas2.2.3/scikit-learn1.9.1, differing from current
+Preparation and fitting took 41.87s, peak sampled RSS 1.43GiB, two threads. Each
+head fit took about 12s and 15,572-row inference 0.02–0.03s. Actual environment:
+Python 3.12.14/NumPy 2.3.5/pandas 2.2.3/scikit-learn 1.9.1, differing from current
 package NumPy/pandas pins.
 
 The [points protocol](../src/fpl_predict_resources/incumbent_availability_points_protocol.json)
@@ -95,9 +95,9 @@ calibration search or fitted-binary save. Supply original manifest, qualified he
 report and predictions with checksums; see `fpl-predict availability-points --help`.
 
 Report both windows' player-GW errors/rankings, all arms, and matched historical
-external/practical comparisons onGW28–38 with retained external forecasts and
-identical neutral policy. No external retraining is needed. Original2024/25Dastan
-cannot receive fabricated news from a source starting2025: keep those results
+external/practical comparisons on GW28–38 with retained external forecasts and
+identical neutral policy. No external retraining is needed. Original 2024/25Dastan
+cannot receive fabricated news from a source starting 2025: keep those results
 separate. A point-error win without legal selection support or existing
 multi-season evidence will not replace the approved champion.
 
@@ -119,7 +119,7 @@ Compare at a common deadline with unequal source feeds; extra source value does
 not establish equal-input architecture superiority. Historical source limits remain.
 
 A first external-replay attempt stopped **before scoring** because fixture-history
-forecasts include23 player-gameweeks absent from the retained predeadline listed
+forecasts include 23 player-gameweeks absent from the retained predeadline listed
 market. These rows stay in every method's error metrics; all methods use the same
 original listed roster for selection. The adapter now reports this uniform
 source-based restriction explicitly instead of requiring the future fixture-history
