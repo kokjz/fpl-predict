@@ -118,9 +118,11 @@ def scenarios(week, count=12, seed=20261015, minimum_cost=900):
             for pos, n in POSITIONS.items():
                 group = pool[pool.position.eq(pos)]
                 if len(group) < n: raise ValueError('Incomplete positional market')
-                weight = np.ones(len(group))
-                if stratum == 'ownership': weight = np.sqrt(group.ownership.to_numpy(float)+.1)
-                if stratum == 'rotation': weight = 1/(1+group.prior_minutes.to_numpy(float)/30)
+                # Common price tilt makes the declared budget band feasible
+                # without consulting forecasts or target outcomes.
+                weight = (group.price_tenths.to_numpy(float)/50)**2
+                if stratum == 'ownership': weight *= np.sqrt(group.ownership.to_numpy(float)+.1)
+                if stratum == 'rotation': weight /= 1+group.prior_minutes.to_numpy(float)/30
                 chosen = rng.choice(group.fpl_code.to_numpy(), n, replace=False, p=weight/weight.sum())
                 ids.extend(map(int, chosen))
             key = tuple(sorted(ids)); squad = choices(pool, ids, 'price_tenths')
@@ -128,7 +130,7 @@ def scenarios(week, count=12, seed=20261015, minimum_cost=900):
             if key not in seen and legal(squad) and minimum_cost <= cost <= 1000:
                 result.append(dict(stratum=stratum, ids=list(key))); seen.add(key); found += 1
                 if found == count//3: break
-        if found != count//3: raise ValueError('Scenario construction budget exhausted')
+        if found != count//3: raise ValueError(f'Scenario construction budget exhausted: {stratum}, {found}/{count//3}')
     return result
 
 

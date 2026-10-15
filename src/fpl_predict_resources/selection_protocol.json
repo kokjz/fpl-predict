@@ -1,18 +1,55 @@
 {
-  "version": 1,
+  "version": 2,
   "primary": "owned-15 mean realised net points per GW, equal neutral scenario weights",
   "reference": "incumbent method; do not select a reference after results",
   "seed": 20261015,
-  "scenarios": {"count": 12, "strata": ["balanced", "ownership", "rotation"], "opening_budget_tenths": [900,1000]},
-  "secondary": ["weekly 100m reset", "six causal quote-ledger rolling paths, one-GW policy"],
+  "scenarios": {
+    "count": 12,
+    "strata": [
+      "balanced",
+      "ownership",
+      "rotation"
+    ],
+    "opening_budget_tenths": [
+      900,
+      1000
+    ],
+    "common_sampling_weight": "(price_tenths/50)^2 before stratum weighting; source-only budget-feasibility correction"
+  },
+  "secondary": [
+    "weekly 100m reset",
+    "six causal quote-ledger rolling paths, one-GW policy"
+  ],
   "policy": "max XI means plus captain plus 0.1 reserve means less 4 per excess transfer; bench/vice descending mean with stable ID ties",
-  "solver": {"name":"scipy.optimize.milp/HiGHS", "seconds_per_solve":10, "relative_gap":1e-8, "require_optimal":true},
+  "solver": {
+    "name": "scipy.optimize.milp/HiGHS",
+    "seconds_per_solve": 10,
+    "relative_gap": 1e-08,
+    "require_optimal": true
+  },
   "finances": "snapshot quotes, 1000 initial capital, 1 initial FT, bank max5, half-profit selling; no chips or hindsight future prices",
-  "inference": {"replicates":4000, "seed":20261015, "primary_block":4, "sensitivity_blocks":[2,6], "method":"season-local contiguous-segment circular blocks; average scenarios within GW; simultaneous centred maximum absolute deviation across reference comparisons", "material_points_per_gw":0.25},
+  "inference": {
+    "replicates": 4000,
+    "seed": 20261015,
+    "primary_block": 4,
+    "sensitivity_blocks": [
+      2,
+      6
+    ],
+    "method": "season-local contiguous-segment circular blocks; average scenarios within GW; simultaneous centred maximum absolute deviation across reference comparisons",
+    "material_points_per_gw": 0.25
+  },
   "rolling_inference": "whole path totals and scenario sensitivity; no independent-episode CI",
   "admission": "only verified club-calendar blanks are zero; missing held-player/market forecast fails whole run, never silently drops a model or favourable path",
   "original_archive": "2024 original Dastan separate conditional weekly owned panels, lower cost bound0, no reset/rolling, original forecasts retained; no information parity claim",
   "small_archive": "original external single GW separate posthoc diagnostic only; no GW inference or pooling",
   "claim_limits": "historical outcomes already inspected; descriptive, no full-season/chip superiority or model promotion; no parameter search",
-  "resources": {"threads":2,"memory_mib":4096,"project_mib":2048,"growth_mib":256,"minimum_free_mib":5120}
+  "resources": {
+    "threads": 2,
+    "memory_mib": 4096,
+    "project_mib": 2048,
+    "growth_mib": 256,
+    "minimum_free_mib": 5120
+  },
+  "revision_note": "v1 sampling exhausted before any new selection scores; failed run retained; no outcome-based policy choice"
 }
