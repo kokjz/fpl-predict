@@ -77,8 +77,10 @@ the place to freeze prospective forecasts; this file enables no background jobs.
 
 ## Current follow-up
 
-The [I4 development study](NATIVE_DEVELOPMENT_PROTOCOL.md) isolates richer inputs
-and participation composition without scoring the reused GW28–38 audit. A true
-external-method architecture comparison and archived-forecast lineage review
-remain conditional. Neither a code merge nor the pilot admits an original system
-or promotes an operational model.
+The [I4 development study](I4_RESULTS_2026-10-15.md) completed with no finalist,
+without scoring the reused GW28–38 audit. A fixed
+[conditional architecture reference](CONDITIONAL_REFERENCE_RESULTS_2026-10-15.md)
+also completed on explicitly modified inputs; original-system admission remains
+unresolved. The [prospective handoff](PROSPECTIVE_VALIDATION_HANDOFF.md) records
+the remaining evidence and pre-deadline comparison procedure. Neither code merges
+nor retrospective benchmark wins promote an operational model.

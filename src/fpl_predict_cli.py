@@ -25,7 +25,8 @@ def main():
     if args.command == "install-model":
         if len(rest) != 1: parser.error("install-model requires one trusted artifact path")
         print(install_approved_model(rest[0])); return
-    if args.command not in ("benchmark", "benchmark-preflight", "run-experiment", "reference-pilot", "audit-deadlines", "native-reference", "native-development", "audit-availability", "conditional-reference") and not any(flag in rest for flag in ("-h", "--help")):
+    read_only_trial = args.command == "decision-trial" and bool(rest) and rest[0] == "review"
+    if not read_only_trial and args.command not in ("benchmark", "benchmark-preflight", "run-experiment", "reference-pilot", "audit-deadlines", "native-reference", "native-development", "audit-availability", "conditional-reference") and not any(flag in rest for flag in ("-h", "--help")):
         initialise()
     sys.argv = [COMMANDS[args.command], *rest]
     runpy.run_module(COMMANDS[args.command], run_name="__main__")
