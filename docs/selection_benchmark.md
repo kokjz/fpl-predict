@@ -1,0 +1,39 @@
+# Practical selection benchmark
+
+This research workflow compares **forecasting contributions under the same selection policy**. It does not compare complete external managers, execute transfers, change the approved model, or predict a user's team.
+
+The versioned [protocol](../src/fpl_predict_resources/selection_protocol.json) is fixed before new scoring. Historical outcomes have already been inspected: all results are retrospective and descriptive, even when scenarios and comparisons are now locked. This does not create a new untouched holdout.
+
+## Comparisons and admission
+
+Run each season and evidence family separately. The primary 2025/26 comparison uses incumbent-method reference forecasts, native histogram boosting, a Dastan architecture adaptation, an OpenFPL published-parameter adaptation, and an AIrsenal-inspired component model. These are named-method adaptations, not reproductions of every original system. The previously recorded forecast-error study remains unchanged.
+
+The primary experiment selects XI, captain, vice and ordered reserves from 12 fixed neutral owned squads (four balanced, four ownership weighted, four rotation-risk weighted). Scenario creation uses only listed positions, clubs, quoted prices, prior minutes and ownership, without forecasts or target outcomes. Initial squads cost £90–100m. All scenarios carry equal weight; scores average within GW before uncertainty calculations. Legacy frozen panels are a separately labelled coverage-repair sensitivity.
+
+Secondary experiments construct an independent £100m squad each week and manage six rolling paths (two per stratum), beginning with the same neutral squads, £100m total capital and one free transfer. Rolling policies use current quoted prices, purchase ledgers, half-profit selling, banked free transfers up to five, and four-point hits. Choices see only that week's forecasts and metadata. The simulation uses recorded **snapshot quotes**, not a verified deadline price tick or an original manager's transaction history. It cannot establish full-season transfer-policy superiority.
+
+The shared optimiser maximises mean starting-XI points plus captain mean, with 0.1 times reserve means as a fixed reserve-value heuristic, minus hits. It does not optimise a probability model of autosubs or look ahead beyond the available one-GW forecast. A proven optimal HiGHS solution within ten seconds is required; a timeout fails the run rather than dropping inconvenient model paths. Vice and bench order use descending means with stable ID ties. Exact-equal squad optima use the deterministic installed solver/order, whose version is recorded; this is not a claim that all solver versions pick identical ties.
+
+Only independently checked membership of a club in an as-of fixture calendar permits filling a blank with zeros. Doubles sum fixture forecasts and outcomes. Every listed player on a club with a fixture must have complete forecasts. Missing held players, conflicting positions/outcomes and missing quotes fail admission. Archive capture claims, historical corrections and manual fixture announcement transcription remain explicit limits.
+
+Original Dastan 2024/25 exports are a **separate conditional weekly owned-panel experiment**: the exported player universe omits some blanks, original information/training histories differ, cutoffs are reconstructed, and earlier fixture prices are used only to sample panels. Players lacking earlier club/price metadata are excluded uniformly and counted before scenario sampling. Squads are regenerated from that shared admitted export each week; unavailable ownership is treated as uniform weighting, so those strata do not represent actual historical template ownership. No complete-market, causal financial, fixed-season-squad or prospective claim follows. Original single-GW archives, when admitted, remain separate diagnostics with unequal information cutoffs and no season-level inference.
+
+## Scoring and uncertainty
+
+The research scorer preserves formation and bench priority, includes goalkeeper substitutions, negative points and captain fallback. Cards count as playing for autosubs; captain fallback follows the rules' minutes wording. This new scorer leaves historical reports and the normal production scorer intact. [Official historical rules](https://www.premierleague.com/ar/news/4661029) and the [selling-price explanation](https://www.premierleague.com/en/news/4593685/watch-out-some-of-your-players-wont-play-in-gameweek-31) inform these rules.
+
+Primary reporting is paired **challenger minus incumbent realised net points per GW**. Circular moving blocks within contiguous season segments resample whole GWs after panel averaging; block four is primary, two and six are sensitivities. A centred maximum-deviation bootstrap gives simultaneous 95% intervals across the incumbent comparisons within each experiment. The predeclared material margin is 0.25 points/GW, a practical judgment rather than an observed gain. Non-significance is not parity. Rolling totals describe entire paths, with no independent-episode confidence interval from a single eleven-GW window. Layers, seasons and sensitivity runs are not pooled into a best-looking result; exploratory cross-layer conclusions have no family-wide confirmatory guarantee.
+
+No chips or long-horizon policy claim is admitted without genuine historical horizon forecasts and appropriate chip/state rules. No model is promoted by these tests.
+
+## Reproduce with your own retained evidence
+
+Prepare a normalized CSV with `season,gameweek,fpl_code,position,team,price_tenths,can_buy,prior_minutes,ownership,deadline,inputs_as_of,actual,minutes,cards` plus one finite forecast column per method. IDs must be stable, positions 1–4, prices integer tenths, timestamps timezone aware, and captures before deadline. The adapter functions in `selection_inputs.py` demonstrate checked bootstrap/calendar joins and a separately caveated original-archive conversion. A generic CSV contract validates supplied claims; it cannot independently prove their truth. Retain source hashes, calendar evidence and feature/training provenance alongside the CSV.
+
+```sh
+fpl-predict selection-benchmark --input market.csv --sha256 YOUR_SHA256 \
+  --models reference native_reference conditional_reference openfpl_cv1_refit conjugate_poisson \
+  --reference reference --output results
+```
+
+Use `--rolling 0 --no-reset --per-week` for the original conditional owned-panel study. Outputs are write-once research evidence: `spec.json`, `scores.csv`, `actions.json`, and `report.json`. Retain a failed directory; use a new directory for an engineering correction. Run under `fpl-predict run-experiment` for process memory, time, thread and storage monitoring. No data download, account action, fitting or model promotion is implicit. Public reports contain aggregates and provenance only; source data, individual forecasts and any private squad information are not bundled.
