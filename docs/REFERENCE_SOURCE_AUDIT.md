@@ -1,5 +1,14 @@
 # Reference source readiness — 15 October 2026
 
+**Subsequent byte-level audit:** see
+[provenance findings](PROVENANCE_FINDINGS_2026-10-15.md). The native parquet files
+have now been retrieved and checksummed, historical snapshots/projections checked,
+and a concrete opponent-history counterexample found. The initial source-only
+review below is retained as the earlier evidence state; its unresolved binary
+transport limitation has been overcome. The native reference remains ineligible.
+
+## Initial source-only review
+
 This is a source/data eligibility audit, not an accuracy comparison. Public text
 was inspected without executing third-party code or loading third-party model
 pickles. Local input records and raw snapshots remain outside the repository.

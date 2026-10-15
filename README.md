@@ -64,6 +64,11 @@ for separately authorised experiments. These tools do not promote models.
 The [reference source audit](docs/REFERENCE_SOURCE_AUDIT.md) distinguishes verified
 inputs from unresolved provenance. An explicit [retrospective reference pilot](docs/reference_pilot.md)
 can measure full-score baseline errors and fitting cost without changing the approved model.
+The optional [deadline/provenance audit](docs/deadline_provenance.md) checks
+historical bootstrap captures and player/team/opponent source-time contracts
+separately from accuracy scoring.
+See the [dated provenance findings](docs/PROVENANCE_FINDINGS_2026-10-15.md) for
+verified inputs, observed temporal concerns and remaining reference-fit gates.
 
 ## Install
 

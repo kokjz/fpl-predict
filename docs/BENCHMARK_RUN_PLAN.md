@@ -6,6 +6,13 @@ external feature provenance. A separately declared, explicitly ineligible
 [retrospective incumbent-method pilot](reference_pilot.md) can measure local
 pipeline cost/baseline errors. It does not relax this plan's eligibility rules.
 
+Subsequent [byte-level provenance findings](PROVENANCE_FINDINGS_2026-10-15.md)
+verify deadlines and reconstruct evaluation fixture membership, but identify
+post-deadline opponent-history values in the native external release. The next
+fit must use a separately named, audited deadline-safe variant with a new frozen
+protocol; the unchanged native release is not admitted by this plan. No old
+pilot/output is retroactively upgraded or relabelled.
+
 Declared 15 October 2026 before any reference fitting in this package. Historical
 outcomes have already been inspected: this is retrospective method research,
 not a newly untouched holdout. No engine/model promotion is authorised by this file.

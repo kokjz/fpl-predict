@@ -12,7 +12,16 @@
       "revision": "758db9247e8b3a9a870c991064f74d8339d61cd0",
       "url": "https://github.com/qazybekb/smartplayfpl-dastan",
       "status": "2024-25_archived_comparison_available",
-      "reason": "Existing matched reference is retrospective; 2025-26 OpenFPL benchmark requires separately fitted Dastan forecasts, not current deployment weights."
+      "reason": "Existing 2024-25 evidence retained. Native 2025-26 feature bytes now verified but opponent-history screen prevents clean temporal admission; require separately named audited cutoff-safe variant before common-window fit.",
+      "primary_route_status": "native_release_not_admitted_temporal_counterexample",
+      "native_artifacts_sha256_verified": true,
+      "native_opponent_screen": {
+        "season": "2025-26",
+        "rows_matching_later_opponent_score": 409,
+        "GW28_38_rows": 330,
+        "scope": "source-informed goal-feature screen; not full Understat reconstruction or accuracy inflation estimate"
+      },
+      "report": "PROVENANCE_FINDINGS_2026-10-15.md"
     },
     {
       "model": "original_openfpl_via_dastan",
@@ -57,5 +66,12 @@
       "status": "deferred",
       "reason": "Source-based reproduction requires historical reconstruction and fitting; lower priority than reusable archives."
     }
-  ]
+  ],
+  "provenance_update": {
+    "bootstrap_season": "2025-26",
+    "snapshots_verified": 38,
+    "ep_next_rows_reconciled": 29645,
+    "event_memberships_reconstructed_GW28_38": 109,
+    "automatic_full_benchmark_admission": false
+  }
 }
