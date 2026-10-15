@@ -54,6 +54,12 @@ A separate matched retrospective comparison against Dastan covers 17,622 player-
 
 Dastan had about 2.9% lower RMSE on those matched records. Training policies and feature sets differ, and this is an archived retrospective comparison, not a prospective competition. Do not compare this table directly with the core-points table above: the periods and targets differ. [Comparison methods, provenance and aggregate results](docs/open_source_comparison_2026-10-14.md).
 
+For shared-row comparisons against other systems, see the [external benchmark
+protocol](docs/BENCHMARK_PROTOCOL.md), [source readiness inventory](docs/benchmark_sources.json)
+and [local import workflow](docs/benchmark_workflow.md). The optional
+`fpl-predict benchmark` command validates local exports and produces aggregate
+coverage/error/ranking reports; it does not train or promote models.
+
 ## Install
 
 The commands below require Git, Python 3.12 and a POSIX shell:

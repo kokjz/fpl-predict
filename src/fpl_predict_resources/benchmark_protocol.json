@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "protocol_id": "matched-external-v1",
+  "frozen_on": "2026-10-15",
+  "horizon_gameweeks": 1,
+  "target_by_season": {
+    "2024-25": "fpl-total-2024-25",
+    "2025-26": "fpl-total-2025-26",
+    "2026-27": "fpl-total-2026-27"
+  },
+  "primary_cohort": "predeadline_candidates",
+  "candidate_rule": "at least 3 prior records and last-five mean minutes >=45, fixed before deadline",
+  "primary_metric": "rmse",
+  "historical_selection_status": "previously_inspected",
+  "max_file_bytes": 67108864,
+  "max_rows": 1000000,
+  "model_promotion": false
+}

@@ -49,3 +49,29 @@ def evaluate(rows, x, prediction):
         if mask.any():
             result["position_candidate_fixture"][str(pos)] = metrics(d.loc[mask, "points_core"], p[mask])
     return result
+
+
+def point_scores(frame, column):
+    """Aggregate point/rank metrics on an already validated shared-row cohort."""
+    if frame.empty:
+        return {"n": 0, "rmse": None, "mae": None, "bias": None,
+                "ranking_weeks": 0, "mean_within_gw_spearman": None,
+                "mean_within_gw_ndcg10": None}
+    actual = frame.actual.to_numpy(dtype=float)
+    predicted = frame[column].to_numpy(dtype=float)
+    if not np.isfinite(actual).all() or not np.isfinite(predicted).all():
+        raise ValueError("Nonfinite comparison scores")
+    error = predicted - actual
+    ranking = []
+    for _, week in frame.groupby(["season", "gameweek"], sort=True):
+        if len(week) < 2 or week.actual.nunique() < 2:
+            continue
+        rho = float(spearmanr(week.actual, week[column]).statistic) if week[column].nunique() > 1 else 0.
+        ranking.append((rho, float(ndcg_score(
+            np.maximum(week.actual.to_numpy(), 0)[None, :],
+            week[column].to_numpy()[None, :], k=min(10, len(week))))))
+    return {"n": len(frame), "rmse": float(np.sqrt(np.mean(error ** 2))),
+            "mae": float(np.mean(abs(error))), "bias": float(np.mean(error)),
+            "ranking_weeks": len(ranking),
+            "mean_within_gw_spearman": float(np.mean([r[0] for r in ranking])) if ranking else None,
+            "mean_within_gw_ndcg10": float(np.mean([r[1] for r in ranking])) if ranking else None}
