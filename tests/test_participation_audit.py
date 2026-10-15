@@ -133,3 +133,28 @@ def test_external_club_evidence_flags_conflict_without_changing_forecast(tmp_pat
     assert preflight(f,s,7,'2026-10-17T09:00:00Z',evidence=p)['status']=='review_required'
     d['players'][0]['published_at_utc']='2026-10-18T10:01:00Z';write(p,d)
     with pytest.raises(ValueError):preflight(f,s,7,'2026-10-17T09:00:00Z',evidence=p)
+
+
+def test_origin_bridge_and_deadline_mismatch_rejected(tmp_path):
+    f,o,end,s,bind=fixture(tmp_path)
+    assert preflight(f,s,7,'2026-10-17T09:00:00Z',origin=o)['identity_bridge_verified']
+    b=json.loads((s/'bootstrap.json').read_text());b['elements'][0]['code']=999;write(s/'bootstrap.json',b);bind()
+    with pytest.raises(ValueError,match='stable identity'):preflight(f,s,7,'2026-10-17T09:00:00Z',origin=o)
+    b=json.loads(o.read_text());b['events'][0]['deadline_time']='2025-10-18T10:00:00Z';write(o,b)
+    with pytest.raises(ValueError,match='deadline'):history(f,o,end,7)
+
+
+def test_empty_candidate_cohort_stays_unknown_not_perfect(tmp_path):
+    f,o,end,_,_=fixture(tmp_path);p=f/'player_gameweek_predictions.json';rows=json.loads(p.read_text())
+    for row in rows:row['candidate_pool']=False
+    write(p,rows);r=history(f,o,end,7)
+    assert r['point_risk']['candidates']['n']==0 and r['point_risk']['candidates']['points_mse'] is None
+    assert r['playing_time']['candidates']['appearance_brier'] is None
+
+
+def test_external_boolean_id_cannot_alias_football_id(tmp_path):
+    f,_,_,s,_=fixture(tmp_path);p=tmp_path/'bad.json'
+    write(p,dict(schema_version=1,GW=7,recorded_at_utc='2026-10-17T08:55:00Z',players=[dict(id=True,
+        source_kind='club',source_url='https://example.org/news',summary='Synthetic',reported_availability='out',
+        published_at_utc='2026-10-17T08:40:00Z',checked_at_utc='2026-10-17T08:50:00Z')]))
+    with pytest.raises(ValueError,match='player ID'):preflight(f,s,7,'2026-10-17T09:00:00Z',evidence=p)

@@ -89,12 +89,13 @@ def history(forecast, origin, outcome, gw):
     forecast=Path(forecast); outcome=Path(outcome); original=read_json(origin)
     final=read_json(outcome/'bootstrap.json'); event=event_for(final,gw)
     if not event.get('finished') or not event.get('data_checked'): raise ValueError('Outcomes not finalised')
+    if utc(event_for(original,gw)['deadline_time']) != utc(event['deadline_time']):raise ValueError('Origin/outcome season or deadline differs')
     manifest, rows = frozen_rows(forecast,gw,event['deadline_time'])
     before=identities(original); after=identities(final); records=[]; histories={}; empty=0
     for row in rows:
         ident=row['id']
         if (ident not in before or ident not in after or before[ident]['code'] != after[ident]['code'] or
-                row['position'] != before[ident]['element_type']): raise ValueError('Identity/position conflict')
+                row['position'] != before[ident]['element_type'] or row['position'] != after[ident]['element_type']): raise ValueError('Identity/position conflict')
         path=outcome/'players'/f'{ident}.json'; payload=read_json(path)
         all_history=payload['history']
         if len({r['fixture'] for r in all_history}) != len(all_history): raise ValueError('Duplicate outcome fixture')
@@ -124,7 +125,7 @@ def external_evidence(document, bootstrap, gw, now):
     known=identities(bootstrap);result={}
     for entry in document['players']:
         ident=entry['id'];url=urlsplit(entry['source_url'])
-        if ident not in known or ident in result:raise ValueError('Unknown/duplicate external player ID')
+        if type(ident) is not int or ident<=0 or ident not in known or ident in result:raise ValueError('Unknown/duplicate external player ID')
         if (url.scheme!='https' or not url.hostname or url.username or url.password or url.query or url.fragment or
                 not str(entry['summary']).strip()):raise ValueError('External evidence requires public source and summary')
         if entry['source_kind'] not in ('club','league','press'):raise ValueError('Unknown external source kind')
@@ -135,7 +136,7 @@ def external_evidence(document, bootstrap, gw, now):
     return result
 
 
-def preflight(forecast, snapshot, gw, as_of, review=None, include_ids=(), evidence=None):
+def preflight(forecast, snapshot, gw, as_of, review=None, include_ids=(), evidence=None, origin=None):
     """Triage uses no outcomes; no flag is a football fitness clearance."""
     forecast=Path(forecast); snapshot=Path(snapshot); now=utc(as_of)
     bootstrap=read_json(snapshot/'bootstrap.json'); event=event_for(bootstrap,gw)
@@ -160,6 +161,11 @@ def preflight(forecast, snapshot, gw, as_of, review=None, include_ids=(), eviden
     include_ids=set(include_ids)
     if not include_ids <= forecast_ids: raise ValueError('Unknown requested forecast ID')
     if not forecast_ids <= set(players): raise ValueError('Missing current player identity')
+    if origin:
+        original=read_json(origin);old=identities(original)
+        if utc(event_for(original,gw)['deadline_time']) != deadline:raise ValueError('Origin/current season or deadline differs')
+        if any(i not in old or old[i]['code'] != players[i]['code'] for i in forecast_ids):
+            raise ValueError('Origin/current stable identity conflict')
     scoped={}; review_doc=None
     if review:
         review_doc=read_json(review)
@@ -202,14 +208,15 @@ def preflight(forecast, snapshot, gw, as_of, review=None, include_ids=(), eviden
                 sourced_assumption_present=entry is not None,external_evidence_present=supplied is not None))
     return dict(schema_version=1,GW=gw,as_of_utc=now.isoformat(),deadline_utc=deadline.isoformat(),policy=POLICY,
         status='review_required' if issues or queue else 'no_machine_detected_issues',
-        global_issues=issues,checked_players=checked,review_queue=queue,fitness_clearance=False,
+        global_issues=issues,identity_bridge_verified=origin is not None,checked_players=checked,review_queue=queue,fitness_clearance=False,
         hashes=dict(forecast_manifest=file_hash(forecast/'manifest.json'),forecasts=file_hash(forecast/'player_gameweek_predictions.json'),
             bootstrap=file_hash(snapshot/'bootstrap.json'),snapshot_manifest=file_hash(snapshot/'manifest.json'),
-            review=file_hash(review) if review else None,external_evidence=file_hash(evidence) if evidence else None),
+            origin=file_hash(origin) if origin else None,review=file_hash(review) if review else None,external_evidence=file_hash(evidence) if evidence else None),
         notes=['No news fetch, forecasts, squad choices or overrides applied',
             'Status a/blank news is not proof of health; official chance is not calibrated p_play',
             'A sourced sensitivity assumption never clears a flag or certifies a start',
             'Review remaining owned players and captain candidates in the authorised weekly workflow',
+            'Supply origin bootstrap to verify stable football identities across refreshed snapshots',
             'External source labels/publication/check times are supplied claims, not independently authenticated',
             'Fixture/press-conference completeness is not certified'])
 
@@ -222,12 +229,12 @@ def main():
         parser.add_argument('--output',type=Path,required=True)
     h.add_argument('--origin',type=Path,required=True);h.add_argument('--outcome',type=Path,required=True)
     f.add_argument('--snapshot',type=Path,required=True);f.add_argument('--as-of',required=True)
-    f.add_argument('--evidence',type=Path);f.add_argument('--review',type=Path);f.add_argument('--include-id',type=int,action='append',default=[])
+    f.add_argument('--origin',type=Path);f.add_argument('--evidence',type=Path);f.add_argument('--review',type=Path);f.add_argument('--include-id',type=int,action='append',default=[])
     args=p.parse_args()
     try:
         if args.output.exists(): raise ValueError('Output exists; evidence is immutable')
         result=(history(args.forecast,args.origin,args.outcome,args.gw) if args.command=='history' else
-                preflight(args.forecast,args.snapshot,args.gw,args.as_of,args.review,args.include_id,args.evidence))
+                preflight(args.forecast,args.snapshot,args.gw,args.as_of,args.review,args.include_id,args.evidence,args.origin))
         result['engine_sha256']=file_hash(Path(__file__))
         result['created_at_utc']=dt.datetime.now(dt.timezone.utc).isoformat()
         with args.output.open('x') as stream: json.dump(result,stream,indent=2,allow_nan=False)

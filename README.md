@@ -23,7 +23,7 @@ It is a forecasting and decision-support engine, not a complete season optimiser
 3. **Fit pooled models.** Histogram gradient-boosted trees learn patterns shared across players. Separate estimators cover core points, minutes, participation and defensive-contribution awards. Training examples have a two-year age half-life. The core model uses shallow seven-leaf trees; no GPU or hosted inference service is required.
 4. **Forecast and evaluate.** Fixture forecasts are summed into gameweeks and optionally compared within a squad. The model registry checks approval status and artifact hashes. Evaluation uses chronological splits; a merged code change or a newer experiment does not automatically replace the approved model.
 
-Official injury percentages are retained as observations, not treated as calibrated start probabilities. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).
+Official injury percentages are retained as observations, not treated as calibrated start probabilities. A [fixed news/availability experiment](docs/NEWS_AVAILABILITY_RESULTS_2026-10-16.md) found useful appearance information in timely published availability fields, with no extra Brier benefit from combining news text with structured labels. This is a component research result against a recent-form control, not a production-model or points-gain claim. The optional [participation audit](docs/participation_audit.md) checks frozen point-risk diagnostics and predeadline evidence, including sourced club/press reports, without applying overrides. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).
 
 ## Performance and other options
 
@@ -204,6 +204,8 @@ Additional research commands expose their options through:
 .venv/bin/fpl-predict decision-trial --help
 .venv/bin/fpl-predict search-lightweight --help
 .venv/bin/fpl-predict selection-benchmark --help
+.venv/bin/fpl-predict participation-audit --help
+.venv/bin/fpl-predict news-probe --help
 .venv/bin/python tools/compare_dastan.py --help
 ```
 

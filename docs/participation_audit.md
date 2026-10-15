@@ -22,11 +22,12 @@ After the weekly chat is authorised to refresh news and generate its normal fore
 
 ```sh
 fpl-predict participation-audit preflight --forecast /path/to/new/forecast \
+  --origin /path/to/forecast/bootstrap.json \
   --snapshot /path/to/fresh/official/snapshot --as-of 2026-10-17T09:00:00Z \
   --gw 7 --output /path/to/new/preflight.json
 ```
 
-Dates and paths are illustrative. Inputs, forecast generation, and explicit `--as-of` must precede the verified GW deadline. Snapshot must name that GW as next/unfinished, its manifest must bind bootstrap bytes and a public official FPL bootstrap URL, and it cannot be older than the forecast input snapshot (an explicitly identical input manifest is also accepted). Review candidates plus optional owned/non-candidate IDs supplied with repeated `--include-id`. Unknown IDs fail; outputs stay private.
+Dates and paths are illustrative. Inputs, forecast generation, and explicit `--as-of` must precede the verified GW deadline. Snapshot must name that GW as next/unfinished, its manifest must bind bootstrap bytes and a public official FPL bootstrap URL, and it cannot be older than the forecast input snapshot (an explicitly identical input manifest is also accepted). Review candidates plus optional owned/non-candidate IDs supplied with repeated `--include-id`. Unknown IDs fail; outputs stay private. Supply `--origin` to verify stable football codes and the season/deadline across refreshed snapshots; otherwise identity-bridge verification is explicitly unavailable.
 
 Optional `--review /path/to/sourced/review.json` uses the existing timestamped [availability review schema](availability_workflow.md). Flags cover status/news/chance observations, changes since the frozen forecast, missing/stale review and stale inputs. Official percentages are not calibrated probabilities; status `a`/blank news do not certify health. A sourced sensitivity assumption does not silently clear a flag or establish a start.
 

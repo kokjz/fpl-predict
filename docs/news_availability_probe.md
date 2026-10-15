@@ -1,5 +1,7 @@
 # Experimental news and availability probe
 
+[Measured fixed-experiment results](NEWS_AVAILABILITY_RESULTS_2026-10-16.md) are available; no production model was changed.
+
 This fixed, small experiment tests whether timestamped availability/news observations add useful appearance information to recent match form. It does not reproduce Dastan, replace the incumbent or directly measure squad points. All historical outcome windows have already been inspected; they are reused descriptive evidence.
 
 ## Source question

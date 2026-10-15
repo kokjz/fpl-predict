@@ -101,3 +101,8 @@ or raw-data redistribution follows from this audit.
 - [Source loader/coverage declaration](https://github.com/alan-turing-institute/AIrsenal/blob/212a0aa478fe885808355dc5f08f81f8f9822893/src/airsenal/ingest/attributes_history.py)
 - [Historical GW20 pre-deadline commit](https://github.com/alan-turing-institute/AIrsenal/commit/0892d46dbd4384de50504b542a6731df33dfb637)
 - [Source software licence](https://github.com/alan-turing-institute/AIrsenal/blob/212a0aa478fe885808355dc5f08f81f8f9822893/LICENSE)
+
+
+## Subsequent complete experimental-window admission
+
+A later [fixed news/availability experiment](NEWS_AVAILABILITY_RESULTS_2026-10-16.md) expanded the exact-prefix/bootstrap method to every GW4–38 required by that experiment. The eleven-week sample above remains the original frozen audit. The later report retains all35prefix records, cohort gaps and source limitations; source admission remains separate from model promotion.

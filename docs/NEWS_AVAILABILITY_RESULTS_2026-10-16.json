@@ -1,0 +1,1575 @@
+{
+  "schema_version": 1,
+  "scope": "Retrospective fixed news/availability appearance probe, not incumbent/Dastan reproduction",
+  "training_rows": 12027,
+  "validation_rows": 6427,
+  "test_rows": 8690,
+  "arms": {
+    "form": {
+      "validation": {
+        "all": {
+          "n": 6427,
+          "brier": 0.0894249926760035,
+          "high_probability_n": 1777,
+          "high_probability_nonappearances": 172,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 4165,
+              "mean_probability": 0.10592656533399128,
+              "actual_rate": 0.10756302521008404
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 485,
+              "mean_probability": 0.6636964468981639,
+              "actual_rate": 0.6927835051546392
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 1294,
+              "mean_probability": 0.9068845488793051,
+              "actual_rate": 0.8964451313755796
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 483,
+              "mean_probability": 0.9581808401681001,
+              "actual_rate": 0.9213250517598344
+            }
+          ]
+        },
+        "candidates": {
+          "n": 1743,
+          "brier": 0.10044317244479273,
+          "high_probability_n": 1489,
+          "high_probability_nonappearances": 132,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 131,
+              "mean_probability": 0.3894444122412803,
+              "actual_rate": 0.4198473282442748
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 123,
+              "mean_probability": 0.6777377266885545,
+              "actual_rate": 0.6341463414634146
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 1045,
+              "mean_probability": 0.9141481298276525,
+              "actual_rate": 0.9062200956937799
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 444,
+              "mean_probability": 0.9575130943790953,
+              "actual_rate": 0.9234234234234234
+            }
+          ]
+        }
+      },
+      "test": {
+        "all": {
+          "n": 8690,
+          "brier": 0.09170408717917845,
+          "high_probability_n": 2376,
+          "high_probability_nonappearances": 266,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 5649,
+              "mean_probability": 0.10403244603805101,
+              "actual_rate": 0.10851478137723491
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 665,
+              "mean_probability": 0.6622363416658714,
+              "actual_rate": 0.6962406015037594
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 1604,
+              "mean_probability": 0.9063754579829703,
+              "actual_rate": 0.8659600997506235
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 772,
+              "mean_probability": 0.9595036260404806,
+              "actual_rate": 0.9339378238341969
+            }
+          ]
+        },
+        "candidates": {
+          "n": 2312,
+          "brier": 0.10653896329942676,
+          "high_probability_n": 1975,
+          "high_probability_nonappearances": 190,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 171,
+              "mean_probability": 0.3774273945654235,
+              "actual_rate": 0.4444444444444444
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 166,
+              "mean_probability": 0.6759387944508342,
+              "actual_rate": 0.6506024096385542
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 1256,
+              "mean_probability": 0.9140586629063295,
+              "actual_rate": 0.8829617834394905
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 719,
+              "mean_probability": 0.959019728647424,
+              "actual_rate": 0.9401947148817803
+            }
+          ]
+        }
+      }
+    },
+    "form_chance": {
+      "validation": {
+        "all": {
+          "n": 6427,
+          "brier": 0.07126862825122642,
+          "high_probability_n": 1975,
+          "high_probability_nonappearances": 166,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 3999,
+              "mean_probability": 0.07569037737399593,
+              "actual_rate": 0.07151787946986747
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 453,
+              "mean_probability": 0.6649145406079997,
+              "actual_rate": 0.6490066225165563
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 860,
+              "mean_probability": 0.8981229779383485,
+              "actual_rate": 0.8604651162790697
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 1115,
+              "mean_probability": 0.9727259536598687,
+              "actual_rate": 0.9587443946188341
+            }
+          ]
+        },
+        "candidates": {
+          "n": 1743,
+          "brier": 0.07271745706217816,
+          "high_probability_n": 1543,
+          "high_probability_nonappearances": 107,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 122,
+              "mean_probability": 0.12360016257957838,
+              "actual_rate": 0.08196721311475409
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 78,
+              "mean_probability": 0.6683638735661668,
+              "actual_rate": 0.5641025641025641
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 495,
+              "mean_probability": 0.9101747981246895,
+              "actual_rate": 0.8686868686868687
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 1048,
+              "mean_probability": 0.9732422950250855,
+              "actual_rate": 0.9599236641221374
+            }
+          ]
+        }
+      },
+      "test": {
+        "all": {
+          "n": 8690,
+          "brier": 0.07725395066909903,
+          "high_probability_n": 2729,
+          "high_probability_nonappearances": 299,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 5333,
+              "mean_probability": 0.07573336387532306,
+              "actual_rate": 0.0701293830864429
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 628,
+              "mean_probability": 0.6533440210351792,
+              "actual_rate": 0.60828025477707
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 1062,
+              "mean_probability": 0.891777662645765,
+              "actual_rate": 0.8305084745762712
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 1667,
+              "mean_probability": 0.9748551589751638,
+              "actual_rate": 0.9286142771445711
+            }
+          ]
+        },
+        "candidates": {
+          "n": 2312,
+          "brier": 0.08448250911683065,
+          "high_probability_n": 2067,
+          "high_probability_nonappearances": 171,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 137,
+              "mean_probability": 0.14161086156849195,
+              "actual_rate": 0.11678832116788321
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 108,
+              "mean_probability": 0.6504372709983852,
+              "actual_rate": 0.5277777777777778
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 518,
+              "mean_probability": 0.90535800964124,
+              "actual_rate": 0.8687258687258688
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 1549,
+              "mean_probability": 0.9755466908999764,
+              "actual_rate": 0.9335054874112331
+            }
+          ]
+        }
+      }
+    },
+    "form_text": {
+      "validation": {
+        "all": {
+          "n": 6427,
+          "brier": 0.07423412366757506,
+          "high_probability_n": 1862,
+          "high_probability_nonappearances": 138,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 4062,
+              "mean_probability": 0.08325634069728946,
+              "actual_rate": 0.08247168882323978
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 503,
+              "mean_probability": 0.670679707807956,
+              "actual_rate": 0.6560636182902585
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 816,
+              "mean_probability": 0.900904962672711,
+              "actual_rate": 0.8921568627450981
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 1046,
+              "mean_probability": 0.9713336988999164,
+              "actual_rate": 0.9521988527724665
+            }
+          ]
+        },
+        "candidates": {
+          "n": 1743,
+          "brier": 0.07233366346000324,
+          "high_probability_n": 1505,
+          "high_probability_nonappearances": 94,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 127,
+              "mean_probability": 0.13785493191779524,
+              "actual_rate": 0.12598425196850394
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 111,
+              "mean_probability": 0.6990016159645287,
+              "actual_rate": 0.5675675675675675
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 511,
+              "mean_probability": 0.9157018302137075,
+              "actual_rate": 0.9060665362035225
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 994,
+              "mean_probability": 0.9717265673014063,
+              "actual_rate": 0.9537223340040242
+            }
+          ]
+        }
+      },
+      "test": {
+        "all": {
+          "n": 8690,
+          "brier": 0.07916725545135399,
+          "high_probability_n": 2504,
+          "high_probability_nonappearances": 245,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 5453,
+              "mean_probability": 0.08348568095605118,
+              "actual_rate": 0.08087291399229782
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 733,
+              "mean_probability": 0.6680393067023577,
+              "actual_rate": 0.6630286493860846
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 1065,
+              "mean_probability": 0.9008731370046509,
+              "actual_rate": 0.8431924882629108
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 1439,
+              "mean_probability": 0.9723822424940339,
+              "actual_rate": 0.9457956914523975
+            }
+          ]
+        },
+        "candidates": {
+          "n": 2312,
+          "brier": 0.0845361743386866,
+          "high_probability_n": 2017,
+          "high_probability_nonappearances": 157,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 151,
+              "mean_probability": 0.17402980601501225,
+              "actual_rate": 0.152317880794702
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 144,
+              "mean_probability": 0.6812078227898964,
+              "actual_rate": 0.5972222222222222
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 637,
+              "mean_probability": 0.9142421958431782,
+              "actual_rate": 0.8634222919937206
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 1380,
+              "mean_probability": 0.9727782121169237,
+              "actual_rate": 0.9492753623188406
+            }
+          ]
+        }
+      }
+    },
+    "form_chance_text": {
+      "validation": {
+        "all": {
+          "n": 6427,
+          "brier": 0.07102497534844646,
+          "high_probability_n": 1979,
+          "high_probability_nonappearances": 160,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 4006,
+              "mean_probability": 0.07626988866855537,
+              "actual_rate": 0.07239141288067898
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 442,
+              "mean_probability": 0.6662207389128265,
+              "actual_rate": 0.6334841628959276
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 785,
+              "mean_probability": 0.8951346416909184,
+              "actual_rate": 0.8585987261146497
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 1194,
+              "mean_probability": 0.9731460948983425,
+              "actual_rate": 0.958961474036851
+            }
+          ]
+        },
+        "candidates": {
+          "n": 1743,
+          "brier": 0.07210711597099174,
+          "high_probability_n": 1538,
+          "high_probability_nonappearances": 101,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 131,
+              "mean_probability": 0.1377466631279506,
+              "actual_rate": 0.1297709923664122
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 74,
+              "mean_probability": 0.6823973609697882,
+              "actual_rate": 0.4864864864864865
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 416,
+              "mean_probability": 0.9063632230317636,
+              "actual_rate": 0.8653846153846154
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 1122,
+              "mean_probability": 0.9736500281936521,
+              "actual_rate": 0.9598930481283422
+            }
+          ]
+        }
+      },
+      "test": {
+        "all": {
+          "n": 8690,
+          "brier": 0.07734939652840447,
+          "high_probability_n": 2736,
+          "high_probability_nonappearances": 294,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 5351,
+              "mean_probability": 0.07689373128606465,
+              "actual_rate": 0.0721360493365726
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 603,
+              "mean_probability": 0.6578063567276577,
+              "actual_rate": 0.593698175787728
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 1006,
+              "mean_probability": 0.8905378314224813,
+              "actual_rate": 0.8290258449304175
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 1730,
+              "mean_probability": 0.9757361953344623,
+              "actual_rate": 0.9294797687861271
+            }
+          ]
+        },
+        "candidates": {
+          "n": 2312,
+          "brier": 0.08462685414700938,
+          "high_probability_n": 2067,
+          "high_probability_nonappearances": 165,
+          "reliability": [
+            {
+              "lower": 0,
+              "upper": 0.5,
+              "n": 157,
+              "mean_probability": 0.1785495533527641,
+              "actual_rate": 0.17834394904458598
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.8,
+              "n": 88,
+              "mean_probability": 0.6764552470863374,
+              "actual_rate": 0.4431818181818182
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.95,
+              "n": 465,
+              "mean_probability": 0.902583173635492,
+              "actual_rate": 0.8688172043010752
+            },
+            {
+              "lower": 0.95,
+              "upper": 1,
+              "n": 1602,
+              "mean_probability": 0.9765042310370774,
+              "actual_rate": 0.9350811485642946
+            }
+          ]
+        }
+      }
+    }
+  },
+  "transforms": {
+    "vocabulary_size": 256,
+    "max_features": 256,
+    "training_only_transforms": true
+  },
+  "declared_primary": {
+    "contrast": "form_chance_text minus form",
+    "metric": "candidate mean per-GW Brier difference",
+    "difference": -0.02161876997244999,
+    "block4_interval": [
+      -0.02813659731918011,
+      -0.016345730942674965
+    ],
+    "gameweeks": 11,
+    "interpretation": "Inspected historical window; descriptive, not an untouched test"
+  },
+  "model_promotion": false,
+  "points_or_squad_gain_measured": false,
+  "limits": [
+    "News/chance are official FPL observations syndicated by AIrsenal, not independent club-news text",
+    "Chance labels are learned covariates, never assigned as start probabilities",
+    "Rows require common published roster/fixture-history coverage; missing target rows are not imputed",
+    "News vocabulary and all numeric transforms fit training only; no parameter/seed search",
+    "A participation improvement alone does not validate unconditional points/selection changes"
+  ],
+  "as_of_utc": "2026-10-15",
+  "as_of_singapore": "2026-10-16",
+  "pre_fit_source": "aeb928e",
+  "source_admission": {
+    "gameweeks": 35,
+    "records": [
+      {
+        "gameweek": 4,
+        "published_at": "2025-09-13T09:13:42+00:00",
+        "deadline": "2025-09-13T10:00:00+00:00",
+        "publication_lead_hours": 0.7716666666666666,
+        "commit": "b96b28066c3172fd49a6efe0cce46b26091c81a1",
+        "git_blob_sha1": "a97005cae40961df6ff275646860935ac342b7df",
+        "prefix_bytes": 165949,
+        "prefix_sha256": "a34840692bd3d74963713d550fcc9ddb5346db6dc4be8cece4a7c8d79efc2ccb",
+        "rows": 738,
+        "bootstrap_known": 738,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 206,
+        "chance_known": 273,
+        "return_gameweek_known": 17,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 5,
+        "published_at": "2025-09-20T09:14:17+00:00",
+        "deadline": "2025-09-20T10:00:00+00:00",
+        "publication_lead_hours": 0.7619444444444444,
+        "commit": "e59b2af85df640f6b51506726c43c74cc0b1211a",
+        "git_blob_sha1": "9547dcbb3cff5866ba871ab6da1226acac4406cc",
+        "prefix_bytes": 747582,
+        "prefix_sha256": "0b9d64030b47cb9b159a85999c8b73c155a23503ea5d4582dccf7ab7c1e72683",
+        "rows": 740,
+        "bootstrap_known": 740,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 204,
+        "chance_known": 287,
+        "return_gameweek_known": 20,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 6,
+        "published_at": "2025-09-27T09:13:56+00:00",
+        "deadline": "2025-09-27T10:00:00+00:00",
+        "publication_lead_hours": 0.7677777777777778,
+        "commit": "8de0405666397e99faec8f42fe5c52100eec9839",
+        "git_blob_sha1": "f6f5b29975fabb86f7aba943876c84218760063a",
+        "prefix_bytes": 1338551,
+        "prefix_sha256": "eda2757585e0c67b4f9b5f5fed3786ed3f49c890122688eb0e213dbb524b8232",
+        "rows": 741,
+        "bootstrap_known": 741,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 234,
+        "chance_known": 327,
+        "return_gameweek_known": 31,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 7,
+        "published_at": "2025-10-03T09:14:16+00:00",
+        "deadline": "2025-10-03T17:30:00+00:00",
+        "publication_lead_hours": 8.262222222222222,
+        "commit": "3e10678476ade90f9c9e78915e2a035a491cbf96",
+        "git_blob_sha1": "d6e2011945c24ab380acb13ebc35c561c3a9684d",
+        "prefix_bytes": 1847721,
+        "prefix_sha256": "1a3745aeefad489c7c10bda54860dcdbbf540e46978680987a751e706d6e873f",
+        "rows": 742,
+        "bootstrap_known": 742,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 231,
+        "chance_known": 340,
+        "return_gameweek_known": 34,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 8,
+        "published_at": "2025-10-18T09:14:00+00:00",
+        "deadline": "2025-10-18T10:00:00+00:00",
+        "publication_lead_hours": 0.7666666666666667,
+        "commit": "73fbad999a5ed9842c7ecc33f6b620de9213907c",
+        "git_blob_sha1": "6f8a924ad7848fe9942685f4b34fd5eed453ef7c",
+        "prefix_bytes": 3129276,
+        "prefix_sha256": "5d639b8a8fa68efc7720a2a3e824307f230b0f63fb57cc3554edf861aea87f09",
+        "rows": 743,
+        "bootstrap_known": 743,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 248,
+        "chance_known": 374,
+        "return_gameweek_known": 22,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 9,
+        "published_at": "2025-10-24T09:14:41+00:00",
+        "deadline": "2025-10-24T17:30:00+00:00",
+        "publication_lead_hours": 8.255277777777778,
+        "commit": "488fd66c130b4857934ba3983b47ed448d0286cd",
+        "git_blob_sha1": "314181a9ae33374c7ac8a7c79fb59a092aaabb0f",
+        "prefix_bytes": 3643383,
+        "prefix_sha256": "b3fec88e30a6ce7e645999223bab8e6042e98c237b4e7e3db63f4e634a47dc1a",
+        "rows": 745,
+        "bootstrap_known": 745,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 240,
+        "chance_known": 385,
+        "return_gameweek_known": 18,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 10,
+        "published_at": "2025-11-01T09:14:00+00:00",
+        "deadline": "2025-11-01T13:30:00+00:00",
+        "publication_lead_hours": 4.266666666666667,
+        "commit": "9ab2bf2c1957ea3da539e5e5981d41a6afe17c70",
+        "git_blob_sha1": "7d5c10d2e17911ea09af9f6375b66fc98b6d5e6e",
+        "prefix_bytes": 4336811,
+        "prefix_sha256": "831f94184deaf4ab33454aaffb7eb0e036d6dcd6cd89b674887409e99abced06",
+        "rows": 746,
+        "bootstrap_known": 746,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 237,
+        "chance_known": 399,
+        "return_gameweek_known": 28,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 11,
+        "published_at": "2025-11-08T09:13:53+00:00",
+        "deadline": "2025-11-08T11:00:00+00:00",
+        "publication_lead_hours": 1.7686111111111111,
+        "commit": "74de1644345f4f2f6dcb531848944c59a07a0226",
+        "git_blob_sha1": "4c1cbf36c728a849eae30c65bce20edf76208e1e",
+        "prefix_bytes": 4944562,
+        "prefix_sha256": "301592ab7c3be6f58407cf0197fa5969867641e22687d1d4484b583c3f58def7",
+        "rows": 748,
+        "bootstrap_known": 748,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 237,
+        "chance_known": 409,
+        "return_gameweek_known": 26,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 12,
+        "published_at": "2025-11-22T09:14:01+00:00",
+        "deadline": "2025-11-22T11:00:00+00:00",
+        "publication_lead_hours": 1.7663888888888888,
+        "commit": "cb9ab6bbbf9f2fc516dbbee1fb7ab33627af7489",
+        "git_blob_sha1": "bd2f9d5ec73d19557fc3da6fee26de47691f3bc0",
+        "prefix_bytes": 6172860,
+        "prefix_sha256": "7aab4af20b73edb6f9dc803728afaff5f603aa7c6b22f17c443f9feeb93763fc",
+        "rows": 752,
+        "bootstrap_known": 752,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 247,
+        "chance_known": 427,
+        "return_gameweek_known": 21,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 13,
+        "published_at": "2025-11-29T09:14:21+00:00",
+        "deadline": "2025-11-29T13:30:00+00:00",
+        "publication_lead_hours": 4.260833333333333,
+        "commit": "863af25ec14df9d85e7d0d11fee18ef67727cb02",
+        "git_blob_sha1": "c022390eb88d246067137fe033cb1ce68d902751",
+        "prefix_bytes": 6786887,
+        "prefix_sha256": "88a0269975d5311b66996f37a96fa0781bbd7807c5f7b0fea812b16374579e01",
+        "rows": 755,
+        "bootstrap_known": 755,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 240,
+        "chance_known": 436,
+        "return_gameweek_known": 21,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 14,
+        "published_at": "2025-12-02T09:15:21+00:00",
+        "deadline": "2025-12-02T18:00:00+00:00",
+        "publication_lead_hours": 8.744166666666667,
+        "commit": "c85d0d4d09d326d2d85d76cd4d5d9fccbb8b089d",
+        "git_blob_sha1": "8ec4bf49f045da0ceff50b7d70e113fdf2cfade5",
+        "prefix_bytes": 7050836,
+        "prefix_sha256": "bfa6e2e76b5ca6e624445489a07d2e71974d0f968ede2f72f436dca5c864aa83",
+        "rows": 755,
+        "bootstrap_known": 755,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 242,
+        "chance_known": 439,
+        "return_gameweek_known": 22,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 15,
+        "published_at": "2025-12-06T09:14:00+00:00",
+        "deadline": "2025-12-06T11:00:00+00:00",
+        "publication_lead_hours": 1.7666666666666666,
+        "commit": "710d9f784f2978c1b97f7335ae5c7d2c2927f0fe",
+        "git_blob_sha1": "efd9661ae4d9660db4b68a7f2b32b2fe7f50a79a",
+        "prefix_bytes": 7404506,
+        "prefix_sha256": "546a6e83df1ebb26e2adaaa8bab89f139bb185e1e0ce2b80accec938306ca63c",
+        "rows": 758,
+        "bootstrap_known": 758,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 252,
+        "chance_known": 449,
+        "return_gameweek_known": 27,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 16,
+        "published_at": "2025-12-13T09:14:10+00:00",
+        "deadline": "2025-12-13T13:30:00+00:00",
+        "publication_lead_hours": 4.263888888888889,
+        "commit": "f33f8e0970acdbd0a80c3f79a7bae8749d5effb0",
+        "git_blob_sha1": "723f004e179bc5e9c41bf29a3ca5254b21934e5f",
+        "prefix_bytes": 8026911,
+        "prefix_sha256": "9c39f0e1ca21284073dd458ab5a00d911470327baa7c2583676a8ed8252f64cd",
+        "rows": 759,
+        "bootstrap_known": 759,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 254,
+        "chance_known": 462,
+        "return_gameweek_known": 29,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 17,
+        "published_at": "2025-12-20T09:14:18+00:00",
+        "deadline": "2025-12-20T11:00:00+00:00",
+        "publication_lead_hours": 1.7616666666666667,
+        "commit": "a60da32fb1fcfcce47fecf05c9884b68f10501db",
+        "git_blob_sha1": "99d7790b3a0e06577254439231aec5874deef3f7",
+        "prefix_bytes": 8671634,
+        "prefix_sha256": "9da9b7a3966c48841757647dba69e59e118125e1b51f9588826d3d0ed4069243",
+        "rows": 760,
+        "bootstrap_known": 760,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 283,
+        "chance_known": 484,
+        "return_gameweek_known": 41,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 18,
+        "published_at": "2025-12-26T09:14:39+00:00",
+        "deadline": "2025-12-26T18:30:00+00:00",
+        "publication_lead_hours": 9.255833333333333,
+        "commit": "2a9226ad8512c84b7738d80642cbda8f4d9d5e83",
+        "git_blob_sha1": "89e33b0d8a7dfe192fed168a3f8dcb4ea1c4e78e",
+        "prefix_bytes": 9229652,
+        "prefix_sha256": "909768d49752c6fca168d166aa16aab8cf74b43b05c6ab3ffffab900426a3b1c",
+        "rows": 770,
+        "bootstrap_known": 770,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 283,
+        "chance_known": 489,
+        "return_gameweek_known": 31,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 19,
+        "published_at": "2025-12-30T09:15:11+00:00",
+        "deadline": "2025-12-30T18:00:00+00:00",
+        "publication_lead_hours": 8.746944444444445,
+        "commit": "097c413ae8bc53cf9b367cf324a516081d185f0e",
+        "git_blob_sha1": "305862b3c5332dbb6cd472693a365e7b5bf1f6f3",
+        "prefix_bytes": 9603388,
+        "prefix_sha256": "c9354908fd43e80a99cc685e8388cd0f88ec24976225a26c6ebff5061fffdec0",
+        "rows": 775,
+        "bootstrap_known": 775,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 284,
+        "chance_known": 497,
+        "return_gameweek_known": 28,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 20,
+        "published_at": "2026-01-03T09:14:41+00:00",
+        "deadline": "2026-01-03T11:00:00+00:00",
+        "publication_lead_hours": 1.7552777777777777,
+        "commit": "0892d46dbd4384de50504b542a6731df33dfb637",
+        "git_blob_sha1": "d5846bcb00fbf3e673f9bcb213f5cf310e25de90",
+        "prefix_bytes": 9980064,
+        "prefix_sha256": "86ddf1c7120ff2ed03b6e5da3f119cce51b0b692ae80828836afb23f0e0e0a40",
+        "rows": 780,
+        "bootstrap_known": 780,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 294,
+        "chance_known": 505,
+        "return_gameweek_known": 23,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 21,
+        "published_at": "2026-01-06T09:15:36+00:00",
+        "deadline": "2026-01-06T18:30:00+00:00",
+        "publication_lead_hours": 9.24,
+        "commit": "ef2dbadfa6af3a9c8505a1231bba72bae5b50f73",
+        "git_blob_sha1": "731713fcda04cdd378a12fa63b0d155f3a8457dd",
+        "prefix_bytes": 10265489,
+        "prefix_sha256": "460ddbf44cc36e10a8615225d8270c0ee2ca9b888aca06df502f7ec8009875b8",
+        "rows": 790,
+        "bootstrap_known": 790,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 292,
+        "chance_known": 512,
+        "return_gameweek_known": 16,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 22,
+        "published_at": "2026-01-17T09:14:04+00:00",
+        "deadline": "2026-01-17T11:00:00+00:00",
+        "publication_lead_hours": 1.7655555555555555,
+        "commit": "590d8b7253f254fe60e0d727f86acd2640227adc",
+        "git_blob_sha1": "0103f076a997e5ccd6624ad0890fee29a043c41d",
+        "prefix_bytes": 11307291,
+        "prefix_sha256": "7e2017b7e6a73eb0fd274585c67de0271c3c87ce6a61fb6bee7071b3e65f6735",
+        "rows": 796,
+        "bootstrap_known": 796,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 287,
+        "chance_known": 535,
+        "return_gameweek_known": 40,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 23,
+        "published_at": "2026-01-24T09:14:19+00:00",
+        "deadline": "2026-01-24T11:00:00+00:00",
+        "publication_lead_hours": 1.761388888888889,
+        "commit": "67108a43ffed7a580a588157757aa3a2d978c928",
+        "git_blob_sha1": "6a757af176cfee7ddd719898f1c011bc5ec6cecc",
+        "prefix_bytes": 11966199,
+        "prefix_sha256": "b9964bf5be1d1a3b46e117ecad27cfabb7fc7bb9a854ce77e4cbe624589ca4b3",
+        "rows": 802,
+        "bootstrap_known": 802,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 281,
+        "chance_known": 547,
+        "return_gameweek_known": 21,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 24,
+        "published_at": "2026-01-31T09:15:49+00:00",
+        "deadline": "2026-01-31T13:30:00+00:00",
+        "publication_lead_hours": 4.2363888888888885,
+        "commit": "790c8f5bcd1c354d25c60cdf25b3a5e26c2ac9c1",
+        "git_blob_sha1": "84a79a429716e8864560f8eddda089358622d768",
+        "prefix_bytes": 12631058,
+        "prefix_sha256": "55f67c1570cc89c43a5a4d7c046970e74459b45ed247fab62780401893497c14",
+        "rows": 808,
+        "bootstrap_known": 808,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 279,
+        "chance_known": 558,
+        "return_gameweek_known": 28,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 25,
+        "published_at": "2026-02-06T09:24:42+00:00",
+        "deadline": "2026-02-06T18:30:00+00:00",
+        "publication_lead_hours": 9.088333333333333,
+        "commit": "deaafab4f7a33978540b6dcdde006c0be0a63df4",
+        "git_blob_sha1": "f08d3d059a4590ac7b5fb23f428090cd8f3c1484",
+        "prefix_bytes": 13210061,
+        "prefix_sha256": "c70b8a621f8a67c56d4b9d2302079b79adb24be9170a47fb8d360e8b0655ce31",
+        "rows": 817,
+        "bootstrap_known": 817,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 303,
+        "chance_known": 568,
+        "return_gameweek_known": 24,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 26,
+        "published_at": "2026-02-10T09:29:50+00:00",
+        "deadline": "2026-02-10T18:00:00+00:00",
+        "publication_lead_hours": 8.502777777777778,
+        "commit": "c2c717d22e40b9eb6476ef0247e2ca8d89d5ba52",
+        "git_blob_sha1": "91ad5cd142ff2fbe1d69eac7365ea90b9f38aed2",
+        "prefix_bytes": 13601545,
+        "prefix_sha256": "c9742dfcfc4a3a9322cfccbac018b657c273eb57caffc10538138f560f378e74",
+        "rows": 817,
+        "bootstrap_known": 817,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 315,
+        "chance_known": 582,
+        "return_gameweek_known": 28,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 27,
+        "published_at": "2026-02-21T09:16:46+00:00",
+        "deadline": "2026-02-21T13:30:00+00:00",
+        "publication_lead_hours": 4.220555555555555,
+        "commit": "ac2eebc1340531bcf081f1dd55794f30103f9b57",
+        "git_blob_sha1": "2565cb330270f70938343144be469679cab061ad",
+        "prefix_bytes": 14678510,
+        "prefix_sha256": "07a6d0cf6105a533692cb6ff210cb1b89d4ee927ddaafc3ff48498c50bf79978",
+        "rows": 817,
+        "bootstrap_known": 817,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 309,
+        "chance_known": 588,
+        "return_gameweek_known": 28,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 28,
+        "published_at": "2026-02-27T09:23:52+00:00",
+        "deadline": "2026-02-27T18:30:00+00:00",
+        "publication_lead_hours": 9.102222222222222,
+        "commit": "35f72c96be85f2bf76c1a0f0cbc74a25545fa7be",
+        "git_blob_sha1": "cbd9396fe6f79a004337779038fb538a9c4b2ecc",
+        "prefix_bytes": 15267187,
+        "prefix_sha256": "6f3bde0600e2a995685193b3ea89610904a109a3afdd3cf170c0b413091aa235",
+        "rows": 818,
+        "bootstrap_known": 818,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 315,
+        "chance_known": 591,
+        "return_gameweek_known": 28,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 29,
+        "published_at": "2026-03-03T09:24:06+00:00",
+        "deadline": "2026-03-03T18:00:00+00:00",
+        "publication_lead_hours": 8.598333333333333,
+        "commit": "2778b4451ef1f4eee1e85e39a6492f24b25cb132",
+        "git_blob_sha1": "acdb75da3f9043b6d205664649e0bb7876d06372",
+        "prefix_bytes": 15659724,
+        "prefix_sha256": "114f427e206cb7b7f9fa3d6c8aedf7f9e9e2bbb251077ef5e0786e61533669ef",
+        "rows": 819,
+        "bootstrap_known": 819,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 316,
+        "chance_known": 595,
+        "return_gameweek_known": 32,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 30,
+        "published_at": "2026-03-14T09:18:41+00:00",
+        "deadline": "2026-03-14T13:30:00+00:00",
+        "publication_lead_hours": 4.188611111111111,
+        "commit": "26942ae60a20cfdb42122efe3aed18588d846d3f",
+        "git_blob_sha1": "83cd76c9c503c134242d4dc0228a53a814adadd7",
+        "prefix_bytes": 16740973,
+        "prefix_sha256": "9a1f94217fe47a42b543963e8fa3a65c75c97ff36918e4774f90e07599a12bd4",
+        "rows": 820,
+        "bootstrap_known": 820,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 311,
+        "chance_known": 602,
+        "return_gameweek_known": 28,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 31,
+        "published_at": "2026-03-20T09:23:17+00:00",
+        "deadline": "2026-03-20T18:30:00+00:00",
+        "publication_lead_hours": 9.111944444444445,
+        "commit": "8ba1e1be38ad52ce9cf66e83b1387aaca68ad552",
+        "git_blob_sha1": "cdcb1eedbf02cc12ea789132b5e164d94c18a552",
+        "prefix_bytes": 17330418,
+        "prefix_sha256": "d0ed44f029a7301084594a7844b0aa2280098cf0c26399f04fb7e282bf77bf64",
+        "rows": 822,
+        "bootstrap_known": 822,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 299,
+        "chance_known": 605,
+        "return_gameweek_known": 27,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 32,
+        "published_at": "2026-04-10T09:37:44+00:00",
+        "deadline": "2026-04-10T17:30:00+00:00",
+        "publication_lead_hours": 7.871111111111111,
+        "commit": "20d265fe3a74d28528fbab0e9c7800d438b20646",
+        "git_blob_sha1": "9731d67200c2d539bde7a06d4bd8a50867e1228e",
+        "prefix_bytes": 18909799,
+        "prefix_sha256": "2d07bca17d7fe49d85b6e4e8b4528748e21aedf5367a5f15d1a1c64d19ca6211",
+        "rows": 825,
+        "bootstrap_known": 825,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 309,
+        "chance_known": 614,
+        "return_gameweek_known": 13,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 33,
+        "published_at": "2026-04-18T09:26:40+00:00",
+        "deadline": "2026-04-18T10:00:00+00:00",
+        "publication_lead_hours": 0.5555555555555556,
+        "commit": "1a5339fad71509e756403fd6a99eaa5d8ff55b98",
+        "git_blob_sha1": "5397ead8667371d2930683b33bceca6d1a432850",
+        "prefix_bytes": 19698513,
+        "prefix_sha256": "dbb11c39c0dc2e40ec0b9e5b299cb282337e4514e46afb141f6ceadc401b0962",
+        "rows": 826,
+        "bootstrap_known": 826,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 300,
+        "chance_known": 617,
+        "return_gameweek_known": 14,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 34,
+        "published_at": "2026-04-24T09:43:57+00:00",
+        "deadline": "2026-04-24T17:30:00+00:00",
+        "publication_lead_hours": 7.7675,
+        "commit": "f06171df98cf3d890fc53d09abcfde799308620f",
+        "git_blob_sha1": "08d25b5e0f72a90ae268014ad40eb043aaa0d5b7",
+        "prefix_bytes": 20291255,
+        "prefix_sha256": "b71dc4477a69f683b1b0f85f5df4a6e1bc822ef0270b739475f82741e0bd0fae",
+        "rows": 829,
+        "bootstrap_known": 829,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 300,
+        "chance_known": 620,
+        "return_gameweek_known": 11,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 35,
+        "published_at": "2026-05-01T09:43:26+00:00",
+        "deadline": "2026-05-01T17:30:00+00:00",
+        "publication_lead_hours": 7.776111111111111,
+        "commit": "42de1650d98a1906cf36687214bd642b2480d316",
+        "git_blob_sha1": "039c218ede20bef47d3f0ab2e1308e24839ff5ce",
+        "prefix_bytes": 20984370,
+        "prefix_sha256": "5bb8efd8ebccd2ef2c60c9de324489112ab756c419548425f14392a50511aab2",
+        "rows": 830,
+        "bootstrap_known": 830,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 302,
+        "chance_known": 621,
+        "return_gameweek_known": 8,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 36,
+        "published_at": "2026-05-09T09:40:59+00:00",
+        "deadline": "2026-05-09T10:00:00+00:00",
+        "publication_lead_hours": 0.3169444444444444,
+        "commit": "ed761cc21b912855f2450369b2dc083538dc2346",
+        "git_blob_sha1": "7e82d88f4b3cc63701eb4c9a838619cd9314c5a6",
+        "prefix_bytes": 21776992,
+        "prefix_sha256": "a8c51555ce6004fbdfb05d9d6e6f040dcf2def417c733e660a6d3226e635a5fd",
+        "rows": 832,
+        "bootstrap_known": 832,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 294,
+        "chance_known": 626,
+        "return_gameweek_known": 7,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 37,
+        "published_at": "2026-05-15T10:00:29+00:00",
+        "deadline": "2026-05-15T17:30:00+00:00",
+        "publication_lead_hours": 7.491944444444444,
+        "commit": "89a1452c2d7c215b3f0d3e86f22e346d52ad7b5f",
+        "git_blob_sha1": "c171e93cac2a50fc505c5a61ba932517227ffb5f",
+        "prefix_bytes": 22374773,
+        "prefix_sha256": "ac3df2320a67d0883802ce9f601bb2fdfb3893cf4315b20d8b3fbe21b12affbd",
+        "rows": 838,
+        "bootstrap_known": 838,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 301,
+        "chance_known": 627,
+        "return_gameweek_known": 4,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      },
+      {
+        "gameweek": 38,
+        "published_at": "2026-05-24T09:45:42+00:00",
+        "deadline": "2026-05-24T13:30:00+00:00",
+        "publication_lead_hours": 3.7383333333333333,
+        "commit": "101df94bfe901ccea7216eef74aeed96979b96d0",
+        "git_blob_sha1": "74829dc09b97143eb0aefbdf4cfb0721359d183a",
+        "prefix_bytes": 23271124,
+        "prefix_sha256": "b6f95fc1d91add8d71fbc17c3f562ab567243f1d6552818db689f8369707210f",
+        "rows": 840,
+        "bootstrap_known": 840,
+        "absent_at_other_capture": 0,
+        "news_nonempty": 292,
+        "chance_known": 630,
+        "return_gameweek_known": 0,
+        "source_clock_has_timezone": false,
+        "time_basis": "exact-prefix Git publication, not assumed source-clock timezone",
+        "model_admitted": false,
+        "benchmark_admitted": false
+      }
+    ],
+    "coverage": [
+      {
+        "gameweek": 4,
+        "source_rows": 738,
+        "not_in_fixture_history": 0,
+        "admitted": 738
+      },
+      {
+        "gameweek": 5,
+        "source_rows": 740,
+        "not_in_fixture_history": 0,
+        "admitted": 740
+      },
+      {
+        "gameweek": 6,
+        "source_rows": 741,
+        "not_in_fixture_history": 0,
+        "admitted": 741
+      },
+      {
+        "gameweek": 7,
+        "source_rows": 742,
+        "not_in_fixture_history": 0,
+        "admitted": 742
+      },
+      {
+        "gameweek": 8,
+        "source_rows": 743,
+        "not_in_fixture_history": 0,
+        "admitted": 743
+      },
+      {
+        "gameweek": 9,
+        "source_rows": 745,
+        "not_in_fixture_history": 0,
+        "admitted": 745
+      },
+      {
+        "gameweek": 10,
+        "source_rows": 746,
+        "not_in_fixture_history": 0,
+        "admitted": 746
+      },
+      {
+        "gameweek": 11,
+        "source_rows": 748,
+        "not_in_fixture_history": 0,
+        "admitted": 748
+      },
+      {
+        "gameweek": 12,
+        "source_rows": 752,
+        "not_in_fixture_history": 0,
+        "admitted": 752
+      },
+      {
+        "gameweek": 13,
+        "source_rows": 755,
+        "not_in_fixture_history": 0,
+        "admitted": 755
+      },
+      {
+        "gameweek": 14,
+        "source_rows": 755,
+        "not_in_fixture_history": 0,
+        "admitted": 755
+      },
+      {
+        "gameweek": 15,
+        "source_rows": 758,
+        "not_in_fixture_history": 0,
+        "admitted": 758
+      },
+      {
+        "gameweek": 16,
+        "source_rows": 759,
+        "not_in_fixture_history": 0,
+        "admitted": 759
+      },
+      {
+        "gameweek": 17,
+        "source_rows": 760,
+        "not_in_fixture_history": 0,
+        "admitted": 760
+      },
+      {
+        "gameweek": 18,
+        "source_rows": 770,
+        "not_in_fixture_history": 0,
+        "admitted": 770
+      },
+      {
+        "gameweek": 19,
+        "source_rows": 775,
+        "not_in_fixture_history": 0,
+        "admitted": 775
+      },
+      {
+        "gameweek": 20,
+        "source_rows": 780,
+        "not_in_fixture_history": 0,
+        "admitted": 780
+      },
+      {
+        "gameweek": 21,
+        "source_rows": 790,
+        "not_in_fixture_history": 0,
+        "admitted": 790
+      },
+      {
+        "gameweek": 22,
+        "source_rows": 796,
+        "not_in_fixture_history": 0,
+        "admitted": 796
+      },
+      {
+        "gameweek": 23,
+        "source_rows": 802,
+        "not_in_fixture_history": 0,
+        "admitted": 802
+      },
+      {
+        "gameweek": 24,
+        "source_rows": 808,
+        "not_in_fixture_history": 0,
+        "admitted": 808
+      },
+      {
+        "gameweek": 25,
+        "source_rows": 817,
+        "not_in_fixture_history": 0,
+        "admitted": 817
+      },
+      {
+        "gameweek": 26,
+        "source_rows": 817,
+        "not_in_fixture_history": 0,
+        "admitted": 817
+      },
+      {
+        "gameweek": 27,
+        "source_rows": 817,
+        "not_in_fixture_history": 0,
+        "admitted": 817
+      },
+      {
+        "gameweek": 28,
+        "source_rows": 818,
+        "not_in_fixture_history": 0,
+        "admitted": 818
+      },
+      {
+        "gameweek": 29,
+        "source_rows": 819,
+        "not_in_fixture_history": 0,
+        "admitted": 819
+      },
+      {
+        "gameweek": 30,
+        "source_rows": 820,
+        "not_in_fixture_history": 0,
+        "admitted": 820
+      },
+      {
+        "gameweek": 31,
+        "source_rows": 822,
+        "not_in_fixture_history": 161,
+        "admitted": 661
+      },
+      {
+        "gameweek": 32,
+        "source_rows": 825,
+        "not_in_fixture_history": 0,
+        "admitted": 825
+      },
+      {
+        "gameweek": 33,
+        "source_rows": 826,
+        "not_in_fixture_history": 0,
+        "admitted": 826
+      },
+      {
+        "gameweek": 34,
+        "source_rows": 829,
+        "not_in_fixture_history": 248,
+        "admitted": 581
+      },
+      {
+        "gameweek": 35,
+        "source_rows": 830,
+        "not_in_fixture_history": 0,
+        "admitted": 830
+      },
+      {
+        "gameweek": 36,
+        "source_rows": 832,
+        "not_in_fixture_history": 0,
+        "admitted": 832
+      },
+      {
+        "gameweek": 37,
+        "source_rows": 838,
+        "not_in_fixture_history": 0,
+        "admitted": 838
+      },
+      {
+        "gameweek": 38,
+        "source_rows": 840,
+        "not_in_fixture_history": 0,
+        "admitted": 840
+      }
+    ]
+  },
+  "evidence_sha256": {
+    "availability-proof-all.json": "a842dfcfd24252ef342b2bc5c4e6a3f86a5f3ad6e3171f0b038ed31d68c2e441",
+    "probe_input_audit.json": "9db0d24bc64359dd77f10e68d208c33ea72a48fcdf50a09015d3a63d59063a06",
+    "probe_input.csv": "6c0fdbf48f60dc5fdb05c4ab9bbc2993fda59195781ed6ed52ab570314c1363d",
+    "study-spec.json": "03f0111cb9566a707cd73744907e0b7f3424feeecd4e64294f0863c35527f1c9",
+    "report.json": "959d43d9ba6d2e1639b8a47830b656435f143e1dccbf23258fe4babeb63d5129",
+    "predictions.csv": "f844c79983e2ee74622366b238e3e5c6de8e2467b335ccdd542a0a10c87db3a1"
+  },
+  "resources": {
+    "preparation_seconds": 11.582323167007416,
+    "study_and_retained_forecast_audit_seconds": 2.466750874882564,
+    "study_peak_sampled_rss_bytes": 375226368,
+    "preparation_peak_sampled_rss_bytes": 1788002304,
+    "threads": 2
+  },
+  "environment": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}
