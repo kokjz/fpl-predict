@@ -54,6 +54,17 @@ A separate matched retrospective comparison against Dastan covers 17,622 player-
 
 Dastan had about 2.9% lower RMSE on those matched records. Training policies and feature sets differ, and this is an archived retrospective comparison, not a prospective competition. Do not compare this table directly with the core-points table above: the periods and targets differ. [Comparison methods, provenance and aggregate results](docs/open_source_comparison_2026-10-14.md).
 
+A [practical selection benchmark](docs/SELECTION_BENCHMARK_RESULTS_2026-10-15.md)
+compares realised lineup points, budgeted squad construction and rolling transfers
+under one shared policy. In the 2025/26 GW28–38 window the incumbent leads the
+measured squad-reset and rolling totals against named-method adaptations; the
+primary owned-squad comparisons remain inconclusive. A separate replay of original
+Dastan forecasts shows a small, inconclusive +0.198 points/GW lead for Dastan.
+These retrospective results do not establish parity or superiority over the
+original external systems, and no model was promoted. The report includes
+coverage, uncertainty, source distinctions and measured execution cost; the
+[workflow](docs/selection_benchmark.md) explains how to test your own forecasts.
+
 For shared-row comparisons against other systems, see the [external benchmark
 protocol](docs/BENCHMARK_PROTOCOL.md), [source readiness inventory](docs/benchmark_sources.json)
 and [local import workflow](docs/benchmark_workflow.md). The optional
@@ -178,6 +189,7 @@ Additional research commands expose their options through:
 ```sh
 .venv/bin/fpl-predict decision-trial --help
 .venv/bin/fpl-predict search-lightweight --help
+.venv/bin/fpl-predict selection-benchmark --help
 .venv/bin/python tools/compare_dastan.py --help
 ```
 

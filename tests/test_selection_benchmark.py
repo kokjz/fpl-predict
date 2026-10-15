@@ -212,6 +212,12 @@ def test_native_adapter_positive_blank_and_missing_forecast(tmp_path):
     assert audit['weeks'][0]['verified_blank_players']==1
     with pytest.raises(ValueError,match='missing played-club'):
         native_market(pred.iloc[:1],raw,manifest,tmp_path,calendar,tmp_path,['reference'])
+    extra_pred=pred.iloc[:1].copy(); extra_pred['fpl_code']=20
+    extra_pred[['reference','actual','minutes']]=0.
+    extra_raw=raw.iloc[:1].copy(); extra_raw['fpl_code']=20; extra_raw['team_name']='T2'
+    extra_raw[['total_points','minutes']]=0.
+    with pytest.raises(ValueError,match='Blank unexpectedly'):
+        native_market(pd.concat([pred,extra_pred]),pd.concat([raw,extra_raw]),manifest,tmp_path,calendar,tmp_path,['reference'])
     path.write_text('{}')
     with pytest.raises(ValueError,match='checksum'):
         native_market(pred,raw,manifest,tmp_path,calendar,tmp_path,['reference'])
@@ -234,3 +240,34 @@ def test_original_single_week_adapter_preserves_cutoff_disclosure(tmp_path):
     assert frame.actual.iloc[0]==5 and frame.reference.iloc[0]==2 and frame.external.iloc[0]==4
     assert report['external_generated']!=report['local_generated']
     assert 'single GW' in report['selection_caveats'][-1]
+
+
+@pytest.mark.parametrize('value',[None,'2025-27','bad'])
+def test_invalid_season_cannot_disappear_from_grouping(value):
+    d=market(); d.loc[0,'season']=value
+    with pytest.raises(ValueError,match='season'): validate(d,MODELS)
+
+
+def test_weekly_schedule_is_recorded_and_matches_every_method():
+    d=market(); later=d.copy(); later['gameweek']=29
+    rows,actions,report=run(pd.concat([d,later]),MODELS,reference='reference',panels=3,rolling=0,reset=False,per_week=True)
+    assert set(report['scenario_schedule'])=={28,29}
+    for a in actions:
+        assert sorted(a['squad'])==report['scenario_schedule'][a['gameweek']][a['scenario']]['ids']
+
+
+def test_cli_records_environment_and_never_overwrites(tmp_path,monkeypatch):
+    import json,sys
+    from experiment_runner import file_hash
+    from selection_benchmark import main
+    d=market();d['price_tenths']=60
+    path=tmp_path/'market.csv';d.to_csv(path,index=False); output=tmp_path/'result'
+    argv=['selection-benchmark','--input',str(path),'--sha256',file_hash(path),'--models',*MODELS,
+          '--reference','reference','--output',str(output),'--panels','3','--rolling','0','--no-reset']
+    monkeypatch.setattr(sys,'argv',argv);main()
+    spec=json.loads((output/'spec.json').read_text());report=json.loads((output/'report.json').read_text())
+    assert spec['environment']['scipy'] and spec['selector_sha256']
+    assert '28' in report['scenario_schedule']
+    before=file_hash(output/'scores.csv')
+    with pytest.raises(SystemExit):main()
+    assert file_hash(output/'scores.csv')==before

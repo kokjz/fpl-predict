@@ -59,7 +59,7 @@ def native_market(predictions, players, manifest, snapshot_root, calendar_audit,
             code = element['code']; club = names[element['team']]; count = int(counts.get(element['team'],0))
             if count == 0:
                 values = {k:0. for k in [*models,'actual','minutes','cards']}; blanks += 1
-                if code in aggregate.index and (aggregate.loc[code].abs()>1e-10).any(): raise ValueError('Blank has nonzero data')
+                if code in aggregate.index: raise ValueError('Blank unexpectedly has fixture rows')
             else:
                 if code not in aggregate.index: raise ValueError('Unexplained missing played-club forecast')
                 rows = paired[paired.fpl_code.eq(code)]
@@ -112,13 +112,14 @@ def dastan_market(archive, players, models, lagged_prices):
             if a.position != r.position or not np.isclose(a.total_points,r.actual) or not np.isclose(a.minutes,r.minutes):
                 raise ValueError('Archived outcome conflict')
             result.append(dict(season='2024-25',gameweek=int(gw),deadline=deadline.isoformat(),
-                inputs_as_of=(deadline-pd.Timedelta(seconds=1)).isoformat(),fpl_code=int(r.fpl_code),position=int(r.position),
+                inputs_as_of=(deadline-pd.Timedelta(seconds=1)).isoformat(),
+                inputs_as_of_kind='reconstructed_analysis_boundary_not_verified_forecast_capture',fpl_code=int(r.fpl_code),position=int(r.position),
                 team=h.team_name,price_tenths=int(price_rows.loc[r.fpl_code,'value']),can_buy=1,prior_minutes=float(means.get(r.fpl_code,0)),
                 ownership=0.,actual=float(a.total_points),minutes=float(a.minutes),cards=float(a.cards+a.reds),
                 **{m:float(getattr(r,m)) for m in models}))
         audit.append(dict(gameweek=int(gw),exported_players=len(week),excluded_no_prior_metadata=excluded))
     return pd.DataFrame(result),dict(weeks=audit,scope='weekly owned panels conditional on original archive coverage',
-        caveats=['Reconstructed cutoff, unequal original training/information history',
+        caveats=['inputs_as_of is a reconstructed analysis boundary, not a verified original forecast capture; unequal training/information history',
                  'Earlier fixture prices used only to sample panels, not historical execution quotes',
                  'Lagged club/appearance data; omitted players/blanks not zero-filled; no complete market claim'])
 

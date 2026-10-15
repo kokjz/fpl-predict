@@ -4,6 +4,9 @@ import argparse
 from collections import Counter
 from itertools import combinations
 import json
+import importlib.metadata
+import platform
+import re
 from pathlib import Path
 import time
 import warnings
@@ -90,7 +93,13 @@ def validate(frame, models):
     numeric = frame[['actual', 'minutes', 'cards', 'prior_minutes', 'ownership', *models]].to_numpy(float)
     if not np.isfinite(numeric).all() or (frame[['minutes', 'cards', 'prior_minutes', 'ownership']] < 0).any().any():
         raise ValueError('Invalid values')
-    if not frame.can_buy.isin([0, 1]).all() or frame.team.isna().any(): raise ValueError('Invalid buy/club')
+    if (not frame.can_buy.isin([0, 1]).all() or
+            not frame.team.map(lambda v:isinstance(v,str) and bool(v.strip())).all()):
+        raise ValueError('Invalid buy/club')
+    def season_valid(v):
+        return (isinstance(v,str) and re.fullmatch(r'20[0-9]{2}-[0-9]{2}',v) is not None and
+                (int(v[:4])+1)%100 == int(v[-2:]))
+    if not frame.season.map(season_valid).all(): raise ValueError('Invalid season')
     for _, week in frame.groupby(['season', 'gameweek']):
         if week.deadline.nunique() != 1 or week.inputs_as_of.nunique() != 1: raise ValueError('Ambiguous cutoff')
         deadline = pd.Timestamp(week.deadline.iloc[0]); cutoff = pd.Timestamp(week.inputs_as_of.iloc[0])
@@ -247,13 +256,14 @@ def run(frame, models, *, reference, panels=12, rolling=6, reset=True, per_week=
     groups = list(frame.groupby('gameweek', sort=True)); first = groups[0][1]
     if rolling and any(b[0] != a[0]+1 for a,b in zip(groups,groups[1:])):
         raise ValueError('Rolling weeks must be consecutive')
-    frozen = scenarios(first, panels, minimum_cost=0 if per_week else 900)
-    if legacy is not None: frozen = legacy
+    frozen = legacy if legacy is not None else (None if per_week else scenarios(first, panels))
+    schedule = {int(gw):scenarios(week,panels,seed=20261015+int(gw),minimum_cost=0)
+                if per_week else frozen for gw,week in groups}
     records = []; actions = []; states = {}
-    rolling_ids = [i for i in range(len(frozen)) if i % (panels//3) < rolling//3] if rolling else []
+    rolling_ids = [i for i in range(len(frozen or [])) if i % (panels//3) < rolling//3] if rolling else []
     if rolling and (per_week or legacy is not None or rolling % 3): raise ValueError('Unsupported rolling scenarios')
     for gw, week in groups:
-        if per_week: frozen = scenarios(week, panels, seed=20261015+int(gw), minimum_cost=0)
+        frozen = schedule[int(gw)]
         outcomes = {int(r.fpl_code):{'actual':float(r.actual),'minutes':float(r.minutes),'cards':float(r.cards)} for r in week.itertuples()}
         def record(layer, sid, model, squad, selection, hits=0, **details):
             points = score(selection, {p['id']:p for p in squad}, outcomes, hits)
@@ -291,7 +301,7 @@ def run(frame, models, *, reference, panels=12, rolling=6, reset=True, per_week=
         summaries['rolling'] = dict(mean_episode_points=totals.mean().to_dict(),
             mean_episode_difference=totals.subtract(totals[reference],axis=0).mean().to_dict(),
             scenario_totals=totals.to_dict('index'),inference='One path-dependent window; no independent-episode CI')
-    return rows,actions,dict(summaries=summaries,scenarios=frozen,models=models,reference=reference,
+    return rows,actions,dict(summaries=summaries,scenario_schedule=schedule,models=models,reference=reference,
                              model_promotion=False,normal_weekly_workflow_changed=False)
 
 
@@ -313,7 +323,9 @@ def main():
     args.output.mkdir(parents=True)
     (args.output/'spec.json').write_text(json.dumps(dict(input_sha256=args.sha256,models=args.models,reference=args.reference,
         panels=args.panels,rolling=args.rolling,reset=not args.no_reset,per_week=args.per_week,
-        engine_sha256=file_hash(Path(__file__)),protocol_sha256=file_hash(Path(__file__).parent/'fpl_predict_resources/selection_protocol.json')),
+        engine_sha256=file_hash(Path(__file__)),selector_sha256=file_hash(Path(__file__).parent/'forecast.py'),
+        environment={name:importlib.metadata.version(name) for name in ('numpy','pandas','scipy','scikit-learn')},
+        python=platform.python_version(),protocol_sha256=file_hash(Path(__file__).parent/'fpl_predict_resources/selection_protocol.json')),
         indent=2))
     rows, actions, report = run(frame,args.models,reference=args.reference,panels=args.panels,rolling=args.rolling,
                                 reset=not args.no_reset,per_week=args.per_week)
