@@ -52,6 +52,20 @@ A separate matched retrospective comparison against Dastan covers 17,622 player-
 | fpl-predict v1 | 2.9765 | 2.1354 |
 | Dastan | **2.8910** | **2.0204** |
 
+On that same candidate cohort, v1 achieved higher **top-10 ranking quality**
+(mean NDCG@10 **0.4937 versus 0.4878**, leading in 13 of 24 GWs). This is a
+planning-relevant historical strength: it rewards putting high-return options
+near the top, although it does not enforce squad constraints. The small lead has
+an exploratory uncertainty interval spanning zero.
+
+About **55% of Dastan's MSE advantage** comes from candidates who subsequently
+recorded zero minutes. Known unavailable players can be excluded using predeadline
+evidence, but unexpected non-appearances remain important selection errors and
+must stay in the comparison. Dastan also has lower error among 60+ minute players.
+The [decision-relevance explanation](docs/comparison_interpretation.md) gives the
+full decomposition, source limitations and distinction between measured wins and
+unproved general superiority.
+
 Dastan had about 2.9% lower RMSE on those matched records. Training policies and feature sets differ, and this is an archived retrospective comparison, not a prospective competition. Do not compare this table directly with the core-points table above: the periods and targets differ. [Comparison methods, provenance and aggregate results](docs/open_source_comparison_2026-10-14.md).
 
 A [practical selection benchmark](docs/SELECTION_BENCHMARK_RESULTS_2026-10-15.md)
