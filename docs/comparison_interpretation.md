@@ -47,7 +47,7 @@ Use the [full practical results](SELECTION_BENCHMARK_RESULTS_2026-10-15.md), [fo
 
 Prioritise a fresh, sourced review of plausible candidates and owned players, especially conflicts between model minutes/probabilities and official status/news. Keep missing information unknown, preserve base forecasts, and record manual sensitivity assumptions with source/publication/check times. Evaluate frozen forecasts after finalisation, including probability reliability and decision-point outcomes. The [availability workflow](availability_workflow.md) describes the process; operational squad planning is a separate action.
 
-No fitted weights or approved registry entry changes because of this report. The read-only [participation audit](participation_audit.md) adds risk attribution and an evidence preflight; it does not choose players or claim to improve points.
+No production forecasting weights or approved registry entry changes because of this report. The [fixed news/availability probe](news_availability_probe.md) tests source value separately without automatic promotion. The read-only [participation audit](participation_audit.md) adds risk attribution and an evidence preflight; it does not choose players or claim to improve points.
 
 ## Reproducibility and grounding
 

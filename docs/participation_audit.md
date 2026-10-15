@@ -26,7 +26,7 @@ fpl-predict participation-audit preflight --forecast /path/to/new/forecast \
   --gw 7 --output /path/to/new/preflight.json
 ```
 
-Dates and paths are illustrative. Inputs, forecast generation, and explicit `--as-of` must precede the verified GW deadline. Snapshot must name that GW as next/unfinished, its manifest must bind bootstrap bytes and a public official FPL bootstrap URL, and it cannot be older than forecast generation. Review candidates plus optional owned/non-candidate IDs supplied with repeated `--include-id`. Unknown IDs fail; outputs stay private.
+Dates and paths are illustrative. Inputs, forecast generation, and explicit `--as-of` must precede the verified GW deadline. Snapshot must name that GW as next/unfinished, its manifest must bind bootstrap bytes and a public official FPL bootstrap URL, and it cannot be older than the forecast input snapshot (an explicitly identical input manifest is also accepted). Review candidates plus optional owned/non-candidate IDs supplied with repeated `--include-id`. Unknown IDs fail; outputs stay private.
 
 Optional `--review /path/to/sourced/review.json` uses the existing timestamped [availability review schema](availability_workflow.md). Flags cover status/news/chance observations, changes since the frozen forecast, missing/stale review and stale inputs. Official percentages are not calibrated probabilities; status `a`/blank news do not certify health. A sourced sensitivity assumption does not silently clear a flag or establish a start.
 
@@ -34,6 +34,6 @@ Freshness heuristics are fixed review prompts: snapshot <=6h old, forecast <=24h
 
 ## Next-cycle decision
 
-Keep the approved model and existing sourced sensitivity workflow. The weekly chat should review plausible targets, owned players and prospective captains for current role/fitness evidence, preserve base and scenario forecasts, freeze the comparison before deadline and assess finalised outcomes afterward. No schedule/background monitor/cross-chat message is created.
+Keep the approved model and existing sourced sensitivity workflow. The weekly chat should review plausible targets, owned players and prospective captains for current role/fitness evidence, preserve base and scenario forecasts, freeze the comparison before deadline and assess finalised outcomes afterward. No schedule/background monitor/cross-chat message is created. Optional `--evidence` accepts independently researched club/league/press observations without forcing a numerical assumption; see the [external-news schema and fixed experiment](news_availability_probe.md).
 
-Earlier hurdle/richer-participation challengers failed development gates. Isolate source freshness, refit frequency or conditional-return modelling one factor at a time in future chronological development studies, with error, ranking and legal-decision gates and a genuinely later audit. This package performs diagnostics and workflow checks, not another search on inspected comparison outcomes.
+Earlier hurdle/richer-participation challengers failed development gates. Isolate source freshness, refit frequency or conditional-return modelling one factor at a time in future chronological development studies, with error, ranking and legal-decision gates and a genuinely later audit. This package adds diagnostics/workflow checks and a separately predeclared fixed source-value probe; it does not tune parameters on inspected comparison outcomes.
