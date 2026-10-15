@@ -18,7 +18,7 @@
       "model": "original_openfpl_via_dastan",
       "revision": "758db9247e8b3a9a870c991064f74d8339d61cd0",
       "url": "https://github.com/qazybekb/smartplayfpl-dastan/blob/758db9247e8b3a9a870c991064f74d8339d61cd0/docs/DATA.md",
-      "status": "partial_archive_integrity_verified",
+      "status": "archive_bytes_keys_and_full_outcomes_verified",
       "bridge": {
         "sha256": "8d11c37a7f7134a93324fdac979d38c3136f8831d3f627dbed8a4eabc5b8b492",
         "hash_verified": true,
@@ -29,10 +29,15 @@
       },
       "predictions": {
         "publisher_sha256": "8113cb86392d98000e84ae0b383c7871cf35bf74a08cd3042cb5c8d81eab3849",
-        "hash_verified": false,
-        "reason": "Prediction CSV not retrieved: direct URL unavailable and connected file reader size/format limit. Published metadata is not independently verified prediction evidence."
+        "hash_verified": true,
+        "bytes": 1414457,
+        "rows": 18173,
+        "bridge_matches": 18173,
+        "historical_full_score_matches": 18173,
+        "outcome_conflicts": 0,
+        "core_full_different_rows": 922
       },
-      "remaining": "Verify actual prediction bytes, exporter/model identity, training/selection provenance, full-score target and permissions before admission."
+      "remaining": "Confirm exporter/model lineage, training/selection/capture provenance and permissions; resolve incumbent full-score window. Integrity is not admission."
     },
     {
       "model": "openfpl_scout_ai",
