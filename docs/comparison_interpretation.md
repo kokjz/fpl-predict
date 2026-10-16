@@ -85,3 +85,14 @@ Older chronological development is nearly neutral; same-policy retained external
 comparisons preserve the error advantage, but reset/rolling points favour the
 standing reference. No new expected-selector adoption or model promotion occurs.
 This follow-up does not rewrite the results or progression rules above.
+
+## Continuous season-management comparisons
+
+The [matched 38-GW forecast-reference study](SEASON_EXTERNAL_RESULTS_2026-10-16.md)
+carries finances, transfers and chips through complete seasons, with both own and
+common opening squads. Its standings depend on training usage and opening state;
+short wall-time search also changes some paths between runs. These named prior-only
+adaptations do not reproduce original external managers. This is more directly
+relevant to season management than reset-team tests, while remaining one reused
+season and an experimental bounded policy. Neither a selected favourable control
+nor a lower point error establishes general or native-system superiority.

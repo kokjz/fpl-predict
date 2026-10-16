@@ -68,3 +68,8 @@ not independent prospective evidence. Later stages add common-start sensitivity,
 admissible external forecasts/planners and further seasons where rules/sources
 permit. No model or policy is promoted solely by this pilot, and no future
 gameweek results are required to conduct it.
+
+The [subsequent external-forecast comparison](SEASON_EXTERNAL_RESULTS_2026-10-16.md)
+adds matched prior-only forecast adaptations and common-opening paths. It uses
+the revised planner and reports both controls; its results do not overwrite this
+first pilot or establish original external-manager superiority.

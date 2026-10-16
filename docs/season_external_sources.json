@@ -1,0 +1,665 @@
+{
+  "season": "2025-26",
+  "checked": "2026-10-16",
+  "snapshots": [
+    {
+      "gameweek": 1,
+      "sha256": "eee31c9ece4864963bff4d88543ac5d440ca4d574ec89512e680d6e697f9a086",
+      "captured_at": "2025-08-15T12:52:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/8/15/1252.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 2,
+      "sha256": "4fc61f6f89d925af550887c05eeb84648d9860cf974ddee113306a89a1d36f51",
+      "captured_at": "2025-08-22T12:51:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/8/22/1251.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 3,
+      "sha256": "02366ddb44914b5a8f846af64886a657d5dd6fa9115b77b990112d647d4d37c0",
+      "captured_at": "2025-08-30T06:32:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/8/30/0632.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 4,
+      "sha256": "0bbfb0d3a5f580ca7ada903c3d9ad25b1036ecc258160eb2b415715c5c03697a",
+      "captured_at": "2025-09-13T06:31:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/9/13/0631.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 5,
+      "sha256": "7d7a0bcb8206f816b772d9d354d0f4690cdfa52c271f5f938b07ddfbc5e04084",
+      "captured_at": "2025-09-20T06:32:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/9/20/0632.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 6,
+      "sha256": "d24eb9d137739682a71090d4abf7b9c49245624f5ffab316c127781ebe514838",
+      "captured_at": "2025-09-27T06:31:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/9/27/0631.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 7,
+      "sha256": "45371fe22f35ede4f644052a0918b1e5fb58d52bb671557be1aa3904a5fdb467",
+      "captured_at": "2025-10-03T12:49:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/10/3/1249.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 8,
+      "sha256": "e81984e8ed02ab4e214d8276580d851c97f130d87cc6e13dc265e1b456bac48e",
+      "captured_at": "2025-10-18T06:33:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/10/18/0633.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 9,
+      "sha256": "4faee9cbcd6ba4c065acba30fc0a79abc8ca67e522493611f9ab001bf20b28b6",
+      "captured_at": "2025-10-24T12:54:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/10/24/1254.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 10,
+      "sha256": "438308293493bd5bfe702c4c33371b0d7f88ecde5ea28b19cdebd2efc6a2991f",
+      "captured_at": "2025-11-01T12:47:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/11/1/1247.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 11,
+      "sha256": "b9b40ee84b55e24b2ce8a3adae8116626ece5091dfd453e05eff640a6b4143fe",
+      "captured_at": "2025-11-08T06:34:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/11/8/0634.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 12,
+      "sha256": "3c3a52d10e696f93f49f75d803ceb2753aa45ba09495523ee777b23377cc400d",
+      "captured_at": "2025-11-22T06:34:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/11/22/0634.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 13,
+      "sha256": "88a3689a796c51387ac427ce215f0f8a56b4d95999f422d671dc46cede87e091",
+      "captured_at": "2025-11-29T12:50:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/11/29/1250.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 14,
+      "sha256": "38c5c4ae749a0e10a6a9730247e9348a3753a2d129f3e50cee58624c602634b8",
+      "captured_at": "2025-12-02T12:58:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/12/2/1258.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 15,
+      "sha256": "d8b06805b784077a35ebe3428e87ab80379e594ede823e80030e030e27e1fde5",
+      "captured_at": "2025-12-06T06:36:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/12/6/0636.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 16,
+      "sha256": "24854bd83cfddd66ecaa2eeecb7d857c1ee46058c27627c9f1a337593454b250",
+      "captured_at": "2025-12-13T12:51:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/12/13/1251.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 17,
+      "sha256": "125e16fb0120ad65e2fbe2998c9613b70f4310b7dfa219b6110ce4a9968bcc81",
+      "captured_at": "2025-12-20T06:38:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/12/20/0638.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 18,
+      "sha256": "beb448b597ee95631bd893f12d617406da064189db78ff4ac0eab80efa32513f",
+      "captured_at": "2025-12-26T12:55:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/12/26/1255.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 19,
+      "sha256": "e89b8875aa9734299b25130c69156abab75dc4de879422e05c347f1469dca750",
+      "captured_at": "2025-12-30T12:58:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2025/12/30/1258.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 20,
+      "sha256": "c7db78778c4d0ce11478f78a0e5b993b45c615fb84827cc3862cd348542e6423",
+      "captured_at": "2026-01-03T06:40:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/1/3/0640.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 21,
+      "sha256": "637c423d6108b26dcd674d275e21a4f3ef423efc40122905ec2c4521c6dd7414",
+      "captured_at": "2026-01-06T12:58:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/1/6/1258.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 22,
+      "sha256": "2e14d23acf03415ee763d7e72864bf41d46b45666c0cadf46815560903ef2a12",
+      "captured_at": "2026-01-17T06:39:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/1/17/0639.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 23,
+      "sha256": "b37dd4fbbdbd7be11c0343ba4683f305404b822dc07560bc7368ec1fa54def45",
+      "captured_at": "2026-01-24T06:40:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/1/24/0640.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 24,
+      "sha256": "ed930ca5b29d29de3bbfa31b505988fff8ffeb4aae35a15667613384b929925e",
+      "captured_at": "2026-01-31T13:03:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/1/31/1303.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 25,
+      "sha256": "baa605b8109f3525a3f8d042c61f7ca7512a3e6d42278f9300eb1f21132a6d41",
+      "captured_at": "2026-02-06T13:15:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/2/6/1315.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 26,
+      "sha256": "c70b651cfdcf2166734fe1ac14a3a687e96bd540377fbedd6693eccca7ecbefa",
+      "captured_at": "2026-02-10T13:41:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/2/10/1341.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 27,
+      "sha256": "ca5e759c6fd7e1118b649e8cfee3bd0b485a686f0b2a9db6306bd329e49952fe",
+      "captured_at": "2026-02-21T13:03:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/2/21/1303.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 28,
+      "sha256": "8edc1cc4e1d0a05e61abb6067530217968dec324f0e0460a220c4a568d83a61d",
+      "captured_at": "2026-02-27T13:14:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/2/27/1314.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 29,
+      "sha256": "109d57adb64e150a21725a68f1c61f0d9874daf16426d327cbc4c49e4de86b18",
+      "captured_at": "2026-03-03T13:14:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/3/3/1314.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 30,
+      "sha256": "80f6e7464eac91189732cc79715d4b76c891a42a5990423d780ebe43b886e870",
+      "captured_at": "2026-03-14T13:08:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/3/14/1308.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 31,
+      "sha256": "60180c532341d293ec9c457a27be1b077994eab1f0f4cb9fc7e23436455d5930",
+      "captured_at": "2026-03-20T13:16:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/3/20/1316.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 32,
+      "sha256": "d3ed02efc62d181101ece997ba7d12988065852286efd747d35710f4116247df",
+      "captured_at": "2026-04-10T13:26:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/4/10/1326.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 33,
+      "sha256": "a6d6cce56422bc2a29334c58e3d106705b8510dd1c7d2253f2aec0e484d0e92f",
+      "captured_at": "2026-04-18T07:19:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/4/18/0719.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 34,
+      "sha256": "057f28b2a0d8e326ef9a6a67efd63b91d7cf31b0d1dbfac5e7240267d70b3195",
+      "captured_at": "2026-04-24T13:55:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/4/24/1355.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 35,
+      "sha256": "f3a8ad4c99a8bec46bd6cfdc475cb475e4003c0c66e01a47a83dd723c0442d18",
+      "captured_at": "2026-05-01T13:43:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/5/1/1343.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 36,
+      "sha256": "b3db8dab3968df2ab7be35e73ed095ac0fa95394d6b82c0a99a59779975a2914",
+      "captured_at": "2026-05-09T08:04:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/5/9/0804.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 37,
+      "sha256": "a91d944878bcb8581fb897c32536cb99040af53df5d57dcbcb293b4b08a708eb",
+      "captured_at": "2026-05-15T14:23:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/5/15/1423.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    },
+    {
+      "gameweek": 38,
+      "sha256": "8127526148dbe0ab0a3fb15e9f59c01f4444b8e3aed00ffa10806f42ca9f41a6",
+      "captured_at": "2026-05-24T08:39:00+00:00",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/6c364bfbd9914649dc5dec016e544be3ae4fe767/cache/2026/5/24/0839.json.xz",
+      "source_revision": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+    }
+  ],
+  "calendar": [
+    {
+      "gameweek": 1,
+      "captured_at": "2025-08-15T12:52:00+00:00",
+      "publication_claim": "2025-08-01T08:49:42Z",
+      "revision": "46277afda009b340e738336dabc4b0822dd80c57",
+      "sha256": "f3a8a7df2d9d41c63b31d761bf094b8bd6c3eec034c07a5a55452fd08bfbdecf",
+      "compressed_sha256": "d765b462021dea6fe1648ebbf40c46e0393488348b4c0661b323653ca684d680",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/46277afda009b340e738336dabc4b0822dd80c57/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 2,
+      "captured_at": "2025-08-22T12:51:00+00:00",
+      "publication_claim": "2025-08-20T07:59:03Z",
+      "revision": "e930bb766ff82d6dff6a47f40eefd4e65bba29ef",
+      "sha256": "8c4f54bbb1d7f28a3d01c5b36081e28b3092a06f70dd0263c0f4a9468641ea96",
+      "compressed_sha256": "6aadc3196de6d22cfd06e6c52f85189fb58900006e8b68db8dd002ae6c161c00",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/e930bb766ff82d6dff6a47f40eefd4e65bba29ef/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 3,
+      "captured_at": "2025-08-30T06:32:00+00:00",
+      "publication_claim": "2025-08-28T16:42:42Z",
+      "revision": "20f6d05bc6ca02aa02fa241291a088e90bb3b46e",
+      "sha256": "54db0535292a1e067eae3941122db01ed9fba2218684a01ce426c1e5df8e1335",
+      "compressed_sha256": "71d8335e25557d82379a6fa5300575916dad5a545468587cda3000023e55f7fd",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/20f6d05bc6ca02aa02fa241291a088e90bb3b46e/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 4,
+      "captured_at": "2025-09-13T06:31:00+00:00",
+      "publication_claim": "2025-09-08T09:23:37Z",
+      "revision": "19b31c9cbf7f7a329123ead3720b24594ac46abe",
+      "sha256": "89b1ab97ba0a977d8bcc93d3ca869e851fe30ec3d99f9c81f3fb4d6a8a2bd842",
+      "compressed_sha256": "f6fb9dab150964c83043de1dc4e970f15fcc7dc8fee4ab50e6509537009ee8be",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/19b31c9cbf7f7a329123ead3720b24594ac46abe/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 5,
+      "captured_at": "2025-09-20T06:32:00+00:00",
+      "publication_claim": "2025-09-18T12:07:27Z",
+      "revision": "45cb8d6210b4009c25980fb22426787902c5dac8",
+      "sha256": "62653dac52e44ec8c38614cbd594e9789c376edcb4d563e60d1b2e66e7ab5219",
+      "compressed_sha256": "e5c2bb1fa06dfbbb27a7811e4a721ab0a9494d830924c7d7b80d3f4d9549b005",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/45cb8d6210b4009c25980fb22426787902c5dac8/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 6,
+      "captured_at": "2025-09-27T06:31:00+00:00",
+      "publication_claim": "2025-09-24T22:45:24Z",
+      "revision": "8db66f4fe0b8afc1a4bcf6aaee2255f56bfd29a4",
+      "sha256": "b079d82b1e6ef6b34a972fc5b27eeb3e07cae3004451423aa61789b4f115a714",
+      "compressed_sha256": "6c0fde3af0f8c844e72d2a828be1b7cdc27dafcdc87ba47c7f83a1b7584906d4",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/8db66f4fe0b8afc1a4bcf6aaee2255f56bfd29a4/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 7,
+      "captured_at": "2025-10-03T12:49:00+00:00",
+      "publication_claim": "2025-09-30T20:29:48Z",
+      "revision": "cd74fdea7d792f816e96e9ada4551f443d0e82c9",
+      "sha256": "483dab3a3a73169bfa8e73664c4e670379b46d2176af01b64aa01e759dea30cc",
+      "compressed_sha256": "28873cf1f874d4ef54a60bab2f701b4a3c196c690dba44fb6a00e09787365b59",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/cd74fdea7d792f816e96e9ada4551f443d0e82c9/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 8,
+      "captured_at": "2025-10-18T06:33:00+00:00",
+      "publication_claim": "2025-09-30T20:29:48Z",
+      "revision": "cd74fdea7d792f816e96e9ada4551f443d0e82c9",
+      "sha256": "483dab3a3a73169bfa8e73664c4e670379b46d2176af01b64aa01e759dea30cc",
+      "compressed_sha256": "28873cf1f874d4ef54a60bab2f701b4a3c196c690dba44fb6a00e09787365b59",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/cd74fdea7d792f816e96e9ada4551f443d0e82c9/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 9,
+      "captured_at": "2025-10-24T12:54:00+00:00",
+      "publication_claim": "2025-10-24T09:01:31Z",
+      "revision": "c0b610997ff299a1077f88ed09dc453ac5c00ebe",
+      "sha256": "13678540d8e49ee56d892389736035df25a9c9e189d97f2065fc783e076debe8",
+      "compressed_sha256": "1a7f7ed827848a13f10139e848e66c3c04ab1966cb86fb03d3b3a0366872209f",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/c0b610997ff299a1077f88ed09dc453ac5c00ebe/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 10,
+      "captured_at": "2025-11-01T12:47:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 11,
+      "captured_at": "2025-11-08T06:34:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 12,
+      "captured_at": "2025-11-22T06:34:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 13,
+      "captured_at": "2025-11-29T12:50:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 14,
+      "captured_at": "2025-12-02T12:58:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 15,
+      "captured_at": "2025-12-06T06:36:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 16,
+      "captured_at": "2025-12-13T12:51:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 17,
+      "captured_at": "2025-12-20T06:38:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 18,
+      "captured_at": "2025-12-26T12:55:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 19,
+      "captured_at": "2025-12-30T12:58:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 20,
+      "captured_at": "2026-01-03T06:40:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 21,
+      "captured_at": "2026-01-06T12:58:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 22,
+      "captured_at": "2026-01-17T06:39:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 23,
+      "captured_at": "2026-01-24T06:40:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 24,
+      "captured_at": "2026-01-31T13:03:00+00:00",
+      "publication_claim": "2025-11-01T00:11:46Z",
+      "revision": "d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93",
+      "sha256": "ef5d395d07b61712dc45f32d79e38f9afa8b42be7b91b1739951004afa0d405d",
+      "compressed_sha256": "9034fb453543afe7399bcb22cb21b9791913f9b0b7482f5da8ec3dcf31db192c",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8f2ea3f56d1e6c25cfc1ed2773fbd945241fb93/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 25,
+      "captured_at": "2026-02-06T13:15:00+00:00",
+      "publication_claim": "2026-02-05T08:00:25Z",
+      "revision": "2c43a95002e0a3ec0700b725da76fdd5fefcd1a6",
+      "sha256": "6312c629796f176868d13f481e61b5578cb9491953e541fc8cdc47403facc170",
+      "compressed_sha256": "ddc7d9c10b4fcc48015332e94df7124c59f1c3da3290b3be557acf8ecfb035a7",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/2c43a95002e0a3ec0700b725da76fdd5fefcd1a6/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 26,
+      "captured_at": "2026-02-10T13:41:00+00:00",
+      "publication_claim": "2026-02-05T08:00:25Z",
+      "revision": "2c43a95002e0a3ec0700b725da76fdd5fefcd1a6",
+      "sha256": "6312c629796f176868d13f481e61b5578cb9491953e541fc8cdc47403facc170",
+      "compressed_sha256": "ddc7d9c10b4fcc48015332e94df7124c59f1c3da3290b3be557acf8ecfb035a7",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/2c43a95002e0a3ec0700b725da76fdd5fefcd1a6/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 27,
+      "captured_at": "2026-02-21T13:03:00+00:00",
+      "publication_claim": "2026-02-05T08:00:25Z",
+      "revision": "2c43a95002e0a3ec0700b725da76fdd5fefcd1a6",
+      "sha256": "6312c629796f176868d13f481e61b5578cb9491953e541fc8cdc47403facc170",
+      "compressed_sha256": "ddc7d9c10b4fcc48015332e94df7124c59f1c3da3290b3be557acf8ecfb035a7",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/2c43a95002e0a3ec0700b725da76fdd5fefcd1a6/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 28,
+      "captured_at": "2026-02-27T13:14:00+00:00",
+      "publication_claim": "2026-02-05T08:00:25Z",
+      "revision": "2c43a95002e0a3ec0700b725da76fdd5fefcd1a6",
+      "sha256": "6312c629796f176868d13f481e61b5578cb9491953e541fc8cdc47403facc170",
+      "compressed_sha256": "ddc7d9c10b4fcc48015332e94df7124c59f1c3da3290b3be557acf8ecfb035a7",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/2c43a95002e0a3ec0700b725da76fdd5fefcd1a6/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 29,
+      "captured_at": "2026-03-03T13:14:00+00:00",
+      "publication_claim": "2026-02-05T08:00:25Z",
+      "revision": "2c43a95002e0a3ec0700b725da76fdd5fefcd1a6",
+      "sha256": "6312c629796f176868d13f481e61b5578cb9491953e541fc8cdc47403facc170",
+      "compressed_sha256": "ddc7d9c10b4fcc48015332e94df7124c59f1c3da3290b3be557acf8ecfb035a7",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/2c43a95002e0a3ec0700b725da76fdd5fefcd1a6/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 30,
+      "captured_at": "2026-03-14T13:08:00+00:00",
+      "publication_claim": "2026-03-13T01:04:19Z",
+      "revision": "77ab48216404b0f49f55fa724c520af25b32ddae",
+      "sha256": "0e594a9423cfb3e001e0f3f4172629c42d44fed59463cef1de0bf7b635077298",
+      "compressed_sha256": "31c2fc0f88f956a4798dc3e31d3c86bb2850fe4241181da57ffc2908443c3078",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/77ab48216404b0f49f55fa724c520af25b32ddae/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 31,
+      "captured_at": "2026-03-20T13:16:00+00:00",
+      "publication_claim": "2026-03-13T01:04:19Z",
+      "revision": "77ab48216404b0f49f55fa724c520af25b32ddae",
+      "sha256": "0e594a9423cfb3e001e0f3f4172629c42d44fed59463cef1de0bf7b635077298",
+      "compressed_sha256": "31c2fc0f88f956a4798dc3e31d3c86bb2850fe4241181da57ffc2908443c3078",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/77ab48216404b0f49f55fa724c520af25b32ddae/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 32,
+      "captured_at": "2026-04-10T13:26:00+00:00",
+      "publication_claim": "2026-03-13T01:04:19Z",
+      "revision": "77ab48216404b0f49f55fa724c520af25b32ddae",
+      "sha256": "0e594a9423cfb3e001e0f3f4172629c42d44fed59463cef1de0bf7b635077298",
+      "compressed_sha256": "31c2fc0f88f956a4798dc3e31d3c86bb2850fe4241181da57ffc2908443c3078",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/77ab48216404b0f49f55fa724c520af25b32ddae/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 33,
+      "captured_at": "2026-04-18T07:19:00+00:00",
+      "publication_claim": "2026-03-13T01:04:19Z",
+      "revision": "77ab48216404b0f49f55fa724c520af25b32ddae",
+      "sha256": "0e594a9423cfb3e001e0f3f4172629c42d44fed59463cef1de0bf7b635077298",
+      "compressed_sha256": "31c2fc0f88f956a4798dc3e31d3c86bb2850fe4241181da57ffc2908443c3078",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/77ab48216404b0f49f55fa724c520af25b32ddae/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 34,
+      "captured_at": "2026-04-24T13:55:00+00:00",
+      "publication_claim": "2026-03-13T01:04:19Z",
+      "revision": "77ab48216404b0f49f55fa724c520af25b32ddae",
+      "sha256": "0e594a9423cfb3e001e0f3f4172629c42d44fed59463cef1de0bf7b635077298",
+      "compressed_sha256": "31c2fc0f88f956a4798dc3e31d3c86bb2850fe4241181da57ffc2908443c3078",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/77ab48216404b0f49f55fa724c520af25b32ddae/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 35,
+      "captured_at": "2026-05-01T13:43:00+00:00",
+      "publication_claim": "2026-03-13T01:04:19Z",
+      "revision": "77ab48216404b0f49f55fa724c520af25b32ddae",
+      "sha256": "0e594a9423cfb3e001e0f3f4172629c42d44fed59463cef1de0bf7b635077298",
+      "compressed_sha256": "31c2fc0f88f956a4798dc3e31d3c86bb2850fe4241181da57ffc2908443c3078",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/77ab48216404b0f49f55fa724c520af25b32ddae/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 36,
+      "captured_at": "2026-05-09T08:04:00+00:00",
+      "publication_claim": "2026-03-13T01:04:19Z",
+      "revision": "77ab48216404b0f49f55fa724c520af25b32ddae",
+      "sha256": "0e594a9423cfb3e001e0f3f4172629c42d44fed59463cef1de0bf7b635077298",
+      "compressed_sha256": "31c2fc0f88f956a4798dc3e31d3c86bb2850fe4241181da57ffc2908443c3078",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/77ab48216404b0f49f55fa724c520af25b32ddae/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 37,
+      "captured_at": "2026-05-15T14:23:00+00:00",
+      "publication_claim": "2026-03-13T01:04:19Z",
+      "revision": "77ab48216404b0f49f55fa724c520af25b32ddae",
+      "sha256": "0e594a9423cfb3e001e0f3f4172629c42d44fed59463cef1de0bf7b635077298",
+      "compressed_sha256": "31c2fc0f88f956a4798dc3e31d3c86bb2850fe4241181da57ffc2908443c3078",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/77ab48216404b0f49f55fa724c520af25b32ddae/data/2025-26/fixtures.csv"
+    },
+    {
+      "gameweek": 38,
+      "captured_at": "2026-05-24T08:39:00+00:00",
+      "publication_claim": "2026-03-13T01:04:19Z",
+      "revision": "77ab48216404b0f49f55fa724c520af25b32ddae",
+      "sha256": "0e594a9423cfb3e001e0f3f4172629c42d44fed59463cef1de0bf7b635077298",
+      "compressed_sha256": "31c2fc0f88f956a4798dc3e31d3c86bb2850fe4241181da57ffc2908443c3078",
+      "source_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/77ab48216404b0f49f55fa724c520af25b32ddae/data/2025-26/fixtures.csv"
+    }
+  ],
+  "fixture_announcements": [
+    {
+      "fixture": 332,
+      "event": 33,
+      "available_at": "2026-04-06T00:00:00Z",
+      "source_url": "https://www.premierleague.com/en/news/4624106"
+    },
+    {
+      "fixture": 333,
+      "event": 33,
+      "available_at": "2026-04-06T00:00:00Z",
+      "source_url": "https://www.premierleague.com/en/news/4624106"
+    },
+    {
+      "fixture": 334,
+      "event": 33,
+      "available_at": "2026-04-06T00:00:00Z",
+      "source_url": "https://www.premierleague.com/en/news/4624106"
+    },
+    {
+      "fixture": 307,
+      "event": 36,
+      "available_at": "2026-04-29T00:00:00Z",
+      "source_url": "https://www.premierleague.com/en/news/4637009"
+    }
+  ],
+  "history": {
+    "raw_fpl_revision": "9779cdbc0c07f6c900c2d0c181ddf6bb9c800f88",
+    "raw_fpl_url": "https://github.com/vaastav/Fantasy-Premier-League/tree/9779cdbc0c07f6c900c2d0c181ddf6bb9c800f88",
+    "provider_url": "https://understat.com",
+    "provider_manifest_sha256": "d21f635bfe24859b7e24e513b23ef78e53dc79637851accf97407e15305abcd0",
+    "canonical_players_sha256": "db737482eb814ca7d18a21d520c5ab3f4df1f6b021d61e4a700f0f45bf04bbc9",
+    "source_gap_keys": [
+      [
+        "2025-26",
+        9,
+        83,
+        155408
+      ],
+      [
+        "2025-26",
+        9,
+        83,
+        168636
+      ]
+    ]
+  },
+  "hash_meaning": "Snapshotsha256 verifies downloadedXZ bytes. Calendarsha256 verifies decodedCSV, compressed_sha256 verifies locally retainedXZ (not necessarily source encoding). Provider manifest is retained evidence, not a promise that mutableAPI bytes can be redownloaded unchanged.",
+  "caveat": "Capture and publication timestamps are archive claims, not independent historical availability certificates. Metadata/source URLs are public; no account/team data or private runtime paths are included. This inventory is not a turnkey data redistribution or reproduction bundle."
+}

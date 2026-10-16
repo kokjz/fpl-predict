@@ -60,8 +60,18 @@ scores 2,295 versus 2,092 for matched six- versus one-week planners with chips,
 and a 52-point six-week lead without chips. Both preseason-reference variants
 lose to the six-week control. This is one reused season with bounded, sometimes
 poorly solved optimisation attempts; it establishes neither general superiority
-nor policy approval. Matched Dastan/OpenFPL and native-planner season comparisons
-remain unfinished.
+nor policy approval. That pilot retains its original source and results.
+
+The subsequent [matched full-season forecast comparison](docs/SEASON_EXTERNAL_RESULTS_2026-10-16.md)
+completes sixteen own/common-opening paths with the same bounded squad/chip
+planner. The five-prior-season standing-method control scores 2,157/2,156 net
+points, versus 2,116/2,014 for the Dastan adaptation and 2,130/2,132 for the
+OpenFPL adaptation. The matched four-year control scores 2,088/2,134: the ranking
+depends on training usage and starting state. These are prior-only research fits,
+not the saved champion or original competitors' complete systems. An initial
+failed run and every uniformly rerun arm are retained. Short-search variability
+and one reused season prevent a general superiority or promotion claim.
+Common-forecast external-planner comparisons and joint qualification remain open.
 
 [Retained-plan bounds](docs/solver_bounds.md) now distinguish a validated plan
 from discarded solver attempts. A switchable baseline objective cut preserves

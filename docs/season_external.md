@@ -90,10 +90,13 @@ training lineage is unreported. Its one-week track is an as-of-source comparator
 not a claim of the same fitted-label split as the five reconstructed learners.
 An inherited local envelope cutoff does not certify the publisher's training.
 
-The protocol and tests precede the new evaluation. No external season ranking,
-native planner compatibility or model/policy qualification is claimed merely
-by adding these interfaces. Common-forecast external planner comparisons and
-end-to-end native-system admission remain separate work.
+The protocol and tests preceded the evaluation. The [complete season report](SEASON_EXTERNAL_RESULTS_2026-10-16.md),
+[aggregate](season_external_results.json) and [dated source inventory](season_external_sources.json)
+retain every initial/revised arm, secondary errors and bounded-search limitations.
+The revised sixteen paths reconcile independently across all 608 deadlines.
+These measured named-reference comparisons do not establish native planner
+compatibility or model/policy qualification. Common-forecast external planner
+comparisons and end-to-end native-system admission remain separate work.
 
 Primary sources checked 16 October 2026: [Dastan](https://github.com/qazybekb/smartplayfpl-dastan),
 [OpenFPL](https://github.com/daniegr/OpenFPL),
