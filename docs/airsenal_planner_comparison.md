@@ -2,8 +2,8 @@
 
 The [protocol](../src/fpl_predict_resources/airsenal_planner_protocol.json) and
 [source recipe](../src/fpl_predict_resources/airsenal_solver_recipe.json) define
-the next native planning comparison. The optional worker is implemented;
-the parent controller, historical-input pilot and season comparison remain.
+the next native planning comparison. The optional worker and parent controller
+are implemented; the historical-input pilot and season comparison remain.
 No AIrsenal historical performance result is claimed.
 
 The intended eight paths cross two frozen prior-only forecasting controls,
@@ -38,6 +38,17 @@ the original breadth-first multiprocessing order. A per-request timer includes
 database and GA construction; only completed full-horizon plans survive a
 timeout. Guarded hooks and query views are restored between origins. Upstream
 daemon stall threads are replaced by parent resource supervision.
+
+`AIrsenalProcess` checks the worker's source/runtime handshake and uses the shared
+bounded serial JSON transport also used by the Solio adapter. Its environment
+does not inherit account settings, and transport failures close the worker.
+`AIrsenalPlanner` uses the common feasibility baseline and candidate procedure,
+then validates every returned period, transfer identity, chip, integer bank/free
+transfer/hit transition and conditional objective. A complete proposal may
+improve under common canonical selection; an invalid or weaker proposal retains
+the validated fallback with explicit diagnostics. There is no heuristic upper
+bound or optimality claim. Current forecasts and normal planner defaults are
+unchanged by these optional interfaces.
 
 Admission requires an explicit empty research home and isolated database before
 any source import, without inherited account configuration. Python HTTP and the
