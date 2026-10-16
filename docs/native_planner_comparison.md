@@ -58,6 +58,24 @@ planning under that shared policy, rather than arbitrary solver tie choices.
 `controlled_settings()` provides the zero terminal/churn proxies required by
 the declared common objective. The existing planner defaults remain intact.
 
+A [feature-only historical-input pilot](native_planner_feature_pilot.json)
+tested fixed half-, one- and two-second inner allowances before any native
+season points were scored. Across five fixed origin/schedule cases, native
+non-fallback proposals were admitted in 1/5, 4/5 and 5/5 cases respectively;
+the standing solver produced one in all five at each allowance. Construction
+overhead made the half-second case unsuitable for the intended comparison.
+Both engines therefore receive two seconds per inner solve and fifteen seconds
+for the outer chip search, capped at twelve trials. That allows a baseline,
+four chip families and a combined-calendar check. It is a resource/validity
+decision, not a choice based on realised points. The pilot used no evaluator
+outcomes and does not establish a season-points advantage.
+
+The engines share the decision problem and policy but use different solver
+bindings/versions and formulations. The standing implementation retains its
+baseline objective cut; the native core uses its original solver tactic.
+Both keep the same valid fallback floor. Conditional bounds, construction and
+cold-start costs, failures and wall-time variability remain part of reporting.
+
 Open FPL Solver's pinned prepared-input API is the first admitted implementation
 target. Its optional Python 3.14/HiGHS runtime is separate from the forecasting
 engine. Source hashes, network refusal, legal-action validation and sampled

@@ -1,0 +1,761 @@
+{
+  "scope": "Pre-season-scoring historical-input resource/validity pilot; no evaluator outcomes loaded, expected objectives are frozen-model proxies, not actual scores",
+  "protocol_sha256": "faa8b31bf2bfa4fc84bbf17cdccc0e21a0f9f3c26560ca271c76d1a8c374ca65",
+  "forecast_sha256": "47a3644e536f3f224b3c41c0d4d184b3f27c683f8862b238a346f167b2245aa0",
+  "startup_seconds": 0.818938166834414,
+  "elapsed_job_seconds": 26.617795332800597,
+  "peak_sampled_group_rss_bytes": 736002048,
+  "runtime": {
+    "status": "ready",
+    "revision": "ec65f5e2b2be34441cb4b2a9efafea1ec0fe3b79",
+    "source_sha256": {
+      "dev/solver.py": "23d567bccc24ba8693b8cef23d8b41c375c6bc6a586b47eff8247faf175b2416",
+      "dev/data_parser.py": "45f283191357314113048eb8d71c16ae16d38a9f21f25b0a264ddc6f6b7d60e9",
+      "LICENSE": "d31d20f625c15c2442faeb6e9ec3c709b1c1be8ab46ebe7f4c91b37c96c9203a",
+      "utils.py": "12f02695207f37a105dc35e79bf7455f71f8c1cc8f97088ff9c806f8a709f346",
+      "paths.py": "98beea32115e459d864a87f6f34043e9a2d933a3d1d29471f6d2ce535db95c0c"
+    },
+    "patched_ast_sha256": "aa7e9b4dd16a69816f4311655a18f4737e3b1090745d545caa1e756e45df21fb",
+    "python": "3.14.6",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "highspy": "1.15.1",
+    "threads": 2,
+    "network_disabled": true
+  },
+  "cases": [
+    {
+      "budget": 0.5,
+      "gameweek": 1,
+      "schedule": {},
+      "planner": "standing",
+      "seconds": 0.2818259170744568,
+      "pool": 71,
+      "objective": 113.78245240234403,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 113.78245240234403,
+        "upper_objective": 113.78245240234403,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -113.78245240234402,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 0.5,
+      "gameweek": 1,
+      "schedule": {},
+      "planner": "native",
+      "seconds": 0.6702063330449164,
+      "pool": 71,
+      "objective": 112.94609278482532,
+      "fallback": true,
+      "bound": {
+        "status": "unavailable",
+        "feasible_objective": 112.94609278482532,
+        "upper_objective": null,
+        "absolute_gap": null,
+        "relative_gap": null,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": null,
+        "native_maximisation_dual_bound": null,
+        "reported_mip_gap": null,
+        "baseline_objective_cut": false,
+        "native_error_type": "ValueError"
+      }
+    },
+    {
+      "budget": 0.5,
+      "gameweek": 15,
+      "schedule": {},
+      "planner": "standing",
+      "seconds": 0.5246053750161082,
+      "pool": 77,
+      "objective": 347.2736964550816,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 347.2736964550816,
+        "upper_objective": 347.2736964550817,
+        "absolute_gap": 5.684341886080802e-14,
+        "relative_gap": 1.6368478073939144e-16,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -347.2736964550817,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 0.5,
+      "gameweek": 15,
+      "schedule": {},
+      "planner": "native",
+      "seconds": 0.6078472919762135,
+      "pool": 77,
+      "objective": 326.76460614730235,
+      "fallback": true,
+      "bound": {
+        "status": "unavailable",
+        "feasible_objective": 326.76460614730235,
+        "upper_objective": null,
+        "absolute_gap": null,
+        "relative_gap": null,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": null,
+        "native_maximisation_dual_bound": null,
+        "reported_mip_gap": null,
+        "baseline_objective_cut": false,
+        "native_error_type": "ValueError"
+      }
+    },
+    {
+      "budget": 0.5,
+      "gameweek": 15,
+      "schedule": {
+        "20": "freehit"
+      },
+      "planner": "standing",
+      "seconds": 0.6700131250545382,
+      "pool": 77,
+      "objective": 338.50384951778074,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 338.50384951778074,
+        "upper_objective": 347.9702504598272,
+        "absolute_gap": 9.466400942046448,
+        "relative_gap": 0.027965415919292823,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -347.9702504598272,
+        "reported_mip_gap": 0.038736869769583904,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 0.5,
+      "gameweek": 15,
+      "schedule": {
+        "20": "freehit"
+      },
+      "planner": "native",
+      "seconds": 0.6113276248797774,
+      "pool": 77,
+      "objective": 326.76460614730235,
+      "fallback": true,
+      "bound": {
+        "status": "unavailable",
+        "feasible_objective": 326.76460614730235,
+        "upper_objective": null,
+        "absolute_gap": null,
+        "relative_gap": null,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": null,
+        "native_maximisation_dual_bound": null,
+        "reported_mip_gap": null,
+        "baseline_objective_cut": false,
+        "native_error_type": "ValueError"
+      }
+    },
+    {
+      "budget": 0.5,
+      "gameweek": 20,
+      "schedule": {},
+      "planner": "standing",
+      "seconds": 0.6778184168506414,
+      "pool": 76,
+      "objective": 333.6572130351056,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 333.6572130351056,
+        "upper_objective": 345.08257880242525,
+        "absolute_gap": 11.425365767319647,
+        "relative_gap": 0.03424282563349689,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -345.08257880242525,
+        "reported_mip_gap": 0.04867196823226973,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 0.5,
+      "gameweek": 20,
+      "schedule": {},
+      "planner": "native",
+      "seconds": 0.6235348749905825,
+      "pool": 76,
+      "objective": 317.12135562912175,
+      "fallback": true,
+      "bound": {
+        "status": "unavailable",
+        "feasible_objective": 317.12135562912175,
+        "upper_objective": null,
+        "absolute_gap": null,
+        "relative_gap": null,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": null,
+        "native_maximisation_dual_bound": null,
+        "reported_mip_gap": null,
+        "baseline_objective_cut": false,
+        "native_error_type": "ValueError"
+      }
+    },
+    {
+      "budget": 0.5,
+      "gameweek": 38,
+      "schedule": {},
+      "planner": "standing",
+      "seconds": 0.04948187503032386,
+      "pool": 74,
+      "objective": 55.95135106605569,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 55.95135106605569,
+        "upper_objective": 55.95135106605569,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -55.95135106605569,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 0.5,
+      "gameweek": 38,
+      "schedule": {},
+      "planner": "native",
+      "seconds": 0.1504233330488205,
+      "pool": 74,
+      "objective": 55.95135106605569,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 55.95135106605569,
+        "upper_objective": 55.95135106605569,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": "HighsModelStatus.kOptimal",
+        "native_maximisation_dual_bound": 55.95135106605569,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": false,
+        "native_error_type": null
+      }
+    },
+    {
+      "budget": 1.0,
+      "gameweek": 1,
+      "schedule": {},
+      "planner": "standing",
+      "seconds": 0.2683644169010222,
+      "pool": 71,
+      "objective": 113.78245240234403,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 113.78245240234403,
+        "upper_objective": 113.78245240234403,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -113.78245240234402,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 1.0,
+      "gameweek": 1,
+      "schedule": {},
+      "planner": "native",
+      "seconds": 0.7371145409997553,
+      "pool": 71,
+      "objective": 113.78245240234403,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 113.78245240234403,
+        "upper_objective": 113.78245240234403,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": "HighsModelStatus.kOptimal",
+        "native_maximisation_dual_bound": 113.78245240234301,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": false,
+        "native_error_type": null
+      }
+    },
+    {
+      "budget": 1.0,
+      "gameweek": 15,
+      "schedule": {},
+      "planner": "standing",
+      "seconds": 0.5134386671707034,
+      "pool": 77,
+      "objective": 347.2736964550816,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 347.2736964550816,
+        "upper_objective": 347.2736964550817,
+        "absolute_gap": 5.684341886080802e-14,
+        "relative_gap": 1.6368478073939144e-16,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -347.2736964550817,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 1.0,
+      "gameweek": 15,
+      "schedule": {},
+      "planner": "native",
+      "seconds": 1.1723025001119822,
+      "pool": 77,
+      "objective": 347.2736964550816,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 347.2736964550816,
+        "upper_objective": 349.0003941054362,
+        "absolute_gap": 1.7266976503545948,
+        "relative_gap": 0.004972152132397208,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": "HighsModelStatus.kTimeLimit",
+        "native_maximisation_dual_bound": 349.0003941054362,
+        "reported_mip_gap": 0.004972152132396879,
+        "baseline_objective_cut": false,
+        "native_error_type": null
+      }
+    },
+    {
+      "budget": 1.0,
+      "gameweek": 15,
+      "schedule": {
+        "20": "freehit"
+      },
+      "planner": "standing",
+      "seconds": 1.1679627501871437,
+      "pool": 77,
+      "objective": 347.95163353602084,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 347.95163353602084,
+        "upper_objective": 347.96378963633936,
+        "absolute_gap": 0.012156100318520657,
+        "relative_gap": 3.493617832738879e-05,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -347.96378963633936,
+        "reported_mip_gap": 3.493617832755216e-05,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 1.0,
+      "gameweek": 15,
+      "schedule": {
+        "20": "freehit"
+      },
+      "planner": "native",
+      "seconds": 1.1735649590846151,
+      "pool": 77,
+      "objective": 347.95163353602084,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 347.95163353602084,
+        "upper_objective": 349.55215460361273,
+        "absolute_gap": 1.6005210675918988,
+        "relative_gap": 0.004599837774367594,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": "HighsModelStatus.kTimeLimit",
+        "native_maximisation_dual_bound": 349.55215460361273,
+        "reported_mip_gap": 0.004599837774366774,
+        "baseline_objective_cut": false,
+        "native_error_type": null
+      }
+    },
+    {
+      "budget": 1.0,
+      "gameweek": 20,
+      "schedule": {},
+      "planner": "standing",
+      "seconds": 1.1765892910771072,
+      "pool": 76,
+      "objective": 333.6572130351056,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 333.6572130351056,
+        "upper_objective": 345.0080696439608,
+        "absolute_gap": 11.350856608855224,
+        "relative_gap": 0.034019515135316286,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -345.0080696439608,
+        "reported_mip_gap": 0.0484455422384413,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 1.0,
+      "gameweek": 20,
+      "schedule": {},
+      "planner": "native",
+      "seconds": 1.117757375119254,
+      "pool": 76,
+      "objective": 317.12135562912175,
+      "fallback": true,
+      "bound": {
+        "status": "unavailable",
+        "feasible_objective": 317.12135562912175,
+        "upper_objective": null,
+        "absolute_gap": null,
+        "relative_gap": null,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": null,
+        "native_maximisation_dual_bound": null,
+        "reported_mip_gap": null,
+        "baseline_objective_cut": false,
+        "native_error_type": "ValueError"
+      }
+    },
+    {
+      "budget": 1.0,
+      "gameweek": 38,
+      "schedule": {},
+      "planner": "standing",
+      "seconds": 0.04897524998523295,
+      "pool": 74,
+      "objective": 55.95135106605569,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 55.95135106605569,
+        "upper_objective": 55.95135106605569,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -55.95135106605569,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 1.0,
+      "gameweek": 38,
+      "schedule": {},
+      "planner": "native",
+      "seconds": 0.1483632088638842,
+      "pool": 74,
+      "objective": 55.95135106605569,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 55.95135106605569,
+        "upper_objective": 55.95135106605569,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": "HighsModelStatus.kOptimal",
+        "native_maximisation_dual_bound": 55.95135106605569,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": false,
+        "native_error_type": null
+      }
+    },
+    {
+      "budget": 2.0,
+      "gameweek": 1,
+      "schedule": {},
+      "planner": "standing",
+      "seconds": 0.2709299169946462,
+      "pool": 71,
+      "objective": 113.78245240234403,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 113.78245240234403,
+        "upper_objective": 113.78245240234403,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -113.78245240234402,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 2.0,
+      "gameweek": 1,
+      "schedule": {},
+      "planner": "native",
+      "seconds": 0.7457463750615716,
+      "pool": 71,
+      "objective": 113.78245240234403,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 113.78245240234403,
+        "upper_objective": 113.78245240234403,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": "HighsModelStatus.kOptimal",
+        "native_maximisation_dual_bound": 113.78245240234301,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": false,
+        "native_error_type": null
+      }
+    },
+    {
+      "budget": 2.0,
+      "gameweek": 15,
+      "schedule": {},
+      "planner": "standing",
+      "seconds": 0.5279763331636786,
+      "pool": 77,
+      "objective": 347.2736964550816,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 347.2736964550816,
+        "upper_objective": 347.2736964550817,
+        "absolute_gap": 5.684341886080802e-14,
+        "relative_gap": 1.6368478073939144e-16,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -347.2736964550817,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 2.0,
+      "gameweek": 15,
+      "schedule": {},
+      "planner": "native",
+      "seconds": 2.2255959999747574,
+      "pool": 77,
+      "objective": 347.2736964550816,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 347.2736964550816,
+        "upper_objective": 348.6889363573321,
+        "absolute_gap": 1.415239902250505,
+        "relative_gap": 0.0040752867743715235,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": "HighsModelStatus.kTimeLimit",
+        "native_maximisation_dual_bound": 348.6889363573321,
+        "reported_mip_gap": 0.004075286774371195,
+        "baseline_objective_cut": false,
+        "native_error_type": null
+      }
+    },
+    {
+      "budget": 2.0,
+      "gameweek": 15,
+      "schedule": {
+        "20": "freehit"
+      },
+      "planner": "standing",
+      "seconds": 1.3021448340732604,
+      "pool": 77,
+      "objective": 347.95163353602084,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 347.95163353602084,
+        "upper_objective": 347.95163353602084,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -347.9516335360208,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 2.0,
+      "gameweek": 15,
+      "schedule": {
+        "20": "freehit"
+      },
+      "planner": "native",
+      "seconds": 2.1256420828867704,
+      "pool": 77,
+      "objective": 347.95163353602084,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 347.95163353602084,
+        "upper_objective": 347.9516335360211,
+        "absolute_gap": 2.8421709430404007e-13,
+        "relative_gap": 8.1682931451051e-16,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": "HighsModelStatus.kOptimal",
+        "native_maximisation_dual_bound": 347.9516335360211,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": false,
+        "native_error_type": null
+      }
+    },
+    {
+      "budget": 2.0,
+      "gameweek": 20,
+      "schedule": {},
+      "planner": "standing",
+      "seconds": 2.1626373340841383,
+      "pool": 76,
+      "objective": 343.8647695431254,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 343.8647695431254,
+        "upper_objective": 345.0070856012318,
+        "absolute_gap": 1.1423160581063598,
+        "relative_gap": 0.0033219921297087036,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -345.0070856012318,
+        "reported_mip_gap": 0.003321992129714177,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 2.0,
+      "gameweek": 20,
+      "schedule": {},
+      "planner": "native",
+      "seconds": 2.1837784580420703,
+      "pool": 76,
+      "objective": 343.6710459299173,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 343.6710459299173,
+        "upper_objective": 346.3746667918692,
+        "absolute_gap": 2.70362086195189,
+        "relative_gap": 0.00786688577338931,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": "HighsModelStatus.kTimeLimit",
+        "native_maximisation_dual_bound": 346.3746667918692,
+        "reported_mip_gap": 0.00786688577339081,
+        "baseline_objective_cut": false,
+        "native_error_type": null
+      }
+    },
+    {
+      "budget": 2.0,
+      "gameweek": 38,
+      "schedule": {},
+      "planner": "standing",
+      "seconds": 0.049303292063996196,
+      "pool": 74,
+      "objective": 55.95135106605569,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 55.95135106605569,
+        "upper_objective": 55.95135106605569,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "minimisation_dual_bound": -55.95135106605569,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": true
+      }
+    },
+    {
+      "budget": 2.0,
+      "gameweek": 38,
+      "schedule": {},
+      "planner": "native",
+      "seconds": 0.15219795890152454,
+      "pool": 74,
+      "objective": 55.95135106605569,
+      "fallback": false,
+      "bound": {
+        "status": "solver_dual",
+        "feasible_objective": 55.95135106605569,
+        "upper_objective": 55.95135106605569,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "diagnostics": {
+        "native_status": "HighsModelStatus.kOptimal",
+        "native_maximisation_dual_bound": 55.95135106605569,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": false,
+        "native_error_type": null
+      }
+    }
+  ],
+  "decision": "Both15souter/2sinner/12trials; lowest tested allowance with all5native proposals admitted. Decided before native historical points, no forecaster refit/new model promotion."
+}
