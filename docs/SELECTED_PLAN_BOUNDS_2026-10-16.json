@@ -1,0 +1,182 @@
+{
+  "scope": "Fixedfeature-onlyengineeringdiagnostic; no seasonoutcomes scored/no new fit/no modelpromotion",
+  "results": [
+    {
+      "case": "neutral-GW20",
+      "baseline_cut": false,
+      "objective": 305.78058654220774,
+      "fallback_objective": 271.3692985989697,
+      "solver_objective": 305.78058654220774,
+      "fallback_retained": false,
+      "selected_plan_bound": {
+        "status": "solver_dual",
+        "feasible_objective": 305.78058654220774,
+        "upper_objective": 327.5811285739384,
+        "absolute_gap": 21.80054203173063,
+        "relative_gap": 0.07129472239638548,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "solver_diagnostics": {
+        "minimisation_dual_bound": -327.5811285739384,
+        "reported_mip_gap": 0.07129472239638548,
+        "baseline_objective_cut": false
+      },
+      "legacy_gap": 0.07129472239638548,
+      "seconds": 0.6183614160399884,
+      "proven_optimal": false,
+      "selection": "validated time-limit incumbent"
+    },
+    {
+      "case": "neutral-GW20",
+      "baseline_cut": true,
+      "objective": 323.6045648971865,
+      "fallback_objective": 271.3692985989697,
+      "solver_objective": 323.6045648971865,
+      "fallback_retained": false,
+      "selected_plan_bound": {
+        "status": "solver_dual",
+        "feasible_objective": 323.6045648971865,
+        "upper_objective": 327.56445765494203,
+        "absolute_gap": 3.95989275775554,
+        "relative_gap": 0.012236826013296972,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "solver_diagnostics": {
+        "minimisation_dual_bound": -327.56445765494203,
+        "reported_mip_gap": 0.012236826013296795,
+        "baseline_objective_cut": true
+      },
+      "legacy_gap": 0.012236826013296795,
+      "seconds": 0.6245476249605417,
+      "proven_optimal": false,
+      "selection": "validated time-limit incumbent"
+    },
+    {
+      "case": "neutral-GW38",
+      "baseline_cut": false,
+      "objective": 38.74569371165651,
+      "fallback_objective": 38.74569371165651,
+      "solver_objective": 38.74569371165651,
+      "fallback_retained": false,
+      "selected_plan_bound": {
+        "status": "solver_dual",
+        "feasible_objective": 38.74569371165651,
+        "upper_objective": 38.74569371165651,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "solver_diagnostics": {
+        "minimisation_dual_bound": -38.74569371165651,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": false
+      },
+      "legacy_gap": 0.0,
+      "seconds": 0.10954558313824236,
+      "proven_optimal": true,
+      "selection": "optimal restricted pool"
+    },
+    {
+      "case": "neutral-GW38",
+      "baseline_cut": true,
+      "objective": 38.74569371165651,
+      "fallback_objective": 38.74569371165651,
+      "solver_objective": 38.74569371165651,
+      "fallback_retained": false,
+      "selected_plan_bound": {
+        "status": "solver_dual",
+        "feasible_objective": 38.74569371165651,
+        "upper_objective": 38.74569371165651,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "solver_diagnostics": {
+        "minimisation_dual_bound": -38.74569371165651,
+        "reported_mip_gap": 0.0,
+        "baseline_objective_cut": true
+      },
+      "legacy_gap": 0.0,
+      "seconds": 0.10756829101592302,
+      "proven_optimal": true,
+      "selection": "optimal restricted pool"
+    },
+    {
+      "case": "diagnostic-GW27-FH32",
+      "baseline_cut": false,
+      "objective": 320.75756858651044,
+      "fallback_objective": 320.75756858651044,
+      "solver_objective": 262.3870525656212,
+      "fallback_retained": true,
+      "selected_plan_bound": {
+        "status": "solver_dual",
+        "feasible_objective": 320.75756858651044,
+        "upper_objective": 339.9725483880878,
+        "absolute_gap": 19.21497980157733,
+        "relative_gap": 0.05990499269043724,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "solver_diagnostics": {
+        "minimisation_dual_bound": -339.9725483880878,
+        "reported_mip_gap": 0.2956910223421293,
+        "baseline_objective_cut": false
+      },
+      "legacy_gap": 0.2956910223421293,
+      "seconds": 0.6266690830234438,
+      "proven_optimal": false,
+      "selection": "no valid incumbent"
+    },
+    {
+      "case": "diagnostic-GW27-FH32",
+      "baseline_cut": true,
+      "objective": 320.75756858651044,
+      "fallback_objective": 320.75756858651044,
+      "solver_objective": null,
+      "fallback_retained": true,
+      "selected_plan_bound": {
+        "status": "unavailable",
+        "feasible_objective": 320.75756858651044,
+        "upper_objective": null,
+        "absolute_gap": null,
+        "relative_gap": null,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "solver_diagnostics": {
+        "minimisation_dual_bound": null,
+        "reported_mip_gap": null,
+        "baseline_objective_cut": true
+      },
+      "legacy_gap": null,
+      "seconds": 0.5728226250503212,
+      "proven_optimal": false,
+      "selection": "no valid incumbent"
+    }
+  ],
+  "seconds": 2.6748187500052154,
+  "model_promotion": false,
+  "protocol_sha256": "6a2969c86797cba83d0ea1cecff313a92332b44938528a602b6a8df86b103c27",
+  "pilot_source": "1837ac9ef2bc9935534e0897cd41457d7b66ca9e",
+  "supervision": {
+    "status": "completed",
+    "elapsed_seconds": 3.8304652080405504,
+    "peak_observed_rss_bytes": 366477312,
+    "peak_observed_project_bytes": 741538710,
+    "minimum_observed_free_bytes": 138274504704,
+    "limits": {
+      "threads": 2,
+      "seconds": 900,
+      "memory_mib": 4096,
+      "poll_seconds": 0.25,
+      "max_project_mib": 2048,
+      "max_growth_mib": 256,
+      "min_free_mib": 5120,
+      "storage_poll_seconds": 5
+    }
+  },
+  "limitations": [
+    "Singleunreplicated short pairs, ordinarybackgroundload, no speed/generalpointgain claim",
+    "Worstlegacygapcase chosen diagnostically, not blindholdout; originaldual/budget cannotbe reconstructed fromoldgap alone",
+    "Cut may leave no dual; unknown remainsunknown. No global chipsearch or realisedpointbound",
+    "OriginalDseason results remain historicalearliersource evidence, notnewsource results"
+  ]
+}

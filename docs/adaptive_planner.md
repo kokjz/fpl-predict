@@ -1,5 +1,9 @@
 # Adaptive chip and scenario planning
 
+Each trial and the selected schedule now expose [retained-plan bounds](solver_bounds.md).
+They apply to a fixed schedule and player pool. The complete heuristic chip
+search still has no global bound; legacy raw gaps remain attempt diagnostics.
+
 `plan-adaptive` is an optional research planner. It combines a detailed one-to-eight
 gameweek financial plan with a coarse remaining-season chip calendar. Only the
 first action is eligible for execution after review. Rebuild the forecasts,

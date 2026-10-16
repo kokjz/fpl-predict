@@ -1,5 +1,9 @@
 # Multi-gameweek forecast and transfer planning
 
+Current diagnostics distinguish the [retained plan's bound](solver_bounds.md)
+from a discarded solver attempt's raw gap. The baseline objective cut is
+switchable; see the [fixed diagnostic](SELECTED_PLAN_BOUNDS_2026-10-16.md).
+
 This opt-in research planner chooses transfers and lineups together over1–8GWs.
 Only its first action is eligible for the current deadline; later actions must be
 reconsidered when new information arrives. Optional fixed chip schedules and a
