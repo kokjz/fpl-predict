@@ -37,33 +37,42 @@ def _objective(state,market,horizon,actions,cfg):
     for gw,action in zip(horizon.gameweeks,actions):
         initial=not state.holdings;m=_market(market,gw,xp);p=prepare(state,m,action)
         roster={r['id'] for r in p.squad};xi=sum(xp[(gw,i)] for i in action.starters);capt=xp[(gw,action.captain)]
-        reserve=cfg.bench_weight*sum(xp[(gw,i)] for i in roster-set(action.starters))
+        reserve=(1. if action.chip=='bboost' else cfg.bench_weight)*sum(xp[(gw,i)] for i in roster-set(action.starters))
+        if action.chip=='3xc':capt*=2
         churn=0. if initial else cfg.churn_cost*p.transfers
         week_value=xi+capt+reserve-p.hits-churn;value+=week_value
         parts.append(dict(gameweek=gw,xi_mean=xi,captain_mean=capt,reserve_proxy=reserve,hits=p.hits,churn_penalty=churn,bank=p.state.bank,next_ft=p.state.free_transfers))
-        state=p.state;last=roster
+        state=p.state;last=set(dict(state.holdings))
     ft=cfg.terminal_ft_value*state.free_transfers if horizon.gameweeks[-1]<38 else 0.
     terminal=cfg.terminal_squad_weight*sum(np.mean([xp[(g,i)] for g in horizon.gameweeks[-2:]]) for i in last) if horizon.gameweeks[-1]<38 else 0.
     return float(value+ft+terminal),dict(weeks=parts,terminal_ft=ft,terminal_squad_proxy=float(terminal))
 
 
-def _fallback(state,market,horizon,baseline):
+def _fallback(state,market,horizon,baseline,chips=None):
     xp=horizon.values();actions=[]
     for k,gw in enumerate(horizon.gameweeks):
         ids=set(baseline['ledger']) if k==0 else set(dict(state.holdings));m=_market(market,gw,xp)
         squad=[p for p in m.players if p['id'] in ids];s=select_xi(squad)
-        a=Action(tuple(sorted(ids-set(dict(state.holdings)))),tuple(sorted(set(dict(state.holdings))-ids)),tuple(s['starters']),tuple(s['bench']),s['captain'],s['vice'])
+        a=Action(tuple(sorted(ids-set(dict(state.holdings)))),tuple(sorted(set(dict(state.holdings))-ids)),tuple(s['starters']),tuple(s['bench']),s['captain'],s['vice'],(chips or {}).get(gw))
         state=prepare(state,m,a).state;actions.append(a)
     return actions
 
 
-def plan(state,market,horizon,settings=None):
+def plan(state,market,horizon,settings=None,*,chip_schedule=None):
     cfg=settings or Settings();start=time.monotonic()
     if (state.season,state.gameweek,market.as_of)!=(horizon.season,horizon.origin,horizon.as_of) or market.gameweek!=state.gameweek:raise ValueError('Planner/forecast origin mismatch')
     if not horizon.gameweeks or len(horizon.gameweeks)>8:raise ValueError('Invalid horizon')
     from horizon_forecast import Horizon
     checked=Horizon.create(market,[dict(r) for r in horizon.forecasts],**dict(horizon.provenance))
     if checked.gameweeks!=horizon.gameweeks:raise ValueError('Unvalidated horizon')
+    chips=dict(chip_schedule or {});rules=rules_for(state.season);tokens=set(state.used_chips)
+    for gw,name in sorted(chips.items()):
+        windows=[w for w in rules['chip_windows'] if w['name']==name and w['start']<=gw<=w['stop']]
+        if type(gw) is not int or gw not in horizon.gameweeks or len(windows)!=1:raise ValueError('Invalid chip schedule')
+        token=(name,windows[0]['start'])
+        if token in tokens:raise ValueError('Chip already used or repeated')
+        tokens.add(token)
+        if name=='freehit' and (chips.get(gw-1)=='freehit' or (gw==state.gameweek and state.previous_chip=='freehit')):raise ValueError('Consecutive Free Hits prohibited')
     xp=horizon.values();allids={p['id'] for p in market.players}
     if set(xp)!={(g,i) for g in horizon.gameweeks for i in allids}:raise ValueError('Forecast coverage differs')
     rows=[dict(fpl_code=p['id'],position=p['position'],team=p['team'],price_tenths=p['price_tenths'],can_buy=int(p['can_buy']),prior_minutes=0.,ownership=0.,expected_points=xp[(state.gameweek,p['id'])]) for p in market.players]
@@ -74,7 +83,7 @@ def plan(state,market,horizon,settings=None):
     except ValueError:
         if not old:raise ValueError('No validated opening-squad baseline') from None
         baseline={'ledger':old};baseline_status='held-squad fallback; one-GW solve unavailable'
-    fallback=_fallback(state,market,horizon,baseline);fallback_value,_=_objective(state,market,horizon,fallback,cfg)
+    fallback=_fallback(state,market,horizon,baseline,chips);fallback_value,_=_objective(state,market,horizon,fallback,cfg)
     # Preserve owned IDs and a full-market feasible baseline, then add form/budget candidates.
     pool=set(old)|set(baseline['ledger'])
     for pos in POSITIONS:
@@ -86,17 +95,21 @@ def plan(state,market,horizon,settings=None):
     c=[];lo=[];hi=[];groups=[]
     def var(cost=0.,upper=1,lower=0):
         i=len(c);c.append(cost);lo.append(lower);hi.append(upper);return i
+    persistent=[t for t,g in enumerate(horizon.gameweeks) if chips.get(g)!='freehit']
+    terminal_t=persistent[-1] if persistent else None
+    constant_terminal=cfg.terminal_squad_weight*sum(np.mean([xp[g,i] for g in horizon.gameweeks[-2:]]) for i in old) if terminal_t is None and horizon.gameweeks[-1]<38 else 0.
     for t,gw in enumerate(horizon.gameweeks):
         cols={name:[] for name in ['old','new','buy','sell_old','sell_new','xi','captain']}
         for p in players:
             q=xp[(gw,p['id'])]
-            terminal=cfg.terminal_squad_weight*np.mean([xp[(g,p['id'])] for g in horizon.gameweeks[-2:]]) if t==H-1 and gw<38 else 0.
+            terminal=cfg.terminal_squad_weight*np.mean([xp[(g,p['id'])] for g in horizon.gameweeks[-2:]]) if t==terminal_t and horizon.gameweeks[-1]<38 else 0.
+            bench_weight=1. if chips.get(gw)=='bboost' else cfg.bench_weight
             for name in cols:
-                cost=-cfg.bench_weight*q-terminal if name in ('old','new') else -(1-cfg.bench_weight)*q if name=='xi' else -q if name=='captain' else cfg.churn_cost if name=='buy' and (old or t) else 0.
+                cost=-bench_weight*q-terminal if name in ('old','new') else -(1-bench_weight)*q if name=='xi' else -(2 if chips.get(gw)=='3xc' else 1)*q if name=='captain' else cfg.churn_cost if name=='buy' and (old or t) else 0.
                 upper=int(p['id'] in old) if name=='old' else int(p['can_buy']) if name=='buy' else 1
                 cols[name].append(var(float(cost),upper))
         funds=state.bank+sum(sell_price(price,next(p['price_tenths'] for p in players if p['id']==i)) for i,price in old.items())
-        cols.update(bank=var(upper=funds),ft=var(upper=5),used=var(upper=5),paid=var(4.,15),after=var(-cfg.terminal_ft_value if t==H-1 and gw<38 else 0.,5,1),excess=var(),cap=var(),repaired=var())
+        cols.update(bank=var(upper=funds),ft=var(upper=5),used=var(upper=5),paid=var(4.,15),after=var(-cfg.terminal_ft_value if t==H-1 and gw<38 else 0.,5,0 if chips.get(gw) in ('wildcard','freehit') else 1),excess=var(),cap=var(),repaired=var())
         groups.append(cols)
     rix=[];cix=[];vals=[];lower=[];upper=[]
     def add(row,l=-np.inf,u=np.inf):
@@ -106,7 +119,8 @@ def plan(state,market,horizon,settings=None):
         lower.append(l);upper.append(u)
     counts=Counter(p['team'] for p in players if p['id'] in old);needs_repair=any(v>3 for v in counts.values())
     for t,(gw,a) in enumerate(zip(horizon.gameweeks,groups)):
-        prev=groups[t-1] if t else None
+        previous_persistent=[j for j in range(t) if chips.get(horizon.gameweeks[j])!='freehit']
+        prev=groups[previous_persistent[-1]] if previous_persistent else None
         for i,p in enumerate(players):
             initial=int(p['id'] in old)
             row={a['old'][i]:1,a['sell_old'][i]:1}
@@ -151,9 +165,13 @@ def plan(state,market,horizon,settings=None):
             continue
         row={a['ft']:1}
         topup=rules['ft_topups'].get(str(gw))
-        if prev and topup is None:row[prev['after']]=-1
-        value=topup if topup is not None else (available_transfers(state,rules) if not prev else 0)
+        if t and topup is None:row[groups[t-1]['after']]=-1
+        value=topup if topup is not None else (available_transfers(state,rules) if not t else 0)
         add(row,value,value)
+        if chips.get(gw) in ('wildcard','freehit'):
+            add({a['after']:1,a['ft']:-1},0,0)
+            add({a['paid']:1},0,0);add({a['used']:1},0,0)
+            continue
         add({a['used']:1,a['ft']:-1},u=0)
         add({a['used']:1,**{i:-1 for i in a['buy']}},u=0)
         add({a['used']:1,a['ft']:-1,a['excess']:-15},l=-15)
@@ -178,19 +196,19 @@ def plan(state,market,horizon,settings=None):
                 xi=tuple(p['id'] for i,p in enumerate(players) if rounded[a['xi'][i]]>.5);capt=next(p['id'] for i,p in enumerate(players) if rounded[a['captain'][i]]>.5)
                 bench=tuple(sorted(ids-set(xi),key=lambda i:(next(p['position'] for p in players if p['id']==i)==1,-xp[(gw,i)],i)))
                 vice=next(i for i in sorted(xi,key=lambda i:(-xp[(gw,i)],i)) if i!=capt)
-                action=Action(tuple(sorted(ids-set(dict(current.holdings)))),tuple(sorted(set(dict(current.holdings))-ids)),xi,bench,capt,vice)
+                action=Action(tuple(sorted(ids-set(dict(current.holdings)))),tuple(sorted(set(dict(current.holdings))-ids)),xi,bench,capt,vice,chips.get(gw))
                 prepared=prepare(current,_market(market,gw,xp),action)
-                if prepared.state.bank!=int(rounded[a['bank']]) or prepared.state.free_transfers!=int(rounded[a['after']]) or prepared.hits!=4*int(rounded[a['paid']]):raise ValueError('Solver/engine finance or FT mismatch')
+                if prepared.playing_bank!=int(rounded[a['bank']]) or prepared.state.free_transfers!=int(rounded[a['after']]) or prepared.hits!=4*int(rounded[a['paid']]):raise ValueError('Solver/engine finance or FT mismatch')
                 current=prepared.state;actions.append(action)
             solution_value,_=_objective(state,market,horizon,actions,cfg)
-            if not np.isclose(solution_value,-np.dot(c,rounded),rtol=0,atol=1e-5):raise ValueError('Solver/objective reconciliation failed')
+            if not np.isclose(solution_value,-np.dot(c,rounded)+constant_terminal,rtol=0,atol=1e-5):raise ValueError('Solver/objective reconciliation failed')
             if solution_value>=fallback_value-1e-7:selected=actions;reason='optimal restricted pool' if result.status==0 else 'validated time-limit incumbent'
     value,parts=_objective(state,market,horizon,selected,cfg)
     report=dict(objective=value,components=parts,fallback_objective=fallback_value,solver_objective=solution_value,
         status=int(result.status),selection=reason,baseline=baseline_status,proven_optimal=bool(result.status==0 and selected is not fallback),
         mip_gap=float(result.mip_gap) if getattr(result,'mip_gap',None) is not None else None,
         seconds=time.monotonic()-start,pool_players=n,full_market_players=len(market.players),variables=len(c),constraints=len(lower),
-        scope='Deterministic origin-frozen1–8GWforecast, constant quotes/roster, restricted candidate pool, no chips or expected autosub objective; commit first action only')
+        chip_schedule=chips,scope='Deterministic origin-frozen1–8GWforecast, constant quotes/roster, restricted candidate pool, fixed chip schedule; no expected autosub objective; commit first action only')
     return selected,report
 
 
@@ -209,7 +227,8 @@ def main():
     m=Market.create(**spec['market']);v=dict(spec['state'])
     for k in ('holdings','used_chips'):v[k]=tuple(tuple(z) for z in v.get(k,[]))
     state=State(**v);h=Horizon.create(m,**spec['forecast']);cfg=Settings(**spec.get('settings',{}))
-    actions,report=plan(state,m,h,cfg);a.output.mkdir(parents=True)
+    chips={int(g):name for g,name in spec.get('chip_schedule',{}).items()}
+    actions,report=plan(state,m,h,cfg,chip_schedule=chips);a.output.mkdir(parents=True)
     result=dict(schema_version=1,scope='Experimental multiGW plan; only first action eligible for currentdeadline after review; no account writes',
         input_sha256=file_hash(a.input),engine_sha256=file_hash(Path(__file__)),forecast_adapter_sha256=file_hash(Path(__file__).with_name('horizon_forecast.py')),
         state_engine_sha256=file_hash(Path(__file__).with_name('season_engine.py')),settings=asdict(cfg),

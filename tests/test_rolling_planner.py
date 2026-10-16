@@ -27,6 +27,55 @@ def setup(gw=36,H=3):
 def config(**kwargs):return Settings(seconds=10.,bench_weight=0.,terminal_ft_value=0.,terminal_squad_weight=0.,**kwargs)
 
 
+def test_fixed_chips_reconcile_freehit_reversion_wildcard_and_boost():
+    s,m,h=setup();s=replace(s,holdings=tuple((i,40 if i==15 else 50) for i in range(1,16)),bank=230,free_transfers=4)
+    chips={36:'freehit',37:'wildcard',38:'bboost'};actions,report=plan(s,m,h,config(),chip_schedule=chips)
+    current=s
+    for gw,a in zip(h.gameweeks,actions):
+        p=prepare(current,Market.create(m.season,gw,m.deadline,m.as_of,[dict(z) for z in m.players]),a)
+        if gw==36:
+            assert p.state.holdings==s.holdings and p.state.bank==s.bank and p.state.free_transfers==4
+        if gw==37:assert p.state.free_transfers==4 and dict(p.state.holdings)=={i:dict(current.holdings).get(i,50) for i in (*a.starters,*a.bench)}
+        assert p.hits==0;current=p.state
+    assert [a.chip for a in actions]==list(chips.values())
+    assert report['objective']==pytest.approx(_objective(s,m,h,actions,config())[0])
+
+
+def test_freehit_terminal_values_apply_to_restored_purchase_ledger():
+    s,m,h=setup(gw=20,H=1);cfg=Settings(seconds=5.)
+    a,r=plan(s,m,h,cfg,chip_schedule={20:'freehit'})
+    assert r['objective']==pytest.approx(_objective(s,m,h,a,cfg)[0])
+    assert r['components']['terminal_squad_proxy']==pytest.approx(cfg.terminal_squad_weight*sum(h.values()[20,i] for i,_ in s.holdings))
+
+
+@pytest.mark.parametrize('schedule',[{36:'3xc',37:'3xc'},{36:'freehit',37:'freehit'},{35:'bboost'},{36:'unknown'}])
+def test_chip_schedule_guards(schedule):
+    s,m,h=setup()
+    with pytest.raises(ValueError):plan(s,m,h,config(),chip_schedule=schedule)
+
+
+@pytest.mark.parametrize('chips',[{37:'3xc',38:'bboost'},{37:'freehit',38:'3xc'},{37:'wildcard',38:'bboost'}])
+def test_chip_milp_matches_exhaustive_two_week_state_search(chips):
+    s,m,h=setup(gw=37,H=2);cfg=config();actions,r=plan(s,m,h,cfg,chip_schedule=chips);xp=h.values();by=m.indexed()
+    squads=[tuple(sorted([1,2,3,4,5,6,7,*mid,*fwd])) for mid in combinations([8,9,10,11,12,18],5) for fwd in combinations([13,14,15,16,17],3)]
+    values={}
+    for g in h.gameweeks:
+        for ids in squads:
+            q=select_xi([dict(by[i],expected_points=xp[g,i]) for i in ids]);v=q['expected_points']
+            if chips.get(g)=='3xc':v+=xp[g,q['captain']]
+            if chips.get(g)=='bboost':v+=sum(xp[g,i] for i in q['bench'])
+            values[g,ids]=v
+    @lru_cache(None)
+    def dp(t,owned,ft):
+        if t==2:return 0.
+        g=h.gameweeks[t];chip=chips.get(g);ans=-1e9
+        for ids in squads:
+            n=len(set(ids)-set(owned));free=chip in ('wildcard','freehit');hits=0 if free else 4*max(0,n-ft)
+            ans=max(ans,values[g,ids]-hits-cfg.churn_cost*n+dp(t+1,owned if chip=='freehit' else ids,ft if free else min(5,max(0,ft-n)+1)))
+        return ans
+    assert r['objective']==pytest.approx(dp(0,tuple(range(1,16)),1),abs=1e-6)
+
+
 def test_multigw_rejects_flash_transfer_for_larger_later_gain():
     s,m,h=setup();actions,r=plan(s,m,h,config())
     one=Horizon.create(m,[dict(z) for z in h.forecasts if z['gameweek']==s.gameweek],trained_through='2025-12-01T00:00Z',feature_cutoff=m.as_of,source_as_of=m.as_of,model_id='synthetic')

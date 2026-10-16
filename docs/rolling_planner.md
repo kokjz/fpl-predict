@@ -2,8 +2,10 @@
 
 This opt-in research planner chooses transfers and lineups together over1–8GWs.
 Only its first action is eligible for the current deadline; later actions must be
-reconsidered when new information arrives. It is not yet a chip strategy, approved
-weekly replacement or demonstrated season-points improvement.
+reconsidered when new information arrives. Optional fixed chip schedules and a
+bounded [chip/scenario strategy](adaptive_planner.md) are now available for
+research. Neither is an approved weekly replacement or demonstrated season-points
+improvement.
 
 ## Origin-frozen forecasts
 
