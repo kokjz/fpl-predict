@@ -2,11 +2,11 @@
 
 The [predeclared protocol](../src/fpl_predict_resources/native_planner_protocol.json)
 separates the planner from the forecasting comparison already completed in the
-[sixteen-path study](SEASON_EXTERNAL_RESULTS_2026-10-16.md). No historical native
-planner score is claimed by this document.
+[sixteen-path study](SEASON_EXTERNAL_RESULTS_2026-10-16.md). The [completed eight-path study](NATIVE_PLANNER_RESULTS_2026-10-16.md)
+reports the historical comparison and its limitations.
 
-The next eight paths cross two frozen forecasting controls, two planning engines
-and own/common opening squads. Both engines will manage continuous 38-GW paths
+The eight paths cross two frozen forecasting controls, two planning engines
+and own/common opening squads. Both engines manage continuous 38-GW paths
 with six-GW lookahead and all four chips. They share the outer chip search,
 candidate procedure, point objective and resource budgets. This measures the
 inner planner under a controlled policy, rather than an original external
@@ -29,8 +29,8 @@ before executing the separately obtained solver. It imports no forecasting
 dependencies merely on import. Request validation rejects outcome fields,
 ambiguous forecasts, invalid origins and illegal chip schedules. Network calls
 are refused; external prints go to the private diagnostic stream. Runtime/source
-metadata is emitted before requests. The parent controller and full replay
-admission are still required before any historical comparison.
+metadata is emitted before requests. The parent controller performs canonical admission before historical replay;
+all 304 transitions in the completed comparison independently reconcile.
 
 Two guarded syntax-tree substitutions adapt the known free-transfer reset and
 the Free Hit budget. Explicit variable bounds prevent buying unavailable

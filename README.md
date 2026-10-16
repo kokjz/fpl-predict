@@ -71,7 +71,16 @@ depends on training usage and starting state. These are prior-only research fits
 not the saved champion or original competitors' complete systems. An initial
 failed run and every uniformly rerun arm are retained. Short-search variability
 and one reused season prevent a general superiority or promotion claim.
-Common-forecast external-planner comparisons and joint qualification remain open.
+The [matched planning-engine comparison](docs/NATIVE_PLANNER_RESULTS_2026-10-16.md)
+then completes eight full-season paths using common forecasts and a shared outer
+chip policy. With freely constructed opening squads, the standing planner leads
+the pinned, rule-adapted Open FPL Solver by 111 points under the four-year control
+and 12 under the five-prior-season control. From a common opening, the native
+adaptation leads by 22 and 2 points respectively. All 304 deadline transitions
+independently reconcile; the mixed rankings establish no consistent planner
+advantage. This compares configured inner solvers, not untouched external
+managers. Repeatability, additional native integration and joint qualification
+remain open.
 
 [Retained-plan bounds](docs/solver_bounds.md) now distinguish a validated plan
 from discarded solver attempts. A switchable baseline objective cut preserves
