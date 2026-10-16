@@ -55,3 +55,15 @@ def test_future_training_labels_rejected_before_loading_optional_learner():
     bad=pd.DataFrame(dict(season=['2025-26']))
     with pytest.raises(ValueError,match='chronological'):
         fit_reference('dastan_adaptation',bad,bad,pd.DataFrame(),pd.DataFrame(),bad,pd.DataFrame(),lambda v:None)
+
+
+def test_native_all_missing_column_selection_uses_training_only():
+    from season_external import fit_reference
+    t=pd.DataFrame(dict(season=['2020-21','2021-22','2022-23','2023-24']*70,
+        ts=pd.to_datetime(['2021-05-01','2022-05-01','2023-05-01','2024-05-01']*70,utc=True),position=[1,2,3,4]*70,total_points=2.))
+    v=pd.DataFrame(dict(season=['2024-25'],ts=pd.to_datetime(['2025-05-01'],utc=True),deadline=pd.to_datetime(['2024-08-01'],utc=True),position=[1],total_points=[2.]))
+    q=pd.DataFrame(dict(season=['2025-26'],inputs_as_of=['2025-08-01T00:00Z'],position=[1]))
+    x=pd.DataFrame(dict(known=np.arange(len(t)),unobserved=np.nan));xv=pd.DataFrame(dict(known=[1.],unobserved=[999.]));xq=xv.copy();log=[]
+    a=fit_reference('native_hgb',t,v,x,xv,q,xq,log.append);xq['unobserved']=-999.
+    b=fit_reference('native_hgb',t,v,x,xv,q,xq,log.append)
+    np.testing.assert_allclose(a,b);assert log[0]['dropped_all_training_missing']==['unobserved']

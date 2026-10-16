@@ -81,6 +81,12 @@ def fit_reference(method,training,validation,xt,xv,query,xq,progress):
             a,b=xt.copy(),xq.copy()
             for pos in range(1,5):
                 a[f'position_{pos}']=training.position.eq(pos).astype(float);b[f'position_{pos}']=query.position.eq(pos).astype(float)
+            # Some supported numerical versions cannot bin all-NaN columns.
+            # They contain no training information; do not use future query
+            # values to decide retention or invent observations to fill them.
+            retained=a.columns[a.notna().any(axis=0)]
+            progress(dict(method=method,training_features=len(retained),dropped_all_training_missing=sorted(set(a)-set(retained))))
+            a,b=a.loc[:,retained],b.loc[:,retained]
             weights=np.power(.5,(pd.to_datetime(training.ts,utc=True).max()-pd.to_datetime(training.ts,utc=True)).dt.total_seconds().to_numpy()/86400/730.5)
             model=HistGradientBoostingRegressor(**POLICY['parameters']);model.fit(a,training.total_points,sample_weight=weights)
             prediction=np.clip(model.predict(b),0,22)

@@ -1,9 +1,10 @@
 {
-  "version": 1,
+  "version": 2,
   "scope": "Matched prior-only full38origin research forecasting and commonplanner season paths; namedadaptations notnative original systems orpromotions",
   "training": "Every core learner fits2020-21..2023-24;2024-25 onlyforrequired earlystopping/calibration, no2025labels fit/select. Core/nativeHGBfixedarchitecture doesnotusevalidationforselection; permitted data horizon common, intrinsicfit/calibration/weighting differ",
   "models": ["common_core_hgb7", "native_hgb", "dastan_adaptation", "openfpl_cv1_adaptation", "conjugate_poisson_adaptation"],
   "specification": "Reuse fixed publishedarchitecture/calibration/40cv1members/componentrecipe from existingreviewed modules, no extra seeds/parametersearch. Fullmodelclaim requiresnative code/input/training/rulecompatibility, adaptations labelled",
+  "native_missing_transform": "Drop columns all-missing in nativeHGB training only, recording retained/dropped features. Never use query values to choose columns. Corrects numerical all-NaNbinning failure without changing modelchoice/hyperparameters or inventing missing observations",
   "scoring": "RemoveDCfrom both labels and total-point historyfeatures for consistentcoretarget; addidentical asofEWDCcomponent cappedbyprior-only standingappearancehead toallmethods. Otherhistoricalscoring differences caveated. Commoncomponentweights2020-24 reused, no2025fit; notexternalnativeDCmodel",
   "origin_features": "Native cutoff equalsmarketcapture, notlaterdeadline; snapshotmay equalobservedorigin but remainsbeforephysicaldeadline. Allfuturetargetsuseoriginhistories/currentroster/knowncalendar, no futureactualform. ep_next/news/chance explicitlyunknownforlatertargets; price/ownershipremainoriginquotes",
   "source": "ExistingcanonicalFPL/Understathistory and38pinnedbootstraps/calendars; mutablecorrections/captureclaims/gaps retained, no newbulkdownloads. Trainingoldercutoffs reconstructed; older snapshotfields missing, neverpostmatchxP",

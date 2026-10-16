@@ -18,6 +18,11 @@ AIrsenal's original BPL or complete manager. Architecture/feature reconstruction
 source gaps and missing older snapshots prevent claims of exact native-system
 reproduction. See [attribution](../THIRD_PARTY_NOTICES.md).
 
+The native HGB adapter drops features entirely missing in its training data and
+records that fitted mask. Query values never determine retention. This avoids an
+all-NaN binning failure in the numerical runtime without inventing observations
+or changing the estimator's parameters. The failed initial fit is retained.
+
 ## Matching information and scoring
 
 `season_external.fixture_targets` creates all origin-known fixture targets from
