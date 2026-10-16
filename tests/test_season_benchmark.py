@@ -23,6 +23,18 @@ def test_full_season_carries_state_and_freezes_decisions_before_settlement(tmp_p
     with pytest.raises(ValueError,match='exists'):run(d,o,tmp_path/'season')
 
 
+def test_season_inner_solver_uses_declared_settings_without_receiving_outcomes(tmp_path):
+    from rolling_planner import plan,Settings
+    calls=[];d,o=bundle()
+    def inner(state,market,horizon,cfg,**kwargs):
+        assert cfg.baseline_mode=='feasibility' and cfg.terminal_ft_value==0.
+        assert all(not {'actual','minutes','cards'}&set(p) for p in market.players)
+        calls.append(state.gameweek);return plan(state,market,horizon,cfg,**kwargs)
+    cfg=Settings(baseline_mode='feasibility',terminal_ft_value=0.,terminal_squad_weight=0.,churn_cost=0.)
+    result=run(d,o,tmp_path/'native-contract',policy=Policy(horizon=1,chips=True,max_trials=1),settings=cfg,inner_planner=inner)
+    assert calls==list(range(1,39)) and result['planner_settings']['baseline_mode']=='feasibility'
+
+
 def test_future_outcomes_do_not_change_earlier_actions(tmp_path):
     d,o=bundle();run(d,o,tmp_path/'a',policy=Policy(chips=False))
     changed=copy.deepcopy(o)

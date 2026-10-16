@@ -1,0 +1,687 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "season": "2025-26",
+  "season_count": 1,
+  "protocol_version": 3,
+  "source_commit": "4feb5d34adf494eec25358b00207347b33dd6422",
+  "paths": 8,
+  "independently_reconciled_deadlines": 304,
+  "horizon": 6,
+  "all_four_chip_types": true,
+  "outer_seconds": 15,
+  "inner_seconds": 2,
+  "max_trials": 12,
+  "threads_per_job": 2,
+  "total_serial_job_seconds": 3350.714413500158,
+  "maximum_sampled_rss_bytes": 896925696,
+  "source_sha256": {
+    "native_planner.py": "a2d89977c1ff92d05a85a261453dd617d3857858321948fe6778482cb5213ba6",
+    "native_solver_worker.py": "f0db24cdc27da186ef26674071b4b9a04c5f32782413553873a56ab272d03bdf",
+    "rolling_planner.py": "70f30795b152d200173e7a661af20bcf754d9d449ca1535a164259003176ed45",
+    "adaptive_planner.py": "ebc0aaab7d7dfdf0cedb733affd8049c4026881882e579016626f68ec9027002",
+    "season_benchmark.py": "c4f1bdbb427994b5d4ee25204ce4a0c0243eb7bb803d5e789456a30ac994ad31",
+    "season_engine.py": "d9328b51ccb81fbfef937a92b7db31d489079f66802a12fdcdca307712589c59",
+    "horizon_forecast.py": "f2eb815ee05871731b70df393a9c94ec9c1a83d6c8a45a08600e3eab18f7a4fd",
+    "opening_baseline.py": "856f039dac25e2b47a932ef032aa56948e5c791b6f3bad0870b65585d516fa50",
+    "forecast.py": "7559b30f2e8ee25bb7c308b005ef855e167e0151381e2b02666e221380867b2e",
+    "selection_benchmark.py": "863f9d6af33c1738db0cccce07afac040bb4f749dfd06514c11d09fde50a5d6c",
+    "fpl_predict_resources/native_planner_protocol.json": "98239fb5b2710c57fd0eaab368e822fa741d493bf205c8d2a3fe53f0b0b7211f",
+    "fpl_predict_resources/native_solver_recipe.json": "91f93d30e1217edc3b397cf1e455a9fe8b7957e46b90e9f0cc0bede550bd314c",
+    "fpl_predict_resources/season_rules.json": "00bd1f16ef39771c63f6fa075757590dd4abd78a6e8c8e00024ee1b001fd9077"
+  },
+  "rows": [
+    {
+      "arm": "common_core_hgb7_standing_own",
+      "forecast": "common_core_hgb7",
+      "planner": "standing",
+      "opening": "own",
+      "net_points": 2141.0,
+      "hits": 16,
+      "transfers": 87,
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 3,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 8,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 14,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 20,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 22,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 30,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "deadlines": 38,
+      "job_seconds": 321.5144467910286,
+      "management_seconds": 320.1243818330113,
+      "sampled_peak_rss_bytes": 686424064,
+      "decision_seconds": {
+        "median": 8.124942500027828,
+        "maximum": 15.374367457814515
+      },
+      "outer_budget_exhausted_origins": 24,
+      "trials": 324,
+      "fallback_retained_trials": 0,
+      "known_selected_bounds": 38,
+      "unknown_selected_bounds": 0,
+      "maximum_known_conditional_relative_gap": 0.006869300654448424,
+      "native_calls": 0,
+      "native_no_feasible_incumbent_attempts": 0,
+      "native_startup_seconds": null,
+      "native_runtime": null,
+      "provenance": {
+        "forecast_bundle_sha256": "47a3644e536f3f224b3c41c0d4d184b3f27c683f8862b238a346f167b2245aa0",
+        "outcome_bundle_sha256": "18b49180983759a0a8216ec1d7dc7724f5b75f950a57a1c6ab730785ec8515eb",
+        "common_opening_sha256": null,
+        "protocol_sha256": "98239fb5b2710c57fd0eaab368e822fa741d493bf205c8d2a3fe53f0b0b7211f",
+        "summary_sha256": "df8260102702c2ac08a0adc86ebcd27094021a48ae8dcff12d4c2b93db0ea7f4"
+      }
+    },
+    {
+      "arm": "common_core_hgb7_standing_common",
+      "forecast": "common_core_hgb7",
+      "planner": "standing",
+      "opening": "common",
+      "net_points": 2135.0,
+      "hits": 16,
+      "transfers": 87,
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 3,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 8,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 14,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 20,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 23,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 34,
+          "name": "wildcard"
+        }
+      ],
+      "deadlines": 38,
+      "job_seconds": 368.35747350007296,
+      "management_seconds": 366.8084835410118,
+      "sampled_peak_rss_bytes": 614383616,
+      "decision_seconds": {
+        "median": 10.357781541417353,
+        "maximum": 16.587539582978934
+      },
+      "outer_budget_exhausted_origins": 27,
+      "trials": 342,
+      "fallback_retained_trials": 2,
+      "known_selected_bounds": 38,
+      "unknown_selected_bounds": 0,
+      "maximum_known_conditional_relative_gap": 0.006869641674270103,
+      "native_calls": 0,
+      "native_no_feasible_incumbent_attempts": 0,
+      "native_startup_seconds": null,
+      "native_runtime": null,
+      "provenance": {
+        "forecast_bundle_sha256": "47a3644e536f3f224b3c41c0d4d184b3f27c683f8862b238a346f167b2245aa0",
+        "outcome_bundle_sha256": "18b49180983759a0a8216ec1d7dc7724f5b75f950a57a1c6ab730785ec8515eb",
+        "common_opening_sha256": "6e2d6cea4f4441efaf6a5a2f537e8e4ada1e0d2d72465f50fd3290197c0a8a99",
+        "protocol_sha256": "98239fb5b2710c57fd0eaab368e822fa741d493bf205c8d2a3fe53f0b0b7211f",
+        "summary_sha256": "e14b7ad7947998de274eeba37956f6abfa8b80165620714b7ff6ffb35970869d"
+      }
+    },
+    {
+      "arm": "common_core_hgb7_native_own",
+      "forecast": "common_core_hgb7",
+      "planner": "native",
+      "opening": "own",
+      "net_points": 2030.0,
+      "hits": 20,
+      "transfers": 89,
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 3,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 8,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 14,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 20,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 21,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 34,
+          "name": "wildcard"
+        }
+      ],
+      "deadlines": 38,
+      "job_seconds": 491.45536191691644,
+      "management_seconds": 489.29111545789056,
+      "sampled_peak_rss_bytes": 863600640,
+      "decision_seconds": {
+        "median": 15.11724939593114,
+        "maximum": 17.575964624993503
+      },
+      "outer_budget_exhausted_origins": 27,
+      "trials": 300,
+      "fallback_retained_trials": 10,
+      "known_selected_bounds": 38,
+      "unknown_selected_bounds": 0,
+      "maximum_known_conditional_relative_gap": 0.010226312347313362,
+      "native_calls": 300,
+      "native_no_feasible_incumbent_attempts": 10,
+      "native_startup_seconds": 0.8028512909077108,
+      "native_runtime": {
+        "status": "ready",
+        "revision": "ec65f5e2b2be34441cb4b2a9efafea1ec0fe3b79",
+        "source_sha256": {
+          "dev/solver.py": "23d567bccc24ba8693b8cef23d8b41c375c6bc6a586b47eff8247faf175b2416",
+          "dev/data_parser.py": "45f283191357314113048eb8d71c16ae16d38a9f21f25b0a264ddc6f6b7d60e9",
+          "LICENSE": "d31d20f625c15c2442faeb6e9ec3c709b1c1be8ab46ebe7f4c91b37c96c9203a",
+          "utils.py": "12f02695207f37a105dc35e79bf7455f71f8c1cc8f97088ff9c806f8a709f346",
+          "paths.py": "98beea32115e459d864a87f6f34043e9a2d933a3d1d29471f6d2ce535db95c0c"
+        },
+        "patched_ast_sha256": "aa7e9b4dd16a69816f4311655a18f4737e3b1090745d545caa1e756e45df21fb",
+        "python": "3.14.6",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "highspy": "1.15.1",
+        "threads": 2,
+        "network_disabled": true
+      },
+      "provenance": {
+        "forecast_bundle_sha256": "47a3644e536f3f224b3c41c0d4d184b3f27c683f8862b238a346f167b2245aa0",
+        "outcome_bundle_sha256": "18b49180983759a0a8216ec1d7dc7724f5b75f950a57a1c6ab730785ec8515eb",
+        "common_opening_sha256": null,
+        "protocol_sha256": "98239fb5b2710c57fd0eaab368e822fa741d493bf205c8d2a3fe53f0b0b7211f",
+        "summary_sha256": "0ca2d8fc2822fbdf933e6b528921512082bdabb165812fff0b99b303888a6d89"
+      }
+    },
+    {
+      "arm": "common_core_hgb7_native_common",
+      "forecast": "common_core_hgb7",
+      "planner": "native",
+      "opening": "common",
+      "net_points": 2157.0,
+      "hits": 24,
+      "transfers": 89,
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 3,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 8,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 14,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 20,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 22,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 30,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "deadlines": 38,
+      "job_seconds": 476.4700792499352,
+      "management_seconds": 474.53148770798,
+      "sampled_peak_rss_bytes": 745652224,
+      "decision_seconds": {
+        "median": 14.99441764561925,
+        "maximum": 15.339315749937668
+      },
+      "outer_budget_exhausted_origins": 24,
+      "trials": 302,
+      "fallback_retained_trials": 15,
+      "known_selected_bounds": 38,
+      "unknown_selected_bounds": 0,
+      "maximum_known_conditional_relative_gap": 0.012013980364776944,
+      "native_calls": 302,
+      "native_no_feasible_incumbent_attempts": 15,
+      "native_startup_seconds": 0.6193728749640286,
+      "native_runtime": {
+        "status": "ready",
+        "revision": "ec65f5e2b2be34441cb4b2a9efafea1ec0fe3b79",
+        "source_sha256": {
+          "dev/solver.py": "23d567bccc24ba8693b8cef23d8b41c375c6bc6a586b47eff8247faf175b2416",
+          "dev/data_parser.py": "45f283191357314113048eb8d71c16ae16d38a9f21f25b0a264ddc6f6b7d60e9",
+          "LICENSE": "d31d20f625c15c2442faeb6e9ec3c709b1c1be8ab46ebe7f4c91b37c96c9203a",
+          "utils.py": "12f02695207f37a105dc35e79bf7455f71f8c1cc8f97088ff9c806f8a709f346",
+          "paths.py": "98beea32115e459d864a87f6f34043e9a2d933a3d1d29471f6d2ce535db95c0c"
+        },
+        "patched_ast_sha256": "aa7e9b4dd16a69816f4311655a18f4737e3b1090745d545caa1e756e45df21fb",
+        "python": "3.14.6",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "highspy": "1.15.1",
+        "threads": 2,
+        "network_disabled": true
+      },
+      "provenance": {
+        "forecast_bundle_sha256": "47a3644e536f3f224b3c41c0d4d184b3f27c683f8862b238a346f167b2245aa0",
+        "outcome_bundle_sha256": "18b49180983759a0a8216ec1d7dc7724f5b75f950a57a1c6ab730785ec8515eb",
+        "common_opening_sha256": "6e2d6cea4f4441efaf6a5a2f537e8e4ada1e0d2d72465f50fd3290197c0a8a99",
+        "protocol_sha256": "98239fb5b2710c57fd0eaab368e822fa741d493bf205c8d2a3fe53f0b0b7211f",
+        "summary_sha256": "55c802495efa0ceee53ca444700d78ca9c8a559556a28a534963de4895fdac5d"
+      }
+    },
+    {
+      "arm": "standing_prior5_standing_own",
+      "forecast": "standing_prior5",
+      "planner": "standing",
+      "opening": "own",
+      "net_points": 2236.0,
+      "hits": 24,
+      "transfers": 91,
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 15,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 19,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 20,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 21,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 31,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "deadlines": 38,
+      "job_seconds": 364.0334960410837,
+      "management_seconds": 362.7290706669446,
+      "sampled_peak_rss_bytes": 695418880,
+      "decision_seconds": {
+        "median": 10.292695646057837,
+        "maximum": 15.275686957873404
+      },
+      "outer_budget_exhausted_origins": 31,
+      "trials": 337,
+      "fallback_retained_trials": 1,
+      "known_selected_bounds": 38,
+      "unknown_selected_bounds": 0,
+      "maximum_known_conditional_relative_gap": 0.003568076062984287,
+      "native_calls": 0,
+      "native_no_feasible_incumbent_attempts": 0,
+      "native_startup_seconds": null,
+      "native_runtime": null,
+      "provenance": {
+        "forecast_bundle_sha256": "d140e27bb93ee7e15619b4fb4377bfb5c32b5fe712758acd1da33da0f289fecd",
+        "outcome_bundle_sha256": "18b49180983759a0a8216ec1d7dc7724f5b75f950a57a1c6ab730785ec8515eb",
+        "common_opening_sha256": null,
+        "protocol_sha256": "98239fb5b2710c57fd0eaab368e822fa741d493bf205c8d2a3fe53f0b0b7211f",
+        "summary_sha256": "1a26dc17a85f7c78a1016335ba23f018f6f54cc8ec69d8283da2f507c7a18b35"
+      }
+    },
+    {
+      "arm": "standing_prior5_standing_common",
+      "forecast": "standing_prior5",
+      "planner": "standing",
+      "opening": "common",
+      "net_points": 2224.0,
+      "hits": 24,
+      "transfers": 91,
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 15,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 19,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 21,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 23,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 30,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "deadlines": 38,
+      "job_seconds": 363.58937295898795,
+      "management_seconds": 362.26562479208224,
+      "sampled_peak_rss_bytes": 896925696,
+      "decision_seconds": {
+        "median": 10.56916164595168,
+        "maximum": 15.26744187483564
+      },
+      "outer_budget_exhausted_origins": 30,
+      "trials": 337,
+      "fallback_retained_trials": 5,
+      "known_selected_bounds": 38,
+      "unknown_selected_bounds": 0,
+      "maximum_known_conditional_relative_gap": 0.005794418114273484,
+      "native_calls": 0,
+      "native_no_feasible_incumbent_attempts": 0,
+      "native_startup_seconds": null,
+      "native_runtime": null,
+      "provenance": {
+        "forecast_bundle_sha256": "d140e27bb93ee7e15619b4fb4377bfb5c32b5fe712758acd1da33da0f289fecd",
+        "outcome_bundle_sha256": "18b49180983759a0a8216ec1d7dc7724f5b75f950a57a1c6ab730785ec8515eb",
+        "common_opening_sha256": "6e2d6cea4f4441efaf6a5a2f537e8e4ada1e0d2d72465f50fd3290197c0a8a99",
+        "protocol_sha256": "98239fb5b2710c57fd0eaab368e822fa741d493bf205c8d2a3fe53f0b0b7211f",
+        "summary_sha256": "3c5c4609732359ec560a37145c42f972ad4943ee571a5a495ed1aa99f3490c6e"
+      }
+    },
+    {
+      "arm": "standing_prior5_native_own",
+      "forecast": "standing_prior5",
+      "planner": "native",
+      "opening": "own",
+      "net_points": 2224.0,
+      "hits": 28,
+      "transfers": 92,
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 15,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 17,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 20,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 21,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 24,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "deadlines": 38,
+      "job_seconds": 464.29430483304895,
+      "management_seconds": 462.5352233340964,
+      "sampled_peak_rss_bytes": 801783808,
+      "decision_seconds": {
+        "median": 15.13551783352159,
+        "maximum": 17.32635666592978
+      },
+      "outer_budget_exhausted_origins": 26,
+      "trials": 288,
+      "fallback_retained_trials": 12,
+      "known_selected_bounds": 38,
+      "unknown_selected_bounds": 0,
+      "maximum_known_conditional_relative_gap": 0.008809535444239302,
+      "native_calls": 288,
+      "native_no_feasible_incumbent_attempts": 11,
+      "native_startup_seconds": 0.44546924997121096,
+      "native_runtime": {
+        "status": "ready",
+        "revision": "ec65f5e2b2be34441cb4b2a9efafea1ec0fe3b79",
+        "source_sha256": {
+          "dev/solver.py": "23d567bccc24ba8693b8cef23d8b41c375c6bc6a586b47eff8247faf175b2416",
+          "dev/data_parser.py": "45f283191357314113048eb8d71c16ae16d38a9f21f25b0a264ddc6f6b7d60e9",
+          "LICENSE": "d31d20f625c15c2442faeb6e9ec3c709b1c1be8ab46ebe7f4c91b37c96c9203a",
+          "utils.py": "12f02695207f37a105dc35e79bf7455f71f8c1cc8f97088ff9c806f8a709f346",
+          "paths.py": "98beea32115e459d864a87f6f34043e9a2d933a3d1d29471f6d2ce535db95c0c"
+        },
+        "patched_ast_sha256": "aa7e9b4dd16a69816f4311655a18f4737e3b1090745d545caa1e756e45df21fb",
+        "python": "3.14.6",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "highspy": "1.15.1",
+        "threads": 2,
+        "network_disabled": true
+      },
+      "provenance": {
+        "forecast_bundle_sha256": "d140e27bb93ee7e15619b4fb4377bfb5c32b5fe712758acd1da33da0f289fecd",
+        "outcome_bundle_sha256": "18b49180983759a0a8216ec1d7dc7724f5b75f950a57a1c6ab730785ec8515eb",
+        "common_opening_sha256": null,
+        "protocol_sha256": "98239fb5b2710c57fd0eaab368e822fa741d493bf205c8d2a3fe53f0b0b7211f",
+        "summary_sha256": "20bf7dbda52c4bcf3a3f05f0ab9548543b1f2c28e3f2c69483146a8850f76c9e"
+      }
+    },
+    {
+      "arm": "standing_prior5_native_common",
+      "forecast": "standing_prior5",
+      "planner": "native",
+      "opening": "common",
+      "net_points": 2226.0,
+      "hits": 12,
+      "transfers": 85,
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 6,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 14,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 17,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 20,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 21,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 34,
+          "name": "wildcard"
+        }
+      ],
+      "deadlines": 38,
+      "job_seconds": 500.9998782090843,
+      "management_seconds": 499.0428004169371,
+      "sampled_peak_rss_bytes": 859389952,
+      "decision_seconds": {
+        "median": 15.213096020394005,
+        "maximum": 15.311994124902412
+      },
+      "outer_budget_exhausted_origins": 33,
+      "trials": 313,
+      "fallback_retained_trials": 12,
+      "known_selected_bounds": 38,
+      "unknown_selected_bounds": 0,
+      "maximum_known_conditional_relative_gap": 0.009310450580113273,
+      "native_calls": 313,
+      "native_no_feasible_incumbent_attempts": 12,
+      "native_startup_seconds": 0.7397330841049552,
+      "native_runtime": {
+        "status": "ready",
+        "revision": "ec65f5e2b2be34441cb4b2a9efafea1ec0fe3b79",
+        "source_sha256": {
+          "dev/solver.py": "23d567bccc24ba8693b8cef23d8b41c375c6bc6a586b47eff8247faf175b2416",
+          "dev/data_parser.py": "45f283191357314113048eb8d71c16ae16d38a9f21f25b0a264ddc6f6b7d60e9",
+          "LICENSE": "d31d20f625c15c2442faeb6e9ec3c709b1c1be8ab46ebe7f4c91b37c96c9203a",
+          "utils.py": "12f02695207f37a105dc35e79bf7455f71f8c1cc8f97088ff9c806f8a709f346",
+          "paths.py": "98beea32115e459d864a87f6f34043e9a2d933a3d1d29471f6d2ce535db95c0c"
+        },
+        "patched_ast_sha256": "aa7e9b4dd16a69816f4311655a18f4737e3b1090745d545caa1e756e45df21fb",
+        "python": "3.14.6",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "highspy": "1.15.1",
+        "threads": 2,
+        "network_disabled": true
+      },
+      "provenance": {
+        "forecast_bundle_sha256": "d140e27bb93ee7e15619b4fb4377bfb5c32b5fe712758acd1da33da0f289fecd",
+        "outcome_bundle_sha256": "18b49180983759a0a8216ec1d7dc7724f5b75f950a57a1c6ab730785ec8515eb",
+        "common_opening_sha256": "6e2d6cea4f4441efaf6a5a2f537e8e4ada1e0d2d72465f50fd3290197c0a8a99",
+        "protocol_sha256": "98239fb5b2710c57fd0eaab368e822fa741d493bf205c8d2a3fe53f0b0b7211f",
+        "summary_sha256": "29481e8c1542cee249dc111cbdc3beab4cdd8038baf97f18a65a611b7036576c"
+      }
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "forecast": "common_core_hgb7",
+      "opening": "own",
+      "standing_points": 2141.0,
+      "native_points": 2030.0,
+      "standing_minus_native": 111.0
+    },
+    {
+      "forecast": "common_core_hgb7",
+      "opening": "common",
+      "standing_points": 2135.0,
+      "native_points": 2157.0,
+      "standing_minus_native": -22.0
+    },
+    {
+      "forecast": "standing_prior5",
+      "opening": "own",
+      "standing_points": 2236.0,
+      "native_points": 2224.0,
+      "standing_minus_native": 12.0
+    },
+    {
+      "forecast": "standing_prior5",
+      "opening": "common",
+      "standing_points": 2224.0,
+      "native_points": 2226.0,
+      "standing_minus_native": -2.0
+    }
+  ],
+  "model_promotion": false,
+  "policy_promotion": false,
+  "scope": "Pinned rule-adapted native Solio inner solver versus standing inner solver, common forecasts/outer-chip policy/objective/candidate procedure, own and common opening tracks. One reused season; not untouched external managers, saved-artifact backcast, global optimality, independent replications or general superiority.",
+  "limitations": [
+    "Wall-time heuristic searches are nondeterministic; some isolated mechanical admission work overlapped the serial batch, so timing and rankings require repeatability assessment.",
+    "Solver versions, formulations and baseline objective-cut tactics differ; common mathematical objective does not mean identical numerical search.",
+    "Selected bounds apply only to a fixed chip schedule, restricted candidate pool and stated surrogate objective; outer/global/season bounds are unknown.",
+    "Four-year and five-prior-year forecasting controls use different history, are chronological method references rather than the saved champion, and are not interchangeable claims.",
+    "No prospective advantage or model promotion; further-horizon quotes remain origin-frozen assumptions and chip calendar search is bounded."
+  ]
+}

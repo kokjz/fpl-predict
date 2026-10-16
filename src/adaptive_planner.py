@@ -75,7 +75,7 @@ def calendar(state,through,gains,*,blocked=()):
     return value,{g:(name,start) for g,name,start in path}
 
 
-def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),coarse=None,opening_ids=None):
+def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),coarse=None,opening_ids=None,inner_planner=None):
     """scenarios: sequence(name, explicit_assumption_weight, Horizon), max3.
 
     All actions across the detailed horizon are shared between scenarios. There
@@ -85,6 +85,7 @@ def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),
     are analyst assumptions, not calibrated projections or learned point gains.
     """
     cfg=settings or Settings();b=budget or Budget();start=time.monotonic()
+    if inner_planner is not None and not callable(inner_planner):raise ValueError('Inner planner must be callable')
     if not 1<=len(scenarios)<=3 or len({s[0] for s in scenarios})!=len(scenarios):raise ValueError('Require1–3 unique scenarios')
     if any(not str(n).strip() or not math.isfinite(w) or w<=0 for n,w,h in scenarios):raise ValueError('Invalid scenario weights')
     if not np.isclose(sum(w for _,w,_ in scenarios),1.):raise ValueError('Explicit weights must sum to1')
@@ -110,7 +111,8 @@ def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),
         if key in cache:return cache[key]
         elapsed=time.monotonic()-start
         if len(trials)>=b.max_trials or elapsed>=b.seconds:return None
-        actions,report=plan(state,market,mean,replace(cfg,seconds=min(b.solve_seconds,max(.01,b.seconds-elapsed))),chip_schedule=schedule,opening_ids=opening_ids)
+        solve_inner=plan if inner_planner is None else inner_planner
+        actions,report=solve_inner(state,market,mean,replace(cfg,seconds=min(b.solve_seconds,max(.01,b.seconds-elapsed))),chip_schedule=schedule,opening_ids=opening_ids)
         after_used=set(used)
         for g,name in schedule.items():after_used.add((name,next(w['start'] for w in windows if w['name']==name and w['start']<=g<=w['stop'])))
         # Allocate remaining tokens to future slots jointly; no double-counted

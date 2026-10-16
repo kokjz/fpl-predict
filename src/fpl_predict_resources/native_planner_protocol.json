@@ -1,0 +1,41 @@
+{
+  "version": 3,
+  "status": "predeclared implementation and admission protocol; no native historical results yet",
+  "objective": "Matched continuous38GW commonforecast planning comparison with6GWlookahead, all4chips, originalpurchasebasis, hits, free-transferreset and deadline-available markets; no savedchampion backcast or provider-original-system superiority claim",
+  "native_source": {
+    "repository": "https://github.com/solioanalytics/open-fpl-solver",
+    "revision": "ec65f5e2b2be34441cb4b2a9efafea1ec0fe3b79",
+    "entry": "dev/solver.py:solve_multi_period_fpl",
+    "runtime": "Explicit isolated Python3.14 interpreter; highspy1.15.1 matching sourceuv.lock; no productiondependency/globalenvironment changes",
+    "execution": "Prepared offline inputs only, sourcehashverification before execution, no live prep_data/accountcalls, network denied; native core with explicit rulecompatibility patches, not untouched originalmanager"
+  },
+  "comparisons": {
+    "forecasts": ["common_core_hgb7", "standing_prior5"],
+    "planners": ["standing_milp_common_policy", "solio_rule_adapted_common_policy"],
+    "openings": ["own", "common_source_neutral15"],
+    "paths": 8,
+    "forecast_inputs": "Reuse immutable E1 all38origin forecastbundles; no forecaster refit, new seeds or point-outcome parameterselection. Both four-year matched core and five-prior-season standing control retained, no favourable control selection",
+    "metrics": "Primary realised38GWnetpoints; hits/transfers/chips and independentfinance/scoring audits. Conditional chosen-planbounds/unknowncounts, runtime/RSS/failures. One reusedseason and evolving paths, not independentGWreplications or generalisation proof"
+  },
+  "shared_problem": {
+    "horizon": 6,
+    "objective": "Same undiscounted XI+captain means, .1reserves, hits4, BBall15/TCextra captain; terminalFT/squad/churn/vice/ITB proxies all0 for both to avoid different native terminal-FT convention",
+    "candidate_pool": "Same deterministic procedure: preserve owned and source-only legal feasibilitybaseline, add12topforecast+6cheapest perposition. Opening feasibility uses minimum-cost flow; later baseline holds currentroster. No separately timed one-GWbaseline solve determining each solver's pool. Commonopening fixesfirstperiodonly; futuremarket remainsopen",
+    "selection": "Both engines useexplicit CanonicalPlanner normalisation: samefixed-roster mean-XI/captain, deterministicvice/bench/IDties. Preserveinnerroster/transfers/chips, independentlyreconcilefinancialstate andcanonicalobjective; boundmustapplytoretainednormalisedplan. Baseweeklyselector/defaultunchanged",
+    "chips": "Same outer bounded adaptive/calendar policy and fixedschedule probes for each inner solver. Only requested chipdates forced, allunrequested nativechiplimits0; validate source-knownwindows/inventory/blockedtokens/consecutiveFH through canonicalengine. Support two same-type chips acrosshalfseasonboundary, not H1/nochip-only substitute",
+    "budgets": "Same15souter/2sinner/12trials/2CPU afterfixedfeature-only .5/1/2s pilot and beforeanynativehistoricalseasonpoints. Nativevalidnonfallback1/5 at.5s,4/5 at1s,5/5 at2s; minimumtestedallowancewithall5valid chosen. Outer15s allows baseline/fourchipfamilies/combinedschedule at2s, not extra point-tunedsearch. Initial4s/.5s proposal retained inhistory. Include modelconstruction/IPC/normalisation in measuredlatency; coldworkerstartup separatelyreported andtotaljobtime retained. No after-outcome winning-budget selection",
+    "implementation_differences": "Common feasiblebaseline floor/candidateuniverse/objective/outerpolicy, but different native/SciPyHiGHS runtimes/encodings. Standing validbaselineobjectivecut remainsenabled; native retainsoriginalsolver tacticwithoutthatcut. Bothretainbetterlegalbaseline ifproposalworse; allconditionalbounds/unknowns/fallbacks reported. This compares implementations underequalresources, not a claim that only one abstractalgorithm variable differs",
+    "information": "Same sourcequotes, currentregisteredclub/position/can_buy, current-only availabilityoverlay, source-knowncalendar and forecastasof. No futureoutcome/news/price fields reach either planner; constantquotes withinhorizon explicit approximation"
+  },
+  "mandatory_native_admission": [
+    "FutureknownGW16FTreset compatibility in native rawFTtransition; independentbefore/at/afterreset tests",
+    "Unbuyable transfer_in0 and FHunbuyable membership onlyif retained in persistentprevioussquad",
+    "FHoriginal-profit discount onlywhile originalholding remainsunsold; afterpermanentsale rebuy costsfullcurrentquote. Retainedoriginalindicator linearisation tested against independentintegerledger; originalstaticdiscountcounterexample retained",
+    "Allprovisionalperiods reconcile canonicalprepare objective/finances/FT/hits/chips/FHreversion before actionadmission; reject invalid/no-feasible nativeoutputs and report explicit validatedfallback",
+    "Smallsyntheticexhaustive optimum, commonopeningfuturepurchase, twoTCwindows,WC->BB,FH->WC, unregisteredsquadmember, profit/sale/FHbuyback and serialization/no-network/resource tests before historicalscoring",
+    "Source/codepatch/hash/runtime provenance public with appropriate attribution; no external source or optional binaries silently vendored into production"
+  ],
+  "later_native_references": "AIrsenal pinnedfe580d7e567e79d80f73450c7d4b5d6610f05863 DB/player/price/scoring contracts underadmissionreview. Build source-safe historical adapter and bound native search before comparison; do not declare incompatible merely because an adapter is required or install fullJAX/BPL training stack for planner-only work",
+  "resources": "Serialcheckpointedjobs/4GiBsampledRSS/900sperjob/project2GiB/growth256MiB/free5GiB; no GPU/PC unless measured localpilot cannotfit. Keep private rawinputs/weights/probes outsideGit; preserve failed/frozen evidence",
+  "qualification": "This controlled policy isolates innerplanner under commonforecasts/outerchips; not original endtoend externalmanager ranking. Nativefullsystems remain separately qualified by input/training/rulecompatibility. No automatic model/policy promotion; F repeatability/quality/jointqualification and weeklyhandoff still required"
+}
