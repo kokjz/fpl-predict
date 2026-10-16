@@ -28,6 +28,19 @@ RECIPE=read_json((RESOURCES/'airsenal_solver_recipe.json').read_bytes())
 
 class NativeBudgetExpired(Exception):pass
 
+def budget_expired(error):
+    """Recognise the actual deadline exception through database wrappers."""
+    pending=[error];seen=set()
+    while pending and len(seen)<32:
+        current=pending.pop()
+        if id(current) in seen:continue
+        seen.add(id(current))
+        if isinstance(current,NativeBudgetExpired):return True
+        for name in ('orig','__cause__','__context__'):
+            nested=getattr(current,name,None)
+            if isinstance(nested,BaseException):pending.append(nested)
+    return False
+
 def expired(signum,frame):raise NativeBudgetExpired('Native request deadline')
 
 class FairQueue:
@@ -285,7 +298,8 @@ def solve(src):
             optimize(queue,0,results,request,TreeSearchConfig(num_thread=1,num_iterations=10))
         else:
             results.plans.append(Plan(root_gameweek=1))
-    except NativeBudgetExpired:
+    except Exception as error:
+        if not budget_expired(error):raise
         queue.truncated = True
         stopped = "request deadline"
     if not results.plans:
@@ -318,7 +332,9 @@ def main():
             q=read_json(raw);validate_request(q,RECIPE)
             signal.setitimer(signal.ITIMER_REAL,q['seconds'])
             with contextlib.redirect_stdout(sys.stderr):answer=solve(q)
-        except Exception as error:answer=dict(status='failed',error_type=type(error).__name__,message=str(error))
+        except Exception as error:
+            answer=(dict(status='failed',error_type='NativeBudgetExpired',message='Native request deadline',wrapped_error_type=type(error).__name__)
+                if budget_expired(error) else dict(status='failed',error_type=type(error).__name__,message=str(error)))
         finally:
             signal.setitimer(signal.ITIMER_REAL,0)
             tree.next_gameweek_transfers,Squad.add_player,FullSquadStrategy.propose,SquadOpt._setup_deap=originals

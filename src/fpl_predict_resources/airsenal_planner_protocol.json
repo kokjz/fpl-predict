@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "feature-only admission passed; final historical matrix ready, no season results yet",
+  "status": "Initial matrix retained: seven complete paths and one wrapped-deadline failure; uniform corrected eight-path rerun required.",
   "season": "2025-26",
   "source_recipe": "airsenal_solver_recipe.json",
   "forecasts": [
@@ -41,7 +41,8 @@
     "full-rebuild sell-value offer view for retained originals, restore market quotes and actual purchase basis",
     "canonical common objective and full financial/action admission; no incomplete prefix accepted",
     "native own opening construction and fixed common opening required; neither may silently substitute an empty or permanently fixed squad",
-    "One forecast-independent cheapest-legal roster seeds each native GA population; remaining individuals and original native fitness/evolution remain unchanged. The same common feasibility procedure supplies the control baseline."
+    "One forecast-independent cheapest-legal roster seeds each native GA population; remaining individuals and original native fitness/evolution remain unchanged. The same common feasibility procedure supplies the control baseline.",
+    "Recognise actual deadline exceptions through typed database orig/cause/context wrappers; preserve completed plans when available and restore hooks before the next request. Do not identify timeouts by matching message text."
   ],
   "pilot": {
     "outcome_fields": false,
@@ -91,13 +92,23 @@
   },
   "model_promotion": false,
   "policy_promotion": false,
-  "next": "Implement optional worker/common transport/controller and tests; mechanical/opening/admission tests then feature-only pilot, freeze final matrix, run8fullseasons, publish all aggregates, review/CI/merge/sync/cleanup; Fqualification remains separate.",
-  "revision": 2,
+  "next": "Complete wrapped-deadline recovery checks; freeze corrected source, uniformly rerun all8fullseasons, publish initial and uniform matrices, review/CI/merge/sync/cleanup; Fqualification remains separate.",
+  "revision": 3,
   "selected_resources": {
     "inner_seconds": 2.0,
     "outer_seconds": 15.0,
     "max_trials": 12,
     "feature_only_evidence": "docs/airsenal_planner_feature_pilot.json",
     "justification": "Lowest tested all-case-valid allowance, with outer capacity for baseline/four chip families/combined calendar; no evaluator outcomes used."
+  },
+  "initial_season_attempt": {
+    "source_commit": "997e227ba86041f1e5e58704b076d5457a964e13",
+    "attempted": 8,
+    "completed": 7,
+    "failed": 1,
+    "independently_reconciled_deadlines": 266,
+    "failure": "Final five-prior/common native path stopped at GW1 before an action was recorded: SQLAlchemy StatementError wrapped NativeBudgetExpired. Expected timeout was misclassified, not a completed invalid proposal.",
+    "repair": "Typed deadline-chain recognition only. Preserve all initial paths and failure; same budgets/seed/pool/objective, uniformly rerun all eight paths on one new frozen source. No selective retry or picking best run by realised points.",
+    "evidence": "docs/airsenal_planner_initial_attempt.json"
   }
 }

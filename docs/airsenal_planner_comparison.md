@@ -3,8 +3,11 @@
 The [protocol](../src/fpl_predict_resources/airsenal_planner_protocol.json) and
 [source recipe](../src/fpl_predict_resources/airsenal_solver_recipe.json) define
 the next native planning comparison. The optional worker and parent controller
-are implemented; the historical-input pilot and season comparison remain.
-No AIrsenal historical performance result is claimed.
+and the outcome-free pilot are implemented. The initial historical matrix
+completed seven paths, while the final path stopped on a wrapped deadline
+exception. The [initial attempt](airsenal_planner_initial_attempt.json) retains
+all outcomes and the failure; a uniform corrected eight-path rerun is required.
+There is no complete-matrix result or policy promotion yet.
 
 The intended eight paths cross two frozen prior-only forecasting controls,
 standing/adapted-native planners and own/common opening squads. Each manages a
@@ -46,7 +49,7 @@ revision 2 therefore inserts one forecast-independent cheapest legal roster into
 each GA's initial population, using the same feasibility procedure as the
 control's baseline. Other random individuals and native fitness/evolution remain
 unchanged; the seed does not fix the selected squad. The failed pilot is retained
-and the full pilot must be rerun uniformly before season scoring.
+and the full pilot was rerun uniformly before season scoring.
 
 That [uniform rerun](airsenal_planner_feature_pilot.json) admitted all five native
 cases at both two- and five-second allowances. Following the predeclared rule,
@@ -103,3 +106,9 @@ and computing costs. One reused season and wall-time heuristic variability
 limit conclusions. This work cannot promote a forecasting artifact or weekly
 policy by code merge. See the earlier [native Solio comparison](NATIVE_PLANNER_RESULTS_2026-10-16.md)
 for the distinction between inner-planner comparisons and original managers.
+
+Protocol revision 3 recognises the actual deadline exception through database
+wrappers by exception identity, not message matching. Completed full-horizon
+plans may survive a wrapped timeout; when none exists, the worker reports the
+expected budget failure. All hooks are restored before the next request. The
+original failed season batch remains separate from the required uniform rerun.

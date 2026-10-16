@@ -49,6 +49,18 @@ def test_deadline_returns_no_node_and_marks_unfinished_search():
     assert queue.get() is None and queue.truncated
 
 
+def test_deadline_recognition_uses_exception_identity_through_wrappers():
+    deadline=worker.NativeBudgetExpired('deadline')
+    wrapper=RuntimeError('database statement failed');wrapper.orig=deadline
+    outer=RuntimeError('outer');outer.__cause__=wrapper
+    assert worker.budget_expired(deadline) and worker.budget_expired(outer)
+    unrelated=RuntimeError('NativeBudgetExpired: Native request deadline')
+    unrelated.__context__=unrelated
+    assert not worker.budget_expired(unrelated)
+    wrapper.orig=ValueError('unrelated database error')
+    assert not worker.budget_expired(outer)
+
+
 def test_import_does_not_load_upstream_and_source_rejection_creates_no_home(tmp_path):
     assert not any(n=='airsenal' or n.startswith('airsenal.') for n in sys.modules)
     home=tmp_path/'runtime'
