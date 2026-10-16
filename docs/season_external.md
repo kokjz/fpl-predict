@@ -64,6 +64,13 @@ comparison. Use retained-plan bounds and unknown counts from the current planner
 not raw attempt gaps. The earlier 2,295-point pilot used a different fit/source;
 it is not a substitute for a new matched baseline.
 
+Before season-path scoring, a further standing-method control is explicitly
+included: the existing five-prior-season forecast, rerun with the new planner on
+both opening tracks. It distinguishes matched four-season fitting from the
+closest eligible standing-method history usage. The deployed artifact cannot be
+backcast into its own training season. All 16 paths are reported; neither control
+is chosen retrospectively to make a competitor comparison look better.
+
 The protocol and tests precede the new evaluation. No external season ranking,
 native planner compatibility or model/policy qualification is claimed merely
 by adding these interfaces. Common-forecast external planner comparisons and
