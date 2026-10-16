@@ -175,3 +175,21 @@ response was admitted, with tests rejecting other types or extended messages.
 The uniform rerun took 6.42 seconds/360.5 MiB for Solio and 3.34 seconds/340.0 MiB
 for AIrsenal, including startup. Synthetic limits were 0.5 seconds outer/0.2 inner;
 they do not select or replace the historical protocol's declared budgets.
+
+## Fixed-schedule numerical sensitivity
+
+The [separate quality protocol](season_policy_quality_protocol.json) fixes five
+calendar anchors (GW1/6/16/30/38) and inner limits of 0.5/2/5 seconds. It uses the
+first common-opening six-week path's frozen states, forecasts and retained chip
+schedules, with one attempt per case. Cases are calendar-based, not selected by
+realised loss or the largest observed solver gap. The declaration follows ten
+completed qualification paths and precedes the diagnostic itself; it is not an
+untouched historical test.
+
+Run this diagnostic only after the twenty-path historical batch finishes. Check
+legal provisional actions, expected-objective reconciliation, retained-plan
+bounds, fallback behaviour and cost. Finite bounds can be compared with an
+existing feasible plan only when the candidate pools and constraints match.
+No future outcomes or quotes enter this probe. Differences are conditional
+optimisation diagnostics, not measured season-point gains or permission to
+select new settings after inspecting realised test scores.
