@@ -39,6 +39,25 @@ is deducted from each solver time limit; actual limits and unknown bounds are
 reported. Models are cleared between requests. Optional solver code and binary
 dependencies are obtained separately and are not bundled in this repository.
 
+`native_planner.NativeProcess` launches that worker with an explicitly supplied
+interpreter, source root and new diagnostic-log path. It sends a small environment
+without inherited account credentials, serialises requests, bounds reply size and
+wait time, checks startup provenance, and terminates the child on transport errors
+or context exit. It stays in the caller's process group so the resource watchdog
+can monitor the whole job. Worker startup and steady-state solve times are
+reported separately.
+
+`NativePlanner` uses the shared feasible baseline/candidate procedure, then checks
+every provisional roster, integer financial transition, free transfer, hit and
+canonical objective before admission. A failed or invalid solve retains the
+validated baseline with unknown bounds; transport failure stops the job. Bounds
+are recalculated against the retained plan, never attached from a discarded
+proposal. `CanonicalPlanner` wraps both inner engines with the same deterministic
+mean lineup/captain/vice/bench policy. This comparison measures roster/transfer
+planning under that shared policy, rather than arbitrary solver tie choices.
+`controlled_settings()` provides the zero terminal/churn proxies required by
+the declared common objective. The existing planner defaults remain intact.
+
 Open FPL Solver's pinned prepared-input API is the first admitted implementation
 target. Its optional Python 3.14/HiGHS runtime is separate from the forecasting
 engine. Source hashes, network refusal, legal-action validation and sampled

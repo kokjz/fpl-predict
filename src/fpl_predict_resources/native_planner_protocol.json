@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "status": "predeclared implementation and admission protocol; no native historical results yet",
   "objective": "Matched continuous38GW commonforecast planning comparison with6GWlookahead, all4chips, originalpurchasebasis, hits, free-transferreset and deadline-available markets; no savedchampion backcast or provider-original-system superiority claim",
   "native_source": {
@@ -21,6 +21,7 @@
     "horizon": 6,
     "objective": "Same undiscounted XI+captain means, .1reserves, hits4, BBall15/TCextra captain; terminalFT/squad/churn/vice/ITB proxies all0 for both to avoid different native terminal-FT convention",
     "candidate_pool": "Same deterministic procedure: preserve owned and source-only legal feasibilitybaseline, add12topforecast+6cheapest perposition. Opening feasibility uses minimum-cost flow; later baseline holds currentroster. No separately timed one-GWbaseline solve determining each solver's pool. Commonopening fixesfirstperiodonly; futuremarket remainsopen",
+    "selection": "Both engines useexplicit CanonicalPlanner normalisation: samefixed-roster mean-XI/captain, deterministicvice/bench/IDties. Preserveinnerroster/transfers/chips, independentlyreconcilefinancialstate andcanonicalobjective; boundmustapplytoretainednormalisedplan. Baseweeklyselector/defaultunchanged",
     "chips": "Same outer bounded adaptive/calendar policy and fixedschedule probes for each inner solver. Only requested chipdates forced, allunrequested nativechiplimits0; validate source-knownwindows/inventory/blockedtokens/consecutiveFH through canonicalengine. Support two same-type chips acrosshalfseasonboundary, not H1/nochip-only substitute",
     "budgets": "Same4souter/.5sinner/12trials/2CPU initialcontrolledcase, include solverconstruction/IPC costs in measuredlatency; report wall-time sensitivity and missing bounds honestly. No retrospective winning-budget selection",
     "information": "Same sourcequotes, currentregisteredclub/position/can_buy, current-only availabilityoverlay, source-knowncalendar and forecastasof. No futureoutcome/news/price fields reach either planner; constantquotes withinhorizon explicit approximation"
