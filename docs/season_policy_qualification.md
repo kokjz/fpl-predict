@@ -112,9 +112,9 @@ items are not established by the callback interface or its synthetic tests.
 No new historical season result, forecast-model promotion or weekly-policy
 approval is claimed here.
 
-The underlying [AIrsenal comparison](airsenal_planner_comparison.md) is a separate
-integration dependency. Its results must remain tied to their frozen source;
-qualification changes must not modify a running benchmark checkout.
+The underlying [AIrsenal comparison](airsenal_planner_comparison.md) was released
+before integrating the qualification runner. Its results remain tied to their
+frozen source; new qualification paths use their own immutable inventory.
 
 ## Reproducible per-arm execution
 
@@ -146,3 +146,14 @@ workflow must enforce the protocol's process-group memory, time and storage caps
 execute historical arms serially and preserve every declared attempt. The runner
 is trusted research code, not an operating-system sandbox or an approval mechanism.
 Final qualification still requires the full matrix and independent scoring audit.
+
+A native-controller preflight used an entirely invented 15-player, 38-origin
+market. Solio completed 38 calls; AIrsenal completed the path through 38 recorded
+feasibility fallbacks because no alternative transfer existed. This checks fallback
+handling, not successful native optimisation or historical performance. The initial
+AIrsenal attempt stopped on its exact upstream `RuntimeError` for an unavailable
+single transfer. That attempt is retained; only that typed, exact feasibility
+response was admitted, with tests rejecting other types or extended messages.
+The uniform rerun took 6.42 seconds/360.5 MiB for Solio and 3.34 seconds/340.0 MiB
+for AIrsenal, including startup. Synthetic limits were 0.5 seconds outer/0.2 inner;
+they do not select or replace the historical protocol's declared budgets.

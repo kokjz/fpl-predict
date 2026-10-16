@@ -100,7 +100,8 @@ class Trace:
             with (self.directory/f'native_failure_{self.calls:04d}.json').open('x') as stream:json.dump(dict(request=value,reply=reply),stream,indent=2,allow_nan=False)
             expected=(reply.get('message')=='No feasible native incumbent') if self.kind=='solio' else (
                 reply.get('error_type')=='NativeBudgetExpired' or reply.get('message')=='No complete native plan within budget' or
-                reply.get('error_type')=='ValueError' and reply.get('message','').startswith('The squad search found no legal squad'))
+                reply.get('error_type')=='ValueError' and reply.get('message','').startswith('The squad search found no legal squad') or
+                reply.get('error_type')=='RuntimeError' and reply.get('message')=='Failed to find valid single transfer for squad')
             if not expected:raise RuntimeError('Unexpected native failure; retain trace and stop the path')
         return reply
 

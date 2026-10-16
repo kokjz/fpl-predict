@@ -81,6 +81,22 @@ def test_trace_keeps_every_reply_and_rejects_unrecognised_failure(tmp_path):
     assert (tmp_path/'native_failure_0003.json').exists()
 
 
+@pytest.mark.parametrize('error_type,message,accepted',[
+    ('RuntimeError','Failed to find valid single transfer for squad',True),
+    ('ValueError','Failed to find valid single transfer for squad',False),
+    ('RuntimeError','Failed to find valid single transfer for squad: unrelated failure',False),
+])
+def test_trace_recognises_only_exact_upstream_infeasible_transfer(tmp_path,error_type,message,accepted):
+    class Actor:
+        def request(self,value):return dict(status='failed',error_type=error_type,message=message)
+    with contextlib.ExitStack() as stack:
+        trace=q.Trace(Actor(),tmp_path,'airsenal',stack)
+        if accepted:assert trace.request({})['status']=='failed'
+        else:
+            with pytest.raises(RuntimeError,match='Unexpected'):trace.request({})
+    assert trace.failed==1 and (tmp_path/'native_failure_0001.json').exists()
+
+
 def test_completed_invalid_native_and_inconsistent_bound_are_fatal(tmp_path):
     trace=SimpleNamespace(calls=1,last=({'id':1},dict(status='completed')))
     def bad(*args,**kwargs):return [],dict(selected_plan_bound=dict(status='unavailable'),solver_diagnostics=dict(native_error_type='ValueError'))

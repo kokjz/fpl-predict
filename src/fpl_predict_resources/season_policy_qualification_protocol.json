@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 3,
-  "status": "Approved-artifact bridge, adaptive synthetic replan and baseline mechanics passed; executable source/runtime lock and historical qualification still pending.",
+  "revision": 4,
+  "status": "Released AIrsenal dependency integrated; source-locked runner and native synthetic preflight passed; freeze executable inventory before historical qualification.",
   "season": "2025-26",
   "season_count": 1,
   "reused_season": true,
@@ -71,7 +71,7 @@
   },
   "bridge": "Registry-approved artifact verified by version/hash and conservative pre-origin observation receipt; actual artifact only on invented future-origin mechanical case. Scoped minutes/availability sensitivity preserved; no current-team forecast required.",
   "pending": [
-    "integrate released dependency and freeze executable source/runtime inventory",
+    "freeze executable source/runtime inventory",
     "historical uniform matrix and independent audit",
     "policy status and release/operational handoff"
   ],
