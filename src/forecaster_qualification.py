@@ -16,6 +16,22 @@ from experiment_runner import file_hash
 PROTOCOL=Path(__file__).parent/'fpl_predict_resources/forecaster_qualification_protocol.json'
 
 
+def join_market(market,conditional):
+    """Attach fixed forecasts by stable keys, never by merged positional order."""
+    keys=['season','gameweek','fpl_code']
+    if market.duplicated(keys).any() or conditional.duplicated(keys).any():raise ValueError('Duplicate market keys')
+    left=pd.MultiIndex.from_frame(market[keys]);right=pd.MultiIndex.from_frame(conditional[keys])
+    if set(left)!=set(right):raise ValueError('Unequal listed market coverage')
+    source=conditional.set_index(keys).loc[left]
+    for k in ['actual','minutes','position','price_tenths','prior_minutes','cards','fixture_count','blank_verified']:
+        if not np.allclose(market[k].to_numpy(float),source[k].to_numpy(float),rtol=0,atol=1e-10):raise ValueError('Market metadata differs: '+k)
+    if not np.array_equal(market.team.to_numpy(),source.team.to_numpy()) or not np.allclose(market.reference.to_numpy(),source.anchor.to_numpy(),rtol=0,atol=1e-10):raise ValueError('Market reference differs')
+    result=market.copy();result['conditional_forecaster']=source.new_xp.to_numpy()
+    result['quote_as_of']=result.inputs_as_of;result['inputs_as_of']=source.inputs_as_of.to_numpy()
+    if not np.isfinite(result.conditional_forecaster).all():raise ValueError('Nonfinite forecasts')
+    return result
+
+
 def development(d,x):
     """Same-train core comparison; no availability observations pre-2025."""
     records=[];folds={}

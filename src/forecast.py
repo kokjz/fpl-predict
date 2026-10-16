@@ -148,6 +148,9 @@ def run(args):
     provenance['timing_note']='as_of_utc is the input snapshot; created_at_utc is when this forecast was generated.'
     provenance['availability_review']=review
     provenance['learned_availability']=learned_availability
+    if learned_availability:
+        provenance['source_sha256']['conditional_forecaster.py']=hashlib.sha256((Path(__file__).resolve().parent/'conditional_forecaster.py').read_bytes()).hexdigest()
+        provenance['caveats'][2]='Official next-GW chance labels enter the learned appearance head; manual news/role review remains necessary. Later horizons use missing availability.'
     provenance['snapshot_as_of_utc']=manifest['retrieved_utc']
     provenance['timing_note']='as_of_utc includes any recorded availability review; snapshot_as_of_utc dates API inputs; created_at_utc dates generation.'
     provenance['official_ep_next_scope']='Unadjusted official next-GW projection only; no extrapolation or missing-value imputation.'

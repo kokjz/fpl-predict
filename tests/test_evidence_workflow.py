@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import json
 import pandas as pd
+import pytest
 from forecast import run
 
 
@@ -14,7 +15,8 @@ class SyntheticModel:
             "expected_minutes":70.,"p_play":.9,"p60":.8},index=x.index)
 
 
-def test_sourced_override_applies_only_to_reviewed_gw_and_preserves_base_pointer(tmp_path,monkeypatch):
+@pytest.mark.parametrize('conditional',[False,True])
+def test_sourced_override_applies_only_to_reviewed_gw_and_preserves_base_pointer(tmp_path,monkeypatch,conditional):
     import forecast
     root=tmp_path/'runtime';snapshot=root/'data/current/synthetic';(snapshot/'players').mkdir(parents=True)
     positions=[1,1]+[2]*5+[3]*5+[4]*3
@@ -36,6 +38,8 @@ def test_sourced_override_applies_only_to_reviewed_gw_and_preserves_base_pointer
     for name,obj in (("bootstrap.json",b),("fixtures.json",fixtures),
                      ("manifest.json",{"retrieved_utc":source['retrieved_utc'],"files":[source]})):
         (snapshot/name).write_text(json.dumps(obj))
+    source['sha256']=hashlib.sha256((snapshot/'bootstrap.json').read_bytes()).hexdigest()
+    (snapshot/'manifest.json').write_text(json.dumps({'retrieved_utc':source['retrieved_utc'],'files':[source]}))
     for p in players:
         fixture=next(f for f in fixtures if f['event']==6 and p['team'] in (f['team_h'],f['team_a']))
         h={"element":p['id'],"fixture":fixture['id'],"round":6,"kickoff_time":fixture['kickoff_time'],
@@ -51,6 +55,7 @@ def test_sourced_override_applies_only_to_reviewed_gw_and_preserves_base_pointer
     (root/'forecasts').mkdir();(root/'forecasts/LATEST').write_text('preserved-base')
     monkeypatch.setattr(forecast,'ROOT',root)
     monkeypatch.setattr(forecast,'resolve_champion',lambda _: (artifact,'synthetic',{}))
+    monkeypatch.setattr(SyntheticModel,'requires_availability',conditional,raising=False)
     monkeypatch.setattr(forecast.joblib,'load',lambda _: SyntheticModel())
     run(argparse.Namespace(snapshot='synthetic',through_gw=8,team_state=str(state),overrides=None,availability_review=str(review)))
     output=next(p for p in (root/'forecasts').iterdir() if p.is_dir())
@@ -64,6 +69,8 @@ def test_sourced_override_applies_only_to_reviewed_gw_and_preserves_base_pointer
     assert manifest['as_of_utc']=='2026-10-10T10:00:00+00:00'
     assert manifest['snapshot_as_of_utc']=='2026-10-10T09:00:00Z'
     assert manifest['availability_review']['GW']==7
+    assert bool(manifest['learned_availability']) is conditional
+    assert ('conditional_forecaster.py' in manifest['source_sha256']) is conditional
     assert (output/'availability_observations.json').exists()
 
 
