@@ -55,7 +55,9 @@ baseline/owned-hold path remains available when possible.
 Full supervised pilot took55.29s, peak sampledRSS0.641GiB, twoCPUthreads.
 Four learner fits and saving took45.74s. This measurement covers only this pilot,
 not every possible squad/chip/uncertainty configuration. NoGPU/remotecompute or
-large download was needed; memory/time/storage bounds were monitored.
+large download was needed; memory/time/storage bounds were monitored. Actual
+Python3.12.14/NumPy2.3.5/pandas2.2.3/sklearn1.9.1 differs from the repository
+NumPy/pandas pins; artifact portability across environments is not assumed.
 
 ## Important limitation: initial-season forecasts
 
@@ -71,6 +73,14 @@ Stable IDs, club/position changes and training/inference consistency must be
 audited; never import laterseason form or select a hindsight GW1squad. Preserve
 this pilot as-is. This finding changes the readiness work before seasonbenchmark,
 not its reported result or the fixed planner parameters.
+
+A read-only source check identifies feasible next inputs: the frozen pre-GW1
+bootstrap has official next-GW projections for all685players (38distinct values,
+range0–5);511listed stable player codes also occur in the prior2024/25history.
+These are source-coverage findings, not tested replacements. Promoted/new players
+still require honest missing-history treatment, and official next-GW projections
+must not be silently extended as validated forecasts across the whole horizon.
+No new candidate was fitted or selected from these observations.
 
 ## Retained external comparison boundary
 

@@ -429,5 +429,15 @@
   "approved_model": "1.0.0",
   "model_promotion": false,
   "weekly_workflow_changed": false,
-  "overall_goal_complete": false
+  "overall_goal_complete": false,
+  "preseason_input_feasibility": {
+    "scope": "Read-only preseason input feasibility, not forecasts or measuredperformance",
+    "listed": 685,
+    "official_ep_next_known": 685,
+    "official_ep_next_unique": 38,
+    "official_ep_next_min": 0.0,
+    "official_ep_next_max": 5.0,
+    "bootstrap_sha256": "eee31c9ece4864963bff4d88543ac5d440ca4d574ec89512e680d6e697f9a086",
+    "prior2024_stable_code_overlap": 511
+  }
 }
