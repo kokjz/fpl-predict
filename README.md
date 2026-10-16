@@ -39,6 +39,12 @@ continuous season pilot are available; matched full-season external management
 comparisons and joint qualification remain in progress. Weekly/reset comparisons
 alone do not establish season-long management superiority.
 
+The [season-policy qualification interface](docs/season_policy_qualification.md)
+adds explicit fixed-calendar and hold controls and an approved-artifact horizon
+bridge with checksummed observation and input clocks. Its
+[invented-case compatibility check](docs/approved_bridge_compatibility.json)
+proves mechanics only; historical qualification and policy approval remain pending.
+
 The [preseason references](docs/preseason_reference.md) address missing opening
 form using stable-code carryover and explicitly next-GW-only official projections.
 The [fixed six-GW pilot](docs/PRESEASON_REFERENCE_RESULTS_2026-10-16.md) improves

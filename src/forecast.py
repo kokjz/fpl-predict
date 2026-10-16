@@ -11,6 +11,7 @@ import pandas as pd
 from threadpoolctl import threadpool_limits
 from fpl_model import FeatureStore,normalise
 from model_registry import resolve_champion
+from forecast_sensitivity import apply_sensitivity,sensitivity_factor
 from conditional_forecaster import predict_current
 from availability_evidence import observations, scoped_overrides, official_baselines
 
@@ -105,17 +106,8 @@ def run(args):
         dc_base=0. if r.pos==1 else 2*float(x.loc[i,'dc_rate4'])
         v['last5_xp']=float(x.loc[i,'last5_points'])+dc_base
         v['ewm_xp']=float(x.loc[i,'ew4_points_core'])+dc_base
-        factor=float(override.get('availability',1.))
-        if not 0<=factor<=1:raise ValueError('availability must lie in [0,1]')
-        if 'minutes' in override:
-            minutes=float(override['minutes'])
-            if not 0<=minutes<=90:raise ValueError('minutes must lie in [0,90]')
-            # An explicit sensitivity approximation, not a retrained conditional forecast.
-            factor*=minutes/max(v['expected_minutes'],10.)
-        for k in v:v[k]*=factor
-        v['p_play']=min(v['p_play'],1.);v['p60']=min(v['p60'],v['p_play']);v['expected_minutes']=min(v['expected_minutes'],90.)
-        v['dc_xp']=min(v['dc_xp'],2*v['p_play'])
-        v['expected_points']=v['core_xp']+v['dc_xp']
+        factor=sensitivity_factor(v,override)
+        v=apply_sensitivity(v,override)
         lo,hi=model.residual_intervals[str(int(r.pos))]
         out.append({'id':int(r.element),'GW':int(r.GW),'fixture':int(r.fixture),'opponent':r.opponent,**v,'core_interval80_low':max(-3,v['core_xp']+lo) if factor else 0.,'core_interval80_high':v['core_xp']+hi if factor else 0.,'n_history':int(x.loc[i,'n_history']),'candidate_pool':bool(x.loc[i,'n_history']>=3 and x.loc[i,'last5_minutes']>=45),'override':override})
     aggregate=aggregate_fixture_predictions(out,players,gws)

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "scope": "Actual approved artifact compatibility using invented identities/dates/history/fixtures/evaluator outcomes; no accuracy, realised football gain or adaptive-policy qualification",
+  "champion": "1.0.0",
+  "artifact_sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+  "cases": [
+    {
+      "horizon": 1,
+      "players": 18,
+      "grid_rows": 18,
+      "admitted_actions": 1,
+      "seconds": 0.15188954188488424,
+      "frozen_sha256": "aac34d5bd8edd27cc58bbc21d7bc73daa072030471a97c83f37c94a13bcf1888"
+    },
+    {
+      "horizon": 4,
+      "players": 18,
+      "grid_rows": 72,
+      "admitted_actions": 4,
+      "seconds": 0.1594112920574844,
+      "frozen_sha256": "62b15664fcfaddbed0882e8200fe06df08118e1df3b559f01c26f637a28011a9"
+    },
+    {
+      "horizon": 6,
+      "players": 18,
+      "grid_rows": 108,
+      "admitted_actions": 6,
+      "seconds": 0.17709141690284014,
+      "frozen_sha256": "72486d9cde313380bb55c5e7228f17147cca43c9354325344985cd3a08bed654"
+    },
+    {
+      "horizon": 8,
+      "players": 18,
+      "grid_rows": 144,
+      "admitted_actions": 8,
+      "seconds": 0.2092417909298092,
+      "frozen_sha256": "462887403b9a0b34af125d9de55b97cf7b1ae55d383fa3403242b6992bc95462"
+    }
+  ],
+  "future_history_mutation_invariant": true,
+  "blank_double_checks": true,
+  "current_gw_only_manual_override": true,
+  "policy": "HoldPolicy mechanical admission only; actual adaptive planner pilot remains separate",
+  "supervised_seconds": 3.2776667079888284,
+  "sampled_group_rss_bytes": 174686208,
+  "inner_probe_seconds": 1.0361382910050452,
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.9.1"
+  },
+  "runtime_scope": "Observed compatibility runtime differs from repository dependency pins. No production dependency change or portable speed guarantee. Synthetic compatibility work overlapped the separate serial historical comparison.",
+  "initial_attempt": {
+    "status": "failed after four positive horizon cases",
+    "cause": "The synthetic future-mutation timestamp used a different ISO format; corrected only that invented timestamp and uniformly repeated all cases. No engine or model change.",
+    "retained_run_sha256": "64172c45b49b4f46e5fad1e44f2829174cd698cbca7c5d1896afe5c4d61edcb3"
+  },
+  "corrected_run_sha256": "e85b7839d6d5374486da69366d0e363e442d4cc85795f9abc1ad06ae4c236644",
+  "synthetic_case_semantic_sha256": "c52aecd7e69822d76ed2285bbd9f4ea74accc532a44d868e07b39fb312be3122",
+  "semantic_hash_fields": [
+    "market",
+    "state",
+    "history",
+    "fixtures"
+  ],
+  "source_sha256": {
+    "approved_horizon.py": "20d70a99487f47a42412a375b3dd0af6d6c2ebc65428a15e62101b4ed5a5c303",
+    "forecast_sensitivity.py": "63833f41b5dedfd901cea1777a48ebe39241ef52fe8f0f90430b60f43a81f0d1",
+    "horizon_forecast.py": "8f9a5587d936192807824181ce8ad3cf8d8540e342ea4047fca1d22be57f29d2",
+    "forecast.py": "0e53f6629ad6f15014d14fa4298b46cce9273dac9f0109b094655e692ec0553e",
+    "management_policies.py": "02333a4fd7d2107cecbfdec8490104b0965c72f45246324dd57613371c7bcb0c",
+    "season_benchmark.py": "2475d7e636765f276e14988c87545f015607d3afc83553764e7cb4e98d43e3ac",
+    "model_registry.py": "eec50fcfc697d7faca70b4651ac92f9e9e2ea83aa2fed128d2df685af977d53b",
+    "fpl_model.py": "59f1098f9032f37ed3b3bef8d2a4cd92988cb64eb16f1dc82d017b582ade6760"
+  },
+  "forecast_promotion": false,
+  "policy_promotion": false
+}
