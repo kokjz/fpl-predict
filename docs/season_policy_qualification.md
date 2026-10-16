@@ -193,3 +193,25 @@ existing feasible plan only when the candidate pools and constraints match.
 No future outcomes or quotes enter this probe. Differences are conditional
 optimisation diagnostics, not measured season-point gains or permission to
 select new settings after inspecting realised test scores.
+
+The [source-checkout runner](../tools/probe_season_solver.py) verifies the locked
+engine/runtime and input checksums, stores each frozen origin once, and retains
+all fifteen attempted cases. It checks the returned provisional actions and
+expected objectives using the independent verifier; evaluator files are never
+read. Input/source drift, an invalid proposal or a contradictory bound stops the
+probe and preserves its partial evidence. An injected test callback is explicitly
+labelled and cannot be mistaken for the canonical solver.
+
+```sh
+python tools/probe_season_solver.py \
+  --decisions DECISIONS.json.gz --reference FIRST_COMMON_H6/result/season \
+  --opening OPENING.json --lock PRIVATE_HOME/lock.json --lock-sha256 LOCK_SHA256 \
+  --protocol docs/season_policy_quality_protocol.json --protocol-sha256 QUALITY_PROTOCOL_SHA256 \
+  --home PRIVATE_HOME --output PRIVATE_HOME/new-quality-probe
+```
+
+Replace placeholders with the frozen inputs and a private workspace. Run under
+the existing `run-experiment`/`run_job` watchdog with the protocol's two-thread,
+120-second, sampled-memory and storage limits. The command itself is not an OS
+quota or sandbox. Source-checkout tests use invented data and a labelled callback;
+they do not execute or establish the historical diagnostic's results.
