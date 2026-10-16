@@ -1,0 +1,2930 @@
+{
+  "scope": "One reused completedhistorical2025-26season, continuous38GWmanagement; all fixedarms/owninitialsquads, not prospective/untouched/promotion/nativeexternal superiority",
+  "pilot_source": "7c271e313eca1dd4237a4fa26b941e0dd982cf8f",
+  "protocol": {
+    "version": 1,
+    "scope": "First continuous historical38GW management pilot, 2025-26; reused season, no prospective/untouched or superiority/promotion claim",
+    "primary": "Realised total38GWnetpoints after transferhits, actualseasonrules/autosubs/captainvice/chips, continuouscash/purchasebasis/FTstate. Each arm chooses its own GW1squad then maintains it",
+    "arms": [
+      {
+        "name": "reset_h1_chips",
+        "forecast": "reset",
+        "horizon": 1,
+        "chips": true
+      },
+      {
+        "name": "reset_h6_chips",
+        "forecast": "reset",
+        "horizon": 6,
+        "chips": true
+      },
+      {
+        "name": "carryover_h6_chips",
+        "forecast": "carryover",
+        "horizon": 6,
+        "chips": true
+      },
+      {
+        "name": "official_origin_h6_chips",
+        "forecast": "official_origin",
+        "horizon": 6,
+        "chips": true
+      },
+      {
+        "name": "reset_h1_nochips",
+        "forecast": "reset",
+        "horizon": 1,
+        "chips": false
+      },
+      {
+        "name": "reset_h6_nochips",
+        "forecast": "reset",
+        "horizon": 6,
+        "chips": false
+      }
+    ],
+    "comparisons": "Primary horizon comparison reset_h6_chips minus reset_h1_chips, same forecast source/chipaccess/budget. Nochip h6-h1 isolates horizon withoutchippolicy. Both B1reference arms retained, never select GW1winner retrospectively",
+    "forecaster": "Reuse B prior-season-only hgb7 core/minutes/appearance/60 fit2020-24 plus origin EWDC; no2025weights fit/backcasting savedchampion. Same fitting scope every origin; observed prior2025form enters onlyafter3hcompletionbuffer",
+    "availability": "Common explicitly experimental official-zero-currentGW policy: only sourcechance_of_playing_next_round==0 AND status!=a zeros origin XP; futuretargets unchanged, no realisedrecoverydate. Percent not calibrated probability/guaranteed truth; missing unchanged. Same rule all arms. API source claims available, independentnews coverageGW1-3unknown",
+    "inputs": "38pinnedpredeadlinebootstraps/auditedcalendars andreviewedfixtureupdates; only currentroster/prices; unsupportedfuturechiptokens blocked fromorigin audit. Stablecodepriorhistory identity bridge only, nofutureendseasonprices/status. Historicalmutablecorrections/captureclaims caveated",
+    "resources": {
+      "threads": 2,
+      "seconds_per_origin": 4,
+      "solve_seconds": 0.5,
+      "max_trials": 12,
+      "seconds_per_job": 900,
+      "memory_mib": 4096,
+      "project_mib": 2048,
+      "growth_mib": 256,
+      "min_free_mib": 5120
+    },
+    "search": "Expiry/date/chiporder balancesfamilies; reserve2trials and20%searchwall for combinedcalendar whenbudgetallows. Gaps/fallbacks/budgetexhaustion disclosed; no jointglobaloptimum",
+    "configuration": "SixGWdetailedoriginfrozenfeatures,constantfuturequotes/roster; defaultsreserve.1/terminalFT1/squad.05/churn.0001/coarseWC12/FH8/TC5/BB10fixed. No hyperparameter/configurationselectiononaudit",
+    "outputs": "Write decision before accessing outcome; hashchain decision-to-settlement,38ledgers/actions/scores, finalnetpoints/transfers/hits/chips/latency/budgets, perGWpairedcontrast andfinancial/scoringaudit",
+    "later": "Common neutralGW1roster sensitivity, moreseasons admittedrules, matched externalforecast/commonplanner and commonforecast/nativequalified externalplanner comparisons, boundedimprovement/jointqualification. This first pilot alone doesnot finish fullgoal",
+    "integrity": "No registry/weekly-policy promotion, actualteam/accountactions or futuregamewait. All arms disclosed includingfailures; failedruns retained, no extra configurations selectedafter scoring"
+  },
+  "arms": [
+    {
+      "name": "reset_h1_chips",
+      "forecast": "reset",
+      "horizon": 1,
+      "chips_enabled": true,
+      "net_points": 2092.0,
+      "hits": 24,
+      "transfers": 94,
+      "chip_uses": [
+        {
+          "gameweek": 2,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 3,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 5,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 20,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 21,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 26,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 31,
+          "name": "wildcard"
+        }
+      ],
+      "manager_seconds": 8.74250050005503,
+      "supervised_seconds": 9.834346291841939,
+      "peak_sampled_rss_bytes": 533577728,
+      "budget_exhausted_origins": 0,
+      "median_origin_seconds": 0.155369957908988,
+      "max_origin_seconds": 0.814906874904409,
+      "solver_trials": 72,
+      "nonoptimal_trials": 0,
+      "max_reported_fixed_schedule_gap": 0.0,
+      "weekly": [
+        {
+          "gameweek": 1,
+          "net_points": 29.0,
+          "hits": 0,
+          "transfers": 15,
+          "chip": null,
+          "base_xi": 26.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 1.0
+        },
+        {
+          "gameweek": 2,
+          "net_points": 55.0,
+          "hits": 0,
+          "transfers": 15,
+          "chip": "freehit",
+          "base_xi": 53.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 3,
+          "net_points": 30.0,
+          "hits": 0,
+          "transfers": 15,
+          "chip": "wildcard",
+          "base_xi": 26.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 4,
+          "net_points": 86.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": "bboost",
+          "base_xi": 64.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 5,
+          "net_points": 39.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": "3xc",
+          "base_xi": 29.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 6,
+          "net_points": 63.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 47.0,
+          "captain_bonus": 16.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 7,
+          "net_points": 86.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 68.0,
+          "captain_bonus": 18.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 8,
+          "net_points": 71.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 56.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 9,
+          "net_points": 46.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 44.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 10,
+          "net_points": 69.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 56.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 11,
+          "net_points": 43.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 39.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 12,
+          "net_points": 49.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 45.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 13,
+          "net_points": 40.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 38.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 14,
+          "net_points": 78.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 64.0,
+          "captain_bonus": 14.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 15,
+          "net_points": 40.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 35.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 3.0
+        },
+        {
+          "gameweek": 16,
+          "net_points": 64.0,
+          "hits": 0,
+          "transfers": 5,
+          "chip": null,
+          "base_xi": 53.0,
+          "captain_bonus": 11.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 17,
+          "net_points": 44.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 41.0,
+          "captain_bonus": 3.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 18,
+          "net_points": 50.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 47.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 1.0
+        },
+        {
+          "gameweek": 19,
+          "net_points": 61.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 47.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 8.0
+        },
+        {
+          "gameweek": 20,
+          "net_points": 70.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": "bboost",
+          "base_xi": 53.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 21,
+          "net_points": 54.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": "3xc",
+          "base_xi": 50.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 22,
+          "net_points": 38.0,
+          "hits": 0,
+          "transfers": 0,
+          "chip": null,
+          "base_xi": 35.0,
+          "captain_bonus": 3.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 23,
+          "net_points": 35.0,
+          "hits": 0,
+          "transfers": 0,
+          "chip": null,
+          "base_xi": 21.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 12.0
+        },
+        {
+          "gameweek": 24,
+          "net_points": 60.0,
+          "hits": 0,
+          "transfers": 3,
+          "chip": null,
+          "base_xi": 46.0,
+          "captain_bonus": 8.0,
+          "autosub_delta": 6.0
+        },
+        {
+          "gameweek": 25,
+          "net_points": 40.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 37.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 1.0
+        },
+        {
+          "gameweek": 26,
+          "net_points": 68.0,
+          "hits": 0,
+          "transfers": 10,
+          "chip": "freehit",
+          "base_xi": 54.0,
+          "captain_bonus": 14.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 27,
+          "net_points": 37.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 33.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 28,
+          "net_points": 59.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 54.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 29,
+          "net_points": 88.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 72.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 9.0
+        },
+        {
+          "gameweek": 30,
+          "net_points": 28.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 26.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 31,
+          "net_points": 43.0,
+          "hits": 0,
+          "transfers": 11,
+          "chip": "wildcard",
+          "base_xi": 41.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 32,
+          "net_points": 68.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 62.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 33,
+          "net_points": 67.0,
+          "hits": 12,
+          "transfers": 4,
+          "chip": null,
+          "base_xi": 69.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 5.0
+        },
+        {
+          "gameweek": 34,
+          "net_points": 65.0,
+          "hits": 8,
+          "transfers": 3,
+          "chip": null,
+          "base_xi": 68.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 35,
+          "net_points": 50.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 44.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 36,
+          "net_points": 81.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 53.0,
+          "captain_bonus": 11.0,
+          "autosub_delta": 21.0
+        },
+        {
+          "gameweek": 37,
+          "net_points": 66.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 64.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 38,
+          "net_points": 32.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 22.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 8.0
+        }
+      ]
+    },
+    {
+      "name": "reset_h6_chips",
+      "forecast": "reset",
+      "horizon": 6,
+      "chips_enabled": true,
+      "net_points": 2295.0,
+      "hits": 20,
+      "transfers": 79,
+      "chip_uses": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 3,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 6,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 10,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 20,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 21,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 25,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "manager_seconds": 113.30877345893532,
+      "supervised_seconds": 114.3336249999702,
+      "peak_sampled_rss_bytes": 424591360,
+      "budget_exhausted_origins": 21,
+      "median_origin_seconds": 3.8051886043976992,
+      "max_origin_seconds": 4.277650209143758,
+      "solver_trials": 247,
+      "nonoptimal_trials": 99,
+      "max_reported_fixed_schedule_gap": 7.1222852606653895,
+      "weekly": [
+        {
+          "gameweek": 1,
+          "net_points": 62.0,
+          "hits": 0,
+          "transfers": 15,
+          "chip": null,
+          "base_xi": 42.0,
+          "captain_bonus": 11.0,
+          "autosub_delta": 9.0
+        },
+        {
+          "gameweek": 2,
+          "net_points": 46.0,
+          "hits": 0,
+          "transfers": 15,
+          "chip": "wildcard",
+          "base_xi": 44.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 3,
+          "net_points": 51.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": "bboost",
+          "base_xi": 36.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 4,
+          "net_points": 68.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 65.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 5,
+          "net_points": 58.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 53.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 6,
+          "net_points": 71.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": "3xc",
+          "base_xi": 39.0,
+          "captain_bonus": 16.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 7,
+          "net_points": 83.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 65.0,
+          "captain_bonus": 18.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 8,
+          "net_points": 77.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 62.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 9,
+          "net_points": 42.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 38.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 10,
+          "net_points": 96.0,
+          "hits": 0,
+          "transfers": 10,
+          "chip": "freehit",
+          "base_xi": 83.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 11,
+          "net_points": 35.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 26.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 5.0
+        },
+        {
+          "gameweek": 12,
+          "net_points": 43.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 40.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 1.0
+        },
+        {
+          "gameweek": 13,
+          "net_points": 39.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 37.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 14,
+          "net_points": 69.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 55.0,
+          "captain_bonus": 14.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 15,
+          "net_points": 68.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 47.0,
+          "captain_bonus": 18.0,
+          "autosub_delta": 3.0
+        },
+        {
+          "gameweek": 16,
+          "net_points": 72.0,
+          "hits": 0,
+          "transfers": 5,
+          "chip": null,
+          "base_xi": 61.0,
+          "captain_bonus": 11.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 17,
+          "net_points": 61.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 52.0,
+          "captain_bonus": 3.0,
+          "autosub_delta": 6.0
+        },
+        {
+          "gameweek": 18,
+          "net_points": 54.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 48.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 4.0
+        },
+        {
+          "gameweek": 19,
+          "net_points": 39.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 30.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 7.0
+        },
+        {
+          "gameweek": 20,
+          "net_points": 70.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": "bboost",
+          "base_xi": 52.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 21,
+          "net_points": 61.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": "3xc",
+          "base_xi": 49.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 22,
+          "net_points": 38.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 36.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 23,
+          "net_points": 45.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 32.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 12.0
+        },
+        {
+          "gameweek": 24,
+          "net_points": 68.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 60.0,
+          "captain_bonus": 8.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 25,
+          "net_points": 49.0,
+          "hits": 0,
+          "transfers": 9,
+          "chip": "wildcard",
+          "base_xi": 47.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 26,
+          "net_points": 60.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 46.0,
+          "captain_bonus": 14.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 27,
+          "net_points": 44.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 34.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 6.0
+        },
+        {
+          "gameweek": 28,
+          "net_points": 66.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 58.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 3.0
+        },
+        {
+          "gameweek": 29,
+          "net_points": 103.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 94.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 30,
+          "net_points": 68.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 66.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 31,
+          "net_points": 50.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 52.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 32,
+          "net_points": 64.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 60.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 33,
+          "net_points": 95.0,
+          "hits": 0,
+          "transfers": 3,
+          "chip": "freehit",
+          "base_xi": 79.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 3.0
+        },
+        {
+          "gameweek": 34,
+          "net_points": 61.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 56.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 35,
+          "net_points": 56.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 50.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 36,
+          "net_points": 61.0,
+          "hits": 8,
+          "transfers": 3,
+          "chip": null,
+          "base_xi": 58.0,
+          "captain_bonus": 11.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 37,
+          "net_points": 69.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 67.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 38,
+          "net_points": 33.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 13.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 18.0
+        }
+      ]
+    },
+    {
+      "name": "carryover_h6_chips",
+      "forecast": "carryover",
+      "horizon": 6,
+      "chips_enabled": true,
+      "net_points": 2132.0,
+      "hits": 28,
+      "transfers": 87,
+      "chip_uses": [
+        {
+          "gameweek": 2,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 3,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 6,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 7,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 20,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 21,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 23,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "manager_seconds": 105.99558729119599,
+      "supervised_seconds": 107.04997116699815,
+      "peak_sampled_rss_bytes": 540753920,
+      "budget_exhausted_origins": 19,
+      "median_origin_seconds": 3.768271854147315,
+      "max_origin_seconds": 4.16927891690284,
+      "solver_trials": 212,
+      "nonoptimal_trials": 108,
+      "max_reported_fixed_schedule_gap": 219.75312401796091,
+      "weekly": [
+        {
+          "gameweek": 1,
+          "net_points": 48.0,
+          "hits": 0,
+          "transfers": 15,
+          "chip": null,
+          "base_xi": 43.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 3.0
+        },
+        {
+          "gameweek": 2,
+          "net_points": 50.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": "3xc",
+          "base_xi": 38.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 3,
+          "net_points": 35.0,
+          "hits": 8,
+          "transfers": 3,
+          "chip": "bboost",
+          "base_xi": 32.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 4,
+          "net_points": 67.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 53.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 1.0
+        },
+        {
+          "gameweek": 5,
+          "net_points": 37.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 32.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 6,
+          "net_points": 66.0,
+          "hits": 0,
+          "transfers": 12,
+          "chip": "wildcard",
+          "base_xi": 50.0,
+          "captain_bonus": 16.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 7,
+          "net_points": 71.0,
+          "hits": 0,
+          "transfers": 10,
+          "chip": "freehit",
+          "base_xi": 53.0,
+          "captain_bonus": 18.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 8,
+          "net_points": 106.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 93.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 9,
+          "net_points": 49.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 47.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 10,
+          "net_points": 61.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 48.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 11,
+          "net_points": 45.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 37.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 4.0
+        },
+        {
+          "gameweek": 12,
+          "net_points": 40.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 34.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 4.0
+        },
+        {
+          "gameweek": 13,
+          "net_points": 32.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 30.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 14,
+          "net_points": 66.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 52.0,
+          "captain_bonus": 14.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 15,
+          "net_points": 66.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 47.0,
+          "captain_bonus": 18.0,
+          "autosub_delta": 1.0
+        },
+        {
+          "gameweek": 16,
+          "net_points": 83.0,
+          "hits": 0,
+          "transfers": 0,
+          "chip": null,
+          "base_xi": 68.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 17,
+          "net_points": 67.0,
+          "hits": 0,
+          "transfers": 5,
+          "chip": null,
+          "base_xi": 58.0,
+          "captain_bonus": 3.0,
+          "autosub_delta": 6.0
+        },
+        {
+          "gameweek": 18,
+          "net_points": 41.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 35.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 4.0
+        },
+        {
+          "gameweek": 19,
+          "net_points": 49.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 36.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 11.0
+        },
+        {
+          "gameweek": 20,
+          "net_points": 36.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": "3xc",
+          "base_xi": 32.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 21,
+          "net_points": 51.0,
+          "hits": 0,
+          "transfers": 11,
+          "chip": "wildcard",
+          "base_xi": 45.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 22,
+          "net_points": 45.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 43.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 23,
+          "net_points": 36.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": "bboost",
+          "base_xi": 29.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 24,
+          "net_points": 68.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 60.0,
+          "captain_bonus": 8.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 25,
+          "net_points": 52.0,
+          "hits": 0,
+          "transfers": 0,
+          "chip": null,
+          "base_xi": 50.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 26,
+          "net_points": 57.0,
+          "hits": 0,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 43.0,
+          "captain_bonus": 14.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 27,
+          "net_points": 34.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 30.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 28,
+          "net_points": 69.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 50.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 14.0
+        },
+        {
+          "gameweek": 29,
+          "net_points": 75.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 70.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 30,
+          "net_points": 39.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 37.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 31,
+          "net_points": 48.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 50.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 32,
+          "net_points": 55.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 51.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 33,
+          "net_points": 105.0,
+          "hits": 0,
+          "transfers": 11,
+          "chip": "freehit",
+          "base_xi": 90.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 34,
+          "net_points": 50.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 45.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 35,
+          "net_points": 49.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 43.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 36,
+          "net_points": 76.0,
+          "hits": 8,
+          "transfers": 3,
+          "chip": null,
+          "base_xi": 61.0,
+          "captain_bonus": 11.0,
+          "autosub_delta": 12.0
+        },
+        {
+          "gameweek": 37,
+          "net_points": 67.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 65.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 38,
+          "net_points": 41.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 21.0,
+          "captain_bonus": 9.0,
+          "autosub_delta": 11.0
+        }
+      ]
+    },
+    {
+      "name": "official_origin_h6_chips",
+      "forecast": "official_origin",
+      "horizon": 6,
+      "chips_enabled": true,
+      "net_points": 1895.0,
+      "hits": 200,
+      "transfers": 124,
+      "chip_uses": [
+        {
+          "gameweek": 1,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 3,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 5,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 20,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 21,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 23,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 24,
+          "name": "freehit"
+        }
+      ],
+      "manager_seconds": 71.45440520811826,
+      "supervised_seconds": 72.73474116693251,
+      "peak_sampled_rss_bytes": 537001984,
+      "budget_exhausted_origins": 13,
+      "median_origin_seconds": 0.6810190210817382,
+      "max_origin_seconds": 4.169770000036806,
+      "solver_trials": 140,
+      "nonoptimal_trials": 82,
+      "max_reported_fixed_schedule_gap": 9.502738662468643,
+      "weekly": [
+        {
+          "gameweek": 1,
+          "net_points": 55.0,
+          "hits": 0,
+          "transfers": 15,
+          "chip": "3xc",
+          "base_xi": 34.0,
+          "captain_bonus": 3.0,
+          "autosub_delta": 15.0
+        },
+        {
+          "gameweek": 2,
+          "net_points": 41.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 39.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 1.0
+        },
+        {
+          "gameweek": 3,
+          "net_points": 37.0,
+          "hits": 0,
+          "transfers": 12,
+          "chip": "wildcard",
+          "base_xi": 29.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 6.0
+        },
+        {
+          "gameweek": 4,
+          "net_points": 67.0,
+          "hits": 0,
+          "transfers": 9,
+          "chip": "freehit",
+          "base_xi": 62.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 5,
+          "net_points": 40.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": "bboost",
+          "base_xi": 41.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 6,
+          "net_points": 61.0,
+          "hits": 16,
+          "transfers": 5,
+          "chip": null,
+          "base_xi": 61.0,
+          "captain_bonus": 16.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 7,
+          "net_points": 59.0,
+          "hits": 8,
+          "transfers": 3,
+          "chip": null,
+          "base_xi": 59.0,
+          "captain_bonus": 8.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 8,
+          "net_points": 63.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 50.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 9,
+          "net_points": 23.0,
+          "hits": 20,
+          "transfers": 6,
+          "chip": null,
+          "base_xi": 35.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 6.0
+        },
+        {
+          "gameweek": 10,
+          "net_points": 81.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 73.0,
+          "captain_bonus": 12.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 11,
+          "net_points": 34.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 28.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 5.0
+        },
+        {
+          "gameweek": 12,
+          "net_points": 30.0,
+          "hits": 8,
+          "transfers": 3,
+          "chip": null,
+          "base_xi": 38.0,
+          "captain_bonus": 0.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 13,
+          "net_points": 39.0,
+          "hits": 8,
+          "transfers": 3,
+          "chip": null,
+          "base_xi": 45.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 14,
+          "net_points": 45.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 45.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 3.0
+        },
+        {
+          "gameweek": 15,
+          "net_points": 70.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 59.0,
+          "captain_bonus": 12.0,
+          "autosub_delta": 3.0
+        },
+        {
+          "gameweek": 16,
+          "net_points": 58.0,
+          "hits": 0,
+          "transfers": 5,
+          "chip": null,
+          "base_xi": 47.0,
+          "captain_bonus": 11.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 17,
+          "net_points": 44.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 35.0,
+          "captain_bonus": 3.0,
+          "autosub_delta": 6.0
+        },
+        {
+          "gameweek": 18,
+          "net_points": 40.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 42.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 19,
+          "net_points": 44.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 42.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 20,
+          "net_points": 37.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": "3xc",
+          "base_xi": 35.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 4.0
+        },
+        {
+          "gameweek": 21,
+          "net_points": 59.0,
+          "hits": 0,
+          "transfers": 9,
+          "chip": "wildcard",
+          "base_xi": 56.0,
+          "captain_bonus": 3.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 22,
+          "net_points": 45.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 36.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 8.0
+        },
+        {
+          "gameweek": 23,
+          "net_points": 33.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": "bboost",
+          "base_xi": 17.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 24,
+          "net_points": 47.0,
+          "hits": 0,
+          "transfers": 7,
+          "chip": "freehit",
+          "base_xi": 45.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 25,
+          "net_points": 52.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 39.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 11.0
+        },
+        {
+          "gameweek": 26,
+          "net_points": 42.0,
+          "hits": 16,
+          "transfers": 5,
+          "chip": null,
+          "base_xi": 52.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 27,
+          "net_points": 52.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 44.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 1.0
+        },
+        {
+          "gameweek": 28,
+          "net_points": 61.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 53.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 6.0
+        },
+        {
+          "gameweek": 29,
+          "net_points": 76.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 77.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 30,
+          "net_points": 49.0,
+          "hits": 8,
+          "transfers": 3,
+          "chip": null,
+          "base_xi": 55.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 31,
+          "net_points": 47.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 34.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 32,
+          "net_points": 51.0,
+          "hits": 16,
+          "transfers": 5,
+          "chip": null,
+          "base_xi": 63.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 33,
+          "net_points": 67.0,
+          "hits": 28,
+          "transfers": 8,
+          "chip": null,
+          "base_xi": 87.0,
+          "captain_bonus": 8.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 34,
+          "net_points": 40.0,
+          "hits": 24,
+          "transfers": 7,
+          "chip": null,
+          "base_xi": 60.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 35,
+          "net_points": 26.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 22.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 36,
+          "net_points": 71.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 54.0,
+          "captain_bonus": 12.0,
+          "autosub_delta": 9.0
+        },
+        {
+          "gameweek": 37,
+          "net_points": 64.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 58.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 38,
+          "net_points": 45.0,
+          "hits": 12,
+          "transfers": 4,
+          "chip": null,
+          "base_xi": 48.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 8.0
+        }
+      ]
+    },
+    {
+      "name": "reset_h1_nochips",
+      "forecast": "reset",
+      "horizon": 1,
+      "chips_enabled": false,
+      "net_points": 1959.0,
+      "hits": 48,
+      "transfers": 53,
+      "chip_uses": [],
+      "manager_seconds": 4.4567491670604795,
+      "supervised_seconds": 5.395542833022773,
+      "peak_sampled_rss_bytes": 380665856,
+      "budget_exhausted_origins": 0,
+      "median_origin_seconds": 0.08711864589713514,
+      "max_origin_seconds": 0.20942833391018212,
+      "solver_trials": 38,
+      "nonoptimal_trials": 0,
+      "max_reported_fixed_schedule_gap": 0.0,
+      "weekly": [
+        {
+          "gameweek": 1,
+          "net_points": 29.0,
+          "hits": 0,
+          "transfers": 15,
+          "chip": null,
+          "base_xi": 26.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 1.0
+        },
+        {
+          "gameweek": 2,
+          "net_points": 27.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 28.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 3,
+          "net_points": 28.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 26.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 4,
+          "net_points": 58.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 55.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 5,
+          "net_points": 29.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 23.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 1.0
+        },
+        {
+          "gameweek": 6,
+          "net_points": 46.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 39.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 7,
+          "net_points": 76.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 58.0,
+          "captain_bonus": 18.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 8,
+          "net_points": 50.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 41.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 9,
+          "net_points": 48.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 45.0,
+          "captain_bonus": 3.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 10,
+          "net_points": 74.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 65.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 11,
+          "net_points": 33.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 29.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 12,
+          "net_points": 46.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 43.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 1.0
+        },
+        {
+          "gameweek": 13,
+          "net_points": 46.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 44.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 14,
+          "net_points": 60.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 46.0,
+          "captain_bonus": 14.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 15,
+          "net_points": 39.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 37.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 16,
+          "net_points": 70.0,
+          "hits": 0,
+          "transfers": 5,
+          "chip": null,
+          "base_xi": 59.0,
+          "captain_bonus": 11.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 17,
+          "net_points": 33.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 30.0,
+          "captain_bonus": 3.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 18,
+          "net_points": 39.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 34.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 3.0
+        },
+        {
+          "gameweek": 19,
+          "net_points": 43.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 37.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 20,
+          "net_points": 65.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 63.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 21,
+          "net_points": 61.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 59.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 22,
+          "net_points": 47.0,
+          "hits": 0,
+          "transfers": 0,
+          "chip": null,
+          "base_xi": 44.0,
+          "captain_bonus": 3.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 23,
+          "net_points": 49.0,
+          "hits": 0,
+          "transfers": 0,
+          "chip": null,
+          "base_xi": 35.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 12.0
+        },
+        {
+          "gameweek": 24,
+          "net_points": 68.0,
+          "hits": 0,
+          "transfers": 3,
+          "chip": null,
+          "base_xi": 53.0,
+          "captain_bonus": 8.0,
+          "autosub_delta": 7.0
+        },
+        {
+          "gameweek": 25,
+          "net_points": 44.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 40.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 26,
+          "net_points": 59.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 45.0,
+          "captain_bonus": 14.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 27,
+          "net_points": 42.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 36.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 28,
+          "net_points": 66.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 61.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 29,
+          "net_points": 89.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 78.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 4.0
+        },
+        {
+          "gameweek": 30,
+          "net_points": 43.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 41.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 31,
+          "net_points": 50.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 48.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 32,
+          "net_points": 53.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 49.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 33,
+          "net_points": 82.0,
+          "hits": 16,
+          "transfers": 5,
+          "chip": null,
+          "base_xi": 82.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 3.0
+        },
+        {
+          "gameweek": 34,
+          "net_points": 44.0,
+          "hits": 16,
+          "transfers": 5,
+          "chip": null,
+          "base_xi": 55.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 35,
+          "net_points": 53.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 47.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 36,
+          "net_points": 68.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 49.0,
+          "captain_bonus": 11.0,
+          "autosub_delta": 12.0
+        },
+        {
+          "gameweek": 37,
+          "net_points": 62.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 60.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 38,
+          "net_points": 40.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 29.0,
+          "captain_bonus": 9.0,
+          "autosub_delta": 2.0
+        }
+      ]
+    },
+    {
+      "name": "reset_h6_nochips",
+      "forecast": "reset",
+      "horizon": 6,
+      "chips_enabled": false,
+      "net_points": 2011.0,
+      "hits": 68,
+      "transfers": 58,
+      "chip_uses": [],
+      "manager_seconds": 17.718116499949247,
+      "supervised_seconds": 18.71987208421342,
+      "peak_sampled_rss_bytes": 546914304,
+      "budget_exhausted_origins": 0,
+      "median_origin_seconds": 0.46738043799996376,
+      "max_origin_seconds": 0.6301453751511872,
+      "solver_trials": 38,
+      "nonoptimal_trials": 19,
+      "max_reported_fixed_schedule_gap": 1.9191527591181363,
+      "weekly": [
+        {
+          "gameweek": 1,
+          "net_points": 62.0,
+          "hits": 0,
+          "transfers": 15,
+          "chip": null,
+          "base_xi": 42.0,
+          "captain_bonus": 11.0,
+          "autosub_delta": 9.0
+        },
+        {
+          "gameweek": 2,
+          "net_points": 25.0,
+          "hits": 28,
+          "transfers": 8,
+          "chip": null,
+          "base_xi": 51.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 3,
+          "net_points": 23.0,
+          "hits": 8,
+          "transfers": 3,
+          "chip": null,
+          "base_xi": 29.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 4,
+          "net_points": 65.0,
+          "hits": 8,
+          "transfers": 3,
+          "chip": null,
+          "base_xi": 66.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 5,
+          "net_points": 53.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 48.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 6,
+          "net_points": 57.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 41.0,
+          "captain_bonus": 16.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 7,
+          "net_points": 72.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 54.0,
+          "captain_bonus": 18.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 8,
+          "net_points": 76.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 61.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 9,
+          "net_points": 49.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 45.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 10,
+          "net_points": 61.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 48.0,
+          "captain_bonus": 13.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 11,
+          "net_points": 40.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 35.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 1.0
+        },
+        {
+          "gameweek": 12,
+          "net_points": 41.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 37.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 13,
+          "net_points": 47.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 45.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 14,
+          "net_points": 64.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 50.0,
+          "captain_bonus": 14.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 15,
+          "net_points": 71.0,
+          "hits": 4,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 45.0,
+          "captain_bonus": 18.0,
+          "autosub_delta": 12.0
+        },
+        {
+          "gameweek": 16,
+          "net_points": 44.0,
+          "hits": 0,
+          "transfers": 4,
+          "chip": null,
+          "base_xi": 40.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 17,
+          "net_points": 52.0,
+          "hits": 0,
+          "transfers": 2,
+          "chip": null,
+          "base_xi": 47.0,
+          "captain_bonus": 3.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 18,
+          "net_points": 39.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 33.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 4.0
+        },
+        {
+          "gameweek": 19,
+          "net_points": 42.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 31.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 9.0
+        },
+        {
+          "gameweek": 20,
+          "net_points": 58.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 56.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 21,
+          "net_points": 68.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 62.0,
+          "captain_bonus": 6.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 22,
+          "net_points": 38.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 27.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 9.0
+        },
+        {
+          "gameweek": 23,
+          "net_points": 30.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 27.0,
+          "captain_bonus": 1.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 24,
+          "net_points": 52.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 44.0,
+          "captain_bonus": 8.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 25,
+          "net_points": 57.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 55.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 26,
+          "net_points": 64.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 50.0,
+          "captain_bonus": 14.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 27,
+          "net_points": 43.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 39.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 28,
+          "net_points": 68.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 55.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 8.0
+        },
+        {
+          "gameweek": 29,
+          "net_points": 73.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 53.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 13.0
+        },
+        {
+          "gameweek": 30,
+          "net_points": 44.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 42.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 31,
+          "net_points": 40.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 38.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 32,
+          "net_points": 62.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 58.0,
+          "captain_bonus": 4.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 33,
+          "net_points": 76.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 63.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 8.0
+        },
+        {
+          "gameweek": 34,
+          "net_points": 51.0,
+          "hits": 8,
+          "transfers": 3,
+          "chip": null,
+          "base_xi": 54.0,
+          "captain_bonus": 5.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 35,
+          "net_points": 39.0,
+          "hits": 12,
+          "transfers": 4,
+          "chip": null,
+          "base_xi": 44.0,
+          "captain_bonus": 7.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 36,
+          "net_points": 65.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 52.0,
+          "captain_bonus": 11.0,
+          "autosub_delta": 2.0
+        },
+        {
+          "gameweek": 37,
+          "net_points": 59.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 57.0,
+          "captain_bonus": 2.0,
+          "autosub_delta": 0.0
+        },
+        {
+          "gameweek": 38,
+          "net_points": 41.0,
+          "hits": 0,
+          "transfers": 1,
+          "chip": null,
+          "base_xi": 26.0,
+          "captain_bonus": 14.0,
+          "autosub_delta": 1.0
+        }
+      ]
+    }
+  ],
+  "contrasts": [
+    {
+      "label": "Primary: sameforecasts/equalchipaccess, six vsoneGW",
+      "left": "reset_h6_chips",
+      "right": "reset_h1_chips",
+      "net_difference": 203.0,
+      "weekly_difference": [
+        33.0,
+        -9.0,
+        21.0,
+        -18.0,
+        19.0,
+        8.0,
+        -3.0,
+        6.0,
+        -4.0,
+        27.0,
+        -8.0,
+        -6.0,
+        -1.0,
+        -9.0,
+        28.0,
+        8.0,
+        17.0,
+        4.0,
+        -22.0,
+        0.0,
+        7.0,
+        0.0,
+        10.0,
+        8.0,
+        9.0,
+        -8.0,
+        7.0,
+        7.0,
+        15.0,
+        40.0,
+        7.0,
+        -4.0,
+        28.0,
+        -4.0,
+        6.0,
+        -20.0,
+        3.0,
+        1.0
+      ]
+    },
+    {
+      "label": "Nochip horizonablation",
+      "left": "reset_h6_nochips",
+      "right": "reset_h1_nochips",
+      "net_difference": 52.0,
+      "weekly_difference": [
+        33.0,
+        -2.0,
+        -5.0,
+        7.0,
+        24.0,
+        11.0,
+        -4.0,
+        26.0,
+        1.0,
+        -13.0,
+        7.0,
+        -5.0,
+        1.0,
+        4.0,
+        32.0,
+        -26.0,
+        19.0,
+        0.0,
+        -1.0,
+        -7.0,
+        7.0,
+        -9.0,
+        -19.0,
+        -16.0,
+        13.0,
+        5.0,
+        1.0,
+        2.0,
+        -16.0,
+        1.0,
+        -10.0,
+        9.0,
+        -6.0,
+        7.0,
+        -14.0,
+        -3.0,
+        -3.0,
+        1.0
+      ]
+    },
+    {
+      "label": "Fixedcarryoverreference diagnostic",
+      "left": "carryover_h6_chips",
+      "right": "reset_h6_chips",
+      "net_difference": -163.0,
+      "weekly_difference": [
+        -14.0,
+        4.0,
+        -16.0,
+        -1.0,
+        -21.0,
+        -5.0,
+        -12.0,
+        29.0,
+        7.0,
+        -35.0,
+        10.0,
+        -3.0,
+        -7.0,
+        -3.0,
+        -2.0,
+        11.0,
+        6.0,
+        -13.0,
+        10.0,
+        -34.0,
+        -10.0,
+        7.0,
+        -9.0,
+        0.0,
+        3.0,
+        -3.0,
+        -10.0,
+        3.0,
+        -28.0,
+        -29.0,
+        -2.0,
+        -9.0,
+        10.0,
+        -11.0,
+        -7.0,
+        15.0,
+        -2.0,
+        8.0
+      ]
+    },
+    {
+      "label": "Fixedofficial-originreference diagnostic",
+      "left": "official_origin_h6_chips",
+      "right": "reset_h6_chips",
+      "net_difference": -400.0,
+      "weekly_difference": [
+        -7.0,
+        -5.0,
+        -14.0,
+        -1.0,
+        -18.0,
+        -10.0,
+        -24.0,
+        -14.0,
+        -19.0,
+        -15.0,
+        -1.0,
+        -13.0,
+        0.0,
+        -24.0,
+        2.0,
+        -14.0,
+        -17.0,
+        -14.0,
+        5.0,
+        -33.0,
+        -2.0,
+        7.0,
+        -12.0,
+        -21.0,
+        3.0,
+        -18.0,
+        8.0,
+        -5.0,
+        -27.0,
+        -19.0,
+        -3.0,
+        -13.0,
+        -28.0,
+        -21.0,
+        -30.0,
+        10.0,
+        -5.0,
+        12.0
+      ]
+    }
+  ],
+  "source_readiness": {
+    "origins": 38,
+    "all_listed_player_fixture_coverage_matches": true,
+    "official_next_event_matches": true,
+    "preparation_seconds": 90.59912595897913,
+    "preparation_supervised_seconds": 91.74908920796588,
+    "preparation_peak_sampled_rss_bytes": 652083200,
+    "model_sha256": "87f2da7694733be054b984669bc25b72df7f7b18f12f1e762ce9ab2302d321dc",
+    "bundles": {
+      "reset": "41a6663dbc1fcf0927933ad58a98cc70c503d424419b0e3b2d63fc87674c90d9",
+      "carryover": "2517e8c9c77a73fa8d45505e0159bf19b8a73a4900cc5c3b4115d395526e530a",
+      "official_origin": "620e9072c1473ef61d0965bc4b331407311f8220907af086512e4eeb0cb6aa5f",
+      "outcomes": "18b49180983759a0a8216ec1d7dc7724f5b75f950a57a1c6ab730785ec8515eb"
+    },
+    "unsupported_future_chips_blocked_origins": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "official_zero_flag_counts": {
+      "1": 90,
+      "2": 104,
+      "3": 122,
+      "4": 184,
+      "5": 175,
+      "6": 213,
+      "7": 216,
+      "8": 206,
+      "9": 206,
+      "10": 216,
+      "11": 214,
+      "12": 218,
+      "13": 214,
+      "14": 215,
+      "15": 221,
+      "16": 224,
+      "17": 263,
+      "18": 258,
+      "19": 248,
+      "20": 251,
+      "21": 244,
+      "22": 260,
+      "23": 246,
+      "24": 260,
+      "25": 270,
+      "26": 290,
+      "27": 292,
+      "28": 289,
+      "29": 289,
+      "30": 281,
+      "31": 278,
+      "32": 269,
+      "33": 273,
+      "34": 272,
+      "35": 273,
+      "36": 267,
+      "37": 272,
+      "38": 269
+    }
+  },
+  "independent_audit": {
+    "arms": [
+      {
+        "arm": "reset_h1_chips",
+        "net_points": 2092.0,
+        "hits": 24,
+        "transfers": 94,
+        "chip_tokens": 8,
+        "deadlines": 38,
+        "status": "independently reconciled"
+      },
+      {
+        "arm": "reset_h6_chips",
+        "net_points": 2295.0,
+        "hits": 20,
+        "transfers": 79,
+        "chip_tokens": 8,
+        "deadlines": 38,
+        "status": "independently reconciled"
+      },
+      {
+        "arm": "carryover_h6_chips",
+        "net_points": 2132.0,
+        "hits": 28,
+        "transfers": 87,
+        "chip_tokens": 8,
+        "deadlines": 38,
+        "status": "independently reconciled"
+      },
+      {
+        "arm": "official_origin_h6_chips",
+        "net_points": 1895.0,
+        "hits": 200,
+        "transfers": 124,
+        "chip_tokens": 8,
+        "deadlines": 38,
+        "status": "independently reconciled"
+      },
+      {
+        "arm": "reset_h1_nochips",
+        "net_points": 1959.0,
+        "hits": 48,
+        "transfers": 53,
+        "chip_tokens": 0,
+        "deadlines": 38,
+        "status": "independently reconciled"
+      },
+      {
+        "arm": "reset_h6_nochips",
+        "net_points": 2011.0,
+        "hits": 68,
+        "transfers": 58,
+        "chip_tokens": 0,
+        "deadlines": 38,
+        "status": "independently reconciled"
+      }
+    ],
+    "complete": true,
+    "model_promotion": false,
+    "champion_unchanged": true,
+    "scope": "Independent integerfinance/FT/chipledger and alternative formation-count autosub/captain/BB/TC score per38deadlinepath"
+  },
+  "new_fit": false,
+  "model_promotion": false,
+  "season_count": 1,
+  "independent_season_generalisation_established": false,
+  "prospective_performance": false
+}

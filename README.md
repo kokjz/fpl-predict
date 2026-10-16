@@ -34,9 +34,10 @@ comparisons. It is saved as a research artifact; **v1.0.0 remains approved**.
 The [season-management foundation](docs/season_management.md) adds persistent
 squad/finance/chip state and complete38-deadline supplied-action replay. Its
 [readiness audit](docs/SEASON_READINESS_2026-10-16.md) verifies historical calendar
-coverage and synthetic mechanics. Adaptive multiweek planning and fullseason
-competitor management benchmarks are still being built; current weekly/reset
-comparisons do not establish season-long management superiority.
+coverage and synthetic mechanics. Adaptive multiweek research planning and a
+continuous season pilot are available; matched full-season external management
+comparisons and joint qualification remain in progress. Weekly/reset comparisons
+alone do not establish season-long management superiority.
 
 The [preseason references](docs/preseason_reference.md) address missing opening
 form using stable-code carryover and explicitly next-GW-only official projections.
@@ -54,8 +55,13 @@ validation. The rolling planner's
 [mechanical pilot](docs/ROLLING_PLANNER_PILOT_2026-10-16.md) checks
 origin timing and bounded solver behaviour, while exposing a preseason forecast
 cold-start limitation. The chip planner's [bounded pilot](docs/ADAPTIVE_CHIP_PILOT_2026-10-16.md)
-checks integration and cost; realised full-season competitor comparisons remain
-unfinished.
+checks integration and cost. The first [continuous 38-GW management pilot](docs/FULL_SEASON_RESULTS_2026-10-16.md)
+scores 2,295 versus 2,092 for matched six- versus one-week planners with chips,
+and a 52-point six-week lead without chips. Both preseason-reference variants
+lose to the six-week control. This is one reused season with bounded, sometimes
+poorly solved optimisation attempts; it establishes neither general superiority
+nor policy approval. Matched Dastan/OpenFPL and native-planner season comparisons
+remain unfinished.
 
 The [controlled integration workflow](docs/conditional_selection.md) separates conditional-return prediction, appearance probabilities and legal bench/captain decisions. It is research tooling and does not replace the approved model or production selector.
 
