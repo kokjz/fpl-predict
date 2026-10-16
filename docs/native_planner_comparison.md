@@ -99,5 +99,9 @@ remain unchanged until separate qualification.
 Sources checked 16 October 2026:
 [Open FPL Solver, pinned source](https://github.com/solioanalytics/open-fpl-solver/tree/ec65f5e2b2be34441cb4b2a9efafea1ec0fe3b79)
 and [AIrsenal, pinned source](https://github.com/alan-turing-institute/AIrsenal/tree/fe580d7e567e79d80f73450c7d4b5d6610f05863).
-AIrsenal's native data/price/scoring contracts remain under adapter review;
-an existing conjugate/Poisson forecasting reference is not its original planner.
+The separate [AIrsenal adaptation](airsenal_planner_comparison.md) and its
+[historical comparison](AIRSENAL_PLANNER_RESULTS_2026-10-16.md) are now implemented.
+Neither the earlier conjugate/Poisson forecast reference nor the adapted planning
+core reproduces its original full manager. The
+[uniform repeated policy study](SEASON_POLICY_QUALIFICATION_RESULTS_2026-10-17.md)
+retains these earlier results as distinct frozen experiments.

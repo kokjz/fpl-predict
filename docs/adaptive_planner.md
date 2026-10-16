@@ -84,3 +84,10 @@ defines the pilot, budgets and nonclaims before historical evaluation. Sources
 checked 16 October 2026: [official chip guidance](https://www.premierleague.com/en/news/4679879/whats-happening-with-fpl-chips-in-202627)
 and [SciPy solver diagnostics](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.milp.html).
 Full-season and external-manager superiority remain unmeasured by these mechanics.
+
+The [completed repeated season study](SEASON_POLICY_QUALIFICATION_RESULTS_2026-10-17.md)
+compares these management policies and a fixed-calendar control over all 38 GWs.
+Shared scenarios and coarse values remain assumptions; that study does not
+calibrate joint outcomes or implement future scenario-tree recourse. Consult
+[policy status](season_policy_status.json) rather than inferring approval from
+the existence of the command or its synthetic tests.

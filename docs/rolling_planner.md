@@ -79,3 +79,8 @@ The [completed mechanical pilot](ROLLING_PLANNER_PILOT_2026-10-16.md) reports
 three origins, full finance/reload checks, computational cost and a preseason
 forecast limitation. It does not change the objective weights or establish
 realised season gains. All further qualification remains separate.
+
+The [subsequent full-season qualification](SEASON_POLICY_QUALIFICATION_RESULTS_2026-10-17.md)
+tests continuous squad and chip management under declared budgets, with explicit
+[historical policy status](season_policy_status.json). Its evidence is separate
+from the small mechanical pilot and does not certify global optimality.

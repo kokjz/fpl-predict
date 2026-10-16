@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "revision": 4,
+  "status": "Released AIrsenal dependency integrated; source-locked runner and native synthetic preflight passed; freeze executable inventory before historical qualification.",
+  "season": "2025-26",
+  "season_count": 1,
+  "reused_season": true,
+  "forecast": "Frozen five-prior-season standing method reference; never backcast the deployment artifact trained on the evaluation season.",
+  "forecast_bundle_sha256": "d140e27bb93ee7e15619b4fb4377bfb5c32b5fe712758acd1da33da0f289fecd",
+  "policies": [
+    "standingH1_adaptive",
+    "standingH6_adaptive",
+    "SolioAdaptedH6_sharedAdaptiveChips",
+    "AIrsenalAdaptedH6_sharedAdaptiveChips"
+  ],
+  "openings": [
+    "own",
+    "common"
+  ],
+  "replications": [
+    1,
+    2
+  ],
+  "repeat_paths": 16,
+  "order": "For replication1then2, for own thencommon, for policies in declared order. Uniform fresh source; never select best realised run.",
+  "controls": {
+    "fixed_calendar_paths": 2,
+    "hold_no_chips_paths": 2,
+    "fixed_calendar": {
+      "6": "wildcard",
+      "12": "bboost",
+      "15": "freehit",
+      "18": "3xc",
+      "24": "wildcard",
+      "30": "bboost",
+      "33": "freehit",
+      "36": "3xc"
+    },
+    "fixed_search": "Same15s outer/2s inner/max12; repeat the one permitted schedule and select by expected objective only; report all attempts and chosen index.",
+    "hold": "Cheapest legal own or common opening; hold15 thereafter, reselect mean XI/captain/vice. Unused chips/transfers explicit; descriptive floor only.",
+    "reference_dates": "Arbitrary spaced dates declared before qualification scoring, never chosen by realised chip returns."
+  },
+  "total_paths": 20,
+  "resources": {
+    "outer_seconds": 15,
+    "inner_seconds": 2,
+    "max_trials": 12,
+    "threads": 2,
+    "per_path_seconds": 900,
+    "sampled_rss_mib": 4096,
+    "project_mib": 2048,
+    "growth_mib": 256,
+    "min_free_mib": 5120,
+    "execution": "Serial historical jobs; retained checkpoints and source/input/runtime hashes; ordinary background load and synthetic development checks disclosed."
+  },
+  "primary": "Realised total38GWpoints after transfer hits, with continuous finances, transfer resources and chip state.",
+  "canonical_settings": {
+    "bench_weight": 0.1,
+    "terminal_ft_value": 0,
+    "terminal_squad_weight": 0,
+    "churn_cost": 0,
+    "baseline_mode": "feasibility"
+  },
+  "qualification": {
+    "integrity": "All declared paths/38deadline freezes, information clocks, admissibility/finances/FT/hits/chips and scoring independently reconcile. Zero completed invalid native proposals. Retain failures; do not selectively retry.",
+    "bounded_improvement": "Against standingH1 in the same opening/replication: mean netpoint difference strictly positive separately for each opening, and every individual paired difference nonnegative. No minimum gain size beyondzero; report all raw differences/ranges.",
+    "external": "Report matched differences to both planner adaptations and retained forecasting references as distinct tracks. No original complete-manager superiority claim.",
+    "scope": "Two repeats/one reused season do not establish future generalisation or a statistical confidence interval. Passing permits experimental historical policy status only; production policy approval remains separate.",
+    "forecast_promotion": false,
+    "completion": "Documented nonpromotion with complete functional integration/evidence is valid; future live results are ongoing maintenance rather than a historical implementation blocker."
+  },
+  "bridge": "Registry-approved artifact verified by version/hash and conservative pre-origin observation receipt; actual artifact only on invented future-origin mechanical case. Scoped minutes/availability sensitivity preserved; no current-team forecast required.",
+  "pending": [
+    "freeze executable source/runtime inventory",
+    "historical uniform matrix and independent audit",
+    "policy status and release/operational handoff"
+  ],
+  "mechanical_evidence": {
+    "approved_bridge": "docs/approved_bridge_compatibility.json",
+    "adaptive_replan": "docs/approved_adaptive_compatibility.json",
+    "baseline_controls": "tests/test_management_policies.py",
+    "scope": "Invented-case mechanics only; no historical qualification result or model/policy promotion."
+  },
+  "outcome_bundle_sha256": "18b49180983759a0a8216ec1d7dc7724f5b75f950a57a1c6ab730785ec8515eb",
+  "common_opening_sha256": "6e2d6cea4f4441efaf6a5a2f537e8e4ada1e0d2d72465f50fd3290197c0a8a99"
+}

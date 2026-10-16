@@ -1,0 +1,159 @@
+{
+  "scope": "Actual approved artifact, invented inputs/outcomes only; adaptive mechanical compatibility, not historical accuracy/season gain or policy promotion",
+  "champion": "1.0.0",
+  "artifact_sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+  "cases": [
+    {
+      "horizon": 1,
+      "actions": 1,
+      "seconds": 0.17555108293890953,
+      "trials": 5,
+      "conditional_bound": {
+        "status": "solver_dual",
+        "feasible_objective": 66.48941052504317,
+        "upper_objective": 66.4894105250432,
+        "absolute_gap": 2.842170943040401e-14,
+        "relative_gap": 4.274621959492181e-16,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "global_bound": null,
+      "frozen_sha256": "d8712c17449a30d345e665ae52ac49d754218f7d4e2c6a1536c871a4496c0eb6"
+    },
+    {
+      "horizon": 4,
+      "actions": 4,
+      "seconds": 0.5653657079674304,
+      "trials": 12,
+      "conditional_bound": {
+        "status": "solver_dual",
+        "feasible_objective": 239.83312108274146,
+        "upper_objective": 239.83312108274148,
+        "absolute_gap": 2.842170943040401e-14,
+        "relative_gap": 1.1850619006287556e-16,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "global_bound": null,
+      "frozen_sha256": "47dea38ac668da330c77200e481464e4cd0ba30d7f051814de310aa183329ec1"
+    },
+    {
+      "horizon": 6,
+      "actions": 6,
+      "seconds": 0.7761440000031143,
+      "trials": 12,
+      "conditional_bound": {
+        "status": "solver_dual",
+        "feasible_objective": 349.0563615188681,
+        "upper_objective": 349.05636151886813,
+        "absolute_gap": 5.684341886080802e-14,
+        "relative_gap": 1.628488265146125e-16,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "global_bound": null,
+      "frozen_sha256": "d99d2944578b87efe10819e4ebb0a803a484a1f5ea31c2e4f16e69613f905627"
+    },
+    {
+      "horizon": 8,
+      "actions": 8,
+      "seconds": 0.9975588750094175,
+      "trials": 12,
+      "conditional_bound": {
+        "status": "solver_dual",
+        "feasible_objective": 458.2796019549947,
+        "upper_objective": 458.2796019549947,
+        "absolute_gap": 0.0,
+        "relative_gap": 0.0,
+        "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+      },
+      "global_bound": null,
+      "frozen_sha256": "1ac531687b9bde9940e2d4b7c20a46fc18dc0a553a9f16e668c7a05da91fc45d"
+    }
+  ],
+  "provisional_actions_checked": 25,
+  "initial_scenario_weights": {
+    "base": 0.5,
+    "invented_absence": 0.5
+  },
+  "weights_scope": "Explicit synthetic sensitivity weights, not calibrated probabilities",
+  "budget": {
+    "seconds": 2.0,
+    "solve_seconds": 0.2,
+    "max_trials": 12
+  },
+  "dynamic_replan": {
+    "carried_state_gameweek": 31,
+    "settled_state_gameweek": 32,
+    "new_fixture_information": true,
+    "new_price_information": true,
+    "new_completed_history": true,
+    "current_only_absence": true,
+    "action_changed_from_old_provisional": true,
+    "frozen_sha256": "87f46adfe82dff09e6c2950288d045e6f0ade1ac13df8e780ef4ca51f9b24c57",
+    "input_sha256": "179f9bbca06c3832509466b09dee3b3d970bf0594af1330622750f337011019b"
+  },
+  "source_sha256": {
+    "approved_horizon.py": "20d70a99487f47a42412a375b3dd0af6d6c2ebc65428a15e62101b4ed5a5c303",
+    "horizon_forecast.py": "8f9a5587d936192807824181ce8ad3cf8d8540e342ea4047fca1d22be57f29d2",
+    "forecast_sensitivity.py": "63833f41b5dedfd901cea1777a48ebe39241ef52fe8f0f90430b60f43a81f0d1",
+    "adaptive_planner.py": "ebc0aaab7d7dfdf0cedb733affd8049c4026881882e579016626f68ec9027002",
+    "rolling_planner.py": "70f30795b152d200173e7a661af20bcf754d9d449ca1535a164259003176ed45",
+    "season_engine.py": "d9328b51ccb81fbfef937a92b7db31d489079f66802a12fdcdca307712589c59",
+    "native_planner.py": "704b801ced8086c8255e097c9cb5a655df6a3423b33dd90e3d9fd1b1052d1e06"
+  },
+  "seconds": 3.2905484579969198,
+  "forecast_promotion": false,
+  "policy_promotion": false,
+  "supervised_seconds": 4.63788945809938,
+  "sampled_group_rss_bytes": 187252736,
+  "independent_audit": {
+    "scope": "Independent formula reconciliation and deterministic replay of frozen invented actions; no model/solver rerun or real-football point gains",
+    "cases": [
+      {
+        "case": "H1_adaptive_frozen.json",
+        "periods": 1,
+        "finance_scoring_objective": true,
+        "frozen_sha256": "d8712c17449a30d345e665ae52ac49d754218f7d4e2c6a1536c871a4496c0eb6"
+      },
+      {
+        "case": "H4_adaptive_frozen.json",
+        "periods": 4,
+        "finance_scoring_objective": true,
+        "frozen_sha256": "47dea38ac668da330c77200e481464e4cd0ba30d7f051814de310aa183329ec1"
+      },
+      {
+        "case": "H6_adaptive_frozen.json",
+        "periods": 6,
+        "finance_scoring_objective": true,
+        "frozen_sha256": "d99d2944578b87efe10819e4ebb0a803a484a1f5ea31c2e4f16e69613f905627"
+      },
+      {
+        "case": "H8_adaptive_frozen.json",
+        "periods": 8,
+        "finance_scoring_objective": true,
+        "frozen_sha256": "1ac531687b9bde9940e2d4b7c20a46fc18dc0a553a9f16e668c7a05da91fc45d"
+      },
+      {
+        "case": "replan_GW31_frozen.json",
+        "periods": 6,
+        "finance_scoring_objective": true,
+        "frozen_sha256": "87f46adfe82dff09e6c2950288d045e6f0ade1ac13df8e780ef4ca51f9b24c57"
+      }
+    ],
+    "periods": 25,
+    "first_action_only_state_carry": true
+  },
+  "independent_audit_sha256": "f29f023bed99b57cb622673d6166fe7bce193d1bc9c3d4980012152ac922468d",
+  "run_sha256": "be7f576d721e65760d3599d617e16235eacce7d661a2b3bcb4bb85399ca29c2a",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.9.1"
+  },
+  "limitations": [
+    "Invented18player case, not real football forecasts, full-market latency, historical accuracy or season-point advantage.",
+    "2s outer/.2s inner/max12 trials for each horizon and next-origin replan. Initial equal scenario weights are explicit analyst assumptions, not learned probabilities.",
+    "Conditional selected-schedule bounds are not outer chip-calendar/global season bounds.",
+    "The separate historical comparison was active; this was not isolated timing. Observed numerical dependencies differ from repository pins.",
+    "Independent scoring used deterministic replay of frozen actions, without rerunning model or solver. The first auditor over-restricted positive bench players; corrected to full formation-count autosub enumeration. No engine or decision change."
+  ]
+}

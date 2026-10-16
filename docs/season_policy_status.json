@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "approval_scope": "Historical experimental policy qualification only; no automatic weekly default or forecaster promotion",
+  "active_forecaster": "Resolve the private approved registry independently; never select benchmark artifacts by date or result.",
+  "production_policy": "Existing reviewed weekly workflow unchanged; do not infer default approval from a code merge.",
+  "source_commit": "d608aa2efb390b7bfe091b4d3d9128460188aa5c",
+  "evidence": "season_policy_qualification_results.json",
+  "policies": [
+    {
+      "policy": "standingH6_adaptive",
+      "status": "historical_experimental_qualified",
+      "criteria": "Complete integrity/cost audit and predeclared positive mean in each opening, no negative paired repetition versus H1.",
+      "points": [
+        {
+          "opening": "own",
+          "paired_differences": [
+            209.0,
+            195.0
+          ],
+          "mean_difference": 202.0,
+          "pass_predeclared_points_gate": true
+        },
+        {
+          "opening": "common",
+          "paired_differences": [
+            133.0,
+            133.0
+          ],
+          "mean_difference": 133.0,
+          "pass_predeclared_points_gate": true
+        }
+      ],
+      "production_approved": false,
+      "historical_evaluation_seasons": [
+        "2025-26"
+      ],
+      "rule_profiles": [
+        "2025-26",
+        "2026-27"
+      ],
+      "current_season_scope": "Standing planner has 2026/27 mechanical integration, not live-season accuracy evidence."
+    },
+    {
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "status": "historical_experimental_qualified",
+      "criteria": "Complete integrity/cost audit and predeclared positive mean in each opening, no negative paired repetition versus H1.",
+      "points": [
+        {
+          "opening": "own",
+          "paired_differences": [
+            183.0,
+            209.0
+          ],
+          "mean_difference": 196.0,
+          "pass_predeclared_points_gate": true
+        },
+        {
+          "opening": "common",
+          "paired_differences": [
+            152.0,
+            113.0
+          ],
+          "mean_difference": 132.5,
+          "pass_predeclared_points_gate": true
+        }
+      ],
+      "production_approved": false,
+      "historical_evaluation_seasons": [
+        "2025-26"
+      ],
+      "rule_profiles": [
+        "2025-26"
+      ],
+      "current_season_scope": "Native worker admits only its audited 2025/26 profile; another season requires separate adaptation and admission."
+    },
+    {
+      "policy": "AIrsenalAdaptedH6_sharedAdaptiveChips",
+      "status": "not_qualified",
+      "criteria": "Complete integrity/cost audit and predeclared positive mean in each opening, no negative paired repetition versus H1.",
+      "points": [
+        {
+          "opening": "own",
+          "paired_differences": [
+            -29.0,
+            -92.0
+          ],
+          "mean_difference": -60.5,
+          "pass_predeclared_points_gate": false
+        },
+        {
+          "opening": "common",
+          "paired_differences": [
+            54.0,
+            57.0
+          ],
+          "mean_difference": 55.5,
+          "pass_predeclared_points_gate": true
+        }
+      ],
+      "production_approved": false,
+      "historical_evaluation_seasons": [
+        "2025-26"
+      ],
+      "rule_profiles": [
+        "2025-26"
+      ],
+      "current_season_scope": "Native worker admits only its audited 2025/26 profile; another season requires separate adaptation and admission."
+    }
+  ]
+}

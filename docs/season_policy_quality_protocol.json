@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "declared_at_utc": "2026-10-16T18:36:23.771951+00:00",
+  "scope": "Fixed-schedule numerical solver-quality sensitivity; no actual future outcomes loaded, no full-season performance or policy promotion from this diagnostic.",
+  "reference_arm": "r1_common_standingH6_adaptive",
+  "reference_source_commit": "d608aa2efb390b7bfe091b4d3d9128460188aa5c",
+  "forecast_bundle_sha256": "d140e27bb93ee7e15619b4fb4377bfb5c32b5fe712758acd1da33da0f289fecd",
+  "origin_gameweeks": [
+    1,
+    6,
+    16,
+    30,
+    38
+  ],
+  "origin_selection": "Calendar anchors: opening, early season, announced transfer reset, late season and finale; not chosen by realised score or observed solver gap.",
+  "inner_seconds": [
+    0.5,
+    2.0,
+    5.0
+  ],
+  "order": "Origin order, then increasing inner seconds; one attempt each, all retained.",
+  "horizon": 6,
+  "calendar": "Exact frozen retained chip schedule at each reference origin; compare numerical solving, not a new outer chip strategy.",
+  "settings": {
+    "bench_weight": 0.1,
+    "terminal_ft_value": 0.0,
+    "terminal_squad_weight": 0.0,
+    "churn_cost": 0.0,
+    "baseline_mode": "feasibility"
+  },
+  "common_opening": "Use the existing common opening only atGW1; no roster freeze in later periods.",
+  "metrics": [
+    "retained_reference_objective",
+    "new_feasible_objective",
+    "difference_vs_frozen_reference",
+    "selected_conditional_bound",
+    "fallback_retained",
+    "solver_seconds",
+    "supervised_wall_time_and_RSS"
+  ],
+  "checks": [
+    "All returned provisional actions legal and objective reconciled using independent verifier arithmetic",
+    "Any finite fixed-pool upper bound must cover the original retained feasible plan when candidate pools match",
+    "No outcomes or future quotes supplied; all original states/forecasts frozen",
+    "No best-realised-run selection or automatic setting change"
+  ],
+  "resources": {
+    "threads": 2,
+    "job_seconds": 120,
+    "sampled_rss_mib": 4096,
+    "project_mib": 2048,
+    "growth_mib": 256,
+    "min_free_mib": 5120
+  },
+  "execution": "Run only after live twenty-path historical batch is terminal; no second simultaneous historical job.",
+  "interpretation": "Addresses the roadmap solver-quality-sensitivity check. Report all fifteen conditional-objective cases; do not infer realised season gain or tune a new policy on inspected audit results. Unknown/noncomparable candidate-pool bounds remain explicit.",
+  "declaration_context": "Declared after the first ten qualification paths completed, before this numerical diagnostic executes. The season is already reused/inspected; this is not an untouched accuracy or policy-selection test."
+}

@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 from availability_evidence import utc
 from fpl_model import FeatureStore
+from forecast_sensitivity import apply_sensitivity
 
 
 @dataclass(frozen=True)
@@ -39,7 +40,7 @@ class Horizon:
     def values(self):return {(r['gameweek'],r['id']):float(r['expected_points']) for r in self.forecasts}
 
 
-def project(model,history,market,fixtures,*,through,trained_through,source_as_of,model_id,source_hashes=None):
+def project(model,history,market,fixtures,*,through,trained_through,source_as_of,model_id,source_hashes=None,availability_overrides=None,override_gameweek=None):
     """All future fixtures share origin form; later actual form is never fed back.
 
     Fixtures must come from the hash-verified as-of calendar adapter. Current
@@ -50,6 +51,8 @@ def project(model,history,market,fixtures,*,through,trained_through,source_as_of
     if through<market.gameweek or through>min(38,market.gameweek+7):raise ValueError('Invalid forecast horizon')
     if getattr(model,'requires_availability',False):raise ValueError('Conditional experimental models need separately admitted availability adapters')
     origin=utc(market.as_of)
+    overrides=dict(availability_overrides or {})
+    if overrides and (override_gameweek!=market.gameweek or not set(overrides)<={p['id'] for p in market.players}):raise ValueError('Manual overrides must target known players in the origin gameweek')
     if utc(trained_through)>=origin or utc(source_as_of)>origin:raise ValueError('Late training/calendar')
     required={'id','event','team_h','team_a','kickoff_time'}
     if required-set(fixtures):raise ValueError('Missing calendar fields')
@@ -73,6 +76,13 @@ def project(model,history,market,fixtures,*,through,trained_through,source_as_of
         if (ts.notna()&ts.ge(origin-pd.Timedelta(hours=3))).any():raise ValueError('Future feature source')
         source_max=ts.max().isoformat() if ts.notna().any() else None
         prediction=model.predict(x,t.pos)
+        if not prediction.index.equals(x.index):raise ValueError('Invalid model predictions')
+        if overrides:
+            prediction=prediction.copy()
+            for row in t.itertuples():
+                if row.GW==override_gameweek and row.element in overrides:
+                    adjusted=apply_sensitivity(prediction.loc[row.Index].to_dict(),overrides[row.element])
+                    for key,value in adjusted.items():prediction.loc[row.Index,key]=value
         if not prediction.index.equals(x.index) or not np.isfinite(prediction.expected_points).all():raise ValueError('Invalid model predictions')
         for row,value in zip(t.itertuples(),prediction.expected_points):out[(int(row.GW),int(row.element))]+=float(value)
     rows=[dict(gameweek=g,id=i,expected_points=v) for (g,i),v in out.items()]
