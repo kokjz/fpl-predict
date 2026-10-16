@@ -47,3 +47,20 @@ def test_dgw_card_and_minutes_moments_are_preserved_under_both_joint_models():
     assert r.old_q*r.old_p+r.old_qc*r.old_pc==pytest.approx(5.13)
     assert r.old_persistent_p==.8
     assert r.old_persistent_q*r.old_persistent_p+r.old_persistent_qc*r.old_persistent_pc==pytest.approx(5.13)
+
+
+def test_audit_market_preserves_original_neutral_metadata_and_anchor(tmp_path,monkeypatch):
+    import integration_study as study
+    p=pd.DataFrame([dict(season='2025-26',gameweek=28,fixture=1,fpl_code=1,position=3,candidate=True,
+        actual=2.,minutes=90.,old_p=.5,new_p=.8,old_xp=2.,new_xp=3.2)])
+    a=p[['season','gameweek','fixture','fpl_code','position','candidate','actual','minutes']].assign(control=2.)
+    raw=p[['season','gameweek','fpl_code']].assign(ts='2026-02-27T20:00Z',minutes=90.,yellow_cards=0.,red_cards=0.)
+    previous=pd.DataFrame([dict(gameweek=28,fpl_code=1,reference=2.,actual=2.,minutes=90.,cards=0.,
+        price_tenths=60,team='A',prior_minutes=22.5,blank_verified=0,fixture_count=1)])
+    boot=dict(elements=[dict(code=1,element_type=3,team=1,now_cost=60,can_select=True,selected_by_percent='10')],teams=[dict(id=1,name='A')])
+    monkeypatch.setattr(study,'read_snapshot',lambda *args:boot)
+    monkeypatch.setattr(study,'extract_bootstrap',lambda *args:(dict(deadline='2026-02-27T18:30Z'),[]))
+    snapshots={'snapshots':[dict(gameweek=28,file='one.json',sha256='a'*64,captured_at='2026-02-27T13:00Z')]}
+    market,_=study.prepare_market(p,a,raw,snapshots,tmp_path,[dict(gameweek=28,published_at='2026-02-27T09:00Z')],previous)
+    assert market.prior_minutes.iloc[0]==22.5  # never reconstruct as current-season zero
+    assert market.anchor.iloc[0]==previous.reference.iloc[0]

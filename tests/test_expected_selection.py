@@ -73,3 +73,17 @@ def test_card_only_event_blocks_autosub_but_triggers_captain_fallback():
     outcomes={x['id']:dict(actual=x['expected_points'],minutes=x['p_play'],cards=x.get('p_card_only',0.)) for x in d}
     assert objective(plan,d)==pytest.approx(score(plan,{x['id']:x for x in d},outcomes)['net_points'])
     assert positive_dependence_stress(plan,d)==pytest.approx(objective(plan,d))
+
+
+def test_fractional_three_state_expectation_matches_exhaustive_scoring():
+    d=squad();uncertain=[d[0],d[3],d[9]]
+    for r in uncertain:r.update(p_play=.5,p_card_only=.2,conditional_card=-1.,expected_points=.5*r['conditional_points']-.2)
+    plan=select_xi(d);total=0.
+    for states in product((0,1,2),repeat=3):
+        probability=np.prod([(.5,.2,.3)[state] for state in states]);by_state={r['id']:v for r,v in zip(uncertain,states)}
+        outcomes={}
+        for r in d:
+            state=by_state.get(r['id'],0)
+            outcomes[r['id']]=dict(actual=r['conditional_points'] if state==0 else -1. if state==1 else 0.,minutes=float(state==0),cards=float(state==1))
+        total+=probability*score(plan,{r['id']:r for r in d},outcomes)['net_points']
+    assert objective(plan,d)==pytest.approx(total,abs=1e-10)

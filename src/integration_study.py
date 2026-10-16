@@ -89,9 +89,12 @@ def prepare_market(predictions,anchor,players,snapshot_manifest,snapshot_root,so
                 if not np.allclose([values['actual'],values['minutes'],values['anchor'],values['cards']],prev[['actual','minutes','reference','cards']].to_numpy(float),rtol=0,atol=1e-10):
                     raise ValueError('Retained outcomes/control disagree')
                 if p['now_cost']!=prev.price_tenths or teams[p['team']]!=prev.team:raise ValueError('Retained price/team disagree')
+                # Restore exact admitted audit anchor and neutral sampling metadata,
+                # including the original cross-season last-four minutes measure.
+                values['anchor']=float(prev.reference)
             listed.append(dict(season='2025-26',gameweek=int(gw),fpl_code=code,position=p['element_type'],team=teams[p['team']],
                 price_tenths=p['now_cost'],can_buy=int(p['can_select']),ownership=float(p['selected_by_percent']),
-                prior_minutes=float(prior.get(code,0.)),deadline=deadline.isoformat(),inputs_as_of=cutoff.isoformat(),quote_as_of=quote.isoformat(),**values))
+                prior_minutes=float(previous.loc[code,'prior_minutes']) if gw>=28 else float(prior.get(code,0.)),deadline=deadline.isoformat(),inputs_as_of=cutoff.isoformat(),quote_as_of=quote.isoformat(),**values))
         if gw>=28 and {r['fpl_code'] for r in listed}!=set(previous.index):raise ValueError('Retained roster coverage differs')
         markets.extend(listed);audits.append(dict(gameweek=int(gw),listed=len(listed),verified_blanks=blank,
             forecasts_outside_listed=len(set(g.fpl_code)-{r['fpl_code'] for r in listed}),snapshot_sha256=entry['sha256'],
@@ -187,7 +190,7 @@ def main():
     p.add_argument('--pilot',action='store_true');a=p.parse_args()
     if file_hash(a.market)!=a.sha256:p.error('Market checksum mismatch')
     if a.output.exists():p.error('Output exists')
-    market=pd.read_csv(a.market);validate(market,['anchor','old_xp','new_xp'])
+    market=pd.read_csv(a.market,float_precision='round_trip');validate(market,['anchor','old_xp','new_xp'])
     a.output.mkdir(parents=True)
     (a.output/'spec.json').write_text(json.dumps(dict(policy=POLICY,market_sha256=a.sha256,pilot=a.pilot,
         code_sha256=file_hash(Path(__file__)),selector_sha256=file_hash(Path(__file__).with_name('expected_selection.py'))),indent=2))

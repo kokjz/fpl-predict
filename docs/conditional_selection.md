@@ -86,3 +86,13 @@ training-only pooled card prior and three-state selector were added before the
 replacement run. No row was dropped or outcome corrected. Captain fallback and
 autosub eligibility are tested separately for this case. This is a data/rule
 correction, not tuning against forecast scores; the failed attempt remains stored.
+
+
+The initial owned replay's reference check found one rotation opening panel
+differed from the previously frozen audit benchmark. The cause was reconstructing
+neutral prior minutes from this season only instead of reusing the admitted
+last-four history across seasons. Audit metadata and anchor values now come
+exactly from the retained market; development panels keep their original inputs.
+CSV numeric reads use round-trip precision. All arms are rerun on the restored
+predeclared panels without changing fitted forecasts, probabilities, seeds or
+selection rules. The superseded replay is retained, not selected by performance.
