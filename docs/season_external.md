@@ -71,6 +71,16 @@ closest eligible standing-method history usage. The deployed artifact cannot be
 backcast into its own training season. All 16 paths are reported; neither control
 is chosen retrospectively to make a competitor comparison look better.
 
+The common roster is fixed only in the first period. Later provisional transfers
+retain access to the full market. This is enforced in the solver, rather than
+by disabling non-opening players throughout the planning horizon. The contract
+was checked before any common-opening management path was scored.
+
+Archived official EP has complete observed coverage here, but its publisher's
+training lineage is unreported. Its one-week track is an as-of-source comparator,
+not a claim of the same fitted-label split as the five reconstructed learners.
+An inherited local envelope cutoff does not certify the publisher's training.
+
 The protocol and tests precede the new evaluation. No external season ranking,
 native planner compatibility or model/policy qualification is claimed merely
 by adding these interfaces. Common-forecast external planner comparisons and

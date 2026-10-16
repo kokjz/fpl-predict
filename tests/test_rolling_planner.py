@@ -27,6 +27,14 @@ def setup(gw=36,H=3):
 def config(**kwargs):return Settings(seconds=10.,bench_weight=0.,terminal_ft_value=0.,terminal_squad_weight=0.,**kwargs)
 
 
+def test_common_opening_membership_does_not_close_future_transfer_market():
+    s,m,h=setup(gw=1,H=3);s=State(m.season)
+    h=Horizon.create(m,[dict(v,expected_points=100. if v['id']==16 else v['expected_points']) for v in h.forecasts],**dict(h.provenance))
+    actions,_=plan(s,m,h,config(),opening_ids=list(range(1,16)))
+    assert set(actions[0].buys)==set(range(1,16)) and 16 in actions[1].buys
+    assert 16 in {p['id'] for p in m.players if p['can_buy']}
+
+
 def test_fixed_chips_reconcile_freehit_reversion_wildcard_and_boost():
     s,m,h=setup();s=replace(s,holdings=tuple((i,40 if i==15 else 50) for i in range(1,16)),bank=230,free_transfers=4)
     chips={36:'freehit',37:'wildcard',38:'bboost'};actions,report=plan(s,m,h,config(),chip_schedule=chips)
