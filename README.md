@@ -38,6 +38,12 @@ coverage and synthetic mechanics. Adaptive multiweek planning and fullseason
 competitor management benchmarks are still being built; current weekly/reset
 comparisons do not establish season-long management superiority.
 
+The [preseason references](docs/preseason_reference.md) address missing opening
+form using stable-code carryover and explicitly next-GW-only official projections.
+The [fixed six-GW pilot](docs/PRESEASON_REFERENCE_RESULTS_2026-10-16.md) improves
+opening differentiation and the GW1 diagnostic, but worsens pooled RMSE; these
+remain experimental comparisons rather than approved forecast replacements.
+
 The [multi-gameweek planner](docs/rolling_planner.md) now chooses provisional
 transfers/lineups across1–8gameweeks and validates finances against the state
 engine. Its [mechanical pilot](docs/ROLLING_PLANNER_PILOT_2026-10-16.md) checks

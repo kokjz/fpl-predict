@@ -1,0 +1,654 @@
+{
+  "scope": "Six reusedhistorical openingGWs, not seasonutility or modelpromotion; all fixedarms reported, no selectionsearch",
+  "arms": [
+    "reset",
+    "carryover",
+    "official_origin"
+  ],
+  "origins": [
+    {
+      "gameweek": 1,
+      "listed": 685,
+      "candidates": 181,
+      "projection_seconds": 1.7629463749472052,
+      "reset_unique": 5,
+      "carryover_unique": 402,
+      "official_unique": 38,
+      "linked": 500,
+      "carryover_active": 500,
+      "official_replaced": 685,
+      "metrics": {
+        "reset": {
+          "all": {
+            "n": 685,
+            "rmse": 2.5420382640335215,
+            "mae": 1.8045174559134718,
+            "bias": 0.08757862428690683,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.05989243726002108,
+            "mean_within_gw_ndcg10": 0.12931882353074328
+          },
+          "candidates": {
+            "n": 181,
+            "rmse": 3.218171924125522,
+            "mae": 2.153934310886421,
+            "bias": -1.1350608098885067,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.0010018670752307615,
+            "mean_within_gw_ndcg10": 0.26687206561877513
+          }
+        },
+        "carryover": {
+          "all": {
+            "n": 685,
+            "rmse": 2.3870574804132723,
+            "mae": 1.6039885451109541,
+            "bias": 0.12374905367270932,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.44299133802294594,
+            "mean_within_gw_ndcg10": 0.31730484541585624
+          },
+          "candidates": {
+            "n": 181,
+            "rmse": 2.9735962364806814,
+            "mae": 2.2665249335130446,
+            "bias": 0.04096982767511638,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.15223954785229427,
+            "mean_within_gw_ndcg10": 0.36962089394355907
+          }
+        },
+        "official_origin": {
+          "all": {
+            "n": 685,
+            "rmse": 2.340016844408772,
+            "mae": 1.52029197080292,
+            "bias": 0.10510948905109486,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.46256879991990346,
+            "mean_within_gw_ndcg10": 0.24496199186801976
+          },
+          "candidates": {
+            "n": 181,
+            "rmse": 2.8687591403819286,
+            "mae": 1.9629834254143648,
+            "bias": -0.407182320441989,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.3324010839636769,
+            "mean_within_gw_ndcg10": 0.3279184854392162
+          }
+        }
+      }
+    },
+    {
+      "gameweek": 2,
+      "listed": 698,
+      "candidates": 182,
+      "projection_seconds": 2.0678159589879215,
+      "reset_unique": 332,
+      "carryover_unique": 542,
+      "official_unique": 37,
+      "linked": 502,
+      "carryover_active": 502,
+      "official_replaced": 698,
+      "metrics": {
+        "reset": {
+          "all": {
+            "n": 698,
+            "rmse": 2.228484035662661,
+            "mae": 1.2325407198924831,
+            "bias": 0.06433112593624057,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.6796904263425322,
+            "mean_within_gw_ndcg10": 0.32344102398739805
+          },
+          "candidates": {
+            "n": 182,
+            "rmse": 2.4606421294663825,
+            "mae": 1.720046170347152,
+            "bias": -0.002023446205099856,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.549377443113189,
+            "mean_within_gw_ndcg10": 0.4200498550204784
+          }
+        },
+        "carryover": {
+          "all": {
+            "n": 698,
+            "rmse": 2.3561827980382093,
+            "mae": 1.329291643505847,
+            "bias": 0.13377127364319316,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.6495334045845426,
+            "mean_within_gw_ndcg10": 0.22909471203544055
+          },
+          "candidates": {
+            "n": 182,
+            "rmse": 2.6899075789476723,
+            "mae": 2.106747791734192,
+            "bias": 0.5277996765891969,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.29877399092334705,
+            "mean_within_gw_ndcg10": 0.4306565649765805
+          }
+        },
+        "official_origin": {
+          "all": {
+            "n": 698,
+            "rmse": 2.4054975240288403,
+            "mae": 1.475358166189112,
+            "bias": 0.21661891117478507,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.5253950254113796,
+            "mean_within_gw_ndcg10": 0.2555878365643649
+          },
+          "candidates": {
+            "n": 182,
+            "rmse": 2.673013280924732,
+            "mae": 1.7983516483516482,
+            "bias": -0.0664835164835165,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.29120354388734715,
+            "mean_within_gw_ndcg10": 0.33184023110728417
+          }
+        }
+      }
+    },
+    {
+      "gameweek": 3,
+      "listed": 709,
+      "candidates": 184,
+      "projection_seconds": 2.1129470421001315,
+      "reset_unique": 397,
+      "carryover_unique": 565,
+      "official_unique": 37,
+      "linked": 505,
+      "carryover_active": 505,
+      "official_replaced": 709,
+      "metrics": {
+        "reset": {
+          "all": {
+            "n": 709,
+            "rmse": 2.036190122336002,
+            "mae": 1.1908152553834266,
+            "bias": -0.0066186221514913214,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.7171373291876314,
+            "mean_within_gw_ndcg10": 0.2169799654396604
+          },
+          "candidates": {
+            "n": 184,
+            "rmse": 2.7022574516724434,
+            "mae": 1.8123188799425993,
+            "bias": -0.2563890491476181,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.5345001400125982,
+            "mean_within_gw_ndcg10": 0.30425840441225205
+          }
+        },
+        "carryover": {
+          "all": {
+            "n": 709,
+            "rmse": 2.063222901954973,
+            "mae": 1.2438080555293372,
+            "bias": 0.06665712733231384,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.6965851449926719,
+            "mean_within_gw_ndcg10": 0.2709963893744065
+          },
+          "candidates": {
+            "n": 184,
+            "rmse": 2.767649577522733,
+            "mae": 2.0733361541314075,
+            "bias": 0.21777329842477577,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.4333313702266869,
+            "mean_within_gw_ndcg10": 0.3668537493427389
+          }
+        },
+        "official_origin": {
+          "all": {
+            "n": 709,
+            "rmse": 2.3413466403478114,
+            "mae": 1.3135401974612129,
+            "bias": -0.013963328631875894,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.673877908624302,
+            "mean_within_gw_ndcg10": 0.20494533167034018
+          },
+          "candidates": {
+            "n": 184,
+            "rmse": 2.9414300721868636,
+            "mae": 1.9559782608695655,
+            "bias": 0.007065217391304351,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.5597509601350581,
+            "mean_within_gw_ndcg10": 0.3239091555712101
+          }
+        }
+      }
+    },
+    {
+      "gameweek": 4,
+      "listed": 738,
+      "candidates": 185,
+      "projection_seconds": 2.162076083943248,
+      "reset_unique": 436,
+      "carryover_unique": 591,
+      "official_unique": 65,
+      "linked": 507,
+      "carryover_active": 507,
+      "official_replaced": 738,
+      "metrics": {
+        "reset": {
+          "all": {
+            "n": 738,
+            "rmse": 1.9898485493235314,
+            "mae": 1.1465362892676316,
+            "bias": -0.05687787922126477,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.687113961242959,
+            "mean_within_gw_ndcg10": 0.4834405805124025
+          },
+          "candidates": {
+            "n": 185,
+            "rmse": 2.499420030147162,
+            "mae": 1.787744927446646,
+            "bias": -0.3506848791011249,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.6017236478406697,
+            "mean_within_gw_ndcg10": 0.6070817197792562
+          }
+        },
+        "carryover": {
+          "all": {
+            "n": 738,
+            "rmse": 2.0270064375395633,
+            "mae": 1.2020070416118502,
+            "bias": 0.00021579503354487566,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.6738066677580904,
+            "mean_within_gw_ndcg10": 0.4661897189581828
+          },
+          "candidates": {
+            "n": 185,
+            "rmse": 2.5698680946231467,
+            "mae": 2.0084245731731643,
+            "bias": 0.017254825233925374,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.5649102903641097,
+            "mean_within_gw_ndcg10": 0.5382497083364419
+          }
+        },
+        "official_origin": {
+          "all": {
+            "n": 738,
+            "rmse": 2.0755382623769636,
+            "mae": 1.1897018970189701,
+            "bias": -0.06504065040650407,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.6570370866517506,
+            "mean_within_gw_ndcg10": 0.4058994098075276
+          },
+          "candidates": {
+            "n": 185,
+            "rmse": 2.372169721834673,
+            "mae": 1.5886486486486486,
+            "bias": -0.14864864864864866,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.6870324790197311,
+            "mean_within_gw_ndcg10": 0.5503387929961416
+          }
+        }
+      }
+    },
+    {
+      "gameweek": 5,
+      "listed": 740,
+      "candidates": 185,
+      "projection_seconds": 2.180915166158229,
+      "reset_unique": 498,
+      "carryover_unique": 634,
+      "official_unique": 68,
+      "linked": 507,
+      "carryover_active": 507,
+      "official_replaced": 740,
+      "metrics": {
+        "reset": {
+          "all": {
+            "n": 740,
+            "rmse": 1.8292165678889218,
+            "mae": 1.0114577111827792,
+            "bias": 0.13070655551766142,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.7155108294505628,
+            "mean_within_gw_ndcg10": 0.29377155799103094
+          },
+          "candidates": {
+            "n": 185,
+            "rmse": 2.652976979546344,
+            "mae": 1.7090758890216027,
+            "bias": -0.09416827312817602,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.5829472257522208,
+            "mean_within_gw_ndcg10": 0.393979881747354
+          }
+        },
+        "carryover": {
+          "all": {
+            "n": 740,
+            "rmse": 1.8387278124251922,
+            "mae": 1.052070645653779,
+            "bias": 0.17289528746301583,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.7156032554425501,
+            "mean_within_gw_ndcg10": 0.27228611273843406
+          },
+          "candidates": {
+            "n": 185,
+            "rmse": 2.6900847437232245,
+            "mae": 1.8789093084958672,
+            "bias": 0.1538722073281591,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.5596292732224654,
+            "mean_within_gw_ndcg10": 0.3765496534763491
+          }
+        },
+        "official_origin": {
+          "all": {
+            "n": 740,
+            "rmse": 2.105629520042801,
+            "mae": 1.1348648648648647,
+            "bias": 0.14513513513513515,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.6864185676478339,
+            "mean_within_gw_ndcg10": 0.31563779163656736
+          },
+          "candidates": {
+            "n": 185,
+            "rmse": 2.8669505411508944,
+            "mae": 1.7875675675675675,
+            "bias": 0.1259459459459459,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.5988661214210775,
+            "mean_within_gw_ndcg10": 0.35711897175338797
+          }
+        }
+      }
+    },
+    {
+      "gameweek": 6,
+      "listed": 741,
+      "candidates": 185,
+      "projection_seconds": 2.1897597080096602,
+      "reset_unique": 498,
+      "carryover_unique": 633,
+      "official_unique": 59,
+      "linked": 507,
+      "carryover_active": 507,
+      "official_replaced": 741,
+      "metrics": {
+        "reset": {
+          "all": {
+            "n": 741,
+            "rmse": 1.902568206613196,
+            "mae": 0.9892000820118567,
+            "bias": 0.1072824426465658,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.723389930789152,
+            "mean_within_gw_ndcg10": 0.37420870807706225
+          },
+          "candidates": {
+            "n": 185,
+            "rmse": 2.406726825778257,
+            "mae": 1.5895382222297223,
+            "bias": 0.11578951044796686,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.5441995828834937,
+            "mean_within_gw_ndcg10": 0.5389808264706618
+          }
+        },
+        "carryover": {
+          "all": {
+            "n": 741,
+            "rmse": 1.9005860644909736,
+            "mae": 1.0059478928128853,
+            "bias": 0.13026894692853075,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.7243051182936074,
+            "mean_within_gw_ndcg10": 0.4254963526900772
+          },
+          "candidates": {
+            "n": 185,
+            "rmse": 2.411245910573735,
+            "mae": 1.6624711805553298,
+            "bias": 0.24223004487013233,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.5426335440827746,
+            "mean_within_gw_ndcg10": 0.557454218211019
+          }
+        },
+        "official_origin": {
+          "all": {
+            "n": 741,
+            "rmse": 2.038310538547048,
+            "mae": 1.0423751686909584,
+            "bias": 0.04831309041835356,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.7100574917488827,
+            "mean_within_gw_ndcg10": 0.4825670808991
+          },
+          "candidates": {
+            "n": 185,
+            "rmse": 2.640137179073149,
+            "mae": 1.668648648648649,
+            "bias": 0.28162162162162163,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": 0.5559466769861284,
+            "mean_within_gw_ndcg10": 0.5325548561749837
+          }
+        }
+      }
+    }
+  ],
+  "pooled": {
+    "reset": {
+      "all": {
+        "n": 4311,
+        "rmse": 2.094540731995095,
+        "mae": 1.222063475847387,
+        "bias": 0.05438300780642567,
+        "ranking_weeks": 6,
+        "mean_within_gw_spearman": 0.597122485712143,
+        "mean_within_gw_ndcg10": 0.3035267765897162
+      },
+      "candidates": {
+        "n": 1102,
+        "rmse": 2.6688868752217583,
+        "mae": 1.7943317689130551,
+        "bias": -0.28481545605431624,
+        "ranking_weeks": 6,
+        "mean_within_gw_spearman": 0.46895831777956704,
+        "mean_within_gw_ndcg10": 0.42187045884146296
+      }
+    },
+    "carryover": {
+      "all": {
+        "n": 4311,
+        "rmse": 2.099757050447911,
+        "mae": 1.2339268139656865,
+        "bias": 0.1043914203615853,
+        "ranking_weeks": 6,
+        "mean_within_gw_spearman": 0.6504708215157348,
+        "mean_within_gw_ndcg10": 0.3302280218687329
+      },
+      "candidates": {
+        "n": 1102,
+        "rmse": 2.6880970035827305,
+        "mae": 1.9980734119175767,
+        "bias": 0.19965192938616033,
+        "ranking_weeks": 6,
+        "mean_within_gw_spearman": 0.425253002778613,
+        "mean_within_gw_ndcg10": 0.43989746471444807
+      }
+    },
+    "official_origin": {
+      "all": {
+        "n": 4311,
+        "rmse": 2.21837239011819,
+        "mae": 1.2741127348643009,
+        "bias": 0.07156112270934818,
+        "ranking_weeks": 6,
+        "mean_within_gw_spearman": 0.6192258133340087,
+        "mean_within_gw_ndcg10": 0.31826657374098666
+      },
+      "candidates": {
+        "n": 1102,
+        "rmse": 2.7333193159158373,
+        "mae": 1.7929219600725954,
+        "bias": -0.03321234119782213,
+        "ranking_weeks": 6,
+        "mean_within_gw_spearman": 0.5042001442355032,
+        "mean_within_gw_ndcg10": 0.4039467488403707
+      }
+    }
+  },
+  "model": {
+    "version": "standing-core-ewdc-origin-v1",
+    "training_scope": "2020-21..2024-25 only; no2025labels fit",
+    "training_rows": 133325,
+    "trained_through": "2025-05-25T18:00:00+00:00",
+    "environment": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "sklearn": "1.9.1"
+    },
+    "approval": "research reference, not savedchampion reproduction"
+  },
+  "model_sha256": "87f2da7694733be054b984669bc25b72df7f7b18f12f1e762ce9ab2302d321dc",
+  "source_provenance": [
+    {
+      "origin": 1,
+      "bootstrap": "eee31c9ece4864963bff4d88543ac5d440ca4d574ec89512e680d6e697f9a086",
+      "calendar": "f3a8a7df2d9d41c63b31d761bf094b8bd6c3eec034c07a5a55452fd08bfbdecf",
+      "forecast_sha256": "5b709089c6fca5f6d1d59325b7cc007a4c4ad8e4634e78cfd634cd180683b255"
+    },
+    {
+      "origin": 2,
+      "bootstrap": "4fc61f6f89d925af550887c05eeb84648d9860cf974ddee113306a89a1d36f51",
+      "calendar": "8c4f54bbb1d7f28a3d01c5b36081e28b3092a06f70dd0263c0f4a9468641ea96",
+      "forecast_sha256": "2e1cb9ea17e21947088ae04201ac11117bad26fb3dc7e3f69e46c5271f586a2d"
+    },
+    {
+      "origin": 3,
+      "bootstrap": "02366ddb44914b5a8f846af64886a657d5dd6fa9115b77b990112d647d4d37c0",
+      "calendar": "54db0535292a1e067eae3941122db01ed9fba2218684a01ce426c1e5df8e1335",
+      "forecast_sha256": "d26f6ac7e1997f4e1455107eac64ada7ea1457136071ffdbba745d711b03dfcb"
+    },
+    {
+      "origin": 4,
+      "bootstrap": "0bbfb0d3a5f580ca7ada903c3d9ad25b1036ecc258160eb2b415715c5c03697a",
+      "calendar": "89b1ab97ba0a977d8bcc93d3ca869e851fe30ec3d99f9c81f3fb4d6a8a2bd842",
+      "forecast_sha256": "e93dca98e2b2894fd999f562e594ee8f30397851c5177a2ca7090ba85d1fb288"
+    },
+    {
+      "origin": 5,
+      "bootstrap": "7d7a0bcb8206f816b772d9d354d0f4690cdfa52c271f5f938b07ddfbc5e04084",
+      "calendar": "62653dac52e44ec8c38614cbd594e9789c376edcb4d563e60d1b2e66e7ab5219",
+      "forecast_sha256": "1df4645a469b7bc35e6d8d654acab0aab6a2643803e5547e55b9ae23bf86b1ff"
+    },
+    {
+      "origin": 6,
+      "bootstrap": "d24eb9d137739682a71090d4abf7b9c49245624f5ffab316c127781ebe514838",
+      "calendar": "b079d82b1e6ef6b34a972fc5b27eeb3e07cae3004451423aa61789b4f115a714",
+      "forecast_sha256": "966a848b089d5b54601f58312ce1cdbfb4d7943de76bbb03832c310d3f6f8ae0"
+    }
+  ],
+  "canonical_hash": "db737482eb814ca7d18a21d520c5ab3f4df1f6b021d61e4a700f0f45bf04bbc9",
+  "seconds": 21.4627462499775,
+  "fit_seconds": 0.0,
+  "new_fit": false,
+  "model_promotion": false,
+  "limitations": [
+    "Mutable corrected historical results",
+    "Publisher timestamps/captureclaims not independentcertificates",
+    "Official EP onlynextGW; identityarchive endseasonmaps only",
+    "No earlyGW Dastan/OpenFPLretainedgrids; externalfullseasonE pending",
+    "Priorposition/role/club/scoring/fitness uncertainty",
+    "SixGWs reused audit, no significance/seasonclaim; freeze ordering not independent realtimewitness"
+  ],
+  "initial_selection": [
+    {
+      "arm": "reset",
+      "origin_only_points": 36.0,
+      "spent_tenths": 1000,
+      "hits": 0,
+      "planner_seconds": 0.307647000066936,
+      "proven_optimal_restricted_pool": true,
+      "scope": "GW1 only, fresh capital, no chips; not season utility"
+    },
+    {
+      "arm": "carryover",
+      "origin_only_points": 47.0,
+      "spent_tenths": 1000,
+      "hits": 0,
+      "planner_seconds": 0.23944104090332985,
+      "proven_optimal_restricted_pool": true,
+      "scope": "GW1 only, fresh capital, no chips; not season utility"
+    },
+    {
+      "arm": "official_origin",
+      "origin_only_points": 52.0,
+      "spent_tenths": 1000,
+      "hits": 0,
+      "planner_seconds": 1.5227563329972327,
+      "proven_optimal_restricted_pool": true,
+      "scope": "GW1 only, fresh capital, no chips; not season utility"
+    }
+  ],
+  "supervision": {
+    "status": "completed",
+    "elapsed_seconds": 22.724557083798572,
+    "peak_observed_rss_bytes": 656818176,
+    "peak_observed_project_bytes": 733573716,
+    "minimum_observed_free_bytes": 138298961920,
+    "limits": {
+      "threads": 2,
+      "seconds": 900,
+      "memory_mib": 4096,
+      "poll_seconds": 0.25,
+      "max_project_mib": 2048,
+      "max_growth_mib": 256,
+      "min_free_mib": 5120,
+      "storage_poll_seconds": 5
+    }
+  },
+  "independent_audit": {
+    "status": "passed",
+    "independent_carryover_horizon_cells": 25866,
+    "origins": 6,
+    "metrics_and_actual_alignment": true,
+    "GW1_failed_run_02_03_forecasts_actions_identical": true,
+    "initial_scores_reconciled": true,
+    "champion_hash_unchanged": true,
+    "pilot_source": "233c4dc4d9ba611b4ce220e093dd04b646ca5ffd",
+    "parameters_changed_after_outcomes": false,
+    "overall_goal_complete": false
+  },
+  "failed_harness_runs": [
+    {
+      "run": 1,
+      "reason": "Missing fixture-audit columns before forecasts"
+    },
+    {
+      "run": 2,
+      "reason": "Incorrect settlement-call signature after GW1 forecast/action freeze"
+    },
+    {
+      "run": 3,
+      "reason": "Missing season grouping key in metric frame"
+    }
+  ],
+  "interpretation": "Opening differentiation and GW1 diagnostic improve, six-GW pooled errors do not; no reference selected or promoted. Carry all declared arms into season research, without quietly treating weaker pooled error as acceptable forecaster qualification."
+}

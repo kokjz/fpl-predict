@@ -77,3 +77,19 @@ def test_season_parsing_not_lexicographic_guess():
     assert previous_season('2025-26')=='2024-25'
     for value in ['2025-27','test','25-26']:
         with pytest.raises(ValueError):previous_season(value)
+
+
+def test_observed_dc_is_not_replaced_with_missing_award_prior():
+    b,m,f,h,r=inputs();h.loc[h.code.eq(333),'dc_hit']=1.
+    q,_=run(b,m,f,h,r)
+    assert q.values()[3,9]==pytest.approx((10.+4.)/3.)
+
+
+def test_provenance_cannot_replace_base_hash_or_hide_later_base_source():
+    b,m,f,h,r=inputs()
+    b=Horizon.create(m,[dict(z) for z in b.forecasts],trained_through=b.provenance['trained_through'],
+        source_as_of=m.as_of,feature_cutoff=m.as_of,model_id='fake',source_hashes={'bootstrap':'original'})
+    with pytest.raises(ValueError,match='Conflicting'):
+        run(b,m,f,h,r,source_hashes={'bootstrap':'different'})
+    with pytest.raises(ValueError,match='source'):
+        apply(b,m,f,h,r,source_as_of='2025-08-15T11:00Z')
