@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "scope": "Experimental deterministic multiGWplanner; no chips in this package, no newforecasterpromotion",
+  "horizon": "SixGWs default; supports1\u20138contiguousGWs clippedatGW38; laterpredeclared4/6/8ablation, no configurationsearch onaudit",
+  "objective": "sum XImeans+captainmean+0.1reserve means\u22124paidtransfers\u22120.0001churn; terminal1point perFT and0.05last2GWmean perheldplayer, bothterminalterms0atGW38",
+  "terminal_values": "Fixed illustrative resourceproxies, not learned gains or calibrated FPLpoint values",
+  "finances": "Originquotesconstant, separate original/new purchase lots, halfprofit selling, integercash/FT, topups perseason; no futureprices used",
+  "pool": "Allowned+fullmarket feasible oneGWbaseline+top12 byhorizonXP perposition+cheapest6; exact optimum applies onlythisrestrictedpool and objective",
+  "execution": "Reconcile everyhypothetical action withseasonstateengine; commitonlyfirst action, lateractions provisional; source/news updates cause complete replan",
+  "time": "30stotalnominal default, maximum120s; baseline\u22645s and remainingbudget toHiGHS;2threads; validate integralfeasible incumbents and recordgap; no validopeningbaselinefailsclosed, ownedholdfallbackwhenpossible",
+  "forecast": "Originform androster unchanged across targets; onlyorigin-knowncalendar; training completed beforeorigin; no laterrealisedfeatures/news/fixturechanges; zero meansno origin-knownfixture, not guaranteedfutureblank",
+  "historical_pilot": "One fixed standingcore architecture fit on2020-21..2024-25, prior-season-only; DC uses asof EW rate because pre2025rules lack observations. Named standing-core/EWDC reference, not savedchampion reproduction. No fitting2025GW19 thenbackcasting",
+  "pilot_origins": [
+    1,
+    20,
+    38
+  ],
+  "pilot_panels": "GW1freshinitialbudget;GW20/38one neutral affordable snapshot-based squad each, fixedsource-onlyseed20261015. Compare frozenoneGW/multiGWobjectives, no realisedseasonpoints",
+  "nonclaims": [
+    "fullseasonperformance",
+    "externalmodelseasonparity",
+    "nativeoriginalreproduction",
+    "exactexpectedautosubs",
+    "futureprice/arbitraryinjurycertainty",
+    "modelorplanneradoption"
+  ],
+  "sources_checked": {
+    "date": "2026-10-16 Asia/Singapore",
+    "milp": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.milp.html",
+    "reference_planner": "https://github.com/solioanalytics/open-fpl-solver"
+  }
+}
