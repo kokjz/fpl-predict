@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "scope": "Fixed B1 cold-start research references, no champion adoption or season-utility claim",
+  "arms": ["standing-core-ewdc-origin-v1 season-reset control", "stable-code carryover-v1", "carryover-official-origin-v1"],
+  "carryover": "Immediately previous season only; last24 compatible-position fixture records; match half-life4; shrinkage2 toward reset mean per fixture; alpha=max(0,1-current_completed_records/6); no new fitted feature distribution",
+  "identity": "Deadline bootstrap id-to-stable-code links; prior archive id-to-code is identity-only, never end-season prices/status/aggregates; no cross-season club ID joins",
+  "scoring": "Previous core points plus actual DC where observed, otherwise fixed0.12 outfield/zeroGK award prior. Other scoring/club/role changes remain approximations",
+  "official": "Pinned predeadline ep_next replaces origin GW total only; blanks remain0; doubles not multiplied; later targets remain carryover/reset. No claim official EP calibrated",
+  "pilot": "Reuse fixed prior-season-only B reference model, no new fit. Origins1 through6, same pinned bootstrap/calendar/result sources. Freeze full6GW grids but score only origin one-GW totals after construction; compare all listed and prior-only candidate group (prior meanminutes>=45, >=3 prior records), never eventual minutes eligibility",
+  "selection_diagnostic": "Initial £100m15player squad+captain/bench decisions using same frozen6GW financial planner per arm; score just originGW1 once with season engine. No independent-week resets presented as season utility",
+  "metrics": "Pooled and per-GW RMSE/MAE/bias, predeadline eligible group, source coverage, cross-section variation and originGW1 realised neutral-squad diagnostic. All arms disclosed; no post-outcome choice/search/promotion",
+  "uncertainty": "Six earlyGWs, reusedhistorical season, mutable archive/capture claims and no exact news forGW1–3. Not untouched test, robust full-season evidence or comparison against native externalsystems",
+  "external": "Official captured EP is a matched as-of external projection comparator. Dastan/OpenFPL previously retained late-season grids are inapplicable here; matched fullseason refits deferredE, no backcasting trained-throughGW19 models",
+  "resources": "2CPUthreads,900s,4GiBRSS,project2GiB/growth256MiB/free>=5GiB; no GPU or downloads",
+  "research_date": "2026-10-16",
+  "sources": ["https://scikit-learn.org/stable/modules/cross_validation.html", "https://github.com/vaastav/Fantasy-Premier-League"]
+}
