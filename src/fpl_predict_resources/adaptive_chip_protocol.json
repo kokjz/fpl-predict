@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "scope": "Experimental shared-plan scenarios and heuristic season chip calendar; code merge does not adopt a policy or promote a forecaster",
+  "fixed_schedule_solver": "WC permanent, FH temporary with original ledger/cash restored, FT retained through WC/FH, TC extra captain multiplier, BB all15 expected means; validate every action with state engine",
+  "search": "Nochip baseline then earliest-expiring-token single-slot probes, additive DPassignment across detailed+coarse calendar, combined schedule solve, one bounded coordinate pass. Re-evaluate actual combined objective; keep best tested feasible candidate. No global chip optimality claim",
+  "budget": "Default60s/max120s,2s per fixed-schedule solve,40trials/max80,2CPUthreads; validated solver incumbent or legal baseline fallback with gap reported",
+  "coarse": "Constant outside detailed horizon proxies WC12/FH8/TC5/BB10; explicit uncalibrated assumptions, overridable. Joint calendar enforces token windows,1chip/GW, expiry/consecutiveFH. Unsupported future tokens blocked by caller's bootstrap audit. No fabricated far-horizon precise forecasts",
+  "scenarios": "1–3 complete same-origin grids, explicit positive weights sum1; common actions for ALL detailed GWs, not just immediate. Linear shared expected objective and per-scenario diagnostics. No future information revelation/recourse oracle; replan at each actual next deadline. No learned joint probabilities, exact expected autosubs or captain/vice nonappearance adjustment in objective",
+  "manual_evidence": "Optional cell-specific XPmultiplier0–2/reason/HTTPSsource/available_at<=origin. Explicit sensitivities only, not inferred calibrated probabilities or verified recovery dates. Fixture changes require new origin-known calendar; hypothetical changes may be supplied as named grid sensitivities",
+  "historical_pilot": "Reuse frozen B inputs atGW20/GW38; neutralstates, no new fit. Compare samegrid no-chip plan with bounded adaptive chipplan and one sourced manual downside sensitivity. Fixed60s/2s/40trials; use default coarse assumptions. No realised points in mechanical stage. Full38GWseason scoring followsD, matchedexternalforecast/planner comparisonsE",
+  "integrity": "Never backcast futuretrainedmodel, no outcome fields in decisions; no future prices; preserve approved champion/manual weekly overrides. Source/calendar/news/unsupported-chip audit required from producer",
+  "verification": "Independent exhaustive2GW toy decisions for TC/BB,WC/BB,FH/TC; FHlot/terminal/FT restoration; calendar expiry/sharedslot/sequence/blockedtokens; scenario timestamp/coverage/weightedobjective; timeout/legalbaseline and installed CLI",
+  "resources": "Supervised900s/4GiBRSS/project2GiB/growth256MiB/free5GiB; no new downloads/GPU required",
+  "sources_checked_2026_10_16": ["https://www.premierleague.com/en/news/4679879/whats-happening-with-fpl-chips-in-202627", "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.milp.html"]
+}
