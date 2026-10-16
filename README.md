@@ -25,6 +25,12 @@ It is a forecasting and decision-support engine, not a complete season optimiser
 
 Official injury percentages are retained as observations, not assigned start probabilities. A [controlled availability study](docs/INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md) reduced candidate appearance Brier error by 20.6% against the full incumbent method. A subsequent [conditional-return and selection study](docs/CONDITIONAL_SELECTION_RESULTS_2026-10-16.md) explicitly integrated those probabilities: its research challenger improved audit points RMSE by 1.23% and MAE by 0.73% versus the incumbent reference, but had lower ranking quality. The new expected bench-selection policy did not establish a realised points gain, so **v1.0.0 remains approved**. These are reused historical error measurements, not percentages of FPL points gained. The earlier [text experiment](docs/NEWS_AVAILABILITY_RESULTS_2026-10-16.md) found no extra Brier benefit from combining news text with structured labels.
 
+The latest [forecaster-only qualification](docs/FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md) tests adoption independently of the expected-bench
+selector. Older-season development is nearly neutral (0.0056% RMSE gain), below
+the existing qualification threshold. The candidate retains its 2025 RMSE gain
+and small owned-squad gain, but scores fewer points in reset and rolling-transfer
+comparisons. It is saved as a research artifact; **v1.0.0 remains approved**.
+
 The [controlled integration workflow](docs/conditional_selection.md) separates conditional-return prediction, appearance probabilities and legal bench/captain decisions. It is research tooling and does not replace the approved model or production selector.
 
 The optional [participation audit](docs/participation_audit.md) checks frozen point-risk diagnostics and predeadline evidence, including sourced club/press reports, without applying overrides. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).
@@ -259,4 +265,4 @@ A small credible improvement can justify model replacement. The latest condition
 forecaster improves historical point errors, while its expected-bench selector
 does not establish better realised decisions. Its failed fixed ranking gate is
 not proof that the forecaster is inferior; see the [targeted adoption assessment](docs/CONDITIONAL_SELECTION_RESULTS_2026-10-16.md#can-a-small-improvement-justify-replacement)
-for uncertainty and remaining production qualification.
+for uncertainty; the subsequent [qualification report](docs/FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md) records the completed adoption assessment.

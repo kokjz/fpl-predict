@@ -234,3 +234,13 @@ ordinary maintenance, separate from this completed historical package.
 Sources checked 16October2026: [official FPL management](https://www.premierleague.com/en/news/2174899/fpl-basics-managing-your-team)
 and [chronological validation guidance](https://scikit-learn.org/stable/modules/cross_validation.html#time-series-split).
 The preceding reports retain full source-publication and external-method lineage.
+
+
+## Subsequent forecaster qualification — 16 October 2026
+
+The [forecaster-only qualification](FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md)
+saves/reloads the fixed conditional candidate and tests current-input compatibility.
+Older chronological development is nearly neutral; same-policy retained external
+comparisons preserve the error advantage, but reset/rolling points favour the
+standing reference. No new expected-selector adoption or model promotion occurs.
+This follow-up does not rewrite the results or progression rules above.

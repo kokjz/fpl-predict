@@ -35,3 +35,11 @@ Only the declared new-expected finalist was considered; no post-test promotion o
 new-mean. Existing promotion gates and approved v1.0.0 remain unchanged. All
 completed-window results, sensitivities, failed admission and superseded replay
 are retained. Historical data completes this package; no future-match wait.
+
+
+The [forecaster-only qualification](FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md)
+uses standing development/multiseason/current/integrity checks, with NDCG a
+separately reported diagnostic. Older development gains only0.0056%, below the
+existing0.5% requirement. Untested expanded gates are not passed. Current API
+compatibility is not current-season accuracy evidence. Owned points improve
+slightly while reset/rolling totals fall; no artifact or selector promotion.
