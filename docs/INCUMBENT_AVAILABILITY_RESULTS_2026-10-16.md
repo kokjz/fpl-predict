@@ -160,3 +160,14 @@ Methodological grounding: [scikit-learn calibration](https://scikit-learn.org/st
 and [temporal validation](https://scikit-learn.org/stable/modules/cross_validation.html#time-series-split),
 checked 16 October 2026. Source lineage and the original-text negative result are in
 [the earlier news study](NEWS_AVAILABILITY_RESULTS_2026-10-16.md).
+
+
+## Conditional integration follow-up — 16 October 2026
+
+[The controlled four-arm integration/selection study](CONDITIONAL_SELECTION_RESULTS_2026-10-16.md)
+now isolates old/new appearance probabilities with one shared conditional-return
+model and current/expected bench selection. Points RMSE and MAE improve versus
+the historical incumbent reference; ranking and the fixed combined selector do
+not qualify. Matched external error/common-mean-policy results are reported,
+including an observed but uncertain RMSE win over the Dastan adaptation. Original
+system comparisons in this document remain unchanged. No model is promoted.
