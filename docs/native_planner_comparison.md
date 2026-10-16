@@ -22,6 +22,23 @@ inner-planner callable and explicit settings. The replay still writes each actio
 before accessing evaluator outcomes. These interfaces alone do not execute or
 qualify an external solver.
 
+The standalone `native_solver_worker.py` supplies a persistent, bounded JSON-line
+interface for an explicitly selected optional Python 3.14 runtime. It verifies
+all files in the [source recipe](../src/fpl_predict_resources/native_solver_recipe.json)
+before executing the separately obtained solver. It imports no forecasting
+dependencies merely on import. Request validation rejects outcome fields,
+ambiguous forecasts, invalid origins and illegal chip schedules. Network calls
+are refused; external prints go to the private diagnostic stream. Runtime/source
+metadata is emitted before requests. The parent controller and full replay
+admission are still required before any historical comparison.
+
+Two guarded syntax-tree substitutions adapt the known free-transfer reset and
+the Free Hit budget. Explicit variable bounds prevent buying unavailable
+registrations while allowing existing holdings to be retained. Model construction
+is deducted from each solver time limit; actual limits and unknown bounds are
+reported. Models are cleared between requests. Optional solver code and binary
+dependencies are obtained separately and are not bundled in this repository.
+
 Open FPL Solver's pinned prepared-input API is the first admitted implementation
 target. Its optional Python 3.14/HiGHS runtime is separate from the forecasting
 engine. Source hashes, network refusal, legal-action validation and sampled

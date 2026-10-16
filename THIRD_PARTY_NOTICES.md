@@ -13,7 +13,16 @@ Dirichlet update (https://github.com/alan-turing-institute/AIrsenal), copyright(
 The Alan Turing Institute. Its team-goal and residual-points layers are separate
 adaptations, not the original AIrsenal system.
 
-These works use the MIT License. The notice below is retained for their feature
+The optional native-planner interface targets separately obtained
+[Open FPL Solver](https://github.com/solioanalytics/open-fpl-solver/tree/ec65f5e2b2be34441cb4b2a9efafea1ec0fe3b79).
+Its source and binaries are not bundled. Its [own license](https://github.com/solioanalytics/open-fpl-solver/blob/ec65f5e2b2be34441cb4b2a9efafea1ec0fe3b79/LICENSE)
+applies independently; this repository's MIT license does not relicense it or
+the separately installed optional packages. The adapter's source hashes and
+explicit rule/financial compatibility changes distinguish it from the untouched
+external manager. No original-system performance equivalence is implied.
+
+The OpenFPL, Dastan and AIrsenal works listed above use the MIT License.
+The notice below is retained for their feature
 definitions. Source-code licensing does not grant rights to redistribute
 third-party FPL/Understat/raw snapshot datasets; no such datasets are included.
 

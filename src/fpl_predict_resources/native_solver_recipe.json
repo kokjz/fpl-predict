@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/solioanalytics/open-fpl-solver",
+  "revision": "ec65f5e2b2be34441cb4b2a9efafea1ec0fe3b79",
+  "source_sha256": {
+    "dev/solver.py": "23d567bccc24ba8693b8cef23d8b41c375c6bc6a586b47eff8247faf175b2416",
+    "dev/data_parser.py": "45f283191357314113048eb8d71c16ae16d38a9f21f25b0a264ddc6f6b7d60e9",
+    "LICENSE": "d31d20f625c15c2442faeb6e9ec3c709b1c1be8ab46ebe7f4c91b37c96c9203a",
+    "utils.py": "12f02695207f37a105dc35e79bf7455f71f8c1cc8f97088ff9c806f8a709f346",
+    "paths.py": "98beea32115e459d864a87f6f34043e9a2d933a3d1d29471f6d2ce535db95c0c"
+  },
+  "highspy_version": "1.15.1",
+  "python_minor": [
+    3,
+    14
+  ],
+  "season": "2025-26",
+  "adaptation": "Known FT resets, registration eligibility, exact retained-original FH profit; common fixed chip schedule/objective. External code is separately obtained, never bundled or relicensed by this package."
+}
