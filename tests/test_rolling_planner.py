@@ -27,6 +27,29 @@ def setup(gw=36,H=3):
 def config(**kwargs):return Settings(seconds=10.,bench_weight=0.,terminal_ft_value=0.,terminal_squad_weight=0.,**kwargs)
 
 
+def test_shared_candidate_pool_matches_previous_selection_and_retains_unbuyable_owned():
+    from rolling_planner import make_baseline,candidate_players
+    import pandas as pd
+    s,m,h=setup();m=Market.create(m.season,m.gameweek,m.deadline,m.as_of,[dict(p,can_buy=p['id']!=15) for p in m.players]);cfg=Settings(top_per_position=1,cheap_per_position=1,baseline_mode='feasibility')
+    baseline,_=make_baseline(s,m,h,cfg);pool=set(dict(s.holdings));xp=h.values()
+    for pos in range(1,5):
+        f=pd.DataFrame([dict(p,horizon_xp=sum(xp[g,p['id']] for g in h.gameweeks)) for p in m.players if p['position']==pos and p['can_buy']])
+        pool.update(f.sort_values(['horizon_xp','id'],ascending=[False,True]).head(1).id)
+        pool.update(f.sort_values(['price_tenths','id']).head(1).id)
+    assert {p['id'] for p in candidate_players(s,m,h,cfg,baseline)}==pool and 15 in pool
+
+
+def test_feasibility_baseline_never_runs_timed_one_week_selector(monkeypatch):
+    import rolling_planner
+    from rolling_planner import make_baseline
+    def forbid(*a,**k):raise AssertionError('Timed selection is forbidden for the shared feasibility baseline')
+    monkeypatch.setattr(rolling_planner,'optimise',forbid)
+    s,m,h=setup(gw=1,H=2);s=State(m.season);cfg=Settings(baseline_mode='feasibility')
+    b,_=make_baseline(s,m,h,cfg);assert len(b['ledger'])==15
+    actions,r=plan(s,m,h,cfg);prepare(s,m,actions[0]);assert 'deterministic' in r['baseline']
+    with pytest.raises(ValueError,match='baseline mode'):Settings(baseline_mode='select-best-outcome')
+
+
 def test_common_opening_membership_does_not_close_future_transfer_market():
     s,m,h=setup(gw=1,H=3);s=State(m.season)
     h=Horizon.create(m,[dict(v,expected_points=100. if v['id']==16 else v['expected_points']) for v in h.forecasts],**dict(h.provenance))

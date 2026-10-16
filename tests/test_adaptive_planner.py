@@ -6,6 +6,20 @@ from season_engine import prepare
 from test_rolling_planner import setup,config
 
 
+def test_inner_planner_receives_shared_origin_scenarios_schedule_and_budget():
+    from rolling_planner import plan,Settings
+    calls=[];s,m,h=setup(gw=20,H=2)
+    def inner(state,market,mean,cfg,**kwargs):
+        assert state==s and market==m and mean.origin==h.origin and mean.as_of==h.as_of
+        assert cfg.baseline_mode=='feasibility' and cfg.seconds<=.5
+        calls.append(dict(kwargs));return plan(state,market,mean,cfg,**kwargs)
+    cfg=Settings(seconds=5.,baseline_mode='feasibility')
+    actions,r=plan_adaptive(s,m,[('same',1.,h)],settings=cfg,budget=Budget(seconds=5.,solve_seconds=.5,max_trials=6),inner_planner=inner)
+    assert calls and all('chip_schedule' in c and 'opening_ids' in c for c in calls)
+    prepare(s,m,actions[0]);assert r['scenario_objectives']['same']==pytest.approx(r['objective'])
+    with pytest.raises(ValueError,match='callable'):plan_adaptive(s,m,[('same',1.,h)],inner_planner='provider')
+
+
 def test_calendar_assigns_each_chip_once_and_respects_expiry_consecutive_fh():
     s,_,_=setup(gw=18,H=1)
     gains={('3xc',1,18):10.,('bboost',1,18):9.,('3xc',1,19):8.,('bboost',1,19):2.,('freehit',20,20):30.}

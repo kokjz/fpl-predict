@@ -39,7 +39,7 @@ def forecast(market,spec,horizon):
     return Horizon.create(market,[dict(v) for v in h.forecasts if v['gameweek']<=end],**dict(h.provenance))
 
 
-def run(decisions,outcomes,directory,*,policy=None,opening_ids=None):
+def run(decisions,outcomes,directory,*,policy=None,opening_ids=None,settings=None,inner_planner=None):
     """Write action before settlement for all38GWs, keep all state and chips.
 
     decisions contains market/forecast/blocked_tokens, outcomes is a distinct
@@ -66,8 +66,10 @@ def run(decisions,outcomes,directory,*,policy=None,opening_ids=None):
             # retain access to the full market, not an artificially closed roster.
         first_ids=opening_ids if market.gameweek==1 else None
         if cfg.chips:
-            proposed,report=plan_adaptive(state,market,[('admitted',1.,h)],settings=Settings(),budget=Budget(cfg.seconds,cfg.solve_seconds,cfg.max_trials),blocked=[tuple(v) for v in spec['blocked_tokens']],opening_ids=first_ids)
-        else:proposed,report=plan(state,market,h,Settings(seconds=cfg.solve_seconds),opening_ids=first_ids)
+            proposed,report=plan_adaptive(state,market,[('admitted',1.,h)],settings=settings or Settings(),budget=Budget(cfg.seconds,cfg.solve_seconds,cfg.max_trials),blocked=[tuple(v) for v in spec['blocked_tokens']],opening_ids=first_ids,inner_planner=inner_planner)
+        else:
+            solve_inner=plan if inner_planner is None else inner_planner
+            proposed,report=solve_inner(state,market,h,replace(settings or Settings(),seconds=cfg.solve_seconds),opening_ids=first_ids)
         action=proposed[0];prepared=prepare(state,market,action)
         record=dict(gameweek=market.gameweek,inputs_as_of=market.as_of,state_before=asdict(state),
             forecast_provenance={**dict(h.provenance),'source_hashes':dict(h.provenance['source_hashes'])},
@@ -83,6 +85,7 @@ def run(decisions,outcomes,directory,*,policy=None,opening_ids=None):
         final_state=asdict(state),net_points=state.total_points,hits=sum(v['hits'] for v in rows),transfers=sum(v['transfers'] for v in rows[1:]),
         chips=[dict(gameweek=v['gameweek'],name=v['chip']) for v in rows if v['chip']],seconds=time.monotonic()-start,
         budget_exhausted_origins=sum(bool(v.get('budget_exhausted',False)) for v in logs),
+        planner_settings=asdict(settings or Settings()),
         scope='Historical38GWcontinuousmanagement with origin quotes and official PGW outcomes; not prospective evidence or full-system promotion')
     with (directory/'summary.json').open('x') as stream:json.dump(summary,stream,indent=2,allow_nan=False)
     return summary

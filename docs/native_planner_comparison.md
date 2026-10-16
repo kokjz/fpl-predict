@@ -12,6 +12,16 @@ candidate procedure, point objective and resource budgets. This measures the
 inner planner under a controlled policy, rather than an original external
 manager's complete forecasting and chip strategy.
 
+`rolling_planner.make_baseline` and `candidate_players` expose the shared
+procedure. `Settings(baseline_mode="feasibility")` uses the held roster or a
+minimum-cost opening roster without a timed point-selection seed. The default
+`"one_week"` mode preserves the existing planner behaviour. Neither mode fixes
+the optimiser's squad; only an explicit common opening fixes the first period.
+`plan_adaptive(..., inner_planner=...)` and `season_benchmark.run` accept a trusted
+inner-planner callable and explicit settings. The replay still writes each action
+before accessing evaluator outcomes. These interfaces alone do not execute or
+qualify an external solver.
+
 Open FPL Solver's pinned prepared-input API is the first admitted implementation
 target. Its optional Python 3.14/HiGHS runtime is separate from the forecasting
 engine. Source hashes, network refusal, legal-action validation and sampled

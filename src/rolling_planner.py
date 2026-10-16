@@ -23,12 +23,14 @@ class Settings:
     terminal_squad_weight:float=.05
     churn_cost:float=.0001
     use_baseline_cut:bool=True
+    baseline_mode:str='one_week'
 
     def __post_init__(self):
         if not np.isfinite([self.seconds,self.bench_weight,self.terminal_ft_value,self.terminal_squad_weight,self.churn_cost]).all() or not 0<self.seconds<=120:raise ValueError('Invalid bounded solver settings')
         if not 0<=self.bench_weight<=1 or min(self.terminal_ft_value,self.terminal_squad_weight,self.churn_cost)<0:raise ValueError('Invalid objective weights')
         if type(self.top_per_position) is not int or type(self.cheap_per_position) is not int or min(self.top_per_position,self.cheap_per_position)<1:raise ValueError('Invalid pool limits')
         if type(self.use_baseline_cut) is not bool:raise ValueError('Invalid baseline cut setting')
+        if self.baseline_mode not in ('one_week','feasibility'):raise ValueError('Invalid baseline mode')
 
 
 def finite_or_none(value):
@@ -86,6 +88,34 @@ def _fallback(state,market,horizon,baseline,chips=None):
     return actions
 
 
+def make_baseline(state,market,horizon,cfg,opening_ids=None):
+    """Shared feasible baseline; the optional mode avoids a timed pool seed."""
+    old=dict(state.holdings);fixed=set(opening_ids) if opening_ids is not None else None
+    by=market.indexed()
+    if fixed is not None and (state.gameweek!=1 or old or len(opening_ids)!=15 or len(fixed)!=15 or not fixed<=set(by) or not all(type(i) is int and by[i]['can_buy'] for i in fixed)):raise ValueError('Invalid common opening roster')
+    if fixed is not None:return {'ledger':{i:by[i]['price_tenths'] for i in fixed}},'supplied common opening roster'
+    if cfg.baseline_mode=='feasibility':
+        return {'ledger':old or cheapest_opening(market,state.bank)},'deterministic held/minimum-cost feasibility baseline'
+    xp=horizon.values()
+    rows=[dict(fpl_code=p['id'],position=p['position'],team=p['team'],price_tenths=p['price_tenths'],can_buy=int(p['can_buy']),prior_minutes=0.,ownership=0.,expected_points=xp[state.gameweek,p['id']]) for p in market.players]
+    try:
+        baseline=optimise(pd.DataFrame(rows),'expected_points',owned=old or None,bank=state.bank,free_transfers=max(1,available_transfers(state,rules_for(state.season))),seconds=min(5.,cfg.seconds/4))
+        return baseline,'full-market one-GW solution'
+    except ValueError:
+        if old:return {'ledger':old},'held-squad fallback; one-GW solve unavailable'
+        return {'ledger':cheapest_opening(market,state.bank)},'minimum-cost legal opening fallback; one-GW solve unavailable'
+
+
+def candidate_players(state,market,horizon,cfg,baseline):
+    """One candidate procedure shared by native and standing inner planners."""
+    xp=horizon.values();pool=set(dict(state.holdings))|set(baseline['ledger'])
+    for pos in POSITIONS:
+        eligible=[p for p in market.players if p['position']==pos and p['can_buy']]
+        pool.update(p['id'] for p in sorted(eligible,key=lambda p:(-sum(xp[g,p['id']] for g in horizon.gameweeks),p['id']))[:cfg.top_per_position])
+        pool.update(p['id'] for p in sorted(eligible,key=lambda p:(p['price_tenths'],p['id']))[:cfg.cheap_per_position])
+    return sorted([dict(p) for p in market.players if p['id'] in pool],key=lambda p:p['id'])
+
+
 def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=None):
     cfg=settings or Settings();start=time.monotonic()
     if (state.season,state.gameweek,market.as_of)!=(horizon.season,horizon.origin,horizon.as_of) or market.gameweek!=state.gameweek:raise ValueError('Planner/forecast origin mismatch')
@@ -103,30 +133,11 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=Non
         if name=='freehit' and (chips.get(gw-1)=='freehit' or (gw==state.gameweek and state.previous_chip=='freehit')):raise ValueError('Consecutive Free Hits prohibited')
     xp=horizon.values();allids={p['id'] for p in market.players}
     if set(xp)!={(g,i) for g in horizon.gameweeks for i in allids}:raise ValueError('Forecast coverage differs')
-    rows=[dict(fpl_code=p['id'],position=p['position'],team=p['team'],price_tenths=p['price_tenths'],can_buy=int(p['can_buy']),prior_minutes=0.,ownership=0.,expected_points=xp[(state.gameweek,p['id'])]) for p in market.players]
-    f=pd.DataFrame(rows);old=dict(state.holdings);rules=rules_for(state.season)
+    old=dict(state.holdings);rules=rules_for(state.season)
     fixed=set(opening_ids) if opening_ids is not None else None
-    if fixed is not None and (state.gameweek!=1 or old or len(opening_ids)!=15 or len(fixed)!=15 or not fixed<=allids or not all(type(i) is int and market.indexed()[i]['can_buy'] for i in fixed)):raise ValueError('Invalid common opening roster')
-    baseline_status='full-market one-GW solution'
-    try:
-        if fixed is not None:
-            baseline={'ledger':{i:market.indexed()[i]['price_tenths'] for i in fixed}};baseline_status='supplied common opening roster'
-        else:baseline=optimise(f,'expected_points',owned=old or None,bank=state.bank,free_transfers=max(1,available_transfers(state,rules)),seconds=min(5.,cfg.seconds/4))
-    except ValueError:
-        if old:
-            baseline={'ledger':old};baseline_status='held-squad fallback; one-GW solve unavailable'
-        else:
-            baseline={'ledger':cheapest_opening(market,state.bank)}
-            baseline_status='minimum-cost legal opening fallback; one-GW solve unavailable'
+    baseline,baseline_status=make_baseline(state,market,horizon,cfg,opening_ids)
     fallback=_fallback(state,market,horizon,baseline,chips);fallback_value,_=_objective(state,market,horizon,fallback,cfg)
-    # Preserve owned IDs and a full-market feasible baseline, then add form/budget candidates.
-    pool=set(old)|set(baseline['ledger'])
-    for pos in POSITIONS:
-        eligible=f[f.position.eq(pos)&f.can_buy.eq(1)].copy()
-        eligible['horizon_xp']=[sum(xp[(g,int(i))] for g in horizon.gameweeks) for i in eligible.fpl_code]
-        pool.update(map(int,eligible.sort_values(['horizon_xp','fpl_code'],ascending=[False,True]).head(cfg.top_per_position).fpl_code))
-        pool.update(map(int,eligible.sort_values(['price_tenths','fpl_code']).head(cfg.cheap_per_position).fpl_code))
-    players=sorted([dict(p) for p in market.players if p['id'] in pool],key=lambda p:p['id']);n=len(players);H=len(horizon.gameweeks)
+    players=candidate_players(state,market,horizon,cfg,baseline);n=len(players);H=len(horizon.gameweeks)
     c=[];lo=[];hi=[];groups=[]
     def var(cost=0.,upper=1,lower=0):
         i=len(c);c.append(cost);lo.append(lower);hi.append(upper);return i
