@@ -73,7 +73,7 @@ fixture forecasts inherit the historical cache's reconstructed schedule limitati
 
 The mechanical pilot evaluates selectors on one opening squad per window without
 scoring outcomes. The fixed full study evaluates all twelve squads and all GWs,
-plus persistent-fixture reoptimisation for squads0/4/8 (one per original stratum).
+plus persistent-fixture reoptimisation for squads 0/4/8 (one per original stratum).
 Positive-dependence stress evaluates the already chosen primary plans only; it
 is not a reoptimisation or measured correlation model. Exactness of primary
 selection does not imply the assumed independence distribution is accurate.
@@ -96,3 +96,31 @@ exactly from the retained market; development panels keep their original inputs.
 CSV numeric reads use round-trip precision. All arms are rerun on the restored
 predeclared panels without changing fitted forecasts, probabilities, seeds or
 selection rules. The superseded replay is retained, not selected by performance.
+
+
+## Reproduction interface
+
+```sh
+fpl-predict conditional-integration \
+  --manifest /path/to/admitted-head-manifest.json --manifest-sha256 MANIFEST_SHA256 \
+  --head /path/to/frozen-head-predictions.csv --head-sha256 HEAD_SHA256 \
+  --output /path/to/new-conditional-fit --trust-local-cache
+fpl-predict integration-study --market /path/to/prepared-market.csv \
+  --sha256 MARKET_SHA256 --output /path/to/new-pilot --pilot
+fpl-predict integration-study --market /path/to/prepared-market.csv \
+  --sha256 MARKET_SHA256 --output /path/to/new-owned-study
+```
+
+Use the public `integration_study.prepare_market` adapter to join the conditional
+fixture outputs with the prior frozen incumbent-control forecasts, canonical
+player/card history, hash-verified bootstrap snapshot manifest/source audits and
+retained admitted audit market. It checks stable keys, outcomes, positions,
+prices, roster coverage and source clocks; it reuses verified blanks only. The
+result contains a normalized listed market, paired probability/conditional-return
+moments and source/coverage audit. Error metrics retain every original forecast
+row even when an earlier roster did not list the player. Preserve the preparation
+inputs and their hashes outside Git; no underlying dataset is redistributed.
+
+The [completed results](CONDITIONAL_SELECTION_RESULTS_2026-10-16.md) report all
+arms and the failed progression gate. Neither this command nor its exact-selector
+implementation changes the default forecast model, selector or runtime registry.

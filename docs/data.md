@@ -26,3 +26,12 @@ A price capture can precede an admitted news observation. The external replay
 retains the original quote timestamp, advances the comparison source cutoff and
 requires both to precede the deadline. It preserves all error rows, while every
 selection method shares the original listed roster and verified blank handling.
+
+
+The [conditional integration follow-up](CONDITIONAL_SELECTION_RESULTS_2026-10-16.md)
+retains the rare zero-minute card penalty instead of assuming every nonappearance
+scores zero. Both arms use the same pooled, training-only card-event prior. The
+selector separates minutes-based captain fallback from minutes-or-cards autosub
+eligibility. Audit neutral metadata and anchor values are copied from the
+previously admitted market, with round-trip numeric reads; development opens
+its own squads from earlier metadata. No later roster is used in development.

@@ -23,3 +23,15 @@ windows, not an untouched test or proof of general superiority. Historical
 training/testing and external replay complete the package; future frozen weekly
 evaluation is ongoing maintenance, not a completion dependency. No automatic
 retraining, model installation or migration follows from these commands.
+
+
+## Controlled conditional integration — 16 October 2026
+
+[Full results](CONDITIONAL_SELECTION_RESULTS_2026-10-16.md) separate shared
+conditional returns, old/new appearance heads and mean/expected bench selection.
+The new appearance arm improves historical RMSE/MAE, but the frozen development
+ranking guard fails and combined owned points do not establish superiority.
+Only the declared new-expected finalist was considered; no post-test promotion of
+new-mean. Existing promotion gates and approved v1.0.0 remain unchanged. All
+completed-window results, sensitivities, failed admission and superseded replay
+are retained. Historical data completes this package; no future-match wait.

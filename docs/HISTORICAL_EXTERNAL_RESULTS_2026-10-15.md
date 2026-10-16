@@ -156,3 +156,14 @@ unconditional points-feature augmentation on historical data. Appearance error
 improves, but points MAE/ranking and owned/rolling decisions do not jointly pass
 the progression checks. The challenger is unapproved; original-system comparisons
 in this report remain unchanged. New aggregates/provenance/cost are linked above.
+
+
+## Conditional integration follow-up — 16 October 2026
+
+[The controlled four-arm integration/selection study](CONDITIONAL_SELECTION_RESULTS_2026-10-16.md)
+now isolates old/new appearance probabilities with one shared conditional-return
+model and current/expected bench selection. Points RMSE and MAE improve versus
+the historical incumbent reference; ranking and the fixed combined selector do
+not qualify. Matched external error/common-mean-policy results are reported,
+including an observed but uncertain RMSE win over the Dastan adaptation. Original
+system comparisons in this document remain unchanged. No model is promoted.

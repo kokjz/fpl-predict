@@ -23,9 +23,9 @@ It is a forecasting and decision-support engine, not a complete season optimiser
 3. **Fit pooled models.** Histogram gradient-boosted trees learn patterns shared across players. Separate estimators cover core points, minutes, participation and defensive-contribution awards. Training examples have a two-year age half-life. The core model uses shallow seven-leaf trees; no GPU or hosted inference service is required.
 4. **Forecast and evaluate.** Fixture forecasts are summed into gameweeks and optionally compared within a squad. The model registry checks approval status and artifact hashes. Evaluation uses chronological splits; a merged code change or a newer experiment does not automatically replace the approved model.
 
-Official injury percentages are retained as observations, not treated as calibrated start probabilities. A [controlled historical availability study](docs/INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md) found 20.6% lower candidate appearance Brier error against a matched refit of the full incumbent method. Adding the same signals to points forecasting reduced audit RMSE by 0.61%, but worsened MAE and slightly reduced ranking quality. Squad-selection results were mixed, so **v1.0.0 remains approved**. These component/error changes are not percentages of FPL points gained. The earlier [text experiment](docs/NEWS_AVAILABILITY_RESULTS_2026-10-16.md) found no extra Brier benefit from combining news text with structured labels.
+Official injury percentages are retained as observations, not assigned start probabilities. A [controlled availability study](docs/INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md) reduced candidate appearance Brier error by 20.6% against the full incumbent method. A subsequent [conditional-return and selection study](docs/CONDITIONAL_SELECTION_RESULTS_2026-10-16.md) explicitly integrated those probabilities: its research challenger improved audit points RMSE by 1.23% and MAE by 0.73% versus the incumbent reference, but had lower ranking quality. The new expected bench-selection policy did not establish a realised points gain, so **v1.0.0 remains approved**. These are reused historical error measurements, not percentages of FPL points gained. The earlier [text experiment](docs/NEWS_AVAILABILITY_RESULTS_2026-10-16.md) found no extra Brier benefit from combining news text with structured labels.
 
-The optional [controlled conditional-return/selection study](docs/conditional_selection.md) isolates how appearance probabilities feed expected points and how a fixed squad uses bench cover. It is research tooling and does not replace the approved model or production selector.
+The [controlled integration workflow](docs/conditional_selection.md) separates conditional-return prediction, appearance probabilities and legal bench/captain decisions. It is research tooling and does not replace the approved model or production selector.
 
 The optional [participation audit](docs/participation_audit.md) checks frozen point-risk diagnostics and predeadline evidence, including sourced club/press reports, without applying overrides. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).
 
@@ -88,6 +88,12 @@ adds a tested research challenger on the same historical market and policy. It
 improves weekly reset scores but slightly loses owned-squad and rolling-transfer
 scores against the incumbent control; it is not promoted. Original Dastan results
 above remain separate from this 2025/26 Dastan-architecture adaptation.
+
+The [conditional-integration follow-up](docs/CONDITIONAL_SELECTION_RESULTS_2026-10-16.md)
+adds another fixed historical comparison. Its unapproved challenger has observed
+RMSE 2.94125 versus 2.95404 for the Dastan adaptation, but higher MAE; the paired
+RMSE interval crosses zero. This is not an original-Dastan or general superiority
+claim. The report also separates mean-policy forecast value from the new selector.
 
 For shared-row comparisons against other systems, see the [external benchmark
 protocol](docs/BENCHMARK_PROTOCOL.md), [source readiness inventory](docs/benchmark_sources.json)
@@ -248,3 +254,9 @@ Source is in `src/`, offline tests in `tests/`, and repository utilities in `too
 For independently fitted, bounded external-method research references, see the
 [historical comparison workflow](docs/historical_references.md). These optional
 experiments do not replace the approved forecasting model.
+
+A small credible improvement can justify model replacement. The latest conditional
+forecaster improves historical point errors, while its expected-bench selector
+does not establish better realised decisions. Its failed fixed ranking gate is
+not proof that the forecaster is inferior; see the [targeted adoption assessment](docs/CONDITIONAL_SELECTION_RESULTS_2026-10-16.md#can-a-small-improvement-justify-replacement)
+for uncertainty and remaining production qualification.
