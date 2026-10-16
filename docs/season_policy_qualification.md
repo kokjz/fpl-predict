@@ -147,6 +147,24 @@ execute historical arms serially and preserve every declared attempt. The runner
 is trusted research code, not an operating-system sandbox or an approval mechanism.
 Final qualification still requires the full matrix and independent scoring audit.
 
+From a source checkout, the standard-library-only verification tool checks one
+complete frozen 2025/26 path without importing the planner or season engine:
+
+```sh
+python tools/audit_season_path.py --decisions DECISIONS.json.gz --outcomes OUTCOMES.json.gz --season-dir PRIVATE_HOME/PATH/result/season --horizon 6
+```
+
+For a common-opening path add `--opening OPENING.json`; use `--horizon 1` for
+the one-week anchor. The tool checks every settled deadline and retained future
+action, original purchase basis, bank, free transfers, chips, hits, formation,
+captain/vice, priority autosubs, expected objective and frozen-decision checksum.
+It accepts the study's mean objective (bench proxy0.1, zero terminal/churn
+proxies), requires assertions enabled and reports aggregate counts and input
+hashes. It deliberately rejects other season profiles or objectives. It does
+not certify archive publication history, model training lineage, native proposal
+admission or solver optimality; those require their separate checks. Inputs and
+full frozen decisions may contain private squads and should remain outside Git.
+
 A native-controller preflight used an entirely invented 15-player, 38-origin
 market. Solio completed 38 calls; AIrsenal completed the path through 38 recorded
 feasibility fallbacks because no alternative transfer existed. This checks fallback
