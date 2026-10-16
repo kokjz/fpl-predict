@@ -31,6 +31,13 @@ the existing qualification threshold. The candidate retains its 2025 RMSE gain
 and small owned-squad gain, but scores fewer points in reset and rolling-transfer
 comparisons. It is saved as a research artifact; **v1.0.0 remains approved**.
 
+The [season-management foundation](docs/season_management.md) adds persistent
+squad/finance/chip state and complete38-deadline supplied-action replay. Its
+[readiness audit](docs/SEASON_READINESS_2026-10-16.md) verifies historical calendar
+coverage and synthetic mechanics. Adaptive multiweek planning and fullseason
+competitor management benchmarks are still being built; current weekly/reset
+comparisons do not establish season-long management superiority.
+
 The [controlled integration workflow](docs/conditional_selection.md) separates conditional-return prediction, appearance probabilities and legal bench/captain decisions. It is research tooling and does not replace the approved model or production selector.
 
 The optional [participation audit](docs/participation_audit.md) checks frozen point-risk diagnostics and predeadline evidence, including sourced club/press reports, without applying overrides. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).

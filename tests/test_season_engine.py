@@ -165,3 +165,29 @@ def test_full_replay_cli_hashes_and_write_once(tmp_path,monkeypatch):
     out=tmp_path/'new';argv.extend(['--output',str(out)]);monkeypatch.setattr(sys,'argv',argv);main()
     r=json.loads((out/'report.json').read_text());assert r['final_state']['total_points']==38*24 and len(r['rows'])==38
     with pytest.raises(SystemExit):main()
+
+
+def test_future_and_past_market_clocks_cannot_be_reordered():
+    m=market(3)
+    m=replace(m,as_of=market(2).as_of,deadline=market(2).deadline)
+    with pytest.raises(ValueError,match='Nonchronological'):replay([market(2),m],{2:outcomes(),3:outcomes()},lambda s,m:action(),state(),require_full_season=False)
+
+
+def test_unavailable_purchases_and_unknown_chips_fail():
+    r=roster();r.append(dict(r[0],id=16,can_buy=False))
+    with pytest.raises(ValueError,match='Unavailable purchase'):prepare(state(),market(2,r),action((16,),(1,)))
+    with pytest.raises(ValueError,match='Unsupported chip'):prepare(state(),market(2),action(chip='manager'))
+
+
+def test_ordinary_hit_accounting_is_in_season_total():
+    r=roster();r.extend([dict(r[0],id=16),dict(r[2],id=17)])
+    a=replace(action((16,17),(1,3)),starters=(16,17,*action().starters[2:]),captain=16,vice=17)
+    o=outcomes();o.update({16:dict(actual=2.,minutes=90.,cards=0.),17:dict(actual=2.,minutes=90.,cards=0.)})
+    s,row=settle(prepare(state(),market(2,r),a),o)
+    assert row['hits']==4 and row['net_points']==20 and s.total_points==20
+
+
+def test_future_price_changes_cannot_change_prepared_finances():
+    r=roster();m=market(2,r);p=prepare(state(),m,action())
+    r[0]['price_tenths']=999
+    assert m.players[0]['price_tenths']==50 and p.state.bank==250

@@ -72,3 +72,27 @@ Rules checked16October2026 against [official rules](https://www.premierleague.co
 and [2025AFCON transfers](https://www.premierleague.com/en/news/4362102/whats-new-in-202526-fantasy-extra-transfers-for-afcon).
 API and historical snapshot checksums are retained. The dated readiness report
 separates available markets from missing calendar/horizon evidence.
+
+
+## Audit historical calendar inputs
+
+```sh
+fpl-predict season-readiness \
+  --calendars /path/to/calendar-manifest.json --calendars-sha256 CALENDAR_MANIFEST_SHA \
+  --bootstraps /path/to/bootstrap-manifest.json --bootstraps-sha256 BOOTSTRAP_MANIFEST_SHA \
+  --calendar-root /path/to/calendars --bootstrap-root /path/to/bootstraps \
+  --outcome-fixtures /path/to/fixture-history.csv --outcome-fixtures-sha256 HISTORY_SHA \
+  --updates /path/to/reviewed-announcements.json --updates-sha256 UPDATES_SHA \
+  --output /path/to/new-source-audit.json
+```
+
+The calendar manifest has `season` and38`entries`: `gameweek`, `captured_at`,
+`publication_claim`, pinned `revision`, relative compressed `file`, raw `sha256`
+and `compressed_sha256`. Bootstrap manifests follow the existing deadline-audit
+schema (`season`, `snapshots`, withGW/file/hash/capture). Official announcement
+updates are optional but require a checksum when supplied. Outcome CSV requires
+only `season`, `gameweek`, `fixture`; none of its point values enters decisions.
+The command checks coverage/clock/hash/root/result-contamination and compares
+memberships without fitting a model. It flags unsupported active/future chip
+configurations separately. A passing audit is source readiness, not a season
+benchmark or first-publication certificate. See [dated findings](SEASON_READINESS_2026-10-16.md).

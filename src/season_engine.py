@@ -66,7 +66,7 @@ class Market:
         required={'id','position','team','price_tenths','can_buy'};players=[];ids=set()
         for row in rows:
             if set(row)-allowed or required-set(row):raise ValueError('Unknown/outcome or missing decision fields')
-            r=deepcopy(row);integer(r['id'],1);integer(r['price_tenths'],1)
+            r=deepcopy(row);integer(r['id'],1);integer(r['price_tenths'],1);integer(r['position'],1)
             if r['id'] in ids or r['position'] not in POSITIONS or not isinstance(r['team'],str) or not r['team'].strip() or type(r['can_buy']) is not bool:raise ValueError('Invalid roster')
             ids.add(r['id'])
             for k in ['expected_points','p_play','expected_minutes']:
@@ -203,7 +203,7 @@ def audit_bootstrap(bootstrap,season,gameweek):
     mismatches=[k for k,v in expected.items() if settings.get(k)!=v]
     expected_windows={(w['name'],w['start'],w['stop']) for w in rules['chip_windows']}
     got={(w['name'],w['start_event'],w['stop_event']) for w in bootstrap['chips']}
-    if got!=expected_windows:mismatches.append('chip_windows')
+    if got!=expected_windows or len(got)!=len(bootstrap['chips']):mismatches.append('chip_windows')
     active=[];future=[]
     for chip in bootstrap['chips']:
         overrides=chip.get('overrides',{})
