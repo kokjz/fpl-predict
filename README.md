@@ -63,6 +63,11 @@ poorly solved optimisation attempts; it establishes neither general superiority
 nor policy approval. Matched Dastan/OpenFPL and native-planner season comparisons
 remain unfinished.
 
+[Retained-plan bounds](docs/solver_bounds.md) now distinguish a validated plan
+from discarded solver attempts. A switchable baseline objective cut preserves
+better solutions; its [small diagnostic](docs/SELECTED_PLAN_BOUNDS_2026-10-16.md)
+shows mixed bound availability, not a guaranteed speed or season-points gain.
+
 The [controlled integration workflow](docs/conditional_selection.md) separates conditional-return prediction, appearance probabilities and legal bench/captain decisions. It is research tooling and does not replace the approved model or production selector.
 
 The optional [participation audit](docs/participation_audit.md) checks frozen point-risk diagnostics and predeadline evidence, including sourced club/press reports, without applying overrides. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).

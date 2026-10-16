@@ -21,11 +21,38 @@ class Settings:
     terminal_ft_value:float=1.
     terminal_squad_weight:float=.05
     churn_cost:float=.0001
+    use_baseline_cut:bool=True
 
     def __post_init__(self):
         if not np.isfinite([self.seconds,self.bench_weight,self.terminal_ft_value,self.terminal_squad_weight,self.churn_cost]).all() or not 0<self.seconds<=120:raise ValueError('Invalid bounded solver settings')
         if not 0<=self.bench_weight<=1 or min(self.terminal_ft_value,self.terminal_squad_weight,self.churn_cost)<0:raise ValueError('Invalid objective weights')
         if type(self.top_per_position) is not int or type(self.cheap_per_position) is not int or min(self.top_per_position,self.cheap_per_position)<1:raise ValueError('Invalid pool limits')
+        if type(self.use_baseline_cut) is not bool:raise ValueError('Invalid baseline cut setting')
+
+
+def finite_or_none(value):
+    return float(value) if value is not None and np.isfinite(value) else None
+
+
+def selected_bound(result,value,constant,validated_optimum):
+    """Bound the retained feasible plan, including the objective constant.
+
+    SciPy minimises; its dual lower bound becomes an upper bound on our maximum.
+    Its reported gap can describe a worse, discarded incumbent, so never attach
+    that gap to the retained baseline. Bounds apply only to this fixed schedule
+    and restricted player pool, not the outer heuristic or the real season.
+    """
+    dual=finite_or_none(getattr(result,'mip_dual_bound',None));upper=None;source='unavailable'
+    if result.status in (0,1) and dual is not None:
+        upper=-dual+constant;source='solver_dual'
+        if upper<value-1e-5:upper=None;source='inconsistent_dual'
+        else:upper=max(upper,value)
+    elif result.status==0 and validated_optimum:
+        upper=value;source='validated_optimal_status'
+    gap=upper-value if upper is not None else None
+    return dict(status=source,feasible_objective=value,upper_objective=upper,absolute_gap=gap,
+                relative_gap=gap/max(abs(value),1e-9) if gap is not None else None,
+                scope='Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound')
 
 
 def _market(market,gw,xp):
@@ -180,6 +207,11 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None):
         add({a['after']:1,a['ft']:-1,a['used']:1},u=1)
         add({a['after']:1,a['ft']:-1,a['used']:1,a['cap']:6},l=1)
         add({a['after']:1,a['cap']:-6},l=-1)
+    if cfg.use_baseline_cut:
+        # A validated feasible baseline is in the preserved candidate pool.
+        # Keep all solutions at least as good, without claiming this supplies an
+        # incumbent/warm start to SciPy or guarantees faster time-limited solves.
+        add(dict(enumerate(c)),u=constant_terminal-fallback_value+1e-7)
     matrix=coo_matrix((vals,(rix,cix)),shape=(len(lower),len(c))).tocsc()
     remaining=max(.01,cfg.seconds-(time.monotonic()-start))
     with warnings.catch_warnings():
@@ -204,9 +236,15 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None):
             if not np.isclose(solution_value,-np.dot(c,rounded)+constant_terminal,rtol=0,atol=1e-5):raise ValueError('Solver/objective reconciliation failed')
             if solution_value>=fallback_value-1e-7:selected=actions;reason='optimal restricted pool' if result.status==0 else 'validated time-limit incumbent'
     value,parts=_objective(state,market,horizon,selected,cfg)
+    bound=selected_bound(result,value,constant_terminal,result.status==0 and selected is not fallback)
+    if bound['status']=='inconsistent_dual':reason='retained feasible plan; inconsistent solver bound'
     report=dict(objective=value,components=parts,fallback_objective=fallback_value,solver_objective=solution_value,
-        status=int(result.status),selection=reason,baseline=baseline_status,proven_optimal=bool(result.status==0 and selected is not fallback),
-        mip_gap=float(result.mip_gap) if getattr(result,'mip_gap',None) is not None else None,
+        status=int(result.status),selection=reason,baseline=baseline_status,proven_optimal=bool(result.status==0 and selected is not fallback and bound['status']!='inconsistent_dual'),
+        mip_gap=finite_or_none(getattr(result,'mip_gap',None)),
+        legacy_gap_scope='Raw solver attempt, potentially discarded; use selected_plan_bound for retained plan',
+        selected_plan_bound=bound,fallback_retained=selected is fallback,
+        solver_diagnostics=dict(minimisation_dual_bound=finite_or_none(getattr(result,'mip_dual_bound',None)),
+                                reported_mip_gap=finite_or_none(getattr(result,'mip_gap',None)),baseline_objective_cut=cfg.use_baseline_cut),
         seconds=time.monotonic()-start,pool_players=n,full_market_players=len(market.players),variables=len(c),constraints=len(lower),
         chip_schedule=chips,scope='Deterministic origin-frozen1–8GWforecast, constant quotes/roster, restricted candidate pool, fixed chip schedule; no expected autosub objective; commit first action only')
     return selected,report

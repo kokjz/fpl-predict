@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "scope": "Selected-plan solver diagnostics and valid baseline objective cut; no forecast/policy promotion or seasonoutcome selection",
+  "bound": "For maximisation value=-c.x+C, upper=-minimisation_dual+C; gap against actualretained feasible value, not discardedincumbent. Missing/nonfinite/inconsistentdual unknown; validatedoptimalstatus can certify optimum absentdual. Fixedschedule/restrictedpool/objective only, not outerchip/globalreal-season/predictionconfidence",
+  "compatibility": "Legacy mip_gap remainsrawattemptdiagnostic withexplicitlabel; selected_plan_bound canonical. Adaptive trial/selectedschedule carriesbound, outerglobalbound null. Nonfinite metrics serialise as null",
+  "cut": "Default use_baseline_cut=True adds c.x<=C-validated_baseline_value+1e-7; baseline players retainedinpool. Doesnot exclude a betteroptimum, supply warmstart or guarantee faster/better time-limited solve. False available forfixed engineeringcomparison",
+  "pilot": "Singlepairedrun cutFalse/True at0.5s each,2threads: frozenBneutralGW20/GW38nochip andDcarryoverGW27fixedFH32(maxlegacyattemptgap219.753124). Lastcase diagnosticselectionexplicit, notblindaudit. Samefrozenforecasts/market/state/schedule, no realisedoutcomes scored, no extra budgets/seed/configsearch",
+  "tests": "Known-exhaustive chip/horizonoptima remainvalid; minimdual sign/constant, discardedattempt, missing/nonfinite/inconsistentdual, FHterminalconstant, zero-gap optimalstatus, adaptivepropagation/globalunknown",
+  "qualification": "Report all6pairedcases includinglosses/unknowns, resourcebounds. PreserveDhistoricalresults withoutretroactivebounds ornewperformanceclaim; recompute matchedbenchmarks withversionednewsource before comparing, never relabelinspectedseasonuntouched",
+  "resources": "900s/4GiBRSS/2CPUthreads/project2GiB/growth256MiB/free5GiB; no new fit/download/GPU",
+  "source_checked_2026_10_16": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.milp.html"
+}
