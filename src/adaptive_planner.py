@@ -121,7 +121,8 @@ def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),
         if set(future_state.used_chips)!=after_used:raise ValueError('Chip inventory reconciliation failed')
         reserve,path=calendar(future_state,38,remaining,blocked=blocked) if future_state else (0.,{})
         result=(actions,report,report['objective']+reserve,path)
-        trials.append(dict(schedule=dict(schedule),objective=report['objective'],coarse_reserve=reserve,total=result[2],seconds=report['seconds'],proven_optimal=report['proven_optimal'],gap=report['mip_gap']))
+        trials.append(dict(schedule=dict(schedule),objective=report['objective'],coarse_reserve=reserve,total=result[2],seconds=report['seconds'],proven_optimal=report['proven_optimal'],gap=report['mip_gap'],
+                           selected_plan_bound=report['selected_plan_bound'],fallback_retained=report['fallback_retained'],solver_diagnostics=report['solver_diagnostics']))
         cache[key]=result;return result
     best=solve({})
     if best is None:raise ValueError('No adaptive baseline')
@@ -164,6 +165,7 @@ def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),
     actions,report,total,future_path=best
     sensitivity={name:_objective(state,market,h,actions,cfg)[0] for name,_,h in scenarios}
     return actions,dict(objective=report['objective'],coarse_reserve=total-report['objective'],total_proxy=total,
+        selected_schedule_bound=report['selected_plan_bound'],global_chip_search_bound=None,
         scenario_objectives=sensitivity,scenario_weights={n:w for n,w,_ in scenarios},chip_schedule=report['chip_schedule'],
         coarse_schedule={g:name for g,(name,_) in future_path.items()},coarse_values=coarse,blocked_tokens=sorted(blocked),
         trials=trials,seconds=time.monotonic()-start,budget_exhausted=len(trials)>=b.max_trials or time.monotonic()-start>=b.seconds,
