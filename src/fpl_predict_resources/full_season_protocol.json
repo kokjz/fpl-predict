@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "scope": "First continuous historical38GW management pilot, 2025-26; reused season, no prospective/untouched or superiority/promotion claim",
+  "primary": "Realised total38GWnetpoints after transferhits, actualseasonrules/autosubs/captainvice/chips, continuouscash/purchasebasis/FTstate. Each arm chooses its own GW1squad then maintains it",
+  "arms": [
+    {"name":"reset_h1_chips","forecast":"reset","horizon":1,"chips":true},
+    {"name":"reset_h6_chips","forecast":"reset","horizon":6,"chips":true},
+    {"name":"carryover_h6_chips","forecast":"carryover","horizon":6,"chips":true},
+    {"name":"official_origin_h6_chips","forecast":"official_origin","horizon":6,"chips":true},
+    {"name":"reset_h1_nochips","forecast":"reset","horizon":1,"chips":false},
+    {"name":"reset_h6_nochips","forecast":"reset","horizon":6,"chips":false}
+  ],
+  "comparisons": "Primary horizon comparison reset_h6_chips minus reset_h1_chips, same forecast source/chipaccess/budget. Nochip h6-h1 isolates horizon withoutchippolicy. Both B1reference arms retained, never select GW1winner retrospectively",
+  "forecaster": "Reuse B prior-season-only hgb7 core/minutes/appearance/60 fit2020-24 plus origin EWDC; no2025weights fit/backcasting savedchampion. Same fitting scope every origin; observed prior2025form enters onlyafter3hcompletionbuffer",
+  "availability": "Common explicitly experimental official-zero-currentGW policy: only sourcechance_of_playing_next_round==0 AND status!=a zeros origin XP; futuretargets unchanged, no realisedrecoverydate. Percent not calibrated probability/guaranteed truth; missing unchanged. Same rule all arms. API source claims available, independentnews coverageGW1-3unknown",
+  "inputs": "38pinnedpredeadlinebootstraps/auditedcalendars andreviewedfixtureupdates; only currentroster/prices; unsupportedfuturechiptokens blocked fromorigin audit. Stablecodepriorhistory identity bridge only, nofutureendseasonprices/status. Historicalmutablecorrections/captureclaims caveated",
+  "resources": {"threads":2,"seconds_per_origin":4,"solve_seconds":0.5,"max_trials":12,"seconds_per_job":900,"memory_mib":4096,"project_mib":2048,"growth_mib":256,"min_free_mib":5120},
+  "search": "Expiry/date/chiporder balancesfamilies; reserve2trials and20%searchwall for combinedcalendar whenbudgetallows. Gaps/fallbacks/budgetexhaustion disclosed; no jointglobaloptimum",
+  "configuration": "SixGWdetailedoriginfrozenfeatures,constantfuturequotes/roster; defaultsreserve.1/terminalFT1/squad.05/churn.0001/coarseWC12/FH8/TC5/BB10fixed. No hyperparameter/configurationselectiononaudit",
+  "outputs": "Write decision before accessing outcome; hashchain decision-to-settlement,38ledgers/actions/scores, finalnetpoints/transfers/hits/chips/latency/budgets, perGWpairedcontrast andfinancial/scoringaudit",
+  "later": "Common neutralGW1roster sensitivity, moreseasons admittedrules, matched externalforecast/commonplanner and commonforecast/nativequalified externalplanner comparisons, boundedimprovement/jointqualification. This first pilot alone doesnot finish fullgoal",
+  "integrity": "No registry/weekly-policy promotion, actualteam/accountactions or futuregamewait. All arms disclosed includingfailures; failedruns retained, no extra configurations selectedafter scoring"
+}
