@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "Foundation only; no adaptive planner or historical season score claimed",
+  "objective": "Expected netpoints over38GWs; primary realised38GWtotal after hits under actualseasonrules",
+  "development": "Known-answer toyseasons; declare bounded configurations/releasegates before firsthistoricalpolicyscoring. Any reusedoutcomepolicyselection disclosed",
+  "first_historical_track": "2025-26 only after38originmarket/calendar/forecastcoverage admission; olderseasons need auditedspecialchiprules",
+  "initial_planner": "Six-GW detailed horizon plus coarseseasonal resources/chips; commit onlyfirstaction thenreplan",
+  "comparisons": [
+    "Sameforecasts existingoneGW vsnewmultiGWplanner",
+    "Sameplanner standing/native/Dastan/OpenFPL/componentforecasts onadmittedorigins",
+    "Sameforecasts compatiblepinnedexternalplanners",
+    "Nativejointsystems onlywith code/source/training/rule/licencecompatibility"
+  ],
+  "starting_conditions": "Separate neutralcommonstartingstate and ownGW1squad+management; identicalbudget/information/rules/chipaccess",
+  "ablations": "Chipsdisabled forallisolateshorizon; commonchipbaseline vsoptimisedchipssameforecasts",
+  "information": "Onlydeadlineknowninputs; futureoutcomes/prices/news/return dates andlaterfixtureassignments hidden; neverbackcastfuturetrainedmodel",
+  "metrics": [
+    "38GWnetpoints",
+    "pairedpoints byseason/startingstate",
+    "hits/transfers/chips",
+    "benchcoverage",
+    "latency/RSS/storage",
+    "solverincumbentgap/fallbacks"
+  ],
+  "uncertainty": "GW/startingstate/overlappingpaths are not independentseasons; report seasoncount and reusedoutcomes, no general superiorityfromonesample",
+  "qualification": "Predeclare system/planner gates beforeoutcomes; integrity/coverage/rules/compatibility mandatory; report smallgains/uncertainty. No code-based modelpromotion, existingforecastgatesretained",
+  "compute": {
+    "threads": 2,
+    "rss_mib": 4096,
+    "seconds_per_job": 900,
+    "project_mib": 2048,
+    "growth_mib": 256,
+    "free_minimum_mib": 5120
+  },
+  "execution": "Deadline-only nettrades; officialfinalplayerpoints input; no intradeadlinepricearbitrage or fabricatedBPS/assists",
+  "future_gameweeks": "Ongoing user-triggeredmaintenance, neverhistoricalimplementationcompletiondependency"
+}

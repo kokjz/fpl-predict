@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-16 Asia/Singapore",
+  "sources": [
+    "https://fantasy.premierleague.com/api/bootstrap-static/",
+    "https://www.premierleague.com/en/news/4661029",
+    "https://www.premierleague.com/en/news/4661030",
+    "https://www.premierleague.com/en/news/4679879/whats-happening-with-fpl-chips-in-202627",
+    "https://www.premierleague.com/en/news/4362102/whats-new-in-202526-fantasy-extra-transfers-for-afcon"
+  ],
+  "seasons": {
+    "2025-26": {
+      "season": "2025-26",
+      "gameweeks": 38,
+      "initial_budget": 1000,
+      "ft_cap": 5,
+      "transfer_cap": 20,
+      "chip_windows": [
+        {
+          "name": "wildcard",
+          "start": 2,
+          "stop": 19
+        },
+        {
+          "name": "wildcard",
+          "start": 20,
+          "stop": 38
+        },
+        {
+          "name": "freehit",
+          "start": 2,
+          "stop": 19
+        },
+        {
+          "name": "freehit",
+          "start": 20,
+          "stop": 38
+        },
+        {
+          "name": "bboost",
+          "start": 1,
+          "stop": 19
+        },
+        {
+          "name": "bboost",
+          "start": 20,
+          "stop": 38
+        },
+        {
+          "name": "3xc",
+          "start": 1,
+          "stop": 19
+        },
+        {
+          "name": "3xc",
+          "start": 20,
+          "stop": 38
+        }
+      ],
+      "ft_topups": {
+        "16": 5
+      },
+      "applicability": "Deadline-only execution; official final player-GW totals, season-specific scoring already included; unsupported scoring/chip variants require a separate audited profile"
+    },
+    "2026-27": {
+      "season": "2026-27",
+      "gameweeks": 38,
+      "initial_budget": 1000,
+      "ft_cap": 5,
+      "transfer_cap": 20,
+      "chip_windows": [
+        {
+          "name": "wildcard",
+          "start": 2,
+          "stop": 19
+        },
+        {
+          "name": "wildcard",
+          "start": 20,
+          "stop": 38
+        },
+        {
+          "name": "freehit",
+          "start": 2,
+          "stop": 19
+        },
+        {
+          "name": "freehit",
+          "start": 20,
+          "stop": 38
+        },
+        {
+          "name": "bboost",
+          "start": 1,
+          "stop": 19
+        },
+        {
+          "name": "bboost",
+          "start": 20,
+          "stop": 38
+        },
+        {
+          "name": "3xc",
+          "start": 1,
+          "stop": 19
+        },
+        {
+          "name": "3xc",
+          "start": 20,
+          "stop": 38
+        }
+      ],
+      "ft_topups": {},
+      "applicability": "Deadline-only execution; official final player-GW totals, season-specific scoring already included; unsupported scoring/chip variants require a separate audited profile"
+    }
+  }
+}

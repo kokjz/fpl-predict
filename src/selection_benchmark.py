@@ -34,13 +34,14 @@ def formation(ids, players):
     return len(ids) == 11 and c[1] == 1 and c[2] >= 3 and c[3] >= 2 and c[4] >= 1
 
 
-def score(selection, players, outcomes, hits=0):
+def score(selection, players, outcomes, hits=0, *, check_clubs=True):
     """Cards count for autosubs; captain fallback uses minutes, per published rules.
 
     Non-appearing original starters still occupy formation slots. Choose the
     lexicographically first eligible bench set that preserves the legal XI.
     """
-    if not legal(list(players.values())): raise ValueError('Illegal squad')
+    squad=list(players.values())
+    if len(squad)!=15 or len({p['id'] for p in squad})!=15 or Counter(p['position'] for p in squad)!=POSITIONS or (check_clubs and max(Counter(p['team'] for p in squad).values())>3):raise ValueError('Illegal squad')
     starters = list(selection['starters']); bench = list(selection['bench'])
     if (len(set(starters + bench)) != 15 or set(starters + bench) != set(players) or
             not formation(starters, players) or len(bench) != 4 or
