@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 1,
-  "status": "Implementation protocol; executable source inventory and mechanical admission pending. No historical qualification scores or approval.",
+  "revision": 2,
+  "status": "Approved-artifact bridge, adaptive synthetic replan and baseline mechanics passed; executable source/runtime lock and historical qualification still pending.",
   "season": "2025-26",
   "season_count": 1,
   "reused_season": true,
@@ -71,9 +71,14 @@
   },
   "bridge": "Registry-approved artifact verified by version/hash and conservative pre-origin observation receipt; actual artifact only on invented future-origin mechanical case. Scoped minutes/availability sensitivity preserved; no current-team forecast required.",
   "pending": [
-    "source inventory and runtime lock after integration/mechanical pilot",
-    "approved artifact bridge and failure tests",
+    "integrate released dependency and freeze executable source/runtime inventory",
     "historical uniform matrix and independent audit",
     "policy status and release/operational handoff"
-  ]
+  ],
+  "mechanical_evidence": {
+    "approved_bridge": "docs/approved_bridge_compatibility.json",
+    "adaptive_replan": "docs/approved_adaptive_compatibility.json",
+    "baseline_controls": "tests/test_management_policies.py",
+    "scope": "Invented-case mechanics only; no historical qualification result or model/policy promotion."
+  }
 }

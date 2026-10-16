@@ -85,8 +85,28 @@ the initial synthetic timestamp-format failure. The adaptive planner pilot remai
 separate. No real player or squad forecasts
 were produced by this check.
 
-The next qualification work includes the adaptive mechanical pilot and source
-lock, bounded uniform-source repeated season
+The subsequent [adaptive integration check](approved_adaptive_compatibility.json)
+uses the same saved champion and invented case with two explicitly weighted
+sensitivity scenarios. All 1/4/6/8-week plans and a six-week next-origin replan
+passed independent accounting, formation, autosub, captain/chip scoring and
+expected-objective reconciliation: 25 provisional periods in total. Deterministic
+scoring replay uses the frozen actions, without refitting or rerunning the solver.
+
+For the next-origin check, only the eight-week plan's first action is committed.
+The resulting squad, bank, transfer resources and chips carry forward. Newly
+revealed invented match history, one changed price, a fixture moved into the
+next gameweek and current-only absence evidence then produce a revised plan.
+The [invented next-origin inputs](../tests/fixtures/synthetic_bridge_replan.json)
+are retained. These are fictional test events, not football news.
+
+Each solve used a two-second outer envelope, 0.2-second inner attempts and at most
+twelve trials. The full supervised check took 4.64 seconds and about 178.6 MiB
+sampled group memory. Selected-schedule bounds were available in this tiny case;
+global chip and season bounds remain unknown. This proves mechanical integration,
+not useful forecasts, realistic full-market latency, season gain or policy approval.
+
+The next qualification work includes the executable source/runtime lock,
+bounded uniform-source repeated season
 comparisons, explicit policy approval status and operational handoff. These
 items are not established by the callback interface or its synthetic tests.
 No new historical season result, forecast-model promotion or weekly-policy
