@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "status": "predeclared implementation and pilot; no native historical season results",
+  "season": "2025-26",
+  "source_recipe": "airsenal_solver_recipe.json",
+  "forecasts": [
+    "common_core_hgb7",
+    "standing_prior5"
+  ],
+  "openings": [
+    "own",
+    "common"
+  ],
+  "planners": [
+    "canonical standing",
+    "rule-adapted AIrsenal tree/GA policy"
+  ],
+  "full_season_paths": 8,
+  "horizon": 6,
+  "all_four_chip_types": true,
+  "objective": {
+    "discount": 1.0,
+    "bench_weight": 0.1,
+    "terminal_ft_value": 0.0,
+    "terminal_squad_weight": 0.0,
+    "churn_cost": 0.0
+  },
+  "native_policy": {
+    "max_opt_transfers": 2,
+    "max_total_hit": 8,
+    "allow_unused_transfers": true,
+    "seed": 42,
+    "iterations": 10
+  },
+  "native_policy_scope": "Native search restrictions, not changes to actual FPL rules or restrictions imposed on the control.",
+  "compatibility": [
+    "original native strategies with serial execution instead of unsafe macOS fork wrapper",
+    "declared bounded queue order providing early complete-horizon plans and coverage of immediate transfer families; preserve raw native FIFO evidence",
+    "constant origin-frozen quote views across the planning horizon; no realised future attributes",
+    "known season transfer top-up and purchase eligibility with retained-holding exemption",
+    "full-rebuild sell-value offer view for retained originals, restore market quotes and actual purchase basis",
+    "canonical common objective and full financial/action admission; no incomplete prefix accepted",
+    "native own opening construction and fixed common opening required; neither may silently substitute an empty or permanently fixed squad"
+  ],
+  "pilot": {
+    "outcome_fields": false,
+    "origins": [
+      1,
+      15,
+      15,
+      20,
+      38
+    ],
+    "schedules": [
+      {},
+      {},
+      {
+        "20": "freehit"
+      },
+      {},
+      {}
+    ],
+    "inner_seconds": [
+      2.0,
+      5.0
+    ],
+    "selection": "Lowest tested allowance producing admitted complete non-fallback native proposals in all five fixed feature cases; choose before season scoring. If neither passes, diagnose integrity/latency and predeclare a revised pilot, never select by realised points.",
+    "shared_outer": "Same control/native allowance, minimum six inner trials worth of outer time and maximum12trials; final budget/config frozen and published before any season score."
+  },
+  "resources": {
+    "threads": 2,
+    "max_rss_mib": 4096,
+    "project_mib": 2048,
+    "growth_mib": 256,
+    "min_free_mib": 5120,
+    "execution": "Serial supervised checkpointed jobs; no automatic global/cloud/training dependency installs; measure total latency including construction and native startup separately."
+  },
+  "benchmark": {
+    "primary": "38GW realised net points after hits with persistent legal squad",
+    "secondary": [
+      "hits/transfers/chipdates",
+      "invalid and incomplete proposals/fallbacks",
+      "full-horizon conditional objectives and unknown bounds",
+      "runtime/memory/storage"
+    ],
+    "bounds": "Heuristic native tree/GA has no optimisation upper-bound certificate; unknown remains unknown.",
+    "validation": "Chronological prior-only fits/frozen origin inputs, independent finance/scoring audit, source/runtime/protocol hashes, both opening tracks, every declared failure/arm retained.",
+    "interpretation": "One reused season; correlated paths/gameweeks are not independent seasons. Shared outer chip policy comparison is not an original native full manager or end-to-end forecaster reproduction."
+  },
+  "model_promotion": false,
+  "policy_promotion": false,
+  "next": "Implement optional worker/common transport/controller and tests; mechanical/opening/admission tests then feature-only pilot, freeze final matrix, run8fullseasons, publish all aggregates, review/CI/merge/sync/cleanup; Fqualification remains separate."
+}
