@@ -65,3 +65,11 @@ def test_deterministic_appearance_states_match_legal_scorer_across_formations():
         plan=dict(starters=starts,bench=bench,captain=starts[0],vice=starts[1])
         outcomes={r['id']:dict(actual=r['expected_points'],minutes=r['p_play'],cards=0.) for r in d}
         assert objective(plan,d)==pytest.approx(score(plan,{r['id']:r for r in d},outcomes)['net_points'])
+
+
+def test_card_only_event_blocks_autosub_but_triggers_captain_fallback():
+    d=squad();plan=select_xi(d);i=plan['captain'];r=d[i-1]
+    r.update(p_play=0.,p_card_only=1.,conditional_card=-1.,expected_points=-1.)
+    outcomes={x['id']:dict(actual=x['expected_points'],minutes=x['p_play'],cards=x.get('p_card_only',0.)) for x in d}
+    assert objective(plan,d)==pytest.approx(score(plan,{x['id']:x for x in d},outcomes)['net_points'])
+    assert positive_dependence_stress(plan,d)==pytest.approx(objective(plan,d))

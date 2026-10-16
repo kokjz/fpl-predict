@@ -14,10 +14,19 @@ def validate(players):
     d=sorted(players,key=lambda r:r['id'])
     if not legal(d):raise ValueError('Require a legal 15-player squad')
     for r in d:
-        p=r['p_play'];q=r['conditional_points'];xp=r['expected_points']
-        if not np.isfinite([p,q,xp]).all() or not 0<=p<=1 or not np.isclose(xp,p*q,rtol=0,atol=1e-9):
+        p=r['p_play'];q=r['conditional_points'];xp=r['expected_points'];pc=r.get('p_card_only',0.);qc=r.get('conditional_card',0.)
+        if not np.isfinite([p,q,xp,pc,qc]).all() or not 0<=p<=1 or not 0<=pc<=1-p+1e-12 or not np.isclose(xp,p*q+pc*qc,rtol=0,atol=1e-9):
             raise ValueError('Incoherent probability/conditional expectation')
     return d
+
+
+def active_probability(r):
+    return r['p_play']+r.get('p_card_only',0.)
+
+
+def active_return(r):
+    p=active_probability(r)
+    return r['expected_points']/p if p else 0.
 
 
 def poisson_binomial_missing(probabilities):
@@ -53,9 +62,9 @@ def bench_table(formation,positions):
 
 def bench_value(start,bench):
     formation=tuple(sum(r['position']==p for r in start) for p in (2,3,4))
-    distributions=[poisson_binomial_missing([r['p_play'] for r in start if r['position']==p]) for p in (2,3,4)]
+    distributions=[poisson_binomial_missing([active_probability(r) for r in start if r['position']==p]) for p in (2,3,4)]
     missing=np.einsum('i,j,k->ijk',*distributions).reshape(-1)
-    p=np.array([r['p_play'] for r in bench]);q=np.array([r['conditional_points'] for r in bench])
+    p=np.array([active_probability(r) for r in bench]);q=np.array([active_return(r) for r in bench])
     masks=np.array(list(product((0,1),repeat=3)))
     weights=np.prod(np.where(masks,p,1-p),axis=1)
     table=bench_table(formation,tuple(r['position'] for r in bench))
@@ -73,7 +82,7 @@ def objective(selection,players):
     keeper=next(r for r in start if r['position']==1);reserve=next(r for r in bench if r['position']==1)
     c=by[selection['captain']];v=by[selection['vice']]
     return float(sum(r['expected_points'] for r in start)+bench_value(out,res)+
-        (1-keeper['p_play'])*reserve['expected_points']+c['expected_points']+(1-c['p_play'])*v['expected_points'])
+        (1-active_probability(keeper))*reserve['expected_points']+c['p_play']*c['conditional_points']+(1-c['p_play'])*v['p_play']*v['conditional_points'])
 
 
 def select(players):
@@ -84,7 +93,8 @@ def select(players):
     """
     d=validate(players);out=[r for r in d if r['position']!=1];keepers=[r for r in d if r['position']==1]
     ids=np.array([r['id'] for r in d]);p=np.array([r['p_play'] for r in d]);xp=np.array([r['expected_points'] for r in d])
-    bonus=xp[:,None]+(1-p[:,None])*xp[None,:];np.fill_diagonal(bonus,-np.inf)
+    play_xp=np.array([r['p_play']*r['conditional_points'] for r in d])
+    bonus=play_xp[:,None]+(1-p[:,None])*play_xp[None,:];np.fill_diagonal(bonus,-np.inf)
     byid={r['id']:i for i,r in enumerate(d)};best=None
     for ix in combinations(range(13),10):
         starters=[out[i] for i in ix]
@@ -99,7 +109,7 @@ def select(players):
             reserve=next(r for r in keepers if r['id']!=keeper['id'])
             eleven=sorted([*starters,keeper],key=lambda r:r['id']);ii=[byid[r['id']] for r in eleven]
             pair=bonus[np.ix_(ii,ii)];ci,vi=np.unravel_index(np.argmax(pair),pair.shape)
-            value=sum(r['expected_points'] for r in eleven)+bench_best[0]+(1-keeper['p_play'])*reserve['expected_points']+pair[ci,vi]
+            value=sum(r['expected_points'] for r in eleven)+bench_best[0]+(1-active_probability(keeper))*reserve['expected_points']+pair[ci,vi]
             if best is None or value>best['expected_points']+1e-12:
                 best=dict(starters=[r['id'] for r in eleven],bench=[r['id'] for r in bench_best[1]]+[reserve['id']],
                     captain=eleven[ci]['id'],vice=eleven[vi]['id'],expected_points=float(value))
@@ -115,11 +125,11 @@ def positive_dependence_stress(selection,players,rho=.25):
     """
     d=validate(players)
     if not 0<=rho<=1:raise ValueError('Invalid stress mixture')
-    by={r['id']:r for r in d};boundaries=sorted({0.,1.,*(r['p_play'] for r in d)})
+    by={r['id']:r for r in d};boundaries=sorted({0.,1.,*(r['p_play'] for r in d),*(active_probability(r) for r in d)})
     common=0.
     for lo,hi in zip(boundaries,boundaries[1:]):
         u=(lo+hi)/2
-        outcomes={r['id']:dict(actual=r['conditional_points'] if u<r['p_play'] else 0.,
-            minutes=1. if u<r['p_play'] else 0.,cards=0.) for r in d}
+        outcomes={r['id']:dict(actual=r['conditional_points'] if u<r['p_play'] else r.get('conditional_card',0.) if u<active_probability(r) else 0.,
+            minutes=1. if u<r['p_play'] else 0.,cards=1. if r['p_play']<=u<active_probability(r) else 0.) for r in d}
         common+=(hi-lo)*score(selection,by,outcomes)['net_points']
     return float((1-rho)*objective(selection,d)+rho*common)

@@ -9,8 +9,10 @@ A shared conditional DC model and conditional minutes diagnostic use the same
 chronological boundary. No availability labels enter these return models. Each
 arm then uses its frozen appearance probability times the same conditional return;
 this is a genuine conditional fit, not scaling already unconditional core points.
-Nonappearance points are assumed zero and evaluation inputs must satisfy that
-assumption. Negative *appearing* returns remain in targets. No fitted artifact is
+A shared pooled, recency-weighted training-only prior estimates zero-minute
+card-only probability and its conditional return. Nonappearance without a card
+has zero points; unexplained zero-minute returns fail closed. Negative returns
+remain in targets, including card-only penalties. No fitted artifact is
 saved or promoted. All transforms/weights fit earlier training rows only.
 
 Training: five earlier seasons plus 2025/26 GW1–19. Development: GW20–27.
@@ -22,18 +24,21 @@ whether the new conditional architecture itself helps or hurts. No best-arm pick
 
 The expected selector enumerates all legal XIs, outfield bench orders and keeper
 choices for an owned 15. Captain/vice are optimised analytically. Independent
-appearance probabilities yield exact missing-count distributions by position;
+three-state events (minutes played, card-only, complete absence) yield exact
+missing-count distributions by position;
 legal bench replacements are averaged over those counts and bench appearances.
 It maximises expected team points under this explicit distribution, not realised
-future appearances. Every conditional return can include a cameo; any appearance
-blocks an autosub. Realised scoring remains the established rule-aware scorer.
+future appearances. Every conditional return can include a cameo; minutes or a card
+block an autosub, while captain fallback depends on minutes. Realised scoring remains the established rule-aware scorer.
 
 The primary player-GW probability uses independent fixture appearances, while
 points/minutes means sum fixture expectations. Persistent fixture availability
 uses p_any=max(p_fixture) as a separate predeclared sensitivity; means stay fixed,
 and conditional-on-any return is derived from the declared fixture joint model.
 This is not dividing a legacy unconditional forecast to pretend it was fitted
-conditionally. Player-to-player independence is not learned. A fixed .25 mixture
+conditionally. The joint fixture model also preserves card-only probability and return moments,
+separating any minutes from card-only eligibility. Player-to-player independence
+is not learned. A fixed .25 mixture
 with a shared-uniform appearance shock stress-tests primary chosen plans while
 preserving marginals; it is deliberately not an estimated football correlation.
 Do not select a coupling or stress weight based on results.
@@ -72,3 +77,12 @@ plus persistent-fixture reoptimisation for squads0/4/8 (one per original stratum
 Positive-dependence stress evaluates the already chosen primary plans only; it
 is not a reoptimisation or measured correlation model. Exactness of primary
 selection does not imply the assumed independence distribution is accurate.
+
+
+A first fit attempt stopped during admission, before fitting or scoring, because
+one development row has zero minutes and a yellow-card penalty. The original
+zero-return assumption was too narrow. This case was preserved; the fixed
+training-only pooled card prior and three-state selector were added before the
+replacement run. No row was dropped or outcome corrected. Captain fallback and
+autosub eligibility are tested separately for this case. This is a data/rule
+correction, not tuning against forecast scores; the failed attempt remains stored.

@@ -9,6 +9,7 @@ from test_incumbent_availability import inputs
 def frames():
     d,x,_,_=inputs()
     for col in ['dc_rate4','dc_rate12','dc_actions4','dc_records']:x[col]=1.
+    d['yellow_cards']=0.;d['red_cards']=0.
     d['points_core']=d.played*5.;d['dc_hit']=d.played;d['total_points']=d.played*7.
     head=d[d.season.eq('2025-26')&d.GW.ge(20)][['season','GW','element','fixture','played']].copy()
     head['control']=.8;head['structured']=.9
@@ -30,9 +31,20 @@ def test_unknown_head_coverage_or_zero_minute_points_fail_closed():
     d,x,h=frames()
     with pytest.raises(ValueError,match='coverage'):fit_returns(d,x,h.iloc[1:])
     d.loc[d.season.eq('2025-26')&d.GW.ge(20)&d.played.eq(0),'total_points']=-1
-    with pytest.raises(ValueError,match='Zero-minute'):fit_returns(d,x,h)
+    with pytest.raises(ValueError,match='zero-minute'):fit_returns(d,x,h)
 
 
 def test_protocol_is_bundled_and_fixed():
     p=Path(__file__).parents[1]/'src/fpl_predict_resources/conditional_selection_protocol.json'
     assert json.loads(p.read_text())==POLICY and not POLICY['promotion']
+
+
+def test_rare_card_prior_uses_training_only_and_preserves_zero_minute_penalty():
+    d,x,h=frames();ix=d[d.season.eq('2024-25')&d.played.eq(0)].index[0]
+    d.loc[ix,['yellow_cards','total_points','points_core']]=[1.,-1.,-1.]
+    e=d[d.season.eq('2025-26')&d.GW.ge(20)&d.played.eq(0)].index[0]
+    d.loc[e,['yellow_cards','total_points','points_core']]=[1.,-1.,-1.]
+    a,r=fit_returns(d,x,h)
+    assert r['card_prior']['card_only_rows']==1
+    assert r['card_prior']['conditional_card_rate']>0
+    assert np.allclose(a.old_xp,.8*(a.conditional_core+2*a.conditional_dc)+a.old_p_card*a.conditional_card)

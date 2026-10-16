@@ -23,11 +23,23 @@ def aggregate(frame):
     out=groups.agg(actual=('actual','sum'),minutes=('minutes','sum'),position=('position','first'),
         candidate=('candidate','first'),anchor=('anchor','sum'),old_xp=('old_xp','sum'),new_xp=('new_xp','sum'),fixture_count=('fixture','size')).reset_index()
     for arm in ['old','new']:
-        pany=groups[arm+'_p'].agg(lambda p:1-float(np.prod(1-p.to_numpy(float))))
-        persistent=groups[arm+'_p'].max()
-        out[arm+'_p']=pany.to_numpy();out[arm+'_persistent_p']=persistent.to_numpy()
-        xp=out[arm+'_xp'].to_numpy(float);p=out[arm+'_p'].to_numpy(float)
-        out[arm+'_q']=np.divide(xp,p,out=np.zeros(len(out)),where=p>0)
+        records=[]
+        for _,g in groups:
+            p=g[arm+'_p'].to_numpy(float)
+            pc=g[arm+'_p_card'].to_numpy(float) if arm+'_p_card' in g else np.zeros(len(g))
+            qc=g.conditional_card.to_numpy(float) if 'conditional_card' in g else np.zeros(len(g))
+            xp=float(g[arm+'_xp'].sum());record={}
+            for suffix,persistent in [('',False),('_persistent',True)]:
+                play=float(p.max()) if persistent else 1-float(np.prod(1-p))
+                active=float((p+pc).max()) if persistent else 1-float(np.prod(1-p-pc))
+                card=max(0.,active-play)
+                if persistent:zero_mass=float(np.sum(np.maximum(0.,p+pc-play)*qc))
+                else:zero_mass=float(sum(pc[i]*qc[i]*np.prod(np.delete(1-p,i)) for i in range(len(p))))
+                record.update({arm+suffix+'_p':play,arm+suffix+'_pc':card,
+                    arm+suffix+'_q':(xp-zero_mass)/play if play else 0.,
+                    arm+suffix+'_qc':zero_mass/card if card else 0.})
+            records.append(record)
+        for key in records[0]:out[key]=[r[key] for r in records]
     return out
 
 
@@ -69,7 +81,7 @@ def prepare_market(predictions,anchor,players,snapshot_manifest,snapshot_root,so
                 if previous is None or code not in previous.index or not(previous.loc[code,'blank_verified']==1 and previous.loc[code,'fixture_count']==0):
                     raise ValueError('Unexplained missing listed prediction')
                 blank+=1
-                values={k:0. for k in ['actual','minutes','cards','anchor','old_xp','new_xp','old_p','new_p','old_persistent_p','new_persistent_p','old_q','new_q','fixture_count']}
+                values={k:0. for k in ['actual','minutes','cards','anchor','old_xp','new_xp','old_p','new_p','old_persistent_p','new_persistent_p','old_q','new_q','old_pc','new_pc','old_qc','new_qc','old_persistent_pc','new_persistent_pc','old_persistent_q','new_persistent_q','old_persistent_qc','new_persistent_qc','fixture_count']}
                 values.update(candidate=False,blank_verified=1)
             if gw>=28:
                 if code not in previous.index:raise ValueError('New roster differs from retained market')
@@ -100,9 +112,10 @@ def inputs_for(week,ids,arm,persistent=False):
     label='old' if arm.startswith('old') else 'new'
     result=choices(week,ids,label+'_xp');by=week.set_index('fpl_code')
     for r in result:
-        p=float(by.loc[r['id'],label+('_persistent_p' if persistent else '_p')]);xp=r['expected_points']
-        if p==0 and abs(xp)>1e-12:raise ValueError('Nonzero expectation with no appearance')
-        r.update(p_play=p,conditional_points=xp/p if p else 0.)
+        prefix=label+('_persistent' if persistent else '')
+        r.update(p_play=float(by.loc[r['id'],prefix+'_p']),
+            conditional_points=float(by.loc[r['id'],prefix+'_q']),
+            p_card_only=float(by.loc[r['id'],prefix+'_pc']),conditional_card=float(by.loc[r['id'],prefix+'_qc']))
     return result
 
 

@@ -36,3 +36,14 @@ def test_progression_uses_incumbent_anchor_and_fixed_combined_arm():
     assert progression(m,means)['passed']
     means['new_expected']=39.5
     assert not progression(m,means)['passed']
+
+
+def test_dgw_card_and_minutes_moments_are_preserved_under_both_joint_models():
+    f=fixture();f['old_p']=[.5,.8];f['new_p']=[.5,.8]
+    f['old_p_card']=[.05,.02];f['new_p_card']=[.05,.02];f['conditional_card']=-1.
+    f['old_xp']=f.old_p*4.-f.old_p_card;f['new_xp']=f.old_xp
+    r=aggregate(f).iloc[0]
+    assert r.old_p==pytest.approx(.9) and r.old_pc==pytest.approx(.019)
+    assert r.old_q*r.old_p+r.old_qc*r.old_pc==pytest.approx(5.13)
+    assert r.old_persistent_p==.8
+    assert r.old_persistent_q*r.old_persistent_p+r.old_persistent_qc*r.old_persistent_pc==pytest.approx(5.13)

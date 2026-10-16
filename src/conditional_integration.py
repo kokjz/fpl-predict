@@ -19,7 +19,7 @@ POLICY=dict(schema_version=1,method='conditional-availability-selection-v1',
     core_clip=[0,20],conditional_dc='fixed hgb7 on earlier appearing observed-DC rows,clip[0,1],GK0',
     conditional_minutes='fixed hgb7 on same appearing rows,clip[1,90];diagnostic only',
     probabilities='reuse exact frozen control/structured appearance forecasts from previous admitted study',
-    formula='p_play*(conditional_core + 2*conditional_DC); zero-minute points assumed0 and checked on evaluation',
+    formula='p_play*(conditional_core+2*conditional_DC)+p_card_only*conditional_card; shared training-only zero-minute card rate/return',
     validation=[20,27],audit=[28,38],refit_validation=False,parameter_or_seed_search=False,
     arms=['anchor','old_mean','new_mean','old_expected','new_expected'],
     fixed_squads=12,squad_source='neutral panels frozen separately at GW20 and GW28; no future roster used in development',
@@ -37,6 +37,7 @@ POLICY=dict(schema_version=1,method='conditional-availability-selection-v1',
        full_promotion='unchanged existing multi-season/current/integrity gates, not waived by this pilot'),
     limits=['inspected/reused historical outcomes,not untouched','conditional means average cameo/long appearances',
       'independent availability is assumed,not learnt; correlation stress is not empirical injury modelling',
+      'rare zero-minute card prior is pooled/training-only,not player-specific',
       'source publication/roster/cached schedule/statistical correction limits inherited','no direct club news or future data',
       'exact optimum applies only to fixed owned15 and specified distribution; not full transfer/chip optimisation'])
 
@@ -51,8 +52,14 @@ def fit_returns(d,x,head):
     if not merged._merge.eq('both').all() or not np.array_equal(merged.played,merged.played_head):raise ValueError('Head target coverage differs')
     bykey=head.set_index(keys).loc[pd.MultiIndex.from_frame(target[keys])]
     if not np.isfinite(bykey[['control','structured']]).all().all() or not bykey[['control','structured']].ge(0).all().all() or not bykey[['control','structured']].le(1).all().all():raise ValueError('Invalid frozen probabilities')
-    if target.loc[target.played.eq(0),'total_points'].ne(0).any():raise ValueError('Zero-minute returns require an explicit separate model')
+    cards=d.yellow_cards+d.red_cards
+    if not np.isfinite(cards).all() or cards.lt(0).any():raise ValueError('Invalid card event data')
+    if ((~train)&d.played.eq(0)&d.total_points.ne(0)&cards.eq(0)).any():raise ValueError('Unexplained zero-minute points require a separate event model')
     weights=pd.Series(sample_weights(d[train]),index=d[train].index);timing={};pred={}
+    zero=train&d.played.eq(0);card=zero&cards.gt(0)
+    if not zero.any():raise ValueError('No nonappearance prior training rows')
+    card_rate=float(weights.loc[d[card].index].sum()/weights.loc[d[zero].index].sum())
+    card_return=float(np.average(d.loc[card,'points_core'],weights=weights.loc[d[card].index])) if card.any() else 0.
     with threadpool_limits(limits=2):
         for name,rows,columns,label,limits in [('core',appearing,CORE_FEATURES,'points_core',(0,20)),
              ('dc',dc_train,DC_FEATURES,'dc_hit',(0,1)),('minutes',appearing,CORE_FEATURES,'minutes',(1,90))]:
@@ -63,10 +70,12 @@ def fit_returns(d,x,head):
     pred['dc']=np.where(target.pos.eq(1),0,pred['dc'])
     out=target.rename(columns={'GW':'gameweek','pos':'position','total_points':'actual'})
     for n,v in pred.items():out['conditional_'+n]=v
+    out['conditional_card']=card_return
     for arm,source in [('old','control'),('new','structured')]:
         p=bykey[source].to_numpy(float);out[arm+'_p']=p
-        out[arm+'_xp']=p*(pred['core']+2*pred['dc']);out[arm+'_minutes']=p*pred['minutes']
-    return out,dict(training_rows=int(train.sum()),appearing_training_rows=int(appearing.sum()),conditional_dc_rows=int(dc_train.sum()),timing=timing)
+        out[arm+'_p_card']=(1-p)*card_rate
+        out[arm+'_xp']=p*(pred['core']+2*pred['dc'])+(1-p)*card_rate*card_return;out[arm+'_minutes']=p*pred['minutes']
+    return out,dict(training_rows=int(train.sum()),appearing_training_rows=int(appearing.sum()),conditional_dc_rows=int(dc_train.sum()),card_prior=dict(training_only=True,nonappearance_rows=int(zero.sum()),card_only_rows=int(card.sum()),conditional_card_rate=card_rate,conditional_card_return=card_return),timing=timing)
 
 
 def metrics(frame):

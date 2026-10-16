@@ -10,7 +10,7 @@
   "conditional_dc": "fixed hgb7 on earlier appearing observed-DC rows,clip[0,1],GK0",
   "conditional_minutes": "fixed hgb7 on same appearing rows,clip[1,90];diagnostic only",
   "probabilities": "reuse exact frozen control/structured appearance forecasts from previous admitted study",
-  "formula": "p_play*(conditional_core + 2*conditional_DC); zero-minute points assumed0 and checked on evaluation",
+  "formula": "p_play*(conditional_core+2*conditional_DC)+p_card_only*conditional_card; shared training-only zero-minute card rate/return",
   "validation": [
     20,
     27
@@ -61,6 +61,7 @@
     "inspected/reused historical outcomes,not untouched",
     "conditional means average cameo/long appearances",
     "independent availability is assumed,not learnt; correlation stress is not empirical injury modelling",
+    "rare zero-minute card prior is pooled/training-only,not player-specific",
     "source publication/roster/cached schedule/statistical correction limits inherited",
     "no direct club news or future data",
     "exact optimum applies only to fixed owned15 and specified distribution; not full transfer/chip optimisation"
