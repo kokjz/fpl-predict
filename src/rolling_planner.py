@@ -10,6 +10,7 @@ from scipy.sparse import coo_matrix
 from forecast import select_xi
 from season_engine import Action,Market,prepare,rules_for,available_transfers
 from selection_benchmark import optimise,POSITIONS,sell_price
+from opening_baseline import cheapest_opening
 
 
 @dataclass(frozen=True)
@@ -112,8 +113,11 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=Non
             baseline={'ledger':{i:market.indexed()[i]['price_tenths'] for i in fixed}};baseline_status='supplied common opening roster'
         else:baseline=optimise(f,'expected_points',owned=old or None,bank=state.bank,free_transfers=max(1,available_transfers(state,rules)),seconds=min(5.,cfg.seconds/4))
     except ValueError:
-        if not old:raise ValueError('No validated opening-squad baseline') from None
-        baseline={'ledger':old};baseline_status='held-squad fallback; one-GW solve unavailable'
+        if old:
+            baseline={'ledger':old};baseline_status='held-squad fallback; one-GW solve unavailable'
+        else:
+            baseline={'ledger':cheapest_opening(market,state.bank)}
+            baseline_status='minimum-cost legal opening fallback; one-GW solve unavailable'
     fallback=_fallback(state,market,horizon,baseline,chips);fallback_value,_=_objective(state,market,horizon,fallback,cfg)
     # Preserve owned IDs and a full-market feasible baseline, then add form/budget candidates.
     pool=set(old)|set(baseline['ledger'])

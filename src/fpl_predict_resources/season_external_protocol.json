@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "scope": "Matched prior-only full38origin research forecasting and commonplanner season paths; namedadaptations notnative original systems orpromotions",
   "training": "Every core learner fits2020-21..2023-24;2024-25 onlyforrequired earlystopping/calibration, no2025labels fit/select. Core/nativeHGBfixedarchitecture doesnotusevalidationforselection; permitted data horizon common, intrinsicfit/calibration/weighting differ",
   "models": ["common_core_hgb7", "native_hgb", "dastan_adaptation", "openfpl_cv1_adaptation", "conjugate_poisson_adaptation"],
@@ -13,6 +13,7 @@
   "comparators": "All5modelsbothopeningtracks, pluscoherentofficial-H1 vscommon-core-H1bothtracks (officialEPneverextended), no after-outcomewinnerselection. Commonforecast externalplanner/nativeendtoend compatibility remainsseparate stage",
   "additional_standing_control": "Beforeanyseasonpathscoring addfrozenDprior-five-seasonstandingH6 bothopeningtracks, rerunwithnewplanner. No newfit. This distinguishesmatched-four-seasoncorecontrol fromclosesteligibleprior-onlystandingmethod; actualsavedchampiontrainedintotestseason isneverbackcast. All16pathsreported, no favorablebaselinechosenafterresults",
   "common_opening_constraint": "Fixonlyfirst-period15player membership; fullfutureprovisional marketremainsavailable. Do not implementcommonstart bygloballydisablinglaterpurchases. Corrected/tested beforeanycommonpathscoring; forecastbundles/fitsunchanged",
+  "opening_failure_repair": "Retain initialv4all16attempts includingcomponent-own failure fromshortbaselineMILP. Afterallinitialattempts terminal addsource-only deterministicminimum-cost position/clubflow fallback whenopeningbaseline unavailable. Validate legal/affordable fallback and unrestrictedpointsolver independently, thenuniformlyrerunall16paths withsameforecasts/parameters/budgets andnewsource. No selectivefailure retry, forecaster refit orpoint-tuned parameterselection. Initialresultsremainreported separately; codefix notpolicy/modelpromotion",
   "metrics": "Realised38GWnetpoints/hits/transfers/chips, pairedweeklycontrasts/cost/retainedboundavailability; point RMSE/MAE/ranking secondary sameorigincohorts. One reusedseason, no untouched/general/nativeoriginalsuperiorityclaim",
   "resources": "2CPUthreads/900sperjob/4GiBRSS/project2GiB/growth256MiB/free5GiB; checkpointpreparation/permodel/perseasonjobs, avoidduplicateweights/cachecompression; no remoteGPUunlesslocalpilotactuallycannotfit",
   "reproduction": "PinnedOpenFPLcv1recipead055ba7270145ce8ecc1f19581423493b1357e7,Dastanarchitecture758db9247e8b3a9a870c991064f74d8339d61cd0,optionalXGBoost3.2.0. PriorDseasonthrough2024fit differsfromcommoncoretrainthrough2023; rerunmatchedbaseline, notcompareold2295asnewanchor",

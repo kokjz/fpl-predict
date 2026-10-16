@@ -153,6 +153,29 @@ def test_baseline_solver_timeout_can_keep_owned_squad(monkeypatch):
     a,r=plan(s,m,h,config());assert 'held-squad fallback' in r['baseline'];prepare(s,m,a[0])
 
 
+def test_opening_baseline_and_main_solver_timeout_still_produce_legal_plan(monkeypatch):
+    import rolling_planner
+    from scipy.optimize import OptimizeResult
+    _,m,h=setup(gw=1,H=3);s=State(m.season)
+    monkeypatch.setattr(rolling_planner,'optimise',lambda *a,**k:(_ for _ in ()).throw(ValueError('timeout')))
+    monkeypatch.setattr(rolling_planner,'milp',lambda *a,**k:OptimizeResult(status=1,x=None))
+    actions,r=plan(s,m,h,config())
+    assert len(actions)==3 and 'minimum-cost legal opening fallback' in r['baseline']
+    assert r['objective']==r['fallback_objective'] and r['selected_plan_bound']['relative_gap'] is None
+    for gw,a in zip(h.gameweeks,actions):
+        s=prepare(s,Market.create(m.season,gw,m.deadline,m.as_of,[dict(p) for p in m.players]),a).state
+
+
+def test_opening_feasibility_fallback_does_not_lock_solver_squad(monkeypatch):
+    import rolling_planner
+    _,m,h=setup(gw=1,H=1);s=State(m.season)
+    h=Horizon.create(m,[dict(v,expected_points=100. if v['id']==16 else v['expected_points']) for v in h.forecasts],**dict(h.provenance))
+    monkeypatch.setattr(rolling_planner,'optimise',lambda *a,**k:(_ for _ in ()).throw(ValueError('timeout')))
+    actions,r=plan(s,m,h,config())
+    assert 16 in actions[0].buys and r['objective']>r['fallback_objective']
+    prepare(s,m,actions[0])
+
+
 def test_plan_cli_write_once_and_source_checks(tmp_path,monkeypatch):
     import hashlib,json,sys
     from dataclasses import asdict

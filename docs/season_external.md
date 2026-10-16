@@ -76,6 +76,15 @@ retain access to the full market. This is enforced in the solver, rather than
 by disabling non-opening players throughout the planning horizon. The contract
 was checked before any common-opening management path was scored.
 
+The first fixed experiment attempted all sixteen paths. One own-opening path
+failed when a short baseline solve could not certify an optimal opening roster.
+That failure remains part of the evidence. A source-only minimum-cost flow
+routine now provides a legal, affordable opening fallback if that solve fails;
+it does not fix the main solver's squad or claim the best predicted points.
+Existing held-squad fallbacks are unchanged. The revised experiment reruns all
+sixteen paths with the same frozen forecasts and budgets, rather than retrying
+only a failed method or choosing parameters after inspecting scores.
+
 Archived official EP has complete observed coverage here, but its publisher's
 training lineage is unreported. Its one-week track is an as-of-source comparator,
 not a claim of the same fitted-label split as the five reconstructed learners.
