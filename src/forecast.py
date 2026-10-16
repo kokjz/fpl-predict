@@ -11,6 +11,7 @@ import pandas as pd
 from threadpoolctl import threadpool_limits
 from fpl_model import FeatureStore,normalise
 from model_registry import resolve_champion
+from conditional_forecaster import predict_current
 from availability_evidence import observations, scoped_overrides, official_baselines
 
 from runtime import workspace_root
@@ -83,7 +84,12 @@ def run(args):
     model_path,champion_version,_=resolve_champion(ROOT)
     model=joblib.load(model_path)
     if model.metadata['version']!=champion_version:raise ValueError('Registry/model version mismatch')
-    pred=model.predict(x,target.pos)
+    if getattr(model,'requires_availability',False):
+        source=next((v for v in manifest['files'] if v['file']=='bootstrap.json'),None)
+        if not source or source.get('sha256')!=hashlib.sha256((root/'bootstrap.json').read_bytes()).hexdigest():
+            raise ValueError('Conditional availability bootstrap checksum mismatch')
+        if pd.Timestamp(source['retrieved_utc'])!=now:raise ValueError('Bootstrap and snapshot clocks differ')
+    pred,learned_availability=predict_current(model,x,target.pos,target,b,manifest['retrieved_utc'])
     overrides=json.loads(Path(args.overrides).read_text()) if args.overrides else {}
     review_path=getattr(args,'availability_review',None)
     review=json.loads(Path(review_path).read_text()) if review_path else None
@@ -141,6 +147,10 @@ def run(args):
     provenance={'snapshot':tag,'as_of_utc':now.isoformat(),'model':model.metadata,'champion_registry_version':champion_version,'model_sha256':hashlib.sha256(model_path.read_bytes()).hexdigest(),'source_sha256':{name:hashlib.sha256((Path(__file__).resolve().parent/name).read_bytes()).hexdigest() for name in ['fpl_model.py','forecast.py','model_registry.py','availability_evidence.py']},'inputs_manifest_sha256':hashlib.sha256((root/'manifest.json').read_bytes()).hexdigest(),'overrides':overrides,'start_gw':nextgw,'through_gw':gws[-1],'current_history_rows':len(hist),'supported_horizon':'one-GW empirical test; all further horizons are unvalidated planning approximations','caveats':['Current forecasts use this-season form and pooled historical patterns; no individual carryover across seasons.','Doubtful/injured status requires scenario review; official percentage is not used as a start probability.','No news-adjusted forecast unless an explicit documented override is supplied.','Six-GW transfer comparison holds the rest of the squad and roles fixed, allows captain changes, and excludes autosubs, future transfers and banked-FT option value. It is not a globally optimal season strategy.','XI objective omits vice-captain fallback and autosub expectation; captain/vice pair is a practical ranking.','Double-GW appearance probability assumes independent matches and is approximate.','Selling prices come from the last manager-confirmed state; reconfirm affordability before action.','Direct core-point model carries historical assist/BPS changes; exact current BPS outcome prediction is not established.','Empirical 80% intervals apply to core match points only; they exclude current DC/fitness uncertainty and are not summed into a multiweek confidence interval.']}
     provenance['timing_note']='as_of_utc is the input snapshot; created_at_utc is when this forecast was generated.'
     provenance['availability_review']=review
+    provenance['learned_availability']=learned_availability
+    if learned_availability:
+        provenance['source_sha256']['conditional_forecaster.py']=hashlib.sha256((Path(__file__).resolve().parent/'conditional_forecaster.py').read_bytes()).hexdigest()
+        provenance['caveats'][2]='Official next-GW chance labels enter the learned appearance head; manual news/role review remains necessary. Later horizons use missing availability.'
     provenance['snapshot_as_of_utc']=manifest['retrieved_utc']
     provenance['timing_note']='as_of_utc includes any recorded availability review; snapshot_as_of_utc dates API inputs; created_at_utc dates generation.'
     provenance['official_ep_next_scope']='Unadjusted official next-GW projection only; no extrapolation or missing-value imputation.'

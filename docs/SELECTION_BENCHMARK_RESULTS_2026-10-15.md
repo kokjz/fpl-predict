@@ -111,3 +111,13 @@ the historical incumbent reference; ranking and the fixed combined selector do
 not qualify. Matched external error/common-mean-policy results are reported,
 including an observed but uncertain RMSE win over the Dastan adaptation. Original
 system comparisons in this document remain unchanged. No model is promoted.
+
+
+## Subsequent forecaster qualification — 16 October 2026
+
+The [forecaster-only qualification](FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md)
+saves/reloads the fixed conditional candidate and tests current-input compatibility.
+Older chronological development is nearly neutral; same-policy retained external
+comparisons preserve the error advantage, but reset/rolling points favour the
+standing reference. No new expected-selector adoption or model promotion occurs.
+This follow-up does not rewrite the results or progression rules above.

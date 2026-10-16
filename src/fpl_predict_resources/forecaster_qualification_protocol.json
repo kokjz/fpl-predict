@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "experiment": "conditional-forecaster-only-qualification-v1",
+  "fixed_candidate": "PR26 new conditional forecaster with existing mean selector; no search, no expected selector adoption",
+  "selection_warning": "Candidate identified using already inspected 2025 outcomes; all results retrospective, never untouched",
+  "development": {"test_seasons": ["2022-23", "2023-24"], "training": "all completed earlier seasons only", "pooled_core_rmse_improvement": 0.005, "maximum_fold_rmse_worsening": 0.005},
+  "historical_audit": {"test_seasons": ["2024-25", "2025-26"], "training": "earlier seasons; 2025 full scoring additionally reports matched fixed train-through-GW19 cohort", "pooled_core_rmse_improvement": 0.005, "maximum_season_worsening": 0.005, "maximum_pooled_mae_worsening": 0.005, "paired_block4_rmse_upper_below_zero": true},
+  "practical": {"owned_primary": "nonnegative pooled candidate-minus-standing points on identical frozen squads", "retained_2025_panels": 12, "secondary": "same-policy budget reset and six rolling episodes; external adapters identical inputs/coverage", "diagnostic_not_gate": "NDCG; no threshold or blend tuning on prior audits"},
+  "current": {"window": "2026-27 GW1-5 retrospective", "minimum_candidates": 150, "rmse_no_worse": true, "mae_maximum_worsening": 0.01, "training": "prior seasons only"},
+  "artifact": "trusted local hash-verified immutable joblib; reload parity; source/environment/feature provenance; no public binary",
+  "availability": "Only admitted 2025 predeadline labels exist; all older labels missing. Current official snapshot labels next-GW only, further horizons missing. Missing never means fit, healthy or start probability",
+  "progression": "Run fixed development first; failure forbids new expanded multi-season fits or final production refit. Still build/reload already-fixed 2025 candidate and finish bounded retained external practical/current-input compatibility diagnostics. No automatic promotion or future-data wait",
+  "promotion": "All standing model_registry.REQUIRED_GATES must pass; no automatic gate waivers; any untested gate is false/inconclusive",
+  "limits": {"threads":2,"seconds_per_job":900,"rss_mib":4096,"project_mib":2048,"growth_mib":256,"minimum_free_mib":5120}
+}
