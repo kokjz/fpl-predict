@@ -38,6 +38,13 @@ coverage and synthetic mechanics. Adaptive multiweek planning and fullseason
 competitor management benchmarks are still being built; current weekly/reset
 comparisons do not establish season-long management superiority.
 
+The [multi-gameweek planner](docs/rolling_planner.md) now chooses provisional
+transfers/lineups across1–8gameweeks and validates finances against the state
+engine. Its [mechanical pilot](docs/ROLLING_PLANNER_PILOT_2026-10-16.md) checks
+origin timing and bounded solver behaviour, while exposing a preseason forecast
+cold-start limitation. It is experimental; chip strategy and realised fullseason
+competitor comparisons are not yet established.
+
 The [controlled integration workflow](docs/conditional_selection.md) separates conditional-return prediction, appearance probabilities and legal bench/captain decisions. It is research tooling and does not replace the approved model or production selector.
 
 The optional [participation audit](docs/participation_audit.md) checks frozen point-risk diagnostics and predeadline evidence, including sourced club/press reports, without applying overrides. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).

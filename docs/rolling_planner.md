@@ -67,3 +67,9 @@ benchmark stages. Existing approved forecasts and weekly commands are unchanged.
 
 Grounding checked16October2026: [SciPy MILP](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.milp.html)
 and [Open FPL Solver](https://github.com/solioanalytics/open-fpl-solver).
+
+
+The [completed mechanical pilot](ROLLING_PLANNER_PILOT_2026-10-16.md) reports
+three origins, full finance/reload checks, computational cost and a preseason
+forecast limitation. It does not change the objective weights or establish
+realised season gains. All further qualification remains separate.

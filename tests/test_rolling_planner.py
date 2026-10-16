@@ -109,3 +109,30 @@ def test_plan_cli_write_once_and_source_checks(tmp_path,monkeypatch):
     main();r=json.loads((out/'plan.json').read_text());assert r['origin']==38 and len(r['provisional_actions'])==1
     assert r['report']['components']['terminal_ft']==0 and r['report']['components']['terminal_squad_proxy']==0
     with pytest.raises(SystemExit):main()
+
+
+def test_lost_selling_profit_changes_affordable_sell_and_rebuy_choice():
+    s,m,h=setup();m=Market.create(m.season,m.gameweek,m.deadline,m.as_of,[dict(p,price_tenths=60 if p['id']==15 else 50) for p in m.players])
+    rows=[]
+    for r in h.forecasts:
+        z=dict(r);i=z['id'];t=z['gameweek']-s.gameweek
+        if i==15:z['expected_points']=5. if t==0 else 8.
+        elif i==16:z['expected_points']=9. if t==0 else 0.
+        elif i in (17,18):z['expected_points']=0.
+        rows.append(z)
+    h=Horizon.create(m,rows,**dict(h.provenance))
+    discounted=replace(s,bank=0,holdings=tuple((i,40 if i==15 else 50) for i in range(1,16)))
+    at_cost=replace(s,bank=0,holdings=tuple((i,60 if i==15 else 50) for i in range(1,16)))
+    keep,_=plan(discounted,m,h,config(churn_cost=0.));trade,_=plan(at_cost,m,h,config(churn_cost=0.))
+    assert 15 not in keep[0].sells and 15 in trade[0].sells and 15 in trade[1].buys
+    assert 16 in keep[0].buys and 16 in trade[0].buys  # equity-preserving alternative sells a different forward
+
+
+def test_valid_time_limit_incumbent_is_reconciled_and_not_called_optimal(monkeypatch):
+    import rolling_planner
+    native=rolling_planner.milp
+    def bounded(*a,**k):
+        r=native(*a,**k);r.status=1;return r
+    monkeypatch.setattr(rolling_planner,'milp',bounded)
+    s,m,h=setup();a,r=plan(s,m,h,config());assert r['selection']=='validated time-limit incumbent' and not r['proven_optimal']
+    prepare(s,m,a[0])
