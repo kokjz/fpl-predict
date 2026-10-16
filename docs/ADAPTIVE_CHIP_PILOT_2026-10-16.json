@@ -1,0 +1,149 @@
+{
+  "scope": "Two origin frozen-forecast/neutral-state chip/scenario mechanics pilot, no realisedseason score or external comparison",
+  "seconds": 67.97898499993607,
+  "model_promotion": false,
+  "new_fit": false,
+  "protocol_sha256": "d73f4f2866f3c7ac19d7aa8a9dac9a17d076e5e1dae8899ac93c5219da6ded17",
+  "pilot_source": "7845f65e07a47bc9b09cf1f12574f1315214fb34",
+  "origins": [
+    {
+      "origin": 20,
+      "baseline_scenario_objectives": {
+        "base": 327.0268892961669,
+        "downside": 327.0268892961669
+      },
+      "objective": 378.6033584336973,
+      "coarse_reserve": 8.0,
+      "total_proxy": 386.6033584336973,
+      "scenario_objectives": {
+        "base": 378.6033584336973,
+        "downside": 378.6033584336973
+      },
+      "chip_schedule": {
+        "20": "wildcard",
+        "23": "3xc",
+        "24": "bboost"
+      },
+      "coarse_schedule": {
+        "38": "freehit"
+      },
+      "coarse_values": {
+        "wildcard": 12.0,
+        "freehit": 8.0,
+        "3xc": 5.0,
+        "bboost": 10.0
+      },
+      "seconds": 60.18417895794846,
+      "trials": 33,
+      "budget_exhausted": true,
+      "largest_trial_mip_gap": 0.00271060893628098,
+      "input_sha256": "f7aedd713ceba3a64f1032153069d5c7dbb52720a7e86168f9e327cfe48a6cc0",
+      "ledger": [
+        {
+          "gameweek": 20,
+          "hits": 0,
+          "bank": 5,
+          "ft": 1,
+          "chip": "wildcard"
+        },
+        {
+          "gameweek": 21,
+          "hits": 0,
+          "bank": 5,
+          "ft": 2,
+          "chip": null
+        },
+        {
+          "gameweek": 22,
+          "hits": 0,
+          "bank": 5,
+          "ft": 3,
+          "chip": null
+        },
+        {
+          "gameweek": 23,
+          "hits": 0,
+          "bank": 5,
+          "ft": 4,
+          "chip": "3xc"
+        },
+        {
+          "gameweek": 24,
+          "hits": 0,
+          "bank": 11,
+          "ft": 4,
+          "chip": "bboost"
+        },
+        {
+          "gameweek": 25,
+          "hits": 0,
+          "bank": 11,
+          "ft": 5,
+          "chip": null
+        }
+      ]
+    },
+    {
+      "origin": 38,
+      "baseline_scenario_objectives": {
+        "base": 38.74569371165651,
+        "downside": 38.70155254059122
+      },
+      "objective": 59.58033101013268,
+      "coarse_reserve": 0.0,
+      "total_proxy": 59.58033101013268,
+      "scenario_objectives": {
+        "base": 59.58033101013268,
+        "downside": 59.58033101013268
+      },
+      "chip_schedule": {
+        "38": "freehit"
+      },
+      "coarse_schedule": {},
+      "coarse_values": {
+        "wildcard": 12.0,
+        "freehit": 8.0,
+        "3xc": 5.0,
+        "bboost": 10.0
+      },
+      "seconds": 0.5784573340788484,
+      "trials": 5,
+      "budget_exhausted": false,
+      "largest_trial_mip_gap": 0,
+      "input_sha256": "f78b8c7f63082ac5d855d4ce58f8b5b8416c6bb9930df0e80f4c1b649a369c7c",
+      "ledger": [
+        {
+          "gameweek": 38,
+          "hits": 0,
+          "bank": 97,
+          "ft": 1,
+          "chip": "freehit"
+        }
+      ]
+    }
+  ],
+  "supervision": {
+    "status": "completed",
+    "elapsed_seconds": 69.36326462496072,
+    "peak_observed_rss_bytes": 595689472,
+    "peak_observed_project_bytes": 733853239,
+    "minimum_observed_free_bytes": 138328322048,
+    "limits": {
+      "threads": 2,
+      "seconds": 900,
+      "memory_mib": 4096,
+      "poll_seconds": 0.25,
+      "max_project_mib": 2048,
+      "max_growth_mib": 256,
+      "min_free_mib": 5120,
+      "storage_poll_seconds": 5
+    }
+  },
+  "caveats": [
+    "Expected heuristic objectives, not actual FPL points; additional chip access confounds superiority versus no-chip baseline",
+    "Coarse FHslot38 is an arbitrary tie under constant assumptions, not an evidence-based deadline recommendation",
+    "Downside scenario does not affect selected squads here; no claim of measured news-response gain",
+    "Synthetic tests separately demonstrate injury-driven replanning and exact toy chipfinance; full38GW/equal-chip/nativeexternal comparisons remainD/E",
+    "No model or weeklypolicy adoption; explicit scenarios not calibrated forecasts"
+  ]
+}

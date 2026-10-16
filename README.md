@@ -46,10 +46,16 @@ remain experimental comparisons rather than approved forecast replacements.
 
 The [multi-gameweek planner](docs/rolling_planner.md) now chooses provisional
 transfers/lineups across1–8gameweeks and validates finances against the state
-engine. Its [mechanical pilot](docs/ROLLING_PLANNER_PILOT_2026-10-16.md) checks
+engine. The optional [chip/scenario planner](docs/adaptive_planner.md) adds legal
+chip schedules, shared decisions across explicit uncertainty scenarios and a
+coarse remaining-season calendar. Its chip search is bounded and heuristic;
+future chip values and scenario weights remain assumptions, pending full-season
+validation. The rolling planner's
+[mechanical pilot](docs/ROLLING_PLANNER_PILOT_2026-10-16.md) checks
 origin timing and bounded solver behaviour, while exposing a preseason forecast
-cold-start limitation. It is experimental; chip strategy and realised fullseason
-competitor comparisons are not yet established.
+cold-start limitation. The chip planner's [bounded pilot](docs/ADAPTIVE_CHIP_PILOT_2026-10-16.md)
+checks integration and cost; realised full-season competitor comparisons remain
+unfinished.
 
 The [controlled integration workflow](docs/conditional_selection.md) separates conditional-return prediction, appearance probabilities and legal bench/captain decisions. It is research tooling and does not replace the approved model or production selector.
 

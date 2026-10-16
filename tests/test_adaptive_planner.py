@@ -56,3 +56,26 @@ def test_budget_retains_valid_no_chip_baseline():
     s,m,h=setup();actions,r=plan_adaptive(s,m,[('base',1.,h)],settings=config(),budget=Budget(seconds=5.,solve_seconds=1.,max_trials=1))
     assert r['budget_exhausted'] and len(r['trials'])==1 and not r['chip_schedule']
     prepare(s,m,actions[0])
+
+
+def test_new_injury_evidence_changes_replanned_captain_without_future_knowledge():
+    s,m,h=setup(gw=38,H=1);budget=Budget(seconds=5.,solve_seconds=1.,max_trials=1)
+    normal,_=plan_adaptive(s,m,[('base',1.,h)],settings=config(),budget=budget)
+    captain=normal[0].captain
+    down,_=scenario(h,m,[dict(id=captain,gameweeks=[38],multiplier=0.,reason='Newly sourced injury downside sensitivity',available_at=m.as_of,source_url='https://example.org/news')])
+    revised,_=plan_adaptive(s,m,[('down',1.,down)],settings=config(),budget=budget)
+    assert revised[0].captain!=captain
+
+
+def test_installed_command_contract_writes_once_without_runtime_initialisation(tmp_path,monkeypatch):
+    import json,sys,hashlib
+    from dataclasses import asdict
+    from fpl_predict_cli import main
+    s,m,h=setup(gw=38,H=1)
+    forecast=dict(h.provenance);forecast['source_hashes']=dict(forecast['source_hashes']);forecast['rows']=[dict(v) for v in h.forecasts]
+    spec=dict(schema_version=1,state=asdict(s),market=dict(season=m.season,gameweek=m.gameweek,deadline=m.deadline,as_of=m.as_of,rows=[dict(p) for p in m.players]),
+        scenarios=[dict(name='base',weight=1.,forecast=forecast)],budget=dict(seconds=5.,solve_seconds=1.,max_trials=1))
+    path=tmp_path/'input.json';path.write_text(json.dumps(spec));output=tmp_path/'result';runtime=tmp_path/'unused-runtime'
+    monkeypatch.setenv('FPL_PREDICT_HOME',str(runtime));monkeypatch.setattr(sys,'argv',['fpl-predict','plan-adaptive','--input',str(path),'--sha256',hashlib.sha256(path.read_bytes()).hexdigest(),'--output',str(output)])
+    main();report=json.loads((output/'plan.json').read_text());assert report['immediate_action'] and not runtime.exists()
+    with pytest.raises(SystemExit):main()
