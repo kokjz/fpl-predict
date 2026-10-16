@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "source_commit": "997e227ba86041f1e5e58704b076d5457a964e13",
+  "protocol_revision": 2,
+  "attempted_paths": 8,
+  "completed_paths": 7,
+  "failed_paths": 1,
+  "independently_reconciled_deadlines": 266,
+  "completed": [
+    {
+      "arm": "common_core_hgb7_standing_own",
+      "net_points": 2113.0,
+      "hits": 16,
+      "transfers": 87,
+      "chip_tokens": 8,
+      "deadlines": 38,
+      "status": "independently reconciled"
+    },
+    {
+      "arm": "common_core_hgb7_standing_common",
+      "net_points": 2135.0,
+      "hits": 16,
+      "transfers": 87,
+      "chip_tokens": 8,
+      "deadlines": 38,
+      "status": "independently reconciled"
+    },
+    {
+      "arm": "common_core_hgb7_airsenal_own",
+      "net_points": 2075.0,
+      "hits": 48,
+      "transfers": 94,
+      "chip_tokens": 8,
+      "deadlines": 38,
+      "status": "independently reconciled"
+    },
+    {
+      "arm": "common_core_hgb7_airsenal_common",
+      "net_points": 2035.0,
+      "hits": 48,
+      "transfers": 90,
+      "chip_tokens": 8,
+      "deadlines": 38,
+      "status": "independently reconciled"
+    },
+    {
+      "arm": "standing_prior5_standing_own",
+      "net_points": 2236.0,
+      "hits": 24,
+      "transfers": 91,
+      "chip_tokens": 8,
+      "deadlines": 38,
+      "status": "independently reconciled"
+    },
+    {
+      "arm": "standing_prior5_standing_common",
+      "net_points": 2169.0,
+      "hits": 32,
+      "transfers": 88,
+      "chip_tokens": 8,
+      "deadlines": 38,
+      "status": "independently reconciled"
+    },
+    {
+      "arm": "standing_prior5_airsenal_own",
+      "net_points": 2059.0,
+      "hits": 80,
+      "transfers": 94,
+      "chip_tokens": 7,
+      "deadlines": 38,
+      "status": "independently reconciled"
+    }
+  ],
+  "failed": {
+    "arm": "standing_prior5_airsenal_common",
+    "status": "failed",
+    "gameweek": 1,
+    "frozen_decisions": 0,
+    "cause": "SQLAlchemy StatementError wraps NativeBudgetExpired; timeout classification did not recognise the wrapper. No completed invalid proposal was admitted.",
+    "run_sha256": "496a1c73b33341a52f42b4658423aa626c5ad22a3e858015aaebf5ff6f1d0bcb"
+  },
+  "provenance_audit_sha256": "16ba9d7086efb00010b2a2b8b5edc7c0b60422c528d9c46882705ecd6dc167c1",
+  "interpretation": "Incomplete initial matrix, retained as evidence. No final paired/general winner or policy promotion. All eight paths must be uniformly rerun after typed timeout handling repair, with unchanged time/seed/objective parameters. Initial results are not merged into the corrected matrix or retrospectively selected."
+}

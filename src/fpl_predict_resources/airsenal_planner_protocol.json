@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "status": "Initial matrix retained: seven complete paths and one wrapped-deadline failure; uniform corrected eight-path rerun required.",
+  "season": "2025-26",
+  "source_recipe": "airsenal_solver_recipe.json",
+  "forecasts": [
+    "common_core_hgb7",
+    "standing_prior5"
+  ],
+  "openings": [
+    "own",
+    "common"
+  ],
+  "planners": [
+    "canonical standing",
+    "rule-adapted AIrsenal tree/GA policy"
+  ],
+  "full_season_paths": 8,
+  "horizon": 6,
+  "all_four_chip_types": true,
+  "objective": {
+    "discount": 1.0,
+    "bench_weight": 0.1,
+    "terminal_ft_value": 0.0,
+    "terminal_squad_weight": 0.0,
+    "churn_cost": 0.0
+  },
+  "native_policy": {
+    "max_opt_transfers": 2,
+    "max_total_hit": 8,
+    "allow_unused_transfers": true,
+    "seed": 42,
+    "iterations": 10
+  },
+  "native_policy_scope": "Native search restrictions, not changes to actual FPL rules or restrictions imposed on the control.",
+  "compatibility": [
+    "original native strategies with serial execution instead of unsafe macOS fork wrapper",
+    "declared bounded queue order providing early complete-horizon plans and coverage of immediate transfer families; preserve raw native FIFO evidence",
+    "constant origin-frozen quote views across the planning horizon; no realised future attributes",
+    "known season transfer top-up and purchase eligibility with retained-holding exemption",
+    "full-rebuild sell-value offer view for retained originals, restore market quotes and actual purchase basis",
+    "canonical common objective and full financial/action admission; no incomplete prefix accepted",
+    "native own opening construction and fixed common opening required; neither may silently substitute an empty or permanently fixed squad",
+    "One forecast-independent cheapest-legal roster seeds each native GA population; remaining individuals and original native fitness/evolution remain unchanged. The same common feasibility procedure supplies the control baseline.",
+    "Recognise actual deadline exceptions through typed database orig/cause/context wrappers; preserve completed plans when available and restore hooks before the next request. Do not identify timeouts by matching message text."
+  ],
+  "pilot": {
+    "outcome_fields": false,
+    "origins": [
+      1,
+      15,
+      15,
+      20,
+      38
+    ],
+    "schedules": [
+      {},
+      {},
+      {
+        "20": "freehit"
+      },
+      {},
+      {}
+    ],
+    "inner_seconds": [
+      2.0,
+      5.0
+    ],
+    "selection": "Lowest tested allowance producing admitted complete non-fallback native proposals in all five fixed feature cases; choose before season scoring. If neither passes, diagnose integrity/latency and predeclare a revised pilot, never select by realised points.",
+    "shared_outer": "Same control/native allowance, minimum six inner trials worth of outer time and maximum12trials; final budget/config frozen and published before any season score.",
+    "previous_attempt": "Revision1 feature pilot completed without evaluator outcomes: native4/5nonfallback atboth2s/5s; GW1 GA10 had no legal individual. Preserve this failure; uniformly rerun allcases after feasible population-seed repair, samebudgets/seed/iterations and gate."
+  },
+  "resources": {
+    "threads": 2,
+    "max_rss_mib": 4096,
+    "project_mib": 2048,
+    "growth_mib": 256,
+    "min_free_mib": 5120,
+    "execution": "Serial supervised checkpointed jobs; no automatic global/cloud/training dependency installs; measure total latency including construction and native startup separately."
+  },
+  "benchmark": {
+    "primary": "38GW realised net points after hits with persistent legal squad",
+    "secondary": [
+      "hits/transfers/chipdates",
+      "invalid and incomplete proposals/fallbacks",
+      "full-horizon conditional objectives and unknown bounds",
+      "runtime/memory/storage"
+    ],
+    "bounds": "Heuristic native tree/GA has no optimisation upper-bound certificate; unknown remains unknown.",
+    "validation": "Chronological prior-only fits/frozen origin inputs, independent finance/scoring audit, source/runtime/protocol hashes, both opening tracks, every declared failure/arm retained.",
+    "interpretation": "One reused season; correlated paths/gameweeks are not independent seasons. Shared outer chip policy comparison is not an original native full manager or end-to-end forecaster reproduction."
+  },
+  "model_promotion": false,
+  "policy_promotion": false,
+  "next": "Complete wrapped-deadline recovery checks; freeze corrected source, uniformly rerun all8fullseasons, publish initial and uniform matrices, review/CI/merge/sync/cleanup; Fqualification remains separate.",
+  "revision": 3,
+  "selected_resources": {
+    "inner_seconds": 2.0,
+    "outer_seconds": 15.0,
+    "max_trials": 12,
+    "feature_only_evidence": "docs/airsenal_planner_feature_pilot.json",
+    "justification": "Lowest tested all-case-valid allowance, with outer capacity for baseline/four chip families/combined calendar; no evaluator outcomes used."
+  },
+  "initial_season_attempt": {
+    "source_commit": "997e227ba86041f1e5e58704b076d5457a964e13",
+    "attempted": 8,
+    "completed": 7,
+    "failed": 1,
+    "independently_reconciled_deadlines": 266,
+    "failure": "Final five-prior/common native path stopped at GW1 before an action was recorded: SQLAlchemy StatementError wrapped NativeBudgetExpired. Expected timeout was misclassified, not a completed invalid proposal.",
+    "repair": "Typed deadline-chain recognition only. Preserve all initial paths and failure; same budgets/seed/pool/objective, uniformly rerun all eight paths on one new frozen source. No selective retry or picking best run by realised points.",
+    "evidence": "docs/airsenal_planner_initial_attempt.json"
+  }
+}

@@ -1,0 +1,1297 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "scope": "Historical inputs only; no evaluator outcomes, no season-points advantage or policy/model promotion",
+  "attempts": [
+    {
+      "attempt": "airsenal-feature-pilot-01",
+      "protocol_sha256": "d5a0e0d7b1559fa288c5b02184544e5110680a5f8a8c8c4d547f7d4adda5f8e3",
+      "forecast_sha256": "47a3644e536f3f224b3c41c0d4d184b3f27c683f8862b238a346f167b2245aa0",
+      "job_seconds": 37.21685454202816,
+      "sampled_peak_rss_bytes": 625999872,
+      "runtime": {
+        "status": "ready",
+        "revision": "fe580d7e567e79d80f73450c7d4b5d6610f05863",
+        "source_sha256": {
+          "airsenal/__init__.py": "b2c886052400f2d5197904d8e6affecdd8dbd7836c9b4d967ffd04550db68617",
+          "airsenal/apply/__init__.py": "e1412d8644540a30617a27c4b49efa145b750fcb753b880359e52c1305275711",
+          "airsenal/apply/lineup.py": "36c783ebc2e38242d144f79b8cd2abfa612512ac9eae8d33b7ca5723630280ef",
+          "airsenal/apply/transfers.py": "1daca1f9506b01f89f50be0e418b2f54fc5224bcf00358891020ad9624f247b3",
+          "airsenal/cli/__init__.py": "cc3a777a1d172773319b61ccd7c8749c80286389c99c72278edacac365226eb3",
+          "airsenal/cli/_components.py": "ac53b14712e202ada02ddcd2e08f11ac4cc150df4bd9004a12a30c4fcd692541",
+          "airsenal/cli/apply.py": "5ec483662f508781fec91ffa2e283d34216e9fc6b78e9b763ad97796f8b46181",
+          "airsenal/cli/db.py": "7ec6ab704710c4f5274e6a21e89e500a539c7b50cecb9e6524553ed68a7996e9",
+          "airsenal/cli/dump.py": "210a4dd8dee1ba895beb2bca3f4924aa0b8875669b5fdd11d4c94ab21bf6f8e9",
+          "airsenal/cli/env.py": "c23c2b609d26cbf30706a3795e8ab2942283ee4e6678d54c8e5fb211c0e2d9d0",
+          "airsenal/cli/main.py": "aaef5f3bf6fde657b21ebf847160e78611684b896f54029efff26e956040d086",
+          "airsenal/cli/optimize.py": "28269f15dc91c409b6eed8a9464811c6d66234db25777f3b073d71a1356f5215",
+          "airsenal/cli/options.py": "9e5b5beb02a4986a34772be8584e43d282c3792b5d3ef24a02fc60dedfcb32b3",
+          "airsenal/cli/plot.py": "fecd62a64171190fd686f2de2fd468fd15ea64e50a07da86ff5e262b48255634",
+          "airsenal/cli/predict.py": "3574da89e9472adda8675c9dba73207959d25b1b6aa06ba6c1b1209aca0d7553",
+          "airsenal/cli/replay.py": "a3f0f69de6838405110ddc058d64d4bca8b6db98c393e21046f3b28cc5dc27e1",
+          "airsenal/cli/run.py": "ca875b7deecbe5bbf02807b6dbc858db13d2cec80058415524ccc32578b02727",
+          "airsenal/core/__init__.py": "f09d0fe28a24468c7be7d200fd719e3d75752fea32bc14e6f38ebe4fb0e87845",
+          "airsenal/core/caching.py": "72fcd73bac8170436b35b785485d46726959640e154ffb33e16c01b563c63d89",
+          "airsenal/core/concurrency.py": "28b1be2b7a4a260d076a50bbfd4e2e582f5bdd39b8f96197b6b803d30225ed82",
+          "airsenal/core/console.py": "e796734a173ef610726192a7b0c72633a5c3c4e14ea95a2334d2a6ff43c07503",
+          "airsenal/core/copy.py": "a1596b824aa9a3eae8f1ad7ad482869ff22291a3bace696fb68cf84e52fafa14",
+          "airsenal/core/data_files.py": "5e3628d8e1ee57c73243a7c6d1905212152157497ad0d460d728c3569a9591c5",
+          "airsenal/core/dates.py": "3d8569ba50145d22ad7ec714b76f5a200f7bb4ad27fe4af7388fed33fdaf7f01",
+          "airsenal/core/env.py": "bc9973291e3bbba52fab98403fb6ce242d617a2601c2a8e31fdb568356a22ac6",
+          "airsenal/core/logging.py": "03428a40b323d784df435da0e8affa88c71c31e7f49526b4ca07eacdbcfecae8",
+          "airsenal/core/lookup.py": "c6489174897be2368ecb3a72c5a4034e316c54f664080f791cea23b02425dadb",
+          "airsenal/db/__init__.py": "eac661345bc1da6d5f939cf9321e72c2bb8a3776b7dc5ebff283a06817ad087b",
+          "airsenal/db/engine.py": "6ede2221d838075aaed029fa3392e120eb27bd9052516661d11477ef0f0d5717",
+          "airsenal/db/models.py": "59fa472492dca0b59614d01f232ae031dd0ab761140fe8e8dc58033c79d5eb77",
+          "airsenal/db/queries/__init__.py": "1cfad4decfbc0b853d68f8291dd6aa8b32bca97855918a3b8c85521d3d2b18fc",
+          "airsenal/db/queries/fixtures.py": "65dbadbbe93275bb69fa3ac234ea6244934e728a8ea2e6eb4f502fd8f2fcdbe6",
+          "airsenal/db/queries/gameweeks.py": "bc99c6f9952ed4e8fb5cc569969fa21caf61da13f0bb57315e664d75d700839f",
+          "airsenal/db/queries/players.py": "ea9da74d0dfd571b0b52f36314076d8d744972dc1240a4c504b9025610b5b512",
+          "airsenal/db/queries/predictions.py": "6afad74bfc5b5f4c56794acf3430c677611e7e6dd7456267bbcf53565229f0c5",
+          "airsenal/db/queries/scores.py": "a381233aebd7fb36c8db15c880c1e5adf2cc015ca4562427744f4759badc7169",
+          "airsenal/db/queries/tags.py": "5c9de5e52aa1c1a63a5c98a8e76dbe80226030e09aae600d31660e80a1b493c4",
+          "airsenal/db/queries/teams.py": "53ecd864e5f53b1c8ef4922878aaf35427166007bbb04531d05e1ec8795e33e3",
+          "airsenal/db/queries/transactions.py": "20265fef3243d0afb5407f34bd7ac3f1664a71fa0d5feffd913c59bf07ba454b",
+          "airsenal/db/session.py": "623a0875b6241c7d4c03cf09f7a1508583c005ecb3e9fd9dc9fa9b676048a367",
+          "airsenal/export/__init__.py": "08eb11e924ff1212cf55457dfade0595ade86daa6e0030250d4efeabd1454a11",
+          "airsenal/export/api_dump.py": "75dc36afb5a253cf15e7197b4eae643900bbaf796cb41fe73c5c2d7df786a6da",
+          "airsenal/export/attributes.py": "64373cc7f902b8aa8198f13d4fbded6b21ddb420054802cb8e9ea4132251aff4",
+          "airsenal/export/db_dump.py": "a9ef2ebe620d2ff56d69e1f08ec9e0bdf38cc65f9b2de78e3b758a657b287cd3",
+          "airsenal/export/player_details.py": "688d8032f25ab6fd1835e6bb0e1acd4facd50bead36b1cae825e3cb748875d14",
+          "airsenal/export/player_summary.py": "dff556a49858d6abdaedfce5619717c75312005c031627ab244d03304b828327",
+          "airsenal/export/results.py": "48589e7e73520e28d0ae5795622bde9eefd8407c54c919542a5b6b20c65ce75a",
+          "airsenal/game/__init__.py": "b78e830c04eac049c67cd1556491d410d0b47682e08539a51046c9b6a6d63e62",
+          "airsenal/game/enums.py": "4d8368f87581018acb5c5736f169f5022ec5e6b7f7c18afa2e54fd8573f6257f",
+          "airsenal/game/mappings.py": "7d8f95526662af10e24f0d8b9cce22d1e29a3d520630955c47433b9e4f8f8bd7",
+          "airsenal/game/scoring.py": "a8e1a60101ccc225fbe66d5a15c1225ea889a081a48a473fd34e6023073ae113",
+          "airsenal/game/season.py": "6eb4e272835c2a88e2a6a0213dcb27909f5105b88d3198a9f153bbbca3c4e927",
+          "airsenal/ingest/__init__.py": "7ad1bb36c7bc695db9fea1512d928e70dd2d9a7fa9a6324c97ae4dd5e047fa44",
+          "airsenal/ingest/absences.py": "e1ed7186f0cfc9a72606f7c46df7f959631f68298a3ec5f2f2f7c052a83ebfaf",
+          "airsenal/ingest/attributes_history.py": "b2a3d4f0c20e9b1fd14ed15b3c6d7d5845fa737cee1c09a0ebc4d07f6cf1c83e",
+          "airsenal/ingest/checks.py": "823206ea50a8124a3cc3d8f88c0edb1cff90e1e1bbd3440b5e918ab7ec4e9343",
+          "airsenal/ingest/fifa_ratings.py": "0b3bc6f9c610b38d6c2fc435e9bebdf502ec0e11ec3ad95e741553039f0ea57a",
+          "airsenal/ingest/fixtures.py": "01f47a16cb4ea5dfe43d63618666075bd266a4cdb10d5d5ca23537b93cd13ac5",
+          "airsenal/ingest/init_db.py": "6ebad11515f9fe57fc50f51d690df84a3e62411de2999b0558fc916f0b6b883c",
+          "airsenal/ingest/player_attributes.py": "1e03fc3e0196c764d521734c309e9af8d1b3ad7c87b3e3c82434c52b1240e015",
+          "airsenal/ingest/player_mappings.py": "ed65b7ee4779a767d9a406806abb355d5609060fbb982cb861c4a29882bbe38a",
+          "airsenal/ingest/player_scores.py": "aa986cf5f7b3ca971eca5c22dc265ae31e8204ba845c9b1b38998f214f694d28",
+          "airsenal/ingest/players.py": "ff9484cb3a169da2c7199643dffdd0055b942ff4d03571b95795a41ac175abb4",
+          "airsenal/ingest/results.py": "8ea8b6e928f7821644fe554843eb3961da5dbe777b3d25f8b4371ce792b777e9",
+          "airsenal/ingest/teams.py": "cbc85dd7e843cd9891af90b98e7950ccccd77c3e1e7ff6c3586580576d4e4a36",
+          "airsenal/ingest/update.py": "4037d98a49cad2fd5ddfcab6684b6edd098c73850c58e9b3843ca951a61cb0ec",
+          "airsenal/optimization/__init__.py": "dbf7231840051c55bb6af87258bbc9d712cda9939466095691ef6cf291b862c1",
+          "airsenal/optimization/moves.py": "ba84e6135837cc8d6b58fc38db4bb8544a237e67547ef552748d09d48c4218f5",
+          "airsenal/optimization/persist.py": "cfc091c6aa6ad3f754f6cf669ecfb64a2be01382e5b78085e975bafc63a5e739",
+          "airsenal/optimization/plan.py": "acd2eb0f3d13be020c279007d6e8f36d38275e7dd60b1ab20f5a9b499224839a",
+          "airsenal/optimization/protocols.py": "3c7dc2d2b602656cd37806eae63b9ada097c3d91dd49e6bba8b2e9b68f61d8e1",
+          "airsenal/optimization/run_squad.py": "5df2f4e38a61ab0a46cc7e0229032f1d604ae1aacb54842573d744efe69487f4",
+          "airsenal/optimization/run_transfers.py": "6321af5bd26859d42474f013417252f5688146125c44046407f3fdbf55a5737f",
+          "airsenal/optimization/squad_optimizers/__init__.py": "53d54f0074504bbaf679ea8ee290f487dd16cfb04d1d50ea0d56f25f4f123c19",
+          "airsenal/optimization/squad_optimizers/genetic.py": "85d2ccef8cd592a9978351d5e0b00ca8f67e39833d3798710214e2c5213188e0",
+          "airsenal/optimization/squad_optimizers/genetic_algorithm.py": "7a25c3a32f1af5792aa331d498e409c6d6879de0e84a9e2a7293d5a2faf08f1c",
+          "airsenal/optimization/squad_score.py": "a57364c6d07f6a75e1d546b9b8e075a547a1ba40084afe0066405475eb97ac51",
+          "airsenal/optimization/strategies/__init__.py": "8801a321ed9abb00272aa0ae81d1c04fce30ebbde660e5c37bf0922e7847c586",
+          "airsenal/optimization/strategies/double.py": "237f082b35d87b9af5546cd820253188bd07256032423e2e5910691a82ab9dd6",
+          "airsenal/optimization/strategies/full_squad.py": "0bf378022b21f945d74ab236576ed80edc41dc2c2b449c2212169502aeb27c4c",
+          "airsenal/optimization/strategies/none.py": "d3eae58ecf767dc8bdaead8297f54f79c1c0bded9b4d50be1bb5767a02def6ca",
+          "airsenal/optimization/strategies/random_search.py": "800958d0c804e16af8d1fe3e2a6e5f70b85f0384ee7aaa89a4dba546081da579",
+          "airsenal/optimization/strategies/single.py": "91e99361a08ced18ae9fc0c78bd3c29dadc348ee116c0646251a9aad2d3e477d",
+          "airsenal/optimization/transfer_optimizers/__init__.py": "223211d46400867b663e2713f52e022612f28f2ba565931ce57d0b4e06b2bcc1",
+          "airsenal/optimization/transfer_optimizers/tree_search.py": "088ba4e30ac1ff539b623898878d4ceafc2c59c7ce4cb03b95f62e8c158da17c",
+          "airsenal/pipeline/__init__.py": "e686502425bdd3be8b766e80babfc93fa8d598c921c22ee6e797082716433c8b",
+          "airsenal/pipeline/replay.py": "4e38bad9ce7994b9502ffd6d0c89a51ac5b71ce6f691bddb12a0c96372dd6223",
+          "airsenal/pipeline/run.py": "3e02185b3d42da28b2acbece43e47f7e2ad53ac6cfa5e8702b080812fec151c0",
+          "airsenal/pipeline/settings.py": "65bafb94cd99bbccd398199817bcb4a144b1c8f9127e9061fd947da9cba5053e",
+          "airsenal/prediction/__init__.py": "8b5b1cbd5c0b64668900a7eb2c33acc31c374831230d1b764416aadc7362d25c",
+          "airsenal/prediction/evaluation.py": "176e9fbf492773eead558106b19861c4f890ad858d979e69b9489ce2be96c9f8",
+          "airsenal/prediction/features.py": "8afcb830ab255554819b8a630d78f8f61f44f01469d29d125e5a472f64be13f0",
+          "airsenal/prediction/minutes.py": "34a9dd261fa010a327cc81f88e6b181eb7c0c081f626531d54540f7dfc5304ff",
+          "airsenal/prediction/minutes_models/__init__.py": "ddc077c15b90feca37526d13499b47655d0d837f3fbb14a9a4e3840e32b88933",
+          "airsenal/prediction/minutes_models/recent.py": "26249337cc4b2a4fc6ee3cc5a6e9837c1d0c94e31e065671b7aa4d61c3318b4c",
+          "airsenal/prediction/player_models/__init__.py": "90687dbe9401cdada35393e1c05fb95694d2ec9a9e2b17294dfe08f0cf965053",
+          "airsenal/prediction/player_models/conjugate.py": "5ac99838abd1b64869371c0a7d741fb6f9339b22a69abc2ca09d23e7321f197c",
+          "airsenal/prediction/player_models/constant.py": "0f36622ba469eb06047e417a3750a254b2a491f3c142cb37dbe65a49ce97316d",
+          "airsenal/prediction/player_models/fitting.py": "00560b8adc706a4ad9eaf4430b2904adb57bc7be89cf81cfa89e932b768a4b0c",
+          "airsenal/prediction/player_models/mcmc.py": "e61b31c88d4f6c5cd87360b5d770b796e8ccb7befd4b57a382482348644569fd",
+          "airsenal/prediction/player_models/scaling.py": "68d3eb15df6f20cc5a2bbde2516f62608313a317447e73a6c8894722b7ba2543",
+          "airsenal/prediction/player_models/xg.py": "579759032f745ef85b3c446b8c856419b45ee9ec41089276b10b67559f00709e",
+          "airsenal/prediction/point_components/__init__.py": "05014bc7b8d8b68c9718706773050f4b8bc9ca7868b79dd26c91208c8dab64bc",
+          "airsenal/prediction/point_components/actual.py": "d5cae8a04d487eaaabf324db96cabc6cfab64e5d28b6de228e3b965b0101f7e1",
+          "airsenal/prediction/point_components/appearance.py": "fd471a2438a5bf4e7e506f890ddcd526f725e28f6b5df8e825e46ba56cd611cb",
+          "airsenal/prediction/point_components/attacking.py": "4c73621dbdb0804bd41aac6242a327b4281c5c4f62fb918a1624d235733a46e7",
+          "airsenal/prediction/point_components/bonus.py": "0ba8eb9dd6ba475328011b75f556e4b820ed3d56bbd6c45ba3d563f2fdc2137c",
+          "airsenal/prediction/point_components/cards.py": "1d2e4d9ae208566fbee765c676040a8ed64ca5f1ec3af2b4409ec884cf7be025",
+          "airsenal/prediction/point_components/def_con.py": "a832e81b49b2a0e4abcaeb32356af3ce1decbcb4f97fc150416ed27bbbaae4a2",
+          "airsenal/prediction/point_components/defending.py": "897c79914953cf54c0f90183a97ef30febf2057180d72f6de81914867dbe4ee2",
+          "airsenal/prediction/point_components/empirical_bayes.py": "9b31e4548f1ada56a526a651b206f5b8a7c28fb399b2d8ecc6a0e76969c6aa73",
+          "airsenal/prediction/point_components/saves.py": "d5c45a729ffb507033f9533ec150fef0d2e51263cc37d3c84700bc2ff1206d89",
+          "airsenal/prediction/points_models/__init__.py": "c595cda9e6c5637ad02b5455cb0860fd58bdf9d57e872bde3966d48c3ca0a9fe",
+          "airsenal/prediction/points_models/component.py": "09f71631365cd17f83b151a484182ed88a58311f8f38ad4dcf6a39327d5a8dbd",
+          "airsenal/prediction/protocols.py": "4b8b0379d8ebbd78caf315b29446d899bd345b49a6284240bc961e738e49594a",
+          "airsenal/prediction/run.py": "8981cf0c47af56fd898de74c1e9f0b5a0c3a3f402cdf3e3313d8806086d13b3b",
+          "airsenal/prediction/team_models/__init__.py": "7f4431bb1dafd5c09614a2db8d92eebf75a6f25abede935a03e12d9b354a8d17",
+          "airsenal/prediction/team_models/constant.py": "a4d88b24c5c28e2a2d8d0989574c07483fe4963466edfdf74dd9216740e72109",
+          "airsenal/prediction/team_models/dixon_coles.py": "956e6f0a683e5cc9de90e687866cd4171ed3ef7b34d9e6f81456b7fd3bde6e2b",
+          "airsenal/prediction/team_models/fitting.py": "a3d07b0a9ba4d5dd425ddc9d33a7b8d9c2d2b6ff4aa5a12d6d1b123139ba70df",
+          "airsenal/prediction/team_models/random_model.py": "a4512ee2709127cb4e40b3c0cd91b4cb4e9e15b1e453de459a35f24e0f146fd3",
+          "airsenal/prediction/team_models/scorelines.py": "1a78346915bdff293e7797f2b4b0dc8802b77e8a94571d6a9d60c3ce256ac96c",
+          "airsenal/prediction/team_models/xg.py": "f098188396ca111535907353d92ae262d731530410756626e02fdd6370306b86",
+          "airsenal/remote/__init__.py": "14295731570bd95680a2729a3b01d39f41d8e073097511ac215b9209e29a385e",
+          "airsenal/remote/discord.py": "866d1e1b4ba16aff5d5d6f110c1a65bbfd76bfac7e2650cb343fbfc1597e2426",
+          "airsenal/remote/download.py": "e88add242118cf6e1dff1f46a09f1a895a2035eaacbde5f412faa26dae9a084f",
+          "airsenal/remote/errors.py": "39bde361529a94a6ee50bf33737d9366bc0dd8935f7660e4a0eb70ee06e6dabb",
+          "airsenal/remote/fpl_api.py": "815e39b7dce9687e2e8ee52601baaafa65798a3922074b3aeb96713871bb9ea1",
+          "airsenal/remote/fpl_auth.py": "5bf8f3beaa07650ef82891f7e7caec78d1903a02792878b65c4495da8b6dd09a",
+          "airsenal/remote/fpl_http.py": "9edeb3cc400062d06b45912acec870911909c90b48f9d90d6c90d1bbf8a8486b",
+          "airsenal/remote/transfermarkt.py": "64213ee26c56eb6de94323ee01805514a60e8f4a8ca25d1890cbabda28a39d88",
+          "airsenal/reporting/__init__.py": "26933a88c8b0332bbc2382bcca4ecf7ac009d51149a88b797d0e4782479dd945",
+          "airsenal/reporting/optimization.py": "04f5b847c26f04454bb8e2a2f0231741d4dbe65863795fc763bf96e76976ad4c",
+          "airsenal/reporting/plots.py": "7447f8115d2002dce622a10441838deff14bbe63cc8727d3d7d411ce42ecc2e9",
+          "airsenal/reporting/squad_view.py": "685210923ea41bb01fc09c31a04897ee9be87ee8611e8a37dda58d6c555e283d",
+          "airsenal/reporting/top_players.py": "8242a8b99b457960cd1390ea2bfa1ea12a8c93c7140701fd7d06c59ee3483d0b",
+          "airsenal/squad/__init__.py": "79e57b4bcd4ac932bcec2670e3d204696e8c251eb9b45213652da9e273db73c4",
+          "airsenal/squad/history.py": "31756eeff518bb93ef735f51faa1dab9c7687c48fb9f1313f5d95bfac759b663",
+          "airsenal/squad/lineup.py": "56cb5669ee157082446ac498d572550af3b583f0e97959ef9df8fde06460ac14",
+          "airsenal/squad/player.py": "24df48ee44b6d690592868499c130c76943e6f9544530771d56fa5384cb12a5a",
+          "airsenal/squad/pricing.py": "790c960941c9e727925eaf63dc77e17b4ff9afeeaf2b6d6ff980e909aacf1ec6",
+          "airsenal/squad/squad.py": "bcf294aad69a36b0b5dd03ef02b83c21f964f9d8c40e19399bc0674f220ba09a",
+          "airsenal/squad/state.py": "e54271523a96d30cb1149cd75889e5c86bc46086af912d1f2e01b795a3671566"
+        },
+        "versions": {
+          "airsenal": "2.0.0",
+          "moocore": "0.3.2",
+          "tzlocal": "5.4.4",
+          "dateparser": "1.4.2",
+          "deap": "1.4.4",
+          "curl-cffi": "0.16.1",
+          "numpy": "2.4.6",
+          "pandas": "3.0.3",
+          "sqlalchemy": "2.0.51"
+        },
+        "network_disabled": true,
+        "serial": true,
+        "discount": 1.0
+      },
+      "startup_seconds": 1.047815915895626,
+      "cases": [
+        {
+          "budget": 2.0,
+          "gameweek": 1,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 0.2748956251889467,
+          "pool": 71,
+          "objective": 113.78245240234403,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 113.78245240234403,
+            "upper_objective": 113.78245240234403,
+            "absolute_gap": 0.0,
+            "relative_gap": 0.0,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -113.78245240234402,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 1,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 0.25204512500204146,
+          "pool": 71,
+          "objective": 112.94609278482532,
+          "fallback": true,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 112.94609278482532,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "failed",
+            "native_error_type": "ValueError",
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 15,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 0.5281659159809351,
+          "pool": 77,
+          "objective": 347.2736964550816,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 347.2736964550816,
+            "upper_objective": 347.2736964550817,
+            "absolute_gap": 5.684341886080802e-14,
+            "relative_gap": 1.6368478073939144e-16,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -347.2736964550817,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 15,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 2.1758707920089364,
+          "pool": 77,
+          "objective": 334.5863592742959,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 334.5863592742959,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 15,
+          "schedule": {
+            "20": "freehit"
+          },
+          "planner": "standing",
+          "seconds": 1.312403209041804,
+          "pool": 77,
+          "objective": 347.95163353602084,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 347.95163353602084,
+            "upper_objective": 347.95163353602084,
+            "absolute_gap": 0.0,
+            "relative_gap": 0.0,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -347.9516335360208,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 15,
+          "schedule": {
+            "20": "freehit"
+          },
+          "planner": "native",
+          "seconds": 2.1719489579554647,
+          "pool": 77,
+          "objective": 331.4960674661888,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 331.4960674661888,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 20,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 2.1784875420853496,
+          "pool": 76,
+          "objective": 343.8647695431254,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 343.8647695431254,
+            "upper_objective": 345.0070856012318,
+            "absolute_gap": 1.1423160581063598,
+            "relative_gap": 0.0033219921297087036,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -345.0070856012318,
+            "reported_mip_gap": 0.003321992129714177,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 20,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 2.1811974169686437,
+          "pool": 76,
+          "objective": 330.65731955101216,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 330.65731955101216,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 38,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 0.04857674986124039,
+          "pool": 74,
+          "objective": 55.95135106605569,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 55.95135106605569,
+            "upper_objective": 55.95135106605569,
+            "absolute_gap": 0.0,
+            "relative_gap": 0.0,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -55.95135106605569,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 38,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 0.39229045808315277,
+          "pool": 74,
+          "objective": 55.95135106605569,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 55.95135106605569,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "completed heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 1,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 0.2568580829538405,
+          "pool": 71,
+          "objective": 113.78245240234403,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 113.78245240234403,
+            "upper_objective": 113.78245240234403,
+            "absolute_gap": 0.0,
+            "relative_gap": 0.0,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -113.78245240234402,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 1,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 0.24390362505801022,
+          "pool": 71,
+          "objective": 112.94609278482532,
+          "fallback": true,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 112.94609278482532,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "failed",
+            "native_error_type": "ValueError",
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 15,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 0.5264823329634964,
+          "pool": 77,
+          "objective": 347.2736964550816,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 347.2736964550816,
+            "upper_objective": 347.2736964550817,
+            "absolute_gap": 5.684341886080802e-14,
+            "relative_gap": 1.6368478073939144e-16,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -347.2736964550817,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 15,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 5.174905000021681,
+          "pool": 77,
+          "objective": 336.6279114931663,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 336.6279114931663,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 15,
+          "schedule": {
+            "20": "freehit"
+          },
+          "planner": "standing",
+          "seconds": 1.3088531668763608,
+          "pool": 77,
+          "objective": 347.95163353602084,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 347.95163353602084,
+            "upper_objective": 347.95163353602084,
+            "absolute_gap": 0.0,
+            "relative_gap": 0.0,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -347.9516335360208,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 15,
+          "schedule": {
+            "20": "freehit"
+          },
+          "planner": "native",
+          "seconds": 5.165971416048706,
+          "pool": 77,
+          "objective": 333.3206064827874,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 333.3206064827874,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 20,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 5.1599389160983264,
+          "pool": 76,
+          "objective": 343.8647695431254,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 343.8647695431254,
+            "upper_objective": 344.81327922365267,
+            "absolute_gap": 0.9485096805272519,
+            "relative_gap": 0.00275837993461059,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -344.81327922365267,
+            "reported_mip_gap": 0.0027583799346160604,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 20,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 5.165348583133891,
+          "pool": 76,
+          "objective": 334.2986329792959,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 334.2986329792959,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 38,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 0.06417379202321172,
+          "pool": 74,
+          "objective": 55.95135106605569,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 55.95135106605569,
+            "upper_objective": 55.95135106605569,
+            "absolute_gap": 0.0,
+            "relative_gap": 0.0,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -55.95135106605569,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 38,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 0.39491541706956923,
+          "pool": 74,
+          "objective": 55.95135106605569,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 55.95135106605569,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "completed heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        }
+      ]
+    },
+    {
+      "attempt": "airsenal-feature-pilot-02",
+      "protocol_sha256": "54ecb14fe6b00fcd26284f5f77b2b353657eae7b1048dbe3ed00073590d4dbb6",
+      "forecast_sha256": "47a3644e536f3f224b3c41c0d4d184b3f27c683f8862b238a346f167b2245aa0",
+      "job_seconds": 43.68199308286421,
+      "sampled_peak_rss_bytes": 619413504,
+      "runtime": {
+        "status": "ready",
+        "revision": "fe580d7e567e79d80f73450c7d4b5d6610f05863",
+        "source_sha256": {
+          "airsenal/__init__.py": "b2c886052400f2d5197904d8e6affecdd8dbd7836c9b4d967ffd04550db68617",
+          "airsenal/apply/__init__.py": "e1412d8644540a30617a27c4b49efa145b750fcb753b880359e52c1305275711",
+          "airsenal/apply/lineup.py": "36c783ebc2e38242d144f79b8cd2abfa612512ac9eae8d33b7ca5723630280ef",
+          "airsenal/apply/transfers.py": "1daca1f9506b01f89f50be0e418b2f54fc5224bcf00358891020ad9624f247b3",
+          "airsenal/cli/__init__.py": "cc3a777a1d172773319b61ccd7c8749c80286389c99c72278edacac365226eb3",
+          "airsenal/cli/_components.py": "ac53b14712e202ada02ddcd2e08f11ac4cc150df4bd9004a12a30c4fcd692541",
+          "airsenal/cli/apply.py": "5ec483662f508781fec91ffa2e283d34216e9fc6b78e9b763ad97796f8b46181",
+          "airsenal/cli/db.py": "7ec6ab704710c4f5274e6a21e89e500a539c7b50cecb9e6524553ed68a7996e9",
+          "airsenal/cli/dump.py": "210a4dd8dee1ba895beb2bca3f4924aa0b8875669b5fdd11d4c94ab21bf6f8e9",
+          "airsenal/cli/env.py": "c23c2b609d26cbf30706a3795e8ab2942283ee4e6678d54c8e5fb211c0e2d9d0",
+          "airsenal/cli/main.py": "aaef5f3bf6fde657b21ebf847160e78611684b896f54029efff26e956040d086",
+          "airsenal/cli/optimize.py": "28269f15dc91c409b6eed8a9464811c6d66234db25777f3b073d71a1356f5215",
+          "airsenal/cli/options.py": "9e5b5beb02a4986a34772be8584e43d282c3792b5d3ef24a02fc60dedfcb32b3",
+          "airsenal/cli/plot.py": "fecd62a64171190fd686f2de2fd468fd15ea64e50a07da86ff5e262b48255634",
+          "airsenal/cli/predict.py": "3574da89e9472adda8675c9dba73207959d25b1b6aa06ba6c1b1209aca0d7553",
+          "airsenal/cli/replay.py": "a3f0f69de6838405110ddc058d64d4bca8b6db98c393e21046f3b28cc5dc27e1",
+          "airsenal/cli/run.py": "ca875b7deecbe5bbf02807b6dbc858db13d2cec80058415524ccc32578b02727",
+          "airsenal/core/__init__.py": "f09d0fe28a24468c7be7d200fd719e3d75752fea32bc14e6f38ebe4fb0e87845",
+          "airsenal/core/caching.py": "72fcd73bac8170436b35b785485d46726959640e154ffb33e16c01b563c63d89",
+          "airsenal/core/concurrency.py": "28b1be2b7a4a260d076a50bbfd4e2e582f5bdd39b8f96197b6b803d30225ed82",
+          "airsenal/core/console.py": "e796734a173ef610726192a7b0c72633a5c3c4e14ea95a2334d2a6ff43c07503",
+          "airsenal/core/copy.py": "a1596b824aa9a3eae8f1ad7ad482869ff22291a3bace696fb68cf84e52fafa14",
+          "airsenal/core/data_files.py": "5e3628d8e1ee57c73243a7c6d1905212152157497ad0d460d728c3569a9591c5",
+          "airsenal/core/dates.py": "3d8569ba50145d22ad7ec714b76f5a200f7bb4ad27fe4af7388fed33fdaf7f01",
+          "airsenal/core/env.py": "bc9973291e3bbba52fab98403fb6ce242d617a2601c2a8e31fdb568356a22ac6",
+          "airsenal/core/logging.py": "03428a40b323d784df435da0e8affa88c71c31e7f49526b4ca07eacdbcfecae8",
+          "airsenal/core/lookup.py": "c6489174897be2368ecb3a72c5a4034e316c54f664080f791cea23b02425dadb",
+          "airsenal/db/__init__.py": "eac661345bc1da6d5f939cf9321e72c2bb8a3776b7dc5ebff283a06817ad087b",
+          "airsenal/db/engine.py": "6ede2221d838075aaed029fa3392e120eb27bd9052516661d11477ef0f0d5717",
+          "airsenal/db/models.py": "59fa472492dca0b59614d01f232ae031dd0ab761140fe8e8dc58033c79d5eb77",
+          "airsenal/db/queries/__init__.py": "1cfad4decfbc0b853d68f8291dd6aa8b32bca97855918a3b8c85521d3d2b18fc",
+          "airsenal/db/queries/fixtures.py": "65dbadbbe93275bb69fa3ac234ea6244934e728a8ea2e6eb4f502fd8f2fcdbe6",
+          "airsenal/db/queries/gameweeks.py": "bc99c6f9952ed4e8fb5cc569969fa21caf61da13f0bb57315e664d75d700839f",
+          "airsenal/db/queries/players.py": "ea9da74d0dfd571b0b52f36314076d8d744972dc1240a4c504b9025610b5b512",
+          "airsenal/db/queries/predictions.py": "6afad74bfc5b5f4c56794acf3430c677611e7e6dd7456267bbcf53565229f0c5",
+          "airsenal/db/queries/scores.py": "a381233aebd7fb36c8db15c880c1e5adf2cc015ca4562427744f4759badc7169",
+          "airsenal/db/queries/tags.py": "5c9de5e52aa1c1a63a5c98a8e76dbe80226030e09aae600d31660e80a1b493c4",
+          "airsenal/db/queries/teams.py": "53ecd864e5f53b1c8ef4922878aaf35427166007bbb04531d05e1ec8795e33e3",
+          "airsenal/db/queries/transactions.py": "20265fef3243d0afb5407f34bd7ac3f1664a71fa0d5feffd913c59bf07ba454b",
+          "airsenal/db/session.py": "623a0875b6241c7d4c03cf09f7a1508583c005ecb3e9fd9dc9fa9b676048a367",
+          "airsenal/export/__init__.py": "08eb11e924ff1212cf55457dfade0595ade86daa6e0030250d4efeabd1454a11",
+          "airsenal/export/api_dump.py": "75dc36afb5a253cf15e7197b4eae643900bbaf796cb41fe73c5c2d7df786a6da",
+          "airsenal/export/attributes.py": "64373cc7f902b8aa8198f13d4fbded6b21ddb420054802cb8e9ea4132251aff4",
+          "airsenal/export/db_dump.py": "a9ef2ebe620d2ff56d69e1f08ec9e0bdf38cc65f9b2de78e3b758a657b287cd3",
+          "airsenal/export/player_details.py": "688d8032f25ab6fd1835e6bb0e1acd4facd50bead36b1cae825e3cb748875d14",
+          "airsenal/export/player_summary.py": "dff556a49858d6abdaedfce5619717c75312005c031627ab244d03304b828327",
+          "airsenal/export/results.py": "48589e7e73520e28d0ae5795622bde9eefd8407c54c919542a5b6b20c65ce75a",
+          "airsenal/game/__init__.py": "b78e830c04eac049c67cd1556491d410d0b47682e08539a51046c9b6a6d63e62",
+          "airsenal/game/enums.py": "4d8368f87581018acb5c5736f169f5022ec5e6b7f7c18afa2e54fd8573f6257f",
+          "airsenal/game/mappings.py": "7d8f95526662af10e24f0d8b9cce22d1e29a3d520630955c47433b9e4f8f8bd7",
+          "airsenal/game/scoring.py": "a8e1a60101ccc225fbe66d5a15c1225ea889a081a48a473fd34e6023073ae113",
+          "airsenal/game/season.py": "6eb4e272835c2a88e2a6a0213dcb27909f5105b88d3198a9f153bbbca3c4e927",
+          "airsenal/ingest/__init__.py": "7ad1bb36c7bc695db9fea1512d928e70dd2d9a7fa9a6324c97ae4dd5e047fa44",
+          "airsenal/ingest/absences.py": "e1ed7186f0cfc9a72606f7c46df7f959631f68298a3ec5f2f2f7c052a83ebfaf",
+          "airsenal/ingest/attributes_history.py": "b2a3d4f0c20e9b1fd14ed15b3c6d7d5845fa737cee1c09a0ebc4d07f6cf1c83e",
+          "airsenal/ingest/checks.py": "823206ea50a8124a3cc3d8f88c0edb1cff90e1e1bbd3440b5e918ab7ec4e9343",
+          "airsenal/ingest/fifa_ratings.py": "0b3bc6f9c610b38d6c2fc435e9bebdf502ec0e11ec3ad95e741553039f0ea57a",
+          "airsenal/ingest/fixtures.py": "01f47a16cb4ea5dfe43d63618666075bd266a4cdb10d5d5ca23537b93cd13ac5",
+          "airsenal/ingest/init_db.py": "6ebad11515f9fe57fc50f51d690df84a3e62411de2999b0558fc916f0b6b883c",
+          "airsenal/ingest/player_attributes.py": "1e03fc3e0196c764d521734c309e9af8d1b3ad7c87b3e3c82434c52b1240e015",
+          "airsenal/ingest/player_mappings.py": "ed65b7ee4779a767d9a406806abb355d5609060fbb982cb861c4a29882bbe38a",
+          "airsenal/ingest/player_scores.py": "aa986cf5f7b3ca971eca5c22dc265ae31e8204ba845c9b1b38998f214f694d28",
+          "airsenal/ingest/players.py": "ff9484cb3a169da2c7199643dffdd0055b942ff4d03571b95795a41ac175abb4",
+          "airsenal/ingest/results.py": "8ea8b6e928f7821644fe554843eb3961da5dbe777b3d25f8b4371ce792b777e9",
+          "airsenal/ingest/teams.py": "cbc85dd7e843cd9891af90b98e7950ccccd77c3e1e7ff6c3586580576d4e4a36",
+          "airsenal/ingest/update.py": "4037d98a49cad2fd5ddfcab6684b6edd098c73850c58e9b3843ca951a61cb0ec",
+          "airsenal/optimization/__init__.py": "dbf7231840051c55bb6af87258bbc9d712cda9939466095691ef6cf291b862c1",
+          "airsenal/optimization/moves.py": "ba84e6135837cc8d6b58fc38db4bb8544a237e67547ef552748d09d48c4218f5",
+          "airsenal/optimization/persist.py": "cfc091c6aa6ad3f754f6cf669ecfb64a2be01382e5b78085e975bafc63a5e739",
+          "airsenal/optimization/plan.py": "acd2eb0f3d13be020c279007d6e8f36d38275e7dd60b1ab20f5a9b499224839a",
+          "airsenal/optimization/protocols.py": "3c7dc2d2b602656cd37806eae63b9ada097c3d91dd49e6bba8b2e9b68f61d8e1",
+          "airsenal/optimization/run_squad.py": "5df2f4e38a61ab0a46cc7e0229032f1d604ae1aacb54842573d744efe69487f4",
+          "airsenal/optimization/run_transfers.py": "6321af5bd26859d42474f013417252f5688146125c44046407f3fdbf55a5737f",
+          "airsenal/optimization/squad_optimizers/__init__.py": "53d54f0074504bbaf679ea8ee290f487dd16cfb04d1d50ea0d56f25f4f123c19",
+          "airsenal/optimization/squad_optimizers/genetic.py": "85d2ccef8cd592a9978351d5e0b00ca8f67e39833d3798710214e2c5213188e0",
+          "airsenal/optimization/squad_optimizers/genetic_algorithm.py": "7a25c3a32f1af5792aa331d498e409c6d6879de0e84a9e2a7293d5a2faf08f1c",
+          "airsenal/optimization/squad_score.py": "a57364c6d07f6a75e1d546b9b8e075a547a1ba40084afe0066405475eb97ac51",
+          "airsenal/optimization/strategies/__init__.py": "8801a321ed9abb00272aa0ae81d1c04fce30ebbde660e5c37bf0922e7847c586",
+          "airsenal/optimization/strategies/double.py": "237f082b35d87b9af5546cd820253188bd07256032423e2e5910691a82ab9dd6",
+          "airsenal/optimization/strategies/full_squad.py": "0bf378022b21f945d74ab236576ed80edc41dc2c2b449c2212169502aeb27c4c",
+          "airsenal/optimization/strategies/none.py": "d3eae58ecf767dc8bdaead8297f54f79c1c0bded9b4d50be1bb5767a02def6ca",
+          "airsenal/optimization/strategies/random_search.py": "800958d0c804e16af8d1fe3e2a6e5f70b85f0384ee7aaa89a4dba546081da579",
+          "airsenal/optimization/strategies/single.py": "91e99361a08ced18ae9fc0c78bd3c29dadc348ee116c0646251a9aad2d3e477d",
+          "airsenal/optimization/transfer_optimizers/__init__.py": "223211d46400867b663e2713f52e022612f28f2ba565931ce57d0b4e06b2bcc1",
+          "airsenal/optimization/transfer_optimizers/tree_search.py": "088ba4e30ac1ff539b623898878d4ceafc2c59c7ce4cb03b95f62e8c158da17c",
+          "airsenal/pipeline/__init__.py": "e686502425bdd3be8b766e80babfc93fa8d598c921c22ee6e797082716433c8b",
+          "airsenal/pipeline/replay.py": "4e38bad9ce7994b9502ffd6d0c89a51ac5b71ce6f691bddb12a0c96372dd6223",
+          "airsenal/pipeline/run.py": "3e02185b3d42da28b2acbece43e47f7e2ad53ac6cfa5e8702b080812fec151c0",
+          "airsenal/pipeline/settings.py": "65bafb94cd99bbccd398199817bcb4a144b1c8f9127e9061fd947da9cba5053e",
+          "airsenal/prediction/__init__.py": "8b5b1cbd5c0b64668900a7eb2c33acc31c374831230d1b764416aadc7362d25c",
+          "airsenal/prediction/evaluation.py": "176e9fbf492773eead558106b19861c4f890ad858d979e69b9489ce2be96c9f8",
+          "airsenal/prediction/features.py": "8afcb830ab255554819b8a630d78f8f61f44f01469d29d125e5a472f64be13f0",
+          "airsenal/prediction/minutes.py": "34a9dd261fa010a327cc81f88e6b181eb7c0c081f626531d54540f7dfc5304ff",
+          "airsenal/prediction/minutes_models/__init__.py": "ddc077c15b90feca37526d13499b47655d0d837f3fbb14a9a4e3840e32b88933",
+          "airsenal/prediction/minutes_models/recent.py": "26249337cc4b2a4fc6ee3cc5a6e9837c1d0c94e31e065671b7aa4d61c3318b4c",
+          "airsenal/prediction/player_models/__init__.py": "90687dbe9401cdada35393e1c05fb95694d2ec9a9e2b17294dfe08f0cf965053",
+          "airsenal/prediction/player_models/conjugate.py": "5ac99838abd1b64869371c0a7d741fb6f9339b22a69abc2ca09d23e7321f197c",
+          "airsenal/prediction/player_models/constant.py": "0f36622ba469eb06047e417a3750a254b2a491f3c142cb37dbe65a49ce97316d",
+          "airsenal/prediction/player_models/fitting.py": "00560b8adc706a4ad9eaf4430b2904adb57bc7be89cf81cfa89e932b768a4b0c",
+          "airsenal/prediction/player_models/mcmc.py": "e61b31c88d4f6c5cd87360b5d770b796e8ccb7befd4b57a382482348644569fd",
+          "airsenal/prediction/player_models/scaling.py": "68d3eb15df6f20cc5a2bbde2516f62608313a317447e73a6c8894722b7ba2543",
+          "airsenal/prediction/player_models/xg.py": "579759032f745ef85b3c446b8c856419b45ee9ec41089276b10b67559f00709e",
+          "airsenal/prediction/point_components/__init__.py": "05014bc7b8d8b68c9718706773050f4b8bc9ca7868b79dd26c91208c8dab64bc",
+          "airsenal/prediction/point_components/actual.py": "d5cae8a04d487eaaabf324db96cabc6cfab64e5d28b6de228e3b965b0101f7e1",
+          "airsenal/prediction/point_components/appearance.py": "fd471a2438a5bf4e7e506f890ddcd526f725e28f6b5df8e825e46ba56cd611cb",
+          "airsenal/prediction/point_components/attacking.py": "4c73621dbdb0804bd41aac6242a327b4281c5c4f62fb918a1624d235733a46e7",
+          "airsenal/prediction/point_components/bonus.py": "0ba8eb9dd6ba475328011b75f556e4b820ed3d56bbd6c45ba3d563f2fdc2137c",
+          "airsenal/prediction/point_components/cards.py": "1d2e4d9ae208566fbee765c676040a8ed64ca5f1ec3af2b4409ec884cf7be025",
+          "airsenal/prediction/point_components/def_con.py": "a832e81b49b2a0e4abcaeb32356af3ce1decbcb4f97fc150416ed27bbbaae4a2",
+          "airsenal/prediction/point_components/defending.py": "897c79914953cf54c0f90183a97ef30febf2057180d72f6de81914867dbe4ee2",
+          "airsenal/prediction/point_components/empirical_bayes.py": "9b31e4548f1ada56a526a651b206f5b8a7c28fb399b2d8ecc6a0e76969c6aa73",
+          "airsenal/prediction/point_components/saves.py": "d5c45a729ffb507033f9533ec150fef0d2e51263cc37d3c84700bc2ff1206d89",
+          "airsenal/prediction/points_models/__init__.py": "c595cda9e6c5637ad02b5455cb0860fd58bdf9d57e872bde3966d48c3ca0a9fe",
+          "airsenal/prediction/points_models/component.py": "09f71631365cd17f83b151a484182ed88a58311f8f38ad4dcf6a39327d5a8dbd",
+          "airsenal/prediction/protocols.py": "4b8b0379d8ebbd78caf315b29446d899bd345b49a6284240bc961e738e49594a",
+          "airsenal/prediction/run.py": "8981cf0c47af56fd898de74c1e9f0b5a0c3a3f402cdf3e3313d8806086d13b3b",
+          "airsenal/prediction/team_models/__init__.py": "7f4431bb1dafd5c09614a2db8d92eebf75a6f25abede935a03e12d9b354a8d17",
+          "airsenal/prediction/team_models/constant.py": "a4d88b24c5c28e2a2d8d0989574c07483fe4963466edfdf74dd9216740e72109",
+          "airsenal/prediction/team_models/dixon_coles.py": "956e6f0a683e5cc9de90e687866cd4171ed3ef7b34d9e6f81456b7fd3bde6e2b",
+          "airsenal/prediction/team_models/fitting.py": "a3d07b0a9ba4d5dd425ddc9d33a7b8d9c2d2b6ff4aa5a12d6d1b123139ba70df",
+          "airsenal/prediction/team_models/random_model.py": "a4512ee2709127cb4e40b3c0cd91b4cb4e9e15b1e453de459a35f24e0f146fd3",
+          "airsenal/prediction/team_models/scorelines.py": "1a78346915bdff293e7797f2b4b0dc8802b77e8a94571d6a9d60c3ce256ac96c",
+          "airsenal/prediction/team_models/xg.py": "f098188396ca111535907353d92ae262d731530410756626e02fdd6370306b86",
+          "airsenal/remote/__init__.py": "14295731570bd95680a2729a3b01d39f41d8e073097511ac215b9209e29a385e",
+          "airsenal/remote/discord.py": "866d1e1b4ba16aff5d5d6f110c1a65bbfd76bfac7e2650cb343fbfc1597e2426",
+          "airsenal/remote/download.py": "e88add242118cf6e1dff1f46a09f1a895a2035eaacbde5f412faa26dae9a084f",
+          "airsenal/remote/errors.py": "39bde361529a94a6ee50bf33737d9366bc0dd8935f7660e4a0eb70ee06e6dabb",
+          "airsenal/remote/fpl_api.py": "815e39b7dce9687e2e8ee52601baaafa65798a3922074b3aeb96713871bb9ea1",
+          "airsenal/remote/fpl_auth.py": "5bf8f3beaa07650ef82891f7e7caec78d1903a02792878b65c4495da8b6dd09a",
+          "airsenal/remote/fpl_http.py": "9edeb3cc400062d06b45912acec870911909c90b48f9d90d6c90d1bbf8a8486b",
+          "airsenal/remote/transfermarkt.py": "64213ee26c56eb6de94323ee01805514a60e8f4a8ca25d1890cbabda28a39d88",
+          "airsenal/reporting/__init__.py": "26933a88c8b0332bbc2382bcca4ecf7ac009d51149a88b797d0e4782479dd945",
+          "airsenal/reporting/optimization.py": "04f5b847c26f04454bb8e2a2f0231741d4dbe65863795fc763bf96e76976ad4c",
+          "airsenal/reporting/plots.py": "7447f8115d2002dce622a10441838deff14bbe63cc8727d3d7d411ce42ecc2e9",
+          "airsenal/reporting/squad_view.py": "685210923ea41bb01fc09c31a04897ee9be87ee8611e8a37dda58d6c555e283d",
+          "airsenal/reporting/top_players.py": "8242a8b99b457960cd1390ea2bfa1ea12a8c93c7140701fd7d06c59ee3483d0b",
+          "airsenal/squad/__init__.py": "79e57b4bcd4ac932bcec2670e3d204696e8c251eb9b45213652da9e273db73c4",
+          "airsenal/squad/history.py": "31756eeff518bb93ef735f51faa1dab9c7687c48fb9f1313f5d95bfac759b663",
+          "airsenal/squad/lineup.py": "56cb5669ee157082446ac498d572550af3b583f0e97959ef9df8fde06460ac14",
+          "airsenal/squad/player.py": "24df48ee44b6d690592868499c130c76943e6f9544530771d56fa5384cb12a5a",
+          "airsenal/squad/pricing.py": "790c960941c9e727925eaf63dc77e17b4ff9afeeaf2b6d6ff980e909aacf1ec6",
+          "airsenal/squad/squad.py": "bcf294aad69a36b0b5dd03ef02b83c21f964f9d8c40e19399bc0674f220ba09a",
+          "airsenal/squad/state.py": "e54271523a96d30cb1149cd75889e5c86bc46086af912d1f2e01b795a3671566"
+        },
+        "versions": {
+          "airsenal": "2.0.0",
+          "moocore": "0.3.2",
+          "tzlocal": "5.4.4",
+          "dateparser": "1.4.2",
+          "deap": "1.4.4",
+          "curl-cffi": "0.16.1",
+          "numpy": "2.4.6",
+          "pandas": "3.0.3",
+          "sqlalchemy": "2.0.51"
+        },
+        "network_disabled": true,
+        "serial": true,
+        "discount": 1.0
+      },
+      "startup_seconds": 0.8922309998888522,
+      "cases": [
+        {
+          "budget": 2.0,
+          "gameweek": 1,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 0.2704969169571996,
+          "pool": 71,
+          "objective": 113.78245240234403,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 113.78245240234403,
+            "upper_objective": 113.78245240234403,
+            "absolute_gap": 0.0,
+            "relative_gap": 0.0,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -113.78245240234402,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 1,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 2.1597423751372844,
+          "pool": 71,
+          "objective": 113.39635539037326,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 113.39635539037326,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 15,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 0.5162495411932468,
+          "pool": 77,
+          "objective": 347.2736964550816,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 347.2736964550816,
+            "upper_objective": 347.2736964550817,
+            "absolute_gap": 5.684341886080802e-14,
+            "relative_gap": 1.6368478073939144e-16,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -347.2736964550817,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 15,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 2.171321125002578,
+          "pool": 77,
+          "objective": 334.5863592742959,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 334.5863592742959,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 15,
+          "schedule": {
+            "20": "freehit"
+          },
+          "planner": "standing",
+          "seconds": 1.29240820906125,
+          "pool": 77,
+          "objective": 347.95163353602084,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 347.95163353602084,
+            "upper_objective": 347.95163353602084,
+            "absolute_gap": 0.0,
+            "relative_gap": 0.0,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -347.9516335360208,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 15,
+          "schedule": {
+            "20": "freehit"
+          },
+          "planner": "native",
+          "seconds": 2.171376083046198,
+          "pool": 77,
+          "objective": 329.6146021080599,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 329.6146021080599,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 20,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 2.1586898339446634,
+          "pool": 76,
+          "objective": 343.8647695431254,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 343.8647695431254,
+            "upper_objective": 345.0070856012318,
+            "absolute_gap": 1.1423160581063598,
+            "relative_gap": 0.0033219921297087036,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -345.0070856012318,
+            "reported_mip_gap": 0.003321992129714177,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 20,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 2.1595448749139905,
+          "pool": 76,
+          "objective": 330.65731955101216,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 330.65731955101216,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 38,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 0.06248291698284447,
+          "pool": 74,
+          "objective": 55.95135106605569,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 55.95135106605569,
+            "upper_objective": 55.95135106605569,
+            "absolute_gap": 0.0,
+            "relative_gap": 0.0,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -55.95135106605569,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 2.0,
+          "gameweek": 38,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 0.39159095799550414,
+          "pool": 74,
+          "objective": 55.95135106605569,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 55.95135106605569,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "completed heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 1,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 0.26390525000169873,
+          "pool": 71,
+          "objective": 113.78245240234403,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 113.78245240234403,
+            "upper_objective": 113.78245240234403,
+            "absolute_gap": 0.0,
+            "relative_gap": 0.0,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -113.78245240234402,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 1,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 5.145607292186469,
+          "pool": 71,
+          "objective": 113.47534882994307,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 113.47534882994307,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 15,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 0.5200029590632766,
+          "pool": 77,
+          "objective": 347.2736964550816,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 347.2736964550816,
+            "upper_objective": 347.2736964550817,
+            "absolute_gap": 5.684341886080802e-14,
+            "relative_gap": 1.6368478073939144e-16,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -347.2736964550817,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 15,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 5.160669208038598,
+          "pool": 77,
+          "objective": 336.6279114931663,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 336.6279114931663,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 15,
+          "schedule": {
+            "20": "freehit"
+          },
+          "planner": "standing",
+          "seconds": 1.2982891669962555,
+          "pool": 77,
+          "objective": 347.95163353602084,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 347.95163353602084,
+            "upper_objective": 347.95163353602084,
+            "absolute_gap": 0.0,
+            "relative_gap": 0.0,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -347.9516335360208,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 15,
+          "schedule": {
+            "20": "freehit"
+          },
+          "planner": "native",
+          "seconds": 5.167975249933079,
+          "pool": 77,
+          "objective": 331.43914112465853,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 331.43914112465853,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 20,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 5.191143582807854,
+          "pool": 76,
+          "objective": 343.8647695431254,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 343.8647695431254,
+            "upper_objective": 344.81327922365267,
+            "absolute_gap": 0.9485096805272519,
+            "relative_gap": 0.00275837993461059,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -344.81327922365267,
+            "reported_mip_gap": 0.0027583799346160604,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 20,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 5.17292070784606,
+          "pool": 76,
+          "objective": 334.2986329792959,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 334.2986329792959,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "truncated heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 38,
+          "schedule": {},
+          "planner": "standing",
+          "seconds": 0.04842370911501348,
+          "pool": 74,
+          "objective": 55.95135106605569,
+          "fallback": false,
+          "bound": {
+            "status": "solver_dual",
+            "feasible_objective": 55.95135106605569,
+            "upper_objective": 55.95135106605569,
+            "absolute_gap": 0.0,
+            "relative_gap": 0.0,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "minimisation_dual_bound": -55.95135106605569,
+            "reported_mip_gap": 0.0,
+            "baseline_objective_cut": true
+          }
+        },
+        {
+          "budget": 5.0,
+          "gameweek": 38,
+          "schedule": {},
+          "planner": "native",
+          "seconds": 0.40287883416749537,
+          "pool": 74,
+          "objective": 55.95135106605569,
+          "fallback": false,
+          "bound": {
+            "status": "unavailable",
+            "feasible_objective": 55.95135106605569,
+            "upper_objective": null,
+            "absolute_gap": null,
+            "relative_gap": null,
+            "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+          },
+          "diagnostics": {
+            "native_status": "completed heuristic",
+            "native_error_type": null,
+            "baseline_objective_cut": false
+          }
+        }
+      ]
+    }
+  ],
+  "selection": {
+    "inner_seconds": 2.0,
+    "outer_seconds": 15.0,
+    "max_trials": 12,
+    "rule": "Lowest tested inner allowance with admitted non-fallback native proposals in all five fixed cases, selected before season scoring."
+  },
+  "repair": "One forecast-independent cheapest-legal roster in each GA population; native fitness/evolution/other random individuals/seed42/effort10 unchanged. First failed pilot retained and all20calls uniformly rerun.",
+  "limits": "Native heuristic has unknown upper bounds; standing conditional gaps are not confidence intervals or directly comparable native certificates."
+}

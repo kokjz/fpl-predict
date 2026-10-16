@@ -19,7 +19,7 @@ from scipy.sparse import csr_matrix
 from experiment_runner import file_hash
 from forecast import select_xi
 
-POSITIONS = {1: 2, 2: 5, 3: 5, 4: 3}
+from opening_baseline import POSITIONS
 DECISION = ['fpl_code', 'position', 'team', 'price_tenths', 'can_buy', 'prior_minutes', 'ownership']
 
 

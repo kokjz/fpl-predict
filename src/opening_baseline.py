@@ -5,7 +5,7 @@ integer capacities enforce squad composition and the three-per-club limit.
 Fifteen shortest augmenting paths find the cheapest legal roster without a
 mixed-integer solve, a prediction score, or a random restart.
 """
-from selection_benchmark import POSITIONS
+POSITIONS = {1: 2, 2: 5, 3: 5, 4: 3}
 
 
 def cheapest_opening(market, bank):
