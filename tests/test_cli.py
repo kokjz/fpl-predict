@@ -33,3 +33,11 @@ def test_trial_review_never_initialises_runtime(tmp_path,monkeypatch):
     seen=[];monkeypatch.setattr('fpl_predict_cli.runpy.run_module',lambda module,run_name:seen.append(module))
     main()
     assert seen==['decision_trial'] and not root.exists()
+
+
+def test_qualification_dispatch_does_not_initialise_runtime(tmp_path,monkeypatch):
+    root=tmp_path/'unused';monkeypatch.setenv('FPL_PREDICT_HOME',str(root))
+    monkeypatch.setattr(sys,'argv',['fpl-predict','qualify-season','arms'])
+    monkeypatch.setattr('fpl_predict_cli.initialise',lambda:pytest.fail('Unexpected operational runtime write'))
+    seen=[];monkeypatch.setattr('fpl_predict_cli.runpy.run_module',lambda module,run_name:seen.append(module))
+    main();assert seen==['season_qualification'] and not root.exists()

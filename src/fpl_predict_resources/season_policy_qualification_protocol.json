@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 2,
+  "revision": 3,
   "status": "Approved-artifact bridge, adaptive synthetic replan and baseline mechanics passed; executable source/runtime lock and historical qualification still pending.",
   "season": "2025-26",
   "season_count": 1,
@@ -80,5 +80,7 @@
     "adaptive_replan": "docs/approved_adaptive_compatibility.json",
     "baseline_controls": "tests/test_management_policies.py",
     "scope": "Invented-case mechanics only; no historical qualification result or model/policy promotion."
-  }
+  },
+  "outcome_bundle_sha256": "18b49180983759a0a8216ec1d7dc7724f5b75f950a57a1c6ab730785ec8515eb",
+  "common_opening_sha256": "6e2d6cea4f4441efaf6a5a2f537e8e4ada1e0d2d72465f50fd3290197c0a8a99"
 }

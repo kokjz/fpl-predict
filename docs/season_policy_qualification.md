@@ -115,3 +115,34 @@ approval is claimed here.
 The underlying [AIrsenal comparison](airsenal_planner_comparison.md) is a separate
 integration dependency. Its results must remain tied to their frozen source;
 qualification changes must not modify a running benchmark checkout.
+
+## Reproducible per-arm execution
+
+`fpl-predict qualify-season arms` lists the twenty declared paths in order.
+`qualify-season lock` records input/protocol hashes, listed engine source hashes
+and package versions. It requires the protocol's forecast, outcome and common
+opening checksums. Custom compatible protocols define separate studies; changing
+inputs never preserves the identity of the canonical qualification run.
+
+```sh
+fpl-predict qualify-season lock --decisions DECISIONS.json.gz --outcomes OUTCOMES.json.gz --opening OPENING.json --output PRIVATE_HOME/lock.json --home PRIVATE_HOME
+fpl-predict qualify-season arm --name control_common_hold_no_chips --decisions DECISIONS.json.gz --outcomes OUTCOMES.json.gz --opening OPENING.json --lock PRIVATE_HOME/lock.json --lock-sha256 LOCK_SHA256 --output PRIVATE_HOME/hold-common --home PRIVATE_HOME
+```
+
+Choose an external private home or an ignored runtime directory. Existing lock
+and output files cannot be overwritten. Source, runtime and input drift is checked
+before and after execution. The native adapters require explicit optional runtime
+paths: `--native-python`, `--solio-source`, `--solio-site-packages` and/or
+`--airsenal-site-packages`. Ordinary installation does not install or start them.
+
+All native requests and replies are retained in compressed JSON lines, alongside
+individual failure evidence. Expected budget/feasibility failures retain validated
+fallbacks. Unknown errors, completed-but-invalid proposals and inconsistent bounds
+stop the path. Native source/runtime identities are checked by the adapter's
+pinned recipe handshake. Full-season outcomes remain separate from planner inputs.
+
+These commands execute one arm. The supervising `run-experiment`/`run_job`
+workflow must enforce the protocol's process-group memory, time and storage caps;
+execute historical arms serially and preserve every declared attempt. The runner
+is trusted research code, not an operating-system sandbox or an approval mechanism.
+Final qualification still requires the full matrix and independent scoring audit.
