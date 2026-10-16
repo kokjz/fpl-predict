@@ -144,7 +144,21 @@ class NativeHistory:
             tackles=("tackles",lambda a:a.sum(min_count=1)))
         self.allowed_index = {key: WindowIndex(g,["dc","tackles"]) for key,g in allowed.groupby("opponent_name",sort=False)}
 
-    def transform(self, targets, snapshots):
+    def transform_at_origins(self, targets, snapshots):
+        """Query history at inputs_as_of, not the later actual deadline.
+
+        A snapshot may equal its own observed origin, but must still precede the
+        physical FPL deadline. Preserve the legacy strict deadline API below.
+        """
+        if 'inputs_as_of' not in targets:raise ValueError('Missing information origin')
+        t=targets.copy()
+        origin=pd.to_datetime(t.inputs_as_of.map(_timestamp),utc=True)
+        deadline=pd.to_datetime(t.deadline.map(_timestamp),utc=True)
+        if origin.ge(deadline).any():raise ValueError('Origin must precede actual deadline')
+        t['deadline']=origin
+        return self.transform(t,snapshots,_snapshot_at_origin=True)
+
+    def transform(self, targets, snapshots, *, _snapshot_at_origin=False):
         targets = targets.copy(); snapshots = snapshots.copy()
         required = {"season","gameweek","fixture","fpl_code","position","team_name","opponent_name","home","deadline"}
         if required-set(targets): raise ValueError("Missing target context")
@@ -220,7 +234,7 @@ class NativeHistory:
             captured=pd.NaT
             if present:
                 row=snap.loc[snapshot_key]; captured=row.captured_at
-                if captured>=r.deadline or captured<r.deadline-pd.Timedelta(hours=24):
+                if (captured>r.deadline if _snapshot_at_origin else captured>=r.deadline) or captured<r.deadline-pd.Timedelta(hours=24):
                     raise ValueError("Late/stale snapshot")
                 for name in SNAPSHOT_FEATURES: z[name]=row[name]
             else:

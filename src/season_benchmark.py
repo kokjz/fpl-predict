@@ -62,10 +62,12 @@ def run(decisions,outcomes,directory,*,policy=None,opening_ids=None):
         state=replace(state,free_transfers=available_transfers(state,rules_for(state.season)))
         if market.gameweek==1 and opening_ids is not None:
             if len(set(opening_ids))!=15 or not set(opening_ids)<=set(market.indexed()) or not all(market.indexed()[i]['can_buy'] for i in opening_ids):raise ValueError('Invalid common opening roster')
-            market=Market.create(market.season,1,market.deadline,market.as_of,[dict(p,can_buy=p['can_buy'] and p['id'] in opening_ids) for p in market.players])
+            # Fix only first-period membership. Future provisional periods must
+            # retain access to the full market, not an artificially closed roster.
+        first_ids=opening_ids if market.gameweek==1 else None
         if cfg.chips:
-            proposed,report=plan_adaptive(state,market,[('admitted',1.,h)],settings=Settings(),budget=Budget(cfg.seconds,cfg.solve_seconds,cfg.max_trials),blocked=[tuple(v) for v in spec['blocked_tokens']])
-        else:proposed,report=plan(state,market,h,Settings(seconds=cfg.solve_seconds))
+            proposed,report=plan_adaptive(state,market,[('admitted',1.,h)],settings=Settings(),budget=Budget(cfg.seconds,cfg.solve_seconds,cfg.max_trials),blocked=[tuple(v) for v in spec['blocked_tokens']],opening_ids=first_ids)
+        else:proposed,report=plan(state,market,h,Settings(seconds=cfg.solve_seconds),opening_ids=first_ids)
         action=proposed[0];prepared=prepare(state,market,action)
         record=dict(gameweek=market.gameweek,inputs_as_of=market.as_of,state_before=asdict(state),
             forecast_provenance={**dict(h.provenance),'source_hashes':dict(h.provenance['source_hashes'])},

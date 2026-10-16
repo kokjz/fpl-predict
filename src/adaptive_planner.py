@@ -75,7 +75,7 @@ def calendar(state,through,gains,*,blocked=()):
     return value,{g:(name,start) for g,name,start in path}
 
 
-def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),coarse=None):
+def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),coarse=None,opening_ids=None):
     """scenarios: sequence(name, explicit_assumption_weight, Horizon), max3.
 
     All actions across the detailed horizon are shared between scenarios. There
@@ -110,7 +110,7 @@ def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),
         if key in cache:return cache[key]
         elapsed=time.monotonic()-start
         if len(trials)>=b.max_trials or elapsed>=b.seconds:return None
-        actions,report=plan(state,market,mean,replace(cfg,seconds=min(b.solve_seconds,max(.01,b.seconds-elapsed))),chip_schedule=schedule)
+        actions,report=plan(state,market,mean,replace(cfg,seconds=min(b.solve_seconds,max(.01,b.seconds-elapsed))),chip_schedule=schedule,opening_ids=opening_ids)
         after_used=set(used)
         for g,name in schedule.items():after_used.add((name,next(w['start'] for w in windows if w['name']==name and w['start']<=g<=w['stop'])))
         # Allocate remaining tokens to future slots jointly; no double-counted

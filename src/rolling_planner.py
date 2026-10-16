@@ -10,6 +10,7 @@ from scipy.sparse import coo_matrix
 from forecast import select_xi
 from season_engine import Action,Market,prepare,rules_for,available_transfers
 from selection_benchmark import optimise,POSITIONS,sell_price
+from opening_baseline import cheapest_opening
 
 
 @dataclass(frozen=True)
@@ -85,7 +86,7 @@ def _fallback(state,market,horizon,baseline,chips=None):
     return actions
 
 
-def plan(state,market,horizon,settings=None,*,chip_schedule=None):
+def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=None):
     cfg=settings or Settings();start=time.monotonic()
     if (state.season,state.gameweek,market.as_of)!=(horizon.season,horizon.origin,horizon.as_of) or market.gameweek!=state.gameweek:raise ValueError('Planner/forecast origin mismatch')
     if not horizon.gameweeks or len(horizon.gameweeks)>8:raise ValueError('Invalid horizon')
@@ -104,12 +105,19 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None):
     if set(xp)!={(g,i) for g in horizon.gameweeks for i in allids}:raise ValueError('Forecast coverage differs')
     rows=[dict(fpl_code=p['id'],position=p['position'],team=p['team'],price_tenths=p['price_tenths'],can_buy=int(p['can_buy']),prior_minutes=0.,ownership=0.,expected_points=xp[(state.gameweek,p['id'])]) for p in market.players]
     f=pd.DataFrame(rows);old=dict(state.holdings);rules=rules_for(state.season)
+    fixed=set(opening_ids) if opening_ids is not None else None
+    if fixed is not None and (state.gameweek!=1 or old or len(opening_ids)!=15 or len(fixed)!=15 or not fixed<=allids or not all(type(i) is int and market.indexed()[i]['can_buy'] for i in fixed)):raise ValueError('Invalid common opening roster')
     baseline_status='full-market one-GW solution'
     try:
-        baseline=optimise(f,'expected_points',owned=old or None,bank=state.bank,free_transfers=max(1,available_transfers(state,rules)),seconds=min(5.,cfg.seconds/4))
+        if fixed is not None:
+            baseline={'ledger':{i:market.indexed()[i]['price_tenths'] for i in fixed}};baseline_status='supplied common opening roster'
+        else:baseline=optimise(f,'expected_points',owned=old or None,bank=state.bank,free_transfers=max(1,available_transfers(state,rules)),seconds=min(5.,cfg.seconds/4))
     except ValueError:
-        if not old:raise ValueError('No validated opening-squad baseline') from None
-        baseline={'ledger':old};baseline_status='held-squad fallback; one-GW solve unavailable'
+        if old:
+            baseline={'ledger':old};baseline_status='held-squad fallback; one-GW solve unavailable'
+        else:
+            baseline={'ledger':cheapest_opening(market,state.bank)}
+            baseline_status='minimum-cost legal opening fallback; one-GW solve unavailable'
     fallback=_fallback(state,market,horizon,baseline,chips);fallback_value,_=_objective(state,market,horizon,fallback,cfg)
     # Preserve owned IDs and a full-market feasible baseline, then add form/budget candidates.
     pool=set(old)|set(baseline['ledger'])
@@ -163,6 +171,7 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None):
             if prev:row.update({prev['old'][i]:1,prev['new'][i]:1})
             add(row,u=1 if prev else 1-initial)
             add({a['old'][i]:1,a['new'][i]:1},u=1)
+            if t==0 and fixed is not None:add({a['old'][i]:1,a['new'][i]:1},int(p['id'] in fixed),int(p['id'] in fixed))
             add({a['xi'][i]:1,a['old'][i]:-1,a['new'][i]:-1},u=0)
             add({a['captain'][i]:1,a['xi'][i]:-1},u=0)
         for pos,count in POSITIONS.items():
