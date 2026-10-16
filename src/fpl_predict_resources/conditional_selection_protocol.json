@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "method": "conditional-availability-selection-v1",
+  "training": "2020-21 through 2024-25 plus 2025-26 GW1-19, only appearing rows for conditional targets",
+  "learner": "fixed hgb7,49CORE features,no availability covariates in shared return model",
+  "core_clip": [
+    0,
+    20
+  ],
+  "conditional_dc": "fixed hgb7 on earlier appearing observed-DC rows,clip[0,1],GK0",
+  "conditional_minutes": "fixed hgb7 on same appearing rows,clip[1,90];diagnostic only",
+  "probabilities": "reuse exact frozen control/structured appearance forecasts from previous admitted study",
+  "formula": "p_play*(conditional_core + 2*conditional_DC); zero-minute points assumed0 and checked on evaluation",
+  "validation": [
+    20,
+    27
+  ],
+  "audit": [
+    28,
+    38
+  ],
+  "refit_validation": false,
+  "parameter_or_seed_search": false,
+  "arms": [
+    "anchor",
+    "old_mean",
+    "new_mean",
+    "old_expected",
+    "new_expected"
+  ],
+  "fixed_squads": 12,
+  "squad_source": "neutral panels frozen separately at GW20 and GW28; no future roster used in development",
+  "primary": "new_expected minus old_mean mean realised owned points/GW; scenarios averaged inside GW",
+  "factorial": [
+    "new_mean-old_mean",
+    "old_expected-old_mean",
+    "new_expected-new_mean",
+    "new_expected-old_expected"
+  ],
+  "expected_selector": "exact exhaustive legal-XI/bench/captain/vice optimum under independent player-GW appearances",
+  "dgw_primary": "independent fixture appearances: p_any=1-product(1-p_fixture); means sum fixture expectations",
+  "sensitivity": "shared fixture threshold p_any=max(p_fixture), primary chosen-plan .25 common-uniform mixture expectation",
+  "sensitivity_squads": [
+    0,
+    4,
+    8
+  ],
+  "sensitivity_reoptimisation": "persistent-fixture assumption, allGWs in both windows; never selected by outcomes",
+  "promotion": false,
+  "progression": {
+    "development_candidate_rmse_improvement": 0.005,
+    "mae_max_worsening": 0.005,
+    "ndcg_no_worse": true,
+    "development_owned_vs_anchor_nonnegative": true,
+    "development_combined_vs_old_mean_nonnegative": true,
+    "frozen_finalist": "new_expected only; no best-arm selection",
+    "historical_extension": "only if development forecast/owned gates pass; always report all existing-window scores",
+    "full_promotion": "unchanged existing multi-season/current/integrity gates, not waived by this pilot"
+  },
+  "limits": [
+    "inspected/reused historical outcomes,not untouched",
+    "conditional means average cameo/long appearances",
+    "independent availability is assumed,not learnt; correlation stress is not empirical injury modelling",
+    "source publication/roster/cached schedule/statistical correction limits inherited",
+    "no direct club news or future data",
+    "exact optimum applies only to fixed owned15 and specified distribution; not full transfer/chip optimisation"
+  ]
+}

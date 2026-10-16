@@ -25,6 +25,8 @@ It is a forecasting and decision-support engine, not a complete season optimiser
 
 Official injury percentages are retained as observations, not treated as calibrated start probabilities. A [controlled historical availability study](docs/INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md) found 20.6% lower candidate appearance Brier error against a matched refit of the full incumbent method. Adding the same signals to points forecasting reduced audit RMSE by 0.61%, but worsened MAE and slightly reduced ranking quality. Squad-selection results were mixed, so **v1.0.0 remains approved**. These component/error changes are not percentages of FPL points gained. The earlier [text experiment](docs/NEWS_AVAILABILITY_RESULTS_2026-10-16.md) found no extra Brier benefit from combining news text with structured labels.
 
+The optional [controlled conditional-return/selection study](docs/conditional_selection.md) isolates how appearance probabilities feed expected points and how a fixed squad uses bench cover. It is research tooling and does not replace the approved model or production selector.
+
 The optional [participation audit](docs/participation_audit.md) checks frozen point-risk diagnostics and predeadline evidence, including sourced club/press reports, without applying overrides. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).
 
 ## Performance and other options
@@ -217,6 +219,8 @@ Additional research commands expose their options through:
 .venv/bin/fpl-predict incumbent-availability --help
 .venv/bin/fpl-predict availability-points --help
 .venv/bin/fpl-predict availability-benchmark --help
+.venv/bin/fpl-predict conditional-integration --help
+.venv/bin/fpl-predict integration-study --help
 .venv/bin/python tools/compare_dastan.py --help
 ```
 
