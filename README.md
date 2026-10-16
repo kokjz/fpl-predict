@@ -86,8 +86,18 @@ and 12 under the five-prior-season control. From a common opening, the native
 adaptation leads by 22 and 2 points respectively. All 304 deadline transitions
 independently reconcile; the mixed rankings establish no consistent planner
 advantage. This compares configured inner solvers, not untouched external
-managers. Repeatability, additional native integration and joint qualification
-remain open.
+managers. Repeatability and joint qualification remain open.
+
+The [AIrsenal planning-policy comparison](docs/AIRSENAL_PLANNER_RESULTS_2026-10-16.md)
+adds eight matched full-season paths under the same forecasting controls
+and shared outer chip policy. Standing-minus-adapted-AIrsenal differences are
++105/+210 points with the four-year forecast and
++131/+67 with the five-prior-season forecast
+(own/common opening respectively). All 304 transitions independently reconcile.
+This tests a declared capped tree/GA policy adaptation, not the original
+AIrsenal forecaster or full manager. Search restrictions, runtime costs,
+failures and unknown bounds accompany the results; one reused season cannot
+establish a general advantage or approve a weekly policy.
 
 [Retained-plan bounds](docs/solver_bounds.md) now distinguish a validated plan
 from discarded solver attempts. A switchable baseline objective cut preserves
