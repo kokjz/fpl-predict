@@ -2,8 +2,9 @@
 
 The [protocol](../src/fpl_predict_resources/airsenal_planner_protocol.json) and
 [source recipe](../src/fpl_predict_resources/airsenal_solver_recipe.json) define
-the next native planning comparison. They do not claim an implemented public
-adapter, a completed historical season or an AIrsenal performance result.
+the next native planning comparison. The optional worker is implemented;
+the parent controller, historical-input pilot and season comparison remain.
+No AIrsenal historical performance result is claimed.
 
 The intended eight paths cross two frozen prior-only forecasting controls,
 standing/adapted-native planners and own/common opening squads. Each manages a
@@ -19,6 +20,24 @@ Only planner dependencies are needed for this track. It does not require fitting
 the original Bayesian forecasting stack, and is not a reproduction of that
 forecaster or the original manager's full chip strategy. External source and
 binaries are not bundled.
+
+`airsenal_solver_worker.py` uses only standard-library imports until explicitly
+started. Its source root is the optional installation directory containing
+the pinned `airsenal/` package: the actual import location, all 143 Python files,
+distribution license and declared dependency versions must match the recipe.
+Supply a new, unused research-home path. A standalone worker can be started with
+`python3.14 -m airsenal_solver_worker --source-root OPTIONAL_SITE_PACKAGES --home NEW_RESEARCH_HOME`.
+It exchanges bounded JSON lines; ordinary engine installation does not install
+AIrsenal or initialise a research database. The interval timer currently requires
+a POSIX runtime. This is a trusted research adapter, not a security sandbox.
+
+The worker supports native GA opening construction or a supplied common opening
+for the first period, then permits future transfers. It explores each immediate
+move family depth first and rotates after a complete plan, instead of retaining
+the original breadth-first multiprocessing order. A per-request timer includes
+database and GA construction; only completed full-horizon plans survive a
+timeout. Guarded hooks and query views are restored between origins. Upstream
+daemon stall threads are replaced by parent resource supervision.
 
 Admission requires an explicit empty research home and isolated database before
 any source import, without inherited account configuration. Python HTTP and the
