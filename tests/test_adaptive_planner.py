@@ -67,6 +67,14 @@ def test_new_injury_evidence_changes_replanned_captain_without_future_knowledge(
     assert revised[0].captain!=captain
 
 
+def test_small_trial_budget_covers_each_chip_family_before_later_dates():
+    s,m,h=setup(gw=20,H=3)
+    _,report=plan_adaptive(s,m,[('base',1.,h)],settings=config(),budget=Budget(seconds=15.,solve_seconds=1.,max_trials=7))
+    singles=[v['schedule'] for v in report['trials'][1:5]]
+    assert {next(iter(v.values())) for v in singles}=={'3xc','bboost','freehit','wildcard'}
+    assert all(set(v)=={20} for v in singles)
+
+
 def test_installed_command_contract_writes_once_without_runtime_initialisation(tmp_path,monkeypatch):
     import json,sys,hashlib
     from dataclasses import asdict

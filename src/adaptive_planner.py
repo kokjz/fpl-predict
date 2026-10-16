@@ -127,14 +127,23 @@ def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),
     if best is None:raise ValueError('No adaptive baseline')
     initial=best;near={};slots=[]
     # Earliest-expiring inventory first; no outcome-based choice of search order.
-    for w in sorted(windows,key=lambda w:(w['stop'],w['name'])):
+    for w in windows:
         for g in mean.gameweeks:
             if not w['start']<=g<=w['stop'] or (w['name']=='freehit' and g==state.gameweek and state.previous_chip=='freehit'):continue
             slots.append((g,w['name'],w['start']))
-            result=solve({g:w['name']})
-            if result is None:continue
-            near[w['name'],w['start'],g]=result[1]['objective']-initial[1]['objective']
-            if result[2]>best[2]+1e-8:best=result
+    # Within an expiry window, probe each chip family at the first date before
+    # spending the remaining budget on that family's later dates.
+    stops={(w['name'],w['start']):w['stop'] for w in windows}
+    slots.sort(key=lambda s:(stops[s[1],s[2]],s[0],s[1]))
+    for g,name,token_start in slots:
+        # Retain capacity to validate the combined calendar, rather than spend
+        # a small budget entirely on mutually exclusive single-chip probes.
+        reserve=2 if b.max_trials>=10 else 0
+        if len(trials)>=b.max_trials-reserve or time.monotonic()-start>=.8*b.seconds:break
+        result=solve({g:name})
+        if result is None:continue
+        near[name,token_start,g]=result[1]['objective']-initial[1]['objective']
+        if result[2]>best[2]+1e-8:best=result
     _,assignment=calendar(state,38,{**future,**near},blocked=blocked)
     combined={g:name for g,(name,_) in assignment.items() if g<=end}
     result=solve(combined)
