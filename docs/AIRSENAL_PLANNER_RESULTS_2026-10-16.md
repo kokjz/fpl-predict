@@ -73,6 +73,8 @@ The native heuristic has no upper-bound certificate even when its capped tree fi
 
 ## Source compatibility and interpretation
 
+The standing/controller runtime is Python 3.12.14 with numpy 2.3.5, pandas 2.2.3, scipy 1.18.1, scikit-learn 1.9.1, joblib 1.6.0, threadpoolctl 3.7.0. These observed versions differ from repository dependency pins. The aggregate records both the standing and optional native runtimes; this is not a guarantee of identical trajectories under another installation.
+
 The native core is [AIrsenal at fe580d7e](https://github.com/alan-turing-institute/AIrsenal/tree/fe580d7e567e79d80f73450c7d4b5d6610f05863), run through the separately installed Python 3.14/DEAP/SQLAlchemy planner runtime. Its forecasting/training stack is not installed or reproduced for this planning-only track. Source hashes and runtime versions are in the aggregate. The guarded compatibility layer handles the known historical transfer top-up, purchase eligibility and Free Hit reversion and retained-original selling offers/purchase basis during full rebuilds. It never supplies future realised prices or recovery information. External source and binaries are not bundled.
 
 Wall-time searches can explore different branches and retain different plans between runs. No second historical benchmark was scheduled alongside this serial batch; synthetic development tests in an isolated checkout overlapped some jobs. It was not a dedicated-machine timing study. Repeatability and solver-quality sensitivity remain qualification work. The point differences must not be attributed solely to forecast accuracy, source-rule corrections or an abstract optimisation algorithm.

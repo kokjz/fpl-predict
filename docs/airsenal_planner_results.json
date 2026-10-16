@@ -1302,5 +1302,17 @@
     "AIrsenal tree/GA bounds are unknown, including fully completed heuristic searches. Standing selected bounds apply only to a fixed chip schedule, restricted pool and surrogate objective; outer/global/season bounds remain unknown.",
     "Four-year and five-prior-year forecasting controls use different history, are chronological method references rather than the saved champion, and are not interchangeable claims.",
     "No prospective advantage or model promotion; further-horizon quotes remain origin-frozen assumptions and chip calendar search is bounded."
-  ]
+  ],
+  "parent_runtime": {
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "joblib": "1.6.0",
+      "threadpoolctl": "3.7.0"
+    }
+  },
+  "runtime_scope": "Standing/controller dependency versions observed in the unchanged execution environment; these differ from repository pins. Native runtime versions are recorded per path. No exact-repeat or portable-timing claim."
 }
