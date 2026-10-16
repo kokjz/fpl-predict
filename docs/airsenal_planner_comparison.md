@@ -39,6 +39,23 @@ database and GA construction; only completed full-horizon plans survive a
 timeout. Guarded hooks and query views are restored between origins. Upstream
 daemon stall threads are replaced by parent resource supervision.
 
+The first historical-input pilot admitted four of five native cases at both
+allowances. Its ten-individual, ten-generation GA failed to construct a legal
+opening squad; a longer time allowance did not change that failure. Protocol
+revision 2 therefore inserts one forecast-independent cheapest legal roster into
+each GA's initial population, using the same feasibility procedure as the
+control's baseline. Other random individuals and native fitness/evolution remain
+unchanged; the seed does not fix the selected squad. The failed pilot is retained
+and the full pilot must be rerun uniformly before season scoring.
+
+That [uniform rerun](airsenal_planner_feature_pilot.json) admitted all five native
+cases at both two- and five-second allowances. Following the predeclared rule,
+the final season matrix uses two seconds per inner attempt, fifteen seconds for
+the shared outer chip search and at most twelve trials. Both engines receive
+the same allowances. The revised pilot took 43.68 seconds and 590.7 MiB maximum
+sampled process-group memory, including both controllers. This chooses a bounded
+validity/cost configuration; it is not evidence of a realised points gain.
+
 `AIrsenalProcess` checks the worker's source/runtime handshake and uses the shared
 bounded serial JSON transport also used by the Solio adapter. Its environment
 does not inherit account settings, and transport failures close the worker.

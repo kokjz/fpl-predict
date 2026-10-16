@@ -20,6 +20,8 @@ import time
 from collections import deque
 from dataclasses import replace
 from pathlib import Path
+from types import SimpleNamespace
+from opening_baseline import cheapest_opening
 from native_solver_worker import MAX_MESSAGE,RESOURCES,read_json,validate_request,verified_sources
 
 RECIPE=read_json((RESOURCES/'airsenal_solver_recipe.json').read_bytes())
@@ -61,6 +63,21 @@ class FairQueue:
         self.rotate=True
 
 
+def seed_population(optimizer,population,allowed):
+    """Replace one random individual with a forecast-independent legal seed."""
+    if not population:return False
+    positions={'GK':1,'DEF':2,'MID':3,'FWD':4}
+    rows=[dict(id=p.player_id,position=positions[p.position(optimizer.season)],
+        team=p.team(optimizer.root_gameweek,optimizer.season),
+        price_tenths=p.price(optimizer.root_gameweek,optimizer.season),can_buy=allowed(p.player_id)) for p in optimizer.players]
+    try:ledger=cheapest_opening(SimpleNamespace(players=rows),optimizer.scoring.budget)
+    except ValueError:return False
+    selected=[index for index,p in enumerate(optimizer.players) if p.player_id in ledger]
+    if len(selected)!=15:return False
+    population[0][:]=selected
+    return True
+
+
 def bootstrap(root,directory):
     """Verify the actual import location before any upstream source executes."""
     global home
@@ -91,6 +108,7 @@ def bootstrap(root,directory):
     from airsenal.optimization.moves import ChipSchedule,GameweekChips,GameweekMove
     from airsenal.game.enums import Chip
     from airsenal.optimization.squad_optimizers import GeneticSquadOptimizer,GeneticAlgorithmConfig
+    from airsenal.optimization.squad_optimizers.genetic_algorithm import SquadOpt
     from airsenal.optimization.protocols import TransferSearchRequest,TransferConstraints
     from airsenal.optimization.squad_score import SquadScoringConfig,get_discount_factor
     from airsenal.optimization.transfer_optimizers.tree_search import TreeSearchConfig
@@ -101,7 +119,7 @@ def bootstrap(root,directory):
     names=['Player','PlayerAttributes','Fixture','PlayerPrediction','get_session','configure_database','ChipSchedule','GameweekChips','GameweekMove','Chip','GeneticSquadOptimizer','GeneticAlgorithmConfig','TransferSearchRequest','TransferConstraints','SquadScoringConfig','TreeSearchConfig','Squad','SubWeights']
     namespace=locals();globals().update({name:namespace[name] for name in names})
     get_discount_factor.__defaults__=(1.,);tree.StallWatchdog.start=lambda self:None
-    return dict(status='ready',revision=RECIPE['revision'],source_sha256=RECIPE['source_sha256'],versions=versions,network_disabled=True,serial=True,discount=1.),(tree.next_gameweek_transfers,Squad.add_player,FullSquadStrategy.propose)
+    return dict(status='ready',revision=RECIPE['revision'],source_sha256=RECIPE['source_sha256'],versions=versions,network_disabled=True,serial=True,discount=1.),(tree.next_gameweek_transfers,Squad.add_player,FullSquadStrategy.propose, SquadOpt._setup_deap)
 
 def solve(src):
     started = time.monotonic()
@@ -162,9 +180,20 @@ def solve(src):
     # Explicit compatibility layer; source files stay unchanged.
     import airsenal.optimization.transfer_optimizers.tree_search as tree
     from airsenal.optimization.strategies.full_squad import FullSquadStrategy
+    from airsenal.optimization.squad_optimizers.genetic_algorithm import SquadOpt
     prices = {r["id"]:r["price_tenths"] for r in src["market"]["rows"]}
     unavailable = {r["id"] for r in src["market"]["rows"] if not r["can_buy"]}
     context = {"branch_gameweek":origin, "rebuild_held":None}
+    raw_setup = SquadOpt._setup_deap
+    def setup_with_seed(optimizer):
+        raw_setup(optimizer)
+        original_population=optimizer.toolbox.population
+        def population(*args,**kwargs):
+            values=original_population(*args,**kwargs)
+            seed_population(optimizer,values,lambda i:i not in unavailable or i in (context['rebuild_held'] or set()))
+            return values
+        optimizer.toolbox.register('population',population)
+    SquadOpt._setup_deap=setup_with_seed
     raw_next = tree.next_gameweek_transfers
     def next_with_reset(free_transfers,*args,**kwargs):
         reset = profile["ft_topups"].get(str(context["branch_gameweek"]))
@@ -280,6 +309,7 @@ def main():
     with contextlib.redirect_stdout(sys.stderr):metadata,originals=bootstrap(args.source_root,args.home)
     import airsenal.optimization.transfer_optimizers.tree_search as tree
     from airsenal.optimization.strategies.full_squad import FullSquadStrategy
+    from airsenal.optimization.squad_optimizers.genetic_algorithm import SquadOpt
     signal.signal(signal.SIGALRM,expired)
     print(json.dumps(metadata,allow_nan=False),flush=True)
     while raw:=sys.stdin.buffer.readline(MAX_MESSAGE+1):
@@ -291,7 +321,7 @@ def main():
         except Exception as error:answer=dict(status='failed',error_type=type(error).__name__,message=str(error))
         finally:
             signal.setitimer(signal.ITIMER_REAL,0)
-            tree.next_gameweek_transfers,Squad.add_player,FullSquadStrategy.propose=originals
+            tree.next_gameweek_transfers,Squad.add_player,FullSquadStrategy.propose,SquadOpt._setup_deap=originals
         print(json.dumps(answer,allow_nan=False),flush=True)
 
 if __name__=='__main__':main()

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "predeclared implementation and pilot; no native historical season results",
+  "status": "feature-only admission passed; final historical matrix ready, no season results yet",
   "season": "2025-26",
   "source_recipe": "airsenal_solver_recipe.json",
   "forecasts": [
@@ -40,7 +40,8 @@
     "known season transfer top-up and purchase eligibility with retained-holding exemption",
     "full-rebuild sell-value offer view for retained originals, restore market quotes and actual purchase basis",
     "canonical common objective and full financial/action admission; no incomplete prefix accepted",
-    "native own opening construction and fixed common opening required; neither may silently substitute an empty or permanently fixed squad"
+    "native own opening construction and fixed common opening required; neither may silently substitute an empty or permanently fixed squad",
+    "One forecast-independent cheapest-legal roster seeds each native GA population; remaining individuals and original native fitness/evolution remain unchanged. The same common feasibility procedure supplies the control baseline."
   ],
   "pilot": {
     "outcome_fields": false,
@@ -65,7 +66,8 @@
       5.0
     ],
     "selection": "Lowest tested allowance producing admitted complete non-fallback native proposals in all five fixed feature cases; choose before season scoring. If neither passes, diagnose integrity/latency and predeclare a revised pilot, never select by realised points.",
-    "shared_outer": "Same control/native allowance, minimum six inner trials worth of outer time and maximum12trials; final budget/config frozen and published before any season score."
+    "shared_outer": "Same control/native allowance, minimum six inner trials worth of outer time and maximum12trials; final budget/config frozen and published before any season score.",
+    "previous_attempt": "Revision1 feature pilot completed without evaluator outcomes: native4/5nonfallback atboth2s/5s; GW1 GA10 had no legal individual. Preserve this failure; uniformly rerun allcases after feasible population-seed repair, samebudgets/seed/iterations and gate."
   },
   "resources": {
     "threads": 2,
@@ -89,5 +91,13 @@
   },
   "model_promotion": false,
   "policy_promotion": false,
-  "next": "Implement optional worker/common transport/controller and tests; mechanical/opening/admission tests then feature-only pilot, freeze final matrix, run8fullseasons, publish all aggregates, review/CI/merge/sync/cleanup; Fqualification remains separate."
+  "next": "Implement optional worker/common transport/controller and tests; mechanical/opening/admission tests then feature-only pilot, freeze final matrix, run8fullseasons, publish all aggregates, review/CI/merge/sync/cleanup; Fqualification remains separate.",
+  "revision": 2,
+  "selected_resources": {
+    "inner_seconds": 2.0,
+    "outer_seconds": 15.0,
+    "max_trials": 12,
+    "feature_only_evidence": "docs/airsenal_planner_feature_pilot.json",
+    "justification": "Lowest tested all-case-valid allowance, with outer capacity for baseline/four chip families/combined calendar; no evaluator outcomes used."
+  }
 }
