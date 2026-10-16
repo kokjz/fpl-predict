@@ -102,3 +102,11 @@ Primary sources checked 16 October 2026: [Dastan](https://github.com/qazybekb/sm
 [OpenFPL](https://github.com/daniegr/OpenFPL),
 [AIrsenal](https://github.com/alan-turing-institute/AIrsenal) and
 [Open FPL Solver](https://github.com/solioanalytics/open-fpl-solver).
+
+## Subsequent planner qualification
+
+The [uniform repeated manager comparison](SEASON_POLICY_QUALIFICATION_RESULTS_2026-10-17.md)
+holds the five-prior-season forecast fixed while comparing one-/six-week standing
+policies and adapted Solio/AIrsenal planning cores. Its twenty paths and solver
+budgets form a separate track. This document's forecasting adaptations keep their
+original source, scores and scope; the deployment artifact is never backcast.

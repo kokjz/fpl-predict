@@ -31,73 +31,60 @@ the existing qualification threshold. The candidate retains its 2025 RMSE gain
 and small owned-squad gain, but scores fewer points in reset and rolling-transfer
 comparisons. It is saved as a research artifact; **v1.0.0 remains approved**.
 
-The [season-management foundation](docs/season_management.md) adds persistent
-squad/finance/chip state and complete38-deadline supplied-action replay. Its
-[readiness audit](docs/SEASON_READINESS_2026-10-16.md) verifies historical calendar
-coverage and synthetic mechanics. Adaptive multiweek research planning and a
-continuous season pilot are available; matched full-season external management
-comparisons and joint qualification remain in progress. Weekly/reset comparisons
-alone do not establish season-long management superiority.
+The optional [season-management system](docs/season_management.md) carries the
+same squad, original purchase prices, cash, free transfers and chips across all
+38 deadlines. Its [multiweek planner](docs/rolling_planner.md) looks one to eight
+gameweeks ahead, while a [coarse remaining-season calendar](docs/adaptive_planner.md)
+reserves chip opportunities. Only the immediate action is committed; refreshed
+injury evidence, fixtures, prices and results lead to a new plan at the next
+deadline. Current-only minutes sensitivities are preserved. Future actions are
+conditional plans, not commitments or foreknowledge of prices and recoveries.
 
-The [season-policy qualification interface](docs/season_policy_qualification.md)
-adds explicit fixed-calendar and hold controls and an approved-artifact horizon
-bridge with checksummed observation and input clocks. Its
-[invented-case compatibility check](docs/approved_bridge_compatibility.json)
-and [adaptive replan check](docs/approved_adaptive_compatibility.json) prove
-mechanics only; historical qualification and policy approval remain pending.
+The [approved-artifact bridge](docs/season_policy_qualification.md) verifies the
+registry, artifact bytes, observation and source clocks before building a horizon.
+Saved-artifact and changed-next-origin integration checks use entirely invented
+data. Historical evaluation uses prior-only method references rather than
+backcasting a deployment artifact trained on the evaluation season.
 
-The [preseason references](docs/preseason_reference.md) address missing opening
-form using stable-code carryover and explicitly next-GW-only official projections.
-The [fixed six-GW pilot](docs/PRESEASON_REFERENCE_RESULTS_2026-10-16.md) improves
-opening differentiation and the GW1 diagnostic, but worsens pooled RMSE; these
-remain experimental comparisons rather than approved forecast replacements.
+The [full qualification results](docs/SEASON_POLICY_QUALIFICATION_RESULTS_2026-10-17.md)
+report twenty continuous 38-GW paths and 760 independently reconciled deadline
+decisions. All policies below use the same frozen five-prior-season forecast,
+information, legal chip resources and declared search limits. Points are after
+transfer hits; columns show both predeclared repetitions.
 
-The [multi-gameweek planner](docs/rolling_planner.md) now chooses provisional
-transfers/lineups across1–8gameweeks and validates finances against the state
-engine. The optional [chip/scenario planner](docs/adaptive_planner.md) adds legal
-chip schedules, shared decisions across explicit uncertainty scenarios and a
-coarse remaining-season calendar. Its chip search is bounded and heuristic;
-future chip values and scenario weights remain assumptions, pending full-season
-validation. The rolling planner's
-[mechanical pilot](docs/ROLLING_PLANNER_PILOT_2026-10-16.md) checks
-origin timing and bounded solver behaviour, while exposing a preseason forecast
-cold-start limitation. The chip planner's [bounded pilot](docs/ADAPTIVE_CHIP_PILOT_2026-10-16.md)
-checks integration and cost. The first [continuous 38-GW management pilot](docs/FULL_SEASON_RESULTS_2026-10-16.md)
-scores 2,295 versus 2,092 for matched six- versus one-week planners with chips,
-and a 52-point six-week lead without chips. Both preseason-reference variants
-lose to the six-week control. This is one reused season with bounded, sometimes
-poorly solved optimisation attempts; it establishes neither general superiority
-nor policy approval. That pilot retains its original source and results.
+| Planning policy | Own opening, runs 1 / 2 | Common opening, runs 1 / 2 |
+|---|---:|---:|
+| Standing one-week | 2,041 / 2,041 | 2,087 / 2,087 |
+| Standing six-week | 2,250 / 2,236 | 2,220 / 2,220 |
+| Solio adapted six-week | 2,224 / 2,250 | 2,239 / 2,200 |
+| AIrsenal adapted six-week | 2,012 / 1,949 | 2,141 / 2,144 |
 
-The subsequent [matched full-season forecast comparison](docs/SEASON_EXTERNAL_RESULTS_2026-10-16.md)
-completes sixteen own/common-opening paths with the same bounded squad/chip
-planner. The five-prior-season standing-method control scores 2,157/2,156 net
-points, versus 2,116/2,014 for the Dastan adaptation and 2,130/2,132 for the
-OpenFPL adaptation. The matched four-year control scores 2,088/2,134: the ranking
-depends on training usage and starting state. These are prior-only research fits,
-not the saved champion or original competitors' complete systems. An initial
-failed run and every uniformly rerun arm are retained. Short-search variability
-and one reused season prevent a general superiority or promotion claim.
-The [matched planning-engine comparison](docs/NATIVE_PLANNER_RESULTS_2026-10-16.md)
-then completes eight full-season paths using common forecasts and a shared outer
-chip policy. With freely constructed opening squads, the standing planner leads
-the pinned, rule-adapted Open FPL Solver by 111 points under the four-year control
-and 12 under the five-prior-season control. From a common opening, the native
-adaptation leads by 22 and 2 points respectively. All 304 deadline transitions
-independently reconcile; the mixed rankings establish no consistent planner
-advantage. This compares configured inner solvers, not untouched external
-managers. Repeatability and joint qualification remain open.
+Own openings allow each manager to build its initial squad. Common openings use
+the same neutral fifteen. These are repeated solver paths from **one reused
+historical season**, not independent season replications. The full report includes
+fixed-calendar/hold controls, paired differences, every chip date, hits, computing
+costs, native failures/fallbacks and conditional-bound coverage.
 
-The [AIrsenal planning-policy comparison](docs/AIRSENAL_PLANNER_RESULTS_2026-10-16.md)
-adds eight matched full-season paths under the same forecasting controls
-and shared outer chip policy. Standing-minus-adapted-AIrsenal differences are
-+105/+210 points with the four-year forecast and
-+131/+67 with the five-prior-season forecast
-(own/common opening respectively). All 304 transitions independently reconcile.
-This tests a declared capped tree/GA policy adaptation, not the original
-AIrsenal forecaster or full manager. Search restrictions, runtime costs,
-failures and unknown bounds accompany the results; one reused season cannot
-establish a general advantage or approve a weekly policy.
+Read the [explicit policy status](docs/season_policy_status.json) before using a
+research planner. Passing the declared historical points/integrity/cost gates
+permits experimental status; it does not automatically change weekly defaults or
+approve forecast weights. The native workers' audited profile is 2025/26 only;
+the standing planner also has 2026/27 mechanical integration. Original external
+managers, global season optimality and future superiority are not established.
+
+The [separate forecasting comparison](docs/SEASON_EXTERNAL_RESULTS_2026-10-16.md)
+tests standing-method, Dastan-architecture, OpenFPL and component adaptations under
+a common planner. Its frozen source and budgets differ from the table above;
+their scores must not be pooled or presented as a native Dastan full manager.
+Earlier [Solio](docs/NATIVE_PLANNER_RESULTS_2026-10-16.md) and
+[AIrsenal](docs/AIRSENAL_PLANNER_RESULTS_2026-10-16.md) matched planner studies retain
+their complete original results. The [preseason reference pilot](docs/PRESEASON_REFERENCE_RESULTS_2026-10-16.md)
+found no consistently better opening forecast replacement; weak cold-start
+information and longer-horizon approximation remain material limitations.
+
+For reproducible execution and independent verification, see the
+[qualification workflow](docs/season_policy_qualification.md). Raw inputs,
+private squads and trained binaries are not distributed with the source.
 
 [Retained-plan bounds](docs/solver_bounds.md) now distinguish a validated plan
 from discarded solver attempts. A switchable baseline objective cut preserves
@@ -213,7 +200,7 @@ python3.12 -m venv .venv
 .venv/bin/python -m pytest -q
 ```
 
-The default tests use synthetic fixtures and run offline. Four integration checks require separately prepared data/artifacts and are skipped on a fresh checkout. Python and numerical dependencies are pinned in [pyproject.toml](pyproject.toml).
+The default tests use synthetic fixtures and run offline. Integration checks that require separately prepared historical data or model artifacts are skipped on a fresh checkout. Python and numerical dependencies are pinned in [pyproject.toml](pyproject.toml).
 
 Initialise a workspace for downloaded data, model artifacts and generated reports:
 

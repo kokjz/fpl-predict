@@ -120,3 +120,8 @@ The comparison harness stops a path if a completed native proposal fails
 canonical admission; a failed proposal must not silently count as a
 successful benchmark path. Failed/budget attempts and selected fallbacks
 are reported separately from invalid proposals and heuristic bounds.
+
+The [uniform repeated policy qualification](SEASON_POLICY_QUALIFICATION_RESULTS_2026-10-17.md)
+uses a fresh common-source matrix and explicit policy status. It does not pool
+the earlier failed or corrected batches as identical-source repetitions. The
+native adapter remains limited to its audited 2025/26 rule profile.

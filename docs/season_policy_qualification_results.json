@@ -1,0 +1,2079 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "scope": "Adaptive continuous 38-GW management with frozen five-prior-season method-reference forecasts; one reused historical season and two solver repetitions; named external planner adaptations",
+  "source_commit": "d608aa2efb390b7bfe091b4d3d9128460188aa5c",
+  "lock_sha256": "9b8471da46fa56a66087b87e74e29588b96d89f283f0a9bfb1e6664f06eb19a6",
+  "season_count": 1,
+  "reused_season": true,
+  "paths": [
+    {
+      "name": "r1_own_standingH1_adaptive",
+      "policy": "standingH1_adaptive",
+      "opening": "own",
+      "replication": 1,
+      "horizon": 1,
+      "net_points": 2041.0,
+      "hits": 0,
+      "transfers": 89,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "freehit",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 3,
+          "chip": "wildcard",
+          "net_points": 30.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "bboost",
+          "net_points": 86.0
+        },
+        {
+          "gameweek": 5,
+          "chip": "3xc",
+          "net_points": 40.0
+        },
+        {
+          "gameweek": 20,
+          "chip": "3xc",
+          "net_points": 71.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "bboost",
+          "net_points": 64.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 120.0
+        },
+        {
+          "gameweek": 36,
+          "chip": "wildcard",
+          "net_points": 58.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1759.0,
+        "autosub_delta": 35.0,
+        "bench_boost_points": 21.0,
+        "captain_bonus": 219.0,
+        "extra_captain_bonus": 7.0
+      },
+      "seconds": 6.948332000058144,
+      "sampled_rss_bytes": 281083904,
+      "provisional_periods": 38,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 1.3874221896111486e-16,
+      "global_bound": null,
+      "total_inner_trials": 84,
+      "fallback_trials": 0,
+      "maximum_origin_seconds": 0.3955647081602365,
+      "native_calls": 0,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "r1_own_standingH6_adaptive",
+      "policy": "standingH6_adaptive",
+      "opening": "own",
+      "replication": 1,
+      "horizon": 6,
+      "net_points": 2250.0,
+      "hits": 24,
+      "transfers": 90,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "3xc",
+          "net_points": 76.0
+        },
+        {
+          "gameweek": 15,
+          "chip": "freehit",
+          "net_points": 92.0
+        },
+        {
+          "gameweek": 19,
+          "chip": "bboost",
+          "net_points": 48.0
+        },
+        {
+          "gameweek": 20,
+          "chip": "bboost",
+          "net_points": 70.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "3xc",
+          "net_points": 77.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 105.0
+        },
+        {
+          "gameweek": 34,
+          "chip": "wildcard",
+          "net_points": 77.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1900.0,
+        "autosub_delta": 85.0,
+        "bench_boost_points": 25.0,
+        "captain_bonus": 251.0,
+        "extra_captain_bonus": 13.0
+      },
+      "seconds": 362.88619095785543,
+      "sampled_rss_bytes": 720207872,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 0.0035644952496225873,
+      "global_bound": null,
+      "total_inner_trials": 362,
+      "fallback_trials": 3,
+      "maximum_origin_seconds": 15.289077040972188,
+      "native_calls": 0,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "r1_own_SolioAdaptedH6_sharedAdaptiveChips",
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "opening": "own",
+      "replication": 1,
+      "horizon": 6,
+      "net_points": 2224.0,
+      "hits": 28,
+      "transfers": 92,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "3xc",
+          "net_points": 76.0
+        },
+        {
+          "gameweek": 15,
+          "chip": "freehit",
+          "net_points": 92.0
+        },
+        {
+          "gameweek": 17,
+          "chip": "bboost",
+          "net_points": 84.0
+        },
+        {
+          "gameweek": 20,
+          "chip": "wildcard",
+          "net_points": 40.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "bboost",
+          "net_points": 103.0
+        },
+        {
+          "gameweek": 24,
+          "chip": "3xc",
+          "net_points": 72.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 105.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1868.0,
+        "autosub_delta": 77.0,
+        "bench_boost_points": 58.0,
+        "captain_bonus": 234.0,
+        "extra_captain_bonus": 15.0
+      },
+      "seconds": 458.52453066711314,
+      "sampled_rss_bytes": 836960256,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 0.008809535444239302,
+      "global_bound": null,
+      "total_inner_trials": 291,
+      "fallback_trials": 10,
+      "maximum_origin_seconds": 15.552544084144756,
+      "native_calls": 291,
+      "native_failed_attempts": 8
+    },
+    {
+      "name": "r1_own_AIrsenalAdaptedH6_sharedAdaptiveChips",
+      "policy": "AIrsenalAdaptedH6_sharedAdaptiveChips",
+      "opening": "own",
+      "replication": 1,
+      "horizon": 6,
+      "net_points": 2012.0,
+      "hits": 72,
+      "transfers": 83,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net_points": 28.0
+        },
+        {
+          "gameweek": 6,
+          "chip": "3xc",
+          "net_points": 73.0
+        },
+        {
+          "gameweek": 10,
+          "chip": "bboost",
+          "net_points": 86.0
+        },
+        {
+          "gameweek": 20,
+          "chip": "bboost",
+          "net_points": 66.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "3xc",
+          "net_points": 52.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 93.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1753.0,
+        "autosub_delta": 58.0,
+        "bench_boost_points": 22.0,
+        "captain_bonus": 229.0,
+        "extra_captain_bonus": 22.0
+      },
+      "seconds": 541.80488620908,
+      "sampled_rss_bytes": 441040896,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 0,
+      "conditional_bounds_unknown": 38,
+      "maximum_known_relative_gap": null,
+      "global_bound": null,
+      "total_inner_trials": 251,
+      "fallback_trials": 34,
+      "maximum_origin_seconds": 15.344302166020498,
+      "native_calls": 251,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "r1_common_standingH1_adaptive",
+      "policy": "standingH1_adaptive",
+      "opening": "common",
+      "replication": 1,
+      "horizon": 1,
+      "net_points": 2087.0,
+      "hits": 0,
+      "transfers": 88,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "freehit",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 3,
+          "chip": "wildcard",
+          "net_points": 30.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "bboost",
+          "net_points": 86.0
+        },
+        {
+          "gameweek": 5,
+          "chip": "3xc",
+          "net_points": 40.0
+        },
+        {
+          "gameweek": 20,
+          "chip": "3xc",
+          "net_points": 71.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "bboost",
+          "net_points": 64.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 120.0
+        },
+        {
+          "gameweek": 36,
+          "chip": "wildcard",
+          "net_points": 58.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1788.0,
+        "autosub_delta": 51.0,
+        "bench_boost_points": 21.0,
+        "captain_bonus": 220.0,
+        "extra_captain_bonus": 7.0
+      },
+      "seconds": 7.513829374918714,
+      "sampled_rss_bytes": 281247744,
+      "provisional_periods": 38,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 1.3874221896111486e-16,
+      "global_bound": null,
+      "total_inner_trials": 84,
+      "fallback_trials": 0,
+      "maximum_origin_seconds": 0.4037577921990305,
+      "native_calls": 0,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "r1_common_standingH6_adaptive",
+      "policy": "standingH6_adaptive",
+      "opening": "common",
+      "replication": 1,
+      "horizon": 6,
+      "net_points": 2220.0,
+      "hits": 24,
+      "transfers": 91,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "3xc",
+          "net_points": 78.0
+        },
+        {
+          "gameweek": 15,
+          "chip": "freehit",
+          "net_points": 92.0
+        },
+        {
+          "gameweek": 19,
+          "chip": "bboost",
+          "net_points": 40.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "bboost",
+          "net_points": 85.0
+        },
+        {
+          "gameweek": 23,
+          "chip": "3xc",
+          "net_points": 37.0
+        },
+        {
+          "gameweek": 30,
+          "chip": "wildcard",
+          "net_points": 61.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 105.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1879.0,
+        "autosub_delta": 86.0,
+        "bench_boost_points": 32.0,
+        "captain_bonus": 239.0,
+        "extra_captain_bonus": 8.0
+      },
+      "seconds": 358.70799775002524,
+      "sampled_rss_bytes": 829652992,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 0.005503562472670368,
+      "global_bound": null,
+      "total_inner_trials": 338,
+      "fallback_trials": 3,
+      "maximum_origin_seconds": 15.254189750179648,
+      "native_calls": 0,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "r1_common_SolioAdaptedH6_sharedAdaptiveChips",
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "opening": "common",
+      "replication": 1,
+      "horizon": 6,
+      "net_points": 2239.0,
+      "hits": 20,
+      "transfers": 86,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "3xc",
+          "net_points": 78.0
+        },
+        {
+          "gameweek": 15,
+          "chip": "freehit",
+          "net_points": 92.0
+        },
+        {
+          "gameweek": 19,
+          "chip": "bboost",
+          "net_points": 48.0
+        },
+        {
+          "gameweek": 20,
+          "chip": "3xc",
+          "net_points": 61.0
+        },
+        {
+          "gameweek": 22,
+          "chip": "bboost",
+          "net_points": 51.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 105.0
+        },
+        {
+          "gameweek": 34,
+          "chip": "wildcard",
+          "net_points": 74.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1905.0,
+        "autosub_delta": 78.0,
+        "bench_boost_points": 28.0,
+        "captain_bonus": 239.0,
+        "extra_captain_bonus": 9.0
+      },
+      "seconds": 496.6813572498504,
+      "sampled_rss_bytes": 974159872,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 0.010509855826188616,
+      "global_bound": null,
+      "total_inner_trials": 324,
+      "fallback_trials": 15,
+      "maximum_origin_seconds": 15.457678167149425,
+      "native_calls": 324,
+      "native_failed_attempts": 14
+    },
+    {
+      "name": "r1_common_AIrsenalAdaptedH6_sharedAdaptiveChips",
+      "policy": "AIrsenalAdaptedH6_sharedAdaptiveChips",
+      "opening": "common",
+      "replication": 1,
+      "horizon": 6,
+      "net_points": 2141.0,
+      "hits": 64,
+      "transfers": 78,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net_points": 61.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "bboost",
+          "net_points": 70.0
+        },
+        {
+          "gameweek": 6,
+          "chip": "3xc",
+          "net_points": 76.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "3xc",
+          "net_points": 61.0
+        },
+        {
+          "gameweek": 22,
+          "chip": "bboost",
+          "net_points": 51.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 89.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1842.0,
+        "autosub_delta": 79.0,
+        "bench_boost_points": 26.0,
+        "captain_bonus": 236.0,
+        "extra_captain_bonus": 22.0
+      },
+      "seconds": 540.9357012920082,
+      "sampled_rss_bytes": 440762368,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 0,
+      "conditional_bounds_unknown": 38,
+      "maximum_known_relative_gap": null,
+      "global_bound": null,
+      "total_inner_trials": 251,
+      "fallback_trials": 31,
+      "maximum_origin_seconds": 15.241554999956861,
+      "native_calls": 251,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "r2_own_standingH1_adaptive",
+      "policy": "standingH1_adaptive",
+      "opening": "own",
+      "replication": 2,
+      "horizon": 1,
+      "net_points": 2041.0,
+      "hits": 0,
+      "transfers": 89,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "freehit",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 3,
+          "chip": "wildcard",
+          "net_points": 30.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "bboost",
+          "net_points": 86.0
+        },
+        {
+          "gameweek": 5,
+          "chip": "3xc",
+          "net_points": 40.0
+        },
+        {
+          "gameweek": 20,
+          "chip": "3xc",
+          "net_points": 71.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "bboost",
+          "net_points": 64.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 120.0
+        },
+        {
+          "gameweek": 36,
+          "chip": "wildcard",
+          "net_points": 58.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1759.0,
+        "autosub_delta": 35.0,
+        "bench_boost_points": 21.0,
+        "captain_bonus": 219.0,
+        "extra_captain_bonus": 7.0
+      },
+      "seconds": 7.2378885839134455,
+      "sampled_rss_bytes": 281509888,
+      "provisional_periods": 38,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 1.3874221896111486e-16,
+      "global_bound": null,
+      "total_inner_trials": 84,
+      "fallback_trials": 0,
+      "maximum_origin_seconds": 0.40212791599333286,
+      "native_calls": 0,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "r2_own_standingH6_adaptive",
+      "policy": "standingH6_adaptive",
+      "opening": "own",
+      "replication": 2,
+      "horizon": 6,
+      "net_points": 2236.0,
+      "hits": 24,
+      "transfers": 91,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "3xc",
+          "net_points": 76.0
+        },
+        {
+          "gameweek": 15,
+          "chip": "freehit",
+          "net_points": 92.0
+        },
+        {
+          "gameweek": 19,
+          "chip": "bboost",
+          "net_points": 50.0
+        },
+        {
+          "gameweek": 20,
+          "chip": "bboost",
+          "net_points": 71.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "3xc",
+          "net_points": 70.0
+        },
+        {
+          "gameweek": 31,
+          "chip": "wildcard",
+          "net_points": 50.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 105.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1914.0,
+        "autosub_delta": 69.0,
+        "bench_boost_points": 27.0,
+        "captain_bonus": 237.0,
+        "extra_captain_bonus": 13.0
+      },
+      "seconds": 358.64636462484486,
+      "sampled_rss_bytes": 879083520,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 0.0035644952496225873,
+      "global_bound": null,
+      "total_inner_trials": 341,
+      "fallback_trials": 3,
+      "maximum_origin_seconds": 15.247546499827877,
+      "native_calls": 0,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "r2_own_SolioAdaptedH6_sharedAdaptiveChips",
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "opening": "own",
+      "replication": 2,
+      "horizon": 6,
+      "net_points": 2250.0,
+      "hits": 24,
+      "transfers": 88,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "3xc",
+          "net_points": 76.0
+        },
+        {
+          "gameweek": 15,
+          "chip": "freehit",
+          "net_points": 92.0
+        },
+        {
+          "gameweek": 19,
+          "chip": "bboost",
+          "net_points": 50.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "bboost",
+          "net_points": 86.0
+        },
+        {
+          "gameweek": 23,
+          "chip": "3xc",
+          "net_points": 39.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 109.0
+        },
+        {
+          "gameweek": 34,
+          "chip": "wildcard",
+          "net_points": 77.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1912.0,
+        "autosub_delta": 77.0,
+        "bench_boost_points": 34.0,
+        "captain_bonus": 243.0,
+        "extra_captain_bonus": 8.0
+      },
+      "seconds": 499.45649087498896,
+      "sampled_rss_bytes": 1040367616,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 0.006029850889770499,
+      "global_bound": null,
+      "total_inner_trials": 315,
+      "fallback_trials": 12,
+      "maximum_origin_seconds": 15.47374379192479,
+      "native_calls": 315,
+      "native_failed_attempts": 9
+    },
+    {
+      "name": "r2_own_AIrsenalAdaptedH6_sharedAdaptiveChips",
+      "policy": "AIrsenalAdaptedH6_sharedAdaptiveChips",
+      "opening": "own",
+      "replication": 2,
+      "horizon": 6,
+      "net_points": 1949.0,
+      "hits": 80,
+      "transfers": 85,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net_points": 28.0
+        },
+        {
+          "gameweek": 3,
+          "chip": "3xc",
+          "net_points": 22.0
+        },
+        {
+          "gameweek": 10,
+          "chip": "bboost",
+          "net_points": 86.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "3xc",
+          "net_points": 41.0
+        },
+        {
+          "gameweek": 22,
+          "chip": "bboost",
+          "net_points": 44.0
+        },
+        {
+          "gameweek": 36,
+          "chip": "freehit",
+          "net_points": 58.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1658.0,
+        "autosub_delta": 98.0,
+        "bench_boost_points": 31.0,
+        "captain_bonus": 234.0,
+        "extra_captain_bonus": 8.0
+      },
+      "seconds": 553.7160110000987,
+      "sampled_rss_bytes": 443891712,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 0,
+      "conditional_bounds_unknown": 38,
+      "maximum_known_relative_gap": null,
+      "global_bound": null,
+      "total_inner_trials": 259,
+      "fallback_trials": 21,
+      "maximum_origin_seconds": 15.244963875040412,
+      "native_calls": 259,
+      "native_failed_attempts": 1
+    },
+    {
+      "name": "r2_common_standingH1_adaptive",
+      "policy": "standingH1_adaptive",
+      "opening": "common",
+      "replication": 2,
+      "horizon": 1,
+      "net_points": 2087.0,
+      "hits": 0,
+      "transfers": 88,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "freehit",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 3,
+          "chip": "wildcard",
+          "net_points": 30.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "bboost",
+          "net_points": 86.0
+        },
+        {
+          "gameweek": 5,
+          "chip": "3xc",
+          "net_points": 40.0
+        },
+        {
+          "gameweek": 20,
+          "chip": "3xc",
+          "net_points": 71.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "bboost",
+          "net_points": 64.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 120.0
+        },
+        {
+          "gameweek": 36,
+          "chip": "wildcard",
+          "net_points": 58.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1788.0,
+        "autosub_delta": 51.0,
+        "bench_boost_points": 21.0,
+        "captain_bonus": 220.0,
+        "extra_captain_bonus": 7.0
+      },
+      "seconds": 6.939959584036842,
+      "sampled_rss_bytes": 281198592,
+      "provisional_periods": 38,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 1.3874221896111486e-16,
+      "global_bound": null,
+      "total_inner_trials": 84,
+      "fallback_trials": 0,
+      "maximum_origin_seconds": 0.39776920806616545,
+      "native_calls": 0,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "r2_common_standingH6_adaptive",
+      "policy": "standingH6_adaptive",
+      "opening": "common",
+      "replication": 2,
+      "horizon": 6,
+      "net_points": 2220.0,
+      "hits": 24,
+      "transfers": 91,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "3xc",
+          "net_points": 78.0
+        },
+        {
+          "gameweek": 15,
+          "chip": "freehit",
+          "net_points": 92.0
+        },
+        {
+          "gameweek": 19,
+          "chip": "bboost",
+          "net_points": 40.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "bboost",
+          "net_points": 85.0
+        },
+        {
+          "gameweek": 23,
+          "chip": "3xc",
+          "net_points": 37.0
+        },
+        {
+          "gameweek": 30,
+          "chip": "wildcard",
+          "net_points": 61.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 105.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1879.0,
+        "autosub_delta": 86.0,
+        "bench_boost_points": 32.0,
+        "captain_bonus": 239.0,
+        "extra_captain_bonus": 8.0
+      },
+      "seconds": 357.81819962500595,
+      "sampled_rss_bytes": 817610752,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 0.005503562472670368,
+      "global_bound": null,
+      "total_inner_trials": 339,
+      "fallback_trials": 2,
+      "maximum_origin_seconds": 15.240783750079572,
+      "native_calls": 0,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "r2_common_SolioAdaptedH6_sharedAdaptiveChips",
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "opening": "common",
+      "replication": 2,
+      "horizon": 6,
+      "net_points": 2200.0,
+      "hits": 24,
+      "transfers": 87,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "3xc",
+          "net_points": 78.0
+        },
+        {
+          "gameweek": 15,
+          "chip": "freehit",
+          "net_points": 92.0
+        },
+        {
+          "gameweek": 19,
+          "chip": "bboost",
+          "net_points": 44.0
+        },
+        {
+          "gameweek": 20,
+          "chip": "bboost",
+          "net_points": 65.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "3xc",
+          "net_points": 73.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 105.0
+        },
+        {
+          "gameweek": 34,
+          "chip": "wildcard",
+          "net_points": 74.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1874.0,
+        "autosub_delta": 77.0,
+        "bench_boost_points": 21.0,
+        "captain_bonus": 239.0,
+        "extra_captain_bonus": 13.0
+      },
+      "seconds": 497.5391918751411,
+      "sampled_rss_bytes": 957382656,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 0.010509855826188616,
+      "global_bound": null,
+      "total_inner_trials": 320,
+      "fallback_trials": 11,
+      "maximum_origin_seconds": 16.075658709043637,
+      "native_calls": 320,
+      "native_failed_attempts": 10
+    },
+    {
+      "name": "r2_common_AIrsenalAdaptedH6_sharedAdaptiveChips",
+      "policy": "AIrsenalAdaptedH6_sharedAdaptiveChips",
+      "opening": "common",
+      "replication": 2,
+      "horizon": 6,
+      "net_points": 2144.0,
+      "hits": 68,
+      "transfers": 86,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net_points": 61.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "bboost",
+          "net_points": 70.0
+        },
+        {
+          "gameweek": 6,
+          "chip": "3xc",
+          "net_points": 76.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "bboost",
+          "net_points": 70.0
+        },
+        {
+          "gameweek": 23,
+          "chip": "3xc",
+          "net_points": 33.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 87.0
+        },
+        {
+          "gameweek": 37,
+          "chip": "wildcard",
+          "net_points": 80.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1828.0,
+        "autosub_delta": 108.0,
+        "bench_boost_points": 25.0,
+        "captain_bonus": 234.0,
+        "extra_captain_bonus": 17.0
+      },
+      "seconds": 545.9644163749181,
+      "sampled_rss_bytes": 441647104,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 0,
+      "conditional_bounds_unknown": 38,
+      "maximum_known_relative_gap": null,
+      "global_bound": null,
+      "total_inner_trials": 250,
+      "fallback_trials": 32,
+      "maximum_origin_seconds": 15.55632650014013,
+      "native_calls": 250,
+      "native_failed_attempts": 1
+    },
+    {
+      "name": "control_own_fixed_calendar",
+      "policy": "fixed_calendar",
+      "opening": "own",
+      "replication": null,
+      "horizon": 6,
+      "net_points": 2095.0,
+      "hits": 56,
+      "transfers": 79,
+      "chip_dates": [
+        {
+          "gameweek": 6,
+          "chip": "wildcard",
+          "net_points": 53.0
+        },
+        {
+          "gameweek": 12,
+          "chip": "bboost",
+          "net_points": 61.0
+        },
+        {
+          "gameweek": 15,
+          "chip": "freehit",
+          "net_points": 92.0
+        },
+        {
+          "gameweek": 18,
+          "chip": "3xc",
+          "net_points": 45.0
+        },
+        {
+          "gameweek": 24,
+          "chip": "wildcard",
+          "net_points": 54.0
+        },
+        {
+          "gameweek": 30,
+          "chip": "bboost",
+          "net_points": 64.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 105.0
+        },
+        {
+          "gameweek": 36,
+          "chip": "3xc",
+          "net_points": 81.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1800.0,
+        "autosub_delta": 63.0,
+        "bench_boost_points": 35.0,
+        "captain_bonus": 240.0,
+        "extra_captain_bonus": 13.0
+      },
+      "seconds": 426.71427970798686,
+      "sampled_rss_bytes": 548339712,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 37,
+      "conditional_bounds_unknown": 1,
+      "maximum_known_relative_gap": 0.01096501114716738,
+      "global_bound": null,
+      "total_inner_trials": 376,
+      "fallback_trials": 14,
+      "maximum_origin_seconds": 15.358103708131239,
+      "native_calls": 0,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "control_common_fixed_calendar",
+      "policy": "fixed_calendar",
+      "opening": "common",
+      "replication": null,
+      "horizon": 6,
+      "net_points": 2202.0,
+      "hits": 56,
+      "transfers": 93,
+      "chip_dates": [
+        {
+          "gameweek": 6,
+          "chip": "wildcard",
+          "net_points": 55.0
+        },
+        {
+          "gameweek": 12,
+          "chip": "bboost",
+          "net_points": 54.0
+        },
+        {
+          "gameweek": 15,
+          "chip": "freehit",
+          "net_points": 92.0
+        },
+        {
+          "gameweek": 18,
+          "chip": "3xc",
+          "net_points": 39.0
+        },
+        {
+          "gameweek": 24,
+          "chip": "wildcard",
+          "net_points": 71.0
+        },
+        {
+          "gameweek": 30,
+          "chip": "bboost",
+          "net_points": 78.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net_points": 105.0
+        },
+        {
+          "gameweek": 36,
+          "chip": "3xc",
+          "net_points": 74.0
+        }
+      ],
+      "score_components": {
+        "base_xi": 1911.0,
+        "autosub_delta": 59.0,
+        "bench_boost_points": 31.0,
+        "captain_bonus": 244.0,
+        "extra_captain_bonus": 13.0
+      },
+      "seconds": 422.38223000010476,
+      "sampled_rss_bytes": 793083904,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "maximum_known_relative_gap": 0.003320160647349092,
+      "global_bound": null,
+      "total_inner_trials": 367,
+      "fallback_trials": 7,
+      "maximum_origin_seconds": 15.219698542030528,
+      "native_calls": 0,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "control_own_hold_no_chips",
+      "policy": "hold_no_chips",
+      "opening": "own",
+      "replication": null,
+      "horizon": 6,
+      "net_points": 300.0,
+      "hits": 0,
+      "transfers": 0,
+      "chip_dates": [],
+      "score_components": {
+        "base_xi": 193.0,
+        "autosub_delta": 3.0,
+        "bench_boost_points": 0.0,
+        "captain_bonus": 104.0,
+        "extra_captain_bonus": 0.0
+      },
+      "seconds": 8.579228332964703,
+      "sampled_rss_bytes": 262356992,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 0,
+      "conditional_bounds_unknown": 38,
+      "maximum_known_relative_gap": null,
+      "global_bound": null,
+      "total_inner_trials": 38,
+      "fallback_trials": 0,
+      "maximum_origin_seconds": 0.13582674995996058,
+      "native_calls": 0,
+      "native_failed_attempts": 0
+    },
+    {
+      "name": "control_common_hold_no_chips",
+      "policy": "hold_no_chips",
+      "opening": "common",
+      "replication": null,
+      "horizon": 6,
+      "net_points": 1449.0,
+      "hits": 0,
+      "transfers": 0,
+      "chip_dates": [],
+      "score_components": {
+        "base_xi": 1181.0,
+        "autosub_delta": 21.0,
+        "bench_boost_points": 0.0,
+        "captain_bonus": 247.0,
+        "extra_captain_bonus": 0.0
+      },
+      "seconds": 8.611418374814093,
+      "sampled_rss_bytes": 262307840,
+      "provisional_periods": 213,
+      "conditional_bounds_known": 0,
+      "conditional_bounds_unknown": 38,
+      "maximum_known_relative_gap": null,
+      "global_bound": null,
+      "total_inner_trials": 38,
+      "fallback_trials": 0,
+      "maximum_origin_seconds": 0.12823341693729162,
+      "native_calls": 0,
+      "native_failed_attempts": 0
+    }
+  ],
+  "paired_points_gates": [
+    {
+      "policy": "standingH6_adaptive",
+      "openings": [
+        {
+          "opening": "own",
+          "paired_differences": [
+            209.0,
+            195.0
+          ],
+          "mean_difference": 202.0,
+          "pass_predeclared_points_gate": true
+        },
+        {
+          "opening": "common",
+          "paired_differences": [
+            133.0,
+            133.0
+          ],
+          "mean_difference": 133.0,
+          "pass_predeclared_points_gate": true
+        }
+      ],
+      "points_gate_pass": true,
+      "production_approval": false,
+      "scope": "Historical experimental points gate only; complete independent integrity/cost audits additionally required."
+    },
+    {
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "openings": [
+        {
+          "opening": "own",
+          "paired_differences": [
+            183.0,
+            209.0
+          ],
+          "mean_difference": 196.0,
+          "pass_predeclared_points_gate": true
+        },
+        {
+          "opening": "common",
+          "paired_differences": [
+            152.0,
+            113.0
+          ],
+          "mean_difference": 132.5,
+          "pass_predeclared_points_gate": true
+        }
+      ],
+      "points_gate_pass": true,
+      "production_approval": false,
+      "scope": "Historical experimental points gate only; complete independent integrity/cost audits additionally required."
+    },
+    {
+      "policy": "AIrsenalAdaptedH6_sharedAdaptiveChips",
+      "openings": [
+        {
+          "opening": "own",
+          "paired_differences": [
+            -29.0,
+            -92.0
+          ],
+          "mean_difference": -60.5,
+          "pass_predeclared_points_gate": false
+        },
+        {
+          "opening": "common",
+          "paired_differences": [
+            54.0,
+            57.0
+          ],
+          "mean_difference": 55.5,
+          "pass_predeclared_points_gate": true
+        }
+      ],
+      "points_gate_pass": false,
+      "production_approval": false,
+      "scope": "Historical experimental points gate only; complete independent integrity/cost audits additionally required."
+    }
+  ],
+  "external_comparisons": [
+    {
+      "opening": "own",
+      "competitor": "SolioAdaptedH6_sharedAdaptiveChips",
+      "standing_minus_external": [
+        26.0,
+        -14.0
+      ],
+      "mean": 6.0
+    },
+    {
+      "opening": "own",
+      "competitor": "AIrsenalAdaptedH6_sharedAdaptiveChips",
+      "standing_minus_external": [
+        238.0,
+        287.0
+      ],
+      "mean": 262.5
+    },
+    {
+      "opening": "common",
+      "competitor": "SolioAdaptedH6_sharedAdaptiveChips",
+      "standing_minus_external": [
+        -19.0,
+        20.0
+      ],
+      "mean": 0.5
+    },
+    {
+      "opening": "common",
+      "competitor": "AIrsenalAdaptedH6_sharedAdaptiveChips",
+      "standing_minus_external": [
+        79.0,
+        76.0
+      ],
+      "mean": 77.5
+    }
+  ],
+  "control_comparisons": [
+    {
+      "opening": "own",
+      "control": "fixed_calendar",
+      "control_net_points": 2095.0,
+      "standing_minus_control": [
+        155.0,
+        141.0
+      ],
+      "mean_difference": 148.0,
+      "scope": "Repeated adaptive paths versus one declared control per opening; descriptive, not independent repetitions or a causal chip-timing estimate."
+    },
+    {
+      "opening": "own",
+      "control": "hold_no_chips",
+      "control_net_points": 300.0,
+      "standing_minus_control": [
+        1950.0,
+        1936.0
+      ],
+      "mean_difference": 1943.0,
+      "scope": "Repeated adaptive paths versus one declared control per opening; descriptive, not independent repetitions or a causal chip-timing estimate."
+    },
+    {
+      "opening": "common",
+      "control": "fixed_calendar",
+      "control_net_points": 2202.0,
+      "standing_minus_control": [
+        18.0,
+        18.0
+      ],
+      "mean_difference": 18.0,
+      "scope": "Repeated adaptive paths versus one declared control per opening; descriptive, not independent repetitions or a causal chip-timing estimate."
+    },
+    {
+      "opening": "common",
+      "control": "hold_no_chips",
+      "control_net_points": 1449.0,
+      "standing_minus_control": [
+        771.0,
+        771.0
+      ],
+      "mean_difference": 771.0,
+      "scope": "Repeated adaptive paths versus one declared control per opening; descriptive, not independent repetitions or a causal chip-timing estimate."
+    }
+  ],
+  "independent_audits": {
+    "scored_deadlines": 760,
+    "provenance_paths": 20,
+    "native_rpc_paths": [
+      {
+        "arm": "r1_own_SolioAdaptedH6_sharedAdaptiveChips",
+        "calls": 291,
+        "completed": 283,
+        "expected_failures": 8,
+        "provisional_periods": 1683,
+        "error_counts": {
+          "ValueError: No feasible native incumbent": 8
+        },
+        "status": "independently reconciled"
+      },
+      {
+        "arm": "r1_own_AIrsenalAdaptedH6_sharedAdaptiveChips",
+        "calls": 251,
+        "completed": 251,
+        "expected_failures": 0,
+        "provisional_periods": 1456,
+        "error_counts": {},
+        "status": "independently reconciled"
+      },
+      {
+        "arm": "r1_common_SolioAdaptedH6_sharedAdaptiveChips",
+        "calls": 324,
+        "completed": 310,
+        "expected_failures": 14,
+        "provisional_periods": 1840,
+        "error_counts": {
+          "ValueError: No feasible native incumbent": 14
+        },
+        "status": "independently reconciled"
+      },
+      {
+        "arm": "r1_common_AIrsenalAdaptedH6_sharedAdaptiveChips",
+        "calls": 251,
+        "completed": 251,
+        "expected_failures": 0,
+        "provisional_periods": 1456,
+        "error_counts": {},
+        "status": "independently reconciled"
+      },
+      {
+        "arm": "r2_own_SolioAdaptedH6_sharedAdaptiveChips",
+        "calls": 315,
+        "completed": 306,
+        "expected_failures": 9,
+        "provisional_periods": 1816,
+        "error_counts": {
+          "ValueError: No feasible native incumbent": 9
+        },
+        "status": "independently reconciled"
+      },
+      {
+        "arm": "r2_own_AIrsenalAdaptedH6_sharedAdaptiveChips",
+        "calls": 259,
+        "completed": 258,
+        "expected_failures": 1,
+        "provisional_periods": 1481,
+        "error_counts": {
+          "ValueError: No complete native plan within budget": 1
+        },
+        "status": "independently reconciled"
+      },
+      {
+        "arm": "r2_common_SolioAdaptedH6_sharedAdaptiveChips",
+        "calls": 320,
+        "completed": 310,
+        "expected_failures": 10,
+        "provisional_periods": 1840,
+        "error_counts": {
+          "ValueError: No feasible native incumbent": 10
+        },
+        "status": "independently reconciled"
+      },
+      {
+        "arm": "r2_common_AIrsenalAdaptedH6_sharedAdaptiveChips",
+        "calls": 250,
+        "completed": 249,
+        "expected_failures": 1,
+        "provisional_periods": 1449,
+        "error_counts": {
+          "ValueError: No complete native plan within budget": 1
+        },
+        "status": "independently reconciled"
+      }
+    ],
+    "public_verification_tool": "tools/audit_season_path.py",
+    "public_verification_tool_sha256": "7c80999ca9afdd184cffa20e28e856ac7e2892956e23a8f2475ed9154899afec",
+    "chosen_provisional_periods": 3560,
+    "provisional_auditor_repair": {
+      "initial_failure": "Auditor wrongly required reserve keeper first; engine action bench keeps outfield priority subsequence and keeper last. Supplied actions legal.",
+      "change": "Require exactly one reserve keeper, without imposing an unsupported positional index.",
+      "engine_or_policy_changed": false
+    },
+    "native_auditor_repair": {
+      "initial_failure": "Auditor expected old synthetic worker source_verified reply field absent from released protocol; actual worker reports pinned revision per reply and source hashes in startup metadata.",
+      "change": "Verify actual per-reply pinned revision and startup recipe source hashes; retain complete ledger/objective checks.",
+      "engine_or_policy_changed": false
+    }
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "joblib": "1.6.0",
+      "threadpoolctl": "3.7.0"
+    },
+    "scope": "Observed parent runtime, not a claim that repository dependency pins were used. Native runtimes are separately recipe-verified."
+  },
+  "native_runtimes": {
+    "SolioAdaptedH6_sharedAdaptiveChips": {
+      "status": "ready",
+      "revision": "ec65f5e2b2be34441cb4b2a9efafea1ec0fe3b79",
+      "patched_ast_sha256": "aa7e9b4dd16a69816f4311655a18f4737e3b1090745d545caa1e756e45df21fb",
+      "python": "3.14.6",
+      "numpy": "2.4.6",
+      "pandas": "3.0.3",
+      "highspy": "1.15.1",
+      "threads": 2,
+      "network_disabled": true
+    },
+    "AIrsenalAdaptedH6_sharedAdaptiveChips": {
+      "status": "ready",
+      "revision": "fe580d7e567e79d80f73450c7d4b5d6610f05863",
+      "versions": {
+        "airsenal": "2.0.0",
+        "moocore": "0.3.2",
+        "tzlocal": "5.4.4",
+        "dateparser": "1.4.2",
+        "deap": "1.4.4",
+        "curl-cffi": "0.16.1",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "sqlalchemy": "2.0.51"
+      },
+      "network_disabled": true,
+      "serial": true,
+      "discount": 1.0
+    }
+  },
+  "quality_sensitivity": {
+    "protocol": "season_policy_quality_protocol.json",
+    "cases": [
+      {
+        "origin": 1,
+        "inner_seconds": 0.5,
+        "reference_objective": 112.3436921922296,
+        "objective": 112.3436921922296,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 112.3436921922296,
+          "upper_objective": 112.3436921922296,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 70,
+        "candidate_ids_sha256": "74f2fa3617d522cbe32487cd153928ea7a98f6e8b2521f5cb3bd0acfd1fe68b4",
+        "fallback_retained": false,
+        "seconds": 0.3060105419717729,
+        "solver_report_seconds": 0.30600204109214246,
+        "input_sha256": "9f72d4f8151bfb5ab21f28033c24678b6b1e63a9185dd23b9b75f24798fff68d",
+        "reference_decision_sha256": "ff5c7a0fd1671965dfeac547bc97bb738a2a04ed09fd92e4f926849aa7b2c228"
+      },
+      {
+        "origin": 1,
+        "inner_seconds": 2.0,
+        "reference_objective": 112.3436921922296,
+        "objective": 112.3436921922296,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 112.3436921922296,
+          "upper_objective": 112.3436921922296,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 70,
+        "candidate_ids_sha256": "74f2fa3617d522cbe32487cd153928ea7a98f6e8b2521f5cb3bd0acfd1fe68b4",
+        "fallback_retained": false,
+        "seconds": 0.2992103330325335,
+        "solver_report_seconds": 0.2992010829038918,
+        "input_sha256": "9f72d4f8151bfb5ab21f28033c24678b6b1e63a9185dd23b9b75f24798fff68d",
+        "reference_decision_sha256": "ff5c7a0fd1671965dfeac547bc97bb738a2a04ed09fd92e4f926849aa7b2c228"
+      },
+      {
+        "origin": 1,
+        "inner_seconds": 5.0,
+        "reference_objective": 112.3436921922296,
+        "objective": 112.3436921922296,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 112.3436921922296,
+          "upper_objective": 112.3436921922296,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 70,
+        "candidate_ids_sha256": "74f2fa3617d522cbe32487cd153928ea7a98f6e8b2521f5cb3bd0acfd1fe68b4",
+        "fallback_retained": false,
+        "seconds": 0.28298891708254814,
+        "solver_report_seconds": 0.28298041713424027,
+        "input_sha256": "9f72d4f8151bfb5ab21f28033c24678b6b1e63a9185dd23b9b75f24798fff68d",
+        "reference_decision_sha256": "ff5c7a0fd1671965dfeac547bc97bb738a2a04ed09fd92e4f926849aa7b2c228"
+      },
+      {
+        "origin": 6,
+        "inner_seconds": 0.5,
+        "reference_objective": 350.89002147978283,
+        "objective": 350.89002147978283,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 350.89002147978283,
+          "upper_objective": 350.89002147978283,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 76,
+        "candidate_ids_sha256": "a23acf16c09029294233cf47614a25a14703bf5fe200839a25042631065323c5",
+        "fallback_retained": false,
+        "seconds": 0.293023832840845,
+        "solver_report_seconds": 0.29301491589285433,
+        "input_sha256": "43fbcaf963ebf6605160c210313ac4ee8e71d3eb5c90cb5afbc017baeeea6450",
+        "reference_decision_sha256": "fcae9457a1bb4a6fc7e23455020b1354bc361fa11faee6d3bca31084b73d1c4a"
+      },
+      {
+        "origin": 6,
+        "inner_seconds": 2.0,
+        "reference_objective": 350.89002147978283,
+        "objective": 350.89002147978283,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 350.89002147978283,
+          "upper_objective": 350.89002147978283,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 76,
+        "candidate_ids_sha256": "a23acf16c09029294233cf47614a25a14703bf5fe200839a25042631065323c5",
+        "fallback_retained": false,
+        "seconds": 0.3035238750744611,
+        "solver_report_seconds": 0.3035146249458194,
+        "input_sha256": "43fbcaf963ebf6605160c210313ac4ee8e71d3eb5c90cb5afbc017baeeea6450",
+        "reference_decision_sha256": "fcae9457a1bb4a6fc7e23455020b1354bc361fa11faee6d3bca31084b73d1c4a"
+      },
+      {
+        "origin": 6,
+        "inner_seconds": 5.0,
+        "reference_objective": 350.89002147978283,
+        "objective": 350.89002147978283,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 350.89002147978283,
+          "upper_objective": 350.89002147978283,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 76,
+        "candidate_ids_sha256": "a23acf16c09029294233cf47614a25a14703bf5fe200839a25042631065323c5",
+        "fallback_retained": false,
+        "seconds": 0.3044008750002831,
+        "solver_report_seconds": 0.3043918330222368,
+        "input_sha256": "43fbcaf963ebf6605160c210313ac4ee8e71d3eb5c90cb5afbc017baeeea6450",
+        "reference_decision_sha256": "fcae9457a1bb4a6fc7e23455020b1354bc361fa11faee6d3bca31084b73d1c4a"
+      },
+      {
+        "origin": 16,
+        "inner_seconds": 0.5,
+        "reference_objective": 370.01808299797204,
+        "objective": 342.2034285684573,
+        "difference_vs_reference": -27.814654429514746,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 342.2034285684573,
+          "upper_objective": 370.39497239057454,
+          "absolute_gap": 28.19154382211724,
+          "relative_gap": 0.08238241194733548,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 78,
+        "candidate_ids_sha256": "fe96c786f933bd265138a0b67b1aea21a96f9c93ff5dd2bf590531814ad75f68",
+        "fallback_retained": false,
+        "seconds": 0.6735043339431286,
+        "solver_report_seconds": 0.6734944579657167,
+        "input_sha256": "182e0d0bd8aac5d6eac2c3a9dc7e6abefbd46138716d17e06ee2b1ee77f95aee",
+        "reference_decision_sha256": "0ae0840082e2e63a5d58acd90c3c15527da3b2c74c727b5a801dcf90d54f0281"
+      },
+      {
+        "origin": 16,
+        "inner_seconds": 2.0,
+        "reference_objective": 370.01808299797204,
+        "objective": 370.01808299797204,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 370.01808299797204,
+          "upper_objective": 370.328406683522,
+          "absolute_gap": 0.31032368554997447,
+          "relative_gap": 0.0008386716752750575,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 78,
+        "candidate_ids_sha256": "fe96c786f933bd265138a0b67b1aea21a96f9c93ff5dd2bf590531814ad75f68",
+        "fallback_retained": false,
+        "seconds": 2.1703293749596924,
+        "solver_report_seconds": 2.170319833094254,
+        "input_sha256": "182e0d0bd8aac5d6eac2c3a9dc7e6abefbd46138716d17e06ee2b1ee77f95aee",
+        "reference_decision_sha256": "0ae0840082e2e63a5d58acd90c3c15527da3b2c74c727b5a801dcf90d54f0281"
+      },
+      {
+        "origin": 16,
+        "inner_seconds": 5.0,
+        "reference_objective": 370.01808299797204,
+        "objective": 370.01808299797204,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 370.01808299797204,
+          "upper_objective": 370.018082997978,
+          "absolute_gap": 5.9685589803848416e-12,
+          "relative_gap": 1.6130452144463312e-14,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 78,
+        "candidate_ids_sha256": "fe96c786f933bd265138a0b67b1aea21a96f9c93ff5dd2bf590531814ad75f68",
+        "fallback_retained": false,
+        "seconds": 2.8736818749457598,
+        "solver_report_seconds": 2.873672667192295,
+        "input_sha256": "182e0d0bd8aac5d6eac2c3a9dc7e6abefbd46138716d17e06ee2b1ee77f95aee",
+        "reference_decision_sha256": "0ae0840082e2e63a5d58acd90c3c15527da3b2c74c727b5a801dcf90d54f0281"
+      },
+      {
+        "origin": 30,
+        "inner_seconds": 0.5,
+        "reference_objective": 344.73922379450437,
+        "objective": 344.73922379450437,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 344.73922379450437,
+          "upper_objective": 344.7831332865243,
+          "absolute_gap": 0.04390949201990679,
+          "relative_gap": 0.00012737016558951472,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 77,
+        "candidate_ids_sha256": "20f2adbfa7e560476f6ce45b89c542958bfc5b9a1d0174ba78a9b7529e499fc5",
+        "fallback_retained": false,
+        "seconds": 0.6829927919898182,
+        "solver_report_seconds": 0.6829832920338959,
+        "input_sha256": "36ee581e440bbe7279d7e0580a2f0126f2cef1ee54963de5d25eba07fb4d3045",
+        "reference_decision_sha256": "6bc4f5753177a41a5578998b0b243500262b06522b37c639d8074f532b67931a"
+      },
+      {
+        "origin": 30,
+        "inner_seconds": 2.0,
+        "reference_objective": 344.73922379450437,
+        "objective": 344.73922379450437,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 344.73922379450437,
+          "upper_objective": 344.7392237945044,
+          "absolute_gap": 5.684341886080802e-14,
+          "relative_gap": 1.6488816745347147e-16,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 77,
+        "candidate_ids_sha256": "20f2adbfa7e560476f6ce45b89c542958bfc5b9a1d0174ba78a9b7529e499fc5",
+        "fallback_retained": false,
+        "seconds": 0.7925497498363256,
+        "solver_report_seconds": 0.7925416249781847,
+        "input_sha256": "36ee581e440bbe7279d7e0580a2f0126f2cef1ee54963de5d25eba07fb4d3045",
+        "reference_decision_sha256": "6bc4f5753177a41a5578998b0b243500262b06522b37c639d8074f532b67931a"
+      },
+      {
+        "origin": 30,
+        "inner_seconds": 5.0,
+        "reference_objective": 344.73922379450437,
+        "objective": 344.73922379450437,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 344.73922379450437,
+          "upper_objective": 344.7392237945044,
+          "absolute_gap": 5.684341886080802e-14,
+          "relative_gap": 1.6488816745347147e-16,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 77,
+        "candidate_ids_sha256": "20f2adbfa7e560476f6ce45b89c542958bfc5b9a1d0174ba78a9b7529e499fc5",
+        "fallback_retained": false,
+        "seconds": 0.7931649589445442,
+        "solver_report_seconds": 0.7931554999668151,
+        "input_sha256": "36ee581e440bbe7279d7e0580a2f0126f2cef1ee54963de5d25eba07fb4d3045",
+        "reference_decision_sha256": "6bc4f5753177a41a5578998b0b243500262b06522b37c639d8074f532b67931a"
+      },
+      {
+        "origin": 38,
+        "inner_seconds": 0.5,
+        "reference_objective": 57.331690018397,
+        "objective": 57.331690018397,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 57.331690018397,
+          "upper_objective": 57.331690018397005,
+          "absolute_gap": 7.105427357601002e-15,
+          "relative_gap": 1.2393542481166982e-16,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 74,
+        "candidate_ids_sha256": "aca6a5168a9d5e32d262c8dda9f9506d671b44835be984851d497ffa436f3640",
+        "fallback_retained": false,
+        "seconds": 0.04698124993592501,
+        "solver_report_seconds": 0.04697462520562112,
+        "input_sha256": "e35268f440d1c529a7c211e35d1807604661f7d17c97f74a0c83b1e680c349ab",
+        "reference_decision_sha256": "6130029a51315fe65720c029b0b338b68af1d4ca3c60ee5a059d433f3053e520"
+      },
+      {
+        "origin": 38,
+        "inner_seconds": 2.0,
+        "reference_objective": 57.331690018397,
+        "objective": 57.331690018397,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 57.331690018397,
+          "upper_objective": 57.331690018397005,
+          "absolute_gap": 7.105427357601002e-15,
+          "relative_gap": 1.2393542481166982e-16,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 74,
+        "candidate_ids_sha256": "aca6a5168a9d5e32d262c8dda9f9506d671b44835be984851d497ffa436f3640",
+        "fallback_retained": false,
+        "seconds": 0.046725207939743996,
+        "solver_report_seconds": 0.04672129196114838,
+        "input_sha256": "e35268f440d1c529a7c211e35d1807604661f7d17c97f74a0c83b1e680c349ab",
+        "reference_decision_sha256": "6130029a51315fe65720c029b0b338b68af1d4ca3c60ee5a059d433f3053e520"
+      },
+      {
+        "origin": 38,
+        "inner_seconds": 5.0,
+        "reference_objective": 57.331690018397,
+        "objective": 57.331690018397,
+        "difference_vs_reference": 0.0,
+        "selected_conditional_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 57.331690018397,
+          "upper_objective": 57.331690018397005,
+          "absolute_gap": 7.105427357601002e-15,
+          "relative_gap": 1.2393542481166982e-16,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "comparable_reference_pool": true,
+        "pool_players": 74,
+        "candidate_ids_sha256": "aca6a5168a9d5e32d262c8dda9f9506d671b44835be984851d497ffa436f3640",
+        "fallback_retained": false,
+        "seconds": 0.046611875062808394,
+        "solver_report_seconds": 0.04660758306272328,
+        "input_sha256": "e35268f440d1c529a7c211e35d1807604661f7d17c97f74a0c83b1e680c349ab",
+        "reference_decision_sha256": "6130029a51315fe65720c029b0b338b68af1d4ca3c60ee5a059d433f3053e520"
+      }
+    ],
+    "tool_sha256": "e339fc6746980820ae1a77791f2ce301f09d6dd682007ed727a96002839d0e91",
+    "solver_identity": "standing CanonicalPlanner",
+    "independent_audit": {
+      "complete": true,
+      "cases": 15,
+      "provisional_periods": 75,
+      "inputs_verified": 39,
+      "output_hashes_verified": 21,
+      "command_and_signature_verified": true,
+      "candidate_pool_rule": "Independent preservation of holdings/common opening plus top12 horizon and cheapest6 per position",
+      "scope": "Separate recorded-file/signature audit and optimizer-independent integer-ledger/mean-objective verifier; not third-party certification, realised-points or global-optimality evidence."
+    },
+    "seconds": 11.029866375029087,
+    "sampled_rss_bytes": 474300416,
+    "scope": "Fixed retained schedule and origin inputs; expected objectives only, not realised season gains or policy setting selection."
+  },
+  "native_search_scope": {
+    "AIrsenal": {
+      "max_opt_transfers": 2,
+      "max_total_hit": 8,
+      "allow_unused_transfers": true,
+      "GA_effort": 10,
+      "random_state": 42,
+      "serial": true
+    },
+    "interpretation": "Configured heuristic restrictions and time truncation, not different legal FPL entitlements or original full-manager reproduction."
+  },
+  "source_inventory": {
+    "runtime_lock": {
+      "season_qualification.py": "257c1043eebba071aa015fa03f2c9e13a033823725c3080eb789ae5d07ccb014",
+      "season_benchmark.py": "2475d7e636765f276e14988c87545f015607d3afc83553764e7cb4e98d43e3ac",
+      "management_policies.py": "02333a4fd7d2107cecbfdec8490104b0965c72f45246324dd57613371c7bcb0c",
+      "adaptive_planner.py": "ebc0aaab7d7dfdf0cedb733affd8049c4026881882e579016626f68ec9027002",
+      "rolling_planner.py": "70f30795b152d200173e7a661af20bcf754d9d449ca1535a164259003176ed45",
+      "horizon_forecast.py": "8f9a5587d936192807824181ce8ad3cf8d8540e342ea4047fca1d22be57f29d2",
+      "season_engine.py": "d9328b51ccb81fbfef937a92b7db31d489079f66802a12fdcdca307712589c59",
+      "points_replay.py": "e2dd2bc919fdd761671277277c86fe78e76e55d3aa9d145bda6a0a7c6dde777a",
+      "selection_benchmark.py": "be83f5f73a2142fbc133b2b9b1b8d0b0dee8c93cd02fed4d7c09fe043c873e26",
+      "forecast.py": "0e53f6629ad6f15014d14fa4298b46cce9273dac9f0109b094655e692ec0553e",
+      "forecast_sensitivity.py": "63833f41b5dedfd901cea1777a48ebe39241ef52fe8f0f90430b60f43a81f0d1",
+      "fpl_model.py": "59f1098f9032f37ed3b3bef8d2a4cd92988cb64eb16f1dc82d017b582ade6760",
+      "model_registry.py": "eec50fcfc697d7faca70b4651ac92f9e9e2ea83aa2fed128d2df685af977d53b",
+      "availability_evidence.py": "f937eabd44fdc5f9e2e9511f5831de145d24a8f8a5effc245a2cc98a3dca0e59",
+      "native_planner.py": "704b801ced8086c8255e097c9cb5a655df6a3423b33dd90e3d9fd1b1052d1e06",
+      "airsenal_planner.py": "d01d7e74f56d2de29aa69b8428a15fc25535110f81e4a27ab03a618f579fe99c",
+      "native_solver_worker.py": "f0db24cdc27da186ef26674071b4b9a04c5f32782413553873a56ab272d03bdf",
+      "airsenal_solver_worker.py": "607c9593e94ec1f9749b611ed3de49aec33ee2f5208a33f509072e44501ae1d4",
+      "native_transport.py": "63ec63247155f688efe56c08cd0a14af93f6a12638a9c96828edd15004626917",
+      "opening_baseline.py": "6037bbb05098526405a083cb136c6cc850fc5dd79575d3b9bbe0b29a3042da44",
+      "experiment_runner.py": "bce0fc5f229b5779e4f9222c6197394c8d59376273170b71704e2d3d0e6a3f1f",
+      "runtime.py": "a307c0756806ad080606d02bc3957919051bc57964171a6fccc9d57902dcf6e3",
+      "fpl_predict_cli.py": "0c8513d0af456db0587d772df4ff5c9eb3d614a58a00c13db096c2fedfff47de",
+      "fpl_predict_resources/season_policy_qualification_protocol.json": "4bd8896e09ac1149790aae8c10260c98888ccd658f53d75458858531094843c7",
+      "fpl_predict_resources/season_rules.json": "00bd1f16ef39771c63f6fa075757590dd4abd78a6e8c8e00024ee1b001fd9077",
+      "fpl_predict_resources/native_solver_recipe.json": "91f93d30e1217edc3b397cf1e455a9fe8b7957e46b90e9f0cc0bede550bd314c",
+      "fpl_predict_resources/airsenal_solver_recipe.json": "45989030f89956a88dc040482cbe2dbd365c37b8a31a1db230a8edecb051795b"
+    },
+    "transitive_local_module_sha256": {
+      "fpl_predict_cli.py": "0c8513d0af456db0587d772df4ff5c9eb3d614a58a00c13db096c2fedfff47de",
+      "runtime.py": "a307c0756806ad080606d02bc3957919051bc57964171a6fccc9d57902dcf6e3",
+      "experiment_runner.py": "bce0fc5f229b5779e4f9222c6197394c8d59376273170b71704e2d3d0e6a3f1f",
+      "external_benchmark.py": "8ebd4d90504869c7ce4d69db7f5b8a37431a353abbc6b394707799d9ee580396",
+      "benchmark_evaluation.py": "74e5877177cadf5c6aa590b1977b4717c2db0626f207f34576df41af8d14826f",
+      "points_replay.py": "e2dd2bc919fdd761671277277c86fe78e76e55d3aa9d145bda6a0a7c6dde777a",
+      "forecast.py": "0e53f6629ad6f15014d14fa4298b46cce9273dac9f0109b094655e692ec0553e",
+      "availability_evidence.py": "f937eabd44fdc5f9e2e9511f5831de145d24a8f8a5effc245a2cc98a3dca0e59",
+      "conditional_forecaster.py": "a26540e34cf30d3e3c1e031979aff6e6dadf48b368a63ea1191e0b6c6d7fc635",
+      "fpl_model.py": "59f1098f9032f37ed3b3bef8d2a4cd92988cb64eb16f1dc82d017b582ade6760",
+      "forecast_sensitivity.py": "63833f41b5dedfd901cea1777a48ebe39241ef52fe8f0f90430b60f43a81f0d1",
+      "model_registry.py": "eec50fcfc697d7faca70b4651ac92f9e9e2ea83aa2fed128d2df685af977d53b",
+      "benchmark_metrics.py": "8808abdaf64e520e896f3527822862aa38263eb6fb909448ab4b4e5c797ec1e0",
+      "opening_baseline.py": "6037bbb05098526405a083cb136c6cc850fc5dd79575d3b9bbe0b29a3042da44",
+      "native_transport.py": "63ec63247155f688efe56c08cd0a14af93f6a12638a9c96828edd15004626917",
+      "native_solver_worker.py": "f0db24cdc27da186ef26674071b4b9a04c5f32782413553873a56ab272d03bdf",
+      "airsenal_solver_worker.py": "607c9593e94ec1f9749b611ed3de49aec33ee2f5208a33f509072e44501ae1d4",
+      "airsenal_planner.py": "d01d7e74f56d2de29aa69b8428a15fc25535110f81e4a27ab03a618f579fe99c",
+      "season_engine.py": "d9328b51ccb81fbfef937a92b7db31d489079f66802a12fdcdca307712589c59",
+      "selection_benchmark.py": "be83f5f73a2142fbc133b2b9b1b8d0b0dee8c93cd02fed4d7c09fe043c873e26",
+      "rolling_planner.py": "70f30795b152d200173e7a661af20bcf754d9d449ca1535a164259003176ed45",
+      "horizon_forecast.py": "8f9a5587d936192807824181ce8ad3cf8d8540e342ea4047fca1d22be57f29d2",
+      "native_planner.py": "704b801ced8086c8255e097c9cb5a655df6a3423b33dd90e3d9fd1b1052d1e06",
+      "adaptive_planner.py": "ebc0aaab7d7dfdf0cedb733affd8049c4026881882e579016626f68ec9027002",
+      "management_policies.py": "02333a4fd7d2107cecbfdec8490104b0965c72f45246324dd57613371c7bcb0c",
+      "season_benchmark.py": "2475d7e636765f276e14988c87545f015607d3afc83553764e7cb4e98d43e3ac",
+      "season_qualification.py": "257c1043eebba071aa015fa03f2c9e13a033823725c3080eb789ae5d07ccb014"
+    },
+    "scope": "Runtime verifies listed 23 modules and 4 resources; separate clean-tree/archive audit verifies all 27 transitive local imports at the study commit."
+  },
+  "measured": {
+    "serial_seconds": 6467.608504459728,
+    "maximum_sampled_rss_bytes": 1040367616,
+    "threads": 2
+  },
+  "model_promotion": false,
+  "production_policy_approval": false,
+  "forecaster_comparison_track": "SEASON_EXTERNAL_RESULTS_2026-10-16.md",
+  "limitations": [
+    "One reused season, not 20 independent seasons. No independent-season confidence interval.",
+    "Restricted candidate pool, mean objective and shared outer chip search and native adaptations, not original complete providers.",
+    "Different solver libraries and wall-clock variability; all declared repetitions retained.",
+    "No global chip/season optimality bound; conditional bounds describe fixed schedule/pool only.",
+    "Historical market/calendar publication clocks reconstructed from mutable archives, not independent historic availability certification.",
+    "Actual approved deployment artifact was not backcast; its compatibility was separately checked on invented cases.",
+    "Expected autosub/vice fallback and scenario-tree recourse are not optimised; actual settlement applies autosubs/vice correctly.",
+    "Forecasting adaptations in earlier comparison use a separate budget/source track; their scores are not pooled into this qualification."
+  ]
+}

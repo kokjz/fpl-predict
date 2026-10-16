@@ -73,3 +73,13 @@ The [subsequent external-forecast comparison](SEASON_EXTERNAL_RESULTS_2026-10-16
 adds matched prior-only forecast adaptations and common-opening paths. It uses
 the revised planner and reports both controls; its results do not overwrite this
 first pilot or establish original external-manager superiority.
+
+## Repeated policy qualification
+
+The [twenty-path study](SEASON_POLICY_QUALIFICATION_RESULTS_2026-10-17.md) adds
+uniform-source repetitions, common openings, matched native planner adaptations
+and fixed-calendar/hold controls. Its budgets and forecast reference are declared
+separately from the first pilot. The
+[standalone verifier](../tools/audit_season_path.py) reconciles both actual
+settlement and every retained future action without importing the planner.
+Do not pool the initial pilot with later repeats or relabel it as new-source data.

@@ -1,9 +1,12 @@
 # Adaptive season management
 
-The objective is net FPL points across all38gameweeks, including transfers and
-chips. Forecast errors, fixed-owned-XI and weeklyfreshbudget results remain
-component diagnostics. The current foundation supplies state/rules/replay, not
-a completed adaptive planner or evidence of better historical season scores.
+The objective is net FPL points across all 38 gameweeks, including transfers and
+chips. Forecast errors, fixed-owned-XI and weekly reset results remain component
+diagnostics. The state engine, origin-safe multiweek planner and adaptive chip
+calendar now support continuous historical management. Read the
+[full qualification results](SEASON_POLICY_QUALIFICATION_RESULTS_2026-10-17.md)
+and [explicit approval scope](season_policy_status.json); implementation and
+historical experimental status do not establish general future superiority.
 
 ## State and scoring
 
@@ -63,9 +66,11 @@ The [season protocol](../src/fpl_predict_resources/season_benchmark_protocol.jso
 separates forecasts/commonplanner, planners/commonforecasts and native fullsystem
 comparisons. Neutral starting-state tests and GW1squad construction are distinct.
 Known-answer synthetic seasons validate mechanics, not historical performance.
-Next stages add origin-safe horizon forecasts, multigameweek planning, adaptive
-chip strategy, historical baselines and external comparisons. Approved weights
-are unchanged; code merge does not qualify a planner or promote a model.
+Origin-safe horizon forecasts, multiweek planning, adaptive chips, full-season
+baselines and named external adaptations are implemented and evaluated. The
+[qualification workflow](season_policy_qualification.md) separates repeated
+policy tests from earlier forecaster comparisons. Approved weights and normal
+weekly defaults are unchanged; code merge does not promote a model or policy.
 
 Rules checked16October2026 against [official rules](https://www.premierleague.com/en/news/4661029),
 [chip guidance](https://www.premierleague.com/en/news/4679879/whats-happening-with-fpl-chips-in-202627)

@@ -105,12 +105,12 @@ sampled group memory. Selected-schedule bounds were available in this tiny case;
 global chip and season bounds remain unknown. This proves mechanical integration,
 not useful forecasts, realistic full-market latency, season gain or policy approval.
 
-The next qualification work includes the executable source/runtime lock,
-bounded uniform-source repeated season
-comparisons, explicit policy approval status and operational handoff. These
-items are not established by the callback interface or its synthetic tests.
-No new historical season result, forecast-model promotion or weekly-policy
-approval is claimed here.
+The completed [historical qualification](SEASON_POLICY_QUALIFICATION_RESULTS_2026-10-17.md)
+and [policy status](season_policy_status.json) report all twenty uniform-source
+paths, independent audits and predeclared decisions. The synthetic checks above
+prove mechanics only. Historical experimental qualification, forecast promotion
+and normal weekly-policy approval remain distinct decisions. The frozen protocol's
+readiness text records its pre-execution state and is not rewritten after results.
 
 The underlying [AIrsenal comparison](airsenal_planner_comparison.md) was released
 before integrating the qualification runner. Its results remain tied to their
@@ -145,7 +145,8 @@ These commands execute one arm. The supervising `run-experiment`/`run_job`
 workflow must enforce the protocol's process-group memory, time and storage caps;
 execute historical arms serially and preserve every declared attempt. The runner
 is trusted research code, not an operating-system sandbox or an approval mechanism.
-Final qualification still requires the full matrix and independent scoring audit.
+The [complete matrix and independent audits](season_policy_qualification_results.json)
+record the completed historical qualification; commands alone never imply approval.
 
 From a source checkout, the standard-library-only verification tool checks one
 complete frozen 2025/26 path without importing the planner or season engine:
