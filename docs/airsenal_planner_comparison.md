@@ -2,14 +2,14 @@
 
 The [protocol](../src/fpl_predict_resources/airsenal_planner_protocol.json) and
 [source recipe](../src/fpl_predict_resources/airsenal_solver_recipe.json) define
-the next native planning comparison. The optional worker and parent controller
-and the outcome-free pilot are implemented. The initial historical matrix
-completed seven paths, while the final path stopped on a wrapped deadline
-exception. The [initial attempt](airsenal_planner_initial_attempt.json) retains
-all outcomes and the failure; a uniform corrected eight-path rerun is required.
-There is no complete-matrix result or policy promotion yet.
+the optional native planning comparison. The worker, parent controller and
+outcome-free pilot are implemented. The [complete season results](AIRSENAL_PLANNER_RESULTS_2026-10-16.md)
+cover eight continuous 38-gameweek paths and 304 independently reconciled
+deadline transitions. This remains research tooling without policy promotion.
+The [initial attempt](airsenal_planner_initial_attempt.json) retains seven
+completed paths and the wrapped-deadline failure separately from the uniform rerun.
 
-The intended eight paths cross two frozen prior-only forecasting controls,
+The eight declared paths cross two frozen prior-only forecasting controls,
 standing/adapted-native planners and own/common opening squads. Each manages a
 continuous 38-gameweek ledger with six-week lookahead, transfers, finances and
 all four chips. Both use the common outer chip policy and canonical mean
@@ -93,7 +93,7 @@ reported as an adaptation. An incomplete prefix is never a full-horizon plan.
 The native tree/GA provides no solver upper-bound certificate: report unknown
 bounds rather than inventing a zero optimality gap.
 
-Before scoring any seasons, run mechanical chip/reset/registration/price tests,
+Admission before season scoring includes mechanical chip/reset/registration/price tests,
 both opening-construction modes, persistent timeout recovery and the fixed
 feature-only latency pilot. The pilot compares two- and five-second inner
 allowances without evaluator outcomes; its validity/cost rule chooses and
@@ -112,3 +112,11 @@ wrappers by exception identity, not message matching. Completed full-horizon
 plans may survive a wrapped timeout; when none exists, the worker reports the
 expected budget failure. All hooks are restored before the next request. The
 original failed season batch remains separate from the required uniform rerun.
+
+The completed comparison and [aggregate/hashes](airsenal_planner_results.json)
+retain every declared path. Independent checks reconstruct run signatures
+and verify frozen input/output hashes as well as finance and scoring.
+The comparison harness stops a path if a completed native proposal fails
+canonical admission; a failed proposal must not silently count as a
+successful benchmark path. Failed/budget attempts and selected fallbacks
+are reported separately from invalid proposals and heuristic bounds.
