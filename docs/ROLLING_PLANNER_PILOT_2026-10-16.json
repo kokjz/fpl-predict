@@ -1,0 +1,443 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-16 Asia/Singapore",
+  "prefit_source": "0f9db8617525a05c0866d2a3767bf8657fa1f56a",
+  "mechanical_pilot": {
+    "scope": "Fixed historical mechanical origin/finance/solver pilot; no realisedpoints scoring, no externalmodels or seasonperformance claims",
+    "fit_seconds": 45.735623833024874,
+    "model": {
+      "version": "standing-core-ewdc-origin-v1",
+      "training_scope": "2020-21..2024-25 only; no2025labels fit",
+      "training_rows": 133325,
+      "trained_through": "2025-05-25T18:00:00+00:00",
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "2.3.5",
+        "pandas": "2.2.3",
+        "sklearn": "1.9.1"
+      },
+      "approval": "research reference, not savedchampion reproduction"
+    },
+    "model_sha256": "87f2da7694733be054b984669bc25b72df7f7b18f12f1e762ce9ab2302d321dc",
+    "origins": [
+      {
+        "origin": 1,
+        "horizon": 6,
+        "projection_seconds": 0.4658451669383794,
+        "plan_seconds": 0.32549774996005,
+        "projection": {
+          "fixture_rows": 4110,
+          "player_gw_rows": 4110,
+          "source_max_ts": null,
+          "zero_fixture_scope": "Zero means no fixture in the origin-known calendar; future rearrangements are unknown, not guaranteed actual blanks",
+          "approximation": "Origin form/roster/availability held fixed; multiweek projections not independently validated"
+        },
+        "planner": {
+          "objective": 118.53835528856824,
+          "components": {
+            "weeks": [
+              {
+                "gameweek": 1,
+                "xi_mean": 16.730877973501563,
+                "captain_mean": 1.57844748347044,
+                "reserve_proxy": 0.5776100031746902,
+                "hits": 0,
+                "churn_penalty": 0.0,
+                "bank": 0,
+                "next_ft": 1
+              },
+              {
+                "gameweek": 2,
+                "xi_mean": 16.480365292635916,
+                "captain_mean": 1.57844748347044,
+                "reserve_proxy": 0.5776100031746902,
+                "hits": 0,
+                "churn_penalty": 0.0001,
+                "bank": 0,
+                "next_ft": 1
+              },
+              {
+                "gameweek": 3,
+                "xi_mean": 16.656455497967848,
+                "captain_mean": 1.57844748347044,
+                "reserve_proxy": 0.5776100031746902,
+                "hits": 0,
+                "churn_penalty": 0.0,
+                "bank": 0,
+                "next_ft": 2
+              },
+              {
+                "gameweek": 4,
+                "xi_mean": 16.480365292635916,
+                "captain_mean": 1.57844748347044,
+                "reserve_proxy": 0.5776100031746902,
+                "hits": 0,
+                "churn_penalty": 0.0,
+                "bank": 0,
+                "next_ft": 3
+              },
+              {
+                "gameweek": 5,
+                "xi_mean": 16.55661608998458,
+                "captain_mean": 1.57844748347044,
+                "reserve_proxy": 0.5776100031746902,
+                "hits": 0,
+                "churn_penalty": 0.0,
+                "bank": 0,
+                "next_ft": 4
+              },
+              {
+                "gameweek": 6,
+                "xi_mean": 16.580204700619184,
+                "captain_mean": 1.57844748347044,
+                "reserve_proxy": 0.5776100031746902,
+                "hits": 0,
+                "churn_penalty": 0.0,
+                "bank": 0,
+                "next_ft": 5
+              }
+            ],
+            "terminal_ft": 5.0,
+            "terminal_squad_proxy": 1.1172255213524391
+          },
+          "fallback_objective": 118.13218594833029,
+          "solver_objective": 118.53835528856824,
+          "status": 0,
+          "selection": "optimal restricted pool",
+          "baseline": "full-market one-GW solution",
+          "proven_optimal": true,
+          "mip_gap": 0.0,
+          "seconds": 0.3252081668470055,
+          "pool_players": 74,
+          "full_market_players": 685,
+          "variables": 3156,
+          "constraints": 3301,
+          "scope": "Deterministic origin-frozen1\u20138GWforecast, constant quotes/roster, restricted candidate pool, no chips or expected autosub objective; commit first action only"
+        },
+        "reload_exact": true,
+        "neutral_state": "fresh initial capital"
+      },
+      {
+        "origin": 20,
+        "horizon": 6,
+        "projection_seconds": 0.7864046250469983,
+        "plan_seconds": 3.533756542019546,
+        "projection": {
+          "fixture_rows": 4680,
+          "player_gw_rows": 4680,
+          "source_max_ts": "2026-01-01T20:00:00+00:00",
+          "zero_fixture_scope": "Zero means no fixture in the origin-known calendar; future rearrangements are unknown, not guaranteed actual blanks",
+          "approximation": "Origin form/roster/availability held fixed; multiweek projections not independently validated"
+        },
+        "planner": {
+          "objective": 327.0268892961669,
+          "components": {
+            "weeks": [
+              {
+                "gameweek": 20,
+                "xi_mean": 47.24890086738204,
+                "captain_mean": 5.907291936008388,
+                "reserve_proxy": 0.7067098465728135,
+                "hits": 20,
+                "churn_penalty": 0.0006000000000000001,
+                "bank": 6,
+                "next_ft": 1
+              },
+              {
+                "gameweek": 21,
+                "xi_mean": 50.36709393595072,
+                "captain_mean": 6.31582503347949,
+                "reserve_proxy": 0.8909374916807611,
+                "hits": 0,
+                "churn_penalty": 0.0001,
+                "bank": 1,
+                "next_ft": 1
+              },
+              {
+                "gameweek": 22,
+                "xi_mean": 49.71685829607951,
+                "captain_mean": 5.884279890530181,
+                "reserve_proxy": 0.9906268364380129,
+                "hits": 0,
+                "churn_penalty": 0.0001,
+                "bank": 10,
+                "next_ft": 1
+              },
+              {
+                "gameweek": 23,
+                "xi_mean": 53.234464350088686,
+                "captain_mean": 6.882547703713146,
+                "reserve_proxy": 0.8898786935701746,
+                "hits": 0,
+                "churn_penalty": 0.0001,
+                "bank": 5,
+                "next_ft": 1
+              },
+              {
+                "gameweek": 24,
+                "xi_mean": 49.417499518035235,
+                "captain_mean": 5.791085687926918,
+                "reserve_proxy": 0.953962522361482,
+                "hits": 0,
+                "churn_penalty": 0.0001,
+                "bank": 11,
+                "next_ft": 1
+              },
+              {
+                "gameweek": 25,
+                "xi_mean": 50.23390825311309,
+                "captain_mean": 5.755831773272641,
+                "reserve_proxy": 0.8883286680756328,
+                "hits": 0,
+                "churn_penalty": 0.0,
+                "bank": 11,
+                "next_ft": 2
+              }
+            ],
+            "terminal_ft": 2.0,
+            "terminal_squad_proxy": 2.9518579918879864
+          },
+          "fallback_objective": 271.3692985989697,
+          "solver_objective": 327.0268892961669,
+          "status": 0,
+          "selection": "optimal restricted pool",
+          "baseline": "full-market one-GW solution",
+          "proven_optimal": true,
+          "mip_gap": 0.0,
+          "seconds": 3.533426166046411,
+          "pool_players": 84,
+          "full_market_players": 780,
+          "variables": 3576,
+          "constraints": 3768,
+          "scope": "Deterministic origin-frozen1\u20138GWforecast, constant quotes/roster, restricted candidate pool, no chips or expected autosub objective; commit first action only"
+        },
+        "reload_exact": true,
+        "neutral_state": "neutral prices-as-purchase state, no realteam"
+      },
+      {
+        "origin": 38,
+        "horizon": 1,
+        "projection_seconds": 0.825771083123982,
+        "plan_seconds": 0.12003091699443758,
+        "projection": {
+          "fixture_rows": 840,
+          "player_gw_rows": 840,
+          "source_max_ts": "2026-05-19T19:15:00+00:00",
+          "zero_fixture_scope": "Zero means no fixture in the origin-known calendar; future rearrangements are unknown, not guaranteed actual blanks",
+          "approximation": "Origin form/roster/availability held fixed; multiweek projections not independently validated"
+        },
+        "planner": {
+          "objective": 38.74569371165651,
+          "components": {
+            "weeks": [
+              {
+                "gameweek": 38,
+                "xi_mean": 32.434330731365264,
+                "captain_mean": 6.156778215348611,
+                "reserve_proxy": 0.15468476494263492,
+                "hits": 0,
+                "churn_penalty": 0.0001,
+                "bank": 5,
+                "next_ft": 1
+              }
+            ],
+            "terminal_ft": 0.0,
+            "terminal_squad_proxy": 0.0
+          },
+          "fallback_objective": 38.74569371165651,
+          "solver_objective": 38.74569371165651,
+          "status": 0,
+          "selection": "optimal restricted pool",
+          "baseline": "full-market one-GW solution",
+          "proven_optimal": true,
+          "mip_gap": 0.0,
+          "seconds": 0.11990987486205995,
+          "pool_players": 84,
+          "full_market_players": 840,
+          "variables": 596,
+          "constraints": 628,
+          "scope": "Deterministic origin-frozen1\u20138GWforecast, constant quotes/roster, restricted candidate pool, no chips or expected autosub objective; commit first action only"
+        },
+        "reload_exact": true,
+        "neutral_state": "neutral prices-as-purchase state, no realteam"
+      }
+    ],
+    "source_time_limit": "Publisherhistoricalcapture/commitclaims, mutableoutcomecachelimitations retained",
+    "availability": "Historicalselection baseline; current injuries/status not calibrated probabilities or silently forcedoverrides; adaptive evidence/chips nextpackage",
+    "model_promotion": false
+  },
+  "independent_audit": {
+    "independent_planned_gw_reconciliations": 13,
+    "forecast_origin_coverage_checks": 3,
+    "initial_cold_start": {
+      "minimum": 1.2640250079367257,
+      "maximum": 1.57844748347044,
+      "unique_rounded8": 5,
+      "players": 685,
+      "explanation": "Standing FeatureStore resets byseason, so no2025 player/team form exists atGW1; position/home priors dominate. Needs separatelydeclared preseason/carryover or officialprojection evidence before seasonutility claim"
+    },
+    "realised_outcomes_used": false,
+    "season_points_measured": false
+  },
+  "retained_overlap_diagnostic": {
+    "scope": "SingleGW38retained-overlap diagnostic only, not controlledfullseason/modelranking; no configuration chosen",
+    "metadata": {
+      "earlier_refs": "Priorseasons+2025GW1\u201319fit andtheirdeclaredpredeadlinefeatures",
+      "new_reference": "Priorseasonsonly withorigin-snapshotfeatures+EWDC; unequaltraining/components/sourceclocks"
+    },
+    "matched_player_gws": 840,
+    "matched_candidate_player_gws": 212,
+    "old_unlisted_excluded_from_this_overlap": 1,
+    "metrics": {
+      "reference": {
+        "candidates": {
+          "n": 212,
+          "rmse": 2.86716482874406,
+          "mae": 2.328785804458838,
+          "bias": 0.28266990479817794,
+          "ranking_weeks": 1,
+          "mean_within_gw_spearman": 0.16384257011711884,
+          "mean_within_gw_ndcg10": 0.3758277319443236
+        },
+        "all": {
+          "n": 840,
+          "rmse": 1.8318713053338662,
+          "mae": 0.9592189845386466,
+          "bias": 0.04388261012401732,
+          "ranking_weeks": 1,
+          "mean_within_gw_spearman": 0.6704195754072507,
+          "mean_within_gw_ndcg10": 0.25025804445609606
+        }
+      },
+      "native_reference": {
+        "candidates": {
+          "n": 212,
+          "rmse": 2.8478439751620614,
+          "mae": 2.3484628578123354,
+          "bias": 0.46821284662558876,
+          "ranking_weeks": 1,
+          "mean_within_gw_spearman": 0.19412900288480203,
+          "mean_within_gw_ndcg10": 0.35435843576441295
+        },
+        "all": {
+          "n": 840,
+          "rmse": 1.8171156893777636,
+          "mae": 0.9577939828240625,
+          "bias": 0.11673310149127782,
+          "ranking_weeks": 1,
+          "mean_within_gw_spearman": 0.7035286809731383,
+          "mean_within_gw_ndcg10": 0.3002726228473665
+        }
+      },
+      "conditional_reference": {
+        "candidates": {
+          "n": 212,
+          "rmse": 2.8254744660033757,
+          "mae": 2.246089764411226,
+          "bias": 0.17184578092428884,
+          "ranking_weeks": 1,
+          "mean_within_gw_spearman": 0.18379339542875262,
+          "mean_within_gw_ndcg10": 0.2488241067427709
+        },
+        "all": {
+          "n": 840,
+          "rmse": 1.802438331610538,
+          "mae": 0.9275396531402653,
+          "bias": 0.03548711446476227,
+          "ranking_weeks": 1,
+          "mean_within_gw_spearman": 0.7029502527226246,
+          "mean_within_gw_ndcg10": 0.19836413774809336
+        }
+      },
+      "openfpl_cv1_refit": {
+        "candidates": {
+          "n": 212,
+          "rmse": 2.865653326136081,
+          "mae": 2.376995823293362,
+          "bias": 0.4563771947374884,
+          "ranking_weeks": 1,
+          "mean_within_gw_spearman": 0.13149605341204917,
+          "mean_within_gw_ndcg10": 0.34703308056277293
+        },
+        "all": {
+          "n": 840,
+          "rmse": 1.8366871747923097,
+          "mae": 1.0365015545815583,
+          "bias": 0.2345413214615768,
+          "ranking_weeks": 1,
+          "mean_within_gw_spearman": 0.6838168225722,
+          "mean_within_gw_ndcg10": 0.28184533439233234
+        }
+      },
+      "conjugate_poisson": {
+        "candidates": {
+          "n": 212,
+          "rmse": 2.7690976390901776,
+          "mae": 2.2279168033657903,
+          "bias": 0.29614576274489857,
+          "ranking_weeks": 1,
+          "mean_within_gw_spearman": 0.27987300412793853,
+          "mean_within_gw_ndcg10": 0.5505037094912785
+        },
+        "all": {
+          "n": 840,
+          "rmse": 1.8249935275185256,
+          "mae": 0.895840037756801,
+          "bias": -0.053102472102868496,
+          "ranking_weeks": 1,
+          "mean_within_gw_spearman": 0.7325073340210271,
+          "mean_within_gw_ndcg10": 0.466480196469903
+        }
+      },
+      "origin_reference": {
+        "candidates": {
+          "n": 212,
+          "rmse": 2.8891051911110694,
+          "mae": 2.336475754181679,
+          "bias": 0.2486712319079316,
+          "ranking_weeks": 1,
+          "mean_within_gw_spearman": 0.13612420471734543,
+          "mean_within_gw_ndcg10": 0.3116160036906706
+        },
+        "all": {
+          "n": 840,
+          "rmse": 1.8419521568824244,
+          "mae": 0.9754877072675732,
+          "bias": 0.057336749739817644,
+          "ranking_weeks": 1,
+          "mean_within_gw_spearman": 0.6737388896460971,
+          "mean_within_gw_ndcg10": 0.2502658927218082
+        }
+      }
+    },
+    "planner_comparison": "StandingoneGWfull-marketbaseline versusmultihorizonpolicy measuredbyfrozenexpectedobjective/knownanswertests; full externalhorizongrid andsameplannerseasonreplayremainforthcoming",
+    "interpretation": "Newreference changes training/DC/origintogether; error differences cannotbe attributed totheplanner andcannotestablishseasonutility. Fullseason/fullhorizonfaircomparisonstillrequired"
+  },
+  "resources": {
+    "seconds": 55.28542433399707,
+    "peak_sampled_rss_bytes": 688619520,
+    "threads": 2
+  },
+  "limitations": [
+    "No realmanager squad used",
+    "No realisedseasonpoints measured",
+    "Only3origins; latency not universal guarantee",
+    "Training/EWDC/currentfeeds differ from retainedreferences; singleGWerroroverlap cannotrankseasonmanagers",
+    "Preseasoncoldstart mustbe addressed before meaningfulinitialsquad qualification",
+    "Mean reserve/terminal proxies andconstantquote planning notcalibrated, nochip/uncertainty implementationyet"
+  ],
+  "approved_model": "1.0.0",
+  "model_promotion": false,
+  "weekly_workflow_changed": false,
+  "overall_goal_complete": false,
+  "preseason_input_feasibility": {
+    "scope": "Read-only preseason input feasibility, not forecasts or measuredperformance",
+    "listed": 685,
+    "official_ep_next_known": 685,
+    "official_ep_next_unique": 38,
+    "official_ep_next_min": 0.0,
+    "official_ep_next_max": 5.0,
+    "bootstrap_sha256": "eee31c9ece4864963bff4d88543ac5d440ca4d574ec89512e680d6e697f9a086",
+    "prior2024_stable_code_overlap": 511
+  }
+}
