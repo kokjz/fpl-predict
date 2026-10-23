@@ -103,4 +103,6 @@ same H6 state at eight fixed origins. Incompatible alternative schedules are
 reported. Future actual chip dates and evaluator/settlement files are not inputs.
 Horizon objectives and remaining-chip reserve assumptions are reported separately;
 a better conditional proxy is not a causal or measured season-point improvement.
-Run this short probe after the full season batch is terminal.
+Supply the opening-lock, source-lock and protocol checksums explicitly, alongside
+the decisions/reference paths and admitted native runtime. Run this short probe
+after the full season batch is terminal.

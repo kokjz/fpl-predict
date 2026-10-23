@@ -7,6 +7,7 @@ prefix enumeration. Native timeouts remain expected attempts, not scored plans.
 import argparse,gzip,json,math
 from pathlib import Path
 from collections import Counter
+from datetime import datetime
 from audit_season_path import advance,expected
 
 
@@ -31,6 +32,7 @@ def validate(request,reply):
     assert set(request)=={'schema_version','market','state','xp','through','chip_schedule','opening_ids','seconds'} and request['schema_version']==1
     assert set(request['state'])=={'season','gameweek','holdings','bank','free_transfers','used_chips','previous_chip'}
     market=request['market'];state=dict(request['state'],total_points=0.);g=state['gameweek'];end=request['through']
+    assert set(market)=={'season','gameweek','deadline','as_of','rows'} and datetime.fromisoformat(market['as_of'].replace('Z','+00:00'))<datetime.fromisoformat(market['deadline'].replace('Z','+00:00'))
     assert market['season']==state['season'] and state['season'] in ('2024-25','2025-26') and market['gameweek']==g and g<=end<=min(38,g+5)
     players={p['id']:p for p in market['rows']};assert len(players)==len(market['rows'])
     assert all(set(p)=={'id','position','team','price_tenths','can_buy'} for p in market['rows'])

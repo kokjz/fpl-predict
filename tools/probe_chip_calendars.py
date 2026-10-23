@@ -4,7 +4,7 @@ Only frozen provisional schedules are considered. Eventually realised chip dates
 are not inputs. Incompatible chip inventories are reported, never repaired.
 """
 import argparse,contextlib,gzip,hashlib,json,sys,time
-from dataclasses import asdict,replace
+from dataclasses import asdict
 from pathlib import Path
 from threadpoolctl import threadpool_limits
 from adaptive_planner import calendar
@@ -47,9 +47,10 @@ def remaining_reserve(state,market,horizon,actions,blocked):
     return reserve,dict(remaining_tokens=[(w['name'],w['start']) for w in windows if (w['name'],w['start']) not in set(current.used_chips)|set(map(tuple,blocked)) and w['stop']>=current.gameweek],coarse_schedule={g:name for g,(name,start) in path.items()})
 
 
-def run(decisions,reference,opening_lock,source_lock,protocol_path,output,*,native_python,solio_source,solio_site_packages):
+def run(decisions,reference,opening_lock,source_lock,protocol_path,output,*,native_python,solio_source,solio_site_packages,opening_lock_sha256,source_lock_sha256,protocol_sha256):
     output=Path(output).resolve()
     if output.exists() or output.is_relative_to(ROOT):raise ValueError('Require a new private output directory')
+    if any(digest(path)!=expected for path,expected in [(opening_lock,opening_lock_sha256),(source_lock,source_lock_sha256),(protocol_path,protocol_sha256)]):raise ValueError('Supplied lock/protocol checksum differs')
     p=json.loads(Path(protocol_path).read_text());old=json.loads(Path(opening_lock).read_text());locked=json.loads(Path(source_lock).read_text())['fingerprint']
     if p['origin_gameweeks']!=[1,6,12,16,20,24,30,38] or p['reference_seed']!=20261025 or p['inner_seconds']!=2. or p['maximum_cases']!=32 or p['solvers']!=['standing','solio_adapted']:raise ValueError('Undeclared probe matrix')
     if digest(decisions)!=old['inputs_sha256']['decisions'] or digest(decisions)!=locked['inputs']['2025-26']['decisions']['sha256']:raise ValueError('Forecast bundle differs')
@@ -89,7 +90,8 @@ def run(decisions,reference,opening_lock,source_lock,protocol_path,output,*,nati
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for key in ['decisions','reference','opening-lock','source-lock','protocol','output','native-python','solio-source','solio-site-packages']:p.add_argument('--'+key,type=Path,required=True)
-    a=p.parse_args();run(a.decisions,a.reference,a.opening_lock,a.source_lock,a.protocol,a.output,native_python=a.native_python,solio_source=a.solio_source,solio_site_packages=a.solio_site_packages)
+    for key in ['opening-lock-sha256','source-lock-sha256','protocol-sha256']:p.add_argument('--'+key,required=True)
+    a=p.parse_args();run(a.decisions,a.reference,a.opening_lock,a.source_lock,a.protocol,a.output,native_python=a.native_python,solio_source=a.solio_source,solio_site_packages=a.solio_site_packages,opening_lock_sha256=a.opening_lock_sha256,source_lock_sha256=a.source_lock_sha256,protocol_sha256=a.protocol_sha256)
 
 
 if __name__=='__main__':main()
