@@ -79,3 +79,12 @@ def test_locked_standing_arm_runs_complete_season_and_refuses_input_drift(tmp_pa
     assert not result['model_promotion'] and not result['policy_promotion']
     d.write_text(d.read_text()+' ')
     with pytest.raises(ValueError,match='drift'):runner.run_arm(d,o,p,lock,sha,20261024,'standingH1_adaptive',tmp_path/'new')
+
+
+def test_diagnostic_cli_refuses_private_output_inside_public_checkout(tmp_path):
+    import os,subprocess,sys
+    repo=Path(__file__).parents[1];env=os.environ.copy();env['PYTHONPATH']=str(repo/'src')
+    cmd=[sys.executable,str(repo/'tools/diagnose_season_path.py'),'--decisions',str(tmp_path/'absent.json'),'--decisions-sha256','0'*64,'--outcomes',str(tmp_path/'absent2.json'),'--outcomes-sha256','0'*64,'--season-dir',str(tmp_path),'--horizon','6','--output',str(repo/'docs/never-written-private-diagnostic.json')]
+    result=subprocess.run(cmd,capture_output=True,text=True,env=env)
+    assert result.returncode!=0 and 'outside the public source checkout' in result.stderr
+    assert not (repo/'docs/never-written-private-diagnostic.json').exists()

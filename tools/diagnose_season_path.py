@@ -140,6 +140,8 @@ def main():
     p.add_argument('--season-dir', type=Path, required=True); p.add_argument('--horizon', type=int, required=True)
     p.add_argument('--output', type=Path, required=True); a = p.parse_args()
     if a.output.exists(): p.error('Output exists; preserve evidence')
+    if a.output.resolve().is_relative_to(Path(__file__).resolve().parents[1]):
+        p.error('Keep detailed path diagnostics outside the public source checkout')
     for name in ('decisions', 'outcomes'):
         if digest(getattr(a, name)) != getattr(a, name+'_sha256'): p.error('Input checksum mismatch')
     result = diagnose(read_bundle(a.decisions), read_bundle(a.outcomes), a.season_dir, a.horizon)
