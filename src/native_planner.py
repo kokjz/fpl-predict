@@ -77,7 +77,7 @@ class NativePlanner:
         if cfg.baseline_mode!='feasibility' or any(abs(v)>1e-12 for v in [cfg.terminal_ft_value,cfg.terminal_squad_weight,cfg.churn_cost]) or abs(cfg.bench_weight-.1)>1e-12:raise ValueError('Native comparison requires the declared common objective and feasible baseline')
         checked=Horizon.create(market,[dict(r) for r in horizon.forecasts],**dict(horizon.provenance))
         recipe=read_json((RESOURCES/'native_solver_recipe.json').read_bytes())
-        if market.season!=recipe['season']:raise ValueError('Unaudited native season profile')
+        if market.season not in [recipe['season'],*recipe.get('additional_seasons',[])]:raise ValueError('Unaudited native season profile')
         if (state.season,state.gameweek)!=(checked.season,checked.origin) or market.gameweek!=state.gameweek:raise ValueError('Native forecast/state origin differs')
         baseline,baseline_status=make_baseline(state,market,horizon,cfg,opening_ids)
         fallback=_fallback(state,market,horizon,baseline,chips);fallback_value,_=_objective(state,market,horizon,fallback,cfg)

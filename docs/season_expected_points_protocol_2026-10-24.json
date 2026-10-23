@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "locked_at": "2026-10-23T21:18:06.184270+00:00",
+  "scope": "Prospectively declared protocol for new historical replays; both seasons and methodology have prior research exposure. Not untouched holdouts. Prior failed consistency gate remains unchanged.",
+  "seasons": [
+    "2024-25",
+    "2025-26"
+  ],
+  "opening_seeds": [
+    20261070,
+    20261071
+  ],
+  "policies": [
+    "standingH1_adaptive",
+    "standingH6_adaptive",
+    "SolioAdaptedH6_sharedAdaptiveChips"
+  ],
+  "paths": 12,
+  "repetitions": 1,
+  "opening": "Source-only random legal GW1 roster costing90..100m, same roster across methods per season/seed; same deterministic existing sampler. No forecast/outcome selection.",
+  "forecast": "Fixed standing hgb7 core/minutes/appearance/60+ prior-only recipe, refit only seasons strictly earlier than evaluation season; 2024 has no DC component, 2025 reuses prior5 frozen bundle. No deployment backcast. Origin-only official-zero availability interpretation retained.",
+  "rules": "2024/25 restricted common no-Assistant-Manager policy space: 2 wildcard windows, single annual FH/BB/TC,5FT cap, no AFCON topup; 2025/26 admitted full ordinary chip rules. All methods share each season rules. Not full 2024/25 chip-capability comparison.",
+  "resources": {
+    "threads": 2,
+    "seconds_per_path": 900,
+    "memory_mib": 4096,
+    "outer_seconds": 15,
+    "inner_seconds": 2,
+    "max_trials": 12,
+    "project_mib": 2560,
+    "growth_mib": 384,
+    "min_free_mib": 5120
+  },
+  "decision_framework": {
+    "primary": "H6 minus H1 full38GW net points after hits; equal mean across openings within season, then equal weight seasons",
+    "mean_gain_required": "strictly positive, no minimum positive effect-size cutoff",
+    "material_season_loss_limit": 19,
+    "material_single_opening_loss_limit": 38,
+    "threshold_rationale": "Declared operational risk allowances of0.5point/GW in season-average downside and1point/GW in any opening, informed by original feasibility utility scale rather than fitting thresholds to later new outcomes. Pragmatic research criteria, not estimated statistical confidence.",
+    "research_support": "All integrity checks pass, equal-season mean gain>0, no season mean below-19, no individual opening below-38; report win/tie/loss and material-loss frequencies plus all exact effects. Small gains may qualify; no win-every-case rule.",
+    "external": "Matched H6-Solio descriptive, same prospective effect/downside summary separately; H1 superiority does not establish Solio superiority.",
+    "uncertainty": "Only2reused seasons: no reliable significance/generalisation claim, no IID-GW bootstrap; openings nested within seasons. Solver repetition is compute variability, not new outcome evidence.",
+    "production": "Research support does not automatically approve weights/policy defaults; explicit scope/operational qualification required."
+  },
+  "diagnostics": {
+    "prior_material_external_loss": "Retain prior2025opening20261025 H6-Solio-153; post-result accounting/decision divergences, compare own and matched-state chip schedules without outcome-guided policy selection.",
+    "new_paths": "All12paths component/hit/chip/financial/selected-bound diagnostics; no tuning on these outcomes.",
+    "bounded_fixed_state": "At most8origins from priorloss path, selected by source/state conditions or predeclared GW1/6/12/16/20/24/30/38, same market/state/forecast and alternative frozen calendar proposals. Diagnostic objectives only, not season-point causal gains."
+  },
+  "integrity": [
+    "All38origin markets and as-of fixture calendars with immutable hashes",
+    "Forecast training label max before first origin; features strictly earlier than every origin with3h buffer",
+    "Unknown future fixture assignments stay unknown; no final-calendar backfill",
+    "All origin-listed footballer outcomes explicitly reconciled including blanks and removed players still held",
+    "No outcome columns passed to planning/native workers; no after-result parameter search",
+    "Independent financial/autosub/chip and provisional/native admission audit",
+    "All attempted arms/failures retained; no winner selection from retries"
+  ],
+  "sources": [
+    "https://scikit-learn.org/stable/modules/cross_validation.html",
+    "https://www.premierleague.com/en/news/4058895",
+    "https://www.premierleague.com/ar/news/4192707"
+  ]
+}

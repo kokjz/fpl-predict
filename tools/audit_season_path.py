@@ -1,4 +1,4 @@
-"""Independent 2025/26 replay audit; standard library only, no planner imports.
+"""Independent 2024/25 restricted or 2025/26 replay audit; stdlib only.
 
 Checks a full frozen season path and its retained provisional actions. Does not
 authenticate archive publication clocks, training recipes or native proposals.
@@ -28,7 +28,8 @@ def digest(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 def advance(state,market,action,blocked=()):
     """Reconstruct integer finance/resources without the engine's prepare code."""
     g=state['gameweek'];by={p['id']:p for p in market['rows']}
-    assert market['season']==state['season']=='2025-26' and market['gameweek']==g
+    season=state['season']
+    assert season in ('2024-25','2025-26') and market['season']==season and market['gameweek']==g
     old=dict(state['holdings']);buys=set(action['buys']);sells=set(action['sells'])
     assert len(buys)==len(action['buys']) and len(sells)==len(action['sells'])
     assert sells<=set(old) and not buys&set(old) and not buys&sells
@@ -47,14 +48,15 @@ def advance(state,market,action,blocked=()):
     chip=action['chip'];assert chip in (None,'wildcard','freehit','bboost','3xc')
     used=set(map(tuple,state['used_chips']))
     if chip:
-        token=(chip,20 if g>=20 else 2 if chip in ('wildcard','freehit') else 1)
+        start=20 if g>=20 and (season=='2025-26' or chip=='wildcard') else 2 if chip in ('wildcard','freehit') else 1
+        token=(chip,start)
         assert token not in used and token not in set(map(tuple,blocked))
         assert (g>1 or chip not in ('wildcard','freehit')) and not (chip==state['previous_chip']=='freehit')
         used.add(token)
     received=sum(min(old[i],by[i]['price_tenths'])+max(0,by[i]['price_tenths']-old[i])//2 for i in sells)
     bank=state['bank']+received-sum(by[i]['price_tenths'] for i in buys);assert bank>=0
     ledger={i:q for i,q in old.items() if i not in sells};ledger.update({i:by[i]['price_tenths'] for i in buys})
-    free=5 if g==16 else state['free_transfers']
+    free=5 if g==16 and season=='2025-26' else state['free_transfers']
     hits=0 if g==1 or chip in ('wildcard','freehit') else 4*max(0,len(buys)-free)
     after=1 if g==1 else free if chip in ('wildcard','freehit') else min(5,max(0,free-len(buys))+1)
     result=dict(state,gameweek=g+1,holdings=sorted((old if chip=='freehit' else ledger).items()),
@@ -108,7 +110,8 @@ def audit(decisions,outcomes,season_dir,horizon,opening=None):
     assert type(horizon) is int and 1<=horizon<=8
     assert decisions['schema_version']==outcomes['schema_version']==1
     weeks=decisions['weeks'];assert len(weeks)==38
-    state=dict(season='2025-26',gameweek=1,holdings=[],bank=1000,free_transfers=0,used_chips=[],previous_chip=None,total_points=0.)
+    state=dict(season=weeks[0]['market']['season'],gameweek=1,holdings=[],bank=1000,free_transfers=0,used_chips=[],previous_chip=None,total_points=0.)
+    assert state['season'] in ('2024-25','2025-26')
     directory=Path(season_dir);points=hits=transfers=periods=0
     result=read(directory/'summary.json');settings=result['planner_settings']
     assert settings['bench_weight']==.1 and all(settings[k]==0 for k in ['terminal_ft_value','terminal_squad_weight','churn_cost']), 'Unsupported research objective'
@@ -119,7 +122,7 @@ def audit(decisions,outcomes,season_dir,horizon,opening=None):
         assert all(datetime.fromisoformat(forecast[k])<=clock for k in ['feature_cutoff','source_as_of'])
         path=directory/f'GW{g:02d}_decision.json';d=read(path);z=read(directory/f'GW{g:02d}_settled.json')
         assert digest(path)==z['score']['decision_sha256'] and d['gameweek']==g and d['inputs_as_of']==market['as_of']
-        if g==16:state['free_transfers']=5
+        if g==16 and state['season']=='2025-26':state['free_transfers']=5
         same_state(state,d['state_before']);assert d['action']==d['provisional_actions'][0]
         assert len(d['provisional_actions'])==min(horizon,39-g)
         xp={(r['gameweek'],r['id']):r['expected_points'] for r in forecast['rows']};current=state;objective=0.
@@ -142,7 +145,7 @@ def audit(decisions,outcomes,season_dir,horizon,opening=None):
     assert (result['net_points'],result['hits'],result['transfers'])==(points,hits,transfers)
     same_state(state,result['final_state'])
     return dict(deadlines=38,provisional_periods=periods,net_points=points,hits=hits,transfers=transfers,
-        status='independently reconciled',scope='2025/26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; no source-authenticity or global-optimality certification')
+        status='independently reconciled',scope=state['season']+' integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification')
 
 
 def main():

@@ -148,7 +148,8 @@ class ForecastModel:
         mins=np.clip(self.minutes.predict(x[CORE_FEATURES]),0,90)
         play=np.clip(self.played.predict(x[CORE_FEATURES]),0,1)
         sixty=np.minimum(play,np.clip(self.sixty.predict(x[CORE_FEATURES]),0,1))
-        if self.dc_name=="ewm": dc=x.dc_rate4.to_numpy().copy()
+        if self.dc_name=="none": dc=np.zeros(len(x))  # Historical seasons without DC scoring.
+        elif self.dc_name=="ewm": dc=x.dc_rate4.to_numpy().copy()
         else: dc=np.clip(self.dc.predict(x[DC_FEATURES]),0,1)
         dc=np.where(np.asarray(pos)==1,0,np.minimum(dc,play))
         return pd.DataFrame({"core_xp":core,"dc_xp":2*dc,"expected_points":core+2*dc,"expected_minutes":mins,"p_play":play,"p60":sixty},index=x.index)
