@@ -1,3 +1,4 @@
+from datetime import datetime,timedelta,timezone
 import hashlib
 import importlib.util
 import json
@@ -13,9 +14,11 @@ def module():
 def setup(tmp_path):
     entries=[]
     for gw in range(1,39):
-        d=dict(events=[dict(id=gw,deadline_time='2024-08-16T17:30Z')],elements=[dict(id=1,element_type=1,team=1,now_cost=45)],chips=[])
+        cutoff=datetime(2024,8,16,17,30,tzinfo=timezone.utc)+timedelta(days=7*(gw-1))
+        capture=cutoff-timedelta(hours=5.5)
+        d=dict(events=[dict(id=gw,deadline_time=cutoff.isoformat())],elements=[dict(id=1,element_type=1,team=1,now_cost=45)],chips=[])
         raw=json.dumps(d).encode();packed=lzma.compress(raw);p=tmp_path/f'{gw}.xz';p.write_bytes(packed)
-        entries.append(dict(gameweek=gw,file=p.name,compressed_sha256=hashlib.sha256(packed).hexdigest(),sha256=hashlib.sha256(raw).hexdigest(),captured_at='2024-08-16T12:00Z',deadline='2024-08-16T17:30Z',players=1,source_url='https://example.invalid/pinned',source_revision='abc'))
+        entries.append(dict(gameweek=gw,file=p.name,compressed_sha256=hashlib.sha256(packed).hexdigest(),sha256=hashlib.sha256(raw).hexdigest(),captured_at=capture.isoformat(),deadline=cutoff.isoformat(),players=1,source_url='https://example.invalid/pinned',source_revision='abc'))
     return dict(season='2024-25',market_origins=entries)
 
 
@@ -41,3 +44,12 @@ def test_historical_admission_rejects_tamper(tmp_path,kind):
         else:raw['events'][0]['deadline_time']='2024-08-17T17:30Z'
         data=json.dumps(raw).encode();packed=lzma.compress(data);p.write_bytes(packed);e['sha256']=hashlib.sha256(data).hexdigest();e['compressed_sha256']=hashlib.sha256(packed).hexdigest()
     with pytest.raises((ValueError,FileNotFoundError)):m.audit(d,tmp_path)
+
+
+def test_receipts_must_have_increasing_gameweek_deadlines(tmp_path):
+    m=module();d=setup(tmp_path);e=d['market_origins'][1];first=d['market_origins'][0]
+    e['captured_at']=first['captured_at'];e['deadline']=first['deadline']
+    p=tmp_path/e['file'];data=json.loads(lzma.decompress(p.read_bytes()));data['events'][0]['deadline_time']=e['deadline']
+    raw=json.dumps(data).encode();packed=lzma.compress(raw);p.write_bytes(packed)
+    e['sha256']=hashlib.sha256(raw).hexdigest();e['compressed_sha256']=hashlib.sha256(packed).hexdigest()
+    with pytest.raises(ValueError,match='Nonchronological'):m.audit(d,tmp_path)

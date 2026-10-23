@@ -21,7 +21,7 @@ def audit(manifest,root):
     root=Path(root).resolve();entries=manifest['market_origins']
     if len(entries)!=38 or {p['gameweek'] for p in entries}!=set(range(1,39)):
         raise ValueError('Need one market receipt for each of38origins')
-    rows=[]
+    rows=[];previous_deadline=None
     for e in sorted(entries,key=lambda p:p['gameweek']):
         path=(root/e['file']).resolve()
         if not path.is_relative_to(root):raise ValueError('Receipt path escapes root')
@@ -34,6 +34,8 @@ def audit(manifest,root):
         def invalid(value):raise ValueError('Nonfinite source JSON')
         data=json.loads(raw,parse_constant=invalid);g=e['gameweek']
         if stamp(e['captured_at'])>=stamp(e['deadline']):raise ValueError('Capture not before deadline')
+        if previous_deadline is not None and stamp(e['deadline'])<=previous_deadline:raise ValueError('Nonchronological season deadlines')
+        previous_deadline=stamp(e['deadline'])
         events=[x for x in data['events'] if x['id']==g]
         if len(events)!=1 or stamp(events[0]['deadline_time'])!=stamp(e['deadline']):raise ValueError('Deadline differs')
         if any(type(p['element_type']) is not int or p['element_type'] not in [1,2,3,4,5] for p in data['elements']):raise ValueError('Invalid player/manager type')
