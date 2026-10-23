@@ -24,6 +24,9 @@ allowances, not estimated uncertainty bounds. Report every paired effect,
 win/tie/loss, median, worst case and the proportion of opening losses exceeding
 19 points. Passing versus H1 does not establish superiority versus Solio.
 
+These are research decision allowances, not universal loss limits: failing them
+does not establish negative expected value.
+
 These criteria were chosen after earlier research, and both seasons already
 have research exposure. They are prospective for this new matrix, not a fresh
 untouched holdout or a retroactive pass for the original gate. Two seasons cannot
@@ -63,6 +66,8 @@ admissible confirmation. Official article publication dates can conceal later
 edits: misleading earlier-dated bodies are excluded, and separate dated sources
 are retained. Archive commit/capture and article publication clocks remain
 publisher claims rather than independently witnessed historical timestamps.
+Calendar replay audits gameweek assignments; cached future kickoff times can lag
+announcements and are not predictor features in this origin-frozen reference.
 
 ## Reproduction
 

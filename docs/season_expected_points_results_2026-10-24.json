@@ -1,0 +1,3204 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "scope": "12matchedcontinuous38GWpaths; previously inspected2024/25restrictedno-AM and2025/26ordinaryfullchip profiles; two source-only common openings per season, not original external complete managers or untouched outcomes",
+  "numerical_source": "353c28679d569a1c4d5e1fc82c8e76e57f7c3c96",
+  "protocol_sha256": "67a8aee203329c32f28d6d159644c6c56f8c4efaef4893b881045f4973b8efc1",
+  "lock_sha256": "54d9d04cd9e19a576d1db0b891e953296f7263d9dd9fdb1089e6f156314b2c76",
+  "runtime": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0"
+  },
+  "python": "3.12.14",
+  "rows": [
+    {
+      "name": "2024-25_20261070_standingH1_adaptive",
+      "season": "2024-25",
+      "seed": 20261070,
+      "policy": "standingH1_adaptive",
+      "status": "completed",
+      "seconds": 5.019168667029589,
+      "sampled_rss_bytes": 267190272,
+      "net_points": 2256.0,
+      "hits": 28,
+      "transfers": 81,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "components": {
+        "base_xi": 1938.0,
+        "autosub_delta": 43.0,
+        "captain_bonus": 289.0,
+        "extra_captain_bonus": 3.0,
+        "bench_boost_points": 11.0,
+        "hits": 28
+      },
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 3,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 5,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 29,
+          "name": "wildcard"
+        }
+      ],
+      "diagnostic_sha256": "ae05457af87953d26e2cc2bf11e4bb0fdcd8a83c2c418cdbb32e8c3da5e679f0",
+      "audit": {
+        "deadlines": 38,
+        "provisional_periods": 38,
+        "net_points": 2256.0,
+        "hits": 28,
+        "transfers": 81,
+        "status": "independently reconciled",
+        "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+      },
+      "native_audit": null,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "max_known_relative_gap": 2.532751406102505e-16
+    },
+    {
+      "name": "2024-25_20261070_standingH6_adaptive",
+      "season": "2024-25",
+      "seed": 20261070,
+      "policy": "standingH6_adaptive",
+      "status": "completed",
+      "seconds": 418.04623954184353,
+      "sampled_rss_bytes": 935378944,
+      "net_points": 2383.0,
+      "hits": 24,
+      "transfers": 72,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "components": {
+        "base_xi": 2016.0,
+        "autosub_delta": 22.0,
+        "captain_bonus": 346.0,
+        "extra_captain_bonus": 15.0,
+        "bench_boost_points": 8.0,
+        "hits": 24
+      },
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 3,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 22,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 23,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "diagnostic_sha256": "6319547498d00f3acd4385993609420354036794fecc97121ea37ca820dbd982",
+      "audit": {
+        "deadlines": 38,
+        "provisional_periods": 213,
+        "net_points": 2383.0,
+        "hits": 24,
+        "transfers": 72,
+        "status": "independently reconciled",
+        "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+      },
+      "native_audit": null,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "max_known_relative_gap": 0.00625515072204676
+    },
+    {
+      "name": "2024-25_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+      "season": "2024-25",
+      "seed": 20261070,
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "status": "completed",
+      "seconds": 389.07096487493254,
+      "sampled_rss_bytes": 962560000,
+      "net_points": 2400.0,
+      "hits": 12,
+      "transfers": 70,
+      "native_calls": 205,
+      "native_failed_attempts": 7,
+      "components": {
+        "base_xi": 1996.0,
+        "autosub_delta": 29.0,
+        "captain_bonus": 346.0,
+        "extra_captain_bonus": 15.0,
+        "bench_boost_points": 26.0,
+        "hits": 12
+      },
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 3,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 7,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 24,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 25,
+          "name": "wildcard"
+        }
+      ],
+      "diagnostic_sha256": "3be828e58a4b2f9d6f82a61fab0e39123b98c5e905048b31dbea9415dd37e872",
+      "audit": {
+        "deadlines": 38,
+        "provisional_periods": 213,
+        "net_points": 2400.0,
+        "hits": 12,
+        "transfers": 70,
+        "status": "independently reconciled",
+        "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+      },
+      "native_audit": {
+        "calls": 205,
+        "completed": 198,
+        "expected_failures": 7,
+        "completed_provisional_periods": 1173,
+        "errors": {
+          "ValueError:No feasible native incumbent": 7
+        },
+        "status": "independently_reconciled",
+        "scope": "Every completed Solio reply: integer finance, chip inventory and separate common-mean selection objective; no source timestamp or global-optimum certification"
+      },
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "max_known_relative_gap": 0.0144626102577934
+    },
+    {
+      "name": "2024-25_20261071_standingH1_adaptive",
+      "season": "2024-25",
+      "seed": 20261071,
+      "policy": "standingH1_adaptive",
+      "status": "completed",
+      "seconds": 4.987350542098284,
+      "sampled_rss_bytes": 261783552,
+      "net_points": 2197.0,
+      "hits": 32,
+      "transfers": 82,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "components": {
+        "base_xi": 1875.0,
+        "autosub_delta": 56.0,
+        "captain_bonus": 284.0,
+        "extra_captain_bonus": 3.0,
+        "bench_boost_points": 11.0,
+        "hits": 32
+      },
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 3,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 5,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 25,
+          "name": "wildcard"
+        }
+      ],
+      "diagnostic_sha256": "e75ba00d089600d48016a1f3dc71730834a91dd47f9abd895bbcfaed503f6c4d",
+      "audit": {
+        "deadlines": 38,
+        "provisional_periods": 38,
+        "net_points": 2197.0,
+        "hits": 32,
+        "transfers": 82,
+        "status": "independently reconciled",
+        "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+      },
+      "native_audit": null,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "max_known_relative_gap": 3.7123493506587114e-16
+    },
+    {
+      "name": "2024-25_20261071_standingH6_adaptive",
+      "season": "2024-25",
+      "seed": 20261071,
+      "policy": "standingH6_adaptive",
+      "status": "completed",
+      "seconds": 403.76869145897217,
+      "sampled_rss_bytes": 809517056,
+      "net_points": 2441.0,
+      "hits": 16,
+      "transfers": 73,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "components": {
+        "base_xi": 2033.0,
+        "autosub_delta": 54.0,
+        "captain_bonus": 349.0,
+        "extra_captain_bonus": 15.0,
+        "bench_boost_points": 6.0,
+        "hits": 16
+      },
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 3,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 9,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 23,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "diagnostic_sha256": "be7e35503b6b14abbf66cb1831a6f88c56d599be21037b97120caebd12099f4c",
+      "audit": {
+        "deadlines": 38,
+        "provisional_periods": 213,
+        "net_points": 2441.0,
+        "hits": 16,
+        "transfers": 73,
+        "status": "independently reconciled",
+        "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+      },
+      "native_audit": null,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "max_known_relative_gap": 0.00462318851137727
+    },
+    {
+      "name": "2024-25_20261071_SolioAdaptedH6_sharedAdaptiveChips",
+      "season": "2024-25",
+      "seed": 20261071,
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "status": "completed",
+      "seconds": 389.3570891248528,
+      "sampled_rss_bytes": 936067072,
+      "net_points": 2401.0,
+      "hits": 16,
+      "transfers": 68,
+      "native_calls": 203,
+      "native_failed_attempts": 6,
+      "components": {
+        "base_xi": 1994.0,
+        "autosub_delta": 53.0,
+        "captain_bonus": 349.0,
+        "extra_captain_bonus": 15.0,
+        "bench_boost_points": 6.0,
+        "hits": 16
+      },
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 3,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 9,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 24,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 25,
+          "name": "wildcard"
+        }
+      ],
+      "diagnostic_sha256": "102ccb9241535e24b95150d9834bb5f6f0c84d9c61bbd52fa5ea44af01d2d5ed",
+      "audit": {
+        "deadlines": 38,
+        "provisional_periods": 213,
+        "net_points": 2401.0,
+        "hits": 16,
+        "transfers": 68,
+        "status": "independently reconciled",
+        "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+      },
+      "native_audit": {
+        "calls": 203,
+        "completed": 197,
+        "expected_failures": 6,
+        "completed_provisional_periods": 1167,
+        "errors": {
+          "ValueError:No feasible native incumbent": 6
+        },
+        "status": "independently_reconciled",
+        "scope": "Every completed Solio reply: integer finance, chip inventory and separate common-mean selection objective; no source timestamp or global-optimum certification"
+      },
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "max_known_relative_gap": 0.012951505164775686
+    },
+    {
+      "name": "2025-26_20261070_standingH1_adaptive",
+      "season": "2025-26",
+      "seed": 20261070,
+      "policy": "standingH1_adaptive",
+      "status": "completed",
+      "seconds": 6.705096042016521,
+      "sampled_rss_bytes": 286212096,
+      "net_points": 2127.0,
+      "hits": 32,
+      "transfers": 95,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "components": {
+        "base_xi": 1806.0,
+        "autosub_delta": 73.0,
+        "captain_bonus": 254.0,
+        "extra_captain_bonus": 7.0,
+        "bench_boost_points": 19.0,
+        "hits": 32
+      },
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 3,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 5,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 20,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 21,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 31,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 33,
+          "name": "wildcard"
+        }
+      ],
+      "diagnostic_sha256": "193acecc775f6f0afe831464924845e1f88ff845325c5f28d345272b4977b5e5",
+      "audit": {
+        "deadlines": 38,
+        "provisional_periods": 38,
+        "net_points": 2127.0,
+        "hits": 32,
+        "transfers": 95,
+        "status": "independently reconciled",
+        "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+      },
+      "native_audit": null,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "max_known_relative_gap": 1.3759145593506633e-16
+    },
+    {
+      "name": "2025-26_20261070_standingH6_adaptive",
+      "season": "2025-26",
+      "seed": 20261070,
+      "policy": "standingH6_adaptive",
+      "status": "completed",
+      "seconds": 361.1239728340879,
+      "sampled_rss_bytes": 853508096,
+      "net_points": 2274.0,
+      "hits": 24,
+      "transfers": 89,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "components": {
+        "base_xi": 1940.0,
+        "autosub_delta": 68.0,
+        "captain_bonus": 250.0,
+        "extra_captain_bonus": 13.0,
+        "bench_boost_points": 27.0,
+        "hits": 24
+      },
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 15,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 19,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 20,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 21,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 31,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "diagnostic_sha256": "85e17e351c03b6cecd7e29408ea3631ed852656892af832c2d4c42d2c7e31b5b",
+      "audit": {
+        "deadlines": 38,
+        "provisional_periods": 213,
+        "net_points": 2274.0,
+        "hits": 24,
+        "transfers": 89,
+        "status": "independently reconciled",
+        "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+      },
+      "native_audit": null,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "max_known_relative_gap": 0.0035644952496225873
+    },
+    {
+      "name": "2025-26_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+      "season": "2025-26",
+      "seed": 20261070,
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "status": "completed",
+      "seconds": 503.79747925000265,
+      "sampled_rss_bytes": 907771904,
+      "net_points": 2274.0,
+      "hits": 24,
+      "transfers": 86,
+      "native_calls": 312,
+      "native_failed_attempts": 9,
+      "components": {
+        "base_xi": 1934.0,
+        "autosub_delta": 67.0,
+        "captain_bonus": 255.0,
+        "extra_captain_bonus": 8.0,
+        "bench_boost_points": 34.0,
+        "hits": 24
+      },
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 15,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 19,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 21,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 23,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 34,
+          "name": "wildcard"
+        }
+      ],
+      "diagnostic_sha256": "25121424fbc9ed5717d0ae1756fbbd56d9782be09dca299259eb3eaf5d7a1649",
+      "audit": {
+        "deadlines": 38,
+        "provisional_periods": 213,
+        "net_points": 2274.0,
+        "hits": 24,
+        "transfers": 86,
+        "status": "independently reconciled",
+        "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+      },
+      "native_audit": {
+        "calls": 312,
+        "completed": 303,
+        "expected_failures": 9,
+        "completed_provisional_periods": 1798,
+        "errors": {
+          "ValueError:No feasible native incumbent": 9
+        },
+        "status": "independently_reconciled",
+        "scope": "Every completed Solio reply: integer finance, chip inventory and separate common-mean selection objective; no source timestamp or global-optimum certification"
+      },
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "max_known_relative_gap": 0.006029850889770499
+    },
+    {
+      "name": "2025-26_20261071_standingH1_adaptive",
+      "season": "2025-26",
+      "seed": 20261071,
+      "policy": "standingH1_adaptive",
+      "status": "completed",
+      "seconds": 6.274979749927297,
+      "sampled_rss_bytes": 264634368,
+      "net_points": 2134.0,
+      "hits": 36,
+      "transfers": 95,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "components": {
+        "base_xi": 1822.0,
+        "autosub_delta": 77.0,
+        "captain_bonus": 246.0,
+        "extra_captain_bonus": 7.0,
+        "bench_boost_points": 18.0,
+        "hits": 36
+      },
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 3,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 5,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 20,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 21,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 26,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 33,
+          "name": "wildcard"
+        }
+      ],
+      "diagnostic_sha256": "da6ecb4459a160e89f24d02d04d6db03df6e7eba77ce2a93acba10ec3e183dfa",
+      "audit": {
+        "deadlines": 38,
+        "provisional_periods": 38,
+        "net_points": 2134.0,
+        "hits": 36,
+        "transfers": 95,
+        "status": "independently reconciled",
+        "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+      },
+      "native_audit": null,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "max_known_relative_gap": 2.6386656233140274e-16
+    },
+    {
+      "name": "2025-26_20261071_standingH6_adaptive",
+      "season": "2025-26",
+      "seed": 20261071,
+      "policy": "standingH6_adaptive",
+      "status": "completed",
+      "seconds": 371.7411096668802,
+      "sampled_rss_bytes": 570720256,
+      "net_points": 2134.0,
+      "hits": 28,
+      "transfers": 91,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "components": {
+        "base_xi": 1841.0,
+        "autosub_delta": 60.0,
+        "captain_bonus": 226.0,
+        "extra_captain_bonus": 13.0,
+        "bench_boost_points": 22.0,
+        "hits": 28
+      },
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 14,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 17,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 20,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 21,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 38,
+          "name": "bboost"
+        }
+      ],
+      "diagnostic_sha256": "79110f4fc26552e7bcc64e0d0a53ee6555193d95eae2225f4a0c063691ab60db",
+      "audit": {
+        "deadlines": 38,
+        "provisional_periods": 213,
+        "net_points": 2134.0,
+        "hits": 28,
+        "transfers": 91,
+        "status": "independently reconciled",
+        "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+      },
+      "native_audit": null,
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "max_known_relative_gap": 0.004410984474477369
+    },
+    {
+      "name": "2025-26_20261071_SolioAdaptedH6_sharedAdaptiveChips",
+      "season": "2025-26",
+      "seed": 20261071,
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "status": "completed",
+      "seconds": 462.7825907911174,
+      "sampled_rss_bytes": 814989312,
+      "net_points": 2260.0,
+      "hits": 16,
+      "transfers": 83,
+      "native_calls": 295,
+      "native_failed_attempts": 12,
+      "components": {
+        "base_xi": 1863.0,
+        "autosub_delta": 117.0,
+        "captain_bonus": 247.0,
+        "extra_captain_bonus": 9.0,
+        "bench_boost_points": 40.0,
+        "hits": 16
+      },
+      "chips": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 16,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 19,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 22,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 26,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 27,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "diagnostic_sha256": "b9798af04b964ed8fbc8ff3bfdd1f6adf7622bcd35b82a2a7de92ecc53b3d4cb",
+      "audit": {
+        "deadlines": 38,
+        "provisional_periods": 213,
+        "net_points": 2260.0,
+        "hits": 16,
+        "transfers": 83,
+        "status": "independently reconciled",
+        "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+      },
+      "native_audit": {
+        "calls": 295,
+        "completed": 283,
+        "expected_failures": 12,
+        "completed_provisional_periods": 1683,
+        "errors": {
+          "ValueError:No feasible native incumbent": 12
+        },
+        "status": "independently_reconciled",
+        "scope": "Every completed Solio reply: integer finance, chip inventory and separate common-mean selection objective; no source timestamp or global-optimum certification"
+      },
+      "conditional_bounds_known": 38,
+      "conditional_bounds_unknown": 0,
+      "max_known_relative_gap": 0.017293310872903186
+    }
+  ],
+  "framework": {
+    "schema_version": 1,
+    "integrity_verified": true,
+    "comparisons": {
+      "standingH1_adaptive": {
+        "pairs": [
+          {
+            "season": "2024-25",
+            "seed": 20261070,
+            "difference": 127.0
+          },
+          {
+            "season": "2024-25",
+            "seed": 20261071,
+            "difference": 244.0
+          },
+          {
+            "season": "2025-26",
+            "seed": 20261070,
+            "difference": 147.0
+          },
+          {
+            "season": "2025-26",
+            "seed": 20261071,
+            "difference": 0.0
+          }
+        ],
+        "season_means": {
+          "2024-25": 185.5,
+          "2025-26": 73.5
+        },
+        "equal_season_mean": 129.5,
+        "median_opening_gain": 137.0,
+        "worst_opening_gain": 0.0,
+        "wins": 3,
+        "ties": 1,
+        "losses": 0,
+        "material_losses": 0,
+        "material_loss_definition": "opening loss exceeding 19points",
+        "material_loss_frequency": 0.0,
+        "research_support": true,
+        "interpretation": "Declared descriptive historical support only; no confidence/significance or automatic policy/model promotion"
+      },
+      "SolioAdaptedH6_sharedAdaptiveChips": {
+        "pairs": [
+          {
+            "season": "2024-25",
+            "seed": 20261070,
+            "difference": -17.0
+          },
+          {
+            "season": "2024-25",
+            "seed": 20261071,
+            "difference": 40.0
+          },
+          {
+            "season": "2025-26",
+            "seed": 20261070,
+            "difference": 0.0
+          },
+          {
+            "season": "2025-26",
+            "seed": 20261071,
+            "difference": -126.0
+          }
+        ],
+        "season_means": {
+          "2024-25": 11.5,
+          "2025-26": -63.0
+        },
+        "equal_season_mean": -25.75,
+        "median_opening_gain": -8.5,
+        "worst_opening_gain": -126.0,
+        "wins": 1,
+        "ties": 1,
+        "losses": 2,
+        "material_losses": 1,
+        "material_loss_definition": "opening loss exceeding 19points",
+        "material_loss_frequency": 0.25,
+        "research_support": false,
+        "interpretation": "Declared descriptive historical support only; no confidence/significance or automatic policy/model promotion"
+      }
+    },
+    "seasons": 2,
+    "openings_per_season": 2,
+    "old_zero_negative_gate_unchanged": true,
+    "policy_promotion": false,
+    "model_promotion": false,
+    "uncertainty": "Two previously inspected outcome seasons; starting cases within each season are dependent. No IID-week or opening-as-season inference."
+  },
+  "integrity": {
+    "deadlines": 456,
+    "retained_provisional_periods": 1856,
+    "completed_native_provisional_periods": 5821,
+    "native_calls": 1015,
+    "expected_native_failures": 34,
+    "invalid_completed_native_proposals": 0,
+    "independent_verifier_sha256": {
+      "ledger": "b147b36ddb335da2c3945fcb5bbe61fab456bcfbab725f036294efdfc4a6ecda",
+      "native": "c24324f8964fd90102ee5797fc041369eeb18a2ee17bde4418acfe40e118ab0c"
+    }
+  },
+  "resources": {
+    "serial_path_seconds": 3322.674732543761,
+    "maximum_sampled_group_rss_bytes": 962560000,
+    "threads": 2
+  },
+  "prior153pointgap": {
+    "scope": "Outcome-aware accounting of prior153pointgap, not causal recoverable losses or a new outcome test",
+    "season": "2025-26",
+    "opening_seed": 20261025,
+    "H6_net": 2154.0,
+    "Solio_net": 2307.0,
+    "difference": -153.0,
+    "components_H6_minus_Solio": {
+      "autosub_delta": -30.0,
+      "captain_bonus": -22.0,
+      "bench_boost_points": -10.0,
+      "base_xi": -79.0,
+      "extra_captain_bonus": -8.0,
+      "hits": 4
+    },
+    "first_action_divergence": 10,
+    "same_playing_roster_origins": 10,
+    "rows": [
+      {
+        "gameweek": 1,
+        "net_difference": 0.0,
+        "same_playing_roster": true,
+        "shared_players": 15,
+        "action_equal": true,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 174.44834421461405,
+        "Solio_expected_total_proxy": 174.44834421461405
+      },
+      {
+        "gameweek": 2,
+        "net_difference": 0.0,
+        "same_playing_roster": true,
+        "shared_players": 15,
+        "action_equal": true,
+        "H6_chip": "wildcard",
+        "Solio_chip": "wildcard",
+        "H6_expected_total_proxy": 413.1568545928323,
+        "Solio_expected_total_proxy": 413.1568545928323
+      },
+      {
+        "gameweek": 3,
+        "net_difference": 0.0,
+        "same_playing_roster": true,
+        "shared_players": 15,
+        "action_equal": true,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 406.0144710466814,
+        "Solio_expected_total_proxy": 406.0144710466814
+      },
+      {
+        "gameweek": 4,
+        "net_difference": 0.0,
+        "same_playing_roster": true,
+        "shared_players": 15,
+        "action_equal": true,
+        "H6_chip": "3xc",
+        "Solio_chip": "3xc",
+        "H6_expected_total_proxy": 397.089971856891,
+        "Solio_expected_total_proxy": 397.089971856891
+      },
+      {
+        "gameweek": 5,
+        "net_difference": 0.0,
+        "same_playing_roster": true,
+        "shared_players": 15,
+        "action_equal": true,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 394.3603254402242,
+        "Solio_expected_total_proxy": 393.9656449748961
+      },
+      {
+        "gameweek": 6,
+        "net_difference": 0.0,
+        "same_playing_roster": true,
+        "shared_players": 15,
+        "action_equal": true,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 383.9996069814908,
+        "Solio_expected_total_proxy": 383.9996069814908
+      },
+      {
+        "gameweek": 7,
+        "net_difference": 0.0,
+        "same_playing_roster": true,
+        "shared_players": 15,
+        "action_equal": true,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 382.07007068229865,
+        "Solio_expected_total_proxy": 382.07007068229865
+      },
+      {
+        "gameweek": 8,
+        "net_difference": 0.0,
+        "same_playing_roster": true,
+        "shared_players": 15,
+        "action_equal": true,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 388.32482328548036,
+        "Solio_expected_total_proxy": 386.956096876477
+      },
+      {
+        "gameweek": 9,
+        "net_difference": 0.0,
+        "same_playing_roster": true,
+        "shared_players": 15,
+        "action_equal": true,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 413.48531604517746,
+        "Solio_expected_total_proxy": 413.48531604517746
+      },
+      {
+        "gameweek": 10,
+        "net_difference": 4.0,
+        "same_playing_roster": false,
+        "shared_players": 13,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 398.43145577146953,
+        "Solio_expected_total_proxy": 398.7791796241823
+      },
+      {
+        "gameweek": 11,
+        "net_difference": -5.0,
+        "same_playing_roster": false,
+        "shared_players": 13,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 396.2146030683238,
+        "Solio_expected_total_proxy": 395.26294354325427
+      },
+      {
+        "gameweek": 12,
+        "net_difference": -11.0,
+        "same_playing_roster": false,
+        "shared_players": 12,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 391.4907794238492,
+        "Solio_expected_total_proxy": 392.6087799268519
+      },
+      {
+        "gameweek": 13,
+        "net_difference": -5.0,
+        "same_playing_roster": false,
+        "shared_players": 10,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 397.26335678565783,
+        "Solio_expected_total_proxy": 398.8642187832082
+      },
+      {
+        "gameweek": 14,
+        "net_difference": -1.0,
+        "same_playing_roster": false,
+        "shared_players": 7,
+        "action_equal": false,
+        "H6_chip": "freehit",
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 408.394512364323,
+        "Solio_expected_total_proxy": 409.3590139621731
+      },
+      {
+        "gameweek": 15,
+        "net_difference": -8.0,
+        "same_playing_roster": false,
+        "shared_players": 10,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 392.21454499844816,
+        "Solio_expected_total_proxy": 396.7050885751431
+      },
+      {
+        "gameweek": 16,
+        "net_difference": -26.0,
+        "same_playing_roster": false,
+        "shared_players": 10,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": "freehit",
+        "H6_expected_total_proxy": 404.824209493003,
+        "Solio_expected_total_proxy": 403.13604638634257
+      },
+      {
+        "gameweek": 17,
+        "net_difference": 24.0,
+        "same_playing_roster": false,
+        "shared_players": 10,
+        "action_equal": false,
+        "H6_chip": "bboost",
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 408.60509805252286,
+        "Solio_expected_total_proxy": 406.5411386128081
+      },
+      {
+        "gameweek": 18,
+        "net_difference": -7.0,
+        "same_playing_roster": false,
+        "shared_players": 9,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 400.0795849580991,
+        "Solio_expected_total_proxy": 407.67783811695097
+      },
+      {
+        "gameweek": 19,
+        "net_difference": -45.0,
+        "same_playing_roster": false,
+        "shared_players": 8,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": "bboost",
+        "H6_expected_total_proxy": 387.0443050311344,
+        "Solio_expected_total_proxy": 392.82204108004595
+      },
+      {
+        "gameweek": 20,
+        "net_difference": -17.0,
+        "same_playing_roster": false,
+        "shared_players": 6,
+        "action_equal": false,
+        "H6_chip": "wildcard",
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 378.5186053897042,
+        "Solio_expected_total_proxy": 382.3431935082679
+      },
+      {
+        "gameweek": 21,
+        "net_difference": 11.0,
+        "same_playing_roster": false,
+        "shared_players": 7,
+        "action_equal": false,
+        "H6_chip": "3xc",
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 382.0151841905975,
+        "Solio_expected_total_proxy": 388.41348492429745
+      },
+      {
+        "gameweek": 22,
+        "net_difference": 12.0,
+        "same_playing_roster": false,
+        "shared_players": 7,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 375.22186031698584,
+        "Solio_expected_total_proxy": 390.1761559985384
+      },
+      {
+        "gameweek": 23,
+        "net_difference": -11.0,
+        "same_playing_roster": false,
+        "shared_players": 7,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": "bboost",
+        "H6_expected_total_proxy": 370.84870234351973,
+        "Solio_expected_total_proxy": 385.7689842345586
+      },
+      {
+        "gameweek": 24,
+        "net_difference": 8.0,
+        "same_playing_roster": false,
+        "shared_players": 6,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 356.16245419469135,
+        "Solio_expected_total_proxy": 355.46003725613133
+      },
+      {
+        "gameweek": 25,
+        "net_difference": 14.0,
+        "same_playing_roster": false,
+        "shared_players": 8,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": "wildcard",
+        "H6_expected_total_proxy": 374.2020914384031,
+        "Solio_expected_total_proxy": 376.55825185034473
+      },
+      {
+        "gameweek": 26,
+        "net_difference": -20.0,
+        "same_playing_roster": false,
+        "shared_players": 7,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": "3xc",
+        "H6_expected_total_proxy": 385.5314736488292,
+        "Solio_expected_total_proxy": 379.8728745449399
+      },
+      {
+        "gameweek": 27,
+        "net_difference": -14.0,
+        "same_playing_roster": false,
+        "shared_players": 7,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 356.9552694030269,
+        "Solio_expected_total_proxy": 346.4593319145402
+      },
+      {
+        "gameweek": 28,
+        "net_difference": -9.0,
+        "same_playing_roster": false,
+        "shared_players": 8,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 351.0762054447323,
+        "Solio_expected_total_proxy": 340.1870240468553
+      },
+      {
+        "gameweek": 29,
+        "net_difference": -4.0,
+        "same_playing_roster": false,
+        "shared_players": 8,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 358.66679819683833,
+        "Solio_expected_total_proxy": 347.61334951622894
+      },
+      {
+        "gameweek": 30,
+        "net_difference": -19.0,
+        "same_playing_roster": false,
+        "shared_players": 9,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 357.54945781724587,
+        "Solio_expected_total_proxy": 348.804602406109
+      },
+      {
+        "gameweek": 31,
+        "net_difference": -3.0,
+        "same_playing_roster": false,
+        "shared_players": 9,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 348.39796248305043,
+        "Solio_expected_total_proxy": 338.95900417610505
+      },
+      {
+        "gameweek": 32,
+        "net_difference": -4.0,
+        "same_playing_roster": false,
+        "shared_players": 11,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 387.02881952966794,
+        "Solio_expected_total_proxy": 379.4306110138096
+      },
+      {
+        "gameweek": 33,
+        "net_difference": 0.0,
+        "same_playing_roster": true,
+        "shared_players": 15,
+        "action_equal": false,
+        "H6_chip": "freehit",
+        "Solio_chip": "freehit",
+        "H6_expected_total_proxy": 390.7354020797002,
+        "Solio_expected_total_proxy": 384.0104369408569
+      },
+      {
+        "gameweek": 34,
+        "net_difference": 1.0,
+        "same_playing_roster": false,
+        "shared_players": 11,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 292.6981073568504,
+        "Solio_expected_total_proxy": 283.9339685480092
+      },
+      {
+        "gameweek": 35,
+        "net_difference": -13.0,
+        "same_playing_roster": false,
+        "shared_players": 10,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 258.337430151461,
+        "Solio_expected_total_proxy": 243.16274145670985
+      },
+      {
+        "gameweek": 36,
+        "net_difference": 7.0,
+        "same_playing_roster": false,
+        "shared_players": 12,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 204.14960562556962,
+        "Solio_expected_total_proxy": 190.58615563785025
+      },
+      {
+        "gameweek": 37,
+        "net_difference": 10.0,
+        "same_playing_roster": false,
+        "shared_players": 10,
+        "action_equal": false,
+        "H6_chip": null,
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 114.87345472735252,
+        "Solio_expected_total_proxy": 107.32313793056517
+      },
+      {
+        "gameweek": 38,
+        "net_difference": -22.0,
+        "same_playing_roster": false,
+        "shared_players": 11,
+        "action_equal": false,
+        "H6_chip": "bboost",
+        "Solio_chip": null,
+        "H6_expected_total_proxy": 67.48508027155665,
+        "Solio_expected_total_proxy": 58.32967520518435
+      }
+    ],
+    "stage_differences": {
+      "GW1_13": -17.0,
+      "GW14_26": -66.0,
+      "GW27_38": -70.0
+    },
+    "chips": {
+      "standingH6_adaptive": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net": 55.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "3xc",
+          "net": 76.0
+        },
+        {
+          "gameweek": 14,
+          "chip": "freehit",
+          "net": 63.0
+        },
+        {
+          "gameweek": 17,
+          "chip": "bboost",
+          "net": 90.0
+        },
+        {
+          "gameweek": 20,
+          "chip": "wildcard",
+          "net": 40.0
+        },
+        {
+          "gameweek": 21,
+          "chip": "3xc",
+          "net": 69.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net": 105.0
+        },
+        {
+          "gameweek": 38,
+          "chip": "bboost",
+          "net": 32.0
+        }
+      ],
+      "SolioAdaptedH6_sharedAdaptiveChips": [
+        {
+          "gameweek": 2,
+          "chip": "wildcard",
+          "net": 55.0
+        },
+        {
+          "gameweek": 4,
+          "chip": "3xc",
+          "net": 76.0
+        },
+        {
+          "gameweek": 16,
+          "chip": "freehit",
+          "net": 80.0
+        },
+        {
+          "gameweek": 19,
+          "chip": "bboost",
+          "net": 67.0
+        },
+        {
+          "gameweek": 23,
+          "chip": "bboost",
+          "net": 42.0
+        },
+        {
+          "gameweek": 25,
+          "chip": "wildcard",
+          "net": 49.0
+        },
+        {
+          "gameweek": 26,
+          "chip": "3xc",
+          "net": 73.0
+        },
+        {
+          "gameweek": 33,
+          "chip": "freehit",
+          "net": 105.0
+        }
+      ]
+    }
+  },
+  "calendar_probe": {
+    "cases": [
+      {
+        "origin": 1,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "standing",
+        "schedule": {},
+        "horizon_objective": 112.44834421461407,
+        "coarse_reserve": 62.0,
+        "total_proxy": 174.44834421461405,
+        "seconds": 0.3412059161346406,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 112.44834421461407,
+          "upper_objective": 112.44834421461407,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "69f241c1f9b92010a29322f4f20a4cc47917d328a4d9629c26915cef81a114d0",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              2
+            ],
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              2
+            ],
+            [
+              "bboost",
+              1
+            ],
+            [
+              "bboost",
+              20
+            ],
+            [
+              "3xc",
+              1
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "16": "wildcard",
+            "17": "freehit",
+            "18": "bboost",
+            "19": "3xc",
+            "36": "wildcard",
+            "37": "bboost",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 1,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "solio_adapted",
+        "schedule": {},
+        "horizon_objective": 112.44834421461407,
+        "coarse_reserve": 62.0,
+        "total_proxy": 174.44834421461405,
+        "seconds": 2.2065659170039,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 112.44834421461407,
+          "upper_objective": 112.45512851716347,
+          "absolute_gap": 0.006784302549405652,
+          "relative_gap": 6.0332614026378406e-05,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "69f241c1f9b92010a29322f4f20a4cc47917d328a4d9629c26915cef81a114d0",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              2
+            ],
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              2
+            ],
+            [
+              "bboost",
+              1
+            ],
+            [
+              "bboost",
+              20
+            ],
+            [
+              "3xc",
+              1
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "16": "wildcard",
+            "17": "freehit",
+            "18": "bboost",
+            "19": "3xc",
+            "36": "wildcard",
+            "37": "bboost",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 1,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "solver": "standing",
+        "schedule": {},
+        "horizon_objective": 112.44834421461407,
+        "coarse_reserve": 62.0,
+        "total_proxy": 174.44834421461405,
+        "seconds": 0.3195680419448763,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 112.44834421461407,
+          "upper_objective": 112.44834421461407,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "16b7b2eb4b649be336c8003c4826d1c66c56acbb694287d42f6ea181cfda79ad",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              2
+            ],
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              2
+            ],
+            [
+              "bboost",
+              1
+            ],
+            [
+              "bboost",
+              20
+            ],
+            [
+              "3xc",
+              1
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "16": "wildcard",
+            "17": "freehit",
+            "18": "bboost",
+            "19": "3xc",
+            "36": "wildcard",
+            "37": "bboost",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 1,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "solver": "solio_adapted",
+        "schedule": {},
+        "horizon_objective": 112.44834421461407,
+        "coarse_reserve": 62.0,
+        "total_proxy": 174.44834421461405,
+        "seconds": 2.2068981660995632,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 112.44834421461407,
+          "upper_objective": 112.45363832385966,
+          "absolute_gap": 0.005294109245596701,
+          "relative_gap": 4.7080366390211956e-05,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "16b7b2eb4b649be336c8003c4826d1c66c56acbb694287d42f6ea181cfda79ad",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              2
+            ],
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              2
+            ],
+            [
+              "bboost",
+              1
+            ],
+            [
+              "bboost",
+              20
+            ],
+            [
+              "3xc",
+              1
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "16": "wildcard",
+            "17": "freehit",
+            "18": "bboost",
+            "19": "3xc",
+            "36": "wildcard",
+            "37": "bboost",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 6,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "standing",
+        "schedule": {
+          "8": "bboost"
+        },
+        "horizon_objective": 348.9996069814908,
+        "coarse_reserve": 35.0,
+        "total_proxy": 383.9996069814908,
+        "seconds": 0.34323516581207514,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 348.9996069814908,
+          "upper_objective": 348.9996069814908,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "7d26cc4bfbddb2c75d14c1ba4c1e6cc9eac8835a9d4dd3fb0204f0d4722f4680",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              2
+            ],
+            [
+              "bboost",
+              20
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "19": "freehit",
+            "36": "wildcard",
+            "37": "bboost",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 6,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "solio_adapted",
+        "schedule": {
+          "8": "bboost"
+        },
+        "horizon_objective": 348.9996069814908,
+        "coarse_reserve": 35.0,
+        "total_proxy": 383.9996069814908,
+        "seconds": 1.4638643749058247,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 348.9996069814908,
+          "upper_objective": 348.9996069814908,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "7d26cc4bfbddb2c75d14c1ba4c1e6cc9eac8835a9d4dd3fb0204f0d4722f4680",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              2
+            ],
+            [
+              "bboost",
+              20
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "19": "freehit",
+            "36": "wildcard",
+            "37": "bboost",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 6,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "solver": "standing",
+        "schedule": {
+          "8": "bboost"
+        },
+        "horizon_objective": 348.9996069814908,
+        "coarse_reserve": 35.0,
+        "total_proxy": 383.9996069814908,
+        "seconds": 0.3391838329844177,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 348.9996069814908,
+          "upper_objective": 348.9996069814908,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "c48cecc7146c8a4b2d0eee56473cbc95f6de389cb486d379ab8bf44b22a64fe3",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              2
+            ],
+            [
+              "bboost",
+              20
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "19": "freehit",
+            "36": "wildcard",
+            "37": "bboost",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 6,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "solver": "solio_adapted",
+        "schedule": {
+          "8": "bboost"
+        },
+        "horizon_objective": 348.9996069814908,
+        "coarse_reserve": 35.0,
+        "total_proxy": 383.9996069814908,
+        "seconds": 1.4615167919546366,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 348.9996069814908,
+          "upper_objective": 348.9996069814908,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "c48cecc7146c8a4b2d0eee56473cbc95f6de389cb486d379ab8bf44b22a64fe3",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              2
+            ],
+            [
+              "bboost",
+              20
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "19": "freehit",
+            "36": "wildcard",
+            "37": "bboost",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 12,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "standing",
+        "schedule": {
+          "14": "bboost"
+        },
+        "horizon_objective": 356.4907794238492,
+        "coarse_reserve": 35.0,
+        "total_proxy": 391.4907794238492,
+        "seconds": 2.185451249824837,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 356.4907794238492,
+          "upper_objective": 356.70389461392114,
+          "absolute_gap": 0.21311519007196011,
+          "relative_gap": 0.0005978140315897964,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "c5175b27b804f5f4b8213f7f95d3989fe3e88c75bf8a8873e7f7d3403a4586f1",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              2
+            ],
+            [
+              "bboost",
+              20
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "19": "freehit",
+            "36": "wildcard",
+            "37": "bboost",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 12,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "solio_adapted",
+        "schedule": {
+          "14": "bboost"
+        },
+        "horizon_objective": 356.4907794238492,
+        "coarse_reserve": 35.0,
+        "total_proxy": 391.4907794238492,
+        "seconds": 2.203538125148043,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 356.4907794238492,
+          "upper_objective": 357.164348357178,
+          "absolute_gap": 0.6735689333288519,
+          "relative_gap": 0.0018894427912482224,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "c5175b27b804f5f4b8213f7f95d3989fe3e88c75bf8a8873e7f7d3403a4586f1",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              2
+            ],
+            [
+              "bboost",
+              20
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "19": "freehit",
+            "36": "wildcard",
+            "37": "bboost",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 12,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "solver": "standing",
+        "schedule": {
+          "14": "bboost"
+        },
+        "horizon_objective": 356.4907794238492,
+        "coarse_reserve": 35.0,
+        "total_proxy": 391.4907794238492,
+        "seconds": 2.187032415997237,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 356.4907794238492,
+          "upper_objective": 356.70389461392114,
+          "absolute_gap": 0.21311519007196011,
+          "relative_gap": 0.0005978140315897964,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "646ad858d1a1d6c42bfd8927a7bf100252e9ed7c8193f6dd4fffa6ea6f12b09f",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              2
+            ],
+            [
+              "bboost",
+              20
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "19": "freehit",
+            "36": "wildcard",
+            "37": "bboost",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 12,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "solver": "solio_adapted",
+        "schedule": {
+          "14": "bboost"
+        },
+        "horizon_objective": 356.4907794238492,
+        "coarse_reserve": 35.0,
+        "total_proxy": 391.4907794238492,
+        "seconds": 2.2200120000634342,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 356.4907794238492,
+          "upper_objective": 357.164348357178,
+          "absolute_gap": 0.6735689333288519,
+          "relative_gap": 0.0018894427912482224,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "646ad858d1a1d6c42bfd8927a7bf100252e9ed7c8193f6dd4fffa6ea6f12b09f",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              2
+            ],
+            [
+              "bboost",
+              20
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "19": "freehit",
+            "36": "wildcard",
+            "37": "bboost",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 16,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "standing",
+        "schedule": {
+          "19": "bboost",
+          "20": "bboost"
+        },
+        "horizon_objective": 379.824209493003,
+        "coarse_reserve": 25.0,
+        "total_proxy": 404.824209493003,
+        "seconds": 0.8352894999552518,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 379.824209493003,
+          "upper_objective": 379.824209493003,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "592f8afef0e533e34c790110ecf2bc47251781354918ad145b49e8d3ce1dd9cd",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              20
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "36": "wildcard",
+            "37": "freehit",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 16,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "solio_adapted",
+        "schedule": {
+          "19": "bboost",
+          "20": "bboost"
+        },
+        "horizon_objective": 379.6754967593258,
+        "coarse_reserve": 25.0,
+        "total_proxy": 404.6754967593258,
+        "seconds": 2.228372999932617,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 379.6754967593258,
+          "upper_objective": 382.15235602832445,
+          "absolute_gap": 2.4768592689986235,
+          "relative_gap": 0.0065236215930170776,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "592f8afef0e533e34c790110ecf2bc47251781354918ad145b49e8d3ce1dd9cd",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              20
+            ],
+            [
+              "3xc",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "36": "wildcard",
+            "37": "freehit",
+            "38": "3xc"
+          }
+        }
+      },
+      {
+        "origin": 20,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "standing",
+        "schedule": {
+          "20": "wildcard",
+          "21": "3xc"
+        },
+        "horizon_objective": 360.5186053897042,
+        "coarse_reserve": 18.0,
+        "total_proxy": 378.5186053897042,
+        "seconds": 2.187827124958858,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 360.5186053897042,
+          "upper_objective": 360.7280375400179,
+          "absolute_gap": 0.20943215031371665,
+          "relative_gap": 0.0005809191181335288,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "6292920e4c09bdfbeaefedd0f6fd7a88c323328caa868407705bb98d8a5885ea",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "freehit",
+              20
+            ],
+            [
+              "bboost",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "37": "freehit",
+            "38": "bboost"
+          }
+        }
+      },
+      {
+        "origin": 20,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "solio_adapted",
+        "schedule": {
+          "20": "wildcard",
+          "21": "3xc"
+        },
+        "horizon_objective": 360.4634086778386,
+        "coarse_reserve": 18.0,
+        "total_proxy": 378.4634086778386,
+        "seconds": 2.2290146669838578,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 360.4634086778386,
+          "upper_objective": 360.8433571943348,
+          "absolute_gap": 0.37994851649625616,
+          "relative_gap": 0.0010540557164731032,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "6292920e4c09bdfbeaefedd0f6fd7a88c323328caa868407705bb98d8a5885ea",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "freehit",
+              20
+            ],
+            [
+              "bboost",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "37": "freehit",
+            "38": "bboost"
+          }
+        }
+      },
+      {
+        "origin": 20,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "solver": "standing",
+        "schedule": {
+          "21": "3xc"
+        },
+        "horizon_objective": 348.1506445419547,
+        "coarse_reserve": 30.0,
+        "total_proxy": 378.1506445419547,
+        "seconds": 0.4656611660029739,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 348.1506445419547,
+          "upper_objective": 348.1506445419547,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "9c8e8dda75dbd8f2b3997dc2f233ecfb981ce41c90b761f2e7cd5674f42303ba",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              20
+            ],
+            [
+              "bboost",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "36": "wildcard",
+            "37": "freehit",
+            "38": "bboost"
+          }
+        }
+      },
+      {
+        "origin": 20,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "solver": "solio_adapted",
+        "schedule": {
+          "21": "3xc"
+        },
+        "horizon_objective": 348.1506445419547,
+        "coarse_reserve": 30.0,
+        "total_proxy": 378.1506445419547,
+        "seconds": 2.205766416154802,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 348.1506445419547,
+          "upper_objective": 348.28819106072547,
+          "absolute_gap": 0.13754651877076185,
+          "relative_gap": 0.0003950775933553858,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "9c8e8dda75dbd8f2b3997dc2f233ecfb981ce41c90b761f2e7cd5674f42303ba",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "wildcard",
+              20
+            ],
+            [
+              "freehit",
+              20
+            ],
+            [
+              "bboost",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "36": "wildcard",
+            "37": "freehit",
+            "38": "bboost"
+          }
+        }
+      },
+      {
+        "origin": 24,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "standing",
+        "schedule": {
+          "27": "bboost"
+        },
+        "horizon_objective": 348.16245419469135,
+        "coarse_reserve": 8.0,
+        "total_proxy": 356.16245419469135,
+        "seconds": 0.35333304200321436,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 348.16245419469135,
+          "upper_objective": 348.1624541946914,
+          "absolute_gap": 5.684341886080802e-14,
+          "relative_gap": 1.6326694098100928e-16,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "cc691891d0ebd99435882aa53c228a02fc16330a622ddd3306c616afb678fcd1",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "freehit",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "38": "freehit"
+          }
+        }
+      },
+      {
+        "origin": 24,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "solio_adapted",
+        "schedule": {
+          "27": "bboost"
+        },
+        "horizon_objective": 348.16245419469135,
+        "coarse_reserve": 8.0,
+        "total_proxy": 356.16245419469135,
+        "seconds": 1.4945792078506202,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 348.16245419469135,
+          "upper_objective": 348.1624541946926,
+          "absolute_gap": 1.2505552149377763e-12,
+          "relative_gap": 3.591872701582204e-15,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "cc691891d0ebd99435882aa53c228a02fc16330a622ddd3306c616afb678fcd1",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "freehit",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "38": "freehit"
+          }
+        }
+      },
+      {
+        "origin": 30,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "standing",
+        "schedule": {
+          "34": "bboost"
+        },
+        "horizon_objective": 349.54945781724587,
+        "coarse_reserve": 8.0,
+        "total_proxy": 357.54945781724587,
+        "seconds": 0.37727170810103416,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 349.54945781724587,
+          "upper_objective": 349.5494578172459,
+          "absolute_gap": 5.684341886080802e-14,
+          "relative_gap": 1.6261910178824345e-16,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "fc5c88aeba69d87c7ad8976c56239f938ce8736462e8c14a4e95c95ba75449ca",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "freehit",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "38": "freehit"
+          }
+        }
+      },
+      {
+        "origin": 30,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "solio_adapted",
+        "schedule": {
+          "34": "bboost"
+        },
+        "horizon_objective": 349.54945781724587,
+        "coarse_reserve": 8.0,
+        "total_proxy": 357.54945781724587,
+        "seconds": 1.1062894160859287,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 349.54945781724587,
+          "upper_objective": 349.5494578172459,
+          "absolute_gap": 5.684341886080802e-14,
+          "relative_gap": 1.6261910178824345e-16,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "fc5c88aeba69d87c7ad8976c56239f938ce8736462e8c14a4e95c95ba75449ca",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "freehit",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "38": "freehit"
+          }
+        }
+      },
+      {
+        "origin": 30,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "solver": "standing",
+        "schedule": {},
+        "horizon_objective": 336.5865334606668,
+        "coarse_reserve": 18.0,
+        "total_proxy": 354.5865334606668,
+        "seconds": 0.4590064170770347,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 336.5865334606668,
+          "upper_objective": 336.5865334606668,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "1fc04cd7342b4d1547bf0dbd6f96c597e4559ea9e9d15399dc11399c45b425cd",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "freehit",
+              20
+            ],
+            [
+              "bboost",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "37": "freehit",
+            "38": "bboost"
+          }
+        }
+      },
+      {
+        "origin": 30,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "solver": "solio_adapted",
+        "schedule": {},
+        "horizon_objective": 336.5865334606668,
+        "coarse_reserve": 18.0,
+        "total_proxy": 354.5865334606668,
+        "seconds": 1.0473036251496524,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 336.5865334606668,
+          "upper_objective": 336.58653346066706,
+          "absolute_gap": 2.8421709430404007e-13,
+          "relative_gap": 8.444101770258538e-16,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "1fc04cd7342b4d1547bf0dbd6f96c597e4559ea9e9d15399dc11399c45b425cd",
+        "inventory": {
+          "remaining_tokens": [
+            [
+              "freehit",
+              20
+            ],
+            [
+              "bboost",
+              20
+            ]
+          ],
+          "coarse_schedule": {
+            "37": "freehit",
+            "38": "bboost"
+          }
+        }
+      },
+      {
+        "origin": 38,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "standing",
+        "schedule": {
+          "38": "bboost"
+        },
+        "horizon_objective": 67.48508027155665,
+        "coarse_reserve": 0.0,
+        "total_proxy": 67.48508027155665,
+        "seconds": 0.07395504182204604,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 67.48508027155665,
+          "upper_objective": 67.48508027155665,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "973e5456ed607075f02836902f33984083ff27d6212a87152b2dc6242e54fc00",
+        "inventory": {
+          "remaining_tokens": [],
+          "coarse_schedule": {}
+        }
+      },
+      {
+        "origin": 38,
+        "schedule_source": "standingH6_adaptive",
+        "solver": "solio_adapted",
+        "schedule": {
+          "38": "bboost"
+        },
+        "horizon_objective": 67.48508027155665,
+        "coarse_reserve": 0.0,
+        "total_proxy": 67.48508027155665,
+        "seconds": 0.14499412500299513,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 67.48508027155665,
+          "upper_objective": 67.48508027155665,
+          "absolute_gap": 0.0,
+          "relative_gap": 0.0,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "973e5456ed607075f02836902f33984083ff27d6212a87152b2dc6242e54fc00",
+        "inventory": {
+          "remaining_tokens": [],
+          "coarse_schedule": {}
+        }
+      },
+      {
+        "origin": 38,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "solver": "standing",
+        "schedule": {},
+        "horizon_objective": 57.733560385053494,
+        "coarse_reserve": 0.0,
+        "total_proxy": 57.733560385053494,
+        "seconds": 0.05376287503167987,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 57.733560385053494,
+          "upper_objective": 57.7335603850535,
+          "absolute_gap": 7.105427357601002e-15,
+          "relative_gap": 1.2307273811300418e-16,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "1cafb3ef2548a837adeb0f409011c0de64dfad1d3478f758e91b007d7fa33a93",
+        "inventory": {
+          "remaining_tokens": [],
+          "coarse_schedule": {}
+        }
+      },
+      {
+        "origin": 38,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "solver": "solio_adapted",
+        "schedule": {},
+        "horizon_objective": 57.733560385053494,
+        "coarse_reserve": 0.0,
+        "total_proxy": 57.733560385053494,
+        "seconds": 0.16815633280202746,
+        "selected_plan_bound": {
+          "status": "solver_dual",
+          "feasible_objective": 57.733560385053494,
+          "upper_objective": 57.7335603850535,
+          "absolute_gap": 7.105427357601002e-15,
+          "relative_gap": 1.2307273811300418e-16,
+          "scope": "Fixed chip schedule, restricted pool and stated heuristic objective only; no outer-search/season/prediction confidence bound"
+        },
+        "input_sha256": "1cafb3ef2548a837adeb0f409011c0de64dfad1d3478f758e91b007d7fa33a93",
+        "inventory": {
+          "remaining_tokens": [],
+          "coarse_schedule": {}
+        }
+      }
+    ],
+    "skipped": [
+      {
+        "origin": 16,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "schedule": {
+          "16": "freehit",
+          "18": "bboost"
+        },
+        "reason": "token already used or blocked in common state"
+      },
+      {
+        "origin": 24,
+        "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+        "schedule": {
+          "25": "3xc"
+        },
+        "reason": "token already used or blocked in common state"
+      }
+    ],
+    "seconds": 33.91616908297874,
+    "native_calls": 14,
+    "native_failed_attempts": 0,
+    "audit": {
+      "complete": true,
+      "cases": 28,
+      "skipped_incompatible_schedules": 2,
+      "provisional_periods": 148,
+      "native": {
+        "calls": 14,
+        "completed": 14,
+        "expected_failures": 0,
+        "completed_provisional_periods": 74,
+        "errors": {},
+        "status": "independently_reconciled",
+        "scope": "Every completed Solio reply: integer finance, chip inventory and separate common-mean selection objective; no source timestamp or global-optimum certification"
+      },
+      "inner_solver_contrasts": [
+        {
+          "origin": 1,
+          "schedule_source": "standingH6_adaptive",
+          "native_minus_standing_total_proxy": 0.0
+        },
+        {
+          "origin": 1,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "native_minus_standing_total_proxy": 0.0
+        },
+        {
+          "origin": 6,
+          "schedule_source": "standingH6_adaptive",
+          "native_minus_standing_total_proxy": 0.0
+        },
+        {
+          "origin": 6,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "native_minus_standing_total_proxy": 0.0
+        },
+        {
+          "origin": 12,
+          "schedule_source": "standingH6_adaptive",
+          "native_minus_standing_total_proxy": 0.0
+        },
+        {
+          "origin": 12,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "native_minus_standing_total_proxy": 0.0
+        },
+        {
+          "origin": 16,
+          "schedule_source": "standingH6_adaptive",
+          "native_minus_standing_total_proxy": -0.1487127336772005
+        },
+        {
+          "origin": 20,
+          "schedule_source": "standingH6_adaptive",
+          "native_minus_standing_total_proxy": -0.05519671186561936
+        },
+        {
+          "origin": 20,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "native_minus_standing_total_proxy": 0.0
+        },
+        {
+          "origin": 24,
+          "schedule_source": "standingH6_adaptive",
+          "native_minus_standing_total_proxy": 0.0
+        },
+        {
+          "origin": 30,
+          "schedule_source": "standingH6_adaptive",
+          "native_minus_standing_total_proxy": 0.0
+        },
+        {
+          "origin": 30,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "native_minus_standing_total_proxy": 0.0
+        },
+        {
+          "origin": 38,
+          "schedule_source": "standingH6_adaptive",
+          "native_minus_standing_total_proxy": 0.0
+        },
+        {
+          "origin": 38,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "native_minus_standing_total_proxy": 0.0
+        }
+      ],
+      "calendar_contrasts": [
+        {
+          "origin": 1,
+          "solver": "standing",
+          "schedule_identical": true,
+          "Solio_schedule_minus_H6_schedule_total_proxy": 0.0
+        },
+        {
+          "origin": 1,
+          "solver": "solio_adapted",
+          "schedule_identical": true,
+          "Solio_schedule_minus_H6_schedule_total_proxy": 0.0
+        },
+        {
+          "origin": 6,
+          "solver": "standing",
+          "schedule_identical": true,
+          "Solio_schedule_minus_H6_schedule_total_proxy": 0.0
+        },
+        {
+          "origin": 6,
+          "solver": "solio_adapted",
+          "schedule_identical": true,
+          "Solio_schedule_minus_H6_schedule_total_proxy": 0.0
+        },
+        {
+          "origin": 12,
+          "solver": "standing",
+          "schedule_identical": true,
+          "Solio_schedule_minus_H6_schedule_total_proxy": 0.0
+        },
+        {
+          "origin": 12,
+          "solver": "solio_adapted",
+          "schedule_identical": true,
+          "Solio_schedule_minus_H6_schedule_total_proxy": 0.0
+        },
+        {
+          "origin": 20,
+          "solver": "standing",
+          "schedule_identical": false,
+          "Solio_schedule_minus_H6_schedule_total_proxy": -0.3679608477494867
+        },
+        {
+          "origin": 20,
+          "solver": "solio_adapted",
+          "schedule_identical": false,
+          "Solio_schedule_minus_H6_schedule_total_proxy": -0.3127641358838673
+        },
+        {
+          "origin": 30,
+          "solver": "standing",
+          "schedule_identical": false,
+          "Solio_schedule_minus_H6_schedule_total_proxy": -2.9629243565790944
+        },
+        {
+          "origin": 30,
+          "solver": "solio_adapted",
+          "schedule_identical": false,
+          "Solio_schedule_minus_H6_schedule_total_proxy": -2.9629243565790944
+        },
+        {
+          "origin": 38,
+          "solver": "standing",
+          "schedule_identical": false,
+          "Solio_schedule_minus_H6_schedule_total_proxy": -9.75151988650316
+        },
+        {
+          "origin": 38,
+          "solver": "solio_adapted",
+          "schedule_identical": false,
+          "Solio_schedule_minus_H6_schedule_total_proxy": -9.75151988650316
+        }
+      ],
+      "output_hashes": [
+        {
+          "origin": 1,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "standing",
+          "objective": 112.44834421461407,
+          "coarse_reserve": 62.0,
+          "output_sha256": "d5d92bf4aa2ec9caf2a6769d283be111258f96e5a4a07b9d4db59f3280c45a81",
+          "input_sha256": "69f241c1f9b92010a29322f4f20a4cc47917d328a4d9629c26915cef81a114d0"
+        },
+        {
+          "origin": 1,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "solio_adapted",
+          "objective": 112.44834421461407,
+          "coarse_reserve": 62.0,
+          "output_sha256": "46ab8c17f413efc6dea38fe8c228c560fd3aee9273cdc392c825f47287b464d9",
+          "input_sha256": "69f241c1f9b92010a29322f4f20a4cc47917d328a4d9629c26915cef81a114d0"
+        },
+        {
+          "origin": 1,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "solver": "standing",
+          "objective": 112.44834421461407,
+          "coarse_reserve": 62.0,
+          "output_sha256": "9af4e7a2d1a9a1217c815c17f469fb771f11f8c4a3b06fd789c331b64dc78ad0",
+          "input_sha256": "16b7b2eb4b649be336c8003c4826d1c66c56acbb694287d42f6ea181cfda79ad"
+        },
+        {
+          "origin": 1,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "solver": "solio_adapted",
+          "objective": 112.44834421461407,
+          "coarse_reserve": 62.0,
+          "output_sha256": "c6b9077623280d8fcd28a67bc488bbca6356f245969162e0417648041b986179",
+          "input_sha256": "16b7b2eb4b649be336c8003c4826d1c66c56acbb694287d42f6ea181cfda79ad"
+        },
+        {
+          "origin": 6,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "standing",
+          "objective": 348.9996069814908,
+          "coarse_reserve": 35.0,
+          "output_sha256": "295752c46ef32470064da2da16342f496771ffbef2297a7a926b0652f6d82323",
+          "input_sha256": "7d26cc4bfbddb2c75d14c1ba4c1e6cc9eac8835a9d4dd3fb0204f0d4722f4680"
+        },
+        {
+          "origin": 6,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "solio_adapted",
+          "objective": 348.9996069814908,
+          "coarse_reserve": 35.0,
+          "output_sha256": "57ca232f04b7cd0e4880140d3702a74f53429caf63c5a210a014a668139f44ef",
+          "input_sha256": "7d26cc4bfbddb2c75d14c1ba4c1e6cc9eac8835a9d4dd3fb0204f0d4722f4680"
+        },
+        {
+          "origin": 6,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "solver": "standing",
+          "objective": 348.9996069814908,
+          "coarse_reserve": 35.0,
+          "output_sha256": "e5f4494f6dac97f12d0fec47b7b678cf37e553218e53dc03fbd0fa15313f627a",
+          "input_sha256": "c48cecc7146c8a4b2d0eee56473cbc95f6de389cb486d379ab8bf44b22a64fe3"
+        },
+        {
+          "origin": 6,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "solver": "solio_adapted",
+          "objective": 348.9996069814908,
+          "coarse_reserve": 35.0,
+          "output_sha256": "5973414edcc7b6f5b7f8b388001e84eb08e5ab6e1d1099e6fd25f3badc0b1719",
+          "input_sha256": "c48cecc7146c8a4b2d0eee56473cbc95f6de389cb486d379ab8bf44b22a64fe3"
+        },
+        {
+          "origin": 12,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "standing",
+          "objective": 356.4907794238492,
+          "coarse_reserve": 35.0,
+          "output_sha256": "3e1d8ecda3f69bc63cbae6cefae8c025c04b68b6fca9cf25bc1a2f9de6df1f14",
+          "input_sha256": "c5175b27b804f5f4b8213f7f95d3989fe3e88c75bf8a8873e7f7d3403a4586f1"
+        },
+        {
+          "origin": 12,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "solio_adapted",
+          "objective": 356.4907794238492,
+          "coarse_reserve": 35.0,
+          "output_sha256": "e21d976f26adcc325c5fa32f46c8b3a1ef8e2ed27bcf4af50f06a8cb469609b2",
+          "input_sha256": "c5175b27b804f5f4b8213f7f95d3989fe3e88c75bf8a8873e7f7d3403a4586f1"
+        },
+        {
+          "origin": 12,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "solver": "standing",
+          "objective": 356.4907794238492,
+          "coarse_reserve": 35.0,
+          "output_sha256": "97916e28f673f1c8ca8f115fe254a2bdf4950e9b96928e332dd30ba8f718595b",
+          "input_sha256": "646ad858d1a1d6c42bfd8927a7bf100252e9ed7c8193f6dd4fffa6ea6f12b09f"
+        },
+        {
+          "origin": 12,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "solver": "solio_adapted",
+          "objective": 356.4907794238492,
+          "coarse_reserve": 35.0,
+          "output_sha256": "ed4d4cff16d985c0df7bf8e30c398948b7431ac28ae2e7c91315520fdd496213",
+          "input_sha256": "646ad858d1a1d6c42bfd8927a7bf100252e9ed7c8193f6dd4fffa6ea6f12b09f"
+        },
+        {
+          "origin": 16,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "standing",
+          "objective": 379.824209493003,
+          "coarse_reserve": 25.0,
+          "output_sha256": "ec2138aec528690f37dbd0162061ab4faee84cd5fa9f75e526730e17dc54d27c",
+          "input_sha256": "592f8afef0e533e34c790110ecf2bc47251781354918ad145b49e8d3ce1dd9cd"
+        },
+        {
+          "origin": 16,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "solio_adapted",
+          "objective": 379.6754967593258,
+          "coarse_reserve": 25.0,
+          "output_sha256": "884c8bc9275514f5a0f3ff9af51c2e09d38bc20db4a50fb7c17d7817547b8bc7",
+          "input_sha256": "592f8afef0e533e34c790110ecf2bc47251781354918ad145b49e8d3ce1dd9cd"
+        },
+        {
+          "origin": 20,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "standing",
+          "objective": 360.5186053897042,
+          "coarse_reserve": 18.0,
+          "output_sha256": "8e12060db413b028a2911f93064412b7b6b63f5d78d510a3935ab9de9528fecb",
+          "input_sha256": "6292920e4c09bdfbeaefedd0f6fd7a88c323328caa868407705bb98d8a5885ea"
+        },
+        {
+          "origin": 20,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "solio_adapted",
+          "objective": 360.4634086778386,
+          "coarse_reserve": 18.0,
+          "output_sha256": "b1ec402c31870019490076b121f9a1b684a80b137964ad027f90dea3593b0d50",
+          "input_sha256": "6292920e4c09bdfbeaefedd0f6fd7a88c323328caa868407705bb98d8a5885ea"
+        },
+        {
+          "origin": 20,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "solver": "standing",
+          "objective": 348.1506445419547,
+          "coarse_reserve": 30.0,
+          "output_sha256": "353b9bf2270908e8db7013bc56ef8a6a8a2a57ca67d0fd6e57b926341dc3e275",
+          "input_sha256": "9c8e8dda75dbd8f2b3997dc2f233ecfb981ce41c90b761f2e7cd5674f42303ba"
+        },
+        {
+          "origin": 20,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "solver": "solio_adapted",
+          "objective": 348.1506445419547,
+          "coarse_reserve": 30.0,
+          "output_sha256": "8411d14b6670c2384c8efea9069dff04475fd86718d1450f913f48fbaa84702f",
+          "input_sha256": "9c8e8dda75dbd8f2b3997dc2f233ecfb981ce41c90b761f2e7cd5674f42303ba"
+        },
+        {
+          "origin": 24,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "standing",
+          "objective": 348.16245419469135,
+          "coarse_reserve": 8.0,
+          "output_sha256": "10308af670667d18a1138a08b6dccf8bcd90d36af0c1817a29d4b35730530111",
+          "input_sha256": "cc691891d0ebd99435882aa53c228a02fc16330a622ddd3306c616afb678fcd1"
+        },
+        {
+          "origin": 24,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "solio_adapted",
+          "objective": 348.16245419469135,
+          "coarse_reserve": 8.0,
+          "output_sha256": "acd1d5212644baa929f6b986c86761aaaed817d3bd47480206b5af3d7be7da87",
+          "input_sha256": "cc691891d0ebd99435882aa53c228a02fc16330a622ddd3306c616afb678fcd1"
+        },
+        {
+          "origin": 30,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "standing",
+          "objective": 349.54945781724587,
+          "coarse_reserve": 8.0,
+          "output_sha256": "d4d8c3d6fbb7498b0b097884aaa0c7d8bf03574569692b3a4fb92cb7e215a855",
+          "input_sha256": "fc5c88aeba69d87c7ad8976c56239f938ce8736462e8c14a4e95c95ba75449ca"
+        },
+        {
+          "origin": 30,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "solio_adapted",
+          "objective": 349.54945781724587,
+          "coarse_reserve": 8.0,
+          "output_sha256": "865d6402949d2cb20f8f450f9e9f9617dc9083c1d3354513bbc0861354ad66c2",
+          "input_sha256": "fc5c88aeba69d87c7ad8976c56239f938ce8736462e8c14a4e95c95ba75449ca"
+        },
+        {
+          "origin": 30,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "solver": "standing",
+          "objective": 336.5865334606668,
+          "coarse_reserve": 18.0,
+          "output_sha256": "648aec0562c81d2fb967401e90a07defcfe152b3975d68f678700bb3868d1ef7",
+          "input_sha256": "1fc04cd7342b4d1547bf0dbd6f96c597e4559ea9e9d15399dc11399c45b425cd"
+        },
+        {
+          "origin": 30,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "solver": "solio_adapted",
+          "objective": 336.5865334606668,
+          "coarse_reserve": 18.0,
+          "output_sha256": "03062a7aeb4ed9231871be9585ea340a68e78ab6c6f8c084accc8b19439bdf78",
+          "input_sha256": "1fc04cd7342b4d1547bf0dbd6f96c597e4559ea9e9d15399dc11399c45b425cd"
+        },
+        {
+          "origin": 38,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "standing",
+          "objective": 67.48508027155665,
+          "coarse_reserve": 0.0,
+          "output_sha256": "c4c052607894e4593c446ab9a02e35ef873a06399b509683fb27dc23a407c3a1",
+          "input_sha256": "973e5456ed607075f02836902f33984083ff27d6212a87152b2dc6242e54fc00"
+        },
+        {
+          "origin": 38,
+          "schedule_source": "standingH6_adaptive",
+          "solver": "solio_adapted",
+          "objective": 67.48508027155665,
+          "coarse_reserve": 0.0,
+          "output_sha256": "383a789a0b0f15175fed7d139a2bbba9b22dc17b8b3b4df9f2afc00b93589d61",
+          "input_sha256": "973e5456ed607075f02836902f33984083ff27d6212a87152b2dc6242e54fc00"
+        },
+        {
+          "origin": 38,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "solver": "standing",
+          "objective": 57.733560385053494,
+          "coarse_reserve": 0.0,
+          "output_sha256": "780fbe85ca903f90e02a969a7f4b6e79724fd9db118ee62379c429313aed7d09",
+          "input_sha256": "1cafb3ef2548a837adeb0f409011c0de64dfad1d3478f758e91b007d7fa33a93"
+        },
+        {
+          "origin": 38,
+          "schedule_source": "SolioAdaptedH6_sharedAdaptiveChips",
+          "solver": "solio_adapted",
+          "objective": 57.733560385053494,
+          "coarse_reserve": 0.0,
+          "output_sha256": "e4d6e00fa34da7afe5663cdd28a818950c99857a9d0fd48c1ea4c2006fb4f2ff",
+          "input_sha256": "1cafb3ef2548a837adeb0f409011c0de64dfad1d3478f758e91b007d7fa33a93"
+        }
+      ],
+      "independent_verifier_sha256": "12c526ccb443113558429bc364ab16430d8fca63d615f8c11083d25bfe344fc6",
+      "scope": "Independent stdlib ledger/common objective/future-token reserve/native admission; conditional post-result diagnostics, not realised-season gains or third-party certification"
+    },
+    "protocol_sha256": "b05176d838125f097219410fa4f72cf75e116688281042bcbb8c12e46070dc42",
+    "source_sha256": {
+      "src/adaptive_planner.py": "ebc0aaab7d7dfdf0cedb733affd8049c4026881882e579016626f68ec9027002",
+      "src/airsenal_planner.py": "d01d7e74f56d2de29aa69b8428a15fc25535110f81e4a27ab03a618f579fe99c",
+      "src/airsenal_solver_worker.py": "607c9593e94ec1f9749b611ed3de49aec33ee2f5208a33f509072e44501ae1d4",
+      "src/approved_horizon.py": "20d70a99487f47a42412a375b3dd0af6d6c2ebc65428a15e62101b4ed5a5c303",
+      "src/archived_reference.py": "da10d10c15fe1df4bf6489efb348fbf8d26ca7ba2da68786fd48fc271884d5fc",
+      "src/availability_evidence.py": "f937eabd44fdc5f9e2e9511f5831de145d24a8f8a5effc245a2cc98a3dca0e59",
+      "src/availability_history.py": "94113c592c9f5360d5841a966088cc2f5c2d01fbdc5d74d3249d1ad50298868f",
+      "src/availability_rebenchmark.py": "ec0eb7c6d876723e01e35508daea309c19129a7b52958979b9f136e9ac648aaf",
+      "src/benchmark_evaluation.py": "74e5877177cadf5c6aa590b1977b4717c2db0626f207f34576df41af8d14826f",
+      "src/benchmark_metrics.py": "8808abdaf64e520e896f3527822862aa38263eb6fb909448ab4b4e5c797ec1e0",
+      "src/benchmark_readiness.py": "3c5a1ec5b33f36f8c9f6b98d1ea7b92657e9f81cb5edf00cf06835a8a98e8475",
+      "src/build_features.py": "6ffbf8b358925d94e46394f283b2091842e724dd93969b1fd5da65d7328a4407",
+      "src/candidate_models.py": "b6d6940f86d77523184a8e48df5aefcaccedd66e65d9c839b1dc23f333e63352",
+      "src/conditional_forecaster.py": "a26540e34cf30d3e3c1e031979aff6e6dadf48b368a63ea1191e0b6c6d7fc635",
+      "src/conditional_integration.py": "e3ada0bb8b9ec3f85ab490b573bc349cd81af5a45f2a3af4385ff3ce42a37f06",
+      "src/conditional_reference.py": "91280c28e72fbb1f9a0a3e8863d920d5df927f38fd13daa222058cd9bc747072",
+      "src/deadline_provenance.py": "d3176b6f4e81ca5da7f8a2c6bd3aa7b8a110c10627ec29a56b1b405bdc4fc13e",
+      "src/decision_trial.py": "625f0a8903f28c0a477c0326894ab64aa974e0195e0c9cd86eab3d6a36de8fd0",
+      "src/download_history.py": "95d290a51a0591f3eddde78f35b7e173631cef557c3176cc4b8190fa2fb45612",
+      "src/expected_selection.py": "9ce910ca47ff98d1f4a5e2410033203b5ef528aef7a9fe1058cd56732fca2812",
+      "src/experiment_runner.py": "bce0fc5f229b5779e4f9222c6197394c8d59376273170b71704e2d3d0e6a3f1f",
+      "src/external_benchmark.py": "8ebd4d90504869c7ce4d69db7f5b8a37431a353abbc6b394707799d9ee580396",
+      "src/forecast.py": "0e53f6629ad6f15014d14fa4298b46cce9273dac9f0109b094655e692ec0553e",
+      "src/forecast_sensitivity.py": "63833f41b5dedfd901cea1777a48ebe39241ef52fe8f0f90430b60f43a81f0d1",
+      "src/forecaster_qualification.py": "08cf17acdfa94a6e7974d4375ab4b5c8b683a2302be256985b27994aba9e5f56",
+      "src/fpl_model.py": "e6981c3cf856524527a94101fc6bc38bda6db8e874afd52c028cfc00768166e0",
+      "src/fpl_predict_cli.py": "0c8513d0af456db0587d772df4ff5c9eb3d614a58a00c13db096c2fedfff47de",
+      "src/historical_references.py": "c1feb299b8f8396cd455ea4fbb9056c0c7ac2cdd1322260e5a31aba8fdcb8f8e",
+      "src/horizon_forecast.py": "8f9a5587d936192807824181ce8ad3cf8d8540e342ea4047fca1d22be57f29d2",
+      "src/incumbent_availability.py": "b6dcf20337aeb4b67b530f969327b700d1fbdcbd3779719f740f9159f6c924e7",
+      "src/incumbent_availability_points.py": "5e9491e3e46669521fd05d740f2e13b5d25d81a7a8a65f5d6bfb4eb6a73bcf1c",
+      "src/integration_study.py": "67d4c738ced8bbdf6bc9f30073775bc3419048020a56bcc596170261563ff2fd",
+      "src/lightweight_candidates.py": "d08598c3479d806b3991f2ba4ee59febffcd3c5d25298637f872cedf35a9c845",
+      "src/management_policies.py": "02333a4fd7d2107cecbfdec8490104b0965c72f45246324dd57613371c7bcb0c",
+      "src/model_registry.py": "eec50fcfc697d7faca70b4651ac92f9e9e2ea83aa2fed128d2df685af977d53b",
+      "src/native_development.py": "98f313245639306b00f6986db908fe19f8cda28bd2c933098db48758c3bf8f31",
+      "src/native_history.py": "6a8e4f025a07d6167daca60cf4432766dfe0e978205c2173649ad40789d0d428",
+      "src/native_planner.py": "e8e17c7086a7b499d46ed422d10fd96d64be7d93ab0583bd7d911c395a553fa7",
+      "src/native_reference.py": "7d09323887782b31a709c0b450ca41ff5f43714efa8ce08b4359a89a6196bae6",
+      "src/native_solver_worker.py": "be8962492946883c112d4cc0ff0916e9a04e31f23219c45b767b8da572bf8252",
+      "src/native_sources.py": "eca4773696299a8d89193a67c5c81450ca5fe32ad5568129ddaa5bc838462b11",
+      "src/native_transport.py": "63ec63247155f688efe56c08cd0a14af93f6a12638a9c96828edd15004626917",
+      "src/news_availability_probe.py": "939757598a4011808fdfa63dfe72da0020ada2637c6bd3f529ddabe198dc6de7",
+      "src/opening_baseline.py": "6037bbb05098526405a083cb136c6cc850fc5dd79575d3b9bbe0b29a3042da44",
+      "src/participation_audit.py": "98ae06a894fc9f5e2261bde8b77afcb58e4ab1fdc97510240052c1f2d6e0dd97",
+      "src/points_replay.py": "e2dd2bc919fdd761671277277c86fe78e76e55d3aa9d145bda6a0a7c6dde777a",
+      "src/preseason_reference.py": "02a0e99be149dff190ce6a887f438a39fd483df5ad8ffbe893378b9c2940b2f6",
+      "src/reference_pilot.py": "5048c11c87389d6f8ac36ddda99ff615ad3ebbc4b1ad52a8bc9b0e8fdf1e03cc",
+      "src/refresh.py": "16965b473dee4dba8c6465c4f10ec27c6e5538db56e6071ef5d9fa7185c93061",
+      "src/rolling_planner.py": "70f30795b152d200173e7a661af20bcf754d9d449ca1535a164259003176ed45",
+      "src/runtime.py": "a307c0756806ad080606d02bc3957919051bc57964171a6fccc9d57902dcf6e3",
+      "src/score_forecast.py": "f4d5d98a6169b1973a5ba2b19f572aa192d63bc73f723a3c4ced8fe110045dd4",
+      "src/search_improvements.py": "8bdff4ddf46872f2acbfd413bee6cd57a4bfd837d707f219100e0de81c422d1a",
+      "src/search_lightweight.py": "4fd3fb9de0a388e1e6dae56301f1d1644503809365506cee418c8766ceac5752",
+      "src/search_quality_targets.py": "543699d5a02afa4123bceda88208b8ffde7a98760ad62df25616abfa3e6bb5a3",
+      "src/season_benchmark.py": "2475d7e636765f276e14988c87545f015607d3afc83553764e7cb4e98d43e3ac",
+      "src/season_engine.py": "d9328b51ccb81fbfef937a92b7db31d489079f66802a12fdcdca307712589c59",
+      "src/season_external.py": "b8995c4851bf8afa07849bb087c7c809451892c3d7db66127ac49897ee61aa46",
+      "src/season_qualification.py": "257c1043eebba071aa015fa03f2c9e13a033823725c3080eb789ae5d07ccb014",
+      "src/season_sources.py": "bd325f9d0a78d1b10fa595eb3fb03b5179972f60f05ea2a56db3df659cfaefbb",
+      "src/selection_benchmark.py": "be83f5f73a2142fbc133b2b9b1b8d0b0dee8c93cd02fed4d7c09fe043c873e26",
+      "src/selection_inputs.py": "bc0790f6280b17231f898cb673d1b510efefddee1205614d83c867639664928b",
+      "src/train.py": "37e4223da5c183d8c00ea8015ffcd8bb1f3c538ffe5603a9df9a3ef44acb7f57",
+      "src/fpl_predict_resources/adaptive_chip_protocol.json": "d73f4f2866f3c7ac19d7aa8a9dac9a17d076e5e1dae8899ac93c5219da6ded17",
+      "src/fpl_predict_resources/airsenal_planner_protocol.json": "ca095a9069bb1668a5bcaad1b2951111bcc72a1d6c5d813bfc8a8412d9c6c92c",
+      "src/fpl_predict_resources/airsenal_solver_recipe.json": "45989030f89956a88dc040482cbe2dbd365c37b8a31a1db230a8edecb051795b",
+      "src/fpl_predict_resources/benchmark_evaluation_protocol.json": "d0801bd90b610e1c3fa82091ea2f1b4ec2cf34598aea909a1f9fac69101237d9",
+      "src/fpl_predict_resources/benchmark_protocol.json": "197350c685ece8957f108a082be0cf7acd54fe56342b077d5285bfed22792831",
+      "src/fpl_predict_resources/conditional_selection_protocol.json": "989d29f472bafd82977e80d37d9a3689933bc1b5a983ecd4cc5540c823829008",
+      "src/fpl_predict_resources/forecaster_qualification_protocol.json": "6af5d4710423a529f84cce98151a143d0627e410c2f154e170914285fbd115e7",
+      "src/fpl_predict_resources/full_season_protocol.json": "b471533177efd623bf885673f1b6031af83555e3da9f66af361ccea1fbd3eaf8",
+      "src/fpl_predict_resources/incumbent_availability_points_protocol.json": "acff2629a72c8f21d8421f454cc859ed022398a70c73ddcd4b4b5f473395bd03",
+      "src/fpl_predict_resources/incumbent_availability_protocol.json": "48aa3644f6ab7365bad6d514bd54ae767453fe7020ea8500488a61ecd7bb7af5",
+      "src/fpl_predict_resources/model_registry.json": "478726935fc2991e208224dc63bfc1bc975ec9a07d2045cdf22e579303f03aaa",
+      "src/fpl_predict_resources/native_planner_protocol.json": "98239fb5b2710c57fd0eaab368e822fa741d493bf205c8d2a3fe53f0b0b7211f",
+      "src/fpl_predict_resources/native_solver_recipe.json": "153d9f211caf22dbe201c16d11364b2c6ce1ae063886e00862aadc63d1d2a21f",
+      "src/fpl_predict_resources/news_probe_protocol.json": "f7b3167007a4d539fcb33cb40bc77766cdd9d0ed3de14b4840c68aaffabd8085",
+      "src/fpl_predict_resources/openfpl_cv1_recipe.json": "b9f76d83fc5b1fbc6eb2a075c351ad9e13e512417c9cad756bf5f8d5a093fd81",
+      "src/fpl_predict_resources/preseason_protocol.json": "5bab167031c535e6e7a86cfe55f140ff8d65e7476adbf8b813d4a65e4d931ae5",
+      "src/fpl_predict_resources/rolling_planner_protocol.json": "23833547a3dbf998f355d61adc683329aff0f5ff151ef73b004725b5d652b88b",
+      "src/fpl_predict_resources/season_benchmark_protocol.json": "efac0a3660a6bd4914353aaac7103f737dd16e005a010e3fb987a492898ca477",
+      "src/fpl_predict_resources/season_external_protocol.json": "6c0686129efe2f832f11a033003d32d0498a70de926349fd192c2a8cbf3975fb",
+      "src/fpl_predict_resources/season_policy_qualification_protocol.json": "4bd8896e09ac1149790aae8c10260c98888ccd658f53d75458858531094843c7",
+      "src/fpl_predict_resources/season_rules.json": "6ea6c723872f9818d65288c82c2c179e7e23a70588e8fec332e44920bbd49f6a",
+      "src/fpl_predict_resources/selection_protocol.json": "6f9b56c7d4129df7113046f40255eb87e8776f98c090d27a04174f22a51db788",
+      "src/fpl_predict_resources/solver_bound_protocol.json": "6a2969c86797cba83d0ea1cecff313a92332b44938528a602b6a8df86b103c27",
+      "tools/run_expected_points_study.py": "4b3f40471de3d2b246aac1167673b4ec394248abbd5f6649cb8ebbc0e77ea225",
+      "tools/run_season_robustness.py": "df2c9cc1260120d57352a20865025cd2a563d3c42442cfe4bc8fa757aae0d9b5",
+      "tools/prepare_season_2024.py": "0d812d48f41486ac75372cdd48ffc59c028cb5145e07238aefcae93e84e4476f",
+      "tools/evaluate_season_policies.py": "b798ef7c9f2ad8e38947c3b79c31c65ae126e0ec61002363317cd62bbdb593c2",
+      "docs/season_calendar_probe_protocol_2026-10-24.json": "b05176d838125f097219410fa4f72cf75e116688281042bcbb8c12e46070dc42",
+      "tools/probe_chip_calendars.py": "3418b2d43caf5078bb8fac3a6842829f15e798dfd099a2a7ef65c0ba186cff40"
+    },
+    "scope": "Post-result diagnosis of the previously observed153pointH6-Solio gap; no outcome/settlement reads during probe, no season-point or causal gain claim.",
+    "attempts": [
+      {
+        "index": 1,
+        "status": "failed_before_first_completed_case",
+        "reason": "JSON blocked chip-token lists were not normalised before reserve accounting",
+        "supervisor_record_sha256": "3f33afadd06e7e1424e95af60c4ee8778f98e3effd086f2c50ece61cb72ef185",
+        "seconds": 2.5414
+      },
+      {
+        "index": 2,
+        "status": "completed_uniform_full_matrix",
+        "seconds": 35.051325125,
+        "eligible_cases": 28,
+        "skipped_schedules": 2,
+        "note": "Same fixed protocol and matrix after diagnostic-only repair and regression tests; original failure retained."
+      }
+    ],
+    "interpretation": "12 of 14 same-schedule core pairs tie; two slightly favour standing H6. Admissible different Solio calendars have lower same-state proxy plus reserve at GW20/30/38. No isolated inner-solver or calendar replacement gain established; not causal realised-season attribution."
+  },
+  "preparation_attempts": [
+    {
+      "index": 1,
+      "status": "failed_before_fit",
+      "reason": "Correction audit included irrelevant manager metadata; retained and fixed before any policy scores"
+    },
+    {
+      "index": 2,
+      "status": "completed",
+      "seconds": 73.9896539580077,
+      "fit_seconds": 34.99088662513532
+    }
+  ],
+  "policy_promotion": false,
+  "model_promotion": false,
+  "limitations": [
+    "Two reused research outcome seasons, no reliable generalisation interval",
+    "Two source-only common opening cases per season, not representative independent managers/seasons or a new own-GW1builder test",
+    "2024/25 common no-AMrestricted profile differs from currentchipinventory and excludes originalAMcapability",
+    "Legacy purchase eligibility proxy/date-capture/publication assumptions in separate source inventory",
+    "Mean/downside research criteria do not retroactively pass original zero-negative gate or automatically change defaults",
+    "External Solio core adaptation shares forecast/candidate/outerchip/canonicalselection; not original complete manager",
+    "Bounded time-limited MILPs and uncalibrated coarse reserve, no global chip/season optimality bound",
+    "Runtime package versions differ from repository pins; observed runtime disclosed",
+    "Fullseason historical points are realised noisy outcomes; component accounting not causal recoverable gains",
+    "Calendar announcement replay verifies GWassignments; cached futurekickoff times may lag announcements and are not predictor features in the origin-frozen model",
+    "No new Dastan/OpenFPL forecast fitting/comparison; previous separate forecast studies retain own scopes"
+  ]
+}

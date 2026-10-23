@@ -1,5 +1,7 @@
 # Season-management robustness and decision findings
 
+This records the earlier six-path release. The [subsequent two-season study](EXPECTED_SEASON_POINTS_RESULTS_2026-10-24.md) completes a separately declared restricted 2024/25 comparison and new mean/downside assessment. All earlier results and source-readiness findings below remain dated evidence.
+
 24 October 2026. Six additional continuous 38-gameweek paths test two new opening squads. Every policy uses the same opening squad, forecasts, budget and chip rights within each comparison. Points are net of transfer hits. The [protocol](season_robustness_protocol_2026-10-24.json) was frozen before these cases were scored, but the 2025/26 outcomes had already been studied. These are starting-state sensitivity tests, not independent seasons or an untouched holdout.
 
 Interpretation clarification: the failed gate tests whether H6 loses **either**

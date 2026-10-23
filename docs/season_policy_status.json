@@ -8,8 +8,8 @@
   "policies": [
     {
       "policy": "standingH6_adaptive",
-      "status": "historical_experimental_evidence_mixed",
-      "criteria": "Complete integrity/cost audit and predeclared positive mean in each opening, no negative paired repetition versus H1.",
+      "status": "historical_experimental_mean_downside_supported",
+      "criteria": "Positive equal-season H6minusH1 mean; season-average downside<=19points and single-opening downside<=38points; independently verified integrity, no automatic production approval.",
       "points": [
         {
           "opening": "own",
@@ -32,9 +32,11 @@
       ],
       "production_approved": false,
       "historical_evaluation_seasons": [
+        "2024-25",
         "2025-26"
       ],
       "rule_profiles": [
+        "2024-25",
         "2025-26",
         "2026-27"
       ],
@@ -49,7 +51,30 @@
         ],
         "consistency_gate_pass": false,
         "interpretation": "Retain original20path qualification as dated scope; further starting-state evidence mixed, no production promotion."
-      }
+      },
+      "original_qualification_criteria": "Complete integrity/cost audit and predeclared positive mean in each opening, no negative paired repetition versus H1.",
+      "criteria_source": "season_expected_points_protocol_2026-10-24.json",
+      "expected_points_followup": {
+        "date": "2026-10-24",
+        "source": "season_expected_points_results_2026-10-24.json",
+        "primary": "H6minusH1 equal-season mean and declared material-downside criteria",
+        "equal_season_mean": 129.5,
+        "season_means": {
+          "2024-25": 185.5,
+          "2025-26": 73.5
+        },
+        "paired_differences": [
+          127.0,
+          244.0,
+          147.0,
+          0.0
+        ],
+        "research_support": true,
+        "external_mean": -25.75,
+        "original_zero_negative_gate_unchanged": true,
+        "production_approved": false
+      },
+      "additional_scope": "2024/25restricted common no-AM; expected-points framework support is separate from original consistency qualification."
     },
     {
       "policy": "SolioAdaptedH6_sharedAdaptiveChips",
@@ -77,12 +102,15 @@
       ],
       "production_approved": false,
       "historical_evaluation_seasons": [
+        "2024-25",
         "2025-26"
       ],
       "rule_profiles": [
+        "2024-25",
         "2025-26"
       ],
-      "current_season_scope": "Native worker admits only its audited 2025/26 profile; another season requires separate adaptation and admission."
+      "current_season_scope": "Native worker admits audited 2025/26 and explicitly restricted 2024/25 no-Assistant-Manager profiles; no 2026/27 native admission or original full-manager claim.",
+      "latest_followup_evidence": "season_expected_points_results_2026-10-24.json"
     },
     {
       "policy": "AIrsenalAdaptedH6_sharedAdaptiveChips",
@@ -119,5 +147,7 @@
     }
   ],
   "latest_followup": "2026-10-24",
-  "latest_followup_evidence": "season_robustness_results_2026-10-24.json"
+  "latest_followup_evidence": "season_expected_points_results_2026-10-24.json",
+  "original_qualification_evidence": "season_policy_qualification_results.json",
+  "latest_followup_numerical_source": "353c28679d569a1c4d5e1fc82c8e76e57f7c3c96"
 }

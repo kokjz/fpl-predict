@@ -1,11 +1,13 @@
 # Adaptive season management
 
-Current evidence: the [24 October follow-up](SEASON_ROBUSTNESS_RESULTS_2026-10-24.md)
-reports H6-H1 differences of +110, -6 points on two additional source-only
-openings. Its declared consistency gate fails. Preserve the original matrix's
-historical qualification, but treat overall H6 evidence as mixed and the policy
-as experimental/shadow support; no forecast or production-default promotion.
-Read the [current scope/status](season_policy_status.json) before use.
+Current evidence: the [two-season study](EXPECTED_SEASON_POINTS_RESULTS_2026-10-24.md)
+reports an equal-season H6-minus-H1 mean of +129.50 net points across
+four common opening cases. Its declared mean/material-downside research criterion
+passes. The earlier zero-negative consistency gate remains failed;
+that narrow failure does not establish H6 inferiority. Both seasons already had
+research exposure, and 2024/25 explicitly excludes Assistant Manager. H6 remains
+experimental support: no forecast or production-default promotion. Read the
+[current scope/status](season_policy_status.json) and [framework](expected_season_points.md).
 
 The objective is net FPL points across all 38 gameweeks, including transfers and
 chips. Forecast errors, fixed-owned-XI and weekly reset results remain component
@@ -27,7 +29,10 @@ an extra transfer. The2025GW16topup applies before that deadline's policy call.
 
 [Versioned rules](../src/fpl_predict_resources/season_rules.json) cover2025/26 and
 2026/27, including two chip sets, expiry and consecutiveFreeHit restrictions.
-Other seasons/specialchip variants and latejoining require separate profiles.
+An additional explicitly restricted 2024/25 no-Assistant-Manager profile uses
+annual Free Hit/Bench Boost/Triple Captain and no AFCON top-up; see the
+[source admission](expected_season_points.md). Other seasons, special chip
+variants and late joining require separately audited profiles.
 Inputs use final official player-GW points, with DGWs summed; this is not a
 reconstruction of uncertain assist/BPS calculations. Club transfers may leave an
 untouched squad above the club limit; a subsequent FPL transfer restores it.

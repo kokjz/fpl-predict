@@ -1,5 +1,7 @@
 # Historical robustness and decision diagnostics
 
+Latest follow-up: [expected season-points results](EXPECTED_SEASON_POINTS_RESULTS_2026-10-24.md) and [workflow](expected_season_points.md) add a restricted second season and a separate mean/downside criterion. The original six-path protocol, failed consistency gate and results remain intact. Use the original research tag for exact historical source reproduction; merged code and new research support do not approve defaults.
+
 This package examines persistent season-management policies, not independent
 weekly resets. Its [fixed protocol](season_robustness_protocol_2026-10-24.json)
 was declared before scoring the new common-opening cases. One reused outcome

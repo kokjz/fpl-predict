@@ -983,6 +983,15 @@
     "2024/25 chip-capability comparison excludes Assistant Manager for every policy",
     "Article date/revision availability is not independently certified; only reviewed dated fixture facts are replayed, never article player/outcome statistics",
     "Mutable article4237390/4273145 not admitted at misleading earlier displayed publication dates; separate datedFAreports support cup clashes",
-    "Pending cup-clash assignments are unknown until dated rescheduling; zero origin fixtures is not a guaranteed actual blank"
-  ]
+    "Pending cup-clash assignments are unknown until dated rescheduling; zero origin fixtures is not a guaranteed actual blank",
+    "Fixture announcement replay verifies GWassignments; cached futurekickoff times may lag the announcements and are not predictor features of this origin-frozen reference."
+  ],
+  "supplementary_official_fixture_document": {
+    "url": "https://resources.premierleague.pulselive.com/premierleague/document/2025/04/03/003bd51e-e0fe-4c25-950e-2fb3cb633139/Fixture-Amendments-22-Season-2024-25-2-.pdf",
+    "sha256": "d95b733b9f3044e58ba5395a2c0e79e6252828390c399810851be2e8c73d8ada",
+    "bytes": 173123,
+    "retrieved_at": "2026-10-23T22:03:04.985290+00:00",
+    "release_date_claim": "2025-04-03",
+    "corroboration": "PDF confirms22AprilCityVilla,23AprilArsenalPalace,1MayForestBrentford; matches unchanged event33/33/34 replay. Later supplementary verification, no forecast/input changes."
+  }
 }
