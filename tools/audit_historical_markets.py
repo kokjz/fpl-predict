@@ -25,7 +25,7 @@ def audit(manifest,root):
     for e in sorted(entries,key=lambda p:p['gameweek']):
         path=(root/e['file']).resolve()
         if not path.is_relative_to(root):raise ValueError('Receipt path escapes root')
-        packed=path.read_bytes()
+        with path.open('rb') as stream:packed=stream.read(512*1024+1)
         if len(packed)>512*1024 or hashlib.sha256(packed).hexdigest()!=e['compressed_sha256']:
             raise ValueError('Compressed source mismatch or oversized')
         decoder=lzma.LZMADecompressor();raw=decoder.decompress(packed,max_length=4*1024**2+1)
@@ -36,6 +36,7 @@ def audit(manifest,root):
         if stamp(e['captured_at'])>=stamp(e['deadline']):raise ValueError('Capture not before deadline')
         events=[x for x in data['events'] if x['id']==g]
         if len(events)!=1 or stamp(events[0]['deadline_time'])!=stamp(e['deadline']):raise ValueError('Deadline differs')
+        if any(type(p['element_type']) is not int or p['element_type'] not in [1,2,3,4,5] for p in data['elements']):raise ValueError('Invalid player/manager type')
         players=[p for p in data['elements'] if p['element_type'] in [1,2,3,4]]
         if not players or len({p['id'] for p in players})!=len(players):raise ValueError('Empty or duplicate market')
         if any(type(p[k]) is not int or p[k]<1 for p in players for k in ['id','now_cost','team']):raise ValueError('Invalid player/club/price integer')

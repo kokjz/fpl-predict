@@ -25,7 +25,7 @@ def test_known_capture_receipts_do_not_admit_whole_replay(tmp_path):
     assert out['rows'][0]['capture_age_hours']==5.5
 
 
-@pytest.mark.parametrize('kind',['late','missing','duplicate','escape','hash','price','deadline'])
+@pytest.mark.parametrize('kind',['late','missing','duplicate','escape','hash','price','deadline','oversized','position'])
 def test_historical_admission_rejects_tamper(tmp_path,kind):
     m=module();d=setup(tmp_path);e=d['market_origins'][0]
     if kind=='late':e['captured_at']=e['deadline']
@@ -33,9 +33,11 @@ def test_historical_admission_rejects_tamper(tmp_path,kind):
     elif kind=='duplicate':d['market_origins'][1]['gameweek']=1
     elif kind=='escape':e['file']='../outside.xz'
     elif kind=='hash':e['sha256']='0'*64
+    elif kind=='oversized':(tmp_path/e['file']).write_bytes(b'X'*(512*1024+1))
     else:
         p=tmp_path/e['file'];raw=json.loads(lzma.decompress(p.read_bytes()))
         if kind=='price':raw['elements'][0]['now_cost']=True
+        elif kind=='position':raw['elements'][0]['element_type']=True
         else:raw['events'][0]['deadline_time']='2024-08-17T17:30Z'
         data=json.dumps(raw).encode();packed=lzma.compress(data);p.write_bytes(packed);e['sha256']=hashlib.sha256(data).hexdigest();e['compressed_sha256']=hashlib.sha256(packed).hexdigest()
     with pytest.raises((ValueError,FileNotFoundError)):m.audit(d,tmp_path)
