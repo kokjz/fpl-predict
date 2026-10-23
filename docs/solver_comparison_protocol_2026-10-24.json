@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24 Asia/Singapore",
+  "scope": "Post-result numerical diagnosis after all six new opening season paths completed; no new outcome-untouched test or policy promotion. No future outcome/settlement files read.",
+  "reference_seeds": [
+    20261024,
+    20261025
+  ],
+  "origin_gameweeks": [
+    1,
+    6,
+    16,
+    30,
+    38
+  ],
+  "solvers": [
+    "standing",
+    "solio_adapted"
+  ],
+  "inner_seconds": 2.0,
+  "horizon": 6,
+  "cases": 20,
+  "shared": "Exact same frozen H6state/market/forecasts/chip schedule/opening/candidate procedure/objective for each solver pair. Original retained plan is an additional feasible reference, not a policy choice after outcomes.",
+  "resources": {
+    "threads": 2,
+    "seconds": 120,
+    "sampled_rss_mib": 4096,
+    "project_mib": 2048,
+    "growth_mib": 256,
+    "min_free_mib": 5120
+  },
+  "interpretation": "Compare feasibility/objective/conditional bounds and retained-reference membership, no realised points. Complementarity or selected objective advantage alone does not prove season gains or permit a production switch. Strong unmet feasible-objective evidence may motivate one separately predeclared candidate; otherwise stop without tuning."
+}

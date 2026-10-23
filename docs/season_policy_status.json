@@ -8,7 +8,7 @@
   "policies": [
     {
       "policy": "standingH6_adaptive",
-      "status": "historical_experimental_qualified",
+      "status": "historical_experimental_evidence_mixed",
       "criteria": "Complete integrity/cost audit and predeclared positive mean in each opening, no negative paired repetition versus H1.",
       "points": [
         {
@@ -38,7 +38,18 @@
         "2025-26",
         "2026-27"
       ],
-      "current_season_scope": "Standing planner has 2026/27 mechanical integration, not live-season accuracy evidence."
+      "current_season_scope": "Standing planner has 2026/27 mechanical integration, not live-season accuracy evidence.",
+      "original_qualification_status": "historical_experimental_qualified",
+      "followup": {
+        "date": "2026-10-24",
+        "source": "season_robustness_results_2026-10-24.json",
+        "paired_H6_minus_H1": [
+          110.0,
+          -6.0
+        ],
+        "consistency_gate_pass": false,
+        "interpretation": "Retain original20path qualification as dated scope; further starting-state evidence mixed, no production promotion."
+      }
     },
     {
       "policy": "SolioAdaptedH6_sharedAdaptiveChips",
@@ -106,5 +117,7 @@
       ],
       "current_season_scope": "Native worker admits only its audited 2025/26 profile; another season requires separate adaptation and admission."
     }
-  ]
+  ],
+  "latest_followup": "2026-10-24",
+  "latest_followup_evidence": "season_robustness_results_2026-10-24.json"
 }

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24 Asia/Singapore",
+  "scope": "Reused2025/26 outcome research; two additional source-only common openings test starting-state sensitivity, not independent seasons/untouched holdout",
+  "source_release": "26861106766be9c42f132d433ac14de2b257a8fe",
+  "historical_season_candidate": "2024-25",
+  "admission_requirements": [
+    "38predeadline market/roster/price snapshots with provenance",
+    "38origin schedules-as-known and completed histories",
+    "all evaluator player-GW points/minutes/cards including confirmed blanks",
+    "audited season rules/chip resources and native compatibility",
+    "strict prior-only forecasting recipe; no backcast deployment artifact"
+  ],
+  "fallback": "If another complete season is not admissible, publish exact gaps and execute the declared additional-opening tests on existing admitted2025/26; never fabricate source completeness or re-score missing events",
+  "diagnostics": {
+    "historical_paths": "All20frozenPR37paths; forecast-track all16PR34paths separately; no pooling",
+    "views": [
+      "forecast errors by minutes group and season third",
+      "fixed-owned XI/captain hindsight headroom, unattainable diagnostic only",
+      "chip scoring components and timing, not causal attribution",
+      "hit/turnover/cash/FT patterns",
+      "within-origin provisional action revisions, not forecast truth"
+    ],
+    "news": "GW7privatefrozen evidence only; no user data in public outputs",
+    "challenger_rule": "After diagnosis at most one mechanistically justified change, separate frozen development/audit protocol before fit/solver runs. No forced model replacement, no repeat unchanged failed conditional/expected-selector trials."
+  },
+  "robustness": {
+    "opening_seeds": [
+      20261024,
+      20261025
+    ],
+    "construction": "Python random.Random(seed); sorted buyableGW1IDs byposition, sample2GK5DEF5MID3FWD; accept first legal<=3club roster costing900..1000tenths, atmost100000attempts. No forecasts/outcomes used. Same opening for all policies.",
+    "policies": [
+      "standingH1_adaptive",
+      "standingH6_adaptive",
+      "SolioAdaptedH6_sharedAdaptiveChips"
+    ],
+    "total_paths": 6,
+    "order": "seed ascending then policy order",
+    "repetitions": 1,
+    "forecast": "frozen standing_prior5 fromPR37; all38origins",
+    "comparison": "H6-H1 and H6-Solio per opening; report alongside all previous outcomes; no after-results gate waiver or default promotion"
+  },
+  "resources": {
+    "threads": 2,
+    "per_path_seconds": 900,
+    "sampled_rss_mib": 4096,
+    "outer_seconds": 15,
+    "inner_seconds": 2,
+    "max_trials": 12,
+    "project_mib": 2048,
+    "growth_mib": 256,
+    "min_free_mib": 5120
+  },
+  "gates": {
+    "integrity": "all complete legal38GWpaths, input/source/runtime hashes, independent ledger and scoring, native completed replies admitted, all failures retained",
+    "research_consistency": "H6-H1 differences nonnegative in both new openings, mean positive; external comparison descriptive",
+    "promotion": "No production promotion from reused2025year alone; forecaster registry unchanged unless separate prior gates met"
+  },
+  "sources": [
+    {
+      "url": "https://www.premierleague.com/en/news/4058895",
+      "checked": "2026-10-24",
+      "finding": "2024/25 FT cap5, banking through WC/FH; version season rules"
+    },
+    {
+      "url": "https://www.premierleague.com/ar/news/4192707",
+      "checked": "2026-10-24",
+      "finding": "2024/25 AssistantManager3GWchip; existing2025/26profile cannot silently stand in"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "checked": "2026-10-24",
+      "finding": "Chronological evaluation, avoid tuning inspected test sets"
+    }
+  ]
+}
