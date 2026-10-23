@@ -1,0 +1,988 @@
+{
+  "schema_version": 1,
+  "season": "2024-25",
+  "policy_scope": "Restricted common no-Assistant-Manager research;2WC,annualFH/BB/TC,5FT,noAFCONtopup,noDCscoring",
+  "origins": [
+    {
+      "gameweek": 1,
+      "captured_at": "2024-08-16T12:38:00+00:00",
+      "deadline": "2024-08-16T17:30:00Z",
+      "listed_footballers": 610,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/8/16/1238.json.xz",
+      "compressed_sha256": "039f3d6584e510aee89802dbf91ec0be0ccc69ee412a47e2104ec553d7037d51",
+      "content_sha256": "2a883793c70f511d85756b8d8a0faf48fc027436fc59eda33a968e662406b133",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/c43f0d83d2b9d769c8dadb64959c16b01713cfaa/data/2024-25/fixtures.csv",
+      "calendar_revision": "c43f0d83d2b9d769c8dadb64959c16b01713cfaa",
+      "calendar_publication_claim": "2024-08-15T17:16:49Z",
+      "calendar_sha256": "a7179a1a633dd1cd7af933bf79f0fefca76f2357b209c1e7c06c8124cc8a7a1f",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 610
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 2,
+      "captured_at": "2024-08-23T18:26:00+00:00",
+      "deadline": "2024-08-24T10:00:00Z",
+      "listed_footballers": 625,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/8/23/1826.json.xz",
+      "compressed_sha256": "a57f8de963c6e1734198efe8e961b14d68b95b66bc66a37d7e449fc0ccec1c39",
+      "content_sha256": "868763d7e538e15eccaf9c3adc66fbbe4837a68e3c394e9b4f74d2cb4a5c3ab0",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/403e10b7b661252698745d1101d1086cec31e0f1/data/2024-25/fixtures.csv",
+      "calendar_revision": "403e10b7b661252698745d1101d1086cec31e0f1",
+      "calendar_publication_claim": "2024-08-20T08:46:13Z",
+      "calendar_sha256": "fbd4488202c51e8e274be15e106a5aba44631282a9e08888eff1502c612d1deb",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 625
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 3,
+      "captured_at": "2024-08-30T18:28:00+00:00",
+      "deadline": "2024-08-31T10:00:00Z",
+      "listed_footballers": 637,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/8/30/1828.json.xz",
+      "compressed_sha256": "a30247d50887acb838583381f47fd0bbd555bfdfd8c7597b9eef635cb147c007",
+      "content_sha256": "d3941ae9ebf7ce45c99ac29de3ea1dab997faf1f3d872ca5558a93fb77a7a74a",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/ec2a907dae6e97f76406c742a15e56653f3d170e/data/2024-25/fixtures.csv",
+      "calendar_revision": "ec2a907dae6e97f76406c742a15e56653f3d170e",
+      "calendar_publication_claim": "2024-08-26T08:10:14Z",
+      "calendar_sha256": "2af550a76a801398f5756d4b8a40ce8270b98b609fa64197d0bddb624b599c13",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 637
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 4,
+      "captured_at": "2024-09-13T18:28:00+00:00",
+      "deadline": "2024-09-14T10:00:00Z",
+      "listed_footballers": 655,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/9/13/1828.json.xz",
+      "compressed_sha256": "6be04d823e421d886159c34b2bd4a2f47f6067dc14c8ecbb5df765bf2b81ade1",
+      "content_sha256": "755f84cf988469c75fe5e09963861f81c002c48fcc84c53d22cf1e207b564f18",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/9d4b5d89af45f85be8c9215f713000072bdbe3dd/data/2024-25/fixtures.csv",
+      "calendar_revision": "9d4b5d89af45f85be8c9215f713000072bdbe3dd",
+      "calendar_publication_claim": "2024-09-06T13:50:27Z",
+      "calendar_sha256": "66287c32f833fdbc5df0c9b8c799481dd8f922d3f6e39fe1ab875de3086d44f7",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 655
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 5,
+      "captured_at": "2024-09-20T18:29:00+00:00",
+      "deadline": "2024-09-21T10:00:00Z",
+      "listed_footballers": 659,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/9/20/1829.json.xz",
+      "compressed_sha256": "e2584dacce6256e0641c8999a187e4c6cd0a5c14a21dfb47c85b54e79b387e4f",
+      "content_sha256": "ccd6f9cf32e665d618dc995882fa68c06b0125f4a30ae9af98872d4a63f688a3",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/3c76203d2997a89f0735d2591e76e7c849a2f491/data/2024-25/fixtures.csv",
+      "calendar_revision": "3c76203d2997a89f0735d2591e76e7c849a2f491",
+      "calendar_publication_claim": "2024-09-16T13:52:04Z",
+      "calendar_sha256": "fe2e470622abc671dd53aba48a9f8018447b30a3007f74fc3d846824d258bbe4",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 659
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 6,
+      "captured_at": "2024-09-27T18:30:00+00:00",
+      "deadline": "2024-09-28T10:00:00Z",
+      "listed_footballers": 661,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/9/27/1830.json.xz",
+      "compressed_sha256": "334ea22bc92a54ff82ea51b537916f66f15953e3051365310923591d295a9d8b",
+      "content_sha256": "11136e93de4cf9f01c33d9c7247124eb143d0d287c2e0185aa7946d074d9ffdf",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/f42ed38d279afc705448ebc2b89e48838a0fdfba/data/2024-25/fixtures.csv",
+      "calendar_revision": "f42ed38d279afc705448ebc2b89e48838a0fdfba",
+      "calendar_publication_claim": "2024-09-23T21:15:45Z",
+      "calendar_sha256": "ecc0e4ca6acd938e8dd359039f934fe1378bd23776cdd84b09e2e1f99ebe0a23",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 661
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 7,
+      "captured_at": "2024-10-04T18:29:00+00:00",
+      "deadline": "2024-10-05T10:00:00Z",
+      "listed_footballers": 664,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/10/4/1829.json.xz",
+      "compressed_sha256": "f49a68626da893c270459604dea5c9199c5ee0db1ef8c7b92d24d4d7844a59ed",
+      "content_sha256": "2e16672b61d8e0302250abf98cb40d8f1765e727e271ab01aeaba3eae3fe61be",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/57caf7e165ba47b48de9f307785aac79cb03b8af/data/2024-25/fixtures.csv",
+      "calendar_revision": "57caf7e165ba47b48de9f307785aac79cb03b8af",
+      "calendar_publication_claim": "2024-10-01T08:56:28Z",
+      "calendar_sha256": "a403444f3e58545319b0abeaeccd32617a7ca33799c015353264eb0c9d1141b5",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 664
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 8,
+      "captured_at": "2024-10-18T18:30:00+00:00",
+      "deadline": "2024-10-19T10:00:00Z",
+      "listed_footballers": 666,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/10/18/1830.json.xz",
+      "compressed_sha256": "31b1513e53432cada15501cdc24156f337d013abd39fa7d9bb6b9b192be2c15d",
+      "content_sha256": "c796da0c1fcda558f6f01b5eb2bc56bdaa528f1398e0173af129d8d19a95b520",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d0f7342e2f5f7176d507badb10ee2db76f564409/data/2024-25/fixtures.csv",
+      "calendar_revision": "d0f7342e2f5f7176d507badb10ee2db76f564409",
+      "calendar_publication_claim": "2024-10-07T09:02:25Z",
+      "calendar_sha256": "41c5641890d15f164308ca40d37a0646d7fcf919f8fdf65458447fd61017f862",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 666
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 9,
+      "captured_at": "2024-10-25T12:43:00+00:00",
+      "deadline": "2024-10-25T17:30:00Z",
+      "listed_footballers": 667,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/10/25/1243.json.xz",
+      "compressed_sha256": "a67508d5bce013ed1c616829140e588ef7bd4400a49a0f96f2c9d99225e7666a",
+      "content_sha256": "5a071fa26bdfa68912f462d044f690d27f3d06b588ba024777540b315519ff54",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/80b1a9fd9efc30dab63fb4aba8afe3f1c6273e75/data/2024-25/fixtures.csv",
+      "calendar_revision": "80b1a9fd9efc30dab63fb4aba8afe3f1c6273e75",
+      "calendar_publication_claim": "2024-10-24T08:59:52Z",
+      "calendar_sha256": "cc5491a01430e18533409d78e79ee709dbb1dd696f8907e4f4bedc92a921b9cd",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 667
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 10,
+      "captured_at": "2024-11-01T18:30:00+00:00",
+      "deadline": "2024-11-02T11:00:00Z",
+      "listed_footballers": 670,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/11/1/1830.json.xz",
+      "compressed_sha256": "0fcbfbea616e9fe551bd1567ed814a8bc45a304a7c9c4b5164b8db1c48ca52c8",
+      "content_sha256": "7fc0d3c431b428dc03f440037ef4636e0653838134a7515dd31cc2d3e68fd2bf",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/2840028eaea97d5255e96620ad2e06942cc8fe90/data/2024-25/fixtures.csv",
+      "calendar_revision": "2840028eaea97d5255e96620ad2e06942cc8fe90",
+      "calendar_publication_claim": "2024-10-28T14:54:39Z",
+      "calendar_sha256": "be8fab2171fa14a65cd9aa51c3173e31a2cdb83b90d6a984f9e808e181889976",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 670
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 11,
+      "captured_at": "2024-11-09T12:38:00+00:00",
+      "deadline": "2024-11-09T13:30:00Z",
+      "listed_footballers": 674,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/11/9/1238.json.xz",
+      "compressed_sha256": "324fabd726b905cde3a42dd91ea08eb57b9ec1c93b5bbd55bb7f5ac338742ec0",
+      "content_sha256": "b6fbf825932cf5409769fe757807fd345fd89a16017ceac9df9ac10935109329",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d7a9ea76d98e7453bdca8893224da894b9b55e28/data/2024-25/fixtures.csv",
+      "calendar_revision": "d7a9ea76d98e7453bdca8893224da894b9b55e28",
+      "calendar_publication_claim": "2024-11-08T17:52:02Z",
+      "calendar_sha256": "7f8670a6767521afb0242fcd3bfbdbc50ba03d0ccf484763ac84143812a41644",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 674
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 12,
+      "captured_at": "2024-11-22T18:31:00+00:00",
+      "deadline": "2024-11-23T11:00:00Z",
+      "listed_footballers": 678,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/11/22/1831.json.xz",
+      "compressed_sha256": "96cbf6b970e573fea92651d6db17b83c2f397ce5a314cb91568e276ce0d3ff78",
+      "content_sha256": "1be5737870fcbf8c55132f9bcb43b920b61bda7721e8d3f9d08923dfe54ef5f4",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/e3135daf0fcb706cc41f237e5c691517bd3432c1/data/2024-25/fixtures.csv",
+      "calendar_revision": "e3135daf0fcb706cc41f237e5c691517bd3432c1",
+      "calendar_publication_claim": "2024-11-20T00:44:27Z",
+      "calendar_sha256": "2dfa2617130c428d647ddf9549b071a9777dba20b1b2bfe94123652847a6eaf3",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 678
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 13,
+      "captured_at": "2024-11-29T12:47:00+00:00",
+      "deadline": "2024-11-29T18:30:00Z",
+      "listed_footballers": 684,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/11/29/1247.json.xz",
+      "compressed_sha256": "ac662fba3b0b0b87b57884beeb4bdacc1cc4990ac5854e035002ee88c2b031b3",
+      "content_sha256": "cfedbc1b71c702062c85377a6bf4388db3b0e41da69ee87d10fc7642ad7e7d40",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/27c87bd13ef72dd8ed2ad6584a0d8d20f070f559/data/2024-25/fixtures.csv",
+      "calendar_revision": "27c87bd13ef72dd8ed2ad6584a0d8d20f070f559",
+      "calendar_publication_claim": "2024-11-29T03:47:49Z",
+      "calendar_sha256": "e4dd6dcbc7a3e7e9e9cf25038862a3fe40049dc1c9bffdc3bb9eb759a5d50369",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 684
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 14,
+      "captured_at": "2024-12-03T12:48:00+00:00",
+      "deadline": "2024-12-03T18:00:00Z",
+      "listed_footballers": 690,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/12/3/1248.json.xz",
+      "compressed_sha256": "47a84c44b18975879e8fd5c62bd0faa844618ce3f12b176b2aae69171e64a763",
+      "content_sha256": "dce7b87ecc738596c297a1310c33e190d795f5118ecad538c72c866b38496174",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/bc76591d36196c0ef59b34db42d0167867686298/data/2024-25/fixtures.csv",
+      "calendar_revision": "bc76591d36196c0ef59b34db42d0167867686298",
+      "calendar_publication_claim": "2024-12-02T03:53:51Z",
+      "calendar_sha256": "d6e2e02a6fa0cf03427abd8d54ace2e4ca90ad4a337e1835e53a15c574a7d15e",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 690
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 15,
+      "captured_at": "2024-12-06T18:32:00+00:00",
+      "deadline": "2024-12-07T11:00:00Z",
+      "listed_footballers": 693,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/12/6/1832.json.xz",
+      "compressed_sha256": "6757bff8eab09ef2ddbb8142bf667147370a908ed5856ac4861a4c80bd2ae795",
+      "content_sha256": "c1a7b5a09185432042c3576ff5e8436c6913e1f6fd790f81c8c331afd45c9913",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/bc76591d36196c0ef59b34db42d0167867686298/data/2024-25/fixtures.csv",
+      "calendar_revision": "bc76591d36196c0ef59b34db42d0167867686298",
+      "calendar_publication_claim": "2024-12-02T03:53:51Z",
+      "calendar_sha256": "d6e2e02a6fa0cf03427abd8d54ace2e4ca90ad4a337e1835e53a15c574a7d15e",
+      "eligibility_sources": {
+        "legacy_status_proxy_excluding_u_n": 693
+      },
+      "ordinary_chip_metadata_verified": false,
+      "forecast_only_fixtures": [
+        144
+      ],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 16,
+      "captured_at": "2024-12-14T12:43:00+00:00",
+      "deadline": "2024-12-14T13:30:00Z",
+      "listed_footballers": 693,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/12/14/1243.json.xz",
+      "compressed_sha256": "b6807223f57d60f28dfe848d4cae3f22eef9961bb4f1df5c746b0195fbfdd3ef",
+      "content_sha256": "ecbfa8d1c7dfa5492fae0faa88fa40b5c52912cbf9a04435b27ef7fd42a0eef6",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/dfdae0e489f8520228a4ffeae11fc70d6aef7804/data/2024-25/fixtures.csv",
+      "calendar_revision": "dfdae0e489f8520228a4ffeae11fc70d6aef7804",
+      "calendar_publication_claim": "2024-12-13T03:23:48Z",
+      "calendar_sha256": "0b39c1cb195d161a0e22ec79836cb556f13cede3f8e2a63f14dd541665de591d",
+      "eligibility_sources": {
+        "archived_can_select": 693
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 17,
+      "captured_at": "2024-12-20T18:29:00+00:00",
+      "deadline": "2024-12-21T11:00:00Z",
+      "listed_footballers": 701,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/12/20/1829.json.xz",
+      "compressed_sha256": "e7c59dc5dc0cdc63897fdef81275ad9412aa8d53bb6074c20a8b0af61a1a51cf",
+      "content_sha256": "40d123652ddd789d4b9b8751999a50ccb75f8ad98f70a838ab1f994c72ab1ece",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/74d804715f821380314efc128bc3e1037750f23f/data/2024-25/fixtures.csv",
+      "calendar_revision": "74d804715f821380314efc128bc3e1037750f23f",
+      "calendar_publication_claim": "2024-12-20T09:04:53Z",
+      "calendar_sha256": "40058f03efc43c76e4e1d509c4dcacd932f2fb55ccccd8917fb396cf68f5b07e",
+      "eligibility_sources": {
+        "archived_can_select": 701
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 18,
+      "captured_at": "2024-12-25T18:28:00+00:00",
+      "deadline": "2024-12-26T11:00:00Z",
+      "listed_footballers": 701,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/12/25/1828.json.xz",
+      "compressed_sha256": "1077a099bdfbde237076d3d57fb7e8e1da003819c6382cdd8463c6b9d1f3b37b",
+      "content_sha256": "8b120973789b6825f34883eeb40ece2932ad7098baac5f9fd82ff857767d8194",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/c9a593826e077670fa300e825022b2979282d069/data/2024-25/fixtures.csv",
+      "calendar_revision": "c9a593826e077670fa300e825022b2979282d069",
+      "calendar_publication_claim": "2024-12-23T09:00:23Z",
+      "calendar_sha256": "57afd46cc82b1fca7bc4871d1a630c44b01bca8f6533839778d005ecee7e7669",
+      "eligibility_sources": {
+        "archived_can_select": 701
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 19,
+      "captured_at": "2024-12-29T12:39:00+00:00",
+      "deadline": "2024-12-29T13:00:00Z",
+      "listed_footballers": 705,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/12/29/1239.json.xz",
+      "compressed_sha256": "05ca7934911c585fd51425e88baff73e03081aa0c7dd2c3e3409c4d52bd1bef8",
+      "content_sha256": "8ec665ca0c81a6f00450f77724ba3637a2e385df958d33783ee9a6dbe2df85bf",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/36f07bb50c876ac49255650fd4478c856f086735/data/2024-25/fixtures.csv",
+      "calendar_revision": "36f07bb50c876ac49255650fd4478c856f086735",
+      "calendar_publication_claim": "2024-12-28T15:07:20Z",
+      "calendar_sha256": "f709d518a9c228f436051194429af1eb0cfa258f9a1c04c02977fe8b5d0d3fc1",
+      "eligibility_sources": {
+        "archived_can_select": 705
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 20,
+      "captured_at": "2025-01-03T18:29:00+00:00",
+      "deadline": "2025-01-04T11:00:00Z",
+      "listed_footballers": 709,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/1/3/1829.json.xz",
+      "compressed_sha256": "f3b4ca89f9de0eae5065b3d8a4f3891faa85375908d1a1e51818a9a1010a89bc",
+      "content_sha256": "8880443d66f94a28a5c1c3be3fb1055006ea66559c4335ceb39ee4f451db6b3d",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/e369a3a0943eb6c7cb240053c0e2827f91b57eaa/data/2024-25/fixtures.csv",
+      "calendar_revision": "e369a3a0943eb6c7cb240053c0e2827f91b57eaa",
+      "calendar_publication_claim": "2025-01-02T18:49:42Z",
+      "calendar_sha256": "3c4f9b9975504738fa370936e2cc1a728dc6d2a2cd6e3809d6e871ac3867fb1d",
+      "eligibility_sources": {
+        "archived_can_select": 709
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 21,
+      "captured_at": "2025-01-14T12:41:00+00:00",
+      "deadline": "2025-01-14T18:00:00Z",
+      "listed_footballers": 718,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/1/14/1241.json.xz",
+      "compressed_sha256": "d167faf62d41f05053bf55c4f2b97c9f58571be2fcb65eab8b1b4530e261a583",
+      "content_sha256": "56179d69a53c1d3827d20b48acf604c9a20b7c996f0a9e942ed901a684387252",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/c56971db31bd27acbc0ec3a96bc00da7870d68a7/data/2024-25/fixtures.csv",
+      "calendar_revision": "c56971db31bd27acbc0ec3a96bc00da7870d68a7",
+      "calendar_publication_claim": "2025-01-07T11:11:38Z",
+      "calendar_sha256": "5d0f8b6ca9d1ac9d266986a91ca738c28bed2ae37c33f987c5a49b24f701deb9",
+      "eligibility_sources": {
+        "archived_can_select": 718
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 22,
+      "captured_at": "2025-01-17T18:29:00+00:00",
+      "deadline": "2025-01-18T11:00:00Z",
+      "listed_footballers": 726,
+      "excluded_managers": 0,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/1/17/1829.json.xz",
+      "compressed_sha256": "a59071af671fe28813c1488797063ece1908f3991b2f50dbac85d9a4cea63f6d",
+      "content_sha256": "d47aa697a63f1453bdde1965dedd21afc211b91b9c92b06e16b37733d1e17362",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/c56971db31bd27acbc0ec3a96bc00da7870d68a7/data/2024-25/fixtures.csv",
+      "calendar_revision": "c56971db31bd27acbc0ec3a96bc00da7870d68a7",
+      "calendar_publication_claim": "2025-01-07T11:11:38Z",
+      "calendar_sha256": "5d0f8b6ca9d1ac9d266986a91ca738c28bed2ae37c33f987c5a49b24f701deb9",
+      "eligibility_sources": {
+        "archived_can_select": 726
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 23,
+      "captured_at": "2025-01-25T12:38:00+00:00",
+      "deadline": "2025-01-25T13:30:00Z",
+      "listed_footballers": 735,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/1/25/1238.json.xz",
+      "compressed_sha256": "8b27730a0f89aaa185496f2b4478b3463672b90ac957a52df3aede0c5dad6ecf",
+      "content_sha256": "563b10b9e131d7bff9efe6f5a20e5de82ec7ac57f72c2bfb300f024047c13b82",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/b9618a5d9eebce9bc5ab0e6683bfb8fc420ac848/data/2024-25/fixtures.csv",
+      "calendar_revision": "b9618a5d9eebce9bc5ab0e6683bfb8fc420ac848",
+      "calendar_publication_claim": "2025-01-18T05:15:44Z",
+      "calendar_sha256": "241173b42629e232e7e783e8413049d6fba82f427577d74e95d325fd3b20b27b",
+      "eligibility_sources": {
+        "archived_can_select": 735
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 24,
+      "captured_at": "2025-01-31T18:29:00+00:00",
+      "deadline": "2025-02-01T11:00:00Z",
+      "listed_footballers": 736,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/1/31/1829.json.xz",
+      "compressed_sha256": "a67385887252c434f4307aaea489af05a557685c1c814b17cacea03e92eb9be4",
+      "content_sha256": "9c3a5f0c6b4024f12729839f9e1046acb0a96fb1e89820a8005ec1b6ce71c961",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/0f5da695398c293dca037c36c703fce88a161195/data/2024-25/fixtures.csv",
+      "calendar_revision": "0f5da695398c293dca037c36c703fce88a161195",
+      "calendar_publication_claim": "2025-01-30T09:22:46Z",
+      "calendar_sha256": "50fe8bfc27a5951a6747b27518f7bb4c2e83a1132e6f24f2715c568a6d78f537",
+      "eligibility_sources": {
+        "archived_can_select": 736
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 25,
+      "captured_at": "2025-02-14T12:43:00+00:00",
+      "deadline": "2025-02-14T18:30:00Z",
+      "listed_footballers": 753,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/2/14/1243.json.xz",
+      "compressed_sha256": "9b424eab523e3e88125f1d4e434a07eeb6b153b6011476078844460c2ba64f12",
+      "content_sha256": "e5abb32786af719055d07c1a4dfe8d323e5ed3be986fb51da556d5f4693a42d4",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/58e46cd9b9fe439d875ed56bd1a398c69b08b570/data/2024-25/fixtures.csv",
+      "calendar_revision": "58e46cd9b9fe439d875ed56bd1a398c69b08b570",
+      "calendar_publication_claim": "2025-02-13T12:56:35Z",
+      "calendar_sha256": "8145dafb94f501220915cf4513973b5e0c56a02ebee75eeb5364dc3abe415fa7",
+      "eligibility_sources": {
+        "archived_can_select": 753
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 26,
+      "captured_at": "2025-02-21T12:44:00+00:00",
+      "deadline": "2025-02-21T18:30:00Z",
+      "listed_footballers": 759,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/2/21/1244.json.xz",
+      "compressed_sha256": "bcb377af43c784e6a750437ece4d915451755f47fbb4c272bdff3b7bf0673835",
+      "content_sha256": "8fa5cb40141e8ee4db4f999da61c65045251591ce86b0c212f371eae47144767",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/a0b8a68297efcf2a9b13b9e132a70913d590b246/data/2024-25/fixtures.csv",
+      "calendar_revision": "a0b8a68297efcf2a9b13b9e132a70913d590b246",
+      "calendar_publication_claim": "2025-02-20T21:00:55Z",
+      "calendar_sha256": "6919577fb9efa53608c1752834fa65b02c3a0046a0a1d318caf26f6a6d3d291e",
+      "eligibility_sources": {
+        "archived_can_select": 759
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 27,
+      "captured_at": "2025-02-25T12:45:00+00:00",
+      "deadline": "2025-02-25T18:00:00Z",
+      "listed_footballers": 763,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/2/25/1245.json.xz",
+      "compressed_sha256": "76a4a39d6b9b8364085e80043bf21dbbac642a080c45af99a0f71e1924bf4511",
+      "content_sha256": "0f9084b60c09fbda2372080110233d8ce17be5441878a99151997a853bec2511",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/814519241dbac0cf82eafa6ce227821e705f652b/data/2024-25/fixtures.csv",
+      "calendar_revision": "814519241dbac0cf82eafa6ce227821e705f652b",
+      "calendar_publication_claim": "2025-02-24T11:50:55Z",
+      "calendar_sha256": "90c0e52d87a7254ec9b8b1691bee7b2288fd425c68934034cc4522c5cd5f9ca4",
+      "eligibility_sources": {
+        "archived_can_select": 763
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 28,
+      "captured_at": "2025-03-07T18:31:00+00:00",
+      "deadline": "2025-03-08T11:00:00Z",
+      "listed_footballers": 765,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/3/7/1831.json.xz",
+      "compressed_sha256": "b00e0b6c946edf510b8f1a2ab65267f7056556a8271ba6249f5863029ea0dc21",
+      "content_sha256": "4fa3767064570c5a3151f4790d2fab25eba0a6c399e17c8f39920114a7c72546",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/a8fce2b6ef72a5f44639e2c0f9333e86c827db58/data/2024-25/fixtures.csv",
+      "calendar_revision": "a8fce2b6ef72a5f44639e2c0f9333e86c827db58",
+      "calendar_publication_claim": "2025-03-05T08:47:03Z",
+      "calendar_sha256": "4248fe90548ec0b00c2896cbd940a4c9a8e7035863bcd27847cd66a87346c708",
+      "eligibility_sources": {
+        "archived_can_select": 765
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 29,
+      "captured_at": "2025-03-15T12:41:00+00:00",
+      "deadline": "2025-03-15T13:30:00Z",
+      "listed_footballers": 769,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/3/15/1241.json.xz",
+      "compressed_sha256": "9a3ebd94707ce3453822fe49a8bf3ae2789dbb60b31c2a993dd0811952becd97",
+      "content_sha256": "f418a8ae409a8722313ef5b0c2fc939cd464536899abc5b43ce377bc98f45f48",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/58de8250c856e3476d45557422b257a3659b2b26/data/2024-25/fixtures.csv",
+      "calendar_revision": "58de8250c856e3476d45557422b257a3659b2b26",
+      "calendar_publication_claim": "2025-03-11T11:53:12Z",
+      "calendar_sha256": "14d42571651825343df33cb197efc371090c562c8ff2d90699b7a93380d813c0",
+      "eligibility_sources": {
+        "archived_can_select": 769
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 30,
+      "captured_at": "2025-04-01T12:50:00+00:00",
+      "deadline": "2025-04-01T17:15:00Z",
+      "listed_footballers": 769,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/4/1/1250.json.xz",
+      "compressed_sha256": "4e9a21ee6bc996453b31344b552e590efa5bb80dec33e473ab77a6e934d20564",
+      "content_sha256": "754bddeb3917f135906d4f6229adf21a9cdeed7f512a7b73c352fdc25e41aff9",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/f89612e6799fb3f8c91939aed87a998078dfb4b6/data/2024-25/fixtures.csv",
+      "calendar_revision": "f89612e6799fb3f8c91939aed87a998078dfb4b6",
+      "calendar_publication_claim": "2025-03-24T14:05:08Z",
+      "calendar_sha256": "2f3fb93b0c0d6992006438833b2f5b9e5c79907bec6cb02b5b11ae7374e08024",
+      "eligibility_sources": {
+        "archived_can_select": 769
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 31,
+      "captured_at": "2025-04-04T18:32:00+00:00",
+      "deadline": "2025-04-05T10:00:00Z",
+      "listed_footballers": 771,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/4/4/1832.json.xz",
+      "compressed_sha256": "a367ade6ea313daadb1f34063122f630a1a6c973a0bf4d7180d3bf7ea9a8552d",
+      "content_sha256": "23e359a33359f9a4d66b2792032f858e2d55d84c6e8689986d0b49d480b562d5",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/f89612e6799fb3f8c91939aed87a998078dfb4b6/data/2024-25/fixtures.csv",
+      "calendar_revision": "f89612e6799fb3f8c91939aed87a998078dfb4b6",
+      "calendar_publication_claim": "2025-03-24T14:05:08Z",
+      "calendar_sha256": "2f3fb93b0c0d6992006438833b2f5b9e5c79907bec6cb02b5b11ae7374e08024",
+      "eligibility_sources": {
+        "archived_can_select": 771
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 32,
+      "captured_at": "2025-04-11T18:33:00+00:00",
+      "deadline": "2025-04-12T10:00:00Z",
+      "listed_footballers": 772,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/4/11/1833.json.xz",
+      "compressed_sha256": "f0a5e1d44759e6b8f220df608c0ab1ad94bb7b4c89942b592f961289205072be",
+      "content_sha256": "ed32b8bced22879d2e002d008bc730d9b6fe4c9b9fe98d5b51bdb43da8eda722",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/29e6c2f4590b1a03f218552ca676b9495539cfdc/data/2024-25/fixtures.csv",
+      "calendar_revision": "29e6c2f4590b1a03f218552ca676b9495539cfdc",
+      "calendar_publication_claim": "2025-04-11T12:32:01Z",
+      "calendar_sha256": "b832431b1ce6ea8566a2793a4046960102a3e90f56c5ad2adb98b67ea70ba8d1",
+      "eligibility_sources": {
+        "archived_can_select": 772
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 33,
+      "captured_at": "2025-04-18T18:32:00+00:00",
+      "deadline": "2025-04-19T12:30:00Z",
+      "listed_footballers": 778,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/4/18/1832.json.xz",
+      "compressed_sha256": "6014a3a1e6c55b2d32fb60bf97dd2728ebcae930a815a6120c5ca415d99d3f48",
+      "content_sha256": "2e9cbf089f1b6e8aa95590d6f327147dfe8f85b26ef13e482571a7afb6fec6e1",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/29e6c2f4590b1a03f218552ca676b9495539cfdc/data/2024-25/fixtures.csv",
+      "calendar_revision": "29e6c2f4590b1a03f218552ca676b9495539cfdc",
+      "calendar_publication_claim": "2025-04-11T12:32:01Z",
+      "calendar_sha256": "b832431b1ce6ea8566a2793a4046960102a3e90f56c5ad2adb98b67ea70ba8d1",
+      "eligibility_sources": {
+        "archived_can_select": 778
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 34,
+      "captured_at": "2025-04-25T18:33:00+00:00",
+      "deadline": "2025-04-26T10:00:00Z",
+      "listed_footballers": 779,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/4/25/1833.json.xz",
+      "compressed_sha256": "c79ee0bd5aeaed881147c19d96638f4f6cc7f94ac3f87b409cbad89e087f6c37",
+      "content_sha256": "b96a438e510ffb0cadf7870ca5749aaf1fc9445a02bf4ce2acb46c351ec85b5d",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/29e6c2f4590b1a03f218552ca676b9495539cfdc/data/2024-25/fixtures.csv",
+      "calendar_revision": "29e6c2f4590b1a03f218552ca676b9495539cfdc",
+      "calendar_publication_claim": "2025-04-11T12:32:01Z",
+      "calendar_sha256": "b832431b1ce6ea8566a2793a4046960102a3e90f56c5ad2adb98b67ea70ba8d1",
+      "eligibility_sources": {
+        "archived_can_select": 779
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 35,
+      "captured_at": "2025-05-02T12:49:00+00:00",
+      "deadline": "2025-05-02T17:30:00Z",
+      "listed_footballers": 780,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/5/2/1249.json.xz",
+      "compressed_sha256": "75fb742cf6b256fe52f2b83bd6450addaba51da3a6a767a55977202eef512bb8",
+      "content_sha256": "3a38b9d03fa04cece599058a15e6af33efb61deb49d7410a56ab0ce8413cf8c7",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/761d80463ce8b7a74e1e67f7763910b4c4e14a10/data/2024-25/fixtures.csv",
+      "calendar_revision": "761d80463ce8b7a74e1e67f7763910b4c4e14a10",
+      "calendar_publication_claim": "2025-04-26T00:07:50Z",
+      "calendar_sha256": "153f8a1bc1e1a919fe3cda3847d4bcfc37935b1cc72b171a28590e066872b74a",
+      "eligibility_sources": {
+        "archived_can_select": 780
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 36,
+      "captured_at": "2025-05-09T18:34:00+00:00",
+      "deadline": "2025-05-10T12:30:00Z",
+      "listed_footballers": 781,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/5/9/1834.json.xz",
+      "compressed_sha256": "cb5aa12a2e5ce92bb8ce5f97ae488366c34babdf421a8326c2f323334eb5904a",
+      "content_sha256": "475905112af3ac8e617f4ebb574ce71b07b6ea8b96512ef7267433e8b5a52c0b",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/761d80463ce8b7a74e1e67f7763910b4c4e14a10/data/2024-25/fixtures.csv",
+      "calendar_revision": "761d80463ce8b7a74e1e67f7763910b4c4e14a10",
+      "calendar_publication_claim": "2025-04-26T00:07:50Z",
+      "calendar_sha256": "153f8a1bc1e1a919fe3cda3847d4bcfc37935b1cc72b171a28590e066872b74a",
+      "eligibility_sources": {
+        "archived_can_select": 781
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 37,
+      "captured_at": "2025-05-16T12:52:00+00:00",
+      "deadline": "2025-05-16T17:00:00Z",
+      "listed_footballers": 781,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/5/16/1252.json.xz",
+      "compressed_sha256": "7672e1df9c37b5d971abf698bd95c15c5360f2b14929834796b24c8dca26a6e7",
+      "content_sha256": "914d27c303480a1d73c7f55fa4e69e46f303b2c3d97f2aba06ff63e462b5ce68",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/e3a961c6b47342884268f59d6cb1730b3be194b2/data/2024-25/fixtures.csv",
+      "calendar_revision": "e3a961c6b47342884268f59d6cb1730b3be194b2",
+      "calendar_publication_claim": "2025-05-16T09:44:44Z",
+      "calendar_sha256": "c8c15992d13f97cfd6f440a10ec94faaf314c9e6d2a820ac1026d76a431ad647",
+      "eligibility_sources": {
+        "archived_can_select": 781
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 38,
+      "captured_at": "2025-05-25T12:47:00+00:00",
+      "deadline": "2025-05-25T13:30:00Z",
+      "listed_footballers": 781,
+      "excluded_managers": 20,
+      "bootstrap_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/5/25/1247.json.xz",
+      "compressed_sha256": "3c85ba3075fb54bfa6ecabff5d7291d77a2b0a9344da66b4d7543b9ff5a3227b",
+      "content_sha256": "5a635f2800d8bbce7f475940dc611164ccb6e3259a187fdb1655d96074871f83",
+      "calendar_url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/a7089bab28e2a6012cde62b4fbd692f975792a55/data/2024-25/fixtures.csv",
+      "calendar_revision": "a7089bab28e2a6012cde62b4fbd692f975792a55",
+      "calendar_publication_claim": "2025-05-24T12:26:14Z",
+      "calendar_sha256": "0e7fdd0fc6a7ca0dbc7385ef604466e72f6853f2b329778da98384f167b9aaec",
+      "eligibility_sources": {
+        "archived_can_select": 781
+      },
+      "ordinary_chip_metadata_verified": true,
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    }
+  ],
+  "fixture_updates": [
+    {
+      "fixture": 144,
+      "event": null,
+      "available_at": "2024-12-07T08:46:00Z",
+      "source_url": "https://www.liverpoolfc.com/news/merseyside-derby-postponed-safety-grounds",
+      "article_sha256": "12c9b4c9e2e0f70039649a70865f7845289231706de6f10d6725a1965603232d",
+      "reason": "Published and modified08:46same7December; excluded from earlier6Decemberorigin.",
+      "publication_evidence": "Publisher date claim, conservative next-day availability bound; revision time unavailable unless explicitly stated. Only fixture announcement fact admitted, no article player/outcome data."
+    },
+    {
+      "fixture": 144,
+      "event": 24,
+      "available_at": "2025-01-18T00:00:00Z",
+      "source_url": "https://www.premierleague.com/en/news/4221184",
+      "article_sha256": "e366e0b45c1d8f08501a985f5f83cfb874310fa4d73fe9043fdae0e36630a665",
+      "reason": "FPL17Januaryassignment; earlierconditionalannouncement not treated as confirmed.",
+      "publication_evidence": "Publisher date claim, conservative next-day availability bound; revision time unavailable unless explicitly stated. Only fixture announcement fact admitted, no article player/outcome data."
+    },
+    {
+      "fixture": 289,
+      "event": null,
+      "available_at": "2025-02-08T00:00:00Z",
+      "source_url": "https://www.premierleague.com/en/news/4243043",
+      "article_sha256": "2134ff564504988910dc60175f95e8a2a5c31ac5b47e98314fd9fee8b99f121a",
+      "reason": "Confirmed7FebruaryEFLfinalqualification and blank29.",
+      "publication_evidence": "Publisher date claim, conservative next-day availability bound; revision time unavailable unless explicitly stated. Only fixture announcement fact admitted, no article player/outcome data."
+    },
+    {
+      "fixture": 282,
+      "event": 25,
+      "available_at": "2025-02-08T00:00:00Z",
+      "source_url": "https://www.premierleague.com/en/news/4243043",
+      "article_sha256": "2134ff564504988910dc60175f95e8a2a5c31ac5b47e98314fd9fee8b99f121a",
+      "reason": "Confirmed7FebruaryLiverpool/VillaDGW25; no Januaryprovisionalbranch resolved by hindsight.",
+      "publication_evidence": "Publisher date claim, conservative next-day availability bound; revision time unavailable unless explicitly stated. Only fixture announcement fact admitted, no article player/outcome data."
+    },
+    {
+      "fixture": 289,
+      "event": 32,
+      "available_at": "2025-02-15T00:00:00Z",
+      "source_url": "https://www.premierleague.com/en/news/4244786",
+      "article_sha256": "65bc98640d63f5a0786f8b3ede9680e2e8a158b776534c5530e07acd8832bba0",
+      "reason": "14FebruaryDGW32announcement; no same-day timing invented.",
+      "publication_evidence": "Publisher date claim, conservative next-day availability bound; revision time unavailable unless explicitly stated. Only fixture announcement fact admitted, no article player/outcome data."
+    },
+    {
+      "fixture": 331,
+      "event": null,
+      "available_at": "2025-03-30T00:00:00Z",
+      "source_url": "https://www.thefa.com/news/2025/mar/29/fulham-crystal-palace-emirates-fa-cup-20250329",
+      "reason": "DatedFAquarterfinalqualification establishes weekend clash. NewGWunconfirmed; none is unknown assignment, not guaranteedactualblank.",
+      "publication_evidence": "Official datedFAreport/publisher claim; conservative next-day bound, no laterfootballoutcomes used."
+    },
+    {
+      "fixture": 338,
+      "event": null,
+      "available_at": "2025-03-30T00:00:00Z",
+      "source_url": "https://www.thefa.com/news/2025/mar/29/emirates-fa-cup-brighton-nottm-forest-20250329",
+      "reason": "DatedFAquarterfinalqualification establishes weekend clash. NewGWunconfirmed; none is unknown assignment, not guaranteedactualblank.",
+      "publication_evidence": "Official datedFAreport/publisher claim; conservative next-day bound, no laterfootballoutcomes used."
+    },
+    {
+      "fixture": 336,
+      "event": null,
+      "available_at": "2025-03-31T00:00:00Z",
+      "source_url": "https://www.thefa.com/news/2025/mar/30/emirates-fa-cup-bournemouth-manchester-city-wrap-20250330",
+      "reason": "DatedFAquarterfinalqualification establishes weekend clash. NewGWunconfirmed; none is unknown assignment, not guaranteedactualblank.",
+      "publication_evidence": "Official datedFAreport/publisher claim; conservative next-day bound, no laterfootballoutcomes used."
+    },
+    {
+      "fixture": 331,
+      "event": 33,
+      "available_at": "2025-04-04T00:00:00Z",
+      "source_url": "https://www.premierleague.com/es/news/4277038",
+      "article_sha256": "bd64f5247ce8aa8194f7c2070526dfb69f4e4faf5986ccf3c59d40513d6b800b",
+      "reason": "3AprilFPLrearrangement; ForestBrentfordremainsGW34, otherstwoDGW33.",
+      "publication_evidence": "Publisher date claim, conservative next-day availability bound; revision time unavailable unless explicitly stated. Only fixture announcement fact admitted, no article player/outcome data."
+    },
+    {
+      "fixture": 336,
+      "event": 33,
+      "available_at": "2025-04-04T00:00:00Z",
+      "source_url": "https://www.premierleague.com/es/news/4277038",
+      "article_sha256": "bd64f5247ce8aa8194f7c2070526dfb69f4e4faf5986ccf3c59d40513d6b800b",
+      "reason": "3AprilFPLrearrangement; ForestBrentfordremainsGW34, otherstwoDGW33.",
+      "publication_evidence": "Publisher date claim, conservative next-day availability bound; revision time unavailable unless explicitly stated. Only fixture announcement fact admitted, no article player/outcome data."
+    },
+    {
+      "fixture": 338,
+      "event": 34,
+      "available_at": "2025-04-04T00:00:00Z",
+      "source_url": "https://www.premierleague.com/es/news/4277038",
+      "article_sha256": "bd64f5247ce8aa8194f7c2070526dfb69f4e4faf5986ccf3c59d40513d6b800b",
+      "reason": "3AprilFPLrearrangement; ForestBrentfordremainsGW34, otherstwoDGW33.",
+      "publication_evidence": "Publisher date claim, conservative next-day availability bound; revision time unavailable unless explicitly stated. Only fixture announcement fact admitted, no article player/outcome data."
+    }
+  ],
+  "official_source_receipts": [
+    {
+      "url": "https://www.premierleague.com/en/news/4058895",
+      "sha256": "b5ed55c0420ede6855e2540b54a06706d846c7dd6043d36f24da43fef989fbcc",
+      "retrieved_at": "2026-10-23T21:21:32.334480+00:00"
+    },
+    {
+      "url": "https://www.premierleague.com/ar/news/4192707",
+      "sha256": "62354fb988263216140e9940737c5e1f1eab880fa8ca603dde96e96e35590629",
+      "retrieved_at": "2026-10-23T21:21:33.829582+00:00"
+    },
+    {
+      "url": "https://www.premierleague.com/en/news/4221184",
+      "sha256": "e366e0b45c1d8f08501a985f5f83cfb874310fa4d73fe9043fdae0e36630a665",
+      "retrieved_at": "2026-10-23T21:21:35.929435+00:00"
+    },
+    {
+      "url": "https://www.premierleague.com/en/news/4243043",
+      "sha256": "2134ff564504988910dc60175f95e8a2a5c31ac5b47e98314fd9fee8b99f121a",
+      "retrieved_at": "2026-10-23T21:21:38.093822+00:00"
+    },
+    {
+      "url": "https://www.premierleague.com/en/news/4244786",
+      "sha256": "65bc98640d63f5a0786f8b3ede9680e2e8a158b776534c5530e07acd8832bba0",
+      "retrieved_at": "2026-10-23T21:21:39.899740+00:00"
+    },
+    {
+      "url": "https://www.premierleague.com/es/news/4277038",
+      "sha256": "bd64f5247ce8aa8194f7c2070526dfb69f4e4faf5986ccf3c59d40513d6b800b",
+      "retrieved_at": "2026-10-23T21:21:41.180766+00:00"
+    },
+    {
+      "url": "https://www.premierleague.com/en/news/4273145",
+      "sha256": "c32659a3f807c3c071359539bc1311cc923a924e7ada1e70e7adc376c7cd6b47",
+      "retrieved_at": "2026-10-23T21:21:42.581091+00:00"
+    },
+    {
+      "url": "https://www.liverpoolfc.com/news/merseyside-derby-postponed-safety-grounds",
+      "sha256": "12c9b4c9e2e0f70039649a70865f7845289231706de6f10d6725a1965603232d",
+      "retrieved_at": "2026-10-23T21:21:45.818333+00:00"
+    },
+    {
+      "url": "https://www.thefa.com/news/2025/mar/29/fulham-crystal-palace-emirates-fa-cup-20250329",
+      "sha256": "cf9d8bae54a28629c0140e41b5666f1dd6ed74df4a705e9f89123fb9d733d1a7",
+      "retrieved_at": "2026-10-23T21:33:02.907060+00:00"
+    },
+    {
+      "url": "https://www.thefa.com/news/2025/mar/29/emirates-fa-cup-brighton-nottm-forest-20250329",
+      "sha256": "ad7cf981861344532200735105c3a8c0e29cd1eed9ed3860ff5da46b5c089491",
+      "retrieved_at": "2026-10-23T21:33:28.931309+00:00"
+    },
+    {
+      "url": "https://www.thefa.com/news/2025/mar/30/emirates-fa-cup-bournemouth-manchester-city-wrap-20250330",
+      "sha256": "4c32e35433858cdbe44c830da756113ab6fde98134424a71efd0d0babf95be1a",
+      "retrieved_at": "2026-10-23T21:33:50.108453+00:00"
+    }
+  ],
+  "outcomes": {
+    "archive_revision": "9779cdbc0c07f6c900c2d0c181ddf6bb9c800f88",
+    "merged_sha256": "5bbbcba6353b4c72ad273adcc8e3aa451946a826564679788f45b1cb3325b84e",
+    "final_players_sha256": "75686051b265cbe7755ac71213ecaad21b26ee1cc46a8bafbba19c39ce894b05",
+    "final_totals_reconciled": 784,
+    "footballer_fixture_rows": 27283,
+    "listed_player_gameweeks": 27158,
+    "blank_player_gameweeks": 360,
+    "evaluator_only_club_transitions": 15,
+    "correction_source": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/9779cdbc0c07f6c900c2d0c181ddf6bb9c800f88/data/2024-25/players/Evan_Ferguson_123/gw.csv",
+    "correction_sha256": "49a485e0078e6dd6980810ef9cac0bc52d1714507e6c835c18a32d733c9711b1",
+    "derived_corrections": [
+      {
+        "element": 123,
+        "fixture": 239,
+        "changes": {
+          "expected_assists": {
+            "before": 0.0,
+            "after": 0.01
+          },
+          "expected_goals_conceded": {
+            "before": 0.0,
+            "after": 0.74
+          },
+          "goals_conceded": {
+            "before": 0,
+            "after": 2
+          },
+          "minutes": {
+            "before": 0,
+            "after": 17
+          },
+          "total_points": {
+            "before": 0,
+            "after": 1
+          }
+        }
+      }
+    ]
+  },
+  "forecast": {
+    "training_scope": "2020/21..2023/24 only",
+    "training_rows": 106042,
+    "trained_through": "2024-05-19T18:00:00+00:00",
+    "model_sha256": "7955c583b3cff6090d7d952193b1a5be33354e1e2db50341f165b2d4c0070d46",
+    "fit_seconds": 34.99088662513532,
+    "preparation_seconds": 72.54602558305487,
+    "decision_bundle_sha256": "96f8ed62674c0643550a8f51d083c7b38f5370efd97a97d3de54342337279402",
+    "outcome_bundle_sha256": "51ecb6b5bf77ab94c5053445adf0f0c28b136068e450c1b8379c9f45b7d1be6e",
+    "deployment_champion_backcast": false,
+    "model_promotion": false
+  },
+  "limitations": [
+    "Publisher archive/commit/date claims are not independently witnessed",
+    "Origin snapshots up to24h before actual deadline, no later news imported",
+    "Legacy status-based purchase eligibility is an explicit proxy where API field absent",
+    "Conditional rescheduling unresolved at origin is not forecast with future cup results",
+    "Official final per-player histories correct one stale merged row; original files preserved",
+    "Prior-only reference on reused research years, not saved champion backcast",
+    "2024/25 chip-capability comparison excludes Assistant Manager for every policy",
+    "Article date/revision availability is not independently certified; only reviewed dated fixture facts are replayed, never article player/outcome statistics",
+    "Mutable article4237390/4273145 not admitted at misleading earlier displayed publication dates; separate datedFAreports support cup clashes",
+    "Pending cup-clash assignments are unknown until dated rescheduling; zero origin fixtures is not a guaranteed actual blank"
+  ]
+}
