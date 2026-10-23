@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "locked_at": "2026-10-23T21:39:10.068937+00:00",
+  "scope": "Post-result diagnosis of the previously observed153pointH6-Solio gap; no outcome/settlement reads during probe, no season-point or causal gain claim.",
+  "reference_seed": 20261025,
+  "origin_gameweeks": [
+    1,
+    6,
+    12,
+    16,
+    20,
+    24,
+    30,
+    38
+  ],
+  "state_source": "Frozen standingH6state before each origin, prior cumulative score removed, original commonGW1roster fixed.",
+  "schedule_sources": [
+    "standingH6_adaptive",
+    "SolioAdaptedH6_sharedAdaptiveChips"
+  ],
+  "schedule_rule": "Only each source policy same-origin frozen provisional chip schedule, never its eventually realised full-season chip dates. Apply to commonH6state only if all tokens/windows/currentpreviousFH compatible; retain ineligible proposals explicitly, never filter into a different schedule.",
+  "solvers": [
+    "standing",
+    "solio_adapted"
+  ],
+  "inner_seconds": 2.0,
+  "maximum_cases": 32,
+  "horizon": 6,
+  "reserve": "Shared defaultcoarse values WC12/FH8/TC5/BB10 and joint remaining-token future assignment, same as released adaptive planner. Report horizonobjective+reserve and consumed tokens separately. Assumptions, not calibrated returns.",
+  "resources": {
+    "threads": 2,
+    "seconds": 180,
+    "memory_mib": 4096,
+    "project_mib": 2560,
+    "growth_mib": 384,
+    "min_free_mib": 5120
+  },
+  "interpretation": "Same schedule/solver contrasts diagnose inner solve; different eligible schedules on same state diagnose available calendar alternatives. No ex-post season rollout, automatic policy choice or hypothesis search."
+}

@@ -1,11 +1,13 @@
 # Season-management policy qualification
 
-Current evidence: the [24 October follow-up](SEASON_ROBUSTNESS_RESULTS_2026-10-24.md)
-reports H6-H1 differences of +110, -6 points on two additional source-only
-openings. Its declared consistency gate fails. Preserve the original matrix's
-historical qualification, but treat overall H6 evidence as mixed and the policy
-as experimental/shadow support; no forecast or production-default promotion.
-Read the [current scope/status](season_policy_status.json) before use.
+Current evidence: the [two-season study](EXPECTED_SEASON_POINTS_RESULTS_2026-10-24.md)
+reports an equal-season H6-minus-H1 mean of +129.50 net points across
+four common opening cases. Its declared mean/material-downside research criterion
+passes. The earlier zero-negative consistency gate remains failed;
+that narrow failure does not establish H6 inferiority. Both seasons already had
+research exposure, and 2024/25 explicitly excludes Assistant Manager. H6 remains
+experimental support: no forecast or production-default promotion. Read the
+[current scope/status](season_policy_status.json) and [framework](expected_season_points.md).
 
 Qualification evaluates a continuous 38-gameweek squad, rather than adding up
 independent weekly team selections. Net realised points after hits is the
@@ -36,7 +38,9 @@ repeat its single allowed schedule, retaining the best expected objective and
 recording every attempt. This compares complete policies and search allocation;
 it does not isolate chip timing independently of numerical solve quality.
 
-The default reference calendar is fixed before qualification scoring:
+The following control calendar belongs to the original 2025/26 two-set study.
+Do not reuse it unchanged with the restricted 2024/25 annual-chip profile.
+It was fixed before that qualification scoring:
 
 | Chip | First window | Second window |
 |---|---:|---:|

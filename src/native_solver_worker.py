@@ -74,7 +74,7 @@ def validate_request(q,recipe):
     m=q['market'];s=q['state']
     if set(m)!={'season','gameweek','deadline','as_of','rows'} or set(s)!={'season','gameweek','holdings','bank','free_transfers','used_chips','previous_chip'}:raise ValueError('Unknown native context fields')
     g=integer(m['gameweek'],1,38);end=integer(q['through'],g,min(38,g+7))
-    if m['season']!=recipe['season'] or s['season']!=m['season'] or s['gameweek']!=g:raise ValueError('Unaudited native season/origin')
+    if m['season'] not in [recipe['season'],*recipe.get('additional_seasons',[])] or s['season']!=m['season'] or s['gameweek']!=g:raise ValueError('Unaudited native season/origin')
     before=datetime.fromisoformat(m['as_of'].replace('Z','+00:00'));deadline=datetime.fromisoformat(m['deadline'].replace('Z','+00:00'))
     if before.tzinfo is None or deadline.tzinfo is None or before>=deadline:raise ValueError('Native origin must precede deadline')
     integer(s['bank']);integer(s['free_transfers'],0,5)

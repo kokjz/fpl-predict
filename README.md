@@ -46,7 +46,20 @@ Saved-artifact and changed-next-origin integration checks use entirely invented
 data. Historical evaluation uses prior-only method references rather than
 backcasting a deployment artifact trained on the evaluation season.
 
-The [full qualification results](docs/SEASON_POLICY_QUALIFICATION_RESULTS_2026-10-17.md)
+The [latest two-season management study](docs/EXPECTED_SEASON_POINTS_RESULTS_2026-10-24.md)
+compares twelve full-season paths from two common starting squads in each of
+2024/25 and 2025/26. H6 averages **+129.50 net points versus H1**
+with equal season weighting; its four differences are
+**+127, +244, +147, +0**. Against the adapted Solio
+planner the average is **-25.75**, with differences
+**-17, +40, +0, -126**. All outcomes and the
+[declared mean/downside criteria](docs/expected_season_points.md) are retained.
+These are observed results on two previously researched seasons, not reliable
+future-gain estimates. The 2024/25 track is explicitly a common no-Assistant-Manager
+subset. Common starts test subsequent management rather than initial squad
+construction; code merges do not approve production defaults or forecast weights.
+
+The **earlier** [full qualification results](docs/SEASON_POLICY_QUALIFICATION_RESULTS_2026-10-17.md)
 report twenty continuous 38-GW paths and 760 independently reconciled deadline
 decisions. All policies below use the same frozen five-prior-season forecast,
 information, legal chip resources and declared search limits. Points are after
@@ -68,7 +81,8 @@ costs, native failures/fallbacks and conditional-bound coverage.
 Read the [explicit policy status](docs/season_policy_status.json) before using a
 research planner. Passing the declared historical points/integrity/cost gates
 permits experimental status; it does not automatically change weekly defaults or
-approve forecast weights. The native workers' audited profile is 2025/26 only;
+approve forecast weights. The original native qualification profile is 2025/26; the new Solio track also
+supports the explicitly restricted 2024/25 no-Assistant-Manager profile;
 the standing planner also has 2026/27 mechanical integration. Original external
 managers, global season optimality and future superiority are not established.
 
@@ -96,16 +110,17 @@ The [controlled integration workflow](docs/conditional_selection.md) separates c
 The optional [participation audit](docs/participation_audit.md) checks frozen point-risk diagnostics and predeadline evidence, including sourced club/press reports, without applying overrides. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).
 
 The [additional-opening robustness study](docs/SEASON_ROBUSTNESS_RESULTS_2026-10-24.md)
-adds six full-season paths from two new common squads. Six-week minus one-week
-returns were **+110, -6 points**; the predeclared consistency gate therefore
-**failed**. Against adapted Solio the differences were -2, -153 points.
-The original qualification remains a dated result, while current H6 evidence is
-mixed and supports experimental/shadow use rather than a production-default
-promotion. The [current policy status](docs/season_policy_status.json) records
-both scopes. The follow-up also reconciles decision losses and verifies all 38
-historical 2024/25 market receipts; a second complete-season comparison still
-requires its own calendar, forecasting and chip-rule admission. Forecast weights
-and normal weekly defaults remain unchanged.
+adds two starting squads on the same previously studied season. H6 minus H1
+returns were **+110 and −6 points**, averaging **+52** across those two cases.
+The declared no-negative-case consistency gate **failed**. That narrow failure
+does not establish that H6 is inferior: a useful policy can lose a case through
+noisy football outcomes and starting-state sensitivity. Against adapted Solio,
+the differences were −2 and −153 points. These are dependent cases on one reused
+season, not independent seasons or an estimated future gain. The original
+qualification and failed follow-up remain dated results. A separately declared
+[expected season-points framework](docs/expected_season_points.md) evaluates
+average gain and material downside for subsequent tests; it does not retroactively
+pass the old gate or automatically change production defaults.
 
 ## Performance and other options
 

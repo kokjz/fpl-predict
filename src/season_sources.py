@@ -13,6 +13,43 @@ from season_engine import audit_bootstrap
 COLUMNS=['id','event','team_h','team_a','kickoff_time']
 
 
+def restricted_2024_bootstrap(payload,gameweek,captured_at):
+    """Explicit footballer-only view; does not claim Assistant Manager support.
+
+    Early archives lack executable chip metadata. Their chip windows require
+    separate dated rule evidence; missing metadata is never a verification pass.
+    Original bytes, including manager records, must be preserved by the caller.
+    """
+    from copy import deepcopy
+    from season_engine import rules_for
+    elements=payload['elements']
+    if any(type(p['element_type']) is not int or p['element_type'] not in (1,2,3,4,5) for p in elements):
+        raise ValueError('Unknown historical element type')
+    for key in ('id','code'):
+        values=[p[key] for p in elements]
+        if len(values)!=len(set(values)) or any(type(v) is not int or v<1 for v in values):
+            raise ValueError('Ambiguous historical identity')
+    view=deepcopy(payload);view['elements']=[p for p in view['elements'] if p['element_type']!=5]
+    info,bridge=extract_bootstrap(view,'2024-25',gameweek,captured_at)
+    ordinary=[c for c in payload.get('chips',[]) if c['name']!='manager']
+    if any(c['name'] not in ('wildcard','freehit','bboost','3xc','manager') for c in payload.get('chips',[])):
+        raise ValueError('Unknown historical chip')
+    expected={(w['name'],w['start'],w['stop']) for w in rules_for('2024-25')['chip_windows']}
+    if ordinary and ({(c['name'],c['start_event'],c['stop_event']) for c in ordinary}!=expected or len(ordinary)!=len(expected)):
+        raise ValueError('Restricted chip windows differ')
+    for c in ordinary:
+        if c.get('number')!=1 or any(c.get('overrides',{}).get(k) for k in ('rules','scoring','element_types','pick_multiplier')):
+            raise ValueError('Unsupported ordinary chip override')
+    expected_settings=dict(squad_squadplay=11,squad_squadsize=15,squad_team_limit=3,squad_total_spend=1000,
+                           transfers_cap=20,transfers_sell_on_fee=.5,max_extra_free_transfers=4)
+    if any(payload['game_settings'].get(k)!=v for k,v in expected_settings.items()):
+        raise ValueError('Restricted financial rules differ')
+    return view,info,bridge,dict(scope='2024/25 restricted no-Assistant-Manager research track',
+        excluded_managers=len(elements)-len(view['elements']),excluded_chip='manager',
+        bootstrap_ordinary_chip_metadata_verified=bool(ordinary),separate_dated_rule_evidence_required=not bool(ordinary),
+        full_season_chip_capability_supported=False)
+
+
 def calendar(entry,root,*,audit_only=False):
     root=Path(root).resolve();p=(root/entry['file']).resolve()
     if not p.is_relative_to(root):raise ValueError('Calendar escapes source root')

@@ -1,5 +1,11 @@
 # Native planner comparison: implementation protocol
 
+Current source admission additionally supports the explicitly restricted 2024/25
+no-Assistant-Manager Solio track. The [two-season results](EXPECTED_SEASON_POINTS_RESULTS_2026-10-24.md)
+and [source inventory](season_2024_source_inventory.json) retain its annual-chip,
+transfer and chronology scope. This does not extend original-manager or current
+live-season approval. The original eight-path protocol below remains dated evidence.
+
 The [predeclared protocol](../src/fpl_predict_resources/native_planner_protocol.json)
 separates the planner from the forecasting comparison already completed in the
 [sixteen-path study](SEASON_EXTERNAL_RESULTS_2026-10-16.md). The [completed eight-path study](NATIVE_PLANNER_RESULTS_2026-10-16.md)
