@@ -31,5 +31,12 @@ def test_expiry_season_inventory_and_consecutive_freehit():
 def test_remaining_resource_reserve_counts_tokens_once_and_expires():
     m=module();s=state(38);mk=market(38)
     h=Horizon.create(mk,[dict(gameweek=38,id=p['id'],expected_points=2.) for p in mk.players],trained_through='2025-05-01T00:00Z',feature_cutoff=mk.as_of,source_as_of=mk.as_of,model_id='synthetic')
-    reserve,info=m.remaining_reserve(s,mk,h,[action()],[])
+    reserve,info=m.remaining_reserve(s,mk,h,[action()],[['3xc',20]])
     assert reserve==0 and not info['remaining_tokens'] and not info['coarse_schedule']
+
+
+def test_probe_rejects_wrong_supplied_hash_before_reading_inputs(tmp_path):
+    m=module();lock=tmp_path/'lock.json';lock.write_text('{}')
+    with pytest.raises(ValueError,match='checksum'):
+        m.run(tmp_path/'never-read.json',tmp_path/'reference',lock,lock,lock,tmp_path/'out',native_python='unused',solio_source=tmp_path,solio_site_packages=tmp_path,opening_lock_sha256='0'*64,source_lock_sha256='0'*64,protocol_sha256='0'*64)
+    assert not (tmp_path/'out').exists()

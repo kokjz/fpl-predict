@@ -43,7 +43,7 @@ def remaining_reserve(state,market,horizon,actions,blocked):
     current=state;xp=horizon.values()
     for g,a in zip(horizon.gameweeks,actions):current=prepare(current,_market(market,g,xp),a).state
     windows=rules_for(state.season)['chip_windows'];gains={(w['name'],w['start'],g):COARSE[w['name']] for w in windows for g in range(max(current.gameweek,w['start']),w['stop']+1)}
-    reserve,path=calendar(current,38,gains,blocked=blocked)
+    reserve,path=calendar(current,38,gains,blocked=tuple(map(tuple,blocked)))
     return reserve,dict(remaining_tokens=[(w['name'],w['start']) for w in windows if (w['name'],w['start']) not in set(current.used_chips)|set(map(tuple,blocked)) and w['stop']>=current.gameweek],coarse_schedule={g:name for g,(name,start) in path.items()})
 
 
