@@ -55,3 +55,13 @@ No forecast weights or weekly defaults change through these read-only diagnostic
 or research runners. Prospective private-team evidence stays outside this public
 repository. Further changes require a separate predeclared, justified trial;
 previous failed conditional/expected-selector variants are not silently repeated.
+
+## Additional-season market receipts
+
+`tools/audit_historical_markets.py` verifies38pinned market files against a
+checksummed manifest: bounded lossless decode, compressed/content hashes, origin
+before event deadline, unique listed player IDs, club and positive integer prices.
+It also reports the observed chip/manager inventory. The output explicitly does
+not admit a whole-season replay. It requires `--manifest`, `--manifest-sha256`,
+`--source-root` and a new private `--output`. Missing fixture-as-known, forecast,
+outcome or rule admission cannot be replaced by a successful market audit.

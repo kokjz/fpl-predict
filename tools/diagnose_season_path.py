@@ -110,7 +110,7 @@ def diagnose(bundle, outcomes, directory, horizon):
         for i in ids:
             error = xp[g, i] - hidden[i]['actual']
             key = 'zero' if hidden[i]['minutes'] == 0 else 'cameo' if hidden[i]['minutes'] < 60 else '60plus'
-            groups[key].append(error); groups[f'GW{1 if g <= 13 else 14 if g <= 26 else 27}onward'].append(error)
+            groups[key].append(error); groups['GW01_13' if g <= 13 else 'GW14_26' if g <= 26 else 'GW27_38'].append(error)
         for key in ('base_xi', 'autosub_delta', 'captain_bonus', 'extra_captain_bonus', 'bench_boost_points', 'hits'):
             components[key] += score.get(key, 0.)
         if rows and len(prior_actions) > 1:
