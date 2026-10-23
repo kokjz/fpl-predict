@@ -65,3 +65,24 @@ It also reports the observed chip/manager inventory. The output explicitly does
 not admit a whole-season replay. It requires `--manifest`, `--manifest-sha256`,
 `--source-root` and a new private `--output`. Missing fixture-as-known, forecast,
 outcome or rule admission cannot be replaced by a successful market audit.
+
+## Matched-state numerical diagnosis
+
+The separate[source-checkout probe](../tools/probe_solver_comparison.py)and
+[fixed protocol](solver_comparison_protocol_2026-10-24.json)compare standing and
+admitted Solio cores at the same ten frozen H6states: both new seeds, each at
+GW1/6/16/30/38. The diagnosis was declared after the six season scores were known;
+it is not an untouched outcome test. Each solver gets two seconds, the same
+restricted-pool procedure, forecasts and retained chip schedule. Only decision
+files are read; there is no outcome/settlement argument. A separate integer-ledger
+verifier checks complete plans and common mean objectives. Actual gains in
+conditional objective are not realised season-point gains or permission to
+switch policy automatically.
+
+Run it after the historical batch is terminal under the existing two-thread,
+120second/4GiB process-group and storage watchdog. Supply `--decisions`,
+`--reference` (the six-arm root), `--lock`, `--lock-sha256`, `--protocol`,
+`--protocol-sha256`, a new private `--output`, and the three explicit native
+runtime/source arguments described above. It retains all twenty cases, ten frozen
+inputs, raw native RPCs, conditional bounds and failed attempts. Injected test
+callbacks are clearly labelled mechanical and are never numerical evidence.
