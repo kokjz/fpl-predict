@@ -1,0 +1,3058 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24 Asia/Singapore",
+  "study_source_commit": "533ca585fb9e79347a51628e10d6ac33a6bcb723",
+  "lock_sha256": "ec9918b09eb319093938c3d7bea6b52c2dc86ca537e33143dba2b813443ecb42",
+  "protocol_sha256": "17243ccc2a3d7c1ec96a263cc684ce9f363cce319fde24f491a961695d5dac09",
+  "runtime": {
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "joblib": "1.6.0",
+      "threadpoolctl": "3.7.0"
+    }
+  },
+  "season_count": 1,
+  "reused_season": true,
+  "scope": "Two additional common openings, three policies, one reused2025/26season; not independent-season generalisation or original complete-manager reproduction.",
+  "rows": [
+    {
+      "name": "20261024_standingH1_adaptive",
+      "seed": 20261024,
+      "policy": "standingH1_adaptive",
+      "status": "completed",
+      "seconds": 6.190494582988322,
+      "sampled_rss_bytes": 266911744,
+      "net_points": 2154.0,
+      "hits": 32,
+      "transfers": 95,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 3,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 5,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 20,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 21,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 26,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 33,
+          "name": "wildcard"
+        }
+      ],
+      "conditional_bound_status_counts": {
+        "solver_dual": 38
+      },
+      "global_season_bound": null
+    },
+    {
+      "name": "20261024_standingH6_adaptive",
+      "seed": 20261024,
+      "policy": "standingH6_adaptive",
+      "status": "completed",
+      "seconds": 358.06549091706984,
+      "sampled_rss_bytes": 893026304,
+      "net_points": 2264.0,
+      "hits": 32,
+      "transfers": 91,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 6,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 15,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 20,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 21,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 25,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "conditional_bound_status_counts": {
+        "solver_dual": 38
+      },
+      "global_season_bound": null
+    },
+    {
+      "name": "20261024_SolioAdaptedH6_sharedAdaptiveChips",
+      "seed": 20261024,
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "status": "completed",
+      "seconds": 502.236474666046,
+      "sampled_rss_bytes": 936067072,
+      "net_points": 2266.0,
+      "hits": 24,
+      "transfers": 87,
+      "native_calls": 312,
+      "native_failed_attempts": 11,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 15,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 19,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 21,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 23,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 34,
+          "name": "wildcard"
+        }
+      ],
+      "conditional_bound_status_counts": {
+        "solver_dual": 38
+      },
+      "global_season_bound": null
+    },
+    {
+      "name": "20261025_standingH1_adaptive",
+      "seed": 20261025,
+      "policy": "standingH1_adaptive",
+      "status": "completed",
+      "seconds": 6.167921458836645,
+      "sampled_rss_bytes": 276430848,
+      "net_points": 2160.0,
+      "hits": 32,
+      "transfers": 96,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 3,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 5,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 20,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 21,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 26,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 33,
+          "name": "wildcard"
+        }
+      ],
+      "conditional_bound_status_counts": {
+        "solver_dual": 38
+      },
+      "global_season_bound": null
+    },
+    {
+      "name": "20261025_standingH6_adaptive",
+      "seed": 20261025,
+      "policy": "standingH6_adaptive",
+      "status": "completed",
+      "seconds": 373.13976529217325,
+      "sampled_rss_bytes": 524943360,
+      "net_points": 2154.0,
+      "hits": 28,
+      "transfers": 91,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 14,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 17,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 20,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 21,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 38,
+          "name": "bboost"
+        }
+      ],
+      "conditional_bound_status_counts": {
+        "solver_dual": 38
+      },
+      "global_season_bound": null
+    },
+    {
+      "name": "20261025_SolioAdaptedH6_sharedAdaptiveChips",
+      "seed": 20261025,
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "status": "completed",
+      "seconds": 469.75194304203615,
+      "sampled_rss_bytes": 875266048,
+      "net_points": 2307.0,
+      "hits": 24,
+      "transfers": 86,
+      "native_calls": 290,
+      "native_failed_attempts": 10,
+      "chip_dates": [
+        {
+          "gameweek": 2,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 4,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 16,
+          "name": "freehit"
+        },
+        {
+          "gameweek": 19,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 23,
+          "name": "bboost"
+        },
+        {
+          "gameweek": 25,
+          "name": "wildcard"
+        },
+        {
+          "gameweek": 26,
+          "name": "3xc"
+        },
+        {
+          "gameweek": 33,
+          "name": "freehit"
+        }
+      ],
+      "conditional_bound_status_counts": {
+        "solver_dual": 38
+      },
+      "global_season_bound": null
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "seed": 20261024,
+      "H6_minus_H1": 110.0,
+      "H6_minus_Solio": -2.0
+    },
+    {
+      "seed": 20261025,
+      "H6_minus_H1": -6.0,
+      "H6_minus_Solio": -153.0
+    }
+  ],
+  "research_consistency_gate_pass": false,
+  "independent_audit": {
+    "deadlines": 228,
+    "retained_provisional_periods": 928,
+    "native_complete_provisional_periods": 3451,
+    "native_calls": 602,
+    "native_expected_failures": 21,
+    "source_input_output_signatures_verified": true
+  },
+  "cost": {
+    "serial_minutes": 28.592534832652504,
+    "maximum_sampled_group_rss_bytes": 936067072,
+    "threads": 2,
+    "measurement_scope": "Serial historical arms, ordinary device load with small development checks; not isolated timing or routine replan latency."
+  },
+  "previous_qualification_diagnostics": {
+    "tool_sha256": "2508f41c3be287c9fea634a571cc7915439d1cc284b99c324bf87cddc12830ac",
+    "paths": 20,
+    "deadlines": 760,
+    "rows": [
+      {
+        "name": "r1_own_standingH1_adaptive",
+        "net_points": 2041.0,
+        "components": {
+          "base_xi": 1759.0,
+          "autosub_delta": 35.0,
+          "captain_bonus": 219.0,
+          "extra_captain_bonus": 7.0,
+          "bench_boost_points": 21.0,
+          "hits": 0
+        },
+        "headroom_base": 204.0,
+        "headroom_captain": 237.0,
+        "zero_starters": 22,
+        "cameos": 27,
+        "errors": {
+          "60plus": {
+            "n": 473,
+            "bias": -0.20094251174651845,
+            "mae": 2.727714511735303,
+            "rmse": 3.4324653951031623
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.4432093046153136,
+            "mae": 2.5774450034637004,
+            "rmse": 3.1667412832470134
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": -0.027883460729666472,
+            "mae": 2.754644690439676,
+            "rmse": 3.474310379197461
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 0.2205623950783887,
+            "mae": 2.6014922767911264,
+            "rmse": 3.3580344242484546
+          },
+          "cameo": {
+            "n": 39,
+            "bias": 2.466222679627165,
+            "mae": 2.519595945136098,
+            "rmse": 2.733112573943801
+          },
+          "zero": {
+            "n": 58,
+            "bias": 2.0612567969388786,
+            "mae": 2.0612567969388786,
+            "rmse": 2.861594094995894
+          }
+        }
+      },
+      {
+        "name": "r1_own_standingH6_adaptive",
+        "net_points": 2250.0,
+        "components": {
+          "base_xi": 1900.0,
+          "autosub_delta": 85.0,
+          "captain_bonus": 251.0,
+          "extra_captain_bonus": 13.0,
+          "bench_boost_points": 25.0,
+          "hits": 24
+        },
+        "headroom_base": 185.0,
+        "headroom_captain": 236.0,
+        "zero_starters": 30,
+        "cameos": 29,
+        "errors": {
+          "60plus": {
+            "n": 474,
+            "bias": -0.5316317735215963,
+            "mae": 2.946323357916892,
+            "rmse": 3.820164815388819
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.032610016006656736,
+            "mae": 2.8584036739338528,
+            "rmse": 3.6668763153745005
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.27110336975961385,
+            "mae": 2.7825219898937505,
+            "rmse": 3.4810129730850146
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.3699387353016935,
+            "mae": 2.9506341747226643,
+            "rmse": 3.9765966832191486
+          },
+          "cameo": {
+            "n": 32,
+            "bias": 3.040721309317368,
+            "mae": 3.1228054332891433,
+            "rmse": 3.416043350869581
+          },
+          "zero": {
+            "n": 64,
+            "bias": 2.103243912165667,
+            "mae": 2.103243912165667,
+            "rmse": 2.9059571204525025
+          }
+        }
+      },
+      {
+        "name": "r1_own_SolioAdaptedH6_sharedAdaptiveChips",
+        "net_points": 2224.0,
+        "components": {
+          "base_xi": 1868.0,
+          "autosub_delta": 77.0,
+          "captain_bonus": 234.0,
+          "extra_captain_bonus": 15.0,
+          "bench_boost_points": 58.0,
+          "hits": 28
+        },
+        "headroom_base": 221.0,
+        "headroom_captain": 255.0,
+        "zero_starters": 26,
+        "cameos": 31,
+        "errors": {
+          "60plus": {
+            "n": 472,
+            "bias": -0.5391883939478104,
+            "mae": 2.977290223274164,
+            "rmse": 3.8691522202582473
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -5.349888958999537e-05,
+            "mae": 2.81301495202866,
+            "rmse": 3.606152697283758
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.10912532778993593,
+            "mae": 2.919606811049687,
+            "rmse": 3.680884214908075
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.22221812921037654,
+            "mae": 2.9358407520503906,
+            "rmse": 3.9539748694553962
+          },
+          "cameo": {
+            "n": 39,
+            "bias": 2.684222885690428,
+            "mae": 2.8192210514052047,
+            "rmse": 3.156353724217133
+          },
+          "zero": {
+            "n": 59,
+            "bias": 2.221728352188804,
+            "mae": 2.221728352188804,
+            "rmse": 3.018159468053535
+          }
+        }
+      },
+      {
+        "name": "r1_own_AIrsenalAdaptedH6_sharedAdaptiveChips",
+        "net_points": 2012.0,
+        "components": {
+          "base_xi": 1753.0,
+          "autosub_delta": 58.0,
+          "captain_bonus": 229.0,
+          "extra_captain_bonus": 22.0,
+          "bench_boost_points": 22.0,
+          "hits": 72
+        },
+        "headroom_base": 190.0,
+        "headroom_captain": 245.0,
+        "zero_starters": 29,
+        "cameos": 37,
+        "errors": {
+          "60plus": {
+            "n": 453,
+            "bias": -0.38798825114471586,
+            "mae": 2.879031677369023,
+            "rmse": 3.7613322379196026
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.4700168325985463,
+            "mae": 2.6697891711953705,
+            "rmse": 3.390324459142087
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.412412743510467,
+            "mae": 2.9169716758418605,
+            "rmse": 3.6614445341090187
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.3731239256123546,
+            "mae": 2.7781968227512737,
+            "rmse": 3.776085044837449
+          },
+          "cameo": {
+            "n": 52,
+            "bias": 2.756614109728378,
+            "mae": 2.845504588953989,
+            "rmse": 3.1239958543347375
+          },
+          "zero": {
+            "n": 65,
+            "bias": 2.1127108429802215,
+            "mae": 2.1127108429802215,
+            "rmse": 2.789601441598551
+          }
+        }
+      },
+      {
+        "name": "r1_common_standingH1_adaptive",
+        "net_points": 2087.0,
+        "components": {
+          "base_xi": 1788.0,
+          "autosub_delta": 51.0,
+          "captain_bonus": 220.0,
+          "extra_captain_bonus": 7.0,
+          "bench_boost_points": 21.0,
+          "hits": 0
+        },
+        "headroom_base": 204.0,
+        "headroom_captain": 243.0,
+        "zero_starters": 17,
+        "cameos": 29,
+        "errors": {
+          "60plus": {
+            "n": 478,
+            "bias": -0.27346585245467664,
+            "mae": 2.7738071829875115,
+            "rmse": 3.50428801725689
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.1958504631481111,
+            "mae": 2.695941232942469,
+            "rmse": 3.3835921712601
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": -0.027883460729666472,
+            "mae": 2.754644690439676,
+            "rmse": 3.474310379197461
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 0.2205623950783887,
+            "mae": 2.6014922767911264,
+            "rmse": 3.3580344242484546
+          },
+          "cameo": {
+            "n": 41,
+            "bias": 2.3711256452142058,
+            "mae": 2.421895336795874,
+            "rmse": 2.668061410549525
+          },
+          "zero": {
+            "n": 51,
+            "bias": 2.07755534520117,
+            "mae": 2.07755534520117,
+            "rmse": 2.98473927799711
+          }
+        }
+      },
+      {
+        "name": "r1_common_standingH6_adaptive",
+        "net_points": 2220.0,
+        "components": {
+          "base_xi": 1879.0,
+          "autosub_delta": 86.0,
+          "captain_bonus": 239.0,
+          "extra_captain_bonus": 8.0,
+          "bench_boost_points": 32.0,
+          "hits": 24
+        },
+        "headroom_base": 201.0,
+        "headroom_captain": 259.0,
+        "zero_starters": 24,
+        "cameos": 32,
+        "errors": {
+          "60plus": {
+            "n": 470,
+            "bias": -0.5431730153504865,
+            "mae": 3.0335113005403147,
+            "rmse": 3.8758359425193363
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.09462067765408529,
+            "mae": 2.9620645793289446,
+            "rmse": 3.8029964982765034
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.19626465028126014,
+            "mae": 2.840315412831051,
+            "rmse": 3.595619714805833
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.13134702504548304,
+            "mae": 3.04656851177048,
+            "rmse": 3.898760825196979
+          },
+          "cameo": {
+            "n": 36,
+            "bias": 2.9978420925597344,
+            "mae": 3.0708057583124235,
+            "rmse": 3.4300890272722797
+          },
+          "zero": {
+            "n": 64,
+            "bias": 2.2429236255732867,
+            "mae": 2.2429236255732867,
+            "rmse": 3.0449996711743292
+          }
+        }
+      },
+      {
+        "name": "r1_common_SolioAdaptedH6_sharedAdaptiveChips",
+        "net_points": 2239.0,
+        "components": {
+          "base_xi": 1905.0,
+          "autosub_delta": 78.0,
+          "captain_bonus": 239.0,
+          "extra_captain_bonus": 9.0,
+          "bench_boost_points": 28.0,
+          "hits": 20
+        },
+        "headroom_base": 199.0,
+        "headroom_captain": 267.0,
+        "zero_starters": 24,
+        "cameos": 30,
+        "errors": {
+          "60plus": {
+            "n": 483,
+            "bias": -0.4660553516715385,
+            "mae": 2.9761987068781375,
+            "rmse": 3.84875001013407
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.016793879671993944,
+            "mae": 2.976208120470572,
+            "rmse": 3.780586373138761
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.05637725733615397,
+            "mae": 2.8997339685245387,
+            "rmse": 3.629437589213926
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.043347748680769856,
+            "mae": 2.881324612684369,
+            "rmse": 3.885056285042629
+          },
+          "cameo": {
+            "n": 35,
+            "bias": 2.847705003903814,
+            "mae": 2.902626817497152,
+            "rmse": 3.2998319644917786
+          },
+          "zero": {
+            "n": 52,
+            "bias": 2.4106004538979273,
+            "mae": 2.4106004538979273,
+            "rmse": 3.213344991350105
+          }
+        }
+      },
+      {
+        "name": "r1_common_AIrsenalAdaptedH6_sharedAdaptiveChips",
+        "net_points": 2141.0,
+        "components": {
+          "base_xi": 1842.0,
+          "autosub_delta": 79.0,
+          "captain_bonus": 236.0,
+          "extra_captain_bonus": 22.0,
+          "bench_boost_points": 26.0,
+          "hits": 64
+        },
+        "headroom_base": 177.0,
+        "headroom_captain": 247.0,
+        "zero_starters": 22,
+        "cameos": 41,
+        "errors": {
+          "60plus": {
+            "n": 466,
+            "bias": -0.5134178070962645,
+            "mae": 2.9386054944816546,
+            "rmse": 3.753404048529469
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.047872337751977204,
+            "mae": 2.784199435117145,
+            "rmse": 3.525262442604908
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.5233123107327886,
+            "mae": 2.878387167807192,
+            "rmse": 3.5474771239292338
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.35271696502399824,
+            "mae": 2.985590268384675,
+            "rmse": 3.898392702697878
+          },
+          "cameo": {
+            "n": 50,
+            "bias": 2.7711689204407945,
+            "mae": 2.846089646785563,
+            "rmse": 3.160267440984812
+          },
+          "zero": {
+            "n": 54,
+            "bias": 2.405851724291816,
+            "mae": 2.405851724291816,
+            "rmse": 3.187084049561327
+          }
+        }
+      },
+      {
+        "name": "r2_own_standingH1_adaptive",
+        "net_points": 2041.0,
+        "components": {
+          "base_xi": 1759.0,
+          "autosub_delta": 35.0,
+          "captain_bonus": 219.0,
+          "extra_captain_bonus": 7.0,
+          "bench_boost_points": 21.0,
+          "hits": 0
+        },
+        "headroom_base": 204.0,
+        "headroom_captain": 237.0,
+        "zero_starters": 22,
+        "cameos": 27,
+        "errors": {
+          "60plus": {
+            "n": 473,
+            "bias": -0.20094251174651845,
+            "mae": 2.727714511735303,
+            "rmse": 3.4324653951031623
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.4432093046153136,
+            "mae": 2.5774450034637004,
+            "rmse": 3.1667412832470134
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": -0.027883460729666472,
+            "mae": 2.754644690439676,
+            "rmse": 3.474310379197461
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 0.2205623950783887,
+            "mae": 2.6014922767911264,
+            "rmse": 3.3580344242484546
+          },
+          "cameo": {
+            "n": 39,
+            "bias": 2.466222679627165,
+            "mae": 2.519595945136098,
+            "rmse": 2.733112573943801
+          },
+          "zero": {
+            "n": 58,
+            "bias": 2.0612567969388786,
+            "mae": 2.0612567969388786,
+            "rmse": 2.861594094995894
+          }
+        }
+      },
+      {
+        "name": "r2_own_standingH6_adaptive",
+        "net_points": 2236.0,
+        "components": {
+          "base_xi": 1914.0,
+          "autosub_delta": 69.0,
+          "captain_bonus": 237.0,
+          "extra_captain_bonus": 13.0,
+          "bench_boost_points": 27.0,
+          "hits": 24
+        },
+        "headroom_base": 213.0,
+        "headroom_captain": 264.0,
+        "zero_starters": 26,
+        "cameos": 33,
+        "errors": {
+          "60plus": {
+            "n": 470,
+            "bias": -0.5663339400471196,
+            "mae": 3.0230681206824417,
+            "rmse": 3.903199679139931
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.022890863300992447,
+            "mae": 2.8472035114759944,
+            "rmse": 3.668594747187567
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.2844019857444316,
+            "mae": 2.929593063498877,
+            "rmse": 3.585914121729736
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.34071434234292813,
+            "mae": 3.071313420247968,
+            "rmse": 4.086801044889479
+          },
+          "cameo": {
+            "n": 37,
+            "bias": 3.143380302232756,
+            "mae": 3.2143719770191566,
+            "rmse": 3.465930949638762
+          },
+          "zero": {
+            "n": 63,
+            "bias": 2.21488837927425,
+            "mae": 2.21488837927425,
+            "rmse": 2.9095695067798237
+          }
+        }
+      },
+      {
+        "name": "r2_own_SolioAdaptedH6_sharedAdaptiveChips",
+        "net_points": 2250.0,
+        "components": {
+          "base_xi": 1912.0,
+          "autosub_delta": 77.0,
+          "captain_bonus": 243.0,
+          "extra_captain_bonus": 8.0,
+          "bench_boost_points": 34.0,
+          "hits": 24
+        },
+        "headroom_base": 189.0,
+        "headroom_captain": 244.0,
+        "zero_starters": 26,
+        "cameos": 32,
+        "errors": {
+          "60plus": {
+            "n": 477,
+            "bias": -0.5163234562998088,
+            "mae": 2.922258843568382,
+            "rmse": 3.727651301676817
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.09955325373740727,
+            "mae": 2.870314710538962,
+            "rmse": 3.6873095983058093
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.17512546327227804,
+            "mae": 2.900431519926917,
+            "rmse": 3.5942999507465547
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.1478072434476571,
+            "mae": 2.8092567283449936,
+            "rmse": 3.6517394969695873
+          },
+          "cameo": {
+            "n": 35,
+            "bias": 3.1147146013838736,
+            "mae": 3.189762943300925,
+            "rmse": 3.4780602595517256
+          },
+          "zero": {
+            "n": 58,
+            "bias": 2.162113011125771,
+            "mae": 2.162113011125771,
+            "rmse": 2.992285994468118
+          }
+        }
+      },
+      {
+        "name": "r2_own_AIrsenalAdaptedH6_sharedAdaptiveChips",
+        "net_points": 1949.0,
+        "components": {
+          "base_xi": 1658.0,
+          "autosub_delta": 98.0,
+          "captain_bonus": 234.0,
+          "extra_captain_bonus": 8.0,
+          "bench_boost_points": 31.0,
+          "hits": 80
+        },
+        "headroom_base": 175.0,
+        "headroom_captain": 224.0,
+        "zero_starters": 34,
+        "cameos": 42,
+        "errors": {
+          "60plus": {
+            "n": 445,
+            "bias": -0.32212333336479554,
+            "mae": 2.8416138085918443,
+            "rmse": 3.648845657325062
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.4700168325985463,
+            "mae": 2.6697891711953705,
+            "rmse": 3.390324459142087
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.5911469134604519,
+            "mae": 2.850912477819699,
+            "rmse": 3.5089082261570987
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.20298919406719132,
+            "mae": 2.8129854837883794,
+            "rmse": 3.700205267727756
+          },
+          "cameo": {
+            "n": 54,
+            "bias": 2.8712725142461273,
+            "mae": 2.95687075350042,
+            "rmse": 3.1976188247890054
+          },
+          "zero": {
+            "n": 71,
+            "bias": 2.23500060742892,
+            "mae": 2.23500060742892,
+            "rmse": 2.9785300575517497
+          }
+        }
+      },
+      {
+        "name": "r2_common_standingH1_adaptive",
+        "net_points": 2087.0,
+        "components": {
+          "base_xi": 1788.0,
+          "autosub_delta": 51.0,
+          "captain_bonus": 220.0,
+          "extra_captain_bonus": 7.0,
+          "bench_boost_points": 21.0,
+          "hits": 0
+        },
+        "headroom_base": 204.0,
+        "headroom_captain": 243.0,
+        "zero_starters": 17,
+        "cameos": 29,
+        "errors": {
+          "60plus": {
+            "n": 478,
+            "bias": -0.27346585245467664,
+            "mae": 2.7738071829875115,
+            "rmse": 3.50428801725689
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.1958504631481111,
+            "mae": 2.695941232942469,
+            "rmse": 3.3835921712601
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": -0.027883460729666472,
+            "mae": 2.754644690439676,
+            "rmse": 3.474310379197461
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 0.2205623950783887,
+            "mae": 2.6014922767911264,
+            "rmse": 3.3580344242484546
+          },
+          "cameo": {
+            "n": 41,
+            "bias": 2.3711256452142058,
+            "mae": 2.421895336795874,
+            "rmse": 2.668061410549525
+          },
+          "zero": {
+            "n": 51,
+            "bias": 2.07755534520117,
+            "mae": 2.07755534520117,
+            "rmse": 2.98473927799711
+          }
+        }
+      },
+      {
+        "name": "r2_common_standingH6_adaptive",
+        "net_points": 2220.0,
+        "components": {
+          "base_xi": 1879.0,
+          "autosub_delta": 86.0,
+          "captain_bonus": 239.0,
+          "extra_captain_bonus": 8.0,
+          "bench_boost_points": 32.0,
+          "hits": 24
+        },
+        "headroom_base": 201.0,
+        "headroom_captain": 259.0,
+        "zero_starters": 24,
+        "cameos": 32,
+        "errors": {
+          "60plus": {
+            "n": 470,
+            "bias": -0.5431730153504865,
+            "mae": 3.0335113005403147,
+            "rmse": 3.8758359425193363
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.09462067765408529,
+            "mae": 2.9620645793289446,
+            "rmse": 3.8029964982765034
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.19626465028126014,
+            "mae": 2.840315412831051,
+            "rmse": 3.595619714805833
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.13134702504548304,
+            "mae": 3.04656851177048,
+            "rmse": 3.898760825196979
+          },
+          "cameo": {
+            "n": 36,
+            "bias": 2.9978420925597344,
+            "mae": 3.0708057583124235,
+            "rmse": 3.4300890272722797
+          },
+          "zero": {
+            "n": 64,
+            "bias": 2.2429236255732867,
+            "mae": 2.2429236255732867,
+            "rmse": 3.0449996711743292
+          }
+        }
+      },
+      {
+        "name": "r2_common_SolioAdaptedH6_sharedAdaptiveChips",
+        "net_points": 2200.0,
+        "components": {
+          "base_xi": 1874.0,
+          "autosub_delta": 77.0,
+          "captain_bonus": 239.0,
+          "extra_captain_bonus": 13.0,
+          "bench_boost_points": 21.0,
+          "hits": 24
+        },
+        "headroom_base": 234.0,
+        "headroom_captain": 258.0,
+        "zero_starters": 25,
+        "cameos": 31,
+        "errors": {
+          "60plus": {
+            "n": 483,
+            "bias": -0.4679130845025344,
+            "mae": 2.9791683631841064,
+            "rmse": 3.8673634389991185
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.016793879671993944,
+            "mae": 2.976208120470572,
+            "rmse": 3.780586373138761
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.09291966245932752,
+            "mae": 2.91728889682641,
+            "rmse": 3.673060664654157
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.053103934707461234,
+            "mae": 2.9050916873982757,
+            "rmse": 3.909167919748053
+          },
+          "cameo": {
+            "n": 36,
+            "bias": 2.84795170498231,
+            "mae": 2.9013479126424997,
+            "rmse": 3.288326447652915
+          },
+          "zero": {
+            "n": 51,
+            "bias": 2.5247368202264306,
+            "mae": 2.5247368202264306,
+            "rmse": 3.29987132215505
+          }
+        }
+      },
+      {
+        "name": "r2_common_AIrsenalAdaptedH6_sharedAdaptiveChips",
+        "net_points": 2144.0,
+        "components": {
+          "base_xi": 1828.0,
+          "autosub_delta": 108.0,
+          "captain_bonus": 234.0,
+          "extra_captain_bonus": 17.0,
+          "bench_boost_points": 25.0,
+          "hits": 68
+        },
+        "headroom_base": 182.0,
+        "headroom_captain": 258.0,
+        "zero_starters": 24,
+        "cameos": 42,
+        "errors": {
+          "60plus": {
+            "n": 465,
+            "bias": -0.5678932608020861,
+            "mae": 2.9752435410878686,
+            "rmse": 3.851708637355586
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.047872337751977204,
+            "mae": 2.784199435117145,
+            "rmse": 3.525262442604908
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.5100210583529885,
+            "mae": 2.855476903199764,
+            "rmse": 3.52511209939033
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.47873161297969646,
+            "mae": 3.0861948522506775,
+            "rmse": 4.1546069863276776
+          },
+          "cameo": {
+            "n": 50,
+            "bias": 2.7406632570956617,
+            "mae": 2.8155839834404297,
+            "rmse": 3.1348781484864645
+          },
+          "zero": {
+            "n": 55,
+            "bias": 2.3815366108916143,
+            "mae": 2.3815366108916143,
+            "rmse": 3.2008255797414416
+          }
+        }
+      },
+      {
+        "name": "control_own_fixed_calendar",
+        "net_points": 2095.0,
+        "components": {
+          "base_xi": 1800.0,
+          "autosub_delta": 63.0,
+          "captain_bonus": 240.0,
+          "extra_captain_bonus": 13.0,
+          "bench_boost_points": 35.0,
+          "hits": 56
+        },
+        "headroom_base": 195.0,
+        "headroom_captain": 255.0,
+        "zero_starters": 31,
+        "cameos": 33,
+        "errors": {
+          "60plus": {
+            "n": 460,
+            "bias": -0.39901760416710214,
+            "mae": 2.876004917636679,
+            "rmse": 3.861255863525083
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.08587449977794404,
+            "mae": 2.7814785923249263,
+            "rmse": 3.829163471820901
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.35463703780488987,
+            "mae": 2.840968080347826,
+            "rmse": 3.6673417818039296
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.04749948556605274,
+            "mae": 2.7335114262676643,
+            "rmse": 3.645301958791354
+          },
+          "cameo": {
+            "n": 41,
+            "bias": 2.8521625244327478,
+            "mae": 2.9631126571855186,
+            "rmse": 3.2780885720562725
+          },
+          "zero": {
+            "n": 69,
+            "bias": 2.086366331041847,
+            "mae": 2.086366331041847,
+            "rmse": 2.8863547821165043
+          }
+        }
+      },
+      {
+        "name": "control_common_fixed_calendar",
+        "net_points": 2202.0,
+        "components": {
+          "base_xi": 1911.0,
+          "autosub_delta": 59.0,
+          "captain_bonus": 244.0,
+          "extra_captain_bonus": 13.0,
+          "bench_boost_points": 31.0,
+          "hits": 56
+        },
+        "headroom_base": 167.0,
+        "headroom_captain": 245.0,
+        "zero_starters": 20,
+        "cameos": 29,
+        "errors": {
+          "60plus": {
+            "n": 474,
+            "bias": -0.41975098633261015,
+            "mae": 2.9373094181093755,
+            "rmse": 3.816203214197105
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.0597561092582978,
+            "mae": 2.7717937415065492,
+            "rmse": 3.6433769397524576
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.24428037493899182,
+            "mae": 2.964107838920743,
+            "rmse": 3.6554320575223898
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.0814449917457249,
+            "mae": 2.8138715518556716,
+            "rmse": 3.82256558171806
+          },
+          "cameo": {
+            "n": 42,
+            "bias": 2.5125797447271574,
+            "mae": 2.808506471354227,
+            "rmse": 3.216446052069626
+          },
+          "zero": {
+            "n": 54,
+            "bias": 2.1251065099374347,
+            "mae": 2.1251065099374347,
+            "rmse": 3.002123706872731
+          }
+        }
+      },
+      {
+        "name": "control_own_hold_no_chips",
+        "net_points": 300.0,
+        "components": {
+          "base_xi": 193.0,
+          "autosub_delta": 3.0,
+          "captain_bonus": 104.0,
+          "extra_captain_bonus": 0.0,
+          "bench_boost_points": 0.0,
+          "hits": 0
+        },
+        "headroom_base": 0.0,
+        "headroom_captain": 29.0,
+        "zero_starters": 343,
+        "cameos": 39,
+        "errors": {
+          "60plus": {
+            "n": 37,
+            "bias": -1.9572272209194506,
+            "mae": 2.573145049330788,
+            "rmse": 3.718292970424614
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.2230961200098764,
+            "mae": 0.34066834826614945,
+            "rmse": 0.6505751051298442
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": -0.017310848200513537,
+            "mae": 0.3486784355320405,
+            "rmse": 1.0959965304928208
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.10370203536021622,
+            "mae": 0.4459449630136586,
+            "rmse": 1.324039946140296
+          },
+          "cameo": {
+            "n": 40,
+            "bias": 0.3105002401023821,
+            "mae": 0.95067975374888,
+            "rmse": 1.1122152519092185
+          },
+          "zero": {
+            "n": 493,
+            "bias": 0.16523156025945482,
+            "mae": 0.16523156025945482,
+            "rmse": 0.3802737443587888
+          }
+        }
+      },
+      {
+        "name": "control_common_hold_no_chips",
+        "net_points": 1449.0,
+        "components": {
+          "base_xi": 1181.0,
+          "autosub_delta": 21.0,
+          "captain_bonus": 247.0,
+          "extra_captain_bonus": 0.0,
+          "bench_boost_points": 0.0,
+          "hits": 0
+        },
+        "headroom_base": 0.0,
+        "headroom_captain": 138.0,
+        "zero_starters": 114,
+        "cameos": 76,
+        "errors": {
+          "60plus": {
+            "n": 231,
+            "bias": -1.2398678062667494,
+            "mae": 2.9075013991772716,
+            "rmse": 3.8965638656149726
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.4241005510765326,
+            "mae": 1.6923016107644278,
+            "rmse": 2.8516864895528893
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": -0.18282657160502833,
+            "mae": 1.5405145956989317,
+            "rmse": 2.674942281253243
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.18605499779800233,
+            "mae": 1.456335994268158,
+            "rmse": 2.5458776626030826
+          },
+          "cameo": {
+            "n": 79,
+            "bias": 0.36162756491616144,
+            "mae": 1.4545141636199517,
+            "rmse": 2.2098089216892935
+          },
+          "zero": {
+            "n": 260,
+            "bias": 0.40769306574114444,
+            "mae": 0.40769306574114444,
+            "rmse": 0.9895984399596098
+          }
+        }
+      }
+    ],
+    "H6_minus_H1_accounting": [
+      {
+        "repetition": 1,
+        "opening": "own",
+        "net_difference": 209.0,
+        "score_component_difference": {
+          "base_xi": 141.0,
+          "autosub_delta": 50.0,
+          "captain_bonus": 32.0,
+          "extra_captain_bonus": 6.0,
+          "bench_boost_points": 4.0,
+          "hits": 24
+        },
+        "H1_zero_starters": 22,
+        "H6_zero_starters": 30,
+        "H1_cameos": 27,
+        "H6_cameos": 29
+      },
+      {
+        "repetition": 1,
+        "opening": "common",
+        "net_difference": 133.0,
+        "score_component_difference": {
+          "base_xi": 91.0,
+          "autosub_delta": 35.0,
+          "captain_bonus": 19.0,
+          "extra_captain_bonus": 1.0,
+          "bench_boost_points": 11.0,
+          "hits": 24
+        },
+        "H1_zero_starters": 17,
+        "H6_zero_starters": 24,
+        "H1_cameos": 29,
+        "H6_cameos": 32
+      },
+      {
+        "repetition": 2,
+        "opening": "own",
+        "net_difference": 195.0,
+        "score_component_difference": {
+          "base_xi": 155.0,
+          "autosub_delta": 34.0,
+          "captain_bonus": 18.0,
+          "extra_captain_bonus": 6.0,
+          "bench_boost_points": 6.0,
+          "hits": 24
+        },
+        "H1_zero_starters": 22,
+        "H6_zero_starters": 26,
+        "H1_cameos": 27,
+        "H6_cameos": 33
+      },
+      {
+        "repetition": 2,
+        "opening": "common",
+        "net_difference": 133.0,
+        "score_component_difference": {
+          "base_xi": 91.0,
+          "autosub_delta": 35.0,
+          "captain_bonus": 19.0,
+          "extra_captain_bonus": 1.0,
+          "bench_boost_points": 11.0,
+          "hits": 24
+        },
+        "H1_zero_starters": 17,
+        "H6_zero_starters": 24,
+        "H1_cameos": 29,
+        "H6_cameos": 32
+      }
+    ],
+    "scope": "Outcome-aware fixed-path diagnostics; owned RMSE cohorts differ and are not cross-model predictive rankings. Hindsight headroom is not attainable gain or causal loss."
+  },
+  "separate_forecaster_track_diagnostics": {
+    "tool_sha256": "2508f41c3be287c9fea634a571cc7915439d1cc284b99c324bf87cddc12830ac",
+    "paths": 16,
+    "deadlines": 608,
+    "rows": [
+      {
+        "name": "common_core_hgb7_own",
+        "net_points": 2088.0,
+        "components": {
+          "base_xi": 1808.0,
+          "autosub_delta": 43.0,
+          "captain_bonus": 234.0,
+          "extra_captain_bonus": 16.0,
+          "bench_boost_points": 15.0,
+          "hits": 28
+        },
+        "headroom_base": 246.0,
+        "headroom_captain": 237.0,
+        "zero_starters": 19,
+        "cameos": 30,
+        "errors": {
+          "60plus": {
+            "n": 486,
+            "bias": -0.29975543138805083,
+            "mae": 2.8267183768131643,
+            "rmse": 3.604712493065424
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.09298143830298738,
+            "mae": 2.808013834111584,
+            "rmse": 3.5389440020350063
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.19916769524157996,
+            "mae": 2.8034576966076954,
+            "rmse": 3.531847394365005
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 0.10025190593592716,
+            "mae": 2.789066054044939,
+            "rmse": 3.568733636797343
+          },
+          "cameo": {
+            "n": 41,
+            "bias": 2.9161969318221526,
+            "mae": 2.9598101836002093,
+            "rmse": 3.267357978221273
+          },
+          "zero": {
+            "n": 43,
+            "bias": 2.35189510603586,
+            "mae": 2.35189510603586,
+            "rmse": 3.1040747247716776
+          }
+        }
+      },
+      {
+        "name": "common_core_hgb7_common",
+        "net_points": 2134.0,
+        "components": {
+          "base_xi": 1794.0,
+          "autosub_delta": 97.0,
+          "captain_bonus": 235.0,
+          "extra_captain_bonus": 18.0,
+          "bench_boost_points": 34.0,
+          "hits": 44
+        },
+        "headroom_base": 241.0,
+        "headroom_captain": 258.0,
+        "zero_starters": 19,
+        "cameos": 31,
+        "errors": {
+          "60plus": {
+            "n": 484,
+            "bias": -0.3963941284918797,
+            "mae": 2.9024610952245884,
+            "rmse": 3.7129833802863343
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.0162679305502421,
+            "mae": 2.8434281986037564,
+            "rmse": 3.6430997122929654
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.1665991270155742,
+            "mae": 2.858984596057956,
+            "rmse": 3.5987336155170317
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.050584412443696346,
+            "mae": 2.8665963947532047,
+            "rmse": 3.6953763685249035
+          },
+          "cameo": {
+            "n": 40,
+            "bias": 2.969475214351238,
+            "mae": 3.0884261081105246,
+            "rmse": 3.3373370836789618
+          },
+          "zero": {
+            "n": 46,
+            "bias": 2.165861556554111,
+            "mae": 2.165861556554111,
+            "rmse": 3.139807840863432
+          }
+        }
+      },
+      {
+        "name": "native_hgb_own",
+        "net_points": 2041.0,
+        "components": {
+          "base_xi": 1761.0,
+          "autosub_delta": 78.0,
+          "captain_bonus": 192.0,
+          "extra_captain_bonus": 18.0,
+          "bench_boost_points": 28.0,
+          "hits": 36
+        },
+        "headroom_base": 134.0,
+        "headroom_captain": 273.0,
+        "zero_starters": 18,
+        "cameos": 27,
+        "errors": {
+          "60plus": {
+            "n": 475,
+            "bias": -0.0935343303953194,
+            "mae": 2.8206274582830515,
+            "rmse": 3.562301441679917
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.24138052793599066,
+            "mae": 2.7757691195454823,
+            "rmse": 3.5864122852923264
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.2865633765914756,
+            "mae": 2.8735634536589667,
+            "rmse": 3.508554344598236
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 0.34239667663057916,
+            "mae": 2.558367731818067,
+            "rmse": 3.292033230765861
+          },
+          "cameo": {
+            "n": 37,
+            "bias": 2.5016499854605936,
+            "mae": 2.861615680150687,
+            "rmse": 3.141640016476726
+          },
+          "zero": {
+            "n": 58,
+            "bias": 2.0077279422774987,
+            "mae": 2.0077279422774987,
+            "rmse": 2.8357761745646193
+          }
+        }
+      },
+      {
+        "name": "native_hgb_common",
+        "net_points": 1971.0,
+        "components": {
+          "base_xi": 1709.0,
+          "autosub_delta": 86.0,
+          "captain_bonus": 195.0,
+          "extra_captain_bonus": 12.0,
+          "bench_boost_points": 29.0,
+          "hits": 60
+        },
+        "headroom_base": 157.0,
+        "headroom_captain": 288.0,
+        "zero_starters": 27,
+        "cameos": 25,
+        "errors": {
+          "60plus": {
+            "n": 465,
+            "bias": -0.1851591493493559,
+            "mae": 2.962618841319951,
+            "rmse": 3.7684072128871104
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.314520329838483,
+            "mae": 2.732557565884778,
+            "rmse": 3.5057623953882397
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.18162447415231486,
+            "mae": 2.954149313512433,
+            "rmse": 3.679724902376035
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 0.31355308075898314,
+            "mae": 2.8632440433983,
+            "rmse": 3.7295710616548106
+          },
+          "cameo": {
+            "n": 41,
+            "bias": 2.527892310584937,
+            "mae": 2.7080682207824975,
+            "rmse": 3.019929202272943
+          },
+          "zero": {
+            "n": 64,
+            "bias": 2.119425172317041,
+            "mae": 2.119425172317041,
+            "rmse": 2.967025334360437
+          }
+        }
+      },
+      {
+        "name": "dastan_adaptation_own",
+        "net_points": 2116.0,
+        "components": {
+          "base_xi": 1785.0,
+          "autosub_delta": 69.0,
+          "captain_bonus": 222.0,
+          "extra_captain_bonus": 23.0,
+          "bench_boost_points": 33.0,
+          "hits": 16
+        },
+        "headroom_base": 172.0,
+        "headroom_captain": 246.0,
+        "zero_starters": 17,
+        "cameos": 27,
+        "errors": {
+          "60plus": {
+            "n": 480,
+            "bias": -0.40674207906865323,
+            "mae": 2.8794158751031422,
+            "rmse": 3.7011920475645637
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.397736632483315,
+            "mae": 2.524009748216748,
+            "rmse": 3.1575806743579826
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": -0.07190486207534681,
+            "mae": 3.0137890112891634,
+            "rmse": 3.7972448457477035
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.4092647344885657,
+            "mae": 2.777063273751671,
+            "rmse": 3.7214596998332494
+          },
+          "cameo": {
+            "n": 42,
+            "bias": 1.9488824851725715,
+            "mae": 2.2469012079078055,
+            "rmse": 2.599217444468938
+          },
+          "zero": {
+            "n": 48,
+            "bias": 2.151097429110781,
+            "mae": 2.151097429110781,
+            "rmse": 2.849024573556736
+          }
+        }
+      },
+      {
+        "name": "dastan_adaptation_common",
+        "net_points": 2014.0,
+        "components": {
+          "base_xi": 1743.0,
+          "autosub_delta": 39.0,
+          "captain_bonus": 213.0,
+          "extra_captain_bonus": 19.0,
+          "bench_boost_points": 32.0,
+          "hits": 32
+        },
+        "headroom_base": 226.0,
+        "headroom_captain": 235.0,
+        "zero_starters": 17,
+        "cameos": 24,
+        "errors": {
+          "60plus": {
+            "n": 479,
+            "bias": -0.33074956905447445,
+            "mae": 2.7765713250298907,
+            "rmse": 3.5117270438526633
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.05684696050777934,
+            "mae": 2.4187010407977407,
+            "rmse": 3.2148514151123755
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.1276897845981224,
+            "mae": 2.7218059004379715,
+            "rmse": 3.3745719146248856
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.26053278413861786,
+            "mae": 2.726223797348648,
+            "rmse": 3.5083270328095812
+          },
+          "cameo": {
+            "n": 37,
+            "bias": 1.7439566400254998,
+            "mae": 2.1662178466906354,
+            "rmse": 2.4530735528242995
+          },
+          "zero": {
+            "n": 54,
+            "bias": 1.536878000867581,
+            "mae": 1.536878000867581,
+            "rmse": 2.4407945938717295
+          }
+        }
+      },
+      {
+        "name": "openfpl_cv1_adaptation_own",
+        "net_points": 2130.0,
+        "components": {
+          "base_xi": 1745.0,
+          "autosub_delta": 128.0,
+          "captain_bonus": 216.0,
+          "extra_captain_bonus": 11.0,
+          "bench_boost_points": 42.0,
+          "hits": 12
+        },
+        "headroom_base": 214.0,
+        "headroom_captain": 260.0,
+        "zero_starters": 22,
+        "cameos": 24,
+        "errors": {
+          "60plus": {
+            "n": 485,
+            "bias": -0.20974640902037467,
+            "mae": 2.910560638819271,
+            "rmse": 3.660078411255738
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.23739488684706903,
+            "mae": 2.7576725528354267,
+            "rmse": 3.5588286471906923
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.2496498218266674,
+            "mae": 2.937440498043137,
+            "rmse": 3.5757920165077794
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 0.05942431053997911,
+            "mae": 2.8726735900138745,
+            "rmse": 3.6282992461509576
+          },
+          "cameo": {
+            "n": 35,
+            "bias": 2.5801117146892634,
+            "mae": 2.8260911099182473,
+            "rmse": 3.166268027816434
+          },
+          "zero": {
+            "n": 50,
+            "bias": 2.341863848986647,
+            "mae": 2.341863848986647,
+            "rmse": 3.1133389205824704
+          }
+        }
+      },
+      {
+        "name": "openfpl_cv1_adaptation_common",
+        "net_points": 2132.0,
+        "components": {
+          "base_xi": 1858.0,
+          "autosub_delta": 34.0,
+          "captain_bonus": 194.0,
+          "extra_captain_bonus": 10.0,
+          "bench_boost_points": 48.0,
+          "hits": 12
+        },
+        "headroom_base": 240.0,
+        "headroom_captain": 293.0,
+        "zero_starters": 15,
+        "cameos": 29,
+        "errors": {
+          "60plus": {
+            "n": 480,
+            "bias": -0.34273505846636587,
+            "mae": 3.011789830739642,
+            "rmse": 3.758039689870052
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.217662847401518,
+            "mae": 2.719377207123076,
+            "rmse": 3.4886852743428
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": -0.20211740885952528,
+            "mae": 3.076364031022025,
+            "rmse": 3.796769978959484
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 0.043003457100816204,
+            "mae": 2.7804099561166358,
+            "rmse": 3.5505978353669416
+          },
+          "cameo": {
+            "n": 38,
+            "bias": 2.2134952905186456,
+            "mae": 2.468742762270492,
+            "rmse": 2.9089237924438645
+          },
+          "zero": {
+            "n": 52,
+            "bias": 1.7533074964996649,
+            "mae": 1.7533074964996649,
+            "rmse": 2.6055999829601415
+          }
+        }
+      },
+      {
+        "name": "conjugate_poisson_adaptation_own",
+        "net_points": 2032.0,
+        "components": {
+          "base_xi": 1783.0,
+          "autosub_delta": 52.0,
+          "captain_bonus": 220.0,
+          "extra_captain_bonus": 12.0,
+          "bench_boost_points": 9.0,
+          "hits": 44
+        },
+        "headroom_base": 154.0,
+        "headroom_captain": 245.0,
+        "zero_starters": 22,
+        "cameos": 29,
+        "errors": {
+          "60plus": {
+            "n": 456,
+            "bias": 0.1903787620863882,
+            "mae": 2.9080840728108543,
+            "rmse": 3.529759428298725
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.9703569955648784,
+            "mae": 2.819168120460182,
+            "rmse": 3.4523401066507367
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.28123386342034884,
+            "mae": 2.8821306230563235,
+            "rmse": 3.510319319764873
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 0.6444200450440536,
+            "mae": 2.799111077879734,
+            "rmse": 3.441148044700434
+          },
+          "cameo": {
+            "n": 42,
+            "bias": 2.730486963416477,
+            "mae": 3.117720337313269,
+            "rmse": 3.3595237198377608
+          },
+          "zero": {
+            "n": 72,
+            "bias": 2.202259133821721,
+            "mae": 2.202259133821721,
+            "rmse": 3.1248090389484613
+          }
+        }
+      },
+      {
+        "name": "conjugate_poisson_adaptation_common",
+        "net_points": 2037.0,
+        "components": {
+          "base_xi": 1764.0,
+          "autosub_delta": 73.0,
+          "captain_bonus": 234.0,
+          "extra_captain_bonus": 8.0,
+          "bench_boost_points": 22.0,
+          "hits": 64
+        },
+        "headroom_base": 168.0,
+        "headroom_captain": 249.0,
+        "zero_starters": 27,
+        "cameos": 30,
+        "errors": {
+          "60plus": {
+            "n": 465,
+            "bias": 0.12165711412623262,
+            "mae": 2.9657083595567046,
+            "rmse": 3.654569621994916
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.6729747456832187,
+            "mae": 2.9702012764215477,
+            "rmse": 3.7082652054429484
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.382246490438152,
+            "mae": 2.876560565863569,
+            "rmse": 3.539603143394145
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 0.6703653632448403,
+            "mae": 2.8339270790393467,
+            "rmse": 3.510404851751231
+          },
+          "cameo": {
+            "n": 40,
+            "bias": 3.0306440524089986,
+            "mae": 3.063336500403302,
+            "rmse": 3.339603891659859
+          },
+          "zero": {
+            "n": 65,
+            "bias": 2.286732096348929,
+            "mae": 2.286732096348929,
+            "rmse": 3.2489803972375335
+          }
+        }
+      },
+      {
+        "name": "standing_prior5_own",
+        "net_points": 2157.0,
+        "components": {
+          "base_xi": 1803.0,
+          "autosub_delta": 77.0,
+          "captain_bonus": 240.0,
+          "extra_captain_bonus": 30.0,
+          "bench_boost_points": 35.0,
+          "hits": 28
+        },
+        "headroom_base": 217.0,
+        "headroom_captain": 228.0,
+        "zero_starters": 26,
+        "cameos": 29,
+        "errors": {
+          "60plus": {
+            "n": 485,
+            "bias": -0.3503272150405108,
+            "mae": 2.930574876948947,
+            "rmse": 3.7615111628578597
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.1446730017795634,
+            "mae": 2.874480318055378,
+            "rmse": 3.5874674473799044
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.17952089621970282,
+            "mae": 2.926052935142003,
+            "rmse": 3.683966523013754
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.014558785139889634,
+            "mae": 2.930346330885644,
+            "rmse": 3.8470495557488977
+          },
+          "cameo": {
+            "n": 38,
+            "bias": 2.7316374799472407,
+            "mae": 2.9087843360878023,
+            "rmse": 3.260702773089862
+          },
+          "zero": {
+            "n": 47,
+            "bias": 2.695823485985731,
+            "mae": 2.695823485985731,
+            "rmse": 3.432601637953728
+          }
+        }
+      },
+      {
+        "name": "standing_prior5_common",
+        "net_points": 2156.0,
+        "components": {
+          "base_xi": 1779.0,
+          "autosub_delta": 108.0,
+          "captain_bonus": 239.0,
+          "extra_captain_bonus": 24.0,
+          "bench_boost_points": 42.0,
+          "hits": 36
+        },
+        "headroom_base": 225.0,
+        "headroom_captain": 235.0,
+        "zero_starters": 25,
+        "cameos": 30,
+        "errors": {
+          "60plus": {
+            "n": 488,
+            "bias": -0.37301029995084517,
+            "mae": 2.923356489594431,
+            "rmse": 3.7775248123403173
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.05063110495490899,
+            "mae": 2.9945951026915663,
+            "rmse": 3.7768532703035644
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.2537719006335206,
+            "mae": 2.803592226199577,
+            "rmse": 3.5638998858900335
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.023422214408111715,
+            "mae": 2.877365978728079,
+            "rmse": 3.8001254946240297
+          },
+          "cameo": {
+            "n": 40,
+            "bias": 2.7719878949622307,
+            "mae": 2.8857117810338218,
+            "rmse": 3.213509166018869
+          },
+          "zero": {
+            "n": 42,
+            "bias": 2.536808741461723,
+            "mae": 2.536808741461723,
+            "rmse": 3.384369157463071
+          }
+        }
+      },
+      {
+        "name": "common_core_hgb7_h1_own",
+        "net_points": 2121.0,
+        "components": {
+          "base_xi": 1772.0,
+          "autosub_delta": 86.0,
+          "captain_bonus": 256.0,
+          "extra_captain_bonus": 18.0,
+          "bench_boost_points": 33.0,
+          "hits": 44
+        },
+        "headroom_base": 206.0,
+        "headroom_captain": 220.0,
+        "zero_starters": 25,
+        "cameos": 27,
+        "errors": {
+          "60plus": {
+            "n": 481,
+            "bias": -0.29833180812244164,
+            "mae": 2.733393983009201,
+            "rmse": 3.5350925354551195
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 0.03671559356560684,
+            "mae": 2.7816874995245273,
+            "rmse": 3.5509189663318907
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.30865364172044735,
+            "mae": 2.6015392957783114,
+            "rmse": 3.343393441235058
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": -0.010874066002651877,
+            "mae": 2.7339326858087913,
+            "rmse": 3.516554697233845
+          },
+          "cameo": {
+            "n": 47,
+            "bias": 2.0956447988379123,
+            "mae": 2.4826093519232866,
+            "rmse": 2.8019614517319424
+          },
+          "zero": {
+            "n": 42,
+            "bias": 2.6283800752813273,
+            "mae": 2.6283800752813273,
+            "rmse": 3.396207331433013
+          }
+        }
+      },
+      {
+        "name": "common_core_hgb7_h1_common",
+        "net_points": 2109.0,
+        "components": {
+          "base_xi": 1788.0,
+          "autosub_delta": 71.0,
+          "captain_bonus": 251.0,
+          "extra_captain_bonus": 18.0,
+          "bench_boost_points": 29.0,
+          "hits": 48
+        },
+        "headroom_base": 260.0,
+        "headroom_captain": 237.0,
+        "zero_starters": 25,
+        "cameos": 29,
+        "errors": {
+          "60plus": {
+            "n": 482,
+            "bias": -0.37178139190143783,
+            "mae": 2.864654489143751,
+            "rmse": 3.723393253238084
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": -0.1941558144902562,
+            "mae": 3.0252191735781624,
+            "rmse": 3.8735239959847596
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 0.33079045744218377,
+            "mae": 2.7552194585713448,
+            "rmse": 3.5852193264352885
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 0.09094825808051464,
+            "mae": 2.7459333920809676,
+            "rmse": 3.4822423545575996
+          },
+          "cameo": {
+            "n": 46,
+            "bias": 2.2427907124707493,
+            "mae": 2.644464785293109,
+            "rmse": 2.9631815706113325
+          },
+          "zero": {
+            "n": 42,
+            "bias": 2.834397617927549,
+            "mae": 2.834397617927549,
+            "rmse": 3.5483264093633813
+          }
+        }
+      },
+      {
+        "name": "official_h1_h1_own",
+        "net_points": 1862.0,
+        "components": {
+          "base_xi": 1774.0,
+          "autosub_delta": 45.0,
+          "captain_bonus": 195.0,
+          "extra_captain_bonus": 6.0,
+          "bench_boost_points": 26.0,
+          "hits": 184
+        },
+        "headroom_base": 298.0,
+        "headroom_captain": 292.0,
+        "zero_starters": 18,
+        "cameos": 43,
+        "errors": {
+          "60plus": {
+            "n": 469,
+            "bias": 1.9678038379530916,
+            "mae": 3.98955223880597,
+            "rmse": 4.944439706228481
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 2.3610256410256407,
+            "mae": 3.9887179487179485,
+            "rmse": 4.8916150130501315
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 2.250769230769231,
+            "mae": 3.844615384615385,
+            "rmse": 4.567774524050427
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 2.549444444444444,
+            "mae": 4.351666666666667,
+            "rmse": 5.485065582510791
+          },
+          "cameo": {
+            "n": 56,
+            "bias": 4.835714285714286,
+            "mae": 4.9071428571428575,
+            "rmse": 5.5671549543473535
+          },
+          "zero": {
+            "n": 45,
+            "bias": 3.6555555555555554,
+            "mae": 3.6644444444444444,
+            "rmse": 4.591078304712304
+          }
+        }
+      },
+      {
+        "name": "official_h1_h1_common",
+        "net_points": 1907.0,
+        "components": {
+          "base_xi": 1786.0,
+          "autosub_delta": 62.0,
+          "captain_bonus": 211.0,
+          "extra_captain_bonus": 5.0,
+          "bench_boost_points": 31.0,
+          "hits": 188
+        },
+        "headroom_base": 290.0,
+        "headroom_captain": 271.0,
+        "zero_starters": 19,
+        "cameos": 39,
+        "errors": {
+          "60plus": {
+            "n": 471,
+            "bias": 1.9118895966029723,
+            "mae": 4.0002123142250525,
+            "rmse": 4.944694126030447
+          },
+          "GW01_13": {
+            "n": 195,
+            "bias": 2.141025641025641,
+            "mae": 3.8528205128205126,
+            "rmse": 4.769190653263873
+          },
+          "GW14_26": {
+            "n": 195,
+            "bias": 2.192820512820513,
+            "mae": 3.838974358974359,
+            "rmse": 4.585215930379411
+          },
+          "GW27_38": {
+            "n": 180,
+            "bias": 2.55,
+            "mae": 4.401111111111112,
+            "rmse": 5.5406076682376035
+          },
+          "cameo": {
+            "n": 51,
+            "bias": 4.823529411764706,
+            "mae": 4.901960784313726,
+            "rmse": 5.616851396275599
+          },
+          "zero": {
+            "n": 48,
+            "bias": 3.283333333333333,
+            "mae": 3.2916666666666665,
+            "rmse": 4.41536144235856
+          }
+        }
+      }
+    ],
+    "scope": "EarlierPR34source/forecasts/smaller budget; do not pool with new planner scores or infer original-Dastan parity."
+  },
+  "additional_season_source_audit": {
+    "tool_sha256": "0fcb47e19fc0e9930772c56a2c2028318c8324726ff5785bbe46b866552a07b3",
+    "season": "2024-25",
+    "market_origins_verified": 38,
+    "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+    "market_rows": [
+      {
+        "gameweek": 1,
+        "listed_players": 610,
+        "listed_managers": 0,
+        "capture_age_hours": 4.866666666666666,
+        "chip_names": [],
+        "market_sha256": "2a883793c70f511d85756b8d8a0faf48fc027436fc59eda33a968e662406b133",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/8/16/1238.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 2,
+        "listed_players": 625,
+        "listed_managers": 0,
+        "capture_age_hours": 15.566666666666666,
+        "chip_names": [],
+        "market_sha256": "868763d7e538e15eccaf9c3adc66fbbe4837a68e3c394e9b4f74d2cb4a5c3ab0",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/8/23/1826.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 3,
+        "listed_players": 637,
+        "listed_managers": 0,
+        "capture_age_hours": 15.533333333333333,
+        "chip_names": [],
+        "market_sha256": "d3941ae9ebf7ce45c99ac29de3ea1dab997faf1f3d872ca5558a93fb77a7a74a",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/8/30/1828.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 4,
+        "listed_players": 655,
+        "listed_managers": 0,
+        "capture_age_hours": 15.533333333333333,
+        "chip_names": [],
+        "market_sha256": "755f84cf988469c75fe5e09963861f81c002c48fcc84c53d22cf1e207b564f18",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/9/13/1828.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 5,
+        "listed_players": 659,
+        "listed_managers": 0,
+        "capture_age_hours": 15.516666666666667,
+        "chip_names": [],
+        "market_sha256": "ccd6f9cf32e665d618dc995882fa68c06b0125f4a30ae9af98872d4a63f688a3",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/9/20/1829.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 6,
+        "listed_players": 661,
+        "listed_managers": 0,
+        "capture_age_hours": 15.5,
+        "chip_names": [],
+        "market_sha256": "11136e93de4cf9f01c33d9c7247124eb143d0d287c2e0185aa7946d074d9ffdf",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/9/27/1830.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 7,
+        "listed_players": 664,
+        "listed_managers": 0,
+        "capture_age_hours": 15.516666666666667,
+        "chip_names": [],
+        "market_sha256": "2e16672b61d8e0302250abf98cb40d8f1765e727e271ab01aeaba3eae3fe61be",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/10/4/1829.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 8,
+        "listed_players": 666,
+        "listed_managers": 0,
+        "capture_age_hours": 15.5,
+        "chip_names": [],
+        "market_sha256": "c796da0c1fcda558f6f01b5eb2bc56bdaa528f1398e0173af129d8d19a95b520",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/10/18/1830.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 9,
+        "listed_players": 667,
+        "listed_managers": 0,
+        "capture_age_hours": 4.783333333333333,
+        "chip_names": [],
+        "market_sha256": "5a071fa26bdfa68912f462d044f690d27f3d06b588ba024777540b315519ff54",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/10/25/1243.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 10,
+        "listed_players": 670,
+        "listed_managers": 0,
+        "capture_age_hours": 16.5,
+        "chip_names": [],
+        "market_sha256": "7fc0d3c431b428dc03f440037ef4636e0653838134a7515dd31cc2d3e68fd2bf",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/11/1/1830.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 11,
+        "listed_players": 674,
+        "listed_managers": 0,
+        "capture_age_hours": 0.8666666666666667,
+        "chip_names": [],
+        "market_sha256": "b6fbf825932cf5409769fe757807fd345fd89a16017ceac9df9ac10935109329",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/11/9/1238.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 12,
+        "listed_players": 678,
+        "listed_managers": 0,
+        "capture_age_hours": 16.483333333333334,
+        "chip_names": [],
+        "market_sha256": "1be5737870fcbf8c55132f9bcb43b920b61bda7721e8d3f9d08923dfe54ef5f4",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/11/22/1831.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 13,
+        "listed_players": 684,
+        "listed_managers": 0,
+        "capture_age_hours": 5.716666666666667,
+        "chip_names": [],
+        "market_sha256": "cfedbc1b71c702062c85377a6bf4388db3b0e41da69ee87d10fc7642ad7e7d40",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/11/29/1247.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 14,
+        "listed_players": 690,
+        "listed_managers": 0,
+        "capture_age_hours": 5.2,
+        "chip_names": [],
+        "market_sha256": "dce7b87ecc738596c297a1310c33e190d795f5118ecad538c72c866b38496174",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/12/3/1248.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 15,
+        "listed_players": 693,
+        "listed_managers": 0,
+        "capture_age_hours": 16.466666666666665,
+        "chip_names": [],
+        "market_sha256": "c1a7b5a09185432042c3576ff5e8436c6913e1f6fd790f81c8c331afd45c9913",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/12/6/1832.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 16,
+        "listed_players": 693,
+        "listed_managers": 0,
+        "capture_age_hours": 0.7833333333333333,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "wildcard"
+        ],
+        "market_sha256": "ecbfa8d1c7dfa5492fae0faa88fa40b5c52912cbf9a04435b27ef7fd42a0eef6",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/12/14/1243.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 17,
+        "listed_players": 701,
+        "listed_managers": 0,
+        "capture_age_hours": 16.516666666666666,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "wildcard"
+        ],
+        "market_sha256": "40d123652ddd789d4b9b8751999a50ccb75f8ad98f70a838ab1f994c72ab1ece",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/12/20/1829.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 18,
+        "listed_players": 701,
+        "listed_managers": 0,
+        "capture_age_hours": 16.533333333333335,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "wildcard"
+        ],
+        "market_sha256": "8b120973789b6825f34883eeb40ece2932ad7098baac5f9fd82ff857767d8194",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/12/25/1828.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 19,
+        "listed_players": 705,
+        "listed_managers": 0,
+        "capture_age_hours": 0.35,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "wildcard"
+        ],
+        "market_sha256": "8ec665ca0c81a6f00450f77724ba3637a2e385df958d33783ee9a6dbe2df85bf",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/12/29/1239.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 20,
+        "listed_players": 709,
+        "listed_managers": 0,
+        "capture_age_hours": 16.516666666666666,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "wildcard"
+        ],
+        "market_sha256": "8880443d66f94a28a5c1c3be3fb1055006ea66559c4335ceb39ee4f451db6b3d",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/1/3/1829.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 21,
+        "listed_players": 718,
+        "listed_managers": 0,
+        "capture_age_hours": 5.316666666666666,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "wildcard"
+        ],
+        "market_sha256": "56179d69a53c1d3827d20b48acf604c9a20b7c996f0a9e942ed901a684387252",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/1/14/1241.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 22,
+        "listed_players": 726,
+        "listed_managers": 0,
+        "capture_age_hours": 16.516666666666666,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "wildcard"
+        ],
+        "market_sha256": "d47aa697a63f1453bdde1965dedd21afc211b91b9c92b06e16b37733d1e17362",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/1/17/1829.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 23,
+        "listed_players": 735,
+        "listed_managers": 20,
+        "capture_age_hours": 0.8666666666666667,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "563b10b9e131d7bff9efe6f5a20e5de82ec7ac57f72c2bfb300f024047c13b82",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/1/25/1238.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 24,
+        "listed_players": 736,
+        "listed_managers": 20,
+        "capture_age_hours": 16.516666666666666,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "9c3a5f0c6b4024f12729839f9e1046acb0a96fb1e89820a8005ec1b6ce71c961",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/1/31/1829.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 25,
+        "listed_players": 753,
+        "listed_managers": 20,
+        "capture_age_hours": 5.783333333333333,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "e5abb32786af719055d07c1a4dfe8d323e5ed3be986fb51da556d5f4693a42d4",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/2/14/1243.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 26,
+        "listed_players": 759,
+        "listed_managers": 20,
+        "capture_age_hours": 5.766666666666667,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "8fa5cb40141e8ee4db4f999da61c65045251591ce86b0c212f371eae47144767",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/2/21/1244.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 27,
+        "listed_players": 763,
+        "listed_managers": 20,
+        "capture_age_hours": 5.25,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "0f9084b60c09fbda2372080110233d8ce17be5441878a99151997a853bec2511",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/2/25/1245.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 28,
+        "listed_players": 765,
+        "listed_managers": 20,
+        "capture_age_hours": 16.483333333333334,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "4fa3767064570c5a3151f4790d2fab25eba0a6c399e17c8f39920114a7c72546",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/3/7/1831.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 29,
+        "listed_players": 769,
+        "listed_managers": 20,
+        "capture_age_hours": 0.8166666666666667,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "f418a8ae409a8722313ef5b0c2fc939cd464536899abc5b43ce377bc98f45f48",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/3/15/1241.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 30,
+        "listed_players": 769,
+        "listed_managers": 20,
+        "capture_age_hours": 4.416666666666667,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "754bddeb3917f135906d4f6229adf21a9cdeed7f512a7b73c352fdc25e41aff9",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/4/1/1250.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 31,
+        "listed_players": 771,
+        "listed_managers": 20,
+        "capture_age_hours": 15.466666666666667,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "23e359a33359f9a4d66b2792032f858e2d55d84c6e8689986d0b49d480b562d5",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/4/4/1832.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 32,
+        "listed_players": 772,
+        "listed_managers": 20,
+        "capture_age_hours": 15.45,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "ed32b8bced22879d2e002d008bc730d9b6fe4c9b9fe98d5b51bdb43da8eda722",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/4/11/1833.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 33,
+        "listed_players": 778,
+        "listed_managers": 20,
+        "capture_age_hours": 17.966666666666665,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "2e9cbf089f1b6e8aa95590d6f327147dfe8f85b26ef13e482571a7afb6fec6e1",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/4/18/1832.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 34,
+        "listed_players": 779,
+        "listed_managers": 20,
+        "capture_age_hours": 15.45,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "b96a438e510ffb0cadf7870ca5749aaf1fc9445a02bf4ce2acb46c351ec85b5d",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/4/25/1833.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 35,
+        "listed_players": 780,
+        "listed_managers": 20,
+        "capture_age_hours": 4.683333333333334,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "3a38b9d03fa04cece599058a15e6af33efb61deb49d7410a56ab0ce8413cf8c7",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/5/2/1249.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 36,
+        "listed_players": 781,
+        "listed_managers": 20,
+        "capture_age_hours": 17.933333333333334,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "475905112af3ac8e617f4ebb574ce71b07b6ea8b96512ef7267433e8b5a52c0b",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/5/9/1834.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 37,
+        "listed_players": 781,
+        "listed_managers": 20,
+        "capture_age_hours": 4.133333333333334,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "914d27c303480a1d73c7f55fa4e69e46f303b2c3d97f2aba06ff63e462b5ce68",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/5/16/1252.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      },
+      {
+        "gameweek": 38,
+        "listed_players": 781,
+        "listed_managers": 20,
+        "capture_age_hours": 0.7166666666666667,
+        "chip_names": [
+          "3xc",
+          "bboost",
+          "freehit",
+          "manager",
+          "wildcard"
+        ],
+        "market_sha256": "5a635f2800d8bbce7f475940dc611164ccb6e3259a187fdb1655d96074871f83",
+        "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2025/5/25/1247.json.xz",
+        "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7"
+      }
+    ],
+    "full_season_replay_admitted": false,
+    "remaining_requirements": [
+      "38as-of fixture assignment calendars and announcement replay, not final fixtures relabelled",
+      "AssistantManager3week budget/club/transfer/interchip/scoring state, or separately declared restricted no-AM track; season-wide single FH/BB/TC inventory",
+      "Prior-only2024forecast bundle excluding2024training; no saveddeploymentbackcast",
+      "Complete player-GW outcome/blank reconciliation by origin-listed identity; appearances alone not enough"
+    ],
+    "scope": "Byte/schema/deadline verification of38historical market receipts only; archive publication/capture claims are not independent certification. No fixture/calendar/outcome/forecast/rule compatibility admission is implied."
+  },
+  "same_state_solver_diagnosis": {
+    "pairs": [
+      {
+        "seed": 20261024,
+        "origin": 1,
+        "standing": 112.35104649987574,
+        "solio": 112.35104649987574,
+        "solio_minus_standing": 0.0
+      },
+      {
+        "seed": 20261024,
+        "origin": 6,
+        "standing": 342.19657993144165,
+        "solio": 342.19657993144165,
+        "solio_minus_standing": 0.0
+      },
+      {
+        "seed": 20261024,
+        "origin": 16,
+        "standing": 370.1425087397345,
+        "solio": 368.1253713953428,
+        "solio_minus_standing": -2.017137344391699
+      },
+      {
+        "seed": 20261024,
+        "origin": 30,
+        "standing": 340.0183733711724,
+        "solio": 340.0183733711724,
+        "solio_minus_standing": 0.0
+      },
+      {
+        "seed": 20261024,
+        "origin": 38,
+        "standing": 56.97761775055083,
+        "solio": 56.97761775055083,
+        "solio_minus_standing": 0.0
+      },
+      {
+        "seed": 20261025,
+        "origin": 1,
+        "standing": 112.44834421461407,
+        "solio": 112.44834421461407,
+        "solio_minus_standing": 0.0
+      },
+      {
+        "seed": 20261025,
+        "origin": 6,
+        "standing": 348.9996069814908,
+        "solio": 348.9996069814908,
+        "solio_minus_standing": 0.0
+      },
+      {
+        "seed": 20261025,
+        "origin": 16,
+        "standing": 379.824209493003,
+        "solio": 379.6754967593258,
+        "solio_minus_standing": -0.1487127336772005
+      },
+      {
+        "seed": 20261025,
+        "origin": 30,
+        "standing": 349.54945781724587,
+        "solio": 349.54945781724587,
+        "solio_minus_standing": 0.0
+      },
+      {
+        "seed": 20261025,
+        "origin": 38,
+        "standing": 67.48508027155665,
+        "solio": 67.48508027155665,
+        "solio_minus_standing": 0.0
+      }
+    ],
+    "cases": 20,
+    "independent_provisional_periods": 100,
+    "output_hashes_verified": 32,
+    "native_admission": {
+      "native_calls": 10,
+      "expected_failures": 0,
+      "independently_admitted_complete_provisional_periods": 50,
+      "mean_selection": "Separate position-prefix enumerator, no production select_xi call"
+    },
+    "seconds": 20.63154916604981,
+    "sampled_group_rss_bytes": 755548160,
+    "protocol": "solver_comparison_protocol_2026-10-24.json",
+    "scope": "Post-result numerical diagnosis after all six new opening season paths completed; no new outcome-untouched test or policy promotion. No future outcome/settlement files read."
+  },
+  "additional_opening_loss_diagnosis": {
+    "rows": [
+      {
+        "policy": "standingH1_adaptive",
+        "net_points": 2160.0,
+        "components": {
+          "base_xi": 1849.0,
+          "autosub_delta": 71.0,
+          "captain_bonus": 239.0,
+          "extra_captain_bonus": 7.0,
+          "bench_boost_points": 26.0,
+          "hits": 32
+        },
+        "zero_starters": 23,
+        "cameos": 28
+      },
+      {
+        "policy": "standingH6_adaptive",
+        "net_points": 2154.0,
+        "components": {
+          "base_xi": 1857.0,
+          "autosub_delta": 55.0,
+          "captain_bonus": 235.0,
+          "extra_captain_bonus": 13.0,
+          "bench_boost_points": 22.0,
+          "hits": 28
+        },
+        "zero_starters": 23,
+        "cameos": 33
+      }
+    ],
+    "difference": -6,
+    "component_differences": {
+      "base_xi": 8.0,
+      "autosub_delta": -16.0,
+      "captain_bonus": -4.0,
+      "extra_captain_bonus": 6.0,
+      "bench_boost_points": -4.0,
+      "hits": -4
+    },
+    "scope": "Post-outcome accounting only. Does not identify an executable correction or permit changing the fixed consistency gate."
+  },
+  "targeted_challenger_decision": {
+    "implemented": false,
+    "reason": "The20case fixed-state check ties in8of10pairs and favours standing in2; it does not justify switching numerical cores based on the153point path difference. The follow-up consistency gate fails; no retuning is allowed to erase that result. Attribution confirms known zero/cameo errors and noisy hindsight headroom, but identifies no new deadline-available signal or validated correction. Previously failed conditional/expected-selector trials are not repeated unchanged. New robustness evidence is qualification, not permission to tune this reused season.",
+    "forecast_weights_changed": false,
+    "production_policy_promoted": false
+  },
+  "model_promotion": false,
+  "policy_promotion": false,
+  "limitations": [
+    "One reused season; seeds test opening dependence, not independent seasons or test purity.",
+    "Six paths have one timed solve each; previous repetitions and all negative findings remain separate.",
+    "Pinned native core is rule-adapted, shares our candidate/selection/outer chip policy and common forecasts; not the original full manager.",
+    "Archive timestamps/capture claims are not independently witnessed historical publication.",
+    "Conditional solver bounds are not full-chip/season optimality; fixed-price future plans remain approximations.",
+    "Additional-season market admission is not full simulation/forecast/rule admission."
+  ]
+}

@@ -95,6 +95,18 @@ The [controlled integration workflow](docs/conditional_selection.md) separates c
 
 The optional [participation audit](docs/participation_audit.md) checks frozen point-risk diagnostics and predeadline evidence, including sourced club/press reports, without applying overrides. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).
 
+The [additional-opening robustness study](docs/SEASON_ROBUSTNESS_RESULTS_2026-10-24.md)
+adds six full-season paths from two new common squads. Six-week minus one-week
+returns were **+110, -6 points**; the predeclared consistency gate therefore
+**failed**. Against adapted Solio the differences were -2, -153 points.
+The original qualification remains a dated result, while current H6 evidence is
+mixed and supports experimental/shadow use rather than a production-default
+promotion. The [current policy status](docs/season_policy_status.json) records
+both scopes. The follow-up also reconciles decision losses and verifies all 38
+historical 2024/25 market receipts; a second complete-season comparison still
+requires its own calendar, forecasting and chip-rule admission. Forecast weights
+and normal weekly defaults remain unchanged.
+
 ## Performance and other options
 
 The published v1 historical evaluation used 163,072 player-match records from 2020/21–2025/26. On 15,308 eligible candidate records across the 2024/25 and 2025/26 expanding-window tests:

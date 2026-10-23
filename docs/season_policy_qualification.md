@@ -1,5 +1,12 @@
 # Season-management policy qualification
 
+Current evidence: the [24 October follow-up](SEASON_ROBUSTNESS_RESULTS_2026-10-24.md)
+reports H6-H1 differences of +110, -6 points on two additional source-only
+openings. Its declared consistency gate fails. Preserve the original matrix's
+historical qualification, but treat overall H6 evidence as mixed and the policy
+as experimental/shadow support; no forecast or production-default promotion.
+Read the [current scope/status](season_policy_status.json) before use.
+
 Qualification evaluates a continuous 38-gameweek squad, rather than adding up
 independent weekly team selections. Net realised points after hits is the
 primary measure. Forecast-error metrics remain diagnostics.

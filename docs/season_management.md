@@ -1,5 +1,12 @@
 # Adaptive season management
 
+Current evidence: the [24 October follow-up](SEASON_ROBUSTNESS_RESULTS_2026-10-24.md)
+reports H6-H1 differences of +110, -6 points on two additional source-only
+openings. Its declared consistency gate fails. Preserve the original matrix's
+historical qualification, but treat overall H6 evidence as mixed and the policy
+as experimental/shadow support; no forecast or production-default promotion.
+Read the [current scope/status](season_policy_status.json) before use.
+
 The objective is net FPL points across all 38 gameweeks, including transfers and
 chips. Forecast errors, fixed-owned-XI and weekly reset results remain component
 diagnostics. The state engine, origin-safe multiweek planner and adaptive chip

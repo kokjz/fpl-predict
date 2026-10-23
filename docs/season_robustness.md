@@ -32,7 +32,7 @@ runtime and protocol hashes and creates two source-only common opening squads.
 The `arm` command takes those same files plus `--lock`, `--lock-sha256`, `--seed`,
 `--policy` and a fresh `--output`. The Solio adaptation additionally requires
 explicit `--native-python`, `--solio-source` and `--solio-site-packages` matching
-the source-pinned [native admission](native_planner.md). Run one arm at a time
+the source-pinned [native admission](native_planner_comparison.md). Run one arm at a time
 under the existing process-group/storage watchdog; the tool itself is not an OS
 quota. Every completed native proposal is admitted canonically; raw attempts and
 expected failures are retained. Do not reuse or overwrite a failed destination.
@@ -70,7 +70,7 @@ outcome or rule admission cannot be replaced by a successful market audit.
 
 The separate[source-checkout probe](../tools/probe_solver_comparison.py)and
 [fixed protocol](solver_comparison_protocol_2026-10-24.json)compare standing and
-admitted Solio cores at the same ten frozen H6states: both new seeds, each at
+admitted Solio cores at the same ten frozen H6 states: both new seeds, each at
 GW1/6/16/30/38. The diagnosis was declared after the six season scores were known;
 it is not an untouched outcome test. Each solver gets two seconds, the same
 restricted-pool procedure, forecasts and retained chip schedule. Only decision
@@ -80,9 +80,17 @@ conditional objective are not realised season-point gains or permission to
 switch policy automatically.
 
 Run it after the historical batch is terminal under the existing two-thread,
-120second/4GiB process-group and storage watchdog. Supply `--decisions`,
+120-second/4 GiB process-group and storage watchdog. Supply `--decisions`,
 `--reference` (the six-arm root), `--lock`, `--lock-sha256`, `--protocol`,
 `--protocol-sha256`, a new private `--output`, and the three explicit native
 runtime/source arguments described above. It retains all twenty cases, ten frozen
 inputs, raw native RPCs, conditional bounds and failed attempts. Injected test
 callbacks are clearly labelled mechanical and are never numerical evidence.
+
+## Results and interpretation
+
+The[complete results](SEASON_ROBUSTNESS_RESULTS_2026-10-24.md)and the
+[aggregate](season_robustness_results_2026-10-24.json)retain all six paths.
+The added H6-H1opening-consistency gate fails; current policy evidence is mixed.
+The 38-market audit is source readiness, not a second full-season replay.
+No rejected selector or forecasting model was installed.
