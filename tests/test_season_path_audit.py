@@ -72,3 +72,16 @@ def test_known_profit_basis_and_temporary_free_hit_resources():
     assert new['bank']==50 and dict(new['holdings'])==dict(state['holdings']) and 16 in ids and new['free_transfers']==3
     assert set(new['used_chips'])=={('freehit',2)}
     with pytest.raises(AssertionError):audit.advance(state,market,action,blocked=[('freehit',2)])
+
+
+def test_restricted_2024_full_season_has_no_2025_topup(tmp_path):
+    d,o=bundle()
+    for week in d:
+        m=week['market'];m['season']='2024-25'
+        for key in ('as_of','deadline'):m[key]=m[key].replace('2025','2024').replace('2026','2025')
+        f=week['forecast'];f['trained_through']='2024-05-01T00:00Z'
+        f['feature_cutoff']=f['source_as_of']=m['as_of']
+    path=tmp_path/'season2024'
+    run(d,o,path,policy=Policy(),settings=Settings(baseline_mode='feasibility',terminal_ft_value=0.,terminal_squad_weight=0.,churn_cost=0.),management_policy=HoldPolicy(),management_policy_id='restricted-hold-test')
+    result=audit.audit(dict(schema_version=1,weeks=d),dict(schema_version=1,weeks={str(g):v for g,v in o.items()}),path,6)
+    assert result['net_points']==456 and result['deadlines']==38
