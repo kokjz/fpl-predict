@@ -117,3 +117,10 @@ and [official captain/vice FAQ](https://www.premierleague.com/en/news/4661030).
 Historical rules remain separately admitted. Evaluation follows the
 [leakage guidance](https://scikit-learn.org/stable/common_pitfalls.html) and
 [chronological validation guidance](https://scikit-learn.org/stable/modules/cross_validation.html).
+
+
+A separate standard-library [expectation auditor](../tools/audit_decision_objective.py)
+enumerates missing-position counts and legal replacement capacities without
+importing the selector, its NumPy bench tensor, forecasting models or a solver.
+Use it alongside the financial/realised-score and native-proposal auditors;
+these are separate implementations within this project, not third-party certification.
