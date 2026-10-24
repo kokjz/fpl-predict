@@ -24,6 +24,7 @@ class Settings:
     churn_cost:float=.0001
     use_baseline_cut:bool=True
     baseline_mode:str='one_week'
+    node_limit:int|None=None
 
     def __post_init__(self):
         if not np.isfinite([self.seconds,self.bench_weight,self.terminal_ft_value,self.terminal_squad_weight,self.churn_cost]).all() or not 0<self.seconds<=120:raise ValueError('Invalid bounded solver settings')
@@ -31,6 +32,9 @@ class Settings:
         if type(self.top_per_position) is not int or type(self.cheap_per_position) is not int or min(self.top_per_position,self.cheap_per_position)<1:raise ValueError('Invalid pool limits')
         if type(self.use_baseline_cut) is not bool:raise ValueError('Invalid baseline cut setting')
         if self.baseline_mode not in ('one_week','feasibility'):raise ValueError('Invalid baseline mode')
+        if self.node_limit is not None:
+            if type(self.node_limit) is not int or not 1<=self.node_limit<=10000:raise ValueError('Invalid fixed-work node limit')
+            if self.baseline_mode!='feasibility':raise ValueError('Fixed work requires a deterministic feasibility baseline')
 
 
 def finite_or_none(value):
@@ -233,10 +237,14 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=Non
         # incumbent/warm start to SciPy or guarantees faster time-limited solves.
         add(dict(enumerate(c)),u=constant_terminal-fallback_value+1e-7)
     matrix=coo_matrix((vals,(rix,cix)),shape=(len(lower),len(c))).tocsc()
-    remaining=max(.01,cfg.seconds-(time.monotonic()-start))
+    remaining=cfg.seconds if cfg.node_limit is not None else max(.01,cfg.seconds-(time.monotonic()-start))
+    options=dict(time_limit=remaining,mip_rel_gap=1e-8,threads=2)
+    if cfg.node_limit is not None:options.update(node_limit=cfg.node_limit,random_seed=0,parallel='off')
     with warnings.catch_warnings():
-        warnings.filterwarnings('ignore',message='Unrecognized options detected:.*threads.*',category=RuntimeWarning)
-        result=milp(np.array(c),integrality=np.ones(len(c)),bounds=Bounds(lo,hi),constraints=LinearConstraint(matrix,lower,upper),options=dict(time_limit=remaining,mip_rel_gap=1e-8,threads=2))
+        warnings.filterwarnings('ignore',message='Unrecognized options detected:.*',category=RuntimeWarning)
+        result=milp(np.array(c),integrality=np.ones(len(c)),bounds=Bounds(lo,hi),constraints=LinearConstraint(matrix,lower,upper),options=options)
+    if cfg.node_limit is not None and ('time limit' in str(result.message).lower() or result.status not in (0,1)):
+        raise RuntimeError('Fixed-work solve did not complete within its safety guard: '+str(result.message))
     if result.status==2:raise ValueError('MILP infeasible despite validated baseline')
     selected=fallback;reason='no valid incumbent';solution_value=None
     if result.x is not None and result.status in (0,1):
@@ -254,7 +262,7 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=Non
                 current=prepared.state;actions.append(action)
             solution_value,_=_objective(state,market,horizon,actions,cfg)
             if not np.isclose(solution_value,-np.dot(c,rounded)+constant_terminal,rtol=0,atol=1e-5):raise ValueError('Solver/objective reconciliation failed')
-            if solution_value>=fallback_value-1e-7:selected=actions;reason='optimal restricted pool' if result.status==0 else 'validated time-limit incumbent'
+            if solution_value>=fallback_value-1e-7:selected=actions;reason='optimal restricted pool' if result.status==0 else ('validated node-limit incumbent' if cfg.node_limit is not None else 'validated time-limit incumbent')
     value,parts=_objective(state,market,horizon,selected,cfg)
     bound=selected_bound(result,value,constant_terminal,result.status==0 and selected is not fallback)
     if bound['status']=='inconsistent_dual':reason='retained feasible plan; inconsistent solver bound'
@@ -267,6 +275,8 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=Non
                                 reported_mip_gap=finite_or_none(getattr(result,'mip_gap',None)),baseline_objective_cut=cfg.use_baseline_cut),
         seconds=time.monotonic()-start,pool_players=n,full_market_players=len(market.players),variables=len(c),constraints=len(lower),
         chip_schedule=chips,scope='Deterministic origin-frozen1–8GWforecast, constant quotes/roster, restricted candidate pool, fixed chip schedule; no expected autosub objective; commit first action only')
+    if cfg.node_limit is not None:
+        report['solver_diagnostics']['work_control']=dict(node_limit=cfg.node_limit,mip_node_count=finite_or_none(getattr(result,'mip_node_count',None)),random_seed=0,parallel='off',safety_seconds=cfg.seconds,message=str(result.message))
     return selected,report
 
 

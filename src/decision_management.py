@@ -85,15 +85,16 @@ class DecisionInner:
 
 
 class DecisionManager:
-    def __init__(self, availability, inner=plan):
+    def __init__(self, availability, inner=plan, *, budget=None):
         self.availability = availability
         self.inner = inner
+        self.budget = budget
 
     def __call__(self, state, market, horizon, *, settings, policy, blocked, opening_ids):
         cfg = settings
         inner = DecisionInner(self.availability, self.inner)
         actions, raw = plan_adaptive(state, market, [('admitted', 1., horizon)], settings=cfg,
-            budget=Budget(policy.seconds, policy.solve_seconds, policy.max_trials),
+            budget=self.budget or Budget(policy.seconds, policy.solve_seconds, policy.max_trials),
             blocked=blocked, opening_ids=opening_ids, inner_planner=inner)
         mean_value, mean_parts = _objective(state, market, horizon, actions, cfg)
         report = dict(raw)

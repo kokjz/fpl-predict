@@ -29,7 +29,15 @@ def mean_selection(ids,players,xp,g):
 
 
 def validate(request,reply,*,allow_dominated_paid_slack=False,diagnostics=None):
-    assert set(request)=={'schema_version','market','state','xp','through','chip_schedule','opening_ids','seconds'} and request['schema_version']==1
+    fields={'schema_version','market','state','xp','through','chip_schedule','opening_ids','seconds'}
+    assert set(request) in (fields,fields|{'work_limit'}) and request['schema_version']==1
+    work=request.get('work_limit')
+    allowed=('HighsModelStatus.kOptimal','HighsModelStatus.kTimeLimit')
+    if work is not None:
+        assert set(work)=={'node_limit','random_seed','parallel'} and type(work['node_limit']) is int and 1<=work['node_limit']<=10000 and type(work['random_seed']) is int and work['random_seed']==0 and work['parallel']=='off'
+        assert reply.get('work_limit')==work and type(reply.get('mip_node_count')) is int and 0<=reply['mip_node_count']<=work['node_limit']
+        allowed=('HighsModelStatus.kOptimal','HighsModelStatus.kSolutionLimit','HighsModelStatus.kIterationLimit')
+        assert reply.get('native_status') in allowed
     assert set(request['state'])=={'season','gameweek','holdings','bank','free_transfers','used_chips','previous_chip'}
     market=request['market'];state=dict(request['state'],total_points=0.);g=state['gameweek'];end=request['through']
     assert set(market)=={'season','gameweek','deadline','as_of','rows'} and datetime.fromisoformat(market['as_of'].replace('Z','+00:00'))<datetime.fromisoformat(market['deadline'].replace('Z','+00:00'))
@@ -39,7 +47,7 @@ def validate(request,reply,*,allow_dominated_paid_slack=False,diagnostics=None):
     xp={(w,i):v for w,i,v in request['xp']};assert len(xp)==len(request['xp']) and set(xp)=={(w,i) for w in range(g,end+1) for i in players} and all(math.isfinite(v) for v in xp.values())
     if reply['status']!='completed':
         assert (reply.get('error_type'),reply.get('message'))==('ValueError','No feasible native incumbent');return 0
-    assert reply['native_status'] in ('HighsModelStatus.kOptimal','HighsModelStatus.kTimeLimit') and math.isfinite(reply['objective'])
+    assert reply['native_status'] in allowed and math.isfinite(reply['objective'])
     seen=set();rosters={w:set() for w in range(g,end+1)}
     for p in reply['picks']:
         w=p['week'];i=p['id'];assert w in rosters and i in players and (w,i) not in seen and type(p['squad']) is int and p['squad'] in (0,1);seen.add((w,i))
@@ -54,7 +62,7 @@ def validate(request,reply,*,allow_dominated_paid_slack=False,diagnostics=None):
         assert actual_ids==ids;stats=reply['statistics'][str(w)]
         assert abs(stats['ft']-free)<1e-5 and abs(stats['itb']*10-state['bank'])<1e-5
         if abs(stats['pt']*4-hits)>=1e-5:
-            assert allow_dominated_paid_slack and reply['native_status']=='HighsModelStatus.kTimeLimit'
+            assert allow_dominated_paid_slack and (reply['native_status']=='HighsModelStatus.kTimeLimit' or work is not None and reply['native_status'] in ('HighsModelStatus.kSolutionLimit','HighsModelStatus.kIterationLimit'))
             assert math.isfinite(stats['pt']) and abs(stats['pt']-round(stats['pt']))<1e-5 and stats['pt']*4>=hits
             removed_penalty+=stats['pt']*4-hits
         value+=expected(action,xp,w,hits)

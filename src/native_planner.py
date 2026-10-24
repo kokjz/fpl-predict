@@ -86,11 +86,21 @@ class NativePlanner:
         players=candidate_players(state,market,horizon,cfg,baseline);xp=horizon.values();ids={p['id'] for p in players}
         qstate=asdict(state);qstate.pop('total_points')
         request=dict(schema_version=1,market=dict(season=market.season,gameweek=market.gameweek,deadline=market.deadline,as_of=market.as_of,rows=[{k:p[k] for k in ['id','position','team','price_tenths','can_buy']} for p in players]),state=qstate,xp=[[g,i,float(xp[g,i])] for g in horizon.gameweeks for i in sorted(ids)],through=horizon.gameweeks[-1],chip_schedule=chips,opening_ids=opening_ids,seconds=max(.001,cfg.seconds-(time.monotonic()-tick)))
+        if cfg.node_limit is not None:
+            request['seconds']=cfg.seconds
+            request['work_limit']=dict(node_limit=cfg.node_limit,random_seed=0,parallel='off')
         response=self.transport.request(request);selected=fallback;reason='validated fallback; native proposal unavailable';proposal_value=None;upper=None;native_status=None;gap=None;error_type=None;error_message=None;paid_slack=[]
+        if cfg.node_limit is not None:
+            if response.get('work_limit')!=request['work_limit'] or type(response.get('mip_node_count')) is not int or not 0<=response['mip_node_count']<=cfg.node_limit:raise RuntimeError('Missing or invalid native fixed-work receipt')
+            if response.get('native_status') not in ('HighsModelStatus.kOptimal','HighsModelStatus.kSolutionLimit','HighsModelStatus.kIterationLimit'):raise RuntimeError('Native fixed-work safety/status failure')
         if response.get('status')=='completed':
             try:
                 native_status=response['native_status'];raw_value=float(response['objective'])
-                if native_status not in ('HighsModelStatus.kOptimal','HighsModelStatus.kTimeLimit'):raise ValueError('Unexpected native solve status')
+                allowed=('HighsModelStatus.kOptimal','HighsModelStatus.kTimeLimit')
+                if cfg.node_limit is not None:
+                    allowed=('HighsModelStatus.kOptimal','HighsModelStatus.kSolutionLimit','HighsModelStatus.kIterationLimit')
+                    if response.get('work_limit')!=request['work_limit'] or type(response.get('mip_node_count')) is not int or not 0<=response['mip_node_count']<=cfg.node_limit:raise ValueError('Native fixed-work receipt differs')
+                if native_status not in allowed:raise ValueError('Unexpected native solve status')
                 if not math.isfinite(raw_value):raise ValueError('Invalid native objective')
                 seen=set();rosters={g:set() for g in horizon.gameweeks}
                 for p in response['picks']:
@@ -112,7 +122,8 @@ class NativePlanner:
                         # The pinned model constrains paid >= transfer_diff and
                         # subtracts paid*4 in its objective. Lowering excess
                         # integral slack preserves every roster/cash/FT rule.
-                        if not self.canonicalise_dominated_paid or native_status!='HighsModelStatus.kTimeLimit' or paid<minimum or abs(paid-round(paid))>1e-5:raise ValueError('Native/engine paid-transfer mismatch')
+                        limited=native_status=='HighsModelStatus.kTimeLimit' or cfg.node_limit is not None and native_status in ('HighsModelStatus.kSolutionLimit','HighsModelStatus.kIterationLimit')
+                        if not self.canonicalise_dominated_paid or not limited or paid<minimum or abs(paid-round(paid))>1e-5:raise ValueError('Native/engine paid-transfer mismatch')
                         paid_slack.append(dict(gameweek=g,reported_paid_transfers=paid,minimum_paid_transfers=minimum))
                     current=p.state;actions.append(a)
                 if opening_ids is not None and set(actions[0].buys)!=set(opening_ids):raise ValueError('Native common opening differs')
@@ -129,4 +140,6 @@ class NativePlanner:
         value,parts=_objective(state,market,horizon,selected,cfg);bound=retained_bound(value,upper)
         proven=bool(selected is not fallback and native_status=='HighsModelStatus.kOptimal' and bound['relative_gap'] is not None and bound['relative_gap']<1e-7)
         report=dict(objective=value,components=parts,fallback_objective=fallback_value,solver_objective=proposal_value,status=0 if proven else 1,selection=reason,baseline=baseline_status,proven_optimal=proven, mip_gap=gap,legacy_gap_scope='Raw native attempt; use selected_plan_bound for retained plan',selected_plan_bound=bound,fallback_retained=selected is fallback,solver_diagnostics=dict(native_status=native_status,native_maximisation_dual_bound=upper,reported_mip_gap=gap,baseline_objective_cut=False,native_error_type=error_type,native_error_message=error_message,dominated_paid_slack=paid_slack,paid_slack_policy=self.canonicalise_dominated_paid),seconds=time.monotonic()-tick,pool_players=len(players),full_market_players=len(market.players),chip_schedule=chips,canonical_selection=True,scope='Rule-adapted native core, shared candidate/selection/outer-chip policy; not untouched external manager or global optimum')
+        if cfg.node_limit is not None:
+            report['solver_diagnostics']['work_control']=dict(request['work_limit'],mip_node_count=response.get('mip_node_count'),safety_seconds=cfg.seconds)
         return selected,report

@@ -19,10 +19,12 @@ class Budget:
     seconds:float=60.
     solve_seconds:float=2.
     max_trials:int=40
+    fixed_work:bool=False
 
     def __post_init__(self):
         if not all(math.isfinite(v) for v in [self.seconds,self.solve_seconds]) or not 0<self.solve_seconds<=self.seconds<=120:raise ValueError('Invalid adaptive time budget')
         if type(self.max_trials) is not int or not 1<=self.max_trials<=80:raise ValueError('Invalid trial limit')
+        if type(self.fixed_work) is not bool:raise ValueError('Invalid fixed-work mode')
 
 
 def scenario(base,market,adjustments):
@@ -85,6 +87,7 @@ def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),
     are analyst assumptions, not calibrated projections or learned point gains.
     """
     cfg=settings or Settings();b=budget or Budget();start=time.monotonic()
+    if b.fixed_work and cfg.node_limit is None:raise ValueError('Fixed outer work requires a fixed-node inner solver')
     if inner_planner is not None and not callable(inner_planner):raise ValueError('Inner planner must be callable')
     if not 1<=len(scenarios)<=3 or len({s[0] for s in scenarios})!=len(scenarios):raise ValueError('Require1–3 unique scenarios')
     if any(not str(n).strip() or not math.isfinite(w) or w<=0 for n,w,h in scenarios):raise ValueError('Invalid scenario weights')
@@ -110,9 +113,10 @@ def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),
         key=tuple(sorted(schedule.items()))
         if key in cache:return cache[key]
         elapsed=time.monotonic()-start
-        if len(trials)>=b.max_trials or elapsed>=b.seconds:return None
+        if len(trials)>=b.max_trials or not b.fixed_work and elapsed>=b.seconds:return None
         solve_inner=plan if inner_planner is None else inner_planner
-        actions,report=solve_inner(state,market,mean,replace(cfg,seconds=min(b.solve_seconds,max(.01,b.seconds-elapsed))),chip_schedule=schedule,opening_ids=opening_ids)
+        limit=b.solve_seconds if b.fixed_work else min(b.solve_seconds,max(.01,b.seconds-elapsed))
+        actions,report=solve_inner(state,market,mean,replace(cfg,seconds=limit),chip_schedule=schedule,opening_ids=opening_ids)
         after_used=set(used)
         for g,name in schedule.items():after_used.add((name,next(w['start'] for w in windows if w['name']==name and w['start']<=g<=w['stop'])))
         # Allocate remaining tokens to future slots jointly; no double-counted
@@ -142,7 +146,7 @@ def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),
         # Retain capacity to validate the combined calendar, rather than spend
         # a small budget entirely on mutually exclusive single-chip probes.
         reserve=2 if b.max_trials>=10 else 0
-        if len(trials)>=b.max_trials-reserve or time.monotonic()-start>=.8*b.seconds:break
+        if len(trials)>=b.max_trials-reserve or not b.fixed_work and time.monotonic()-start>=.8*b.seconds:break
         result=solve({g:name})
         if result is None:continue
         near[name,token_start,g]=result[1]['objective']-initial[1]['objective']
@@ -154,7 +158,7 @@ def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),
     # One bounded coordinate pass exposes some WC->BB interactions that the
     # additive scheduling proxy misses; it does not prove joint optimality.
     for g,name,token_start in slots:
-        if len(trials)>=b.max_trials or time.monotonic()-start>=b.seconds:break
+        if len(trials)>=b.max_trials or not b.fixed_work and time.monotonic()-start>=b.seconds:break
         schedule=dict(best[1]['chip_schedule'])
         schedule={t:n for t,n in schedule.items() if not (n==name and token_start<=t<=next(w['stop'] for w in windows if w['name']==name and w['start']==token_start))}
         if g in schedule:continue
@@ -170,7 +174,8 @@ def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),
         selected_schedule_bound=report['selected_plan_bound'],global_chip_search_bound=None,
         scenario_objectives=sensitivity,scenario_weights={n:w for n,w,_ in scenarios},chip_schedule=report['chip_schedule'],
         coarse_schedule={g:name for g,(name,_) in future_path.items()},coarse_values=coarse,blocked_tokens=sorted(blocked),
-        trials=trials,seconds=time.monotonic()-start,budget_exhausted=len(trials)>=b.max_trials or time.monotonic()-start>=b.seconds,
+        trials=trials,seconds=time.monotonic()-start,budget_exhausted=len(trials)>=b.max_trials or not b.fixed_work and time.monotonic()-start>=b.seconds,
+        search_control=dict(mode='fixed_work' if b.fixed_work else 'wall_time',max_trials=b.max_trials,node_limit=cfg.node_limit,safety_seconds_per_solve=b.solve_seconds),
         scope='Heuristic chip search, fixed coarse proxies, shared full-horizon plan across scenarios; first action only, replan at next deadline; not global optimum or calibrated uncertainty')
 
 
