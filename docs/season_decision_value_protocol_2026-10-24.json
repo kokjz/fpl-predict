@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "method": "mean-preserving-chip-aware-selection-v1",
+  "seasons": [
+    "2024-25",
+    "2025-26"
+  ],
+  "opening_seeds": [
+    20261070,
+    20261071
+  ],
+  "base_release": "cf811d50d3dbda879ddb3c8de094529b23ecc33b",
+  "prior_study_numerical_source": "353c28679d569a1c4d5e1fc82c8e76e57f7c3c96",
+  "mean_forecasts": "exact unchanged prior-study player-GW means; no refit",
+  "availability": "replay original prior-only appearance heads with exact origin features/calendar; p_any=1-product(1-p_fixture),1% symmetric mixture p_fixture=.98*raw+.01 for scheduled fixtures; official-zero-at-origin and known blanks exactly0",
+  "conditional_return": "mean-preserving q=xp/p_any for p_any>0; zero-minute-card probability0 approximation; do not multiply unconditional points by p_play",
+  "scenario_assumptions": "independent player-GW appearances; fixed .25 common-uniform dependence stress on chosen decisions, not fitted",
+  "source_scope": "origin-frozen rosters/calendars, current status zero policy; no later results/recoveries/team news; publisher timestamp claims retained",
+  "selector": "exhaustive legal XI/outfield bench permutations and ordered captain/vice pairs under same distribution; Bench Boost removes autosubs and counts all15, TC doubles armband bonus incl vice fallback",
+  "controls": [
+    "saved_mean_selection",
+    "legacy_expected_no_chip_selection",
+    "new_chip_aware_selection"
+  ],
+  "fixed_roster_pilot": {
+    "source": "all38held15/chip states on4savedH6paths,152panels; predictions stored before evaluator access",
+    "primary": "equal-season mean new minus saved H6 net38GWpoints",
+    "cost_limit_mean_seconds_per_selection": 1.0,
+    "progression": {
+      "strict_positive_equal_season_mean": true,
+      "season_average_loss_limit": 19,
+      "single_opening_loss_limit": 38,
+      "integrity_required": true,
+      "expected_objective_not_below_saved": true
+    }
+  },
+  "full_overlay_comparison": {
+    "paths": 12,
+    "policies": [
+      "standingH1_adaptive",
+      "standingH6_adaptive",
+      "SolioAdaptedH6_sharedAdaptiveChips"
+    ],
+    "scope": "full38GWselection overlay on frozen roster/transfer/chip paths, NOT new adaptive transfer/chip-policy performance"
+  },
+  "conditional_integration": {
+    "only_if_pilot_passes": true,
+    "mechanism": "Availability-aware reranking of bounded feasible candidate paths; both cores retain original inner mean proposal objectives. New selection objective/bounds separately reported, no false dual certificate.",
+    "full_adaptive_cases": "2seasons x2common starts: baselineH6 and changedH6; retained12prior-policy paths as dated external controls, plus uniform freshSolio controls where needed to match source/budgets",
+    "primary": "equal-season challenger minus uniform current H6 netpoints",
+    "downside": [
+      19,
+      38
+    ],
+    "no_production_default_without_operational_qualification": true
+  },
+  "diagnosis": "Before next model fit, report appearance calibration/error by predeclared cohorts and decision-loss components; scope minutes/conditional-return/preseason/additional-year actions from evidence, no automatic broad refit or new-year admission.",
+  "research_limits": [
+    "Both years already inspected; no untouched or statistical generalisation claim",
+    "2024/25commonnoAM subset; originalexternal fullmanager not reproduced",
+    "Conditional returns reconstructed from unconditional means and regularised appearance are assumptions, not calibrated new conditional forecasts",
+    "Earlier failed fixed-owned conditional-selector experiment retained separately; do not pool its different window/means",
+    "No seed,hyperparameter,threshold or post-outcome winning-arm search",
+    "All failures,losses,skips retained; no model/default promotion by code merge"
+  ],
+  "resources": {
+    "threads": 2,
+    "seconds_per_job": 900,
+    "memory_mib": 4096,
+    "project_mib": 2560,
+    "growth_mib": 384,
+    "min_free_mib": 5120,
+    "serial_numerical_jobs": true
+  },
+  "sources": [
+    "https://fantasy.premierleague.com/help/faqs",
+    "https://www.premierleague.com/en/news/4661030",
+    "https://scikit-learn.org/stable/common_pitfalls.html",
+    "https://scikit-learn.org/stable/modules/cross_validation.html"
+  ]
+}
