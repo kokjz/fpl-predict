@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-24",
+  "scope": "Mechanical source admission amendment; no criterion/seed/budget/forecast/availability change",
+  "original_protocol": "season_decision_integration_protocol_2026-10-24.json",
+  "original_protocol_sha256": "03918bd5448746ba6803edb2dc43db603ef5a64620b7df86acdc4af088ccffc2",
+  "trigger": "Study01 retained3completepaths and one Solio failure: GW4 time-limit incumbent reported dominated integral paid-transfer slack; strict original adapter correctly rejected its reported point-cost values",
+  "diagnosis": "Independent integer-ledger check admits same roster, bank and FT trajectory. Pinned external paid variable has only paid>=transfer_diff plus optional upper limits and negative objective coefficient. Lowering excess integer paid to legal minimum preserves constraints and increases canonical objective.",
+  "admission": {
+    "explicit_opt_in": true,
+    "default_legacy_strict": true,
+    "time_limit_only": true,
+    "integral_overpayment_only": true,
+    "all_roster_cash_ft_source_and_objective_checks_retained": true,
+    "underpayment_or_fractional_or_optimal_mismatch_rejected": true,
+    "raw_response_and_original_penalty_retained": true,
+    "canonical_objective_must_exceed_raw_plus_removed_penalty": true
+  },
+  "rerun": "Uniform complete sixteen-case matrix on new source, retaining all original completed scores and failure separately; no selective retry or best-run selection",
+  "external_scope": "Further explicit rule-adapted Solio admission, not untouched original manager; unchanged external pinned code is not redistributed",
+  "source": "https://github.com/solioanalytics/open-fpl-solver",
+  "future_current_defaults": "No forecast weights or normal weekly defaults changed",
+  "pinned_external_revision": "ec65f5e2b2be34441cb4b2a9efafea1ec0fe3b79",
+  "pinned_solver_sha256": "23d567bccc24ba8693b8cef23d8b41c375c6bc6a586b47eff8247faf175b2416",
+  "exact_failed_reply_replay": "Strict adapter rejects; explicit canonicalisation passes same roster/cash/FT, removes424provisionalproxy penalty points and keeps raw upper bound346.662107. This is not424realised FPL points or a measured season gain."
+}

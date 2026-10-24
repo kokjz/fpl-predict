@@ -141,3 +141,22 @@ manual zero remains zero in that gameweek and does not propagate to future weeks
 The fixed probability mixture is an experimental decision assumption, not a new
 calibrated fitness probability. Save/load, source-clock and invented-data
 compatibility tests do not establish live-season accuracy or promote a policy.
+
+
+## Paid-transfer admission amendment
+
+The first adaptive batch retained three complete paths, then stopped when a
+Solio time-limit incumbent reported integer paid transfers above the legal
+minimum. The original strict adapter rejected it. Separate ledger checks admit
+the same roster, cash and free-transfer trajectory; the pinned model's paid
+variable has a lower inequality and a negative objective coefficient, so excess
+slack is dominated. Lowering it does not change the FPL transfer plan.
+
+The [explicit amendment](season_decision_admission_amendment_2026-10-24.json)
+permits only integral overpayment in time-limit incumbents after every other
+admission check passes. Underpayment, fractional slack, cash/FT/roster errors and
+optimal-status objective mismatches still fail. Original replies and removed
+penalties are recorded. The default legacy adapter and trace auditor stay strict;
+the new study explicitly opts in. All sixteen paths rerun uniformly on the revised
+source, with the original three scores and failure retained separately. No
+criterion, budget, seed, forecast or probability setting changes.

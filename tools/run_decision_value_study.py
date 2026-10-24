@@ -195,7 +195,7 @@ def adaptive_case(decisions, outcomes, availability, output, *, policy_id, openi
                 out/'native_stderr.log', site_packages=solio_site_packages))
             trace = Trace(actor, out, 'solio', stack)
             native_metadata = actor.metadata
-            inner = Guarded(CanonicalPlanner(NativePlanner(trace)), out, trace)
+            inner = Guarded(CanonicalPlanner(NativePlanner(trace, canonicalise_dominated_paid=True)), out, trace)
         else:
             inner = Guarded(CanonicalPlanner(), out)
         settings = Settings(baseline_mode='feasibility', terminal_ft_value=0.,

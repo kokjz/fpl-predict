@@ -49,6 +49,31 @@ def test_failed_native_attempt_retains_baseline_and_unknown_bound():
     assert r['solver_diagnostics']['native_error_type']=='NoFeasibleIncumbent';prepare(s,m,a[0])
 
 
+def test_explicit_time_limited_dominated_paid_slack_canonicalisation():
+    s,m,h=setup();cfg=controlled_settings(5.);reply=response(s,m,h,cfg);original=reply['objective']
+    reply['native_status']='HighsModelStatus.kTimeLimit';reply['statistics']['36']['pt']+=2;reply['objective']-=8
+    _,strict=NativePlanner(Fake(reply))(s,m,h,cfg)
+    assert strict['solver_diagnostics']['native_error_type']=='ValueError'
+    actions,report=NativePlanner(Fake(reply),canonicalise_dominated_paid=True)(s,m,h,cfg)
+    assert report['solver_diagnostics']['native_error_type'] is None
+    assert report['objective']==pytest.approx(original) and not report['proven_optimal']
+    assert report['solver_diagnostics']['dominated_paid_slack']==[dict(gameweek=36,reported_paid_transfers=reply['statistics']['36']['pt'],minimum_paid_transfers=reply['statistics']['36']['pt']-2)]
+    assert _objective(s,m,h,actions,cfg)[0]==pytest.approx(original)
+
+
+@pytest.mark.parametrize('damage',['optimal','fractional','underpaid','cash','ft'])
+def test_paid_slack_policy_never_waives_other_admission_rules(damage):
+    s,m,h=setup();cfg=controlled_settings(5.);reply=response(s,m,h,cfg)
+    reply['native_status']='HighsModelStatus.kTimeLimit';reply['statistics']['36']['pt']+=2;reply['objective']-=8
+    if damage=='optimal':reply['native_status']='HighsModelStatus.kOptimal'
+    elif damage=='fractional':reply['statistics']['36']['pt']+=.5
+    elif damage=='underpaid':reply['statistics']['36']['pt']=-1
+    elif damage=='cash':reply['statistics']['36']['itb']+=1
+    else:reply['statistics']['36']['ft']+=1
+    _,report=NativePlanner(Fake(reply),canonicalise_dominated_paid=True)(s,m,h,cfg)
+    assert report['solver_diagnostics']['native_error_type']=='ValueError' and report['selected_plan_bound']['upper_objective'] is None
+
+
 def test_canonical_policy_is_idempotent_preserves_finance_and_reports_selected_bound():
     s,m,h=setup();cfg=controlled_settings(5.);a,r=CanonicalPlanner()(s,m,h,cfg)
     assert canonical_actions(s,m,h,a)==a and r['canonical_selection']
