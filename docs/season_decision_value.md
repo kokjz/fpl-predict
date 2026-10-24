@@ -124,3 +124,20 @@ enumerates missing-position counts and legal replacement capacities without
 importing the selector, its NumPy bench tensor, forecasting models or a solver.
 Use it alongside the financial/realised-score and native-proposal auditors;
 these are separate implementations within this project, not third-party certification.
+
+
+## Optional approved-artifact compatibility
+
+`approved_decision.project_decision_approved` is an explicit research-policy API.
+It requires `allow_research_policy=True` plus the existing verified registry and
+pre-origin artifact-observation receipt. It checks that a probability replay
+reproduces the approved point means exactly and returns a separate appearance
+sidecar for `DecisionManager`. Normal forecasting commands do not call it.
+
+The artifact observation is a conservative existence upper bound, not an invented
+fit time. Source history/calendar admission remains the caller's responsibility.
+Explicit current-gameweek minutes/availability sensitivities are applied once; a
+manual zero remains zero in that gameweek and does not propagate to future weeks.
+The fixed probability mixture is an experimental decision assumption, not a new
+calibrated fitness probability. Save/load, source-clock and invented-data
+compatibility tests do not establish live-season accuracy or promote a policy.
