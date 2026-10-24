@@ -39,3 +39,11 @@ def test_raw_reply_tamper_rejected(damage):
 def test_only_expected_native_failure_is_accepted():
     q,r=case();m=module();assert m.validate(q,dict(status='failed',error_type='ValueError',message='No feasible native incumbent'))==0
     with pytest.raises(AssertionError):m.validate(q,dict(status='failed',error_type='RuntimeError',message='unexpected'))
+
+
+def test_explicit_paid_slack_extension_and_strict_default():
+    q,r=case();r['native_status']='HighsModelStatus.kTimeLimit';r['statistics']['16']['pt']=2;r['objective']-=8;m=module()
+    with pytest.raises(AssertionError):m.validate(q,r)
+    assert m.validate(q,r,allow_dominated_paid_slack=True)==1
+    r['statistics']['16']['pt']=1.5
+    with pytest.raises(AssertionError):m.validate(q,r,allow_dominated_paid_slack=True)

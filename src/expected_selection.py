@@ -5,14 +5,16 @@ conditional mean returns. This is a transparent research assumption, not a learn
 joint distribution or a replacement for the production selector.
 """
 from functools import lru_cache
+from collections import Counter
 from itertools import combinations, permutations, product
 import numpy as np
-from selection_benchmark import legal, score
+from selection_benchmark import legal, score, POSITIONS
 
 
-def validate(players):
+def validate(players, *, check_clubs=True):
     d=sorted(players,key=lambda r:r['id'])
-    if not legal(d):raise ValueError('Require a legal 15-player squad')
+    structural=len(d)==15 and len({r['id'] for r in d})==15 and Counter(r['position'] for r in d)==POSITIONS
+    if not structural or check_clubs and not legal(d):raise ValueError('Require a legal 15-player squad')
     for r in d:
         p=r['p_play'];q=r['conditional_points'];xp=r['expected_points'];pc=r.get('p_card_only',0.);qc=r.get('conditional_card',0.)
         if not np.isfinite([p,q,xp,pc,qc]).all() or not 0<=p<=1 or not 0<=pc<=1-p+1e-12 or not np.isclose(xp,p*q+pc*qc,rtol=0,atol=1e-9):
@@ -72,11 +74,11 @@ def bench_value(start,bench):
     return float(inclusion@q)
 
 
-def objective(selection,players):
+def objective(selection,players, *, check_clubs=True):
     """Expected score under the primary independent marginal model."""
-    d=validate(players);by={r['id']:r for r in d}
+    d=validate(players,check_clubs=check_clubs);by={r['id']:r for r in d}
     # Reuse full legal-selection guards without realised outcomes.
-    score(selection,by,{r['id']:dict(actual=0.,minutes=0.,cards=0.) for r in d})
+    score(selection,by,{r['id']:dict(actual=0.,minutes=0.,cards=0.) for r in d},check_clubs=check_clubs)
     start=[by[i] for i in selection['starters']];bench=[by[i] for i in selection['bench']]
     out=[r for r in start if r['position']!=1];res=[r for r in bench if r['position']!=1]
     keeper=next(r for r in start if r['position']==1);reserve=next(r for r in bench if r['position']==1)
@@ -85,13 +87,13 @@ def objective(selection,players):
         (1-active_probability(keeper))*reserve['expected_points']+c['p_play']*c['conditional_points']+(1-c['p_play'])*v['p_play']*v['conditional_points'])
 
 
-def select(players):
+def select(players, *, check_clubs=True):
     """Enumerate every legal XI/bench order and optimise captain/vice exactly.
 
     Bench expectation depends only on the outfield XI; compute it once for both
     keeper choices. All tie resolution follows sorted IDs and permutation order.
     """
-    d=validate(players);out=[r for r in d if r['position']!=1];keepers=[r for r in d if r['position']==1]
+    d=validate(players,check_clubs=check_clubs);out=[r for r in d if r['position']!=1];keepers=[r for r in d if r['position']==1]
     ids=np.array([r['id'] for r in d]);p=np.array([r['p_play'] for r in d]);xp=np.array([r['expected_points'] for r in d])
     play_xp=np.array([r['p_play']*r['conditional_points'] for r in d])
     bonus=play_xp[:,None]+(1-p[:,None])*play_xp[None,:];np.fill_diagonal(bonus,-np.inf)

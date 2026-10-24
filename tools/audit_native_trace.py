@@ -28,7 +28,7 @@ def mean_selection(ids,players,xp,g):
     return best[1]
 
 
-def validate(request,reply):
+def validate(request,reply,*,allow_dominated_paid_slack=False,diagnostics=None):
     assert set(request)=={'schema_version','market','state','xp','through','chip_schedule','opening_ids','seconds'} and request['schema_version']==1
     assert set(request['state'])=={'season','gameweek','holdings','bank','free_transfers','used_chips','previous_chip'}
     market=request['market'];state=dict(request['state'],total_points=0.);g=state['gameweek'];end=request['through']
@@ -44,7 +44,7 @@ def validate(request,reply):
     for p in reply['picks']:
         w=p['week'];i=p['id'];assert w in rosters and i in players and (w,i) not in seen and type(p['squad']) is int and p['squad'] in (0,1);seen.add((w,i))
         if p['squad']:rosters[w].add(i)
-    value=0.
+    value=0.;removed_penalty=0.
     for w in range(g,end+1):
         ids=rosters[w];assert len(ids)==15;old=dict(state['holdings']);selection=mean_selection(ids,players,xp,w);chip=request['chip_schedule'].get(str(w))
         action=dict(buys=sorted(ids-set(old)),sells=sorted(set(old)-ids),chip=chip,**selection)
@@ -52,26 +52,32 @@ def validate(request,reply):
         if w==g and request['opening_ids'] is not None:assert ids==set(request['opening_ids'])
         state,actual_ids,hits,n=advance(state,dict(market,gameweek=w),action)
         assert actual_ids==ids;stats=reply['statistics'][str(w)]
-        assert abs(stats['ft']-free)<1e-5 and abs(stats['pt']*4-hits)<1e-5 and abs(stats['itb']*10-state['bank'])<1e-5
+        assert abs(stats['ft']-free)<1e-5 and abs(stats['itb']*10-state['bank'])<1e-5
+        if abs(stats['pt']*4-hits)>=1e-5:
+            assert allow_dominated_paid_slack and reply['native_status']=='HighsModelStatus.kTimeLimit'
+            assert math.isfinite(stats['pt']) and abs(stats['pt']-round(stats['pt']))<1e-5 and stats['pt']*4>=hits
+            removed_penalty+=stats['pt']*4-hits
         value+=expected(action,xp,w,hits)
-    assert value>=reply['objective']-1e-5
+    assert value>=reply['objective']+removed_penalty-1e-5
     if reply['native_status']=='HighsModelStatus.kOptimal':assert abs(value-reply['objective'])<1e-5
+    if diagnostics is not None:diagnostics['removed_dominated_paid_penalty']=removed_penalty
     return end-g+1
 
 
-def audit(path):
+def audit(path,*,allow_dominated_paid_slack=False):
     if not __debug__:raise ValueError('Assertions must be enabled')
-    calls=completed=failed=periods=0;errors=Counter()
+    calls=completed=failed=periods=slack_calls=0;slack_penalty=0.;errors=Counter()
     with gzip.open(path,'rt') as stream:
         for line in stream:
-            r=json.loads(line);calls+=1;assert r['index']==calls;periods+=validate(r['request'],r['reply'])
+            r=json.loads(line);calls+=1;assert r['index']==calls;d={};periods+=validate(r['request'],r['reply'],allow_dominated_paid_slack=allow_dominated_paid_slack,diagnostics=d)
+            removed=d.get('removed_dominated_paid_penalty',0.);slack_calls+=int(removed>1e-5);slack_penalty+=removed
             if r['reply']['status']=='completed':completed+=1
             else:failed+=1;errors[r['reply']['error_type']+':'+r['reply']['message']]+=1
-    return dict(calls=calls,completed=completed,expected_failures=failed,completed_provisional_periods=periods,errors=dict(errors),status='independently_reconciled',scope='Every completed Solio reply: integer finance, chip inventory and separate common-mean selection objective; no source timestamp or global-optimum certification')
+    return dict(calls=calls,completed=completed,expected_failures=failed,completed_provisional_periods=periods,errors=dict(errors),status='independently_reconciled',allow_dominated_paid_slack=allow_dominated_paid_slack,dominated_paid_slack_calls=slack_calls,removed_dominated_paid_penalty=slack_penalty,scope='Every completed Solio reply: integer finance, chip inventory and separate common-mean selection objective; explicit optional time-limit integral paid-slack canonicalisation; no source timestamp or global-optimum certification')
 
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--trace',type=Path,required=True);a=p.parse_args();print(json.dumps(audit(a.trace),indent=2))
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--trace',type=Path,required=True);p.add_argument('--allow-dominated-paid-slack',action='store_true');a=p.parse_args();print(json.dumps(audit(a.trace,allow_dominated_paid_slack=a.allow_dominated_paid_slack),indent=2))
 
 
 if __name__=='__main__':main()

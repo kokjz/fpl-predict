@@ -46,7 +46,22 @@ Saved-artifact and changed-next-origin integration checks use entirely invented
 data. Historical evaluation uses prior-only method references rather than
 backcasting a deployment artifact trained on the evaluation season.
 
-The [latest two-season management study](docs/EXPECTED_SEASON_POINTS_RESULTS_2026-10-24.md)
+The [availability-aware season study](docs/SEASON_DECISION_VALUE_RESULTS_2026-10-24.md)
+keeps point forecasts fixed and compares sixteen continuous 38-GW paths. The
+changed six-week policy averages **+57.50 net points versus current H6**
+across two starts in each of two reused seasons; the four effects are
+**+60, +105, -33, +98**. Against adapted Solio its
+mean is **+3.25**.
+The predeclared mean/downside research criterion passes versus current H6.
+The Solio comparison has two wins and two losses, a **−40-point second-season
+mean**, and fails the same downside criterion. Fresh time-limited control paths
+also vary from earlier runs; this limits causal interpretation of the gain.
+These are conditional historical management results, not a forecast-error gain,
+untouched evaluation or original full-manager superiority. The 2024/25 comparison
+excludes Assistant Manager. Weights and normal weekly defaults remain unchanged;
+read the [optional research API and limitations](docs/season_decision_value.md).
+
+The **earlier** [two-season management study](docs/EXPECTED_SEASON_POINTS_RESULTS_2026-10-24.md)
 compares twelve full-season paths from two common starting squads in each of
 2024/25 and 2025/26. H6 averages **+129.50 net points versus H1**
 with equal season weighting; its four differences are

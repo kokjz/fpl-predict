@@ -1,5 +1,16 @@
 # Adaptive season management
 
+Latest follow-up, 24 October 2026: the optional
+[availability-aware policy](SEASON_DECISION_VALUE_RESULTS_2026-10-24.md) keeps
+point means fixed and tests legal expected subs/vice fallback in sixteen matched
+38-GW paths. Its equal-season difference versus fresh H6 is
+**+57.50 net points**; the predeclared historical
+mean/material-downside criterion **passes**. This is a separate research policy,
+with two reused years, two common starts each and no Assistant Manager in 2024/25.
+Read its [method, optional API and limitations](season_decision_value.md).
+No approved forecast weights or normal weekly defaults change. The earlier
+studies below retain their original dates, gates and scopes.
+
 Current evidence: the [two-season study](EXPECTED_SEASON_POINTS_RESULTS_2026-10-24.md)
 reports an equal-season H6-minus-H1 mean of +129.50 net points across
 four common opening cases. Its declared mean/material-downside research criterion
