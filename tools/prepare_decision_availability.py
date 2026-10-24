@@ -29,6 +29,22 @@ def checked(entry):
     return path
 
 
+def corrected_history(history, correction):
+    """Match the admitted origin recipe, including derived appearance labels."""
+    result = history.copy()
+    for r in correction.to_dict('records'):
+        mask = result.element.eq(r['element']) & result.fixture.eq(r['fixture'])
+        if mask.sum() != 1:
+            raise ValueError('Ambiguous derived history correction')
+        for field in STATS:
+            if field in r:
+                result.loc[mask, field] = r[field]
+        result.loc[mask, 'points_core'] = r['total_points']
+        result.loc[mask, 'played'] = float(r['minutes'] > 0)
+        result.loc[mask, 'sixty'] = float(r['minutes'] >= 60)
+    return result
+
+
 def prepare(manifest, expected, output, *, trust_local_cache=False):
     if not trust_local_cache:
         raise ValueError('Explicit cache/model trust required')
@@ -58,15 +74,7 @@ def prepare(manifest, expected, output, *, trust_local_cache=False):
             history = pd.read_pickle(checked(source['history']))
             history = history[history.season.eq(season)].copy()
             if source.get('correction'):
-                correction = pd.read_csv(checked(source['correction']))
-                for r in correction.to_dict('records'):
-                    mask = history.element.eq(r['element']) & history.fixture.eq(r['fixture'])
-                    if mask.sum() != 1:
-                        raise ValueError('Ambiguous derived history correction')
-                    for field in STATS:
-                        if field in r:
-                            history.loc[mask, field] = r[field]
-                    history.loc[mask, 'points_core'] = r['total_points']
+                history = corrected_history(history, pd.read_csv(checked(source['correction'])))
             decisions = read_bundle(checked(source['decisions']))['weeks']
             origins = source['origins']
             if [x['gameweek'] for x in origins] != list(range(1, 39)) or len(decisions) != 38:
