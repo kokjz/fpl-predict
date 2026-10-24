@@ -49,8 +49,21 @@ def test_fixed_inner_forwards_node_seed_parallel_controls(monkeypatch):
         return SimpleNamespace(status=1,message='Iteration limit reached',x=None,mip_node_count=1)
     monkeypatch.setattr(rolling_planner,'milp',solve)
     actions,report=rolling_planner.plan(state,m,h,replace(cfg,node_limit=1))
-    assert seen['node_limit']==1 and seen['random_seed']==0 and seen['parallel']=='off'
+    assert seen['node_limit']==1 and seen['random_seed']==0 and seen['parallel'] is False
     assert report['fallback_retained'] and report['solver_diagnostics']['work_control']['mip_node_count']==1
+
+
+@pytest.mark.parametrize('message,accepted',[
+    ('The HiGHS status code was not recognized. (HiGHS Status 16: Solution limit reached)',True),
+    ('The HiGHS status code was not recognized. (HiGHS Status 15: Unknown)',False)])
+def test_only_exact_known_unmapped_solution_limit_is_admitted_in_node_mode(monkeypatch,message,accepted):
+    state,m,h,a,cfg=fixture()
+    monkeypatch.setattr(rolling_planner,'milp',lambda *a,**k:SimpleNamespace(status=4,message=message,x=None,mip_node_count=1))
+    if not accepted:
+        with pytest.raises(RuntimeError):rolling_planner.plan(state,m,h,replace(cfg,node_limit=1))
+    else:
+        _,report=rolling_planner.plan(state,m,h,replace(cfg,node_limit=1))
+        assert report['status']==1 and report['solver_diagnostics']['work_control']['raw_solver_status']==4
 
 
 def test_fingerprint_omits_elapsed_but_detects_provisional_financial_source_changes():

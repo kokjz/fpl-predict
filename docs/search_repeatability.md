@@ -32,6 +32,15 @@ checks their actual values before solving. The complete preflight reruns on the
 corrected source; no season scores, budgets or probability settings informed this
 mechanical repair. Legacy requests retain upstream defaults.
 
+A second preflight exposed SciPy-wrapper differences: its parallel option uses
+boolean `False` for off, and the installed status mapper does not recognise HiGHS
+solution-limit enum 16 even when an incumbent is returned. The adapter now passes
+the documented wrapper type, makes option warnings fatal in explicit work mode,
+and admits only that exact known status message as a node-limit termination.
+Raw and admitted statuses remain recorded; normal incumbent/financial/objective
+checks are retained. Unknown statuses and all time guards still stop the run.
+Both failed preflight batches remain separate from the uniform corrected rerun.
+
 Node caps do not bound root-node presolve/heuristic effort, equalise CPU work
 between different formulations or guarantee equality across solver versions.
 Runtime versions are frozen and reported. Expected-value and global chip/season

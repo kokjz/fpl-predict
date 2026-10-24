@@ -1,11 +1,12 @@
 """Bounded multi-GW mean-point MILP with exact constant-quote finance and FT state."""
 from collections import Counter
 from dataclasses import dataclass
+from copy import copy
 import time
 import warnings
 import numpy as np
 import pandas as pd
-from scipy.optimize import milp,Bounds,LinearConstraint
+from scipy.optimize import milp,Bounds,LinearConstraint,OptimizeWarning
 from scipy.sparse import coo_matrix
 from forecast import select_xi
 from season_engine import Action,Market,prepare,rules_for,available_transfers
@@ -239,10 +240,17 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=Non
     matrix=coo_matrix((vals,(rix,cix)),shape=(len(lower),len(c))).tocsc()
     remaining=cfg.seconds if cfg.node_limit is not None else max(.01,cfg.seconds-(time.monotonic()-start))
     options=dict(time_limit=remaining,mip_rel_gap=1e-8,threads=2)
-    if cfg.node_limit is not None:options.update(node_limit=cfg.node_limit,random_seed=0,parallel='off')
+    if cfg.node_limit is not None:options.update(node_limit=cfg.node_limit,random_seed=0,parallel=False)
     with warnings.catch_warnings():
         warnings.filterwarnings('ignore',message='Unrecognized options detected:.*',category=RuntimeWarning)
+        if cfg.node_limit is not None:warnings.filterwarnings('error',category=OptimizeWarning)
         result=milp(np.array(c),integrality=np.ones(len(c)),bounds=Bounds(lo,hi),constraints=LinearConstraint(matrix,lower,upper),options=options)
+    raw_solver_status=int(result.status)
+    # Some SciPy releases return the incumbent but do not map HiGHS' node/solution
+    # limit enum16. Admit only this exact known message in explicit node mode;
+    # all incumbent integrality, finance, objective and bound checks still apply.
+    if cfg.node_limit is not None and result.status==4 and str(result.message)=='The HiGHS status code was not recognized. (HiGHS Status 16: Solution limit reached)':
+        result=copy(result);result.status=1
     if cfg.node_limit is not None and ('time limit' in str(result.message).lower() or result.status not in (0,1)):
         raise RuntimeError('Fixed-work solve did not complete within its safety guard: '+str(result.message))
     if result.status==2:raise ValueError('MILP infeasible despite validated baseline')
@@ -276,7 +284,7 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=Non
         seconds=time.monotonic()-start,pool_players=n,full_market_players=len(market.players),variables=len(c),constraints=len(lower),
         chip_schedule=chips,scope='Deterministic origin-frozen1–8GWforecast, constant quotes/roster, restricted candidate pool, fixed chip schedule; no expected autosub objective; commit first action only')
     if cfg.node_limit is not None:
-        report['solver_diagnostics']['work_control']=dict(node_limit=cfg.node_limit,mip_node_count=finite_or_none(getattr(result,'mip_node_count',None)),random_seed=0,parallel='off',safety_seconds=cfg.seconds,message=str(result.message))
+        report['solver_diagnostics']['work_control']=dict(node_limit=cfg.node_limit,mip_node_count=finite_or_none(getattr(result,'mip_node_count',None)),random_seed=0,parallel='off',scipy_parallel_option=False,safety_seconds=cfg.seconds,message=str(result.message),raw_solver_status=raw_solver_status,admitted_status=int(result.status))
     return selected,report
 
 
