@@ -161,3 +161,60 @@ def progression(rows, protocol):
     return dict(equal_season_mean_gain=gain, season_means=season_means, differences=deltas,
         mean_selection_seconds=cost, integration_admitted=admitted, model_promotion=False,
         policy_promotion=False, scope='Predeclared conditional research progression; two reused seasons, no generalisation interval')
+
+
+def adaptive_case(decisions, outcomes, availability, output, *, policy_id, opening_ids,
+                  native_python=None, solio_source=None, solio_site_packages=None):
+    """One declared continuous policy path; caller locks all sources and inputs.
+
+    Availability and decisions are supplied separately from evaluator outcomes.
+    The manager sees only its current origin. Use the existing external watchdog
+    for whole-process memory/time/storage limits and retain raw attempts.
+    """
+    import contextlib
+    from season_benchmark import run, Policy
+    from decision_management import DecisionManager
+    from native_planner import NativeProcess, NativePlanner, CanonicalPlanner
+    from season_qualification import Trace, Guarded
+    from rolling_planner import Settings
+    allowed = ('standingH1_adaptive', 'standingH6_adaptive', 'decisionH6_adaptive',
+               'SolioAdaptedH6_sharedAdaptiveChips')
+    if policy_id not in allowed:
+        raise ValueError('Undeclared adaptive policy')
+    out = Path(output).resolve()
+    if out.exists() or out.is_relative_to(ROOT):
+        raise ValueError('Require new private output directory')
+    out.mkdir(parents=True)
+    trace = None
+    native_metadata = None
+    with contextlib.ExitStack() as stack:
+        if policy_id.startswith('Solio'):
+            if not all([native_python, solio_source, solio_site_packages]):
+                raise ValueError('Admitted native runtime required')
+            actor = stack.enter_context(NativeProcess(native_python, solio_source,
+                out/'native_stderr.log', site_packages=solio_site_packages))
+            trace = Trace(actor, out, 'solio', stack)
+            native_metadata = actor.metadata
+            inner = Guarded(CanonicalPlanner(NativePlanner(trace)), out, trace)
+        else:
+            inner = Guarded(CanonicalPlanner(), out)
+        settings = Settings(baseline_mode='feasibility', terminal_ft_value=0.,
+                            terminal_squad_weight=0., churn_cost=0.)
+        cfg = Policy(1 if policy_id.startswith('standingH1') else 6, True, 15., 2., 12)
+        if policy_id.startswith('decision'):
+            by = {r['gameweek']: r for r in availability}
+            if len(by) != 38 or set(by) != set(range(1, 39)):
+                raise ValueError('Incomplete appearance origins')
+            def manager(state, market, horizon, **kwargs):
+                return DecisionManager(by[market.gameweek], inner)(state, market, horizon, **kwargs)
+            result = run(decisions, outcomes, out/'season', policy=cfg,
+                opening_ids=opening_ids, settings=settings, management_policy=manager,
+                management_policy_id='mean-preserving-expected-candidate-rerank-v1')
+        else:
+            result = run(decisions, outcomes, out/'season', policy=cfg,
+                opening_ids=opening_ids, settings=settings, inner_planner=inner)
+    result.update(policy_id=policy_id, native_runtime=native_metadata,
+        native_calls=trace.calls if trace else 0, native_failed_attempts=trace.failed if trace else 0,
+        model_promotion=False, production_policy_promotion=False)
+    (out/'summary.json').write_text(json.dumps(result, indent=2, allow_nan=False)+'\n')
+    return result

@@ -13,7 +13,7 @@ from selection_benchmark import score
 CHIPS = (None, 'wildcard', 'freehit', 'bboost', '3xc')
 
 
-def players(squad, probabilities):
+def players(squad, probabilities, *, check_clubs=True):
     """Keep unconditional means exactly; do not multiply them by appearance.
 
     The caller supplies a source-validated player-GW probability. Zero probability
@@ -32,7 +32,7 @@ def players(squad, probabilities):
         result.append(dict(id=r['id'], position=r['position'], team=r['team'],
                            expected_points=xp, p_play=p,
                            conditional_points=xp / p if p else 0.))
-    return validate(result)
+    return validate(result, check_clubs=check_clubs)
 
 
 def captain_value(selection, by):
@@ -40,21 +40,21 @@ def captain_value(selection, by):
     return c['expected_points'] + (1 - c['p_play']) * v['expected_points']
 
 
-def objective(selection, rows, chip=None):
+def objective(selection, rows, chip=None, *, check_clubs=True):
     if chip not in CHIPS:
         raise ValueError('Unsupported chip')
-    d = validate(rows)
+    d = validate(rows, check_clubs=check_clubs)
     if any(r.get('p_card_only', 0.) for r in d):
         raise ValueError('This fixed policy assumes no predicted card-only events')
     by = {r['id']: r for r in d}
-    ordinary = legacy_objective(selection, d)  # Includes selection/formation guards.
+    ordinary = legacy_objective(selection, d, check_clubs=check_clubs)
     bonus = captain_value(selection, by)
     if chip == 'bboost':
         return float(sum(r['expected_points'] for r in d) + bonus)
     return float(ordinary + (bonus if chip == '3xc' else 0.))
 
 
-def select(rows, chip=None):
+def select(rows, chip=None, *, check_clubs=True):
     """Exact optimum under the stated independent-marginal mean model.
 
     Normal chips reuse the earlier exact selector as a control. TC optimises a
@@ -63,11 +63,11 @@ def select(rows, chip=None):
     """
     if chip not in CHIPS:
         raise ValueError('Unsupported chip')
-    d = validate(rows)
+    d = validate(rows, check_clubs=check_clubs)
     if any(r.get('p_card_only', 0.) for r in d):
         raise ValueError('This fixed policy assumes no predicted card-only events')
     if chip not in ('bboost', '3xc'):
-        return legacy_select(d)
+        return legacy_select(d, check_clubs=check_clubs)
     out = [r for r in d if r['position'] != 1]
     keepers = [r for r in d if r['position'] == 1]
     by_id = {r['id']: k for k, r in enumerate(d)}
@@ -111,11 +111,11 @@ def select(rows, chip=None):
     return best
 
 
-def realised(selection, rows, outcomes, chip=None, hits=0):
+def realised(selection, rows, outcomes, chip=None, hits=0, *, check_clubs=True):
     """Evaluate separately supplied results, including real card-only events."""
     if chip not in CHIPS:
         raise ValueError('Unsupported chip')
-    result = score(selection, {r['id']: r for r in rows}, outcomes, hits)
+    result = score(selection, {r['id']: r for r in rows}, outcomes, hits, check_clubs=check_clubs)
     if chip == 'bboost':
         return float(sum(outcomes[r['id']]['actual'] for r in rows)
                      + result['captain_bonus'] - hits)

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "method": "mean-preserving-expected-candidate-rerank-v1",
+  "admission_evidence": "Fixed-roster pilot+5.75mean across4H6cases; newchipawareandlegacyexpected same realised totals, no isolated chip-awaregainclaim",
+  "pilot_source": "270a474",
+  "seasons": [
+    "2024-25",
+    "2025-26"
+  ],
+  "opening_seeds": [
+    20261070,
+    20261071
+  ],
+  "policies": [
+    "standingH1_adaptive",
+    "standingH6_adaptive",
+    "decisionH6_adaptive",
+    "SolioAdaptedH6_sharedAdaptiveChips"
+  ],
+  "paths": 16,
+  "horizon": 6,
+  "means": "unchanged original source-locked prior-only grids",
+  "availability": "fixed already frozen76origin sidecars; no refit or new probability parameters",
+  "objective": "Conditional independent-marginal expected score incl legalautosubs and vicefallback for candidate proposed rosters, subtracthits; coarse chip reserve unchanged. Original innerMILPs still propose under mean/reserve proxy, not exact new-objective global optimisation.",
+  "candidate_generation": "same standing/native mean MILP, candidates, baseline and inner2sec; only challenger reselects/reranks all detailedhorizon proposals; onlyfirstactualdeadline action executed, nextoriginreplans",
+  "fairness": "All16freshpaths same source/bundles/commonstarts/15souter2sinner12probes; probabilityselectiontime counts insidechallengerouterbudget, rawinnercalls/runtime/probes/failures retained. Saved12priorcontrols andfixed overlays separately retained, not substituted for fresh uniformcontrols.",
+  "resources": {
+    "threads": 2,
+    "seconds_per_path": 900,
+    "memory_mib": 4096,
+    "outer_seconds": 15.0,
+    "inner_seconds": 2.0,
+    "max_trials": 12,
+    "project_mib": 2560,
+    "growth_mib": 384,
+    "min_free_mib": 5120
+  },
+  "primary": "decisionH6minusfreshstandingH6 equal-season mean net38GWpoints",
+  "research_criteria": {
+    "positive_mean": true,
+    "season_average_loss_limit": 19,
+    "single_opening_loss_limit": 38,
+    "all_legality_and_source_checks_required": true,
+    "current_input_and_save_load_qualification_separate": true
+  },
+  "secondary": [
+    "H6minusH1",
+    "decisionH6minusH1",
+    "decisionH6minusadaptedSolio",
+    "currentH6minusadaptedSolio",
+    "raw/regularised appearance calibration and decision components"
+  ],
+  "bounds": "No existing mean-MILP dual certifies expected-autosub objective; expected selected-plan/global bounds unknown. Keep raw proposal mean bounds separately. Missingboundsnotmanufactured.",
+  "retention": "All16declaredarms, every loss/failure/timeout, conditionalgateoutcome and source version retained; no inspected-outcome search. A repaired mechanical job requires preservedfailure and uniformappropriate rerun, not selectiveseedreplacement.",
+  "limits": [
+    "Two reusedyears/two common openingstates each, notindependent4seasons or untouched",
+    "2024/25commonnoAssistantManager; nooriginalcompleteexternalmanagerclaim",
+    "Existingexternal forecaster andAIrsenal studies separate; no newDastan/OpenFPL/AIrsenal claim fromSolio run",
+    "1%appearance regularisation and conditionalreturnidentity are fixedassumptions, notnewcalibratedinjurymodel",
+    "Unknownjointappearance/cardonlyrisks and coarsefuturechipgain proxies persist",
+    "Originalforecasterv1.0.0unchanged, noautomaticweeklydefaultpromotion"
+  ]
+}

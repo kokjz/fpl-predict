@@ -68,6 +68,34 @@ independent seasons. The 2024/25 profile excludes Assistant Manager for every
 policy. These are named shared-input external-core adaptations; original full
 external managers, global optimality and future points gains are not established.
 
+## Admitted integration stage
+
+The fixed-roster pilot passed its predeclared progression rule: H6 selection-only
+differences were +9, +4, −3 and +13 points, equal-season mean +5.75. All twelve
+overlay paths retained the same realised totals for the legacy and chip-aware
+expected selectors, so an isolated chip-aware realised gain is not established.
+Those overlays do not establish adaptive transfer/chip-policy improvement.
+
+The [separate integration protocol](season_decision_integration_protocol_2026-10-24.json)
+declares sixteen fresh continuous paths before scoring: H1, H6, changed H6 and
+adapted Solio, two common openings in each year. The changed policy reranks
+bounded feasible mean-MILP proposals by expected autosub/vice-aware value across
+the detailed horizon, plus the unchanged coarse chip reserve. It optimises the
+lineup for each proposed roster, commits only the first action, then replans.
+It does not solve the exact global expected-value transfer problem.
+
+Selector time counts inside the same outer search budget; fewer completed chip
+probes are a possible cost. Expected-value dual/global bounds remain unknown.
+Raw inner mean-objective bounds are preserved separately, and the engine's
+mechanical mean-admission value is distinguished from the decision value used
+to rank plans. Existing weekly defaults remain unchanged.
+
+An unchanged squad may legally exceed three players from a club following a
+real club move. The optional research selector can omit that club-count check
+only after the season engine admits the financial/transfer transition; new
+transfers still require the ordinary club limit. Structural XI/squad checks
+are always enforced, and default selector validation remains strict.
+
 ## Reproduction and resources
 
 Use a source checkout with `PYTHONPATH=src`. The offline
