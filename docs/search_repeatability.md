@@ -25,6 +25,13 @@ existing explicit dominated integral paid-transfer-slack policy also covers
 node-limit incumbents; strict legacy defaults remain unchanged. This is an
 adapted external core, not an untouched original manager.
 
+The initial source-only preflight stopped when the pinned upstream solver reset
+parallel mode to `on`. Its raw attempt is retained. The explicit work adapter now
+enforces the declared node/seed/parallel settings on every option assignment and
+checks their actual values before solving. The complete preflight reruns on the
+corrected source; no season scores, budgets or probability settings informed this
+mechanical repair. Legacy requests retain upstream defaults.
+
 Node caps do not bound root-node presolve/heuristic effort, equalise CPU work
 between different formulations or guarantee equality across solver versions.
 Runtime versions are frozen and reported. Expected-value and global chip/season

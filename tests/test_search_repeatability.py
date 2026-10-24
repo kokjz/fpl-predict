@@ -96,3 +96,13 @@ def test_independent_native_auditor_checks_fixed_node_slack_and_failed_receipts(
     assert auditor.validate(q,r,allow_dominated_paid_slack=True)==1
     r['mip_node_count']=2
     with pytest.raises(AssertionError):auditor.validate(q,r,allow_dominated_paid_slack=True)
+
+
+def test_pinned_upstream_parallel_default_cannot_override_explicit_work_control():
+    from native_solver_worker import fixed_work_option
+    work=dict(node_limit=1,random_seed=0,parallel='off')
+    assert fixed_work_option(work,'parallel','on')=='off'
+    assert fixed_work_option(work,'random_seed',37)==0
+    assert fixed_work_option(work,'mip_max_nodes',900)==1
+    assert fixed_work_option(work,'presolve','on')=='on'
+    assert fixed_work_option(None,'parallel','on')=='on'

@@ -122,6 +122,14 @@ def validate_request(q,recipe):
     return players,old,xp,chips,rules
 
 
+def fixed_work_option(work,name,value):
+    """Preserve declared controls when upstream sets its own defaults later."""
+    if work:
+        fixed={'mip_max_nodes':work['node_limit'],'random_seed':0,'parallel':'off'}
+        return fixed.get(name,value)
+    return value
+
+
 class Runtime:
     def __init__(self,root):
         self.recipe=read_json((RESOURCES/'native_solver_recipe.json').read_bytes())
@@ -168,6 +176,7 @@ class Runtime:
                     for name,value in [('mip_max_nodes',work['node_limit']),('random_seed',0),('parallel','off')]:
                         if str(m.setOptionValue(name,value))!='HighsStatus.kOk':raise ValueError('Native fixed-work option rejected')
             def setOptionValue(m,name,value):
+                value=fixed_work_option(work,name,value)
                 if name=='time_limit':
                     value=q['seconds'] if work else max(.001,value-(time.monotonic()-tick));m.actual_time_limit=value
                 return super().setOptionValue(name,value)
