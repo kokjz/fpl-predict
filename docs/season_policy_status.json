@@ -144,10 +144,104 @@
         "2025-26"
       ],
       "current_season_scope": "Native worker admits only its audited 2025/26 profile; another season requires separate adaptation and admission."
+    },
+    {
+      "policy": "decisionH6_adaptive",
+      "status": "historical_experimental_mean_downside_supported",
+      "criteria_source": "season_decision_integration_protocol_2026-10-24.json",
+      "primary": {
+        "pairs": [
+          {
+            "season": "2024-25",
+            "seed": 20261070,
+            "difference": 60.0
+          },
+          {
+            "season": "2024-25",
+            "seed": 20261071,
+            "difference": 105.0
+          },
+          {
+            "season": "2025-26",
+            "seed": 20261070,
+            "difference": -33.0
+          },
+          {
+            "season": "2025-26",
+            "seed": 20261071,
+            "difference": 98.0
+          }
+        ],
+        "season_means": {
+          "2024-25": 82.5,
+          "2025-26": 32.5
+        },
+        "equal_season_mean": 57.5,
+        "median": 79.0,
+        "worst": -33.0,
+        "wins": 3,
+        "ties": 0,
+        "losses": 1,
+        "material_losses_exceeding19": 1,
+        "research_criteria_pass": true,
+        "scope": "Descriptive paired results on two reused seasons/two common starts each; not confidence or guaranteed future gain"
+      },
+      "external_comparison": {
+        "pairs": [
+          {
+            "season": "2024-25",
+            "seed": 20261070,
+            "difference": 92.0
+          },
+          {
+            "season": "2024-25",
+            "seed": 20261071,
+            "difference": 1.0
+          },
+          {
+            "season": "2025-26",
+            "seed": 20261070,
+            "difference": -55.0
+          },
+          {
+            "season": "2025-26",
+            "seed": 20261071,
+            "difference": -25.0
+          }
+        ],
+        "season_means": {
+          "2024-25": 46.5,
+          "2025-26": -40.0
+        },
+        "equal_season_mean": 3.25,
+        "median": -12.0,
+        "worst": -55.0,
+        "wins": 2,
+        "ties": 0,
+        "losses": 2,
+        "material_losses_exceeding19": 2,
+        "research_criteria_pass": false,
+        "scope": "Descriptive paired results on two reused seasons/two common starts each; not confidence or guaranteed future gain"
+      },
+      "production_approved": false,
+      "forecaster_weights_changed": false,
+      "historical_evaluation_seasons": [
+        "2024-25",
+        "2025-26"
+      ],
+      "rule_profiles": [
+        "2024-25",
+        "2025-26",
+        "2026-27"
+      ],
+      "current_season_scope": "Approved-artifact and manual-sensitivity mechanical compatibility on invented 2026/27 inputs; no live accuracy evidence",
+      "source_scope": "Mean-preserving prior-head expected selection and candidate reranking; no Assistant Manager in 2024/25; two reused years with common starts; expected/global bounds unknown",
+      "operational_api": "approved_decision.project_decision_approved with explicit research opt-in; normal weekly defaults unchanged"
     }
   ],
   "latest_followup": "2026-10-24",
-  "latest_followup_evidence": "season_expected_points_results_2026-10-24.json",
+  "latest_followup_evidence": "season_decision_value_results_2026-10-24.json",
   "original_qualification_evidence": "season_policy_qualification_results.json",
-  "latest_followup_numerical_source": "353c28679d569a1c4d5e1fc82c8e76e57f7c3c96"
+  "latest_followup_numerical_source": "353c28679d569a1c4d5e1fc82c8e76e57f7c3c96",
+  "latest_decision_numerical_source": "b241e8ff2b64387cfa5e6ce71d9d3b170d29f96e"
 }

@@ -1,0 +1,2799 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "scope": "Mean-preserving season-policy research on two reused years; common no-Assistant-Manager action space in 2024/25; named adapted external core, not original full managers",
+  "fixed_roster_source": "270a474052f0fc77166e9252b18f4f5176e92232",
+  "adaptive_source": "b241e8ff2b64387cfa5e6ce71d9d3b170d29f96e",
+  "protocol_sha256": "9a9d2c43271df30d5b31956b336ef90681f88845b236f692260119825d21c12c",
+  "integration_protocol_sha256": "03918bd5448746ba6803edb2dc43db603ef5a64620b7df86acdc4af088ccffc2",
+  "amendment_sha256": "46c611dc463e0f273e48da352868cae82e1e29731e577a8aa803a54d48068aa4",
+  "fixed_roster_results": {
+    "complete": true,
+    "rows": [
+      {
+        "name": "2024-25_20261070_standingH6_adaptive",
+        "season": "2024-25",
+        "seed": 20261070,
+        "policy": "standingH6_adaptive",
+        "net_points": {
+          "saved_mean": 2383.0,
+          "legacy_expected_no_chip": 2392.0,
+          "chip_aware_expected": 2392.0
+        },
+        "components": {
+          "saved_mean": {
+            "base_xi": 2016.0,
+            "autosub_delta": 22.0,
+            "captain_bonus": 346.0,
+            "bench_boost_points": 8.0,
+            "extra_captain_bonus": 15.0
+          },
+          "legacy_expected_no_chip": {
+            "base_xi": 1962.0,
+            "autosub_delta": 70.0,
+            "captain_bonus": 361.0,
+            "bench_boost_points": 8.0,
+            "extra_captain_bonus": 15.0
+          },
+          "chip_aware_expected": {
+            "base_xi": 1955.0,
+            "autosub_delta": 70.0,
+            "captain_bonus": 361.0,
+            "bench_boost_points": 15.0,
+            "extra_captain_bonus": 15.0
+          }
+        },
+        "changed_selections": {
+          "saved_mean": 0,
+          "legacy_expected_no_chip": 38,
+          "chip_aware_expected": 38
+        },
+        "mean_new_selection_seconds": 0.08360220297368558,
+        "calibration": {
+          "n": 570,
+          "raw_squared_error": 24.54243179772706,
+          "regularised_squared_error": 24.781722953446128
+        },
+        "independently_reconciled_scores": 114,
+        "independently_reconciled_financial_states": 114,
+        "mean_preservation_verified": true,
+        "scope": "Fixed-roster/chip/transfer selection overlay, not a new adaptive manager"
+      },
+      {
+        "name": "2024-25_20261071_standingH6_adaptive",
+        "season": "2024-25",
+        "seed": 20261071,
+        "policy": "standingH6_adaptive",
+        "net_points": {
+          "saved_mean": 2441.0,
+          "legacy_expected_no_chip": 2445.0,
+          "chip_aware_expected": 2445.0
+        },
+        "components": {
+          "saved_mean": {
+            "base_xi": 2033.0,
+            "autosub_delta": 54.0,
+            "captain_bonus": 349.0,
+            "bench_boost_points": 6.0,
+            "extra_captain_bonus": 15.0
+          },
+          "legacy_expected_no_chip": {
+            "base_xi": 1984.0,
+            "autosub_delta": 84.0,
+            "captain_bonus": 361.0,
+            "bench_boost_points": 17.0,
+            "extra_captain_bonus": 15.0
+          },
+          "chip_aware_expected": {
+            "base_xi": 1978.0,
+            "autosub_delta": 84.0,
+            "captain_bonus": 361.0,
+            "bench_boost_points": 23.0,
+            "extra_captain_bonus": 15.0
+          }
+        },
+        "changed_selections": {
+          "saved_mean": 0,
+          "legacy_expected_no_chip": 38,
+          "chip_aware_expected": 38
+        },
+        "mean_new_selection_seconds": 0.08407510426314059,
+        "calibration": {
+          "n": 570,
+          "raw_squared_error": 27.333106291133014,
+          "regularised_squared_error": 27.53412112097562
+        },
+        "independently_reconciled_scores": 114,
+        "independently_reconciled_financial_states": 114,
+        "mean_preservation_verified": true,
+        "scope": "Fixed-roster/chip/transfer selection overlay, not a new adaptive manager"
+      },
+      {
+        "name": "2025-26_20261070_standingH6_adaptive",
+        "season": "2025-26",
+        "seed": 20261070,
+        "policy": "standingH6_adaptive",
+        "net_points": {
+          "saved_mean": 2274.0,
+          "legacy_expected_no_chip": 2271.0,
+          "chip_aware_expected": 2271.0
+        },
+        "components": {
+          "saved_mean": {
+            "base_xi": 1940.0,
+            "autosub_delta": 68.0,
+            "captain_bonus": 250.0,
+            "bench_boost_points": 27.0,
+            "extra_captain_bonus": 13.0
+          },
+          "legacy_expected_no_chip": {
+            "base_xi": 1881.0,
+            "autosub_delta": 128.0,
+            "captain_bonus": 244.0,
+            "bench_boost_points": 31.0,
+            "extra_captain_bonus": 11.0
+          },
+          "chip_aware_expected": {
+            "base_xi": 1878.0,
+            "autosub_delta": 128.0,
+            "captain_bonus": 244.0,
+            "bench_boost_points": 34.0,
+            "extra_captain_bonus": 11.0
+          }
+        },
+        "changed_selections": {
+          "saved_mean": 0,
+          "legacy_expected_no_chip": 38,
+          "chip_aware_expected": 38
+        },
+        "mean_new_selection_seconds": 0.08131023465787884,
+        "calibration": {
+          "n": 570,
+          "raw_squared_error": 32.311876871682486,
+          "regularised_squared_error": 32.43075201166607
+        },
+        "independently_reconciled_scores": 114,
+        "independently_reconciled_financial_states": 114,
+        "mean_preservation_verified": true,
+        "scope": "Fixed-roster/chip/transfer selection overlay, not a new adaptive manager"
+      },
+      {
+        "name": "2025-26_20261071_standingH6_adaptive",
+        "season": "2025-26",
+        "seed": 20261071,
+        "policy": "standingH6_adaptive",
+        "net_points": {
+          "saved_mean": 2134.0,
+          "legacy_expected_no_chip": 2147.0,
+          "chip_aware_expected": 2147.0
+        },
+        "components": {
+          "saved_mean": {
+            "base_xi": 1841.0,
+            "autosub_delta": 60.0,
+            "captain_bonus": 226.0,
+            "bench_boost_points": 22.0,
+            "extra_captain_bonus": 13.0
+          },
+          "legacy_expected_no_chip": {
+            "base_xi": 1773.0,
+            "autosub_delta": 148.0,
+            "captain_bonus": 221.0,
+            "bench_boost_points": 22.0,
+            "extra_captain_bonus": 11.0
+          },
+          "chip_aware_expected": {
+            "base_xi": 1748.0,
+            "autosub_delta": 148.0,
+            "captain_bonus": 221.0,
+            "bench_boost_points": 47.0,
+            "extra_captain_bonus": 11.0
+          }
+        },
+        "changed_selections": {
+          "saved_mean": 0,
+          "legacy_expected_no_chip": 38,
+          "chip_aware_expected": 38
+        },
+        "mean_new_selection_seconds": 0.08154838597368708,
+        "calibration": {
+          "n": 570,
+          "raw_squared_error": 32.05748742732817,
+          "regularised_squared_error": 32.18002541535976
+        },
+        "independently_reconciled_scores": 114,
+        "independently_reconciled_financial_states": 114,
+        "mean_preservation_verified": true,
+        "scope": "Fixed-roster/chip/transfer selection overlay, not a new adaptive manager"
+      },
+      {
+        "name": "2024-25_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+        "season": "2024-25",
+        "seed": 20261070,
+        "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+        "net_points": {
+          "saved_mean": 2400.0,
+          "legacy_expected_no_chip": 2423.0,
+          "chip_aware_expected": 2423.0
+        },
+        "components": {
+          "saved_mean": {
+            "base_xi": 1996.0,
+            "autosub_delta": 29.0,
+            "captain_bonus": 346.0,
+            "bench_boost_points": 26.0,
+            "extra_captain_bonus": 15.0
+          },
+          "legacy_expected_no_chip": {
+            "base_xi": 1977.0,
+            "autosub_delta": 56.0,
+            "captain_bonus": 361.0,
+            "bench_boost_points": 26.0,
+            "extra_captain_bonus": 15.0
+          },
+          "chip_aware_expected": {
+            "base_xi": 1985.0,
+            "autosub_delta": 56.0,
+            "captain_bonus": 361.0,
+            "bench_boost_points": 18.0,
+            "extra_captain_bonus": 15.0
+          }
+        },
+        "changed_selections": {
+          "saved_mean": 0,
+          "legacy_expected_no_chip": 38,
+          "chip_aware_expected": 38
+        },
+        "mean_new_selection_seconds": 0.08399727860526846,
+        "calibration": {
+          "n": 570,
+          "raw_squared_error": 21.737953217572194,
+          "regularised_squared_error": 22.00424693758006
+        },
+        "independently_reconciled_scores": 114,
+        "independently_reconciled_financial_states": 114,
+        "mean_preservation_verified": true,
+        "scope": "Fixed-roster/chip/transfer selection overlay, not a new adaptive manager"
+      },
+      {
+        "name": "2024-25_20261070_standingH1_adaptive",
+        "season": "2024-25",
+        "seed": 20261070,
+        "policy": "standingH1_adaptive",
+        "net_points": {
+          "saved_mean": 2256.0,
+          "legacy_expected_no_chip": 2278.0,
+          "chip_aware_expected": 2278.0
+        },
+        "components": {
+          "saved_mean": {
+            "base_xi": 1938.0,
+            "autosub_delta": 43.0,
+            "captain_bonus": 289.0,
+            "bench_boost_points": 11.0,
+            "extra_captain_bonus": 3.0
+          },
+          "legacy_expected_no_chip": {
+            "base_xi": 1905.0,
+            "autosub_delta": 87.0,
+            "captain_bonus": 300.0,
+            "bench_boost_points": 11.0,
+            "extra_captain_bonus": 3.0
+          },
+          "chip_aware_expected": {
+            "base_xi": 1894.0,
+            "autosub_delta": 87.0,
+            "captain_bonus": 300.0,
+            "bench_boost_points": 22.0,
+            "extra_captain_bonus": 3.0
+          }
+        },
+        "changed_selections": {
+          "saved_mean": 0,
+          "legacy_expected_no_chip": 38,
+          "chip_aware_expected": 38
+        },
+        "mean_new_selection_seconds": 0.08395715023685793,
+        "calibration": {
+          "n": 570,
+          "raw_squared_error": 24.31748027411183,
+          "regularised_squared_error": 24.636526525096023
+        },
+        "independently_reconciled_scores": 114,
+        "independently_reconciled_financial_states": 114,
+        "mean_preservation_verified": true,
+        "scope": "Fixed-roster/chip/transfer selection overlay, not a new adaptive manager"
+      },
+      {
+        "name": "2024-25_20261071_SolioAdaptedH6_sharedAdaptiveChips",
+        "season": "2024-25",
+        "seed": 20261071,
+        "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+        "net_points": {
+          "saved_mean": 2401.0,
+          "legacy_expected_no_chip": 2410.0,
+          "chip_aware_expected": 2410.0
+        },
+        "components": {
+          "saved_mean": {
+            "base_xi": 1994.0,
+            "autosub_delta": 53.0,
+            "captain_bonus": 349.0,
+            "bench_boost_points": 6.0,
+            "extra_captain_bonus": 15.0
+          },
+          "legacy_expected_no_chip": {
+            "base_xi": 1953.0,
+            "autosub_delta": 91.0,
+            "captain_bonus": 361.0,
+            "bench_boost_points": 6.0,
+            "extra_captain_bonus": 15.0
+          },
+          "chip_aware_expected": {
+            "base_xi": 1941.0,
+            "autosub_delta": 91.0,
+            "captain_bonus": 361.0,
+            "bench_boost_points": 18.0,
+            "extra_captain_bonus": 15.0
+          }
+        },
+        "changed_selections": {
+          "saved_mean": 0,
+          "legacy_expected_no_chip": 38,
+          "chip_aware_expected": 38
+        },
+        "mean_new_selection_seconds": 0.08446325107895877,
+        "calibration": {
+          "n": 570,
+          "raw_squared_error": 29.196938092397048,
+          "regularised_squared_error": 29.39909158915315
+        },
+        "independently_reconciled_scores": 114,
+        "independently_reconciled_financial_states": 114,
+        "mean_preservation_verified": true,
+        "scope": "Fixed-roster/chip/transfer selection overlay, not a new adaptive manager"
+      },
+      {
+        "name": "2024-25_20261071_standingH1_adaptive",
+        "season": "2024-25",
+        "seed": 20261071,
+        "policy": "standingH1_adaptive",
+        "net_points": {
+          "saved_mean": 2197.0,
+          "legacy_expected_no_chip": 2191.0,
+          "chip_aware_expected": 2191.0
+        },
+        "components": {
+          "saved_mean": {
+            "base_xi": 1875.0,
+            "autosub_delta": 56.0,
+            "captain_bonus": 284.0,
+            "bench_boost_points": 11.0,
+            "extra_captain_bonus": 3.0
+          },
+          "legacy_expected_no_chip": {
+            "base_xi": 1814.0,
+            "autosub_delta": 103.0,
+            "captain_bonus": 292.0,
+            "bench_boost_points": 11.0,
+            "extra_captain_bonus": 3.0
+          },
+          "chip_aware_expected": {
+            "base_xi": 1807.0,
+            "autosub_delta": 103.0,
+            "captain_bonus": 292.0,
+            "bench_boost_points": 18.0,
+            "extra_captain_bonus": 3.0
+          }
+        },
+        "changed_selections": {
+          "saved_mean": 0,
+          "legacy_expected_no_chip": 38,
+          "chip_aware_expected": 38
+        },
+        "mean_new_selection_seconds": 0.08283800334210187,
+        "calibration": {
+          "n": 570,
+          "raw_squared_error": 33.1325329822549,
+          "regularised_squared_error": 33.34590321975358
+        },
+        "independently_reconciled_scores": 114,
+        "independently_reconciled_financial_states": 114,
+        "mean_preservation_verified": true,
+        "scope": "Fixed-roster/chip/transfer selection overlay, not a new adaptive manager"
+      },
+      {
+        "name": "2025-26_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+        "season": "2025-26",
+        "seed": 20261070,
+        "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+        "net_points": {
+          "saved_mean": 2274.0,
+          "legacy_expected_no_chip": 2276.0,
+          "chip_aware_expected": 2276.0
+        },
+        "components": {
+          "saved_mean": {
+            "base_xi": 1934.0,
+            "autosub_delta": 67.0,
+            "captain_bonus": 255.0,
+            "bench_boost_points": 34.0,
+            "extra_captain_bonus": 8.0
+          },
+          "legacy_expected_no_chip": {
+            "base_xi": 1880.0,
+            "autosub_delta": 129.0,
+            "captain_bonus": 249.0,
+            "bench_boost_points": 36.0,
+            "extra_captain_bonus": 6.0
+          },
+          "chip_aware_expected": {
+            "base_xi": 1883.0,
+            "autosub_delta": 129.0,
+            "captain_bonus": 249.0,
+            "bench_boost_points": 33.0,
+            "extra_captain_bonus": 6.0
+          }
+        },
+        "changed_selections": {
+          "saved_mean": 0,
+          "legacy_expected_no_chip": 38,
+          "chip_aware_expected": 38
+        },
+        "mean_new_selection_seconds": 0.08136830710527408,
+        "calibration": {
+          "n": 570,
+          "raw_squared_error": 31.157666935938682,
+          "regularised_squared_error": 31.293457105208635
+        },
+        "independently_reconciled_scores": 114,
+        "independently_reconciled_financial_states": 114,
+        "mean_preservation_verified": true,
+        "scope": "Fixed-roster/chip/transfer selection overlay, not a new adaptive manager"
+      },
+      {
+        "name": "2025-26_20261070_standingH1_adaptive",
+        "season": "2025-26",
+        "seed": 20261070,
+        "policy": "standingH1_adaptive",
+        "net_points": {
+          "saved_mean": 2127.0,
+          "legacy_expected_no_chip": 2120.0,
+          "chip_aware_expected": 2120.0
+        },
+        "components": {
+          "saved_mean": {
+            "base_xi": 1806.0,
+            "autosub_delta": 73.0,
+            "captain_bonus": 254.0,
+            "bench_boost_points": 19.0,
+            "extra_captain_bonus": 7.0
+          },
+          "legacy_expected_no_chip": {
+            "base_xi": 1741.0,
+            "autosub_delta": 128.0,
+            "captain_bonus": 248.0,
+            "bench_boost_points": 28.0,
+            "extra_captain_bonus": 7.0
+          },
+          "chip_aware_expected": {
+            "base_xi": 1739.0,
+            "autosub_delta": 128.0,
+            "captain_bonus": 248.0,
+            "bench_boost_points": 30.0,
+            "extra_captain_bonus": 7.0
+          }
+        },
+        "changed_selections": {
+          "saved_mean": 0,
+          "legacy_expected_no_chip": 38,
+          "chip_aware_expected": 38
+        },
+        "mean_new_selection_seconds": 0.081921513184236,
+        "calibration": {
+          "n": 570,
+          "raw_squared_error": 25.341386252797683,
+          "regularised_squared_error": 25.59917118494911
+        },
+        "independently_reconciled_scores": 114,
+        "independently_reconciled_financial_states": 114,
+        "mean_preservation_verified": true,
+        "scope": "Fixed-roster/chip/transfer selection overlay, not a new adaptive manager"
+      },
+      {
+        "name": "2025-26_20261071_SolioAdaptedH6_sharedAdaptiveChips",
+        "season": "2025-26",
+        "seed": 20261071,
+        "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+        "net_points": {
+          "saved_mean": 2260.0,
+          "legacy_expected_no_chip": 2255.0,
+          "chip_aware_expected": 2255.0
+        },
+        "components": {
+          "saved_mean": {
+            "base_xi": 1863.0,
+            "autosub_delta": 117.0,
+            "captain_bonus": 247.0,
+            "bench_boost_points": 40.0,
+            "extra_captain_bonus": 9.0
+          },
+          "legacy_expected_no_chip": {
+            "base_xi": 1783.0,
+            "autosub_delta": 198.0,
+            "captain_bonus": 241.0,
+            "bench_boost_points": 42.0,
+            "extra_captain_bonus": 7.0
+          },
+          "chip_aware_expected": {
+            "base_xi": 1789.0,
+            "autosub_delta": 198.0,
+            "captain_bonus": 241.0,
+            "bench_boost_points": 36.0,
+            "extra_captain_bonus": 7.0
+          }
+        },
+        "changed_selections": {
+          "saved_mean": 0,
+          "legacy_expected_no_chip": 38,
+          "chip_aware_expected": 38
+        },
+        "mean_new_selection_seconds": 0.08146264581579257,
+        "calibration": {
+          "n": 570,
+          "raw_squared_error": 35.86142130350701,
+          "regularised_squared_error": 35.957848744387576
+        },
+        "independently_reconciled_scores": 114,
+        "independently_reconciled_financial_states": 114,
+        "mean_preservation_verified": true,
+        "scope": "Fixed-roster/chip/transfer selection overlay, not a new adaptive manager"
+      },
+      {
+        "name": "2025-26_20261071_standingH1_adaptive",
+        "season": "2025-26",
+        "seed": 20261071,
+        "policy": "standingH1_adaptive",
+        "net_points": {
+          "saved_mean": 2134.0,
+          "legacy_expected_no_chip": 2159.0,
+          "chip_aware_expected": 2159.0
+        },
+        "components": {
+          "saved_mean": {
+            "base_xi": 1822.0,
+            "autosub_delta": 77.0,
+            "captain_bonus": 246.0,
+            "bench_boost_points": 18.0,
+            "extra_captain_bonus": 7.0
+          },
+          "legacy_expected_no_chip": {
+            "base_xi": 1759.0,
+            "autosub_delta": 167.0,
+            "captain_bonus": 244.0,
+            "bench_boost_points": 18.0,
+            "extra_captain_bonus": 7.0
+          },
+          "chip_aware_expected": {
+            "base_xi": 1743.0,
+            "autosub_delta": 167.0,
+            "captain_bonus": 244.0,
+            "bench_boost_points": 34.0,
+            "extra_captain_bonus": 7.0
+          }
+        },
+        "changed_selections": {
+          "saved_mean": 0,
+          "legacy_expected_no_chip": 38,
+          "chip_aware_expected": 38
+        },
+        "mean_new_selection_seconds": 0.08210545176316493,
+        "calibration": {
+          "n": 570,
+          "raw_squared_error": 29.831636355823605,
+          "regularised_squared_error": 30.022397414299647
+        },
+        "independently_reconciled_scores": 114,
+        "independently_reconciled_financial_states": 114,
+        "mean_preservation_verified": true,
+        "scope": "Fixed-roster/chip/transfer selection overlay, not a new adaptive manager"
+      }
+    ],
+    "progression": {
+      "equal_season_mean_gain": 5.75,
+      "season_means": {
+        "2024-25": 6.5,
+        "2025-26": 5.0
+      },
+      "differences": [
+        {
+          "season": "2024-25",
+          "seed": 20261070,
+          "difference": 9.0
+        },
+        {
+          "season": "2024-25",
+          "seed": 20261071,
+          "difference": 4.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261070,
+          "difference": -3.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261071,
+          "difference": 13.0
+        }
+      ],
+      "mean_selection_seconds": 0.08263398196709802,
+      "integration_admitted": true,
+      "model_promotion": false,
+      "policy_promotion": false,
+      "scope": "Predeclared conditional research progression; two reused seasons, no generalisation interval"
+    },
+    "freeze_manifest_sha256": "bf3705cb005b73f851589bba2d7468e55bb85af10aa218b4cdb9e34b66916c51",
+    "source_commit": "270a474052f0fc77166e9252b18f4f5176e92232",
+    "scope": "Twelve complete fixed-roster/chip/transfer selection overlays; no new adaptive policy"
+  },
+  "independent_fixed_expectation_audit": {
+    "complete": true,
+    "expected_values_independently_reconciled": 1368,
+    "frozen_panels": 456,
+    "source_commit": "270a474052f0fc77166e9252b18f4f5176e92232",
+    "later_changed_code_verified_in_original_commit": [
+      "src/decision_value.py",
+      "src/expected_selection.py",
+      "tools/run_decision_value_study.py"
+    ],
+    "verifier_sha256": "c6f2f0a03cd97ba70264cdc01e543c526e681dbb09da3ae8c397599f015b371e",
+    "expectation_auditor_sha256": "378b3c3f34f099914feb84de36d37bd813f8121adc85e88d635b5eede958db69",
+    "scope": "Separate stdlib missing-count/capacity expectation and immutable input/code receipts; no source-publication-date or model calibration certification"
+  },
+  "independent_appearance_audit": {
+    "complete": true,
+    "counts": {
+      "single_fixture_cells": 295841,
+      "zero_or_blank_cells": 19066,
+      "origins": 76,
+      "multiple_fixture_cells": 1663
+    },
+    "seasons": [
+      {
+        "season": "2024-25",
+        "rows": 151237,
+        "sha256": "a5922cdbdc4f3b0021e2b44075bf69331d2c857ee2f2a940adaacf5b9fc1250d"
+      },
+      {
+        "season": "2025-26",
+        "rows": 165333,
+        "sha256": "a22fc977ad0813ca0e0720b4b7d5468b5cdc80742fa5a783b20ee9b8d612ea8f"
+      }
+    ],
+    "all_original_mean_reproduction_errors_zero": true,
+    "verifier_sha256": "97c23132fb883257104e1fc717eba6e99dca79f967b877dcd2196ec6fe867245",
+    "scope": "Separate stdlib grid/clock/calendar/regularisation/mean-identity audit; multi-fixture mixture bounded, fixture-level head values remain replay receipt claims, no independent publication-date certification"
+  },
+  "adaptive_rows": [
+    {
+      "name": "2024-25_20261070_standingH1_adaptive",
+      "season": "2024-25",
+      "seed": 20261070,
+      "policy": "standingH1_adaptive",
+      "status": "completed",
+      "seconds": 5.182579583000006,
+      "sampled_rss_bytes": 359120896,
+      "net_points": 2256.0,
+      "hits": 28,
+      "transfers": 81,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "budget_exhausted_origins": 0
+    },
+    {
+      "name": "2024-25_20261070_standingH6_adaptive",
+      "season": "2024-25",
+      "seed": 20261070,
+      "policy": "standingH6_adaptive",
+      "status": "completed",
+      "seconds": 419.64232308300006,
+      "sampled_rss_bytes": 975060992,
+      "net_points": 2383.0,
+      "hits": 24,
+      "transfers": 72,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "budget_exhausted_origins": 24
+    },
+    {
+      "name": "2024-25_20261070_decisionH6_adaptive",
+      "season": "2024-25",
+      "seed": 20261070,
+      "policy": "decisionH6_adaptive",
+      "status": "completed",
+      "seconds": 379.4200384579999,
+      "sampled_rss_bytes": 928956416,
+      "net_points": 2443.0,
+      "hits": 20,
+      "transfers": 66,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "budget_exhausted_origins": 21
+    },
+    {
+      "name": "2024-25_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+      "season": "2024-25",
+      "seed": 20261070,
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "status": "completed",
+      "seconds": 395.9712878749997,
+      "sampled_rss_bytes": 1011040256,
+      "net_points": 2351.0,
+      "hits": 24,
+      "transfers": 74,
+      "native_calls": 199,
+      "native_failed_attempts": 9,
+      "budget_exhausted_origins": 22
+    },
+    {
+      "name": "2024-25_20261071_standingH1_adaptive",
+      "season": "2024-25",
+      "seed": 20261071,
+      "policy": "standingH1_adaptive",
+      "status": "completed",
+      "seconds": 5.57680420899942,
+      "sampled_rss_bytes": 353484800,
+      "net_points": 2197.0,
+      "hits": 32,
+      "transfers": 82,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "budget_exhausted_origins": 0
+    },
+    {
+      "name": "2024-25_20261071_standingH6_adaptive",
+      "season": "2024-25",
+      "seed": 20261071,
+      "policy": "standingH6_adaptive",
+      "status": "completed",
+      "seconds": 370.9453551249999,
+      "sampled_rss_bytes": 922320896,
+      "net_points": 2331.0,
+      "hits": 24,
+      "transfers": 73,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "budget_exhausted_origins": 22
+    },
+    {
+      "name": "2024-25_20261071_decisionH6_adaptive",
+      "season": "2024-25",
+      "seed": 20261071,
+      "policy": "decisionH6_adaptive",
+      "status": "completed",
+      "seconds": 437.41022175000035,
+      "sampled_rss_bytes": 699973632,
+      "net_points": 2436.0,
+      "hits": 20,
+      "transfers": 71,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "budget_exhausted_origins": 23
+    },
+    {
+      "name": "2024-25_20261071_SolioAdaptedH6_sharedAdaptiveChips",
+      "season": "2024-25",
+      "seed": 20261071,
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "status": "completed",
+      "seconds": 399.46252525,
+      "sampled_rss_bytes": 961855488,
+      "net_points": 2435.0,
+      "hits": 12,
+      "transfers": 69,
+      "native_calls": 200,
+      "native_failed_attempts": 9,
+      "budget_exhausted_origins": 23
+    },
+    {
+      "name": "2025-26_20261070_standingH1_adaptive",
+      "season": "2025-26",
+      "seed": 20261070,
+      "policy": "standingH1_adaptive",
+      "status": "completed",
+      "seconds": 8.00610287499967,
+      "sampled_rss_bytes": 386695168,
+      "net_points": 2127.0,
+      "hits": 32,
+      "transfers": 95,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "budget_exhausted_origins": 0
+    },
+    {
+      "name": "2025-26_20261070_standingH6_adaptive",
+      "season": "2025-26",
+      "seed": 20261070,
+      "policy": "standingH6_adaptive",
+      "status": "completed",
+      "seconds": 368.54929054199965,
+      "sampled_rss_bytes": 756219904,
+      "net_points": 2213.0,
+      "hits": 32,
+      "transfers": 87,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "budget_exhausted_origins": 27
+    },
+    {
+      "name": "2025-26_20261070_decisionH6_adaptive",
+      "season": "2025-26",
+      "seed": 20261070,
+      "policy": "decisionH6_adaptive",
+      "status": "completed",
+      "seconds": 495.40173400000003,
+      "sampled_rss_bytes": 794050560,
+      "net_points": 2180.0,
+      "hits": 16,
+      "transfers": 87,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "budget_exhausted_origins": 33
+    },
+    {
+      "name": "2025-26_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+      "season": "2025-26",
+      "seed": 20261070,
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "status": "completed",
+      "seconds": 468.3001723749994,
+      "sampled_rss_bytes": 877756416,
+      "net_points": 2235.0,
+      "hits": 20,
+      "transfers": 86,
+      "native_calls": 286,
+      "native_failed_attempts": 7,
+      "budget_exhausted_origins": 26
+    },
+    {
+      "name": "2025-26_20261071_standingH1_adaptive",
+      "season": "2025-26",
+      "seed": 20261071,
+      "policy": "standingH1_adaptive",
+      "status": "completed",
+      "seconds": 6.446931834000679,
+      "sampled_rss_bytes": 364281856,
+      "net_points": 2134.0,
+      "hits": 36,
+      "transfers": 95,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "budget_exhausted_origins": 0
+    },
+    {
+      "name": "2025-26_20261071_standingH6_adaptive",
+      "season": "2025-26",
+      "seed": 20261071,
+      "policy": "standingH6_adaptive",
+      "status": "completed",
+      "seconds": 381.0170106249998,
+      "sampled_rss_bytes": 624738304,
+      "net_points": 2134.0,
+      "hits": 28,
+      "transfers": 91,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "budget_exhausted_origins": 33
+    },
+    {
+      "name": "2025-26_20261071_decisionH6_adaptive",
+      "season": "2025-26",
+      "seed": 20261071,
+      "policy": "decisionH6_adaptive",
+      "status": "completed",
+      "seconds": 439.3751417090007,
+      "sampled_rss_bytes": 641990656,
+      "net_points": 2232.0,
+      "hits": 32,
+      "transfers": 90,
+      "native_calls": 0,
+      "native_failed_attempts": 0,
+      "budget_exhausted_origins": 27
+    },
+    {
+      "name": "2025-26_20261071_SolioAdaptedH6_sharedAdaptiveChips",
+      "season": "2025-26",
+      "seed": 20261071,
+      "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+      "status": "completed",
+      "seconds": 485.99406191699927,
+      "sampled_rss_bytes": 831094784,
+      "net_points": 2257.0,
+      "hits": 28,
+      "transfers": 86,
+      "native_calls": 301,
+      "native_failed_attempts": 5,
+      "budget_exhausted_origins": 30
+    }
+  ],
+  "adaptive_comparisons": {
+    "decision_minus_H6": {
+      "pairs": [
+        {
+          "season": "2024-25",
+          "seed": 20261070,
+          "difference": 60.0
+        },
+        {
+          "season": "2024-25",
+          "seed": 20261071,
+          "difference": 105.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261070,
+          "difference": -33.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261071,
+          "difference": 98.0
+        }
+      ],
+      "season_means": {
+        "2024-25": 82.5,
+        "2025-26": 32.5
+      },
+      "equal_season_mean": 57.5,
+      "median": 79.0,
+      "worst": -33.0,
+      "wins": 3,
+      "ties": 0,
+      "losses": 1,
+      "material_losses_exceeding19": 1,
+      "research_criteria_pass": true,
+      "scope": "Descriptive paired results on two reused seasons/two common starts each; not confidence or guaranteed future gain"
+    },
+    "decision_minus_H1": {
+      "pairs": [
+        {
+          "season": "2024-25",
+          "seed": 20261070,
+          "difference": 187.0
+        },
+        {
+          "season": "2024-25",
+          "seed": 20261071,
+          "difference": 239.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261070,
+          "difference": 53.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261071,
+          "difference": 98.0
+        }
+      ],
+      "season_means": {
+        "2024-25": 213.0,
+        "2025-26": 75.5
+      },
+      "equal_season_mean": 144.25,
+      "median": 142.5,
+      "worst": 53.0,
+      "wins": 4,
+      "ties": 0,
+      "losses": 0,
+      "material_losses_exceeding19": 0,
+      "research_criteria_pass": true,
+      "scope": "Descriptive paired results on two reused seasons/two common starts each; not confidence or guaranteed future gain"
+    },
+    "decision_minus_Solio": {
+      "pairs": [
+        {
+          "season": "2024-25",
+          "seed": 20261070,
+          "difference": 92.0
+        },
+        {
+          "season": "2024-25",
+          "seed": 20261071,
+          "difference": 1.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261070,
+          "difference": -55.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261071,
+          "difference": -25.0
+        }
+      ],
+      "season_means": {
+        "2024-25": 46.5,
+        "2025-26": -40.0
+      },
+      "equal_season_mean": 3.25,
+      "median": -12.0,
+      "worst": -55.0,
+      "wins": 2,
+      "ties": 0,
+      "losses": 2,
+      "material_losses_exceeding19": 2,
+      "research_criteria_pass": false,
+      "scope": "Descriptive paired results on two reused seasons/two common starts each; not confidence or guaranteed future gain"
+    },
+    "H6_minus_H1": {
+      "pairs": [
+        {
+          "season": "2024-25",
+          "seed": 20261070,
+          "difference": 127.0
+        },
+        {
+          "season": "2024-25",
+          "seed": 20261071,
+          "difference": 134.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261070,
+          "difference": 86.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261071,
+          "difference": 0.0
+        }
+      ],
+      "season_means": {
+        "2024-25": 130.5,
+        "2025-26": 43.0
+      },
+      "equal_season_mean": 86.75,
+      "median": 106.5,
+      "worst": 0.0,
+      "wins": 3,
+      "ties": 1,
+      "losses": 0,
+      "material_losses_exceeding19": 0,
+      "research_criteria_pass": true,
+      "scope": "Descriptive paired results on two reused seasons/two common starts each; not confidence or guaranteed future gain"
+    },
+    "H6_minus_Solio": {
+      "pairs": [
+        {
+          "season": "2024-25",
+          "seed": 20261070,
+          "difference": 32.0
+        },
+        {
+          "season": "2024-25",
+          "seed": 20261071,
+          "difference": -104.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261070,
+          "difference": -22.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261071,
+          "difference": -123.0
+        }
+      ],
+      "season_means": {
+        "2024-25": -36.0,
+        "2025-26": -72.5
+      },
+      "equal_season_mean": -54.25,
+      "median": -63.0,
+      "worst": -123.0,
+      "wins": 1,
+      "ties": 0,
+      "losses": 3,
+      "material_losses_exceeding19": 3,
+      "research_criteria_pass": false,
+      "scope": "Descriptive paired results on two reused seasons/two common starts each; not confidence or guaranteed future gain"
+    }
+  },
+  "independent_adaptive_audit": {
+    "complete": true,
+    "paths": 16,
+    "rows": [
+      {
+        "name": "2024-25_20261070_standingH1_adaptive",
+        "season": "2024-25",
+        "seed": 20261070,
+        "policy": "standingH1_adaptive",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 38,
+          "net_points": 2256.0,
+          "hits": 28,
+          "transfers": 81,
+          "status": "independently reconciled",
+          "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": null,
+        "expected_retained_periods": 0,
+        "job_sha256": "f25556c7768e5646eb34ee125d1fa6e325e0ac217b29d792b08fc56553209987"
+      },
+      {
+        "name": "2024-25_20261070_standingH6_adaptive",
+        "season": "2024-25",
+        "seed": 20261070,
+        "policy": "standingH6_adaptive",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 213,
+          "net_points": 2383.0,
+          "hits": 24,
+          "transfers": 72,
+          "status": "independently reconciled",
+          "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": null,
+        "expected_retained_periods": 0,
+        "job_sha256": "c3790cf41eb3bd4a298dc2c0379e87c63c06a4f44cc5be01049c979f2f000f48"
+      },
+      {
+        "name": "2024-25_20261070_decisionH6_adaptive",
+        "season": "2024-25",
+        "seed": 20261070,
+        "policy": "decisionH6_adaptive",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 213,
+          "net_points": 2443.0,
+          "hits": 20,
+          "transfers": 66,
+          "status": "independently reconciled",
+          "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": null,
+        "expected_retained_periods": 213,
+        "job_sha256": "144aa89943635aa3c09c970ab0e129baeb49ecb465e6528d437c01ff2ae77f34"
+      },
+      {
+        "name": "2024-25_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+        "season": "2024-25",
+        "seed": 20261070,
+        "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 213,
+          "net_points": 2351.0,
+          "hits": 24,
+          "transfers": 74,
+          "status": "independently reconciled",
+          "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": {
+          "calls": 199,
+          "completed": 190,
+          "expected_failures": 9,
+          "completed_provisional_periods": 1125,
+          "errors": {
+            "ValueError:No feasible native incumbent": 9
+          },
+          "status": "independently_reconciled",
+          "allow_dominated_paid_slack": true,
+          "dominated_paid_slack_calls": 0,
+          "removed_dominated_paid_penalty": 0.0,
+          "scope": "Every completed Solio reply: integer finance, chip inventory and separate common-mean selection objective; explicit optional time-limit integral paid-slack canonicalisation; no source timestamp or global-optimum certification"
+        },
+        "expected_retained_periods": 0,
+        "job_sha256": "7233efd2162ebac06b128ba9913ba7d743c069e81c92c89199db87487d6551d9"
+      },
+      {
+        "name": "2024-25_20261071_standingH1_adaptive",
+        "season": "2024-25",
+        "seed": 20261071,
+        "policy": "standingH1_adaptive",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 38,
+          "net_points": 2197.0,
+          "hits": 32,
+          "transfers": 82,
+          "status": "independently reconciled",
+          "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": null,
+        "expected_retained_periods": 0,
+        "job_sha256": "d35f32360ccf0f8a00f91db5e0474a534cc1392d2d0db22b01d127b122a2caf9"
+      },
+      {
+        "name": "2024-25_20261071_standingH6_adaptive",
+        "season": "2024-25",
+        "seed": 20261071,
+        "policy": "standingH6_adaptive",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 213,
+          "net_points": 2331.0,
+          "hits": 24,
+          "transfers": 73,
+          "status": "independently reconciled",
+          "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": null,
+        "expected_retained_periods": 0,
+        "job_sha256": "250b303c7b830d6ba26eb97b7e331c13de02a7c9c484386f2dc6dc860cc34517"
+      },
+      {
+        "name": "2024-25_20261071_decisionH6_adaptive",
+        "season": "2024-25",
+        "seed": 20261071,
+        "policy": "decisionH6_adaptive",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 213,
+          "net_points": 2436.0,
+          "hits": 20,
+          "transfers": 71,
+          "status": "independently reconciled",
+          "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": null,
+        "expected_retained_periods": 213,
+        "job_sha256": "b3afeef5af48bf1406c535a8ae1d01388ce9631cb2d7471ad1e7a20c08cb0ed1"
+      },
+      {
+        "name": "2024-25_20261071_SolioAdaptedH6_sharedAdaptiveChips",
+        "season": "2024-25",
+        "seed": 20261071,
+        "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 213,
+          "net_points": 2435.0,
+          "hits": 12,
+          "transfers": 69,
+          "status": "independently reconciled",
+          "scope": "2024-25 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": {
+          "calls": 200,
+          "completed": 191,
+          "expected_failures": 9,
+          "completed_provisional_periods": 1131,
+          "errors": {
+            "ValueError:No feasible native incumbent": 9
+          },
+          "status": "independently_reconciled",
+          "allow_dominated_paid_slack": true,
+          "dominated_paid_slack_calls": 0,
+          "removed_dominated_paid_penalty": 0.0,
+          "scope": "Every completed Solio reply: integer finance, chip inventory and separate common-mean selection objective; explicit optional time-limit integral paid-slack canonicalisation; no source timestamp or global-optimum certification"
+        },
+        "expected_retained_periods": 0,
+        "job_sha256": "b43031c1477e636d9a1be9d76991ab18a9463f70c1e0de4a056556b58d226e99"
+      },
+      {
+        "name": "2025-26_20261070_standingH1_adaptive",
+        "season": "2025-26",
+        "seed": 20261070,
+        "policy": "standingH1_adaptive",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 38,
+          "net_points": 2127.0,
+          "hits": 32,
+          "transfers": 95,
+          "status": "independently reconciled",
+          "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": null,
+        "expected_retained_periods": 0,
+        "job_sha256": "f095d3225413239fcf4cc67a724cb82cdc8bd9c2decfeb9d880ef4fccb795e3e"
+      },
+      {
+        "name": "2025-26_20261070_standingH6_adaptive",
+        "season": "2025-26",
+        "seed": 20261070,
+        "policy": "standingH6_adaptive",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 213,
+          "net_points": 2213.0,
+          "hits": 32,
+          "transfers": 87,
+          "status": "independently reconciled",
+          "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": null,
+        "expected_retained_periods": 0,
+        "job_sha256": "cb59e151dbc6d9baa71032a3cd6976fa891763f70276fc4ecb9e126a8a6fa885"
+      },
+      {
+        "name": "2025-26_20261070_decisionH6_adaptive",
+        "season": "2025-26",
+        "seed": 20261070,
+        "policy": "decisionH6_adaptive",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 213,
+          "net_points": 2180.0,
+          "hits": 16,
+          "transfers": 87,
+          "status": "independently reconciled",
+          "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": null,
+        "expected_retained_periods": 213,
+        "job_sha256": "e4309172c145144344b512632e6b9cfd1189aec8149f4dc7892022cc49846476"
+      },
+      {
+        "name": "2025-26_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+        "season": "2025-26",
+        "seed": 20261070,
+        "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 213,
+          "net_points": 2235.0,
+          "hits": 20,
+          "transfers": 86,
+          "status": "independently reconciled",
+          "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": {
+          "calls": 286,
+          "completed": 279,
+          "expected_failures": 7,
+          "completed_provisional_periods": 1659,
+          "errors": {
+            "ValueError:No feasible native incumbent": 7
+          },
+          "status": "independently_reconciled",
+          "allow_dominated_paid_slack": true,
+          "dominated_paid_slack_calls": 1,
+          "removed_dominated_paid_penalty": 4.0,
+          "scope": "Every completed Solio reply: integer finance, chip inventory and separate common-mean selection objective; explicit optional time-limit integral paid-slack canonicalisation; no source timestamp or global-optimum certification"
+        },
+        "expected_retained_periods": 0,
+        "job_sha256": "1e271595b9ca002dbb758925908a738e44f6507107e6bf81a9c2dc3ca48e90bd"
+      },
+      {
+        "name": "2025-26_20261071_standingH1_adaptive",
+        "season": "2025-26",
+        "seed": 20261071,
+        "policy": "standingH1_adaptive",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 38,
+          "net_points": 2134.0,
+          "hits": 36,
+          "transfers": 95,
+          "status": "independently reconciled",
+          "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": null,
+        "expected_retained_periods": 0,
+        "job_sha256": "793f7f3368a303eabadea82316f050f84e1adea50be5c9e9a1e062579e76bbd5"
+      },
+      {
+        "name": "2025-26_20261071_standingH6_adaptive",
+        "season": "2025-26",
+        "seed": 20261071,
+        "policy": "standingH6_adaptive",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 213,
+          "net_points": 2134.0,
+          "hits": 28,
+          "transfers": 91,
+          "status": "independently reconciled",
+          "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": null,
+        "expected_retained_periods": 0,
+        "job_sha256": "c464c4b773495ec847080046b1151d58308ccceb396d67d5ddda5d96f5bf8060"
+      },
+      {
+        "name": "2025-26_20261071_decisionH6_adaptive",
+        "season": "2025-26",
+        "seed": 20261071,
+        "policy": "decisionH6_adaptive",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 213,
+          "net_points": 2232.0,
+          "hits": 32,
+          "transfers": 90,
+          "status": "independently reconciled",
+          "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": null,
+        "expected_retained_periods": 213,
+        "job_sha256": "712164da004e57af0fc7ddaccba50c6beae924b43db11929cc7955aeb0d95c7e"
+      },
+      {
+        "name": "2025-26_20261071_SolioAdaptedH6_sharedAdaptiveChips",
+        "season": "2025-26",
+        "seed": 20261071,
+        "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+        "score_and_ledger": {
+          "deadlines": 38,
+          "provisional_periods": 213,
+          "net_points": 2257.0,
+          "hits": 28,
+          "transfers": 86,
+          "status": "independently reconciled",
+          "scope": "2025-26 integer ledger, frozen decisions, final scoring and retained mean-objective plans; 2024/25 excludes Assistant Manager. No source-authenticity or global-optimality certification"
+        },
+        "native": {
+          "calls": 301,
+          "completed": 296,
+          "expected_failures": 5,
+          "completed_provisional_periods": 1761,
+          "errors": {
+            "ValueError:No feasible native incumbent": 5
+          },
+          "status": "independently_reconciled",
+          "allow_dominated_paid_slack": true,
+          "dominated_paid_slack_calls": 0,
+          "removed_dominated_paid_penalty": 0.0,
+          "scope": "Every completed Solio reply: integer finance, chip inventory and separate common-mean selection objective; explicit optional time-limit integral paid-slack canonicalisation; no source timestamp or global-optimum certification"
+        },
+        "expected_retained_periods": 0,
+        "job_sha256": "748f5efb49384d10dc29fdc8edf7f6fc49232ec2000d6edb7baf7ed04bcfbbed"
+      }
+    ],
+    "deadlines": 608,
+    "retained_periods": 2708,
+    "expected_retained_periods": 852,
+    "expected_candidate_trial_reports": 983,
+    "native_periods": 5676,
+    "source_commit": "b241e8ff2b64387cfa5e6ce71d9d3b170d29f96e",
+    "verifier_sha256": "96f919b94283406c4663982de7b790a8e0b1cd449a971d32bbf9e70dd7714b65",
+    "scope": "Independent stdlib finances/realised scoring/retained expected objectives/coarse reserve/conditional bound semantics; native proposals audited separately, not external date authenticity or global expected optimality"
+  },
+  "original_incomplete_batch": {
+    "rows": [
+      {
+        "name": "2024-25_20261070_standingH1_adaptive",
+        "season": "2024-25",
+        "seed": 20261070,
+        "policy": "standingH1_adaptive",
+        "status": "completed",
+        "seconds": 5.288694166999903,
+        "sampled_rss_bytes": 360169472,
+        "net_points": 2256.0,
+        "hits": 28,
+        "transfers": 81,
+        "native_calls": 0,
+        "native_failed_attempts": 0,
+        "budget_exhausted_origins": 0
+      },
+      {
+        "name": "2024-25_20261070_standingH6_adaptive",
+        "season": "2024-25",
+        "seed": 20261070,
+        "policy": "standingH6_adaptive",
+        "status": "completed",
+        "seconds": 419.649663958,
+        "sampled_rss_bytes": 974061568,
+        "net_points": 2383.0,
+        "hits": 24,
+        "transfers": 72,
+        "native_calls": 0,
+        "native_failed_attempts": 0,
+        "budget_exhausted_origins": 24
+      },
+      {
+        "name": "2024-25_20261070_decisionH6_adaptive",
+        "season": "2024-25",
+        "seed": 20261070,
+        "policy": "decisionH6_adaptive",
+        "status": "completed",
+        "seconds": 378.86144570800025,
+        "sampled_rss_bytes": 873103360,
+        "net_points": 2443.0,
+        "hits": 20,
+        "transfers": 66,
+        "native_calls": 0,
+        "native_failed_attempts": 0,
+        "budget_exhausted_origins": 20
+      },
+      {
+        "name": "2024-25_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+        "season": "2024-25",
+        "seed": 20261070,
+        "policy": "SolioAdaptedH6_sharedAdaptiveChips",
+        "status": "failed",
+        "seconds": 60.108409875000234,
+        "sampled_rss_bytes": 923467776
+      }
+    ],
+    "complete": false,
+    "source_commit": "7a078e3a4b30ed17ab6369ab43a5dd960bcaa7e7",
+    "model_promotion": false,
+    "production_policy_promotion": false
+  },
+  "preparation_attempts": [
+    {
+      "index": 1,
+      "status": "failed",
+      "elapsed_seconds": 0.3588003749998734,
+      "peak_observed_rss_bytes": 1294336
+    },
+    {
+      "index": 2,
+      "status": "failed",
+      "elapsed_seconds": 17.90968262499996,
+      "peak_observed_rss_bytes": 440582144
+    },
+    {
+      "index": 3,
+      "status": "completed",
+      "elapsed_seconds": 56.8151459579999,
+      "peak_observed_rss_bytes": 505790464
+    }
+  ],
+  "native_admission_replay": {
+    "complete": true,
+    "raw_failed_request_sha256": "c931a6f0384ee8ed43aafe4506cd0daa0efce2c044c8cd0d4ba404545d8a8641",
+    "strict_original_rejected": true,
+    "new_admission_passed": true,
+    "removed_paid_penalty": 424.0,
+    "raw_objective": -131.9613796496141,
+    "canonical_proposal_objective": 295.6496154822516,
+    "raw_dual_bound": 346.66210745665126,
+    "raw_trace_audit": {
+      "calls": 35,
+      "completed": 34,
+      "expected_failures": 1,
+      "completed_provisional_periods": 204,
+      "errors": {
+        "ValueError:No feasible native incumbent": 1
+      },
+      "status": "independently_reconciled",
+      "allow_dominated_paid_slack": true,
+      "dominated_paid_slack_calls": 1,
+      "removed_dominated_paid_penalty": 424.0,
+      "scope": "Every completed Solio reply: integer finance, chip inventory and separate common-mean selection objective; explicit optional time-limit integral paid-slack canonicalisation; no source timestamp or global-optimum certification"
+    },
+    "roster_cash_and_ft_checks_preserved": true,
+    "scope": "Exact frozen failed reply replay; no new external solver run or outcomes, no statistical points-gain claim"
+  },
+  "resources": {
+    "serial_path_seconds": 5066.701581209998,
+    "maximum_sampled_group_rss_bytes": 1011040256,
+    "threads": 2,
+    "model_fits": 0
+  },
+  "observed_runtime": {
+    "observed_at_utc": "2026-10-24T07:30:35.699834+00:00",
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "joblib": "1.6.0",
+      "threadpoolctl": "3.7.0"
+    },
+    "note": "Observed after fixed-roster study and during serial adaptive study; not a claimed original historical runtime or signed launch-time receipt. No package installation/change performed during numerical work."
+  },
+  "forecast_diagnostics": {
+    "groups": {
+      "2024-25/all_listed": {
+        "n": 27158,
+        "played": 11422,
+        "brier_raw": 0.08657964981821453,
+        "brier_regularised": 0.08660116618371821,
+        "zero_minute_card_events": 1,
+        "official_zero_but_played": 26,
+        "bins": [
+          {
+            "n": 13277,
+            "played": 536,
+            "mean_p": 0.02745969787533686,
+            "observed_play_rate": 0.04037056563982828
+          },
+          {
+            "n": 1905,
+            "played": 749,
+            "mean_p": 0.30509730138938396,
+            "observed_play_rate": 0.3931758530183727
+          },
+          {
+            "n": 1972,
+            "played": 1210,
+            "mean_p": 0.4911322335226551,
+            "observed_play_rate": 0.6135902636916836
+          },
+          {
+            "n": 2798,
+            "played": 2187,
+            "mean_p": 0.7123405797910375,
+            "observed_play_rate": 0.7816297355253753
+          },
+          {
+            "n": 7206,
+            "played": 6740,
+            "mean_p": 0.9018355492522871,
+            "observed_play_rate": 0.9353316680543992
+          }
+        ],
+        "point_RMSE_unchanged": 1.9079898886319304,
+        "point_MAE_unchanged": 0.9351050602316984
+      },
+      "2025-26/all_listed": {
+        "n": 29645,
+        "played": 11352,
+        "brier_raw": 0.07651297068029381,
+        "brier_regularised": 0.07655052201701909,
+        "zero_minute_card_events": 1,
+        "official_zero_but_played": 23,
+        "bins": [
+          {
+            "n": 15786,
+            "played": 477,
+            "mean_p": 0.023859024339399158,
+            "observed_play_rate": 0.030216647662485746
+          },
+          {
+            "n": 1857,
+            "played": 754,
+            "mean_p": 0.306562442579612,
+            "observed_play_rate": 0.40603123317178247
+          },
+          {
+            "n": 1909,
+            "played": 1112,
+            "mean_p": 0.4899790710493981,
+            "observed_play_rate": 0.5825039287585123
+          },
+          {
+            "n": 2531,
+            "played": 1959,
+            "mean_p": 0.7196262217815721,
+            "observed_play_rate": 0.7740023706045042
+          },
+          {
+            "n": 7562,
+            "played": 7050,
+            "mean_p": 0.9031060164803699,
+            "observed_play_rate": 0.9322930441682095
+          }
+        ],
+        "point_RMSE_unchanged": 1.9030515480154508,
+        "point_MAE_unchanged": 0.9291501067203711
+      },
+      "2024-25/saved_H6_owned": {
+        "n": 1140,
+        "played": 1056,
+        "brier_raw": 0.045504857972684325,
+        "brier_regularised": 0.04589109129335252,
+        "zero_minute_card_events": 0,
+        "official_zero_but_played": 0,
+        "bins": [
+          {
+            "n": 34,
+            "played": 0,
+            "mean_p": 0.0,
+            "observed_play_rate": 0.0
+          },
+          {
+            "n": 6,
+            "played": 2,
+            "mean_p": 0.3317577772766224,
+            "observed_play_rate": 0.3333333333333333
+          },
+          {
+            "n": 44,
+            "played": 38,
+            "mean_p": 0.47081426135440413,
+            "observed_play_rate": 0.8636363636363636
+          },
+          {
+            "n": 23,
+            "played": 18,
+            "mean_p": 0.7601072446341185,
+            "observed_play_rate": 0.782608695652174
+          },
+          {
+            "n": 1033,
+            "played": 998,
+            "mean_p": 0.9359711309158606,
+            "observed_play_rate": 0.9661181026137464
+          }
+        ],
+        "point_RMSE_unchanged": 3.8520496508187727,
+        "point_MAE_unchanged": 2.9290042597899437
+      },
+      "2025-26/saved_H6_owned": {
+        "n": 1140,
+        "played": 1018,
+        "brier_raw": 0.05646435464825502,
+        "brier_regularised": 0.056676120550022704,
+        "zero_minute_card_events": 0,
+        "official_zero_but_played": 0,
+        "bins": [
+          {
+            "n": 41,
+            "played": 0,
+            "mean_p": 0.02911832494703303,
+            "observed_play_rate": 0.0
+          },
+          {
+            "n": 16,
+            "played": 2,
+            "mean_p": 0.2807212884357323,
+            "observed_play_rate": 0.125
+          },
+          {
+            "n": 43,
+            "played": 30,
+            "mean_p": 0.49054418820143175,
+            "observed_play_rate": 0.6976744186046512
+          },
+          {
+            "n": 16,
+            "played": 11,
+            "mean_p": 0.7369054428742847,
+            "observed_play_rate": 0.6875
+          },
+          {
+            "n": 1024,
+            "played": 975,
+            "mean_p": 0.935340997161451,
+            "observed_play_rate": 0.9521484375
+          }
+        ],
+        "point_RMSE_unchanged": 3.783582422530381,
+        "point_MAE_unchanged": 2.9086109461723764
+      }
+    },
+    "posthoc_diagnostic_only": true,
+    "forecast_means_unchanged": true,
+    "no_new_fit": true,
+    "limitations": [
+      "Regularisation is not claimed to improve probability calibration",
+      "Owned cases overlap players/outcomes; no IID precision/confidence inference",
+      "Calendar surprises count as nonappearances at that origin, not necessarily injury mistakes",
+      "Source capture/publication/corrected data limitations inherited",
+      "Mean forecast errors do not establish season-policy superiority; original fullmanager/nativeforecaster comparisons remain separate"
+    ],
+    "next_fit_policy": "Require a distinct diagnosed mechanism and declared chronological development/audit before training; no current inspected-outcome parameter search or automatic promotion"
+  },
+  "policy_accounting": {
+    "complete": true,
+    "cases": [
+      {
+        "season": "2024-25",
+        "seed": 20261070,
+        "net_difference": 60.0,
+        "component_differences": {
+          "base_xi": -44.0,
+          "autosub_delta": 72.0,
+          "captain_bonus": 15.0,
+          "bench_boost_points": 13.0,
+          "extra_captain_bonus": 0.0,
+          "hits": -4.0
+        },
+        "changed_deadlines": {
+          "roster": 36,
+          "transfers": 34,
+          "starters": 38,
+          "bench": 37,
+          "captain": 5,
+          "vice": 12,
+          "chip": 6
+        },
+        "largest_gains": [
+          {
+            "gameweek": 8,
+            "net_difference": 20.0,
+            "component_differences": {
+              "base_xi": 11.0,
+              "autosub_delta": 9.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 26,
+            "net_difference": 20.0,
+            "component_differences": {
+              "base_xi": 20.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 30,
+            "net_difference": 20.0,
+            "component_differences": {
+              "base_xi": 15.0,
+              "autosub_delta": 9.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 4
+            }
+          },
+          {
+            "gameweek": 35,
+            "net_difference": 18.0,
+            "component_differences": {
+              "base_xi": 11.0,
+              "autosub_delta": 7.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 9,
+            "net_difference": 16.0,
+            "component_differences": {
+              "base_xi": -5.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 21.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          }
+        ],
+        "largest_losses": [
+          {
+            "gameweek": 33,
+            "net_difference": -35.0,
+            "component_differences": {
+              "base_xi": -35.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 32,
+            "net_difference": -24.0,
+            "component_differences": {
+              "base_xi": -20.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 4
+            }
+          },
+          {
+            "gameweek": 24,
+            "net_difference": -9.0,
+            "component_differences": {
+              "base_xi": -9.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 28,
+            "net_difference": -8.0,
+            "component_differences": {
+              "base_xi": -8.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 34,
+            "net_difference": -8.0,
+            "component_differences": {
+              "base_xi": -13.0,
+              "autosub_delta": 5.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          }
+        ]
+      },
+      {
+        "season": "2024-25",
+        "seed": 20261071,
+        "net_difference": 105.0,
+        "component_differences": {
+          "base_xi": 14.0,
+          "autosub_delta": 55.0,
+          "captain_bonus": 17.0,
+          "bench_boost_points": 6.0,
+          "extra_captain_bonus": 9.0,
+          "hits": -4.0
+        },
+        "changed_deadlines": {
+          "roster": 36,
+          "transfers": 31,
+          "starters": 38,
+          "bench": 37,
+          "captain": 6,
+          "vice": 11,
+          "chip": 8
+        },
+        "largest_gains": [
+          {
+            "gameweek": 37,
+            "net_difference": 24.0,
+            "component_differences": {
+              "base_xi": 18.0,
+              "autosub_delta": 6.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 14,
+            "net_difference": 17.0,
+            "component_differences": {
+              "base_xi": 18.0,
+              "autosub_delta": -1.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 26,
+            "net_difference": 17.0,
+            "component_differences": {
+              "base_xi": 8.0,
+              "autosub_delta": 9.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 3,
+            "net_difference": 16.0,
+            "component_differences": {
+              "base_xi": 1.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 15.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 29,
+            "net_difference": 15.0,
+            "component_differences": {
+              "base_xi": 4.0,
+              "autosub_delta": 2.0,
+              "captain_bonus": 5.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": -4
+            }
+          }
+        ],
+        "largest_losses": [
+          {
+            "gameweek": 32,
+            "net_difference": -10.0,
+            "component_differences": {
+              "base_xi": -10.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 31,
+            "net_difference": -9.0,
+            "component_differences": {
+              "base_xi": -5.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 4
+            }
+          },
+          {
+            "gameweek": 34,
+            "net_difference": -9.0,
+            "component_differences": {
+              "base_xi": -32.0,
+              "autosub_delta": 23.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 6,
+            "net_difference": -8.0,
+            "component_differences": {
+              "base_xi": 0.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": -8.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 10,
+            "net_difference": -8.0,
+            "component_differences": {
+              "base_xi": 4.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": -12.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          }
+        ]
+      },
+      {
+        "season": "2025-26",
+        "seed": 20261070,
+        "net_difference": -33.0,
+        "component_differences": {
+          "base_xi": -112.0,
+          "autosub_delta": 61.0,
+          "captain_bonus": -4.0,
+          "bench_boost_points": 4.0,
+          "extra_captain_bonus": 2.0,
+          "hits": -16.0
+        },
+        "changed_deadlines": {
+          "roster": 31,
+          "transfers": 26,
+          "starters": 38,
+          "bench": 36,
+          "captain": 7,
+          "vice": 11,
+          "chip": 10
+        },
+        "largest_gains": [
+          {
+            "gameweek": 15,
+            "net_difference": 17.0,
+            "component_differences": {
+              "base_xi": 23.0,
+              "autosub_delta": -6.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 21,
+            "net_difference": 17.0,
+            "component_differences": {
+              "base_xi": 11.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 6.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 14,
+            "net_difference": 15.0,
+            "component_differences": {
+              "base_xi": 10.0,
+              "autosub_delta": 5.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 36,
+            "net_difference": 14.0,
+            "component_differences": {
+              "base_xi": -3.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 17.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 11,
+            "net_difference": 11.0,
+            "component_differences": {
+              "base_xi": -5.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 12.0,
+              "extra_captain_bonus": 0.0,
+              "hits": -4
+            }
+          }
+        ],
+        "largest_losses": [
+          {
+            "gameweek": 37,
+            "net_difference": -28.0,
+            "component_differences": {
+              "base_xi": -29.0,
+              "autosub_delta": 2.0,
+              "captain_bonus": -1.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 16,
+            "net_difference": -26.0,
+            "component_differences": {
+              "base_xi": -17.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": -9.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 13,
+            "net_difference": -17.0,
+            "component_differences": {
+              "base_xi": -24.0,
+              "autosub_delta": 7.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 27,
+            "net_difference": -17.0,
+            "component_differences": {
+              "base_xi": -10.0,
+              "autosub_delta": -9.0,
+              "captain_bonus": 2.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 30,
+            "net_difference": -17.0,
+            "component_differences": {
+              "base_xi": -19.0,
+              "autosub_delta": 2.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          }
+        ]
+      },
+      {
+        "season": "2025-26",
+        "seed": 20261071,
+        "net_difference": 98.0,
+        "component_differences": {
+          "base_xi": 34.0,
+          "autosub_delta": 67.0,
+          "captain_bonus": 4.0,
+          "bench_boost_points": 4.0,
+          "extra_captain_bonus": -7.0,
+          "hits": 4.0
+        },
+        "changed_deadlines": {
+          "roster": 31,
+          "transfers": 29,
+          "starters": 38,
+          "bench": 36,
+          "captain": 5,
+          "vice": 5,
+          "chip": 9
+        },
+        "largest_gains": [
+          {
+            "gameweek": 19,
+            "net_difference": 45.0,
+            "component_differences": {
+              "base_xi": 25.0,
+              "autosub_delta": -3.0,
+              "captain_bonus": 4.0,
+              "bench_boost_points": 23.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 4
+            }
+          },
+          {
+            "gameweek": 15,
+            "net_difference": 30.0,
+            "component_differences": {
+              "base_xi": 24.0,
+              "autosub_delta": 6.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 23,
+            "net_difference": 22.0,
+            "component_differences": {
+              "base_xi": 23.0,
+              "autosub_delta": -2.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 1.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 20,
+            "net_difference": 13.0,
+            "component_differences": {
+              "base_xi": 13.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 30,
+            "net_difference": 12.0,
+            "component_differences": {
+              "base_xi": 12.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          }
+        ],
+        "largest_losses": [
+          {
+            "gameweek": 17,
+            "net_difference": -32.0,
+            "component_differences": {
+              "base_xi": -16.0,
+              "autosub_delta": 1.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": -17.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 34,
+            "net_difference": -14.0,
+            "component_differences": {
+              "base_xi": -37.0,
+              "autosub_delta": 19.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": -4
+            }
+          },
+          {
+            "gameweek": 24,
+            "net_difference": -13.0,
+            "component_differences": {
+              "base_xi": -18.0,
+              "autosub_delta": 8.0,
+              "captain_bonus": -3.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 37,
+            "net_difference": -11.0,
+            "component_differences": {
+              "base_xi": -6.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": -5.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          },
+          {
+            "gameweek": 22,
+            "net_difference": -10.0,
+            "component_differences": {
+              "base_xi": -10.0,
+              "autosub_delta": 0.0,
+              "captain_bonus": 0.0,
+              "bench_boost_points": 0.0,
+              "extra_captain_bonus": 0.0,
+              "hits": 0
+            }
+          }
+        ]
+      }
+    ],
+    "control_repeat_differences": [
+      {
+        "name": "2024-25_20261070_standingH1_adaptive",
+        "previous": 2256.0,
+        "fresh": 2256.0,
+        "difference": 0.0
+      },
+      {
+        "name": "2024-25_20261070_standingH6_adaptive",
+        "previous": 2383.0,
+        "fresh": 2383.0,
+        "difference": 0.0
+      },
+      {
+        "name": "2024-25_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+        "previous": 2400.0,
+        "fresh": 2351.0,
+        "difference": -49.0
+      },
+      {
+        "name": "2024-25_20261071_standingH1_adaptive",
+        "previous": 2197.0,
+        "fresh": 2197.0,
+        "difference": 0.0
+      },
+      {
+        "name": "2024-25_20261071_standingH6_adaptive",
+        "previous": 2441.0,
+        "fresh": 2331.0,
+        "difference": -110.0
+      },
+      {
+        "name": "2024-25_20261071_SolioAdaptedH6_sharedAdaptiveChips",
+        "previous": 2401.0,
+        "fresh": 2435.0,
+        "difference": 34.0
+      },
+      {
+        "name": "2025-26_20261070_standingH1_adaptive",
+        "previous": 2127.0,
+        "fresh": 2127.0,
+        "difference": 0.0
+      },
+      {
+        "name": "2025-26_20261070_standingH6_adaptive",
+        "previous": 2274.0,
+        "fresh": 2213.0,
+        "difference": -61.0
+      },
+      {
+        "name": "2025-26_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+        "previous": 2274.0,
+        "fresh": 2235.0,
+        "difference": -39.0
+      },
+      {
+        "name": "2025-26_20261071_standingH1_adaptive",
+        "previous": 2134.0,
+        "fresh": 2134.0,
+        "difference": 0.0
+      },
+      {
+        "name": "2025-26_20261071_standingH6_adaptive",
+        "previous": 2134.0,
+        "fresh": 2134.0,
+        "difference": 0.0
+      },
+      {
+        "name": "2025-26_20261071_SolioAdaptedH6_sharedAdaptiveChips",
+        "previous": 2260.0,
+        "fresh": 2257.0,
+        "difference": -3.0
+      }
+    ],
+    "repeat_scope": "Descriptive repeat drift versus earlier released control paths; wall-time-bounded searches and explicit native-admission source differences mean these are not a controlled noise distribution or an extra primary test. Final study uses the uniform fresh controls, never retrospective best controls.",
+    "scope": "Post-result accounting on matched independent policy paths; roster/chip/captain changes interact. Component totals are not causal recoverable gains, forecast calibration or a parameter-search mandate."
+  },
+  "selection_dependence_stress": {
+    "complete": true,
+    "rho": 0.25,
+    "panels": 456,
+    "rows": [
+      {
+        "name": "2024-25_20261070_standingH6_adaptive",
+        "panels": 38,
+        "frozen_sha256": "f5d2f85bf110b6ec4e11f9476869f49b119333becf41b0ad41a095ee2d92ca62",
+        "arms": {
+          "saved_mean": {
+            "independent_total": 2268.6097232490806,
+            "stressed_total": 2249.4701712176884
+          },
+          "legacy_expected_no_chip": {
+            "independent_total": 2271.966980108094,
+            "stressed_total": 2252.787213089979
+          },
+          "chip_aware_expected": {
+            "independent_total": 2271.966980108094,
+            "stressed_total": 2252.787213089979
+          }
+        },
+        "independent_new_minus_saved": 3.3572568590134324,
+        "stressed_new_minus_saved": 3.3170418722907016,
+        "stressed_panels_favouring_saved": 0
+      },
+      {
+        "name": "2024-25_20261071_standingH6_adaptive",
+        "panels": 38,
+        "frozen_sha256": "896937ad41da45bf1e7d25023aef6836518ba5de009b4ece3fc469c27614c9f8",
+        "arms": {
+          "saved_mean": {
+            "independent_total": 2272.6598943348886,
+            "stressed_total": 2253.1579559878955
+          },
+          "legacy_expected_no_chip": {
+            "independent_total": 2278.0688431178055,
+            "stressed_total": 2258.6600535748194
+          },
+          "chip_aware_expected": {
+            "independent_total": 2278.0688431178055,
+            "stressed_total": 2258.6600535748194
+          }
+        },
+        "independent_new_minus_saved": 5.408948782916923,
+        "stressed_new_minus_saved": 5.50209758692381,
+        "stressed_panels_favouring_saved": 0
+      },
+      {
+        "name": "2025-26_20261070_standingH6_adaptive",
+        "panels": 38,
+        "frozen_sha256": "83a30665174eb4f9b994d8f744fd073cda05bf4090be59159f6d375deba20f41",
+        "arms": {
+          "saved_mean": {
+            "independent_total": 2270.0938714629874,
+            "stressed_total": 2248.977229453343
+          },
+          "legacy_expected_no_chip": {
+            "independent_total": 2274.4797871598907,
+            "stressed_total": 2253.370788249638
+          },
+          "chip_aware_expected": {
+            "independent_total": 2274.4797871598907,
+            "stressed_total": 2253.370788249638
+          }
+        },
+        "independent_new_minus_saved": 4.385915696903339,
+        "stressed_new_minus_saved": 4.393558796294656,
+        "stressed_panels_favouring_saved": 0
+      },
+      {
+        "name": "2025-26_20261071_standingH6_adaptive",
+        "panels": 38,
+        "frozen_sha256": "a069d7c2f916c59f90c8a73c7945bc24499806f9b8cb73643846271ce4f6360c",
+        "arms": {
+          "saved_mean": {
+            "independent_total": 2266.765925840628,
+            "stressed_total": 2245.807730472714
+          },
+          "legacy_expected_no_chip": {
+            "independent_total": 2270.6297037675563,
+            "stressed_total": 2249.9378933814864
+          },
+          "chip_aware_expected": {
+            "independent_total": 2270.6297037675563,
+            "stressed_total": 2249.9378933814864
+          }
+        },
+        "independent_new_minus_saved": 3.8637779269283783,
+        "stressed_new_minus_saved": 4.1301629087724905,
+        "stressed_panels_favouring_saved": 0
+      },
+      {
+        "name": "2024-25_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+        "panels": 38,
+        "frozen_sha256": "1be7fc4fa470feece2c3646391d9ae7fb1b4d44d880cf037a26a966fb83239c9",
+        "arms": {
+          "saved_mean": {
+            "independent_total": 2265.557912665056,
+            "stressed_total": 2246.549611968133
+          },
+          "legacy_expected_no_chip": {
+            "independent_total": 2268.047884095351,
+            "stressed_total": 2249.093287237255
+          },
+          "chip_aware_expected": {
+            "independent_total": 2268.047884095351,
+            "stressed_total": 2249.093287237255
+          }
+        },
+        "independent_new_minus_saved": 2.4899714302950997,
+        "stressed_new_minus_saved": 2.5436752691221045,
+        "stressed_panels_favouring_saved": 0
+      },
+      {
+        "name": "2024-25_20261070_standingH1_adaptive",
+        "panels": 38,
+        "frozen_sha256": "99359af03747559061df69e618992f1bed5508ecd6988d0c246979d0fe18d107",
+        "arms": {
+          "saved_mean": {
+            "independent_total": 2225.817836860495,
+            "stressed_total": 2205.6800634207057
+          },
+          "legacy_expected_no_chip": {
+            "independent_total": 2228.7908746840644,
+            "stressed_total": 2208.5978262577305
+          },
+          "chip_aware_expected": {
+            "independent_total": 2228.7908746840644,
+            "stressed_total": 2208.5978262577305
+          }
+        },
+        "independent_new_minus_saved": 2.9730378235694843,
+        "stressed_new_minus_saved": 2.9177628370248385,
+        "stressed_panels_favouring_saved": 0
+      },
+      {
+        "name": "2024-25_20261071_SolioAdaptedH6_sharedAdaptiveChips",
+        "panels": 38,
+        "frozen_sha256": "3e8fc99feefc3b6872db13fc358b7157299c740935fc5b581ebf40982df392da",
+        "arms": {
+          "saved_mean": {
+            "independent_total": 2274.7384918769444,
+            "stressed_total": 2254.33288694351
+          },
+          "legacy_expected_no_chip": {
+            "independent_total": 2278.4182410388353,
+            "stressed_total": 2258.1888852485995
+          },
+          "chip_aware_expected": {
+            "independent_total": 2278.4182410388353,
+            "stressed_total": 2258.1888852485995
+          }
+        },
+        "independent_new_minus_saved": 3.679749161890868,
+        "stressed_new_minus_saved": 3.8559983050895426,
+        "stressed_panels_favouring_saved": 0
+      },
+      {
+        "name": "2024-25_20261071_standingH1_adaptive",
+        "panels": 38,
+        "frozen_sha256": "aaa8a86466f1fc6946b35a245d3c946615213252a7cf844c95b646da8e57d7f2",
+        "arms": {
+          "saved_mean": {
+            "independent_total": 2188.612601681468,
+            "stressed_total": 2168.6941016473706
+          },
+          "legacy_expected_no_chip": {
+            "independent_total": 2193.543881017635,
+            "stressed_total": 2173.8053328639285
+          },
+          "chip_aware_expected": {
+            "independent_total": 2193.543881017635,
+            "stressed_total": 2173.8053328639285
+          }
+        },
+        "independent_new_minus_saved": 4.931279336167336,
+        "stressed_new_minus_saved": 5.111231216557826,
+        "stressed_panels_favouring_saved": 0
+      },
+      {
+        "name": "2025-26_20261070_SolioAdaptedH6_sharedAdaptiveChips",
+        "panels": 38,
+        "frozen_sha256": "c8aa898680af393726a6ca7f0244a2f15c5b8292045205435d23fe2ff59030b1",
+        "arms": {
+          "saved_mean": {
+            "independent_total": 2282.255964904769,
+            "stressed_total": 2261.0096143560086
+          },
+          "legacy_expected_no_chip": {
+            "independent_total": 2285.9710654579335,
+            "stressed_total": 2264.78095948783
+          },
+          "chip_aware_expected": {
+            "independent_total": 2285.9710654579335,
+            "stressed_total": 2264.78095948783
+          }
+        },
+        "independent_new_minus_saved": 3.715100553164575,
+        "stressed_new_minus_saved": 3.771345131821363,
+        "stressed_panels_favouring_saved": 0
+      },
+      {
+        "name": "2025-26_20261070_standingH1_adaptive",
+        "panels": 38,
+        "frozen_sha256": "381d3ed381b18815feffcd444cc78228bd8f68c11d48a1cb7c40d3345cab5956",
+        "arms": {
+          "saved_mean": {
+            "independent_total": 2224.02712151498,
+            "stressed_total": 2203.4882133431915
+          },
+          "legacy_expected_no_chip": {
+            "independent_total": 2228.839016617343,
+            "stressed_total": 2208.2854935055793
+          },
+          "chip_aware_expected": {
+            "independent_total": 2228.839016617343,
+            "stressed_total": 2208.2854935055793
+          }
+        },
+        "independent_new_minus_saved": 4.811895102362996,
+        "stressed_new_minus_saved": 4.7972801623877785,
+        "stressed_panels_favouring_saved": 0
+      },
+      {
+        "name": "2025-26_20261071_SolioAdaptedH6_sharedAdaptiveChips",
+        "panels": 38,
+        "frozen_sha256": "2b16541c41fe7b9e6c72830434cfcaf6f3215f2053a61e67d5b1552d39244e49",
+        "arms": {
+          "saved_mean": {
+            "independent_total": 2270.0535239475744,
+            "stressed_total": 2248.109102535868
+          },
+          "legacy_expected_no_chip": {
+            "independent_total": 2276.0997164105556,
+            "stressed_total": 2254.301164410519
+          },
+          "chip_aware_expected": {
+            "independent_total": 2276.0997164105556,
+            "stressed_total": 2254.301164410519
+          }
+        },
+        "independent_new_minus_saved": 6.046192462981253,
+        "stressed_new_minus_saved": 6.192061874651245,
+        "stressed_panels_favouring_saved": 0
+      },
+      {
+        "name": "2025-26_20261071_standingH1_adaptive",
+        "panels": 38,
+        "frozen_sha256": "c14b2ef1b2d3d81e996359746e7b18c5f8bad35fa71a1ee606eb56e9f23a5b9c",
+        "arms": {
+          "saved_mean": {
+            "independent_total": 2235.4040150465767,
+            "stressed_total": 2215.0063034581754
+          },
+          "legacy_expected_no_chip": {
+            "independent_total": 2242.0522449602777,
+            "stressed_total": 2221.8579919185368
+          },
+          "chip_aware_expected": {
+            "independent_total": 2242.0522449602777,
+            "stressed_total": 2221.8579919185368
+          }
+        },
+        "independent_new_minus_saved": 6.648229913701016,
+        "stressed_new_minus_saved": 6.851688460361402,
+        "stressed_panels_favouring_saved": 0
+      }
+    ],
+    "primary_mean_independent_objective_difference": 4.253974816440518,
+    "primary_mean_stressed_objective_difference": 4.335715291070414,
+    "scope": "Fixed .25 common-uniform appearance mixture preserves marginals. These are chosen-plan expected objective values, not realised gains, probability calibration, an adaptive correlated-policy replay or a newly selected stress parameter."
+  },
+  "operational_compatibility": {
+    "passed": true,
+    "champion": "1.0.0",
+    "artifact_sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+    "registry_unchanged": true,
+    "weights_unchanged": true,
+    "synthetic_only": true,
+    "manual_zero_current_only": true,
+    "blank_double_supported": true,
+    "origin_clock_kind": "Explicitly invented future origin onehour after a genuine artifact-existence observation; not a live/source capture or historical timestamp",
+    "source_sha256": {
+      "bridge": "2c75deb134a7dba90b92eb57839b81229a9fa6e771a6fb6fcde9e463e599118c",
+      "manager": "ee3c587ef8e1906d0729f76fa734521ef85a335f597225fb3de804b12f58705e"
+    },
+    "production_policy_approved": false,
+    "scope": "Actual approved artifact save/load/interface and legal-horizon mechanical compatibility on invented data only; no current FPL player prediction, accuracy evidence or account/team action"
+  },
+  "mechanical_preflight": {
+    "cases": [
+      {
+        "season": "2024-25",
+        "origin": 1,
+        "seconds": 8.43001675000005,
+        "mean_admission": 96.109197934548,
+        "decision_value": 126.1888796690458,
+        "selection_calls": 50,
+        "trials": 12,
+        "all_steps_mechanically_admitted": true,
+        "bounds_unknown": true
+      },
+      {
+        "season": "2024-25",
+        "origin": 16,
+        "seconds": 15.633812207999654,
+        "mean_admission": 335.52074347436456,
+        "decision_value": 344.2737270585591,
+        "selection_calls": 32,
+        "trials": 7,
+        "all_steps_mechanically_admitted": true,
+        "bounds_unknown": true
+      },
+      {
+        "season": "2025-26",
+        "origin": 1,
+        "seconds": 7.870692458000121,
+        "mean_admission": 112.35684325779567,
+        "decision_value": 144.69894816835836,
+        "selection_calls": 42,
+        "trials": 12,
+        "all_steps_mechanically_admitted": true,
+        "bounds_unknown": true
+      },
+      {
+        "season": "2025-26",
+        "origin": 16,
+        "seconds": 15.742523917000199,
+        "mean_admission": 371.17123551196363,
+        "decision_value": 384.7956078886618,
+        "selection_calls": 21,
+        "trials": 8,
+        "all_steps_mechanically_admitted": true,
+        "bounds_unknown": true
+      }
+    ],
+    "seconds": 48.10292029099992,
+    "scope": "No realised-outcome scoring; mechanical integration"
+  },
+  "policy_qualification": {
+    "historical_research_criteria_pass": true,
+    "production_approved": false,
+    "scope": "Optional reviewed experimental decision support only; weights and normal weekly defaults unchanged"
+  },
+  "forecaster_weights_changed": false,
+  "model_promotion": false,
+  "limitations": [
+    "Two reused historical years, not untouched evaluation or four independent seasons",
+    "Common no-Assistant-Manager subset in 2024/25; seasonal scoring and rule differences retained",
+    "Common openings test management, not a fresh initial-squad builder",
+    "Appearance sidecars use fixed 1% regularisation, a conditional-mean identity, independence and no predicted card-only event; these are assumptions, not learned calibrated news probabilities",
+    "Raw Brier is slightly better than regularised Brier; no appearance-accuracy improvement is claimed",
+    "The new policy uses prior-head appearance marginals while controls rank mean proposals; this compares policies and use of inputs, not pure inner-solver superiority",
+    "Inner MILPs still optimise their original mean proxy; expected-value/global bounds unknown",
+    "Native paid-transfer canonicalisation is explicit adapted admission; the legacy default remains strict",
+    "Original three complete paths and one failure are retained separately; the final sixteen-case matrix uniformly uses the revised source without best-run selection",
+    "No new Dastan/OpenFPL/AIrsenal forecaster/fullmanager comparison; their previous separate studies retain scopes",
+    "Publisher capture/publication/corrected-source and earlier-than-deadline observation limitations inherited",
+    "Nominal outerbudget may finish a started inner solve; actual path timings retained",
+    "Lightweight audits/synthetic compatibility/tests/docs overlapped serial batch; not isolated hardware benchmark or extra model fit"
+  ]
+}
