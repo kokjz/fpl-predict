@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-25",
+  "scope": "Resource-only probe-cap amendment before new season scoring; no point-result selection",
+  "original_protocol": "search_repeatability_protocol_2026-10-25.json",
+  "original_protocol_sha256": "a0c5b9a5f8f101749129b85c53f7f792730a54d34752f447a60acbbf10d52e3d",
+  "pilot_source": "dea657d6dc84784905208bb27343c2a38374bb07",
+  "pilot_cases": 24,
+  "pilot_mean_seconds_by_policy": {
+    "SolioAdaptedH6_fixedWork": 40.97617329675086,
+    "decisionH6_fixedWork": 24.53526044262526,
+    "standingH6_fixedWork": 19.282390999874224
+  },
+  "rule": "Choose the largest cap from 12, 8, 6 for which 38 times the largest per-policy mean preflight time times cap/12 fits the existing 900-second path guard. Linear scaling is a resource estimate, not a guarantee or football criterion.",
+  "estimated_seconds_by_cap": {
+    "12": 1557.0945852765326,
+    "8": 1038.0630568510217,
+    "6": 778.5472926382663
+  },
+  "selected_max_trials": 6,
+  "retained_controls": {
+    "node_limit": 1,
+    "random_seed": 0,
+    "parallel": "off",
+    "threads": 2,
+    "inner_safety_seconds": 120.0
+  },
+  "matrix_and_point_criteria_unchanged": true,
+  "actual_season_outcomes_scored": false,
+  "required_validation": "Fresh uniform 24-case source-only preflight with the selected cap before the full 24-season-path matrix; retain the original 24-case pilot and both failed preflights.",
+  "chip_fairness": "Reserve capacity for one combined-schedule proposal when the fixed-work cap is 6\u20139; probe each eligible chip family before later dates. Duplicate schedules reuse the cache. Legacy wall-time behaviour is unchanged.",
+  "limitations": "Fixed-work search may cost more than timed search; cap changes define a separate research policy. No promise of global optimality, identical CPU work or equal scores versus PR40."
+}

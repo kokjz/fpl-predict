@@ -145,7 +145,7 @@ def plan_adaptive(state,market,scenarios,*,settings=None,budget=None,blocked=(),
     for g,name,token_start in slots:
         # Retain capacity to validate the combined calendar, rather than spend
         # a small budget entirely on mutually exclusive single-chip probes.
-        reserve=2 if b.max_trials>=10 else 0
+        reserve=2 if b.max_trials>=10 else 1 if b.fixed_work and b.max_trials>=6 else 0
         if len(trials)>=b.max_trials-reserve or not b.fixed_work and time.monotonic()-start>=.8*b.seconds:break
         result=solve({g:name})
         if result is None:continue

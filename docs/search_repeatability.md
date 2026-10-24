@@ -12,6 +12,14 @@ declared number of outer trials. Model construction and selection time do not
 reduce the number of eligible schedule probes. Duplicate/illegal schedules and
 remaining chip inventory can still reduce the actual trial count.
 
+The [resource amendment](search_repeatability_resource_amendment_2026-10-25.json)
+uses the completed, unscored 24-case timing pilot to select six probes for the
+full season study. The original twelve-probe pilot remains published separately.
+All policies use the same amended cap; a reserved combined-calendar probe follows
+the first eligible chip-family probes. This is a resource choice before season
+scoring, not a setting selected for better realised points. The 900-second path
+guard remains, and the linear timing estimate is not a worst-case guarantee.
+
 The existing two-thread limit remains. Inner time limits and the external
 process/memory/storage watchdog are safety guards. Reaching a time guard raises
 an error rather than accepting that result as successful fixed-work completion.

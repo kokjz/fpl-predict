@@ -119,3 +119,30 @@ def test_pinned_upstream_parallel_default_cannot_override_explicit_work_control(
     assert fixed_work_option(work,'mip_max_nodes',900)==1
     assert fixed_work_option(work,'presolve','on')=='on'
     assert fixed_work_option(None,'parallel','on')=='on'
+
+
+def test_six_probe_fixed_budget_covers_families_and_reserves_combined_capacity(monkeypatch):
+    from test_rolling_planner import setup
+    from rolling_planner import _fallback,_objective
+    s,m,h=setup();cfg=Settings(seconds=120.,baseline_mode='feasibility',node_limit=1,
+        terminal_ft_value=0.,terminal_squad_weight=0.,churn_cost=0.)
+    calls=[];combined=[]
+    import adaptive_planner
+    original_calendar=adaptive_planner.calendar
+    def observe_calendar(state,*args,**kwargs):
+        if state.gameweek==s.gameweek:combined.append(len(calls))
+        return original_calendar(state,*args,**kwargs)
+    monkeypatch.setattr(adaptive_planner,'calendar',observe_calendar)
+    def inner(state,market,horizon,settings,*,chip_schedule=None,opening_ids=None):
+        calls.append(chip_schedule)
+        actions=_fallback(state,market,horizon,{'ledger':dict(state.holdings)},chip_schedule)
+        value,parts=_objective(state,market,horizon,actions,settings)
+        return actions,dict(objective=value,components=parts,chip_schedule=chip_schedule or {},seconds=0.,proven_optimal=False,mip_gap=None,
+            selected_plan_bound=dict(status='synthetic',feasible_objective=value,upper_objective=None),fallback_retained=True,solver_diagnostics={})
+    _,report=plan_adaptive(s,m,[('same',1.,h)],settings=cfg,budget=Budget(120.,120.,6,True),inner_planner=inner)
+    schedules=[t['schedule'] for t in report['trials']]
+    assert len(schedules)==6 and schedules[0]=={}
+    assert {next(iter(t.values())) for t in schedules[1:5]}=={'wildcard','freehit','bboost','3xc'}
+    # A combined proposal may duplicate a single schedule, but its calendar is
+    # constructed with a solve slot still available rather than after the cap.
+    assert combined==[5]
