@@ -40,3 +40,32 @@ preserving transfer/chip proposals. An older-season admission audit and at most
 one diagnosis-supported correction follow under separately frozen evaluation
 criteria. Previously inspected years are never relabelled untouched, previous
 failed gates remain failed, and merging tooling does not promote model weights.
+
+
+## Measured diagnostic checkpoint
+
+The [complete no-fit diagnostic](COHERENCE_AUDIT_2026-10-26.md) and
+[all declared groups](coherence_audit_results_2026-10-26.json) are now available.
+The surrounding implementation/qualification package remains in progress.
+
+## First-action selection control
+
+The opt-in `selection_control.FirstActionSelection(mean_manager, availability)`
+API calls the explicit mean manager once and changes only the first lineup,
+bench order, captain and vice. Buys, sells, chip use and every subsequent
+provisional action are preserved; the engine verifies the immediate financial
+transition. Only origin-current appearance cells are used by this control.
+
+The retained mean objective is recomputed for mechanical admission. A valid
+source upper bound can be rebased to this feasible mean-valued plan because
+its mean problem is unchanged; it does not certify the expected selection
+objective or global chip search. Original trials/scenario scores are explicitly
+labelled as proposals. A previous optimality/gap flag is not copied as proof
+for a changed plan. The full-horizon availability reranker is a separate policy.
+
+Source-checkout diagnostics require the checkout's `src` on `PYTHONPATH`, for
+example `PYTHONPATH=src python tools/appearance_return_audit.py --help`. Supply
+explicit private input/output paths and hashes; no runtime/team discovery or
+source download is implicit. The new control is research-only and changes no
+normal CLI/default policy. Frozen replay equivalence is a conditional control,
+not by itself a fresh adaptive solver benchmark or future-points estimate.
