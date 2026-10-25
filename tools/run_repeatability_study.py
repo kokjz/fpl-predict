@@ -13,7 +13,7 @@ from season_benchmark import run, Policy
 from season_qualification import Trace, Guarded
 
 
-POLICIES = ('standingH6_fixedWork', 'decisionH6_fixedWork', 'SolioAdaptedH6_fixedWork')
+POLICIES = ('standingH6_fixedWork', 'decisionH6_fixedWork', 'decisionH6_calibrated_fixedWork', 'SolioAdaptedH6_fixedWork')
 
 
 def run_case(decisions, outcomes, availability, output, *, policy_id, opening_ids,

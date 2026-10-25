@@ -98,3 +98,18 @@ No later cancellation or replay date is backfilled into the earlier forecast.
 Archive/Git dates remain publisher claims and early status-based eligibility is
 an explicit proxy. Admission and synthetic solver checks do not establish
 season-points performance.
+
+## One declared calibration experiment
+
+The [frozen protocol](appearance_calibration_protocol_2026-10-26.json) specifies
+one prior-season Platt mapping, with point means exactly unchanged. Historical
+training labels come from cumulative API minute increments at the next
+predeadline snapshot, after the current event is marked finished/data checked.
+These are noisy source-time proxies: later revisions to earlier minutes may
+contaminate an increment. Negative changes and missing identities are excluded
+and counted; later corrected outcomes never select training rows. GW38 is not
+used for training. Fit2023/24→test2024/25 and fit2024/25→test2025/26 remain
+strictly separated. Explicit zero/news flags and calendar blanks are preserved.
+`tools/calibrate_appearance.py` requires a new private output folder and input
+hashes; it does not read target outcomes or alter the registry. This is research,
+not a calibrated current-season release or a demonstrated points gain.

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-25T18:18:34.885697+00:00",
+  "name": "One fixed chronological Platt appearance correction",
+  "status": "declared before calibration fits and new decision/season effects",
+  "diagnosis": "Current proposed-squad appearance marginal underprediction in both inspected years; no evidence of extreme implied conditional-return inflation. Joint residuals confounded by marginal calibration.",
+  "candidate": {
+    "method": "LogisticRegression on logit(p_play), C1, lbfgs, max_iter200, random_state20261026; no class balancing; two parameters; no alternatives or tuning",
+    "probability_clip": 1e-06,
+    "weight_half_life_days": 730.5,
+    "training_cohort": "All prior-season origin/player cells for GW1..37 with positive fixture count, nonzero p and no official-zero flag; matched stable code in following origin; next origin confirms current event finished/data_checked; nonnegative cumulative-minute increment. Labels are historical API minute-increment proxies as recorded then, not later corrected histories. Exclude incomplete/ambiguous records with counts.",
+    "training_sources": "Train2023/24 -> test2024/25; train2024/25 -> test2025/26. Each prior-year next-origin label clock must strictly precede each target origin. No target-year label fitting. No calibration before2024/25.",
+    "application": "Map origin-frozen player-GW p over all six horizon leads with same transform. Preserve explicit official-zero/no-fixture/zero-support cells. Do not regularise again. Unconditional mean grid exactly unchanged. Nonnegative slope required; otherwise candidate is invalid, not replaced.",
+    "clock": "Historical simulated training-data cutoff distinct from actual2026 execution time; archive clocks remain publisher claims. Counter revisions can contaminate minute-increment labels; compare label disagreement diagnostically, never select training rows using later corrected truth."
+  },
+  "components": {
+    "primary": "Equal-season mean current-player-GW Brier relative change; all market and frozen ex-ante proposed-squad union, each season retained. Reliability bins/counts, no independence CI.",
+    "quality": "At least0.5% mean relative Brier reduction; no season relative Brier deterioration above1%; identity of point mean grid, frozen errors/coverage and all flags required. Results may fail. This gate is research only and does not replace live promotion gates.",
+    "secondary": "Implied conditional-return errors on played subset; prior fixed proposal first-action overlays; joint count residuals; unchanged-point MAE/RMSE must be reported."
+  },
+  "seasons": {
+    "older_extension": "2023/24 uncalibrated H6, availability-aware H6, adapted Solio, two declared common openings/two fixed-work repetitions:12paths. Historical reference fit2020/21..2022/23; old validation exposure disclosed.",
+    "candidate": "2024/25 and2025/26 calibrated availability-aware H6, same two starts/two repetitions:8newpaths; reuse hash-verified identical24prior controls, including uncalibrated availability-H6/H6/adaptedSolio.",
+    "openings": [
+      20261070,
+      20261071
+    ],
+    "work": "node_limit1, max_trials6, seed0, paralleloff,2threads,120sinner safety/900spath safety, original horizon6/all legal ordinary chips",
+    "primary": "Calibrated candidate minus original uncalibrated availability-aware H6 on old two years, equal-season mean across opening cases; also versus H6 and adapted Solio. Older extension is a separate additional historical-policy comparison, not a calibrated-candidate gain.",
+    "criterion": "Positive equal-season mean; each season mean >=-19; every common-opening mean >=-38; exact repeated decision/source/finance fingerprints and independent outcome/legality audits. Retain previous thresholds/results unchanged; these are operational downside budgets, not significance tests.",
+    "uncertainty": "Two calibration target years plus one older policy year, all with prior research exposure; repeated solver paths not independent football seasons. Report every loss, mean and downside separately; no general/original-manager/forecast superiority claim."
+  },
+  "resources": {
+    "threads": 2,
+    "memory_mib": 4096,
+    "fit_fold_count": "One older four-head reference fold + two tiny probability-calibration folds =3",
+    "max_new_paths": 20,
+    "seconds_per_path": 900,
+    "max_project_mib": 2560,
+    "max_package_growth_mib": 256,
+    "min_free_mib": 5120
+  },
+  "release": "No automatic forecaster/default promotion. Historical calibrated policy only; no target-year search, current-input backcast, future-game wait or private publication."
+}

@@ -1,5 +1,5 @@
 {
-  "status": "source_and_rules_admitted_no_fit_yet",
+  "status": "sources_rules_and_prior_only_reference_prepared_no_season_points_yet",
   "season": "2023-24",
   "checked_at": "2026-10-26 Asia/Singapore",
   "training": {
@@ -2575,5 +2575,28 @@
     "Reused validation year and retrospectively chosen model recipe; not prospective/untouched",
     "Prior-only source-lag approximation3h; final-stat revision provenance is incomplete"
   ],
-  "model_promotion": false
+  "model_promotion": false,
+  "prior_reference": {
+    "model": {
+      "version": "standing-prior3-no-dc-2023-v1",
+      "training_rows": 76317,
+      "training_scope": [
+        "2020-21",
+        "2021-22",
+        "2022-23"
+      ],
+      "trained_through": "2023-05-28T18:30:00+00:00",
+      "approval": "Historical research only; reused2023/24 validation year, no deployment promotion"
+    },
+    "model_sha256": "bf0b54344bda0b44f0337b52bd38a103f944343f11e02dcd469dfbb3b03decd5",
+    "bundles": {
+      "decisions": "eeca6ea377a81f481061a702195d6c5c9a4c7a09557a041c6f154e9cd8b6058a",
+      "outcomes": "c6da284dfe2bd1a3f701dbad1f32d5a16416bda36ef89a55529613c460e2156a"
+    },
+    "fit_seconds": 26.51719441599562,
+    "total_seconds": 65.56982341600087,
+    "sampled_peak_rss_bytes": 861896704,
+    "source_commit": "46b1c84acb234a89e146582511754d56a5a40f15",
+    "model_promotion": false
+  }
 }
