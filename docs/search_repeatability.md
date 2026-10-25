@@ -74,3 +74,39 @@ References checked 25 October 2026:
 and [HiGHS node/seed/parallel options](https://ergo-code.github.io/HiGHS/dev/options/definitions/).
 These document available controls; measured repeatability still requires the
 declared tests on the pinned runtime and historical inputs.
+
+
+## Interrupted attempt and unchanged continuation
+
+The original full-season batch stopped on an inner safety-time guard while the
+host entered lid-closed sleep. Ten complete paths and seventeen settled origins
+of the next remain immutable. The [continuation rule](search_repeatability_resume_2026-10-25.json)
+references the complete jobs and permits one identical retry of the interrupted
+case, with its saved seventeen-origin decision prefix required to match. No
+source, input, seed, node/probe cap or safety budget changes. A further failure
+stops the continuation; an incomplete attempt never counts as a complete run.
+
+## Exploratory selection-only diagnostic
+
+The [post-result addendum](search_repeatability_selection_addendum_2026-10-25.json)
+compares saved, legacy expected and chip-aware expected selections on all sixteen
+mean-H6/adapted-Solio paths, retaining every roster, transfer and chip. It freezes
+all 608 panels before counterfactual scoring, then separately reconciles finance,
+realised scores and expected values. The outcomes were already researched; this
+is mechanism diagnosis, not untouched validation or a new promotion gate.
+
+The source-checkout helper `tools/repeatability_selection_overlay.py` exposes
+`freeze_case(decisions, appearance, record_directory, new_private_file)` and
+`evaluate_case(frozen_file, sha256, decisions, evaluator_outcomes, saved_net_points)`.
+Freeze every declared case first; retain a hashed complete manifest before
+loading evaluator outcomes. Use the same prior-only references, as-of sidecars
+and immutable decision records as the primary study. `freeze_case` accepts no
+evaluator input. The caller must lock sources/inputs and supervise resource
+limits; API separation is not a security boundary for untrusted code.
+
+Retained squads that exceed a club limit after a club move are admitted only
+after the season engine verifies the original transaction and purchase ledger.
+This exception does not permit an illegal purchase or an invalid 15-player squad.
+The diagnostic makes no fit, solver call, team/account action or default change.
+A selection overlay is conditional on saved transfers/chips; it does not estimate
+causal recoverable gains from an independently replanned full-season manager.
