@@ -1,5 +1,17 @@
 # Season-management policy qualification
 
+Latest follow-up, 25 October 2026: the
+[fixed-work study](SEARCH_REPEATABILITY_RESULTS_2026-10-25.md) completes 24
+continuous season paths using one-node/six-probe research policies. Repeated
+full-plan fingerprints all match; the availability-aware policy's equal-season
+mean versus matched H6 is **+6.50 net points**. Combined historical research
+qualification does not pass.
+Two reused years, paired numerical repetitions and restricted 2024/25 no-AM
+rules limit inference. This mode differs from the earlier timed policies.
+Read the [method and resource amendment](search_repeatability.md).
+Approved weights and normal weekly defaults remain unchanged. Earlier dated
+results and gates below retain their original scopes.
+
 Latest follow-up, 24 October 2026: the optional
 [availability-aware policy](SEASON_DECISION_VALUE_RESULTS_2026-10-24.md) keeps
 point means fixed and tests legal expected subs/vice fallback in sixteen matched

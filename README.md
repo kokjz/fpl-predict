@@ -46,7 +46,19 @@ Saved-artifact and changed-next-origin integration checks use entirely invented
 data. Historical evaluation uses prior-only method references rather than
 backcasting a deployment artifact trained on the evaluation season.
 
-The [availability-aware season study](docs/SEASON_DECISION_VALUE_RESULTS_2026-10-24.md)
+The [fixed-work repeatability study](docs/SEARCH_REPEATABILITY_RESULTS_2026-10-25.md)
+compares 24 continuous season paths using fixed node/probe caps. Repeated full
+decisions match exactly on all twelve cases;
+the availability-aware policy averages **+6.50 net points versus
+the matched H6 control**, with opening effects **+25, +22, -67, +46**. Against adapted Solio,
+its mean is **+15.50**. The primary H6 comparison fails the declared downside
+limit because one opening loses 67 points; this is a positive observed average,
+not evidence of general inferiority or sufficient support for replacement. These are two reused years and paired numerical repetitions,
+not independent new seasons or forecast-error improvements. Six-probe fixed-work
+policies differ from the earlier timed policies. Approved weights and normal weekly
+defaults remain unchanged. See the [method and source-only resource amendment](docs/search_repeatability.md).
+
+The earlier [availability-aware season study](docs/SEASON_DECISION_VALUE_RESULTS_2026-10-24.md)
 keeps point forecasts fixed and compares sixteen continuous 38-GW paths. The
 changed six-week policy averages **+57.50 net points versus current H6**
 across two starts in each of two reused seasons; the four effects are
