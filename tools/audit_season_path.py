@@ -1,4 +1,4 @@
-"""Independent 2024/25 restricted or 2025/26 replay audit; stdlib only.
+"""Independent admitted historical-season replay audit; stdlib only.
 
 Checks a full frozen season path and its retained provisional actions. Does not
 authenticate archive publication clocks, training recipes or native proposals.

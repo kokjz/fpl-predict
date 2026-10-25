@@ -41,7 +41,7 @@ def validate(request,reply,*,allow_dominated_paid_slack=False,diagnostics=None):
     assert set(request['state'])=={'season','gameweek','holdings','bank','free_transfers','used_chips','previous_chip'}
     market=request['market'];state=dict(request['state'],total_points=0.);g=state['gameweek'];end=request['through']
     assert set(market)=={'season','gameweek','deadline','as_of','rows'} and datetime.fromisoformat(market['as_of'].replace('Z','+00:00'))<datetime.fromisoformat(market['deadline'].replace('Z','+00:00'))
-    assert market['season']==state['season'] and state['season'] in ('2024-25','2025-26') and market['gameweek']==g and g<=end<=min(38,g+5)
+    assert market['season']==state['season'] and state['season'] in ('2023-24','2024-25','2025-26') and market['gameweek']==g and g<=end<=min(38,g+5)
     players={p['id']:p for p in market['rows']};assert len(players)==len(market['rows'])
     assert all(set(p)=={'id','position','team','price_tenths','can_buy'} for p in market['rows'])
     xp={(w,i):v for w,i,v in request['xp']};assert len(xp)==len(request['xp']) and set(xp)=={(w,i) for w in range(g,end+1) for i in players} and all(math.isfinite(v) for v in xp.values())
