@@ -527,5 +527,518 @@
     "scope": "Independent stdlib scalar probability/error/role arithmetic and logistic stationarity; training counters remain archive claims and are covered by source/cohort audits, no new fit",
     "verifier_sha256": "9224c9885f9527e2a10b6c9c3919786a2fca0cf767e5fafcdfc504da60d62e8a"
   },
-  "season_matrix_status": "Running separately; component results are not full-season results"
+  "season_matrix_status": "Running separately; component results are not full-season results",
+  "joint_diagnostic": {
+    "complete": true,
+    "unique_frozen_panels": 456,
+    "version_panels": 912,
+    "rows": [
+      {
+        "season": "2024-25",
+        "case": "r1_2024-25_20261070_SolioAdaptedH6_fixedWork",
+        "version": "calibrated",
+        "panels": 38,
+        "mean_expected_misses": 1.3175977666558316,
+        "mean_observed_misses": 1.105263157894737,
+        "mean_count_residual": -0.21233460876109492,
+        "mean_squared_scaled_residual": 1.3180356511048021,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 259,
+            "mean_residual_product": 0.011398382696472866
+          },
+          "different_club": {
+            "pairs": 3731,
+            "mean_residual_product": 0.003432773759299696
+          }
+        }
+      },
+      {
+        "season": "2024-25",
+        "case": "r1_2024-25_20261070_SolioAdaptedH6_fixedWork",
+        "version": "original",
+        "panels": 38,
+        "mean_expected_misses": 1.7282754873243003,
+        "mean_observed_misses": 1.105263157894737,
+        "mean_count_residual": -0.6230123294295632,
+        "mean_squared_scaled_residual": 1.2715638296795486,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 259,
+            "mean_residual_product": 0.014644868980595667
+          },
+          "different_club": {
+            "pairs": 3731,
+            "mean_residual_product": 0.0063966204284661
+          }
+        }
+      },
+      {
+        "season": "2024-25",
+        "case": "r1_2024-25_20261070_decisionH6_fixedWork",
+        "version": "calibrated",
+        "panels": 38,
+        "mean_expected_misses": 1.1770210660919624,
+        "mean_observed_misses": 0.9736842105263158,
+        "mean_count_residual": -0.20333685556564662,
+        "mean_squared_scaled_residual": 1.0479449124699887,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 284,
+            "mean_residual_product": 0.009959400627673204
+          },
+          "different_club": {
+            "pairs": 3706,
+            "mean_residual_product": 0.00296346868000838
+          }
+        }
+      },
+      {
+        "season": "2024-25",
+        "case": "r1_2024-25_20261070_decisionH6_fixedWork",
+        "version": "original",
+        "panels": 38,
+        "mean_expected_misses": 1.6097437167823239,
+        "mean_observed_misses": 0.9736842105263158,
+        "mean_count_residual": -0.636059506256008,
+        "mean_squared_scaled_residual": 1.119826492593668,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 284,
+            "mean_residual_product": 0.01347490991386511
+          },
+          "different_club": {
+            "pairs": 3706,
+            "mean_residual_product": 0.005808168388518357
+          }
+        }
+      },
+      {
+        "season": "2024-25",
+        "case": "r1_2024-25_20261070_standingH6_fixedWork",
+        "version": "calibrated",
+        "panels": 38,
+        "mean_expected_misses": 1.411617529523403,
+        "mean_observed_misses": 1.131578947368421,
+        "mean_count_residual": -0.28003858215498206,
+        "mean_squared_scaled_residual": 1.3901818629904938,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 266,
+            "mean_residual_product": 0.011412360304823843
+          },
+          "different_club": {
+            "pairs": 3724,
+            "mean_residual_product": 0.003644099068670757
+          }
+        }
+      },
+      {
+        "season": "2024-25",
+        "case": "r1_2024-25_20261070_standingH6_fixedWork",
+        "version": "original",
+        "panels": 38,
+        "mean_expected_misses": 1.83541808777133,
+        "mean_observed_misses": 1.131578947368421,
+        "mean_count_residual": -0.7038391404029091,
+        "mean_squared_scaled_residual": 1.3983154153788013,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 266,
+            "mean_residual_product": 0.014990154845253989
+          },
+          "different_club": {
+            "pairs": 3724,
+            "mean_residual_product": 0.0068063025346981635
+          }
+        }
+      },
+      {
+        "season": "2024-25",
+        "case": "r1_2024-25_20261071_SolioAdaptedH6_fixedWork",
+        "version": "calibrated",
+        "panels": 38,
+        "mean_expected_misses": 1.3332682385161059,
+        "mean_observed_misses": 1.131578947368421,
+        "mean_count_residual": -0.20168929114768483,
+        "mean_squared_scaled_residual": 1.1206651414181168,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 267,
+            "mean_residual_product": 0.007015715981756575
+          },
+          "different_club": {
+            "pairs": 3723,
+            "mean_residual_product": 0.0015268641457911137
+          }
+        }
+      },
+      {
+        "season": "2024-25",
+        "case": "r1_2024-25_20261071_SolioAdaptedH6_fixedWork",
+        "version": "original",
+        "panels": 38,
+        "mean_expected_misses": 1.7674598021880836,
+        "mean_observed_misses": 1.131578947368421,
+        "mean_count_residual": -0.6358808548196624,
+        "mean_squared_scaled_residual": 1.1151067623767184,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 267,
+            "mean_residual_product": 0.009106184692510375
+          },
+          "different_club": {
+            "pairs": 3723,
+            "mean_residual_product": 0.004379926420074562
+          }
+        }
+      },
+      {
+        "season": "2024-25",
+        "case": "r1_2024-25_20261071_decisionH6_fixedWork",
+        "version": "calibrated",
+        "panels": 38,
+        "mean_expected_misses": 1.3235310037118153,
+        "mean_observed_misses": 1.131578947368421,
+        "mean_count_residual": -0.19195205634339424,
+        "mean_squared_scaled_residual": 1.1059829328687694,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 267,
+            "mean_residual_product": 0.007015715981756575
+          },
+          "different_club": {
+            "pairs": 3723,
+            "mean_residual_product": 0.001470285934846269
+          }
+        }
+      },
+      {
+        "season": "2024-25",
+        "case": "r1_2024-25_20261071_decisionH6_fixedWork",
+        "version": "original",
+        "panels": 38,
+        "mean_expected_misses": 1.755436653231281,
+        "mean_observed_misses": 1.131578947368421,
+        "mean_count_residual": -0.62385770586286,
+        "mean_squared_scaled_residual": 1.0946939094901762,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 267,
+            "mean_residual_product": 0.009106184692510375
+          },
+          "different_club": {
+            "pairs": 3723,
+            "mean_residual_product": 0.004265987336958659
+          }
+        }
+      },
+      {
+        "season": "2024-25",
+        "case": "r1_2024-25_20261071_standingH6_fixedWork",
+        "version": "calibrated",
+        "panels": 38,
+        "mean_expected_misses": 1.3235310037118153,
+        "mean_observed_misses": 1.131578947368421,
+        "mean_count_residual": -0.19195205634339424,
+        "mean_squared_scaled_residual": 1.1059829328687694,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 267,
+            "mean_residual_product": 0.007015715981756575
+          },
+          "different_club": {
+            "pairs": 3723,
+            "mean_residual_product": 0.001470285934846269
+          }
+        }
+      },
+      {
+        "season": "2024-25",
+        "case": "r1_2024-25_20261071_standingH6_fixedWork",
+        "version": "original",
+        "panels": 38,
+        "mean_expected_misses": 1.755436653231281,
+        "mean_observed_misses": 1.131578947368421,
+        "mean_count_residual": -0.62385770586286,
+        "mean_squared_scaled_residual": 1.0946939094901762,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 267,
+            "mean_residual_product": 0.009106184692510375
+          },
+          "different_club": {
+            "pairs": 3723,
+            "mean_residual_product": 0.004265987336958659
+          }
+        }
+      },
+      {
+        "season": "2025-26",
+        "case": "r1_2025-26_20261070_SolioAdaptedH6_fixedWork",
+        "version": "calibrated",
+        "panels": 38,
+        "mean_expected_misses": 1.5634982121799674,
+        "mean_observed_misses": 1.5526315789473684,
+        "mean_count_residual": -0.01086663323259896,
+        "mean_squared_scaled_residual": 1.2475601227754303,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 218,
+            "mean_residual_product": 0.004230252167791266
+          },
+          "different_club": {
+            "pairs": 3772,
+            "mean_residual_product": -0.0002226636006995776
+          }
+        }
+      },
+      {
+        "season": "2025-26",
+        "case": "r1_2025-26_20261070_SolioAdaptedH6_fixedWork",
+        "version": "original",
+        "panels": 38,
+        "mean_expected_misses": 1.9629371060477625,
+        "mean_observed_misses": 1.5526315789473684,
+        "mean_count_residual": -0.41030552710039386,
+        "mean_squared_scaled_residual": 1.0500151696019915,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 218,
+            "mean_residual_product": 0.004121226477908749
+          },
+          "different_club": {
+            "pairs": 3772,
+            "mean_residual_product": 0.0009055382326735138
+          }
+        }
+      },
+      {
+        "season": "2025-26",
+        "case": "r1_2025-26_20261070_decisionH6_fixedWork",
+        "version": "calibrated",
+        "panels": 38,
+        "mean_expected_misses": 1.4045354075964809,
+        "mean_observed_misses": 1.5526315789473684,
+        "mean_count_residual": 0.1480961713508874,
+        "mean_squared_scaled_residual": 1.5273578155574699,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 242,
+            "mean_residual_product": -0.005344885502213093
+          },
+          "different_club": {
+            "pairs": 3748,
+            "mean_residual_product": -0.00016475018387811962
+          }
+        }
+      },
+      {
+        "season": "2025-26",
+        "case": "r1_2025-26_20261070_decisionH6_fixedWork",
+        "version": "original",
+        "panels": 38,
+        "mean_expected_misses": 1.8134225852586443,
+        "mean_observed_misses": 1.5526315789473684,
+        "mean_count_residual": -0.260791006311276,
+        "mean_squared_scaled_residual": 1.107274653372005,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 242,
+            "mean_residual_product": -0.006425840934787887
+          },
+          "different_club": {
+            "pairs": 3748,
+            "mean_residual_product": 0.00047696574420064304
+          }
+        }
+      },
+      {
+        "season": "2025-26",
+        "case": "r1_2025-26_20261070_standingH6_fixedWork",
+        "version": "calibrated",
+        "panels": 38,
+        "mean_expected_misses": 1.4465743654675987,
+        "mean_observed_misses": 1.394736842105263,
+        "mean_count_residual": -0.05183752336233543,
+        "mean_squared_scaled_residual": 1.0130959910461599,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 227,
+            "mean_residual_product": -0.0028473004816635685
+          },
+          "different_club": {
+            "pairs": 3763,
+            "mean_residual_product": -0.00046764772419398344
+          }
+        }
+      },
+      {
+        "season": "2025-26",
+        "case": "r1_2025-26_20261070_standingH6_fixedWork",
+        "version": "original",
+        "panels": 38,
+        "mean_expected_misses": 1.8272649285796192,
+        "mean_observed_misses": 1.394736842105263,
+        "mean_count_residual": -0.43252808647435614,
+        "mean_squared_scaled_residual": 0.9096454662283616,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 227,
+            "mean_residual_product": -0.0019891471891116
+          },
+          "different_club": {
+            "pairs": 3763,
+            "mean_residual_product": 0.0006109553269689852
+          }
+        }
+      },
+      {
+        "season": "2025-26",
+        "case": "r1_2025-26_20261071_SolioAdaptedH6_fixedWork",
+        "version": "calibrated",
+        "panels": 38,
+        "mean_expected_misses": 1.408672285373298,
+        "mean_observed_misses": 1.4210526315789473,
+        "mean_count_residual": 0.012380346205649276,
+        "mean_squared_scaled_residual": 1.560154214973349,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 221,
+            "mean_residual_product": 0.006578837961569325
+          },
+          "different_club": {
+            "pairs": 3769,
+            "mean_residual_product": 0.0009167390505980355
+          }
+        }
+      },
+      {
+        "season": "2025-26",
+        "case": "r1_2025-26_20261071_SolioAdaptedH6_fixedWork",
+        "version": "original",
+        "panels": 38,
+        "mean_expected_misses": 1.805838386081592,
+        "mean_observed_misses": 1.4210526315789473,
+        "mean_count_residual": -0.38478575450264474,
+        "mean_squared_scaled_residual": 1.2703910637618947,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 221,
+            "mean_residual_product": 0.0070045099498359815
+          },
+          "different_club": {
+            "pairs": 3769,
+            "mean_residual_product": 0.002134040471800432
+          }
+        }
+      },
+      {
+        "season": "2025-26",
+        "case": "r1_2025-26_20261071_decisionH6_fixedWork",
+        "version": "calibrated",
+        "panels": 38,
+        "mean_expected_misses": 1.3994878177067767,
+        "mean_observed_misses": 1.4736842105263157,
+        "mean_count_residual": 0.07419639281953923,
+        "mean_squared_scaled_residual": 1.3510504848642626,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 248,
+            "mean_residual_product": 0.006153315015833624
+          },
+          "different_club": {
+            "pairs": 3742,
+            "mean_residual_product": -0.00031453644601590403
+          }
+        }
+      },
+      {
+        "season": "2025-26",
+        "case": "r1_2025-26_20261071_decisionH6_fixedWork",
+        "version": "original",
+        "panels": 38,
+        "mean_expected_misses": 1.789904662394248,
+        "mean_observed_misses": 1.4736842105263157,
+        "mean_count_residual": -0.31622045186793246,
+        "mean_squared_scaled_residual": 1.0489275375089928,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 248,
+            "mean_residual_product": 0.005457569462799194
+          },
+          "different_club": {
+            "pairs": 3742,
+            "mean_residual_product": 0.0008141787204946842
+          }
+        }
+      },
+      {
+        "season": "2025-26",
+        "case": "r1_2025-26_20261071_standingH6_fixedWork",
+        "version": "calibrated",
+        "panels": 38,
+        "mean_expected_misses": 1.4717925813187387,
+        "mean_observed_misses": 1.5263157894736843,
+        "mean_count_residual": 0.05452320815494551,
+        "mean_squared_scaled_residual": 1.2651402663790192,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 203,
+            "mean_residual_product": 0.004281329278706763
+          },
+          "different_club": {
+            "pairs": 3787,
+            "mean_residual_product": -0.0001549157614400126
+          }
+        }
+      },
+      {
+        "season": "2025-26",
+        "case": "r1_2025-26_20261071_standingH6_fixedWork",
+        "version": "original",
+        "panels": 38,
+        "mean_expected_misses": 1.8672578573348018,
+        "mean_observed_misses": 1.5263157894736843,
+        "mean_count_residual": -0.3409420678611175,
+        "mean_squared_scaled_residual": 1.038647822670749,
+        "zero_variance_panels": 0,
+        "pair_groups": {
+          "same_club": {
+            "pairs": 203,
+            "mean_residual_product": 0.003877586854971553
+          },
+          "different_club": {
+            "pairs": 3787,
+            "mean_residual_product": 0.0008131608912148094
+          }
+        }
+      }
+    ],
+    "scope": "Descriptive original and calibrated marginal residuals on the same frozen squads. Reused/overlapping panels and marginal calibration confound dependence; no causal recovery, independent-sample confidence interval or joint-scenario correction is inferred.",
+    "verifier_sha256": "6473230a045f36b9479af29b5b1be483a10f31d3686203d45f8720a93b562226"
+  }
 }

@@ -113,3 +113,9 @@ strictly separated. Explicit zero/news flags and calendar blanks are preserved.
 `tools/calibrate_appearance.py` requires a new private output folder and input
 hashes; it does not read target outcomes or alter the registry. This is research,
 not a calibrated current-season release or a demonstrated points gain.
+
+The [reproduction guide](coherence_reproduction.md) describes source-only manifests,
+commands, counter-label clocks and independent replay audits. The
+[July2023 launch guide](https://www.premierleague.com/en/news/3568527) also
+corroborates the historical chip windows and transfer resets before the opening
+deadline, subject to the same publisher/revision limitations.

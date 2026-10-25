@@ -45,6 +45,11 @@ effects are **+1, −2, +16, +2** (mean +4.25). These are conditional frozen-ros
 overlays, **not adaptive season-policy gains or causal recoverable points**.
 All 304 scores and 1,704 financial periods reconcile independently.
 
+The joint diagnostic also retains original/calibrated count residuals and
+same-club/different-club residual products over all 456 frozen current-squad
+panels. Marginal calibration and dependence remain confounded; this is not an
+identified correlation correction or an independent-sample significance test.
+
 A separate scalar audit reconciles 208 metric/bin values and every probability
 mapping; both fits satisfy the penalised logistic stationarity check. The
 component job took about 67 seconds with maximum sampled process-group memory
