@@ -69,3 +69,32 @@ explicit private input/output paths and hashes; no runtime/team discovery or
 source download is implicit. The new control is research-only and changes no
 normal CLI/default policy. Frozen replay equivalence is a conditional control,
 not by itself a fresh adaptive solver benchmark or future-points estimate.
+
+## Older historical admission
+
+The optional `tools/prepare_season_2023.py` audits all 38 origin sources and final
+listed-player outcomes before fitting anything. Its default is admission only;
+`--fit` additionally creates a private fixed-recipe prior-only reference from
+2020/21–2022/23. Explicit hashes and local-cache trust are required. It never
+installs an operational model. The 2023/24 year has previous validation exposure
+and is not an untouched holdout.
+
+The separately tested 2023/24 rule profile uses a two-transfer bank, resets next
+entitlement to one after Wildcard/Free Hit, and has Wildcard windows GW2–20 and
+GW21–38. Annual Free Hit/Bench Boost/Triple Captain have no later AFCON topup.
+See the [official transfer-rule change](https://www.premierleague.com/en/news/4058895),
+[historical Free Hit explanation](https://www.premierleague.com/en/news/1153106)
+and [2023/24 Wildcard deadline](https://www.premierleague.com/en/news/3841904).
+The adapted Solio core compiles a separate, structure-checked historical FT AST;
+newer years retain the previous default AST. This is an explicit historical
+adaptation, not an original-manager reproduction.
+
+Git-versioned fixture metadata is selected strictly before each market snapshot;
+raw result/stat columns are kept outside forecasting. The one current-GW
+membership difference is the subsequently abandoned Bournemouth–Luton fixture:
+it remains scheduled in the GW17 forecast, while the evaluator applies the
+[official void/autosub ruling](https://www.premierleague.com/en/news/3830180).
+No later cancellation or replay date is backfilled into the earlier forecast.
+Archive/Git dates remain publisher claims and early status-based eligibility is
+an explicit proxy. Admission and synthetic solver checks do not establish
+season-points performance.

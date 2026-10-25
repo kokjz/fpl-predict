@@ -43,7 +43,7 @@ def verified_sources(root,expected):
     return result
 
 
-def patched_tree(source):
+def patched_tree(source,*,legacy_transfer_rules=False):
     """Replace two hash-admitted expressions, not a downloaded install script."""
     class Rules(ast.NodeTransformer):
         resets=0;budgets=0
@@ -60,6 +60,33 @@ def patched_tree(source):
             return self.generic_visit(node)
     rules=Rules();tree=rules.visit(ast.parse(source))
     if (rules.resets,rules.budgets)!=(1,1):raise ValueError('Pinned source adaptation structure differs')
+    if legacy_transfer_rules:
+        # Historical profile only: retain the default pinned AST for newer years.
+        class OldTransfers(ast.NodeTransformer):
+            states=0;bounds=0;clamps=0;resets=0
+            def visit_Assign(self,node):
+                names={t.id for t in node.targets if isinstance(t,ast.Name)}
+                if 'ft_states' in names:
+                    self.states+=1;node.value=ast.parse('[0,1,2]',mode='eval').body
+                if 'fts' in names:
+                    if not isinstance(node.value,ast.Call):raise ValueError('Historical FT declaration differs')
+                    for k in node.value.keywords:
+                        if k.arg=='ub' and isinstance(k.value,ast.Constant) and k.value.value==5:
+                            self.bounds+=1;k.value=ast.Constant(2)
+                if 'raw_gw_ft' in names:
+                    self.resets+=1
+                    node.value=ast.parse("{w: 1 if w in data.get('chip_transfer_weeks', []) else fts[w]-transfer_count[w]+1 for w in gws}",mode='eval').body
+                return self.generic_visit(node)
+            def visit_Expr(self,node):
+                names={n.id for n in ast.walk(node) if isinstance(n,ast.Name)}
+                if isinstance(node.value,ast.Call) and isinstance(node.value.func,ast.Attribute) and node.value.func.attr=='addConstrs' and 'ft_above_ub' in names:
+                    hits=[n for n in ast.walk(node) if isinstance(n,ast.Constant) and type(n.value) is int and n.value in (5,6)]
+                    if hits:
+                        self.clamps+=1
+                        for n in hits:n.value={5:2,6:3}[n.value]
+                return self.generic_visit(node)
+        old=OldTransfers();tree=old.visit(tree)
+        if (old.states,old.bounds,old.clamps,old.resets)!=(1,1,4,1):raise ValueError('Pinned historical FT structure differs')
     ast.fix_missing_locations(tree)
     return tree,hashlib.sha256(ast.dump(tree,include_attributes=False).encode()).hexdigest()
 
@@ -103,6 +130,7 @@ def validate_request(q,recipe):
         xp[week,i]=value
     if set(xp)!={(week,i) for week in range(g,end+1) for i in players}:raise ValueError('Incomplete forecast cells')
     rules=read_json((RESOURCES/'season_rules.json').read_bytes())['seasons'][m['season']]
+    if s['free_transfers']>rules['ft_cap']:raise ValueError('Native transfer bank exceeds season cap')
     if s['previous_chip'] not in (None,'wildcard','freehit','bboost','3xc'):raise ValueError('Unknown previous chip')
     used=set()
     for name,start in s['used_chips']:
@@ -148,6 +176,7 @@ class Runtime:
         load('paths','paths.py');utils=load('utils','utils.py');utils.cached_request=deny
         dev=types.ModuleType('dev');dev.__path__=[];sys.modules['dev']=dev
         load('dev.data_parser','dev/data_parser.py')
+        self.sources=sources;self.legacy_solver=None
         self.solver=types.ModuleType('native_rule_adapted');self.solver.__file__=str(Path(root)/'dev/solver.py')
         tree,self.patch_hash=patched_tree(sources['dev/solver.py']);self.solver.native_fh_budget=self.fh_budget
         exec(compile(tree,self.solver.__file__,'exec'),self.solver.__dict__);self.solver.cached_request=deny
@@ -214,9 +243,18 @@ class Runtime:
             options=dict(horizon=end-g+1,objective='regular',bench_weights={i:.1 for i in range(4)},vcap_weight=0.,ft_value=0.,itb_value=0.,secs=q['seconds'],gap=0.,verbose=False,no_opposing_play=False,chip_limits={})
             for name,abbreviation in {'wildcard':'wc','freehit':'fh','bboost':'bb','3xc':'tc'}.items():options['use_'+abbreviation]=[w for w,c in chips.items() if c==name]
             if q['opening_ids'] is not None:options['locked_next_gw']=q['opening_ids']
-            answer=self.solver.solve_multi_period_fpl(data,options)[0];info=models[-1].getInfo()
+            solver=self.solver;patch_hash=self.patch_hash
+            if rules.get('chip_transfer_policy')=='reset_one':
+                data['chip_transfer_weeks']=[w for w,c in chips.items() if c in ('wildcard','freehit')]
+                if self.legacy_solver is None:
+                    tree,self.legacy_patch_hash=patched_tree(self.sources['dev/solver.py'],legacy_transfer_rules=True)
+                    module=types.ModuleType('native_2023_rule_adapted');module.__file__=self.solver.__file__;module.native_fh_budget=self.fh_budget
+                    exec(compile(tree,module.__file__,'exec'),module.__dict__);module.cached_request=self.solver.cached_request
+                    self.legacy_solver=module
+                solver=self.legacy_solver;patch_hash=self.legacy_patch_hash
+            answer=solver.solve_multi_period_fpl(data,options)[0];info=models[-1].getInfo()
             finite=lambda x:float(x) if math.isfinite(x) else None
-            result=dict(status='completed',seconds=time.monotonic()-tick,solver_time_limit=models[-1].actual_time_limit,objective=answer['score'],native_status=str(models[-1].getModelStatus()),dual_bound=finite(info.mip_dual_bound),mip_gap=finite(info.mip_gap),statistics=answer['statistics'],picks=read_json(answer['picks'].to_json(orient='records')))
+            result=dict(status='completed',patched_ast_sha256=patch_hash,seconds=time.monotonic()-tick,solver_time_limit=models[-1].actual_time_limit,objective=answer['score'],native_status=str(models[-1].getModelStatus()),dual_bound=finite(info.mip_dual_bound),mip_gap=finite(info.mip_gap),statistics=answer['statistics'],picks=read_json(answer['picks'].to_json(orient='records')))
             if work:result.update(work_limit=work,mip_node_count=int(info.mip_node_count))
             return result
         finally:

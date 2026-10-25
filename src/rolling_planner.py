@@ -143,6 +143,7 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=Non
     baseline,baseline_status=make_baseline(state,market,horizon,cfg,opening_ids)
     fallback=_fallback(state,market,horizon,baseline,chips);fallback_value,_=_objective(state,market,horizon,fallback,cfg)
     players=candidate_players(state,market,horizon,cfg,baseline);n=len(players);H=len(horizon.gameweeks)
+    ft_cap=rules['ft_cap'];cap_m=ft_cap+1
     c=[];lo=[];hi=[];groups=[]
     def var(cost=0.,upper=1,lower=0):
         i=len(c);c.append(cost);lo.append(lower);hi.append(upper);return i
@@ -160,7 +161,7 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=Non
                 upper=int(p['id'] in old) if name=='old' else int(p['can_buy']) if name=='buy' else 1
                 cols[name].append(var(float(cost),upper))
         funds=state.bank+sum(sell_price(price,next(p['price_tenths'] for p in players if p['id']==i)) for i,price in old.items())
-        cols.update(bank=var(upper=funds),ft=var(upper=5),used=var(upper=5),paid=var(4.,15),after=var(-cfg.terminal_ft_value if t==H-1 and gw<38 else 0.,5,0 if chips.get(gw) in ('wildcard','freehit') else 1),excess=var(),cap=var(),repaired=var())
+        cols.update(bank=var(upper=funds),ft=var(upper=ft_cap),used=var(upper=ft_cap),paid=var(4.,15),after=var(-cfg.terminal_ft_value if t==H-1 and gw<38 else 0.,ft_cap,0 if chips.get(gw) in ('wildcard','freehit') else 1),excess=var(),cap=var(),repaired=var())
         groups.append(cols)
     rix=[];cix=[];vals=[];lower=[];upper=[]
     def add(row,l=-np.inf,u=np.inf):
@@ -221,7 +222,8 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=Non
         value=topup if topup is not None else (available_transfers(state,rules) if not t else 0)
         add(row,value,value)
         if chips.get(gw) in ('wildcard','freehit'):
-            add({a['after']:1,a['ft']:-1},0,0)
+            if rules.get('chip_transfer_policy')=='reset_one':add({a['after']:1},1,1)
+            else:add({a['after']:1,a['ft']:-1},0,0)
             add({a['paid']:1},0,0);add({a['used']:1},0,0)
             continue
         add({a['used']:1,a['ft']:-1},u=0)
@@ -230,8 +232,8 @@ def plan(state,market,horizon,settings=None,*,chip_schedule=None,opening_ids=Non
         add({a['used']:1,a['excess']:15,**{i:-1 for i in a['buy']}},l=0)
         add({a['paid']:1,a['used']:1,**{i:-1 for i in a['buy']}},0,0)
         add({a['after']:1,a['ft']:-1,a['used']:1},u=1)
-        add({a['after']:1,a['ft']:-1,a['used']:1,a['cap']:6},l=1)
-        add({a['after']:1,a['cap']:-6},l=-1)
+        add({a['after']:1,a['ft']:-1,a['used']:1,a['cap']:cap_m},l=1)
+        add({a['after']:1,a['cap']:-cap_m},l=-1)
     if cfg.use_baseline_cut:
         # A validated feasible baseline is in the preserved candidate pool.
         # Keep all solutions at least as good, without claiming this supplies an

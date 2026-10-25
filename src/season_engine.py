@@ -47,7 +47,7 @@ class State:
         if not isinstance(self.used_chips,tuple) or len(set(self.used_chips))!=len(self.used_chips):raise ValueError('Invalid chip history')
         if self.previous_chip not in (*CHIPS,None):raise ValueError('Invalid previous chip')
         for name,start in self.used_chips:
-            if name not in CHIPS or start not in (1,2,20):raise ValueError('Invalid chip token')
+            if name not in CHIPS or start not in (1,2,20,21):raise ValueError('Invalid chip token')
 
 
 @dataclass(frozen=True)
@@ -115,6 +115,8 @@ def prepare(state,market,action,rules=None):
     Market.create(market.season,market.gameweek,market.deadline,market.as_of,[dict(p) for p in market.players])
     if rules['season']!=state.season or market.season!=state.season or market.gameweek!=state.gameweek or state.gameweek>38:raise ValueError('Season/GW mismatch')
     if state.gameweek==1 and (state.holdings or state.bank!=rules['initial_budget'] or state.free_transfers or state.used_chips or state.total_points or state.previous_chip):raise ValueError('GW1 must start with audited initial capital and no prior actions')
+    if state.free_transfers>rules['ft_cap']:raise ValueError('Transfer bank exceeds season cap')
+    if any(not any(w['name']==name and w['start']==start for w in rules['chip_windows']) for name,start in state.used_chips):raise ValueError('Chip history differs from season profile')
     if not isinstance(action,Action):raise ValueError('Policy must return an Action')
     for seq in [action.buys,action.sells,action.starters,action.bench]:
         if not isinstance(seq,tuple) or len(set(seq))!=len(seq):raise ValueError('Mutable/duplicate action IDs')
@@ -145,7 +147,7 @@ def prepare(state,market,action,rules=None):
     if old and action.chip not in ('wildcard','freehit') and n>rules['transfer_cap']:raise ValueError('Transfer cap exceeded')
     hits=0 if not old or action.chip in ('wildcard','freehit') else 4*max(0,n-free)
     if not old:next_ft=1
-    elif action.chip in ('wildcard','freehit'):next_ft=free
+    elif action.chip in ('wildcard','freehit'):next_ft=1 if rules.get('chip_transfer_policy')=='reset_one' else free
     else:next_ft=min(rules['ft_cap'],max(0,free-n)+1)
     integer(action.captain,1);integer(action.vice,1)
     selection=action.selection();by={p['id']:p for p in squad}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-10-16 Asia/Singapore",
+  "checked_at": "2026-10-26 Asia/Singapore",
   "sources": [
     "https://fantasy.premierleague.com/api/bootstrap-static/",
     "https://www.premierleague.com/en/news/4661029",
@@ -8,7 +8,9 @@
     "https://www.premierleague.com/en/news/4679879/whats-happening-with-fpl-chips-in-202627",
     "https://www.premierleague.com/en/news/4362102/whats-new-in-202526-fantasy-extra-transfers-for-afcon",
     "https://www.premierleague.com/en/news/4058895",
-    "https://www.premierleague.com/ar/news/4192707"
+    "https://www.premierleague.com/ar/news/4192707",
+    "https://www.premierleague.com/en/news/3841904",
+    "https://www.premierleague.com/en/news/1153106"
   ],
   "seasons": {
     "2025-26": {
@@ -153,6 +155,43 @@
         "manager"
       ],
       "applicability": "Restricted common no-Assistant-Manager research policy space; all footballer scoring uses actual 2024/25 totals without defensive-contribution additions. Not a full 2024/25 manager/chip-capability implementation."
+    },
+    "2023-24": {
+      "season": "2023-24",
+      "gameweeks": 38,
+      "initial_budget": 1000,
+      "ft_cap": 2,
+      "chip_transfer_policy": "reset_one",
+      "transfer_cap": 20,
+      "chip_windows": [
+        {
+          "name": "wildcard",
+          "start": 2,
+          "stop": 20
+        },
+        {
+          "name": "wildcard",
+          "start": 21,
+          "stop": 38
+        },
+        {
+          "name": "freehit",
+          "start": 2,
+          "stop": 38
+        },
+        {
+          "name": "bboost",
+          "start": 1,
+          "stop": 38
+        },
+        {
+          "name": "3xc",
+          "start": 1,
+          "stop": 38
+        }
+      ],
+      "ft_topups": {},
+      "applicability": "Historical deadline-only footballer replay; two saved transfers maximum; Wildcard/Free Hit reset next entitlement to one. Actual final 2023/24 player-GW points, ordinary annual chips, no later scoring additions or AFCON topup. Source clocks remain archive claims."
     }
   }
 }
