@@ -1,0 +1,531 @@
+{
+  "complete": true,
+  "groups": [
+    {
+      "season": "2024-25",
+      "scope": "all_market_current",
+      "baseline": {
+        "n": 27158,
+        "brier": 0.08660116618371845,
+        "p_mean": 0.3831674439395979,
+        "appearance_rate": 0.42057588924073935,
+        "point_mae": 0.9351050602316984,
+        "point_rmse": 1.9079898886319322,
+        "conditional_n": 11396,
+        "played_zero_support": 26,
+        "conditional_bias": 0.051066544519349305,
+        "conditional_rmse": 2.778420191734005,
+        "maximum_implied_conditional": 11.25693490124916,
+        "reliability": [
+          {
+            "lower": 0,
+            "upper": 0.2,
+            "n": 13277,
+            "prediction": 0.027459697875337048,
+            "observed": 0.04037056563982828
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.5,
+            "n": 3121,
+            "prediction": 0.36202318696728275,
+            "observed": 0.4668375520666453
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.8,
+            "n": 3554,
+            "prediction": 0.6789470172717744,
+            "observed": 0.7566122678671919
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.95,
+            "n": 6520,
+            "prediction": 0.8954530738975739,
+            "observed": 0.9325153374233128
+          },
+          {
+            "lower": 0.95,
+            "upper": 1,
+            "n": 686,
+            "prediction": 0.9624969768218528,
+            "observed": 0.9620991253644315
+          }
+        ]
+      },
+      "candidate": {
+        "n": 27158,
+        "brier": 0.08401678138643269,
+        "p_mean": 0.41796506001712413,
+        "appearance_rate": 0.42057588924073935,
+        "point_mae": 0.9351050602316984,
+        "point_rmse": 1.9079898886319322,
+        "conditional_n": 11396,
+        "played_zero_support": 26,
+        "conditional_bias": -0.14601210771103224,
+        "conditional_rmse": 2.7786049987948136,
+        "maximum_implied_conditional": 11.249487632918123,
+        "reliability": [
+          {
+            "lower": 0,
+            "upper": 0.2,
+            "n": 12823,
+            "prediction": 0.02879876460427096,
+            "observed": 0.033767449114871714
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.5,
+            "n": 2392,
+            "prediction": 0.3572207040011021,
+            "observed": 0.3612040133779264
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.8,
+            "n": 3326,
+            "prediction": 0.6592361434113053,
+            "observed": 0.6563439567047504
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.95,
+            "n": 5399,
+            "prediction": 0.895143443424465,
+            "observed": 0.8997962585664012
+          },
+          {
+            "lower": 0.95,
+            "upper": 1,
+            "n": 3218,
+            "prediction": 0.9639023472402635,
+            "observed": 0.9583592293349906
+          }
+        ]
+      },
+      "brier_relative_reduction": 0.029842378701958383
+    },
+    {
+      "season": "2024-25",
+      "scope": "frozen_proposed_union_current",
+      "baseline": {
+        "n": 845,
+        "brier": 0.04749126846486432,
+        "p_mean": 0.8687162120496638,
+        "appearance_rate": 0.9183431952662722,
+        "point_mae": 2.7777696189663947,
+        "point_rmse": 3.6630150531987864,
+        "conditional_n": 776,
+        "played_zero_support": 0,
+        "conditional_bias": -0.010213319643275933,
+        "conditional_rmse": 3.70911851226584,
+        "maximum_implied_conditional": 11.25693490124916,
+        "reliability": [
+          {
+            "lower": 0,
+            "upper": 0.2,
+            "n": 30,
+            "prediction": 0.0,
+            "observed": 0.0
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.5,
+            "n": 45,
+            "prediction": 0.4254445272398919,
+            "observed": 0.7333333333333333
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.8,
+            "n": 20,
+            "prediction": 0.6910395093987661,
+            "observed": 0.85
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.95,
+            "n": 504,
+            "prediction": 0.9207337445798347,
+            "observed": 0.9583333333333334
+          },
+          {
+            "lower": 0.95,
+            "upper": 1,
+            "n": 246,
+            "prediction": 0.9636162520323523,
+            "observed": 0.9878048780487805
+          }
+        ]
+      },
+      "candidate": {
+        "n": 845,
+        "brier": 0.042992066077928555,
+        "p_mean": 0.8983065991193568,
+        "appearance_rate": 0.9183431952662722,
+        "point_mae": 2.7777696189663947,
+        "point_rmse": 3.6630150531987864,
+        "conditional_n": 776,
+        "played_zero_support": 0,
+        "conditional_bias": -0.14727961010846055,
+        "conditional_rmse": 3.7122265725383525,
+        "maximum_implied_conditional": 11.249487632918123,
+        "reliability": [
+          {
+            "lower": 0,
+            "upper": 0.2,
+            "n": 30,
+            "prediction": 0.0,
+            "observed": 0.0
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.5,
+            "n": 9,
+            "prediction": 0.3951799768950554,
+            "observed": 0.2222222222222222
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.8,
+            "n": 42,
+            "prediction": 0.5656104528412226,
+            "observed": 0.8809523809523809
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.95,
+            "n": 172,
+            "prediction": 0.9197795968821427,
+            "observed": 0.9244186046511628
+          },
+          {
+            "lower": 0.95,
+            "upper": 1,
+            "n": 592,
+            "prediction": 0.9688424438863871,
+            "observed": 0.9763513513513513
+          }
+        ]
+      },
+      "brier_relative_reduction": 0.09473746506190772
+    },
+    {
+      "season": "2025-26",
+      "scope": "all_market_current",
+      "baseline": {
+        "n": 29645,
+        "brier": 0.07655052201701863,
+        "p_mean": 0.3552692435378349,
+        "appearance_rate": 0.3829313543599258,
+        "point_mae": 0.9291501067203735,
+        "point_rmse": 1.9030515480154475,
+        "conditional_n": 11329,
+        "played_zero_support": 23,
+        "conditional_bias": 0.04326186294497108,
+        "conditional_rmse": 2.8879158875858626,
+        "maximum_implied_conditional": 11.174283968325446,
+        "reliability": [
+          {
+            "lower": 0,
+            "upper": 0.2,
+            "n": 15786,
+            "prediction": 0.023859024339399015,
+            "observed": 0.030216647662485746
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.5,
+            "n": 3093,
+            "prediction": 0.36603035623217933,
+            "observed": 0.4688005172971225
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.8,
+            "n": 3204,
+            "prediction": 0.6847373838972121,
+            "observed": 0.7412609238451935
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.95,
+            "n": 6735,
+            "prediction": 0.8959196450405857,
+            "observed": 0.9279881217520416
+          },
+          {
+            "lower": 0.95,
+            "upper": 1,
+            "n": 827,
+            "prediction": 0.9616310607934953,
+            "observed": 0.9673518742442564
+          }
+        ]
+      },
+      "candidate": {
+        "n": 29645,
+        "brier": 0.07486286367752412,
+        "p_mean": 0.3867024567818381,
+        "appearance_rate": 0.3829313543599258,
+        "point_mae": 0.9291501067203735,
+        "point_rmse": 1.9030515480154475,
+        "conditional_n": 11329,
+        "played_zero_support": 23,
+        "conditional_bias": -0.16944988022137594,
+        "conditional_rmse": 2.8833805517524964,
+        "maximum_implied_conditional": 11.161546726374471,
+        "reliability": [
+          {
+            "lower": 0,
+            "upper": 0.2,
+            "n": 15375,
+            "prediction": 0.028182236666105767,
+            "observed": 0.024390243902439025
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.5,
+            "n": 2271,
+            "prediction": 0.36556023392056014,
+            "observed": 0.37824746807573756
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.8,
+            "n": 3129,
+            "prediction": 0.6542847310037965,
+            "observed": 0.6356663470757431
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.95,
+            "n": 5858,
+            "prediction": 0.8966975167348673,
+            "observed": 0.8929668828951861
+          },
+          {
+            "lower": 0.95,
+            "upper": 1,
+            "n": 3012,
+            "prediction": 0.9628798721709471,
+            "observed": 0.9621513944223108
+          }
+        ]
+      },
+      "brier_relative_reduction": 0.02204633351970231
+    },
+    {
+      "season": "2025-26",
+      "scope": "frozen_proposed_union_current",
+      "baseline": {
+        "n": 981,
+        "brier": 0.06524305279686829,
+        "p_mean": 0.8596464370407748,
+        "appearance_rate": 0.8878695208970439,
+        "point_mae": 2.7469562394043927,
+        "point_rmse": 3.575065294287217,
+        "conditional_n": 870,
+        "played_zero_support": 1,
+        "conditional_bias": 0.08022000400491168,
+        "conditional_rmse": 3.6182104827729464,
+        "maximum_implied_conditional": 11.174283968325446,
+        "reliability": [
+          {
+            "lower": 0,
+            "upper": 0.2,
+            "n": 37,
+            "prediction": 0.011144508559327639,
+            "observed": 0.02702702702702703
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.5,
+            "n": 54,
+            "prediction": 0.4211195949147927,
+            "observed": 0.5555555555555556
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.8,
+            "n": 34,
+            "prediction": 0.6366409267725215,
+            "observed": 0.8529411764705882
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.95,
+            "n": 597,
+            "prediction": 0.9198429447528353,
+            "observed": 0.9413735343383585
+          },
+          {
+            "lower": 0.95,
+            "upper": 1,
+            "n": 259,
+            "prediction": 0.9628120473636974,
+            "observed": 0.9613899613899614
+          }
+        ]
+      },
+      "candidate": {
+        "n": 981,
+        "brier": 0.0625121385576468,
+        "p_mean": 0.8876387066448832,
+        "appearance_rate": 0.8878695208970439,
+        "point_mae": 2.7469562394043927,
+        "point_rmse": 3.575065294287217,
+        "conditional_n": 870,
+        "played_zero_support": 1,
+        "conditional_bias": -0.055097244142756,
+        "conditional_rmse": 3.618872205854424,
+        "maximum_implied_conditional": 11.161546726374471,
+        "reliability": [
+          {
+            "lower": 0,
+            "upper": 0.2,
+            "n": 37,
+            "prediction": 0.015679063882041988,
+            "observed": 0.02702702702702703
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.5,
+            "n": 15,
+            "prediction": 0.4038713148327183,
+            "observed": 0.26666666666666666
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.8,
+            "n": 61,
+            "prediction": 0.5973239382347056,
+            "observed": 0.7377049180327869
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.95,
+            "n": 254,
+            "prediction": 0.9224719402682593,
+            "observed": 0.9330708661417323
+          },
+          {
+            "lower": 0.95,
+            "upper": 1,
+            "n": 614,
+            "prediction": 0.9664344349707643,
+            "observed": 0.9511400651465798
+          }
+        ]
+      },
+      "brier_relative_reduction": 0.041857548384869214
+    }
+  ],
+  "quality": {
+    "all_market_current": {
+      "mean_relative_reduction": 0.025944356110830347,
+      "worst_relative_reduction": 0.02204633351970231
+    },
+    "frozen_proposed_union_current": {
+      "mean_relative_reduction": 0.06829750672338847,
+      "worst_relative_reduction": 0.041857548384869214
+    }
+  },
+  "declared_component_gate_pass": true,
+  "probability_cells_identity_checked": 316570,
+  "unconditional_point_means_changed": false,
+  "training_proxy_disagreement": [
+    {
+      "season": "2023-24",
+      "n": 18458,
+      "disagreements": 1,
+      "scope": "Post-fit diagnostic only; no rows/parameters changed"
+    },
+    {
+      "season": "2024-25",
+      "n": 18653,
+      "disagreements": 1,
+      "scope": "Post-fit diagnostic only; no rows/parameters changed"
+    }
+  ],
+  "overlay": [
+    {
+      "name": "r1_2024-25_20261070_SolioAdaptedH6_fixedWork",
+      "base_uncalibrated": 2420.0,
+      "calibrated": 2421.0,
+      "delta": 1.0
+    },
+    {
+      "name": "r1_2024-25_20261070_standingH6_fixedWork",
+      "base_uncalibrated": 2429.0,
+      "calibrated": 2433.0,
+      "delta": 4.0
+    },
+    {
+      "name": "r1_2024-25_20261071_SolioAdaptedH6_fixedWork",
+      "base_uncalibrated": 2445.0,
+      "calibrated": 2443.0,
+      "delta": -2.0
+    },
+    {
+      "name": "r1_2024-25_20261071_standingH6_fixedWork",
+      "base_uncalibrated": 2445.0,
+      "calibrated": 2443.0,
+      "delta": -2.0
+    },
+    {
+      "name": "r1_2025-26_20261070_SolioAdaptedH6_fixedWork",
+      "base_uncalibrated": 2214.0,
+      "calibrated": 2230.0,
+      "delta": 16.0
+    },
+    {
+      "name": "r1_2025-26_20261070_standingH6_fixedWork",
+      "base_uncalibrated": 2258.0,
+      "calibrated": 2256.0,
+      "delta": -2.0
+    },
+    {
+      "name": "r1_2025-26_20261071_SolioAdaptedH6_fixedWork",
+      "base_uncalibrated": 2226.0,
+      "calibrated": 2228.0,
+      "delta": 2.0
+    },
+    {
+      "name": "r1_2025-26_20261071_standingH6_fixedWork",
+      "base_uncalibrated": 2204.0,
+      "calibrated": 2214.0,
+      "delta": 10.0
+    }
+  ],
+  "selection_finance_periods": 1704,
+  "independent_scores": 304,
+  "frozen_selections_sha256": "a747d9e5b993c6200fe81da7c1717dcfff3cf4d72edcb543ffdba51b8ff9718b",
+  "scope": "Frozen-proposal conditional overlay; no transfer/chip or adaptive policy gain claim",
+  "model_promotion": false,
+  "numerical_source": "9e26851a92371690848e3811c6e120026dd33011",
+  "independent_audit": {
+    "complete": true,
+    "independent_scalar_metric_checks": 208,
+    "probability_formula_cells": 316570,
+    "chronological_fit_rows": 37111,
+    "fit_stationarity": [
+      {
+        "target": "2024-25",
+        "normalised_max_penalised_gradient": 1.123045130446237e-05,
+        "rows": 18458
+      },
+      {
+        "target": "2025-26",
+        "normalised_max_penalised_gradient": 1.1415439349834237e-05,
+        "rows": 18653
+      }
+    ],
+    "selection_freeze_hash_verified": true,
+    "protected_files_unchanged": true,
+    "scope": "Independent stdlib scalar probability/error/role arithmetic and logistic stationarity; training counters remain archive claims and are covered by source/cohort audits, no new fit",
+    "verifier_sha256": "9224c9885f9527e2a10b6c9c3919786a2fca0cf767e5fafcdfc504da60d62e8a"
+  },
+  "season_matrix_status": "Running separately; component results are not full-season results"
+}
