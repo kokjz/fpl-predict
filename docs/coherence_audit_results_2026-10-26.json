@@ -19456,5 +19456,37 @@
   },
   "package_state": "Diagnostic checkpoint; decision-isolation, older-year admission and candidate qualification remain in progress",
   "production_approved": false,
-  "forecaster_weights_changed": false
+  "forecaster_weights_changed": false,
+  "selection_control_qualification": {
+    "complete": true,
+    "source_commit": "bdb34d0ede570b8be8bd015edd56c6357413e8dc",
+    "cases": 8,
+    "current_selections": 304,
+    "financial_periods": 1704,
+    "independently_reconciled_scores": 304,
+    "all_saved_overlay_totals_match": true,
+    "case_totals": {
+      "r1_2024-25_20261070_standingH6_fixedWork": 2429.0,
+      "r1_2024-25_20261070_SolioAdaptedH6_fixedWork": 2420.0,
+      "r1_2024-25_20261071_standingH6_fixedWork": 2445.0,
+      "r1_2024-25_20261071_SolioAdaptedH6_fixedWork": 2445.0,
+      "r1_2025-26_20261070_standingH6_fixedWork": 2258.0,
+      "r1_2025-26_20261070_SolioAdaptedH6_fixedWork": 2214.0,
+      "r1_2025-26_20261071_standingH6_fixedWork": 2204.0,
+      "r1_2025-26_20261071_SolioAdaptedH6_fixedWork": 2226.0
+    },
+    "frozen_sha256": "85cf0280529065716fe99ae40123ea34d7f9496604bf9822a0164e275d8a67d8",
+    "model_promotion": false,
+    "scope": "API/mechanical financial and conditional frozen-proposal control, not a fresh adaptive solver replay or independent performance evidence"
+  },
+  "selection_control_cost": {
+    "elapsed_seconds": 67.35171116599668,
+    "peak_observed_rss_bytes": 503840768
+  },
+  "retained_control_check_failure": {
+    "evaluator_scored": false,
+    "cause": "Private checker compared tuple action fields with serialized JSON lists; corrected only comparison normalisation and reran all eight cases on unchanged engine/source/budgets",
+    "engine_change": false,
+    "retained": true
+  }
 }

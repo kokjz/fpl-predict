@@ -36,8 +36,10 @@ extreme `mean / p_play` inflation as the leading diagnosis on this evidence.
 
 The full market contains 26 and 23 observed appearances despite a frozen zero
 probability; one newer-year proposed-squad union observation has this property.
-These can include official-zero/source assumptions. They are not authority to
-clear fitness flags or manually replace probabilities. Card-only outcomes and
+All 49 are in the frozen official-zero stratum; the frozen zero-fixture stratum
+has no observed appearances. This identifies a source-assumption limitation, not
+permission to
+automatically clear fitness flags or replace probabilities. Card-only outcomes and
 missing-outcome counts are separately reported.
 
 Joint squad-count residuals differ across years and cases. Marginal calibration
@@ -50,6 +52,28 @@ with maximum sampled process-group memory below 530 MiB. A failed launch before
 calculation is retained separately: the private launcher omitted the source-path
 setting, then reran the same protocol/calculation with that environment fixed.
 No model was fitted or new data downloaded for this diagnostic.
+
+## Selection-only API qualification
+
+The optional `FirstActionSelection` control has been checked on every first-
+repetition mean-H6/adapted-Solio path: **eight cases, 304 current selections,
+1,704 financial periods and 304 independently reconciled scores**. Every score
+matches the corresponding previously frozen selection overlay exactly. Transfers,
+chips, financial state and every later provisional action remain unchanged.
+Source: `bdb34d0ede570b8be8bd015edd56c6357413e8dc`.
+
+The control rechecks mean-objective bounds for the retained plan, makes no
+expected-objective/global-chip bound claim, and labels source search trials as
+proposals. Tests include a substantive captain change, future-probability
+irrelevance and invalid source/bound rejection. Qualification took
+67.35 seconds and 480.5 MiB peak sampled group memory.
+The initial checker stopped before evaluator scoring on a JSON tuple/list
+comparison mismatch; its failed attempt is retained, and the complete rerun
+changes only comparison normalisation, not engine code or scientific settings.
+
+This is an API/invariant and conditional frozen-proposal control. It does not
+add fresh football evidence or constitute an independently replanned adaptive
+solver comparison, a calibrated probability head or production approval.
 
 ## Following work
 

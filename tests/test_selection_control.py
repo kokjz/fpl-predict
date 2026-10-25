@@ -4,17 +4,19 @@ import pytest
 from selection_control import FirstActionSelection
 from season_engine import prepare
 from season_benchmark import Policy, managed_plan
+from horizon_forecast import Horizon
 from rolling_planner import _fallback, _objective, Settings
 from test_rolling_planner import setup
 
 
 def inputs():
     s,m,h=setup()
+    h=Horizon.create(m,[dict(r,expected_points=8. if r['id']==1 else r['expected_points']) for r in h.forecasts],**dict(h.provenance))
     cfg=Settings(seconds=120.,baseline_mode='feasibility',node_limit=1,
         terminal_ft_value=0.,terminal_squad_weight=0.,churn_cost=0.)
     a=dict(gameweek=m.gameweek,as_of=m.as_of,trained_through=h.provenance['trained_through'],
         model_sha256='invented',decision_sha256='invented',calendar_sha256='invented',
-        rows=[dict(gameweek=g,id=p['id'],p_play=.3 if p['id']==1 else .9) for g in h.gameweeks for p in m.players])
+        rows=[dict(gameweek=g,id=p['id'],p_play=.3 if p['id']==14 else .9) for g in h.gameweeks for p in m.players])
     def manager(state,market,horizon,*,settings,policy,blocked,opening_ids):
         actions=_fallback(state,market,horizon,{'ledger':dict(state.holdings)}, {36:'freehit',37:'wildcard',38:'bboost'})
         v,parts=_objective(state,market,horizon,actions,settings)
@@ -28,6 +30,7 @@ def test_only_first_selection_changes_and_source_plan_remains_unmodified():
     frozen=copy.deepcopy(old)
     actions,r=managed_plan(FirstActionSelection(manager,a),s,m,h,cfg,policy,(),None)
     assert old==frozen and actions[1:]==old[1:]
+    assert actions[0].captain==14 and old[0].captain!=14
     assert (actions[0].buys,actions[0].sells,actions[0].chip)==(old[0].buys,old[0].sells,old[0].chip)
     assert prepare(s,m,old[0]).state==prepare(s,m,actions[0]).state
     assert r['objective']==pytest.approx(_objective(s,m,h,actions,cfg)[0])
