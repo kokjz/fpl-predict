@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-25",
+  "declared_at_utc": "2026-10-24T18:48:16.607554+00:00",
+  "purpose": "Exploratory mechanism diagnostic after observing r1 2025/26 opening20261070 decision-minus-H6 \u221267; not a new validation or promotion search",
+  "primary_protocol_unchanged": true,
+  "primary_source": "23422fef92c220dcc59f1f886892756c5b4b75e3",
+  "scope": "All16 complete mean-H6/adaptedSolio paths across both admitted years, both openings and both repetitions; compare saved, legacy expected and chip-aware expected selections while keeping every roster, transfer and chip unchanged",
+  "design": "Freeze all608panel selections/checksums before new counterfactual evaluator access. Previously researched outcomes remain known/reused; no untouched claim. Use same frozen means/appearance probabilities; no new fit, solver, seed or parameter choices.",
+  "limits": [
+    "Conditional overlays are not a new adaptive transfer/chip-policy replay or native original external manager",
+    "Lineup-only totals diagnose a mechanism, not a promotion gate or causal estimate of recoverable full-policy points",
+    "Preserve all losses and both legacy/chip-aware arms; no retrospective winning-arm selection"
+  ],
+  "resources": {
+    "threads": 2,
+    "memory_mib": 4096,
+    "seconds": 180,
+    "growth_mib": 64,
+    "min_free_mib": 5120
+  },
+  "execute": "Only after primary24pathbatch completes, to avoid overlapping numerical resource guards"
+}

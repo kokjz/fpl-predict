@@ -70,7 +70,12 @@ def integer(value,minimum=0,maximum=None):
 
 
 def validate_request(q,recipe):
-    if set(q)!={'schema_version','market','state','xp','through','chip_schedule','opening_ids','seconds'} or q['schema_version']!=1:raise ValueError('Unknown native request fields')
+    fields={'schema_version','market','state','xp','through','chip_schedule','opening_ids','seconds'}
+    if set(q) not in (fields,fields|{'work_limit'}) or q['schema_version']!=1:raise ValueError('Unknown native request fields')
+    if 'work_limit' in q:
+        w=q['work_limit']
+        if not isinstance(w,dict) or set(w)!={'node_limit','random_seed','parallel'} or w['parallel']!='off' or type(w['random_seed']) is not int or w['random_seed']!=0:raise ValueError('Invalid native work control')
+        integer(w['node_limit'],1,10000)
     m=q['market'];s=q['state']
     if set(m)!={'season','gameweek','deadline','as_of','rows'} or set(s)!={'season','gameweek','holdings','bank','free_transfers','used_chips','previous_chip'}:raise ValueError('Unknown native context fields')
     g=integer(m['gameweek'],1,38);end=integer(q['through'],g,min(38,g+7))
@@ -117,6 +122,14 @@ def validate_request(q,recipe):
     return players,old,xp,chips,rules
 
 
+def fixed_work_option(work,name,value):
+    """Preserve declared controls when upstream sets its own defaults later."""
+    if work:
+        fixed={'mip_max_nodes':work['node_limit'],'random_seed':0,'parallel':'off'}
+        return fixed.get(name,value)
+    return value
+
+
 class Runtime:
     def __init__(self,root):
         self.recipe=read_json((RESOURCES/'native_solver_recipe.json').read_bytes())
@@ -155,17 +168,27 @@ class Runtime:
 
     def solve(self,q):
         tick=time.monotonic();players,old,xp,chips,rules=validate_request(q,self.recipe);g=q['market']['gameweek'];end=q['through'];models=[];base=self.original
+        work=q.get('work_limit')
         class Limited(base):
             def __init__(m,*a,**k):
                 super().__init__(*a,**k);m.setOptionValue('threads',2);m.maps={};m.injected=False;models.append(m)
+                if work:
+                    for name,value in [('mip_max_nodes',work['node_limit']),('random_seed',0),('parallel','off')]:
+                        if str(m.setOptionValue(name,value))!='HighsStatus.kOk':raise ValueError('Native fixed-work option rejected')
             def setOptionValue(m,name,value):
-                if name=='time_limit':value=max(.001,value-(time.monotonic()-tick));m.actual_time_limit=value
+                value=fixed_work_option(work,name,value)
+                if name=='time_limit':
+                    value=q['seconds'] if work else max(.001,value-(time.monotonic()-tick));m.actual_time_limit=value
                 return super().setOptionValue(name,value)
             def addVariables(m,*a,**k):
                 values=super().addVariables(*a,**k)
                 if k.get('name_prefix') in ('squad','squad_fh','transfer_in'):m.maps[k['name_prefix']]=values
                 return values
             def run(m):
+                if work:
+                    for name,value in [('mip_max_nodes',work['node_limit']),('random_seed',0),('parallel','off')]:
+                        status,actual=m.getOptionValue(name)
+                        if str(status)!='HighsStatus.kOk' or actual!=value:raise RuntimeError('Native fixed-work options changed')
                 if not m.injected:
                     for (i,w),v in m.maps['transfer_in'].items():
                         if not players[i]['can_buy']:m.changeColBounds(v.index,0.,0.)
@@ -173,7 +196,12 @@ class Runtime:
                         if not players[i]['can_buy']:m.addConstr(v<=m.maps['squad'][i,w-1])
                     m.injected=True
                 result=super().run()
-                if not m.getSolution().value_valid:raise ValueError('No feasible native incumbent')
+                if work and str(m.getModelStatus())=='HighsModelStatus.kTimeLimit':raise RuntimeError('Fixed-work native safety time limit reached')
+                if not m.getSolution().value_valid:
+                    error=ValueError('No feasible native incumbent')
+                    if work:
+                        error.work_limit=work;error.mip_node_count=int(m.getInfo().mip_node_count);error.native_status=str(m.getModelStatus())
+                    raise error
                 return result
         self.hs.Highs=Limited
         try:
@@ -188,7 +216,9 @@ class Runtime:
             if q['opening_ids'] is not None:options['locked_next_gw']=q['opening_ids']
             answer=self.solver.solve_multi_period_fpl(data,options)[0];info=models[-1].getInfo()
             finite=lambda x:float(x) if math.isfinite(x) else None
-            return dict(status='completed',seconds=time.monotonic()-tick,solver_time_limit=models[-1].actual_time_limit,objective=answer['score'],native_status=str(models[-1].getModelStatus()),dual_bound=finite(info.mip_dual_bound),mip_gap=finite(info.mip_gap),statistics=answer['statistics'],picks=read_json(answer['picks'].to_json(orient='records')))
+            result=dict(status='completed',seconds=time.monotonic()-tick,solver_time_limit=models[-1].actual_time_limit,objective=answer['score'],native_status=str(models[-1].getModelStatus()),dual_bound=finite(info.mip_dual_bound),mip_gap=finite(info.mip_gap),statistics=answer['statistics'],picks=read_json(answer['picks'].to_json(orient='records')))
+            if work:result.update(work_limit=work,mip_node_count=int(info.mip_node_count))
+            return result
         finally:
             self.hs.Highs=base
             for model in models:model.clear()
@@ -203,7 +233,9 @@ def main():
         try:
             q=read_json(raw)
             with contextlib.redirect_stdout(sys.stderr):result=runtime.solve(q)
-        except Exception as error:result=dict(status='failed',error_type=type(error).__name__,message=str(error)[:500])
+        except Exception as error:
+            result=dict(status='failed',error_type=type(error).__name__,message=str(error)[:500])
+            if hasattr(error,'work_limit'):result.update(work_limit=error.work_limit,mip_node_count=error.mip_node_count,native_status=error.native_status)
         print(json.dumps(result,allow_nan=False),flush=True)
 
 

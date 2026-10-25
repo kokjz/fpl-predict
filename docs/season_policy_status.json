@@ -237,11 +237,118 @@
       "current_season_scope": "Approved-artifact and manual-sensitivity mechanical compatibility on invented 2026/27 inputs; no live accuracy evidence",
       "source_scope": "Mean-preserving prior-head expected selection and candidate reranking; no Assistant Manager in 2024/25; two reused years with common starts; expected/global bounds unknown",
       "operational_api": "approved_decision.project_decision_approved with explicit research opt-in; normal weekly defaults unchanged"
+    },
+    {
+      "policy": "decisionH6_fixedWork",
+      "status": "historical_experimental_not_qualified",
+      "criteria_source": "search_repeatability_protocol_2026-10-25.json",
+      "resource_amendment": "search_repeatability_resource_amendment_2026-10-25.json",
+      "primary": {
+        "cases": [
+          {
+            "season": "2024-25",
+            "seed": 20261070,
+            "repetition_effects": [
+              25.0,
+              25.0
+            ],
+            "mean_difference": 25.0
+          },
+          {
+            "season": "2024-25",
+            "seed": 20261071,
+            "repetition_effects": [
+              22.0,
+              22.0
+            ],
+            "mean_difference": 22.0
+          },
+          {
+            "season": "2025-26",
+            "seed": 20261070,
+            "repetition_effects": [
+              -67.0,
+              -67.0
+            ],
+            "mean_difference": -67.0
+          },
+          {
+            "season": "2025-26",
+            "seed": 20261071,
+            "repetition_effects": [
+              46.0,
+              46.0
+            ],
+            "mean_difference": 46.0
+          }
+        ],
+        "season_means": {
+          "2024-25": 23.5,
+          "2025-26": -10.5
+        },
+        "equal_season_mean": 6.5,
+        "worst_opening": -67.0,
+        "worst_individual_repetition": -67.0,
+        "point_criterion_pass": false
+      },
+      "external_comparison": {
+        "cases": [
+          {
+            "season": "2024-25",
+            "seed": 20261070,
+            "repetition_effects": [
+              44.0,
+              44.0
+            ],
+            "mean_difference": 44.0
+          },
+          {
+            "season": "2024-25",
+            "seed": 20261071,
+            "repetition_effects": [
+              22.0,
+              22.0
+            ],
+            "mean_difference": 22.0
+          },
+          {
+            "season": "2025-26",
+            "seed": 20261070,
+            "repetition_effects": [
+              -26.0,
+              -26.0
+            ],
+            "mean_difference": -26.0
+          },
+          {
+            "season": "2025-26",
+            "seed": 20261071,
+            "repetition_effects": [
+              22.0,
+              22.0
+            ],
+            "mean_difference": 22.0
+          }
+        ],
+        "season_means": {
+          "2024-25": 33.0,
+          "2025-26": -2.0
+        },
+        "equal_season_mean": 15.5,
+        "worst_opening": -26.0,
+        "worst_individual_repetition": -26.0,
+        "point_criterion_pass": true
+      },
+      "strict_repeatability_pass": true,
+      "production_approved": false,
+      "forecaster_weights_changed": false,
+      "scope": "Two reused years/common starts; one-node/six-probe research policy and adapted external control. No live accuracy or global optimality claim."
     }
   ],
-  "latest_followup": "2026-10-24",
-  "latest_followup_evidence": "season_decision_value_results_2026-10-24.json",
+  "latest_followup": "2026-10-25",
+  "latest_followup_evidence": "search_repeatability_results_2026-10-25.json",
   "original_qualification_evidence": "season_policy_qualification_results.json",
   "latest_followup_numerical_source": "353c28679d569a1c4d5e1fc82c8e76e57f7c3c96",
-  "latest_decision_numerical_source": "b241e8ff2b64387cfa5e6ce71d9d3b170d29f96e"
+  "latest_decision_numerical_source": "b241e8ff2b64387cfa5e6ce71d9d3b170d29f96e",
+  "latest_repeatability_numerical_source": "23422fef92c220dcc59f1f886892756c5b4b75e3"
 }

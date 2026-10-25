@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "base_release": "f0710cf970c1710b6ab815428d8826db5459aa25",
+  "purpose": "Measure repeatability and season-policy effects under fixed logical work, without altering forecast means or fitting weights",
+  "seasons": [
+    "2024-25",
+    "2025-26"
+  ],
+  "opening_seeds": [
+    20261070,
+    20261071
+  ],
+  "policies": [
+    "standingH6_fixedWork",
+    "decisionH6_fixedWork",
+    "SolioAdaptedH6_fixedWork"
+  ],
+  "repetitions": [
+    1,
+    2
+  ],
+  "paths": 24,
+  "controls": {
+    "node_limit": 1,
+    "max_trials": 12,
+    "random_seed": 0,
+    "parallel": "off",
+    "threads": 2,
+    "inner_safety_seconds": 120.0,
+    "detailed_horizon": 6
+  },
+  "resource_limits": {
+    "seconds_per_path": 900,
+    "memory_mib": 4096,
+    "threads": 2,
+    "project_mib": 2560,
+    "growth_mib": 256,
+    "min_free_mib": 5120,
+    "serial": true
+  },
+  "inputs": "Exact prior-only point bundles/common openings and76appearance sidecars from the released PR40; no source feed or probability changes",
+  "preflight": {
+    "origins": [
+      1,
+      16
+    ],
+    "opening_seed": 20261070,
+    "repetitions": 2,
+    "policies": "all3",
+    "seasons": "both",
+    "cases": 24,
+    "source": "frozen standingH6 state, origin-only inputs; total_points removed and no evaluator access",
+    "feasibility": "All complete/legal/source-matched and no safety cap. Repeat differences must be reported, never hidden; no outcome-guided work-budget selection."
+  },
+  "repetition_order": "sequential complete matrix r1 then identical r2; no best-run selection",
+  "primary": "decisionH6 minus standingH6: mean within each common opening over both repetitions, then equal-season mean",
+  "criteria": {
+    "positive_equal_season_mean": true,
+    "season_average_loss_limit": 19,
+    "single_opening_loss_limit": 38,
+    "all24_paths_and_audits_required": true,
+    "repeatability_required_for_stability_claim": "All38deadline financial/action/provisional/source fingerprints and net totals match for every repeated case",
+    "production_promotion": false
+  },
+  "secondary": [
+    "matched adaptedSolio comparison with same mean/downside reporting",
+    "per-policy repeat fingerprint/score dispersion, conditional bound coverage, fallback and actual resource cost",
+    "dated PR40 control drift remains a separate wall-time study, not a random noise sample"
+  ],
+  "safety": "Wall-time/memory/storage watchdog limits are abort guards, never successful stopping rules or accepted partial fixed-work scores. Preserve every failure; mechanical repairs require documented appropriate uniform reruns, not selective seed retry.",
+  "native_admission": "Explicit optional node/seed/parallel request and source receipt, only optimal/node-limit statuses. Declared dominated integral paid-slack canonicalisation extends to node-limit incumbents; default legacy remains strict. Root-node/probe caps do not equalise compute across formulations.",
+  "limits": [
+    "Two reused historical years with two common openings, not four independent seasons or an untouched test",
+    "2024/25 common no-Assistant-Manager action space; original complete managers not reproduced",
+    "Different pinned embedded/native HiGHS runtimes and formulations; fixed nodes/probes are not identical CPU work",
+    "Root/presolve/heuristic effort is not node-count bounded; safety guards may invalidate a run",
+    "Expected-objective/global chip/season bounds remain unknown; no forecast-weight or normal weekly-default promotion",
+    "No new Dastan/OpenFPL/AIrsenal forecast claim, retraining, live team planning or future-game wait"
+  ],
+  "sources": [
+    {
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.milp.html",
+      "observed": "2026-10-25",
+      "use": "node_limit and status/node-count semantics"
+    },
+    {
+      "url": "https://ergo-code.github.io/HiGHS/dev/options/definitions/",
+      "observed": "2026-10-25",
+      "use": "mip_max_nodes, random_seed, parallel, threads and safety time options"
+    }
+  ]
+}

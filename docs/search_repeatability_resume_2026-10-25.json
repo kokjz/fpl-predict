@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-25",
+  "reason": "One inner time safety guard fired while the host entered lid-closed sleep, then woke about eighteen minutes later. The failed batch stopped after ten complete paths and seventeen settled origins of the eleventh.",
+  "original_source": "23422fef92c220dcc59f1f886892756c5b4b75e3",
+  "preservation": "Retain the original failed batch and all partial decisions unchanged. Reference the ten checksum-verified completed paths without copying or changing them.",
+  "action": "One identical retry of the interrupted case, followed by the thirteen as-yet-unrun matrix cases. No numerical source, input, rule, node/probe/seed/thread setting or resource limit changes. Stop on any further failure.",
+  "integrity": "Before accepting the retry, require its first seventeen full-plan/financial/source fingerprints to match the saved interrupted prefix. All twenty-four declared completed paths and both numerical repetitions remain mandatory.",
+  "claim_limit": "The failed safety-limited attempt is not a successful fixed-work run; it and its costs remain separate from the completed matrix. Host-sleep coincidence is evidence for the operational interruption, not proof that a given node budget always finishes within a time limit.",
+  "production_policy_approved": false,
+  "forecaster_weights_changed": false
+}
