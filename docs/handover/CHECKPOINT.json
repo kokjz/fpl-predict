@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "handover_preparation_in_progress",
+  "updated": "2026-10-27 Asia/Singapore",
+  "repository": "https://github.com/kokjz/fpl-predict",
+  "reviewed_engine_main": "cf19ff2446da8b5b9cdd4444417e75ace9ffd642",
+  "research": {
+    "pr": 42,
+    "branch": "feat/appearance-return-coherence",
+    "head": "747d2b33cd2c701f5135578afe2ac8aed3ded7f1",
+    "numerical_source": "9e26851a92371690848e3811c6e120026dd33011",
+    "declared_new_paths": 20,
+    "reused_controls": 24,
+    "source_and_weights_frozen": true,
+    "completion": "Inspect final updated checkpoint; no unfinished research is declared complete"
+  },
+  "approved_forecaster": {
+    "version": "1.0.0",
+    "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+    "binary_in_repository": false,
+    "source": "Private transfer registry; not research file dates"
+  },
+  "remaining_work": [
+    "Finish frozen numerical matrix/independent audits where not yet complete",
+    "Resolve research review findings R1 future-chip ledger, R2 generic cap audit, R3 clear selection gross/net report fields in PR42 after jobs finish",
+    "Complete research results/readme/policy qualification/publication and appropriate Git release SOP; preserve all failures/old gates",
+    "Validate receiving-machine runtime/archive and resume exact package before any new candidate"
+  ],
+  "privacy": "Only engine/research context is public; full private transfer remains outside repository",
+  "research_links": {
+    "protocol": "https://github.com/kokjz/fpl-predict/blob/747d2b33cd2c701f5135578afe2ac8aed3ded7f1/docs/appearance_calibration_protocol_2026-10-26.json",
+    "components": "https://github.com/kokjz/fpl-predict/blob/747d2b33cd2c701f5135578afe2ac8aed3ded7f1/docs/COHERENCE_CALIBRATION_RESULTS_2026-10-26.md",
+    "reproduction": "https://github.com/kokjz/fpl-predict/blob/747d2b33cd2c701f5135578afe2ac8aed3ded7f1/docs/coherence_reproduction.md"
+  }
+}
