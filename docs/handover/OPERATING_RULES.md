@@ -64,9 +64,8 @@ completed research release.
 The source repository is public. Private models, original personal context,
 team/history, screenshots, credentials and the transfer archive stay outside Git.
 Do not copy private manifests with old absolute paths into public source. Publish
-only audited engine/research context and nonprivate aggregates. Treat the user's
-public-facing Git email preference as deliberate; do not demand repository
-recreation or email-privacy changes.
+only audited engine/research context and nonprivate aggregates. Respect the
+configured Git author identity; do not change account settings unnecessarily.
 
 ## Compute, storage and responsibility split
 
@@ -88,8 +87,10 @@ It records suspected defects/frozen evidence for improvement work without
 independently retraining/tuning/promoting. Do not message it without user
 permission; shared files and the supplied update prompt are the handoff.
 
-Before every model analysis on either device, fetch remote, safely sync a clean
-reviewed checkout and verify approved artifact compatibility. See
+Before every weekly/operational model analysis on any device, fetch remote,
+safely sync a clean reviewed checkout and verify approved artifact compatibility.
+Improvement experiments instead use an explicit reviewed base and source-locked
+purpose branch; do not change its inputs/source while jobs run. See
 [WEEKLY_SOURCE_SYNC.md](WEEKLY_SOURCE_SYNC.md). Source sync does not copy private
 weights or change model approval. Keep a private context master/prompt log on the
 receiving workspace, separating user facts, external evidence and judgments.

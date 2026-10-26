@@ -5,6 +5,11 @@ it does not contain credentials, a source `.git`directory, or reusable Mac
 virtual environments/native libraries. Recreate environments on the receiving
 machine. A private archive must never be uploaded to this public repository.
 
+The receiving chat needs access to the private workspace, a terminal/Python/Git,
+and authorised GitHub writes for implementation/PR work. A tool-less chat can
+read context but cannot execute the handover; identify missing access explicitly
+rather than claiming runs or uploads. This requirement is vendor-independent.
+
 ## Runtime choice
 
 Use Python3.12 for the engine. Match the measured private runtime versions in
@@ -55,7 +60,7 @@ This verification does not itself execute/unpickle transferred models or scripts
 
 Clone the repository as `NEW_PRIVATE_WORKSPACE/payload/fpl-predict`. Keep that
 source checkout on reviewed main for normal work; use a separate checkout or the
-explicit pinned research branch for unfinishedPR42. Never change a checkout
+explicit pinned research branch for unfinished PR42. Never change a checkout
 owned by an active other task. The private registry belongs under the payload's
 `model/`directory, selected through explicit `FPL_PREDICT_HOME`.
 
@@ -98,3 +103,27 @@ training commands can build a research reference. The resulting hash is a new
 artifact; it is not automatically the approved1.0.0binary. No private key or
 credential is required in the transfer, and authentication should be configured
 separately without printing secrets.
+
+Example after restoring and recreating the legacy environment (substitute actual
+paths; do not change the trusted artifact hash):
+
+```sh
+PYTHONPATH=SOURCE_CHECKOUT/src LEGACY_PYTHON SOURCE_CHECKOUT/tools/handover_smoke.py \
+  --model PRIVATE_PAYLOAD/model/artifacts/models/789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233.joblib \
+  --oracle PRIVATE_PAYLOAD/migration/PRIVATE_RUNTIME_SMOKE.json --trust-local-model
+```
+
+For the preserved research source, fetch tags and inspect the exact revision before
+creating a separate working branch/checking out the existing PR branch:
+
+```sh
+git fetch origin --prune --tags
+git show --no-patch research-handover-2026-10-27
+git show --no-patch 9e26851a92371690848e3811c6e120026dd33011
+```
+
+The handover tag preserves the unmerged research head and the numerical source
+in its ancestry. It is not a production release or approved model. The reviewed
+handover source and tools are available on main; consult CHECKPOINT.json for the
+exact open PR and next review step. Do not rerun the finished matrix merely
+because it was produced in an unmerged research branch.

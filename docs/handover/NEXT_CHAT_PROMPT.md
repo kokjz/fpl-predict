@@ -3,11 +3,16 @@
 I am permanently moving my FPL prediction-engine improvement work to this
 Windows chat. You may be Codex or Claude. You have no prior conversation context;
 retrieve it from the repository and the privately supplied archive before acting.
+Verify that you have private-file, terminal/Python/Git and authorised GitHub access
+for implementation; if not, identify that external prerequisite and do not claim
+execution or publication.
 
 Repository: https://github.com/kokjz/fpl-predict
 
 Start with `HANDOVER.md`, then `docs/handover/CHECKPOINT.json`, `PROJECT_CONTEXT.md`,
-`OPERATING_RULES.md` and `WINDOWS_SETUP.md`. Read all linked current package
+`OPERATING_RULES.md` and `WINDOWS_SETUP.md`. Use structured summaries and scripts
+to inspect large arrays without dumping bulk raw data into chat. Read all linked
+current package
 protocols/results and the precise remaining-work list. Fetch remote main first;
 inspect open PRs/branches/tags. Distinguish reviewed main, the preserved unmerged
 research PR and its immutable numerical source. Do not infer promotion from a
@@ -88,10 +93,11 @@ is authorised by this handover.
 This chat handles engine research; a separate chat handles weekly squads,
 transfers, captain/bench/chips and finalised-GW review. Do not do those jobs or
 message that chat without my authorisation. Maintain a private context master
-and an operational handoff after every prompt/release. Before every model
-analysis, fetch/safely sync reviewed remote source and separately verify approved
-artifact/schema/runtime compatibility; repeat the source/registry check before
-final weekly advice. The weekly update prompt in the repository explains that
+and an operational handoff after every prompt/release. Before every weekly or
+operational model analysis, fetch/safely sync reviewed remote source and separately verify approved
+artifact/schema/runtime compatibility; improvement experiments use their explicit
+source-locked purpose branch without changing running inputs; repeat the
+source/registry check before final weekly advice. The weekly update prompt in the repository explains that
 new cross-device safety rule.
 
 Your first response should state the verified source/PR/model/checkpoint state,
