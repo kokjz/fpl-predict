@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "status": "numerical_checkpoint_complete_research_review_pending",
+  "updated": "2026-10-27 Asia/Singapore",
+  "repository": "https://github.com/kokjz/fpl-predict",
+  "reviewed_engine_main": "cf19ff2446da8b5b9cdd4444417e75ace9ffd642",
+  "research": {
+    "pr": 42,
+    "branch": "feat/appearance-return-coherence",
+    "head": "747d2b33cd2c701f5135578afe2ac8aed3ded7f1",
+    "numerical_source": "9e26851a92371690848e3811c6e120026dd33011",
+    "declared_new_paths": 20,
+    "reused_controls": 24,
+    "source_and_weights_frozen": true,
+    "completion": "Numerical study and independent audits complete; PR42 review fixes, valid-state revalidation and full final research publication remain unfinished",
+    "tag": "research-handover-2026-10-27",
+    "new_paths_complete": 20,
+    "all_paths_complete": 44,
+    "independent_settlements": 1672,
+    "repeat_fingerprints_equal": 836,
+    "results": "RESEARCH_STOPPING_RESULTS.json",
+    "criterion_pass": false,
+    "primary_mean_points": -31.75,
+    "all_processes_stopped": true,
+    "failed_interrupted_attempts_retained": true
+  },
+  "approved_forecaster": {
+    "version": "1.0.0",
+    "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+    "binary_in_repository": false,
+    "source": "Private transfer registry; not research file dates"
+  },
+  "remaining_work": [
+    "Receiving host: verify private archive/restore/runtime/artifact smoke and source hashes without modifying original evidence; path-only adapters get separate provenance",
+    "Continue existing draft PR42; review private review_findings.json/post_study_review.patch and base hashes: R1 reject future-used-chip ledgers, R2 generic audit free-transfer cap, R3 explicit gross/net selection report fields; prepared patch is unapplied, not a tested release",
+    "Apply coherent fixes/tests after inspecting source; audit all frozen valid states under repaired validator, prove decisions/settings/means unchanged, run bounded affected integration/full required checks without rerunning completed numerical paths unnecessarily",
+    "Complete PR42 final results/readme/policy status and explicit negative qualification; retain all failed attempts, old gates, source9e numerical ancestry, coverage/clock/reused-year/bound limitations; no candidate/model/default promotion",
+    "Review/check/merge PR42 only when ready, safely bring main up to date and remove completed dependent branches; emit private operational handoff. Assess a new bounded package only after unfinished work is closed."
+  ],
+  "privacy": "Only engine/research context is public; full private transfer remains outside repository",
+  "research_links": {
+    "protocol": "https://github.com/kokjz/fpl-predict/blob/747d2b33cd2c701f5135578afe2ac8aed3ded7f1/docs/appearance_calibration_protocol_2026-10-26.json",
+    "components": "https://github.com/kokjz/fpl-predict/blob/747d2b33cd2c701f5135578afe2ac8aed3ded7f1/docs/COHERENCE_CALIBRATION_RESULTS_2026-10-26.md",
+    "reproduction": "https://github.com/kokjz/fpl-predict/blob/747d2b33cd2c701f5135578afe2ac8aed3ded7f1/docs/coherence_reproduction.md"
+  },
+  "handover_pr": 43,
+  "reviewed_engine_main_scope": "PR41 installed engine math; later handover releases update documentation/portable tools only, not approved weights or weekly defaults",
+  "private_transfer": "Separately supplied PRIVATE archive/manifest/receipt; origin restore proof supplied outside Git. Full archive and approved model are deliberately not public; receiving Windows qualification remains required",
+  "receiving_profile": {
+    "intended": "Optional architect/programmer split or one capable chat; local Windows/WSL access requires receiving-host verification",
+    "verified_on_receiving_host": false,
+    "workflow": "HYBRID_WORKFLOW.md",
+    "bootstrap": "QUICK_START_PROMPT.md",
+    "no_fixed_usage_entitlement_claim": true,
+    "roles": {
+      "architect": [
+        "Claude Opus5.5"
+      ],
+      "programmer": "GPT-6.1 Sol",
+      "fallback": "Single capable chat"
+    },
+    "claude_usage_guide": "CLAUDE_PRO_WORKFLOW.md",
+    "role_prompts": [
+      "ARCHITECT_CHAT_PROMPT.md",
+      "PROGRAMMER_CHAT_PROMPT.md"
+    ],
+    "improvement_update_prompt": "MODEL_IMPROVEMENT_CHAT_UPDATE.md",
+    "coordination": "Canonical private brief/revision/hash, active owner/source state, results packet and decision log; one implementation writer",
+    "package_layout": "PACKAGE_LAYOUT.md",
+    "architect_effort": {
+      "default": "Medium",
+      "includes_initial_setup": true,
+      "escalation": "High as needed within the same architect conversation; record reason and actual selection",
+      "policy": "ARCHITECT_MODEL_POLICY.md",
+      "user_decision_date": "2026-10-27",
+      "actual_receiving_setting_verified": false
+    },
+    "workspace_layout": "WORKSPACE_LAYOUT.md",
+    "receiving_outer_folder": "fpl prediction model research",
+    "source_location": "OUTER/fpl-predict only; private-handover and private-workspace are siblings",
+    "manual_outer_checksum": "Optional for user; programmer automated integrity checks retained",
+    "user_checklist": "WINDOWS_HANDOVER_STEPS.md"
+  },
+  "review_findings_private_location": "work/appearance_return_coherence_2026-10-26/review_findings.json",
+  "workflow_revision": "opus-medium-sibling-workspace-2026-10-27",
+  "latest_handover_update_pr": 46
+}
