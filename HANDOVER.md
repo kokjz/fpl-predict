@@ -9,6 +9,9 @@ the [hybrid workflow](docs/handover/HYBRID_WORKFLOW.md), then start with the
 [short bootstrap prompt](docs/handover/QUICK_START_PROMPT.md); the full prompt and
 all evidence remain available without loading them all at once.
 
+See the [private package layout](docs/handover/PACKAGE_LAYOUT.md) for the separate
+role entry points and one canonical coordination packet.
+
 ## Start here
 
 1. Read the [staged bootstrap](docs/handover/BOOTSTRAP.md) and

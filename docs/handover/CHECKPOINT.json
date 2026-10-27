@@ -66,7 +66,8 @@
       "PROGRAMMER_CHAT_PROMPT.md"
     ],
     "improvement_update_prompt": "MODEL_IMPROVEMENT_CHAT_UPDATE.md",
-    "coordination": "Canonical private brief/revision/hash, active owner/source state, results packet and decision log; one implementation writer"
+    "coordination": "Canonical private brief/revision/hash, active owner/source state, results packet and decision log; one implementation writer",
+    "package_layout": "PACKAGE_LAYOUT.md"
   },
   "review_findings_private_location": "work/appearance_return_coherence_2026-10-26/review_findings.json",
   "workflow_revision": "hybrid-architect-programmer-2026-10-27"
