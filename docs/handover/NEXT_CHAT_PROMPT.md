@@ -1,18 +1,23 @@
 # Prompt for the receiving model-improvement chat
 
 I am permanently moving my FPL prediction-engine improvement work to this
-Windows chat, primarily Claude Desktop with integrated Claude Code, Sonnet5.5
-on Pro. Verify the actual selected model/effort/account; these are my intended
-settings, not evidence of your runtime. Codex remains a compatible alternative.
+Windows workflow. I may use Claude Sonnet5.5 or Opus5.5 as architect for ML
+pipeline/experiment design and results interpretation, with GPT-6.1 Sol as the
+programmer for implementation, execution, audits/tests and Git/PR work. A single
+capable chat is also allowed. Confirm your role and actual model/effort/account/
+tool access; intended selections are not proof of runtime configuration.
 You have no prior conversation context;
 retrieve it from the repository and the privately supplied archive before acting.
-Verify that you have private-file, terminal/Python/Git and authorised GitHub access
-for implementation; if not, identify that external prerequisite and do not claim
-execution or publication.
+For programmer work, verify private-file, terminal/Python/Git and authorised
+GitHub access; identify any missing external prerequisite rather than claim
+execution/publication. An architect may plan from user-supplied versioned evidence
+without write/command access, but must not claim runs or direct verification it
+cannot perform.
 
 Repository: https://github.com/kokjz/fpl-predict
 
-Start with `HANDOVER.md`, `docs/handover/BOOTSTRAP.md` and
+Start with `HANDOVER.md`, `docs/handover/HYBRID_WORKFLOW.md`, your
+`ARCHITECT_CHAT_PROMPT.md` or `PROGRAMMER_CHAT_PROMPT.md`, `BOOTSTRAP.md` and
 `CLAUDE_PRO_WORKFLOW.md`, then `CHECKPOINT.json`, `PROJECT_CONTEXT.md`,
 `OPERATING_RULES.md` and `WINDOWS_SETUP.md`. Use structured summaries and scripts
 to inspect large arrays without dumping bulk raw data into chat. Read all linked
@@ -121,3 +126,14 @@ checkpoint before compaction/new sessions and revalidate after resuming. Do not
 automatically spawn agents, change model/effort or enable paid overage. The short
 QUICK_START_PROMPT.md can bootstrap this same full workflow without pasting this
 whole document; it does not reduce any scientific/Git/privacy requirement.
+
+The roles share one canonical private package brief/revision/hash, active source/
+owner state, results packet and decision log. Architect designs/interprets;
+programmer is the sole implementation writer and executes routine authorised
+work without per-commit permission. Material scientific deviations are recorded
+and resolved before dependent new work. Use shared files or user-facilitated
+transfer, never unauthorised messaging or a paid API/model router. A second LLM
+opinion is not an independent season or production approval. Read originals when
+needed, preserve gates and report any unperformed architect review as pending.
+Measure practical usage/rework/defects/handoff overhead on existing authorised
+work; no model/cost superiority has been established for this project.

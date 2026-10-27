@@ -47,11 +47,27 @@
   "reviewed_engine_main_scope": "PR41 engine math; handover PR43 adds documentation/verification tools only, no model/default change",
   "private_transfer": "Separately supplied PRIVATE archive/manifest/receipt; origin restore proof supplied outside Git. Full archive and approved model are deliberately not public; receiving Windows qualification remains required",
   "receiving_profile": {
-    "intended": "Claude Desktop Code / Sonnet5.5 / Pro / local WSL2",
+    "intended": "Optional architect/programmer split or one capable chat; local Windows/WSL access requires receiving-host verification",
     "verified_on_receiving_host": false,
-    "workflow": "CLAUDE_PRO_WORKFLOW.md",
+    "workflow": "HYBRID_WORKFLOW.md",
     "bootstrap": "QUICK_START_PROMPT.md",
-    "no_fixed_usage_entitlement_claim": true
+    "no_fixed_usage_entitlement_claim": true,
+    "roles": {
+      "architect": [
+        "Claude Sonnet5.5",
+        "Claude Opus5.5"
+      ],
+      "programmer": "GPT-6.1 Sol",
+      "fallback": "Single capable chat"
+    },
+    "claude_usage_guide": "CLAUDE_PRO_WORKFLOW.md",
+    "role_prompts": [
+      "ARCHITECT_CHAT_PROMPT.md",
+      "PROGRAMMER_CHAT_PROMPT.md"
+    ],
+    "improvement_update_prompt": "MODEL_IMPROVEMENT_CHAT_UPDATE.md",
+    "coordination": "Canonical private brief/revision/hash, active owner/source state, results packet and decision log; one implementation writer"
   },
-  "review_findings_private_location": "work/appearance_return_coherence_2026-10-26/review_findings.json"
+  "review_findings_private_location": "work/appearance_return_coherence_2026-10-26/review_findings.json",
+  "workflow_revision": "hybrid-architect-programmer-2026-10-27"
 }

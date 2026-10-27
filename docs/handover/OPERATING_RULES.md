@@ -94,3 +94,16 @@ purpose branch; do not change its inputs/source while jobs run. See
 [WEEKLY_SOURCE_SYNC.md](WEEKLY_SOURCE_SYNC.md). Source sync does not copy private
 weights or change model approval. Keep a private context master/prompt log on the
 receiving workspace, separating user facts, external evidence and judgments.
+
+
+## Optional architect/programmer split
+
+Follow [HYBRID_WORKFLOW.md](HYBRID_WORKFLOW.md): user-selected Sonnet5.5/Opus5.5
+may design/interpret; GPT-6.1 Sol may implement/execute/test/publish. Verify role,
+brief revision/hash/source and actual access. One implementation writer; private
+coordination files carry handoffs, not stale chat memory. Routine engineering
+continues autonomously; no per-commit architect approval, automatic messaging,
+subagents/model switching or paid router. Material scientific changes require
+recorded resolution before dependent new work. Scientific gates, current
+negative findings, approval status and weekly source/artifact checks remain.
+Single-chat fallback is supported; workflow savings/superiority are unmeasured.

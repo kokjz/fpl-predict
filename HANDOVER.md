@@ -2,8 +2,10 @@
 
 This is the entry point for a fresh Codex or Claude chat taking over prediction-
 engine research on Windows. Read it before running models or modifying source.
-Weekly squad planning remains a separate responsibility. Claude Desktop/Code
-with Sonnet5.5 on Pro is the primary intended receiving setup. Start with the
+Weekly squad planning remains a separate responsibility. The optional intended
+workflow uses Claude Sonnet5.5 or Opus5.5 for architecture/interpretation and
+GPT-6.1 Sol for implementation. A single capable chat remains supported. Read
+the [hybrid workflow](docs/handover/HYBRID_WORKFLOW.md), then start with the
 [short bootstrap prompt](docs/handover/QUICK_START_PROMPT.md); the full prompt and
 all evidence remain available without loading them all at once.
 
@@ -19,7 +21,10 @@ all evidence remain available without loading them all at once.
    Obtain the separately supplied **private** transfer archive and its trusted
    SHA256 from the user. It contains the exact model, original research evidence
    and private context; none of that archive belongs in this public repository.
-3. Use the [fresh-chat prompt](docs/handover/NEXT_CHAT_PROMPT.md). Verify source,
+3. Use the [shared comprehensive prompt](docs/handover/NEXT_CHAT_PROMPT.md) and
+   the role-specific [architect](docs/handover/ARCHITECT_CHAT_PROMPT.md) or
+   [programmer](docs/handover/PROGRAMMER_CHAT_PROMPT.md) startup. Existing
+   improvement chats have an [update prompt](docs/handover/MODEL_IMPROVEMENT_CHAT_UPDATE.md). Verify source,
    archive, model and runtime before resuming the exact listed unfinished work.
 4. The weekly chat has a separate [update prompt](docs/handover/WEEKLY_CHAT_UPDATE.md)
    and [mandatory source-sync procedure](docs/handover/WEEKLY_SOURCE_SYNC.md).

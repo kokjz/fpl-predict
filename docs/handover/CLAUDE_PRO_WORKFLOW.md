@@ -1,7 +1,9 @@
 # Claude Desktop/Code on Pro: bounded-context workflow
 
 Guidance checked **27October2026** against Anthropic's official documentation.
-The user intends Sonnet5.5 on Pro in Claude Desktop with integrated Claude Code.
+The Claude side may use Sonnet5.5 or Opus5.5 on Pro in Desktop/Code for
+architecture/interpretation, while GPT-6.1 Sol handles programming separately.
+See HYBRID_WORKFLOW.md; this guide applies to the Claude side, not Codex quotas.
 Verify the actual model, effort, plan and local execution environment in the
 receiving app. An announced feature is not proof it is enabled for that account.
 
