@@ -118,6 +118,11 @@ def test_used_chip_history_cannot_include_this_or_a_future_window(season,g,start
     spec=importlib.util.spec_from_file_location('historical_auditor',Path(__file__).parents[1]/'tools/audit_season_path.py')
     audit=importlib.util.module_from_spec(spec);spec.loader.exec_module(audit)
     m=market(g,season=season)
+    # The same action/context is valid when its history contains only an earlier
+    # window (or no used window at GW2). This excludes unrelated audit failures.
+    valid=replace(s,used_chips=(('wildcard',2),) if g>2 else ())
+    result,_,_,_=audit.advance(asdict(valid),dict(season=season,gameweek=g,rows=[dict(p) for p in m.players]),asdict(action()))
+    assert result['gameweek']==g+1
     with pytest.raises(AssertionError):
         audit.advance(asdict(s),dict(season=season,gameweek=g,rows=[dict(p) for p in m.players]),asdict(action()))
 
