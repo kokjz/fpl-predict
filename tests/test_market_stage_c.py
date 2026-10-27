@@ -1,5 +1,7 @@
 import importlib.util
 import json
+import hashlib
+import shutil
 from pathlib import Path
 
 import numpy as np
@@ -122,3 +124,16 @@ def test_worker_reserves_four_slot_ledger_and_never_retries(tmp_path,monkeypatch
     assert json.loads(next(ledger.glob('*.json')).read_text())['status']=='completed'
     with pytest.raises(ValueError,match='no retry'):worker.fit(build/'bundle.npz','2022-23','control',ledger,output)
     assert calls==['2022-23']
+
+
+def test_i4_source_qualification_rejects_executed_xi_changes(tmp_path):
+    path=Path(__file__).resolve().parents[1]/'tools/run_market_stage_c.py'
+    spec=importlib.util.spec_from_file_location('stage_c_qualification',path);worker=importlib.util.module_from_spec(spec);spec.loader.exec_module(worker)
+    root=path.parents[1]/'src';original={}
+    for name in i4.code_hashes():
+        shutil.copyfile(root/name,tmp_path/name)
+        original[name]=hashlib.sha256((root/name).read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+    receipt=worker.qualify_i4_sources(original,tmp_path)
+    assert all(receipt[n]['executed_scope_equal_original'] for n in ['native_history.py','forecast.py','fpl_model.py'])
+    p=tmp_path/'forecast.py';p.write_text(p.read_text(encoding='utf-8').replace('return best\n','return None\n'),encoding='utf-8')
+    with pytest.raises(ValueError,match='Executed I4 source changed'):worker.qualify_i4_sources(original,tmp_path)

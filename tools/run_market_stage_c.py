@@ -59,6 +59,35 @@ def protocol():
     return cfg
 
 
+def qualify_i4_sources(original, source_root=None):
+    """Qualify executed I4 code, explicitly isolating later unused API wrappers."""
+    root = Path(source_root) if source_root else Path(i4.__file__).parent
+    exceptions = {
+        'fpl_model.py':'92c837537621f78e99c2ba8ed39130137481d6c3f0cf7d7eedd673d20c6cce7c',
+        'native_history.py':'f9f66a5e375137163315ff9813d55f4b7a7f4f8bcd5401854e7876ee0160ad65',
+        'forecast.py':'8fd006ce27a013d140b79a7d2b0ddc957f3748849a8344014d7af364e7dbd635'}
+    receipt = {}
+    for name, expected in original.items():
+        raw=(root/name).read_bytes().replace(b'\r\n',b'\n'); actual=hashlib.sha256(raw).hexdigest()
+        receipt[name]=dict(original_lf_sha256=expected,receiving_lf_sha256=actual,whole_file_equal=actual==expected)
+        if name not in exceptions:
+            if actual!=expected: raise ValueError('I4 source differs: '+name)
+            continue
+        tree=ast.parse(raw)
+        if name=='fpl_model.py':
+            tree.body=[n for n in tree.body if not (isinstance(n,ast.ClassDef) and n.name=='ForecastModel')]
+        elif name=='native_history.py':
+            for node in tree.body:
+                if isinstance(node,ast.ClassDef) and node.name=='NativeHistory':
+                    node.body=[n for n in node.body if not (isinstance(n,ast.FunctionDef) and n.name in ['transform','transform_at_origins'])]
+        else:
+            tree=ast.Module(body=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in ['legal_squad','select_xi']],type_ignores=[])
+        fingerprint=hashlib.sha256(ast.dump(tree,include_attributes=False).encode()).hexdigest()
+        if fingerprint!=exceptions[name]: raise ValueError('Executed I4 source changed: '+name)
+        receipt[name].update(executed_scope_ast_sha256=fingerprint,executed_scope_equal_original=True)
+    return receipt
+
+
 def build(manifest, output):
     cfg = protocol(); tick = time.monotonic()
     original = json.loads(verified(manifest['i4_manifest']).read_text(encoding='utf-8'))
@@ -75,13 +104,7 @@ def build(manifest, output):
             if logical_bytes > 200_000_000: raise ValueError('Logical control exceeds input budget')
     if h.hexdigest() != original['inputs']['control']['sha256']:
         raise ValueError('I4 logical control cannot be reproduced')
-    for name, expected in original['code'].items():
-        actual = hashlib.sha256((Path(i4.__file__).parent/name).read_bytes().replace(b'\r\n', b'\n')).hexdigest()
-        if name != 'fpl_model.py' and actual != expected: raise ValueError('I4 source differs: ' + name)
-    tree = ast.parse((Path(i4.__file__).parent/'fpl_model.py').read_text(encoding='utf-8'))
-    tree.body = [n for n in tree.body if not (isinstance(n,ast.ClassDef) and n.name=='ForecastModel')]
-    if hashlib.sha256(ast.dump(tree,include_attributes=False).encode()).hexdigest() != '92c837537621f78e99c2ba8ed39130137481d6c3f0cf7d7eedd673d20c6cce7c':
-        raise ValueError('I4 model helpers differ outside unused ForecastModel wrapper')
+    source_qualification = qualify_i4_sources(original['code'])
     with threadpool_limits(limits=2):
         p, _, c = i4.load(entries)
         panels = i4.panels(c)
@@ -132,7 +155,7 @@ def build(manifest, output):
         cold_start_counts=cold, rating_origins=origins, source_max_checks=len(unique),
         panels=panels, panels_equal_original=True, logical_control_sha256=h.hexdigest(),
         logical_control_bytes=logical_bytes, inputs=manifest, original_environment=original['environment'],
-        receiving_environment=environment(), preparation_seconds=time.monotonic()-tick,
+        receiving_environment=environment(), source_qualification=source_qualification, preparation_seconds=time.monotonic()-tick,
         stage_C_method_fold_fits=0, scope='I4 core only + three raw market columns; identical nonmarket bytes; no later-season target/fit/score')
     write_json(output/'summary.json', summary)
     print(json.dumps(dict(status='built', rows=proof['rows'], rating_origins=origins, seconds=summary['preparation_seconds'])))
