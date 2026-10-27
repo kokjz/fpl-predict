@@ -98,7 +98,9 @@ receiving workspace, separating user facts, external evidence and judgments.
 
 ## Optional architect/programmer split
 
-Follow [HYBRID_WORKFLOW.md](HYBRID_WORKFLOW.md): user-selected Sonnet5.5/Opus5.5
+Follow [HYBRID_WORKFLOW.md](HYBRID_WORKFLOW.md): user-selected Opus5.5 Medium
+(including initial setup), High as needed within that architect conversation;
+see [ARCHITECT_MODEL_POLICY.md](ARCHITECT_MODEL_POLICY.md). The architect
 may design/interpret; GPT-6.1 Sol may implement/execute/test/publish. Verify role,
 brief revision/hash/source and actual access. One implementation writer; private
 coordination files carry handoffs, not stale chat memory. Routine engineering

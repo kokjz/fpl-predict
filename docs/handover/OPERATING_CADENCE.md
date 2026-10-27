@@ -10,7 +10,7 @@ no daily job, automatic messaging, account action or monitoring is configured.
 
 | Role | Responsibility | Normal involvement |
 |---|---|---|
-| Architect, user-selected Sonnet5.5 | Bounded research design, chronological validation, result interpretation and next-package priority | Package design and results checkpoints; Opus5.5 only for a specific difficult question or user selection |
+| Architect, user-selected Opus5.5 / Medium | Bounded research design, chronological validation, result interpretation and next-package priority | Initial setup and normal checkpoints at Medium; High as needed within the architect conversation |
 | Programmer, intended GPT-6.1 Sol | Implementation, bounded runs, independent audits, tests, coherent commits/PRs and release handoff | Throughout the authorised research package; one implementation writer |
 | Weekly planning chat, normally user-selected GPT-6.1 Sol / Medium | News, approved-model forecasts, transfers, selection, captaincy, chips and finalised-GW assessment | Each authorised planning/review cycle; no routine architect handoff required |
 | User | Confirmed manager state and execution, goals and unresolved material choices | Team updates and cross-chat/device handoffs where required |
@@ -120,7 +120,8 @@ token allowance or measured workflow saving is promised.
 
 ## Immediate receiving checkpoint
 
-A short Sonnet architect intake can confirm the existing brief. The programmer
+A short Opus5.5 / Medium architect intake can confirm the existing brief.
+Read ARCHITECT_MODEL_POLICY.md; the earlier Sonnet-first intake is superseded. The programmer
 then qualifies receiving source/runtime/private artifact and completes the
 already-authorised PR42 R1/R2/R3 repairs, valid-state tests and negative-result
 publication. Routine repairs need no new architecture gate. All20new+24retained

@@ -3,7 +3,8 @@
 This is the entry point for a fresh Codex or Claude chat taking over prediction-
 engine research on Windows. Read it before running models or modifying source.
 Weekly squad planning remains a separate responsibility. The optional intended
-workflow uses Claude Sonnet5.5 or Opus5.5 for architecture/interpretation and
+workflow uses Claude Opus5.5 at Medium (High as needed within the architect
+conversation, including Medium for initial setup) for architecture/interpretation and
 GPT-6.1 Sol for implementation. A single capable chat remains supported. Read
 the [hybrid workflow](docs/handover/HYBRID_WORKFLOW.md), then start with the
 [short bootstrap prompt](docs/handover/QUICK_START_PROMPT.md); the full prompt and
@@ -12,8 +13,17 @@ all evidence remain available without loading them all at once.
 For the day-to-day research and full gameweek rhythm, read the
 [daily/weekly operating cadence](docs/handover/OPERATING_CADENCE.md).
 
+For the chosen outer parent with sibling handover, repository and private runtime,
+follow [workspace placement and path mapping](docs/handover/WORKSPACE_LAYOUT.md).
+
+Read the [selected architect model/effort policy](docs/handover/ARCHITECT_MODEL_POLICY.md),
+which supersedes earlier Sonnet-first advice.
+
 See the [private package layout](docs/handover/PACKAGE_LAYOUT.md) for the separate
 role entry points and one canonical coordination packet.
+
+For a user-facing receiving checklist, follow
+[Windows handover steps](docs/handover/WINDOWS_HANDOVER_STEPS.md).
 
 ## Start here
 

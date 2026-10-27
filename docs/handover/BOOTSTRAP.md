@@ -1,13 +1,26 @@
 # Small receiving-chat bootstrap
 
 The optional receiving workflow splits architecture/result interpretation
-(Claude Sonnet5.5 or Opus5.5) from implementation (GPT-6.1 Sol), or uses one
+(Claude Opus5.5 / Medium, High as needed within that conversation) from
+implementation (GPT-6.1 Sol), or uses one
 capable chat. Read HYBRID_WORKFLOW.md and your role's startup prompt. Verify
 actual model/effort/account/tools and local Windows/WSL access. These are intended
 roles, not verified settings or measured superiority/cost savings.
 
-Read OPERATING_CADENCE.md for the ongoing research/gameweek rhythm and private
+Read ARCHITECT_MODEL_POLICY.md: Medium also covers initial intake/setup;
+earlier Sonnet-first advice is superseded. Read OPERATING_CADENCE.md for the ongoing research/gameweek rhythm and private
 release/defect handoffs; use it as a reference after initial intake.
+
+First resolve paths with WORKSPACE_LAYOUT.md. From the outer parent, start at
+private-handover/README_FIRST.md; read its instructions and your role prompt.
+The canonical packet is private-handover/coordination/. The sibling repository
+is fpl-predict/ and the restored runtime is private-workspace/payload/.
+
+Both roles must keep the active remote clone at the outer
+`fpl prediction model research/fpl-predict/`, with related project files under
+that parent where possible. Record necessary third-party-managed exceptions.
+The user need not manually hash the outer ZIP; programmer verification during
+restoration still applies.
 
 1. Inspect repository/source, open PRs and CHECKPOINT.json. Read PROJECT_CONTEXT.md
    and OPERATING_RULES.md once: they are the compact factual and standing-rule

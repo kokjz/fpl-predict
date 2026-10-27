@@ -4,6 +4,10 @@ Read [OPERATING_CADENCE.md](OPERATING_CADENCE.md) for the active-day research
 routine, complete weekly cycle and two-way private handoffs. It is included under
 source/ and linked from the role/update prompts and outer README.
 
+This tree describes the contents of `private-handover/`, not the entire outer
+research folder. The sibling repository and restored private runtime sit outside
+it; see [WORKSPACE_LAYOUT.md](WORKSPACE_LAYOUT.md) for the complete arrangement.
+
 The separately transferred ZIP is private. This public file describes its layout;
 it does not include the archive, approved weights or personal context.
 
@@ -11,7 +15,7 @@ it does not include the archive, approved weights or personal context.
 README_FIRST.md                    Extract/verify sequence and precedence
 START_PROMPT.md                    Select role and enter the shared workflow
 roles/
-  architect/START_PROMPT.md         Sonnet5.5; user-selected Opus5.5 when useful
+  architect/START_PROMPT.md         Opus5.5 Medium, including setup; High as needed
   programmer/START_PROMPT.md        GPT-6.1 Sol implementation and execution
   model_improvement/UPDATE_PROMPT.md  Update an existing improvement chat
   weekly_planner/UPDATE_PROMPT.md   Update the separate weekly-planning chat

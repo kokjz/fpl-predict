@@ -1,8 +1,11 @@
 # Prompt for the receiving model-improvement chat
 
 I am permanently moving my FPL prediction-engine improvement work to this
-Windows workflow. I may use Claude Sonnet5.5 or Opus5.5 as architect for ML
-pipeline/experiment design and results interpretation, with GPT-6.1 Sol as the
+Windows workflow. The architect uses Claude Opus5.5 / Medium for most tasks
+including initial setup; use High for specific harder questions as needed within
+that conversation, record why/actual effort and return to Medium afterward.
+Read ARCHITECT_MODEL_POLICY.md; earlier Sonnet-first advice is superseded.
+GPT-6.1 Sol remains the
 programmer for implementation, execution, audits/tests and Git/PR work. A single
 capable chat is also allowed. Confirm your role and actual model/effort/account/
 tool access; intended selections are not proof of runtime configuration.
@@ -15,6 +18,14 @@ without write/command access, but must not claim runs or direct verification it
 cannot perform.
 
 Repository: https://github.com/kokjz/fpl-predict
+
+For the outer parent, first read `private-handover/README_FIRST.md`, its
+`CLAUDE.md`/referenced instructions and `source/WORKSPACE_LAYOUT.md`. The sibling
+clone is `fpl-predict/`; current guides are also in `private-handover/source/`
+before cloning. Use only `private-handover/coordination/` as the active packet.
+The restored core goes to `private-workspace/`; select the sibling source through
+`--source-checkout` and verify the derived mappings. Read repository instructions
+explicitly before source work; keep private payload and maps outside Git.
 
 Start with `HANDOVER.md`, `docs/handover/HYBRID_WORKFLOW.md`, your
 `ARCHITECT_CHAT_PROMPT.md` or `PROGRAMMER_CHAT_PROMPT.md`, `BOOTSTRAP.md` and
@@ -123,7 +134,8 @@ compatibility check as forecast accuracy or promotion.
 For Pro usage, keep one bounded step active, a durable private RESUME_CURRENT.md
 and concise tool output. Check actual context and shared plan usage separately;
 checkpoint before compaction/new sessions and revalidate after resuming. Do not
-automatically spawn agents, change model/effort or enable paid overage. The short
+automatically spawn agents, switch models or enable paid overage. The user's
+explicit Opus Medium/High architect policy applies; verify/record actual effort. The short
 QUICK_START_PROMPT.md can bootstrap this same full workflow without pasting this
 whole document; it does not reduce any scientific/Git/privacy requirement.
 
@@ -137,3 +149,12 @@ opinion is not an independent season or production approval. Read originals when
 needed, preserve gates and report any unperformed architect review as pending.
 Measure practical usage/rework/defects/handoff overhead on existing authorised
 work; no model/cost superiority has been established for this project.
+
+
+Receiving location is mandatory for both roles: the outer folder is named
+"fpl prediction model research"; clone the remote only into its fpl-predict/
+child. Keep project files/worktrees, private data, notes, environments, logs and
+outputs under that outer root where possible. Record necessary third-party
+WSL/Docker/application-managed exceptions and actual paths/mounts; do not use
+default app checkout locations or create divergent Windows/Linux copies. Record
+the absolute outer root and canonical packet path in the private resume note.
