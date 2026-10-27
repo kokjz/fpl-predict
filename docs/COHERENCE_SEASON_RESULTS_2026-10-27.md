@@ -49,7 +49,8 @@ Frozen-roster selection effects of +2.50 for mean H6 and +4.25 for adapted
 Solio are selection-only overlays; they do not establish adaptive management
 gains. The separate older 2023/24 uncalibrated extension loses 9 and 65 points
 against mean H6. It adds source/rule coverage, not a third calibrated target
-year. The descriptive three-year uncalibrated-versus-H6 mean is −8.00.
+year. The descriptive three-year mean for uncalibrated availability-aware H6
+(decisionH6) minus mean H6 (standingH6) is −8.00.
 
 ## Provenance, failures and limits
 
