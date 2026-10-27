@@ -1,5 +1,11 @@
 # Market-implied team strength: admission checkpoint
 
+This historical Stage-A checkpoint was accepted with Amendment 1. Its open
+specification choices are resolved in the
+[new Stage-B protocol](market_strength_stage_b_protocol_2026-10-28.json);
+the [Stage-B result](MARKET_STRENGTH_STAGE_B_RESULTS_2026-10-28.md) passes its
+component gate and stops for architect review before player development.
+
 This is a **data-admission checkpoint**, with no Stage-B or player-model fit,
 score, Gate-B verdict or promotion. The
 [frozen admission protocol](market_strength_protocol_2026-10-28.json) records
