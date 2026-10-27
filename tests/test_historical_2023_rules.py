@@ -105,3 +105,27 @@ def solve(data,fts,transfer_count,use_wc,use_fh,m):
     context=dict(data={'chip_transfer_weeks':[20]},gws=[20,21],fts={20:2,21:1},transfer_count={20:0,21:0})
     assert eval(expr,context)=={20:1,21:2}
     with pytest.raises(ValueError,match='historical FT'):patched_tree(source.replace('ub=5','ub=4'),legacy_transfer_rules=True)
+
+
+@pytest.mark.parametrize('season,g,start',[('2023-24',21,21),('2023-24',20,21),('2024-25',19,20),('2025-26',20,20),('2025-26',19,20),('2025-26',2,2)])
+def test_used_chip_history_cannot_include_this_or_a_future_window(season,g,start):
+    s=replace(state(g,season=season),used_chips=(('wildcard',start),))
+    with pytest.raises(ValueError,match='precede'):prepare(s,market(g,season=season),action())
+    q=request(gw=g,H=1);q['market']['season']=q['state']['season']=season;q['state']['used_chips']=[['wildcard',start]]
+    with pytest.raises(ValueError,match='used-chip'):validate_request(q,read_json((RESOURCES/'native_solver_recipe.json').read_bytes()))
+    import importlib.util
+    from pathlib import Path
+    spec=importlib.util.spec_from_file_location('historical_auditor',Path(__file__).parents[1]/'tools/audit_season_path.py')
+    audit=importlib.util.module_from_spec(spec);spec.loader.exec_module(audit)
+    m=market(g,season=season)
+    with pytest.raises(AssertionError):
+        audit.advance(asdict(s),dict(season=season,gameweek=g,rows=[dict(p) for p in m.players]),asdict(action()))
+
+
+@pytest.mark.parametrize('season,extra',[('2023-24',1),('2024-25',4),('2025-26',4)])
+def test_complete_historical_bootstrap_checks_its_own_transfer_cap(season,extra):
+    from season_engine import rules_for,audit_bootstrap
+    rules=rules_for(season);b=dict(game_settings=dict(squad_squadplay=11,squad_squadsize=15,squad_team_limit=3,squad_total_spend=1000,transfers_cap=20,transfers_sell_on_fee=.5,max_extra_free_transfers=extra),chips=[dict(name=w['name'],start_event=w['start'],stop_event=w['stop'],number=1,overrides={}) for w in rules['chip_windows']])
+    assert audit_bootstrap(b,season,1)['active_rules_compatible']
+    b['game_settings']['max_extra_free_transfers']=extra+1
+    assert 'max_extra_free_transfers' in audit_bootstrap(b,season,1)['mismatches']

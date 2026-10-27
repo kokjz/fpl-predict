@@ -117,6 +117,7 @@ def prepare(state,market,action,rules=None):
     if state.gameweek==1 and (state.holdings or state.bank!=rules['initial_budget'] or state.free_transfers or state.used_chips or state.total_points or state.previous_chip):raise ValueError('GW1 must start with audited initial capital and no prior actions')
     if state.free_transfers>rules['ft_cap']:raise ValueError('Transfer bank exceeds season cap')
     if any(not any(w['name']==name and w['start']==start for w in rules['chip_windows']) for name,start in state.used_chips):raise ValueError('Chip history differs from season profile')
+    if any(start>=state.gameweek for _,start in state.used_chips):raise ValueError('Chip history must precede the origin')
     if not isinstance(action,Action):raise ValueError('Policy must return an Action')
     for seq in [action.buys,action.sells,action.starters,action.bench]:
         if not isinstance(seq,tuple) or len(set(seq))!=len(seq):raise ValueError('Mutable/duplicate action IDs')
@@ -201,7 +202,7 @@ def audit_bootstrap(bootstrap,season,gameweek):
     """Check executable active-chip rules; flag unsupported future overrides."""
     rules=rules_for(season);settings=bootstrap['game_settings']
     expected=dict(squad_squadplay=11,squad_squadsize=15,squad_team_limit=3,squad_total_spend=1000,
-                  transfers_cap=20,transfers_sell_on_fee=.5,max_extra_free_transfers=4)
+                  transfers_cap=20,transfers_sell_on_fee=.5,max_extra_free_transfers=rules['ft_cap']-1)
     mismatches=[k for k,v in expected.items() if settings.get(k)!=v]
     expected_windows={(w['name'],w['start'],w['stop']) for w in rules['chip_windows']}
     got={(w['name'],w['start_event'],w['stop_event']) for w in bootstrap['chips']}

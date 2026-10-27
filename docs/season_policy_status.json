@@ -350,5 +350,34 @@
   "original_qualification_evidence": "season_policy_qualification_results.json",
   "latest_followup_numerical_source": "353c28679d569a1c4d5e1fc82c8e76e57f7c3c96",
   "latest_decision_numerical_source": "b241e8ff2b64387cfa5e6ce71d9d3b170d29f96e",
-  "latest_repeatability_numerical_source": "23422fef92c220dcc59f1f886892756c5b4b75e3"
+  "latest_repeatability_numerical_source": "23422fef92c220dcc59f1f886892756c5b4b75e3",
+  "appearance_calibration_followup": {
+    "date": "2026-10-27",
+    "policy": "decisionH6_calibrated_fixedWork",
+    "status": "not_historically_qualified",
+    "numerical_source": "9e26851a92371690848e3811c6e120026dd33011",
+    "evidence": "COHERENCE_SEASON_RESULTS_2026-10-27.md",
+    "full_numerical_evidence": "handover/RESEARCH_STOPPING_RESULTS.json",
+    "primary_comparator": "decisionH6_fixedWork",
+    "opening_net_point_effects": [
+      -26,
+      -2,
+      5,
+      -104
+    ],
+    "season_mean_effects": {
+      "2024-25": -14.0,
+      "2025-26": -49.5
+    },
+    "equal_season_mean": -31.75,
+    "point_criterion_pass": false,
+    "component_gate_pass": true,
+    "point_means_and_errors_unchanged": true,
+    "new_paths": 20,
+    "retained_controls": 24,
+    "repeated_full_fingerprints_equal": 836,
+    "production_approved": false,
+    "forecaster_weights_changed": false,
+    "scope": "Two reused calibrated target years; older uncalibrated coverage is separate. Existing defaults, original gates and earlier dated results unchanged. Final source release/review tracked separately in handover/CHECKPOINT.json."
+  }
 }

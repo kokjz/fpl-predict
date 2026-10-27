@@ -2,8 +2,9 @@
 
 26 October 2026. The [protocol](appearance_calibration_protocol_2026-10-26.json)
 was fixed before the two calibration fits and their target-year evaluations.
-This is a historical research checkpoint; the continuous-season matrix is running
-separately. **No model or normal planning default is promoted.**
+These are the historical component results. The continuous-season matrix is now
+complete and [fails the season-points criterion](COHERENCE_SEASON_RESULTS_2026-10-27.md).
+**No model or normal planning default is promoted.**
 
 A single two-parameter Platt mapping is fitted on the preceding year's archived
 next-origin minute-increment labels. The older three-year reference and all
@@ -59,9 +60,9 @@ reproduce all ten full-decision fingerprints. Numerical source:
 `9e26851a92371690848e3811c6e120026dd33011`; fit/preflight source:
 `39f19c977816794134c44c3844cc66632354a320`.
 
-The next declared evaluation is eight calibrated candidate season paths on the
+The completed declared evaluation contains eight calibrated candidate season paths on the
 two existing target years and twelve older-year policy paths, with matched
-frozen controls and two solver repetitions. The original mean/−19-season/
+frozen controls and two solver repetitions. Its full result is linked above. The original mean/−19-season/
 −38-opening criteria remain unchanged. Reused outcomes, restricted 2024/25
 no-Assistant-Manager rules, bounded search, noisy labels and unequal historical
 source coverage limit inference. This adds no new Dastan/OpenFPL forecasting

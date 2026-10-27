@@ -35,6 +35,10 @@ def test_only_first_selection_changes_and_source_plan_remains_unmodified():
     assert prepare(s,m,old[0]).state==prepare(s,m,actions[0]).state
     assert r['objective']==pytest.approx(_objective(s,m,h,actions,cfg)[0])
     assert r['selection_control']['expected_after_hits']>=r['selection_control']['expected_before_hits']-1e-9
+    scores=r['selection_control']
+    assert scores['transfer_hit_points']==0  # Free Hit carries no transfer charge.
+    assert scores['expected_original_after_transfer_hits']==scores['expected_original_before_transfer_hits']==scores['expected_before_hits']
+    assert scores['expected_selected_after_transfer_hits']==scores['expected_selected_before_transfer_hits']==scores['expected_after_hits']
     assert r['selected_schedule_bound']['upper_objective']==raw['selected_schedule_bound']['upper_objective']
     assert r['selected_schedule_bound']['feasible_objective']==pytest.approx(r['objective'])
     assert r['selection_control']['expected_objective_bound'] is None
@@ -60,3 +64,20 @@ def test_invalid_sources_or_bounds_are_rejected(damage):
         return actions,r
     with pytest.raises(ValueError):
         FirstActionSelection(manager,a)(s,m,h,settings=cfg,policy=Policy(3),blocked=(),opening_ids=None)
+
+
+
+def test_explicit_selection_score_fields_distinguish_gross_from_transfer_hits():
+    s,m,h,a,cfg,_=inputs();s=replace(s,free_transfers=0)
+    def manager(state,market,horizon,*,settings,**kwargs):
+        ledger=dict(state.holdings);ledger.pop(15);ledger[16]=50
+        actions=_fallback(state,market,horizon,{'ledger':ledger},{})
+        value,parts=_objective(state,market,horizon,actions,settings)
+        return actions,dict(objective=value,components=parts,selected_schedule_bound=dict(status='synthetic_source',feasible_objective=value,upper_objective=value+100,relative_gap=100/abs(value)),proven_optimal=False)
+    actions,report=FirstActionSelection(manager,a)(s,m,h,settings=cfg,policy=Policy(3),blocked=(),opening_ids=None)
+    r=report['selection_control'];assert r['transfer_hit_points']==4
+    assert r['expected_original_before_transfer_hits']==r['expected_before_hits']
+    assert r['expected_selected_before_transfer_hits']==r['expected_after_hits']
+    assert r['expected_selected_after_transfer_hits']==pytest.approx(r['expected_selected_before_transfer_hits']-4)
+    assert r['expected_original_after_transfer_hits']==pytest.approx(r['expected_original_before_transfer_hits']-4)
+    assert actions[0].buys==(16,) and actions[0].sells==(15,)

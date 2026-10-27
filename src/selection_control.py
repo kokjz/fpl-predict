@@ -61,6 +61,8 @@ class FirstActionSelection:
         source_value, _ = _objective(state, market, horizon, proposed, settings)
         if abs(source_value-original['objective']) > 1e-6:
             raise ValueError('Source mean objective does not reconcile')
+        original_expected=objective(first.selection(),d,first.chip,check_clubs=False)
+        selected_expected=objective(choice,d,first.chip,check_clubs=False)
         report = dict(original)
         for key in ('trials', 'scenario_objectives', 'total_proxy'):
             if key in report: report['proposal_'+key] = report.pop(key)
@@ -71,8 +73,14 @@ class FirstActionSelection:
             proposal_mean_objective=source_value,
             objective_scope='Retained mean objective for admission; transfer/chip search unchanged, first selection uses expected legal scoring',
             selection_control=dict(origin=market.gameweek, original_first_action=asdict(first),
-                expected_before_hits=objective(first.selection(),d,first.chip,check_clubs=False),
-                expected_after_hits=objective(choice,d,first.chip,check_clubs=False),
+                expected_before_hits=original_expected,
+                expected_after_hits=selected_expected,
+                expected_original_before_transfer_hits=original_expected,
+                expected_original_after_transfer_hits=original_expected-after.hits,
+                expected_selected_before_transfer_hits=selected_expected,
+                transfer_hit_points=after.hits,
+                expected_selected_after_transfer_hits=selected_expected-after.hits,
+                legacy_expected_fields_scope='Legacy before/after fields describe original/selected lineups; both exclude transfer hits',
                 expected_objective_bound=None, financial_transition_unchanged=True,
                 future_provisional_actions_unchanged=selected[1:]==proposed[1:]),
             availability_provenance={k:a[k] for k in ('gameweek','as_of','trained_through','model_sha256','decision_sha256','calendar_sha256')},

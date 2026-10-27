@@ -134,7 +134,7 @@ def validate_request(q,recipe):
     if s['previous_chip'] not in (None,'wildcard','freehit','bboost','3xc'):raise ValueError('Unknown previous chip')
     used=set()
     for name,start in s['used_chips']:
-        if type(start) is not int or start>g or (name,start) in used or not any(w['name']==name and w['start']==start for w in rules['chip_windows']):raise ValueError('Invalid used-chip ledger')
+        if type(start) is not int or start>=g or (name,start) in used or not any(w['name']==name and w['start']==start for w in rules['chip_windows']):raise ValueError('Invalid used-chip ledger')
         used.add((name,start))
     chips={}
     for week,name in q['chip_schedule'].items():

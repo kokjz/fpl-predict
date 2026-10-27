@@ -46,7 +46,7 @@ def advance(state,market,action,blocked=()):
     assert action['captain'] in xi and action['vice'] in xi and action['captain']!=action['vice']
     assert sum(by[i]['position']==1 for i in bench)==1
     chip=action['chip'];assert chip in (None,'wildcard','freehit','bboost','3xc')
-    used=set(map(tuple,state['used_chips']))
+    used=set(map(tuple,state['used_chips']));assert all(start<g for _,start in used)
     if chip:
         if season=='2023-24':start=21 if chip=='wildcard' and g>=21 else 2 if chip in ('wildcard','freehit') else 1
         else:start=20 if g>=20 and (season=='2025-26' or chip=='wildcard') else 2 if chip in ('wildcard','freehit') else 1
