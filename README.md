@@ -6,6 +6,9 @@ fpl-predict combines recent player form, playing-time patterns and fixture conte
 
 **Project status:** experimental, with a command-line interface. Python 3.12 is required. Source, tests and evaluation protocols are included; historical datasets and trained model binaries are not distributed. A fresh installation can run the tests and reproduce training experiments. Forecasting additionally requires a trusted model artifact approved by the runtime registry; see [model setup](#model-setup).
 
+For a receiving model-improvement chat or a cross-device weekly workflow, start
+with the [handover index](HANDOVER.md) and its explicit checkpoint/approval scope.
+
 ## What it does
 
 - Predicts fixture-level core points, defensive-contribution points, expected minutes, appearance probability and probability of playing at least 60 minutes.
