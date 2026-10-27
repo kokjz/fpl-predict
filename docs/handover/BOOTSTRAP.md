@@ -6,6 +6,9 @@ capable chat. Read HYBRID_WORKFLOW.md and your role's startup prompt. Verify
 actual model/effort/account/tools and local Windows/WSL access. These are intended
 roles, not verified settings or measured superiority/cost savings.
 
+Read OPERATING_CADENCE.md for the ongoing research/gameweek rhythm and private
+release/defect handoffs; use it as a reference after initial intake.
+
 1. Inspect repository/source, open PRs and CHECKPOINT.json. Read PROJECT_CONTEXT.md
    and OPERATING_RULES.md once: they are the compact factual and standing-rule
    map. Read CLAUDE_PRO_WORKFLOW.md and WINDOWS_SETUP.md for setup, then use those

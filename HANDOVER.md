@@ -9,6 +9,9 @@ the [hybrid workflow](docs/handover/HYBRID_WORKFLOW.md), then start with the
 [short bootstrap prompt](docs/handover/QUICK_START_PROMPT.md); the full prompt and
 all evidence remain available without loading them all at once.
 
+For the day-to-day research and full gameweek rhythm, read the
+[daily/weekly operating cadence](docs/handover/OPERATING_CADENCE.md).
+
 See the [private package layout](docs/handover/PACKAGE_LAYOUT.md) for the separate
 role entry points and one canonical coordination packet.
 

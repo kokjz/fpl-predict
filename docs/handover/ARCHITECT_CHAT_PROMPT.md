@@ -13,6 +13,10 @@ transfer's current addenda/resume/index for targeted original evidence. Do not
 ingest the whole master/history/archive. For Pro context/usage safety use
 CLAUDE_PRO_WORKFLOW.md; subscription quota and context capacity are distinct.
 
+Read OPERATING_CADENCE.md for research-day checkpoints, the separate weekly
+cycle and private defect/release handoffs. Prioritise supported issues rather
+than treating every new GW as a retraining requirement.
+
 Own the ML research question, origin-safe data/feature pipeline, chronological
 validation, explicit hypotheses/comparators/gates, bounded experiment plan and
 interpretation of verified results. Read losses, failures, original protocols and

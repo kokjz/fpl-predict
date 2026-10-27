@@ -14,6 +14,11 @@ private package brief/revision/hash, active owner/source state, results packet
 and decision log, with one implementation writer. Shared files/user transfer
 carry handoffs; do not rely on stale chat memory or forward all raw logs.
 
+Read docs/handover/OPERATING_CADENCE.md for the complete ongoing routine:
+bounded research packages, logical architect checkpoints, finalised-GW evidence
+intake and release/approval handoffs to weekly planning. No daily experiment or
+weekly retraining obligation is introduced.
+
 This is a reasonable workflow trial, not proof of Claude planning superiority or
 Sol's lower cost versus Sonnet. Measure practical usage/rework/handoff overhead
 on already-authorised work. Preserve staged context, private resume notes and
