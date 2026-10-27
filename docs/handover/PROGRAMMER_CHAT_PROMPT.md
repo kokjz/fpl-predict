@@ -7,6 +7,24 @@ settings. A separate user-selected Claude Sonnet5.5 or Opus5.5 chat may handle
 architecture and scientific interpretation. A single-chat fallback is allowed.
 
 Repository: https://github.com/kokjz/fpl-predict.
+
+Receiving location is mandatory for both roles: the outer folder is named
+"fpl prediction model research"; clone the remote only into its fpl-predict/
+child. Keep project files/worktrees, private data, notes, environments, logs and
+outputs under that outer root where possible. Record necessary third-party
+WSL/Docker/application-managed exceptions and actual paths/mounts; do not use
+default app checkout locations or create divergent Windows/Linux copies. Record
+the absolute outer root and canonical packet path in the private resume note.
+
+Read WORKSPACE_LAYOUT.md: the outer parent contains private-handover/, the
+sibling fpl-predict/ clone and private-workspace/ for restored payload. From
+the clone, access those private siblings explicitly; from the parent, start at
+private-handover/README_FIRST.md and read both handover and clone instructions.
+The canonical packet is private-handover/coordination/. Restore with the current
+tool and --source-checkout pointing to the sibling clone, verify actual source/
+private mappings, and keep path adaptations outside Git. No second clone is
+required for the older nested default. Source/interpreter adapters still need
+validation; FPL_PREDICT_HOME alone does not relocate all historical launchers.
 Read HANDOVER.md, docs/handover/HYBRID_WORKFLOW.md, BOOTSTRAP.md, CHECKPOINT.json,
 compact PROJECT_CONTEXT.md and OPERATING_RULES.md. Restore the separately PRIVATE
 transfer with its trusted checksums and staged instructions. If the supplied ZIP

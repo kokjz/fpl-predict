@@ -16,6 +16,14 @@ cannot perform.
 
 Repository: https://github.com/kokjz/fpl-predict
 
+For the outer parent, first read `private-handover/README_FIRST.md`, its
+`CLAUDE.md`/referenced instructions and `source/WORKSPACE_LAYOUT.md`. The sibling
+clone is `fpl-predict/`; current guides are also in `private-handover/source/`
+before cloning. Use only `private-handover/coordination/` as the active packet.
+The restored core goes to `private-workspace/`; select the sibling source through
+`--source-checkout` and verify the derived mappings. Read repository instructions
+explicitly before source work; keep private payload and maps outside Git.
+
 Start with `HANDOVER.md`, `docs/handover/HYBRID_WORKFLOW.md`, your
 `ARCHITECT_CHAT_PROMPT.md` or `PROGRAMMER_CHAT_PROMPT.md`, `BOOTSTRAP.md` and
 `CLAUDE_PRO_WORKFLOW.md`, then `CHECKPOINT.json`, `PROJECT_CONTEXT.md`,
@@ -137,3 +145,12 @@ opinion is not an independent season or production approval. Read originals when
 needed, preserve gates and report any unperformed architect review as pending.
 Measure practical usage/rework/defects/handoff overhead on existing authorised
 work; no model/cost superiority has been established for this project.
+
+
+Receiving location is mandatory for both roles: the outer folder is named
+"fpl prediction model research"; clone the remote only into its fpl-predict/
+child. Keep project files/worktrees, private data, notes, environments, logs and
+outputs under that outer root where possible. Record necessary third-party
+WSL/Docker/application-managed exceptions and actual paths/mounts; do not use
+default app checkout locations or create divergent Windows/Linux copies. Record
+the absolute outer root and canonical packet path in the private resume note.

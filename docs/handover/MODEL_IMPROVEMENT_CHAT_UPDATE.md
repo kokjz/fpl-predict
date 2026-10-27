@@ -19,6 +19,13 @@ bounded research packages, logical architect checkpoints, finalised-GW evidence
 intake and release/approval handoffs to weekly planning. No daily experiment or
 weekly retraining obligation is introduced.
 
+Workspace placement now follows WORKSPACE_LAYOUT.md: private-handover/,
+fpl-predict/ and private-workspace/ are siblings under the outer research folder.
+Use private-handover/coordination/ as the sole active packet. Explicitly read
+both instruction sets and pass the actual sibling --source-checkout to the
+current restore tool; its resolver now honours that mapping. Preserve originals
+and validate private/source paths. Weekly squad-planner instructions are unchanged.
+
 This is a reasonable workflow trial, not proof of Claude planning superiority or
 Sol's lower cost versus Sonnet. Measure practical usage/rework/handoff overhead
 on already-authorised work. Preserve staged context, private resume notes and
@@ -43,3 +50,12 @@ state/frozen trials; no new forecast/team/account action is requested here.
 Confirm your role, source/checkpoint/model and next step after reading the shared
 files. Keep normal autonomy within the authorised package; ask only for genuinely
 missing prerequisites. Do not send another chat a message without my authorisation.
+
+
+Receiving location is mandatory for both roles: the outer folder is named
+"fpl prediction model research"; clone the remote only into its fpl-predict/
+child. Keep project files/worktrees, private data, notes, environments, logs and
+outputs under that outer root where possible. Record necessary third-party
+WSL/Docker/application-managed exceptions and actual paths/mounts; do not use
+default app checkout locations or create divergent Windows/Linux copies. Record
+the absolute outer root and canonical packet path in the private resume note.

@@ -4,6 +4,10 @@ Read [OPERATING_CADENCE.md](OPERATING_CADENCE.md) for the active-day research
 routine, complete weekly cycle and two-way private handoffs. It is included under
 source/ and linked from the role/update prompts and outer README.
 
+This tree describes the contents of `private-handover/`, not the entire outer
+research folder. The sibling repository and restored private runtime sit outside
+it; see [WORKSPACE_LAYOUT.md](WORKSPACE_LAYOUT.md) for the complete arrangement.
+
 The separately transferred ZIP is private. This public file describes its layout;
 it does not include the archive, approved weights or personal context.
 

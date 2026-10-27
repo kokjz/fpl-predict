@@ -10,6 +10,17 @@ and authorised GitHub writes for implementation/PR work. A tool-less chat can
 read context but cannot execute the handover; identify missing access explicitly
 rather than claiming runs or uploads. This requirement is vendor-independent.
 
+Read [WORKSPACE_LAYOUT.md](WORKSPACE_LAYOUT.md) for the supported parent folder
+with sibling private-handover/, fpl-predict/ and private-workspace/. Its placement
+and source mapping supersede older nested-clone-only examples.
+
+For this receiving workflow the outer folder is named
+`fpl prediction model research`, and the remote must be cloned only into its
+`fpl-predict/` child. Keep related files under the parent where possible; record
+necessary third-party storage/mount exceptions. Both roles follow this rule.
+The old nested clone remains a tool compatibility default, not this workspace's
+chosen destination.
+
 ## Runtime choice
 
 Use Python3.12 for the engine. Match the measured private runtime versions in
@@ -45,12 +56,15 @@ No GPU/CUDA/cloud installation is necessary for the current checkpoint.
 ## Restore without executing transferred code
 
 Obtain the archive and SHA256 through the user's private transfer. On Windows,
-`Get-FileHash -Algorithm SHA256` can independently check the file first. Then use
+manual `Get-FileHash -Algorithm SHA256` checking of the outer delivery is optional
+for the user's private device-to-device transfer. The programmer performs
+automated inner archive/member and approved-artifact checks using the supplied
+checksums; those guards remain active. Then use
 these source-checkout commands with the actual archive/destination:
 
 ```sh
 python tools/portable_handover.py verify --archive PRIVATE.zip --sha256 TRUSTED_SHA256
-python tools/portable_handover.py restore --archive PRIVATE.zip --sha256 TRUSTED_SHA256 --destination NEW_PRIVATE_WORKSPACE
+python tools/portable_handover.py restore --archive "PRIVATE.zip" --sha256 TRUSTED_SHA256 --destination "NEW_PRIVATE_WORKSPACE" --source-checkout "ACTUAL_SOURCE_CHECKOUT"
 ```
 
 The tool refuses mismatched bytes, unsafe/colliding paths, symlinks and existing
@@ -58,11 +72,16 @@ output destinations. It verifies every member and leaves original payload bytes
 unchanged. Inspect `TRANSFER_MANIFEST.json` and the generated `PORTABLE_PATHS.json`.
 This verification does not itself execute/unpickle transferred models or scripts.
 
-Clone the repository as `NEW_PRIVATE_WORKSPACE/payload/fpl-predict`. Keep that
-source checkout on reviewed main for normal work; use a separate checkout or the
-explicit pinned research branch for unfinished PR42. Never change a checkout
-owned by an active other task. The private registry belongs under the payload's
-`model/`directory, selected through explicit `FPL_PREDICT_HOME`.
+For the sibling layout, clone the repository as `fpl-predict/` beside
+`private-handover/` and `private-workspace/` under the chosen outer parent. Pass
+that actual absolute or shell-relative source location to `--source-checkout`
+when restoring; it can be the future clone location. Keep reviewed main for
+normal work; use a separate checkout or the explicit pinned research branch for
+unfinished PR42. Never change another task's checkout. The private registry lives
+in `NEW_PRIVATE_WORKSPACE/payload/model/`, selected through explicit
+`FPL_PREDICT_HOME`. Omitting `--source-checkout` retains the older nested default
+`NEW_PRIVATE_WORKSPACE/payload/fpl-predict` for compatibility; do not create a
+second clone merely to satisfy that default.
 
 ## Relocate paths honestly
 
@@ -72,6 +91,12 @@ They are immutable historical evidence. Resolve workspace paths with:
 ```sh
 python tools/portable_handover.py resolve --map NEW_PRIVATE_WORKSPACE/PORTABLE_PATHS.json --path ORIGINAL_WORKSPACE_PATH
 ```
+
+The current resolver honours `source_checkout` for the exact original
+`fpl-predict` subtree, while other paths stay in the private payload. Older
+standalone copies ignored this field: use the current tool and check source and
+private mappings separately. Changing `FPL_PREDICT_HOME` alone is insufficient
+for historical source/interpreter paths.
 
 Do not rewrite frozen source/data/forecast files and retain their old hashes.
 Create separately named derived manifests/wrappers when a filesystem/runtime

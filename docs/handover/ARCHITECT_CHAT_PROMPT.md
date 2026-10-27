@@ -7,6 +7,22 @@ This optional role split supplements, rather than replaces, the user's standing
 instructions, research gates, privacy and Git SOP.
 
 Repository: https://github.com/kokjz/fpl-predict.
+
+Receiving location is mandatory for both roles: the outer folder is named
+"fpl prediction model research"; clone the remote only into its fpl-predict/
+child. Keep project files/worktrees, private data, notes, environments, logs and
+outputs under that outer root where possible. Record necessary third-party
+WSL/Docker/application-managed exceptions and actual paths/mounts; do not use
+default app checkout locations or create divergent Windows/Linux copies. Record
+the absolute outer root and canonical packet path in the private resume note.
+
+If your selected root is the outer research folder, first read
+private-handover/README_FIRST.md, its CLAUDE.md/referenced instructions and
+private-handover/source/WORKSPACE_LAYOUT.md. Use private-handover/coordination/
+as the one active packet; record its absolute path. The sibling clone is
+fpl-predict/. Until it exists, read current guides from private-handover/source/;
+read the clone's own CLAUDE.md/AGENTS.md before repository work. Do not assume
+child instructions or bare relative prompt paths were automatically loaded.
 Read HANDOVER.md, docs/handover/HYBRID_WORKFLOW.md, CHECKPOINT.json, compact
 PROJECT_CONTEXT.md and OPERATING_RULES.md. Use BOOTSTRAP.md and the private
 transfer's current addenda/resume/index for targeted original evidence. Do not

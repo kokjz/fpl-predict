@@ -12,6 +12,9 @@ all evidence remain available without loading them all at once.
 For the day-to-day research and full gameweek rhythm, read the
 [daily/weekly operating cadence](docs/handover/OPERATING_CADENCE.md).
 
+For the chosen outer parent with sibling handover, repository and private runtime,
+follow [workspace placement and path mapping](docs/handover/WORKSPACE_LAYOUT.md).
+
 See the [private package layout](docs/handover/PACKAGE_LAYOUT.md) for the separate
 role entry points and one canonical coordination packet.
 

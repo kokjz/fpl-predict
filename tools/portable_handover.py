@@ -79,9 +79,11 @@ def verify(archive,expected):
     return m
 
 
-def restore(archive,expected,destination):
+def restore(archive,expected,destination,source_checkout=None):
     m=verify(archive,expected);target=Path(destination).resolve()
-    if target.exists() or target.is_relative_to(ROOT):raise ValueError('Require a new destination outside checkout')
+    source=Path(source_checkout).expanduser().resolve() if source_checkout is not None else target/'payload/fpl-predict'
+    if target.exists() or target.is_relative_to(ROOT) or target.is_relative_to(source):raise ValueError('Require a new destination outside checkout')
+    if source.exists() and not source.is_dir():raise ValueError('Source checkout must be a directory or a future clone location')
     target.parent.mkdir(parents=True,exist_ok=True);tmp=Path(tempfile.mkdtemp(prefix='.'+target.name+'-restore-',dir=target.parent))
     try:
         with zipfile.ZipFile(archive) as z:
@@ -92,7 +94,7 @@ def restore(archive,expected,destination):
                 with z.open(info) as src,p.open('xb') as dst:shutil.copyfileobj(src,dst,1024**2)
                 if info.filename!='TRANSFER_MANIFEST.json' and digest(p)!=members[info.filename]['sha256']:raise ValueError('Archive changed during extraction')
         if digest(archive)!=expected:raise ValueError('Archive changed during restoration')
-        paths=dict(schema_version=1,original_workspace=m['original_workspace'],workspace=str(target/'payload'),source_checkout=str(target/'payload/fpl-predict'),scope='Original payload bytes unchanged; resolve legacy paths through this derived map, never rewrite frozen records')
+        paths=dict(schema_version=1,original_workspace=m['original_workspace'],workspace=str(target/'payload'),source_checkout=str(source),scope='Original payload bytes unchanged; source paths resolve to source_checkout, other workspace paths to workspace; never rewrite frozen records')
         (tmp/'PORTABLE_PATHS.json').write_text(json.dumps(paths,indent=2)+'\n');tmp.rename(target)
     except BaseException:
         shutil.rmtree(tmp);raise
@@ -104,6 +106,9 @@ def resolve(original,paths):
     if original==root:return str(Path(paths['workspace']))
     if not original.startswith(prefix):raise ValueError('Path is outside captured workspace; supply an explicit new runtime location')
     suffix=original[len(prefix):];name(suffix)
+    if suffix=='fpl-predict' or suffix.startswith('fpl-predict/'):
+        source=Path(paths.get('source_checkout',Path(paths['workspace'])/'fpl-predict'))
+        return str(source.joinpath(*PurePosixPath(suffix).parts[1:]))
     return str(Path(paths['workspace']).joinpath(*PurePosixPath(suffix).parts))
 
 
@@ -111,10 +116,12 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     for command in ['verify','restore']:
         q=sub.add_parser(command);q.add_argument('--archive',type=Path,required=True);q.add_argument('--sha256',required=True)
-        if command=='restore':q.add_argument('--destination',type=Path,required=True)
+        if command=='restore':
+            q.add_argument('--destination',type=Path,required=True)
+            q.add_argument('--source-checkout',type=Path,help='Actual public checkout or future clone path; default: DESTINATION/payload/fpl-predict')
     q=sub.add_parser('resolve');q.add_argument('--map',type=Path,required=True);q.add_argument('--path',required=True);a=p.parse_args()
     if a.command=='resolve':print(resolve(a.path,json.loads(a.map.read_text())));return
-    m=verify(a.archive,a.sha256) if a.command=='verify' else restore(a.archive,a.sha256,a.destination)
+    m=verify(a.archive,a.sha256) if a.command=='verify' else restore(a.archive,a.sha256,a.destination,a.source_checkout)
     print(json.dumps(dict(status='verified' if a.command=='verify' else 'restored',members=len(m['members']) if a.command=='verify' else None,untrusted_code_executed=False)))
 
 

@@ -9,6 +9,17 @@ roles, not verified settings or measured superiority/cost savings.
 Read OPERATING_CADENCE.md for the ongoing research/gameweek rhythm and private
 release/defect handoffs; use it as a reference after initial intake.
 
+First resolve paths with WORKSPACE_LAYOUT.md. From the outer parent, start at
+private-handover/README_FIRST.md; read its instructions and your role prompt.
+The canonical packet is private-handover/coordination/. The sibling repository
+is fpl-predict/ and the restored runtime is private-workspace/payload/.
+
+Both roles must keep the active remote clone at the outer
+`fpl prediction model research/fpl-predict/`, with related project files under
+that parent where possible. Record necessary third-party-managed exceptions.
+The user need not manually hash the outer ZIP; programmer verification during
+restoration still applies.
+
 1. Inspect repository/source, open PRs and CHECKPOINT.json. Read PROJECT_CONTEXT.md
    and OPERATING_RULES.md once: they are the compact factual and standing-rule
    map. Read CLAUDE_PRO_WORKFLOW.md and WINDOWS_SETUP.md for setup, then use those
