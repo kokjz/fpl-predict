@@ -107,7 +107,7 @@ def fit_ratings(matches,cutoff,*,target_match=None):
     for row in matches:
         when=timestamp(row['kickoff'])
         if when>=cutoff: raise ValueError('Match kickoff must be strictly before cutoff')
-        key=(row['season'],row['fixture'])
+        key=tuple(row['identity']) if 'identity' in row else (row['season'],row['fixture'])
         if key==target_match: raise ValueError('Target-match odds are prohibited')
         if key in seen: raise ValueError('Duplicate market match identity')
         seen.add(key)
