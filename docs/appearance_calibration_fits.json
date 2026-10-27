@@ -1,0 +1,458 @@
+{
+  "complete": true,
+  "targets": [
+    {
+      "target": "2024-25",
+      "training_season": "2023-24",
+      "calibration": {
+        "schema_version": 1,
+        "method": "chronological_platt_v1",
+        "slope": 1.048118899494425,
+        "intercept": 0.4063201511212161,
+        "probability_clip": 1e-06,
+        "training_cells": 18458,
+        "positive_labels": 10499,
+        "training_data_available_through": "2024-05-19T12:33:00+00:00",
+        "target_not_before": "2024-08-16T12:38:00+00:00",
+        "executed_at_utc": "2026-10-25T18:24:42.796932+00:00",
+        "source_hashes": {
+          "protocol": "2ebeedd02433265240595fc613052aa33fe4ef78c6dae5ce596f927c8cbae008",
+          "markets": "ee10dbd167ef88e745befeb28775c0a413a6e6440a4de82226a0c892b09b6724",
+          "appearance": "2ec15dbff098ad23d30294e44a490828d545eef1f2775a325dd81d19e8a3df0b",
+          "cohort": "36d195af87759b08b7059bd68392f011c1f42ae29b62f8213730859278bf9ffd"
+        },
+        "half_life_days": 730.5,
+        "approval": "Historical research only; no operational promotion"
+      },
+      "cohort_audit": {
+        "counts": {
+          "considered": 28649,
+          "included": 18458,
+          "negative_revision": 354,
+          "official_zero": 9277,
+          "zero_support": 560
+        },
+        "clocks": [
+          {
+            "gameweek": 1,
+            "label_available_at": "2023-08-18T12:31:00+00:00",
+            "label_source_sha256": "cd94da6586686c77c7516e094f1ba5f165085260612d042477b42a2bf6a8c52a"
+          },
+          {
+            "gameweek": 2,
+            "label_available_at": "2023-08-25T12:32:00+00:00",
+            "label_source_sha256": "f5a13892f9294c6ba8190b058b428a0db2c99e19591a630a0e8635d9dbad2304"
+          },
+          {
+            "gameweek": 3,
+            "label_available_at": "2023-09-01T12:32:00+00:00",
+            "label_source_sha256": "6efa3c3be23926e3f94dd31f304224e17f00ba837bc873b8a73a5299939266db"
+          },
+          {
+            "gameweek": 4,
+            "label_available_at": "2023-09-16T06:20:00+00:00",
+            "label_source_sha256": "43b82e90908681fa0269c2184044223932100071b0fe0d1b04a226c496dbd3d9"
+          },
+          {
+            "gameweek": 5,
+            "label_available_at": "2023-09-23T06:20:00+00:00",
+            "label_source_sha256": "e0f71b52dc7cc1057195f54087e0306117ee0cc85a21e13899c72fe2de832752"
+          },
+          {
+            "gameweek": 6,
+            "label_available_at": "2023-09-30T06:21:00+00:00",
+            "label_source_sha256": "38eb4d437476bb70c2c6d689246e13e7c0e17ee4e5fbf4be5d37e5c4b9f16896"
+          },
+          {
+            "gameweek": 7,
+            "label_available_at": "2023-10-07T06:21:00+00:00",
+            "label_source_sha256": "9a9a762c3450020c279db8f62760a0da566601fdf13dd7d5445dc7d57bd8bb15"
+          },
+          {
+            "gameweek": 8,
+            "label_available_at": "2023-10-21T06:21:00+00:00",
+            "label_source_sha256": "e454e3f28488b4aad5eb1802307e6d1ffdb8831987f5e10ad5a62ce971ca2841"
+          },
+          {
+            "gameweek": 9,
+            "label_available_at": "2023-10-27T12:33:00+00:00",
+            "label_source_sha256": "5e7ebc796e7e1f4c0e759c672dc1a39fe6ceaece40472c25965ebf8eded84abe"
+          },
+          {
+            "gameweek": 10,
+            "label_available_at": "2023-11-04T06:21:00+00:00",
+            "label_source_sha256": "cce06561b1cfd37a0a1c5bbad8815d02f83e25e4cbbbda3061ae5eb9a0bc633d"
+          },
+          {
+            "gameweek": 11,
+            "label_available_at": "2023-11-11T06:21:00+00:00",
+            "label_source_sha256": "f873a29708e7156268db72e8aac46d700a0b6b92366eb82d41871eacaae04724"
+          },
+          {
+            "gameweek": 12,
+            "label_available_at": "2023-11-25T06:21:00+00:00",
+            "label_source_sha256": "3f21f909cd7f745dfec71608d8dc5546e2055dce7764b8c484e38dfa3031bbf3"
+          },
+          {
+            "gameweek": 13,
+            "label_available_at": "2023-12-02T12:31:00+00:00",
+            "label_source_sha256": "9d5483e8a54bec0176d0e61e180775c70a1a7f20134af9c3c25d725c7fc41eb3"
+          },
+          {
+            "gameweek": 14,
+            "label_available_at": "2023-12-05T12:34:00+00:00",
+            "label_source_sha256": "99c414824dbf74b93b025ed1856f9c6014bd7e24fae42e63f32c3c6761f5f823"
+          },
+          {
+            "gameweek": 15,
+            "label_available_at": "2023-12-09T06:21:00+00:00",
+            "label_source_sha256": "71d7dd2a01f31aac65a3d26c4048315259fec9e3a22ad654dd86efda4b700ac9"
+          },
+          {
+            "gameweek": 16,
+            "label_available_at": "2023-12-15T18:22:00+00:00",
+            "label_source_sha256": "d3b3b5ff0aa35d5630c7887e968d233324f5b0d27f51831e92f532df9fb1641a"
+          },
+          {
+            "gameweek": 17,
+            "label_available_at": "2023-12-21T18:20:00+00:00",
+            "label_source_sha256": "f15075d28ca8f94e5e7865de4f75a103ebf196f7f23b8a59fe9118dfc2827894"
+          },
+          {
+            "gameweek": 18,
+            "label_available_at": "2023-12-26T06:22:00+00:00",
+            "label_source_sha256": "8c1afb2e560104ffadf5cbfadfc931654dd15e9466319959827749a4a663b5df"
+          },
+          {
+            "gameweek": 19,
+            "label_available_at": "2023-12-30T06:21:00+00:00",
+            "label_source_sha256": "e6e61fe6dea39797a00e210274602fbf8c1c558bbcb50fb850e8ef700f101bba"
+          },
+          {
+            "gameweek": 20,
+            "label_available_at": "2024-01-12T12:34:00+00:00",
+            "label_source_sha256": "0c26466f53b3d773a656960f281ca7e60ef8b2d712900a70d8c96f45c651e57b"
+          },
+          {
+            "gameweek": 21,
+            "label_available_at": "2024-01-30T12:31:00+00:00",
+            "label_source_sha256": "dc0059444028b457256892611cd3e9e2f7fa92360291682716a84959e9280a72"
+          },
+          {
+            "gameweek": 22,
+            "label_available_at": "2024-02-03T06:20:00+00:00",
+            "label_source_sha256": "7460ee769625d84f152439016e3a21e935d29152938b808980d1eb7b07e8c90a"
+          },
+          {
+            "gameweek": 23,
+            "label_available_at": "2024-02-10T06:20:00+00:00",
+            "label_source_sha256": "6e2c636d474660ac13be1245dc9c9da036ffc229b13af353796af53a1f49eaa9"
+          },
+          {
+            "gameweek": 24,
+            "label_available_at": "2024-02-17T06:21:00+00:00",
+            "label_source_sha256": "68ac14b405d6de055ef217314a00ed91052c732d99301d06555fb8a0576fd8be"
+          },
+          {
+            "gameweek": 25,
+            "label_available_at": "2024-02-24T12:29:00+00:00",
+            "label_source_sha256": "0335f951cbf4f3d4efd6fe7867866690d5f1266c084e56d35e9e3f9c90939be8"
+          },
+          {
+            "gameweek": 26,
+            "label_available_at": "2024-03-02T12:29:00+00:00",
+            "label_source_sha256": "dbea5d88e42b579ce06dc9a96bb02b076dd8e5ed8e12f5cc39fd3ca2015c29f4"
+          },
+          {
+            "gameweek": 27,
+            "label_available_at": "2024-03-09T06:23:00+00:00",
+            "label_source_sha256": "3c0e98dfe91b5284f61052ce93bb0d5b9a301900380fa3ce26ec888679aa897c"
+          },
+          {
+            "gameweek": 28,
+            "label_available_at": "2024-03-16T12:31:00+00:00",
+            "label_source_sha256": "45de01bfb4871256625ed8482b493140d0197d3a13a0ade8650976693c44893b"
+          },
+          {
+            "gameweek": 29,
+            "label_available_at": "2024-03-30T06:21:00+00:00",
+            "label_source_sha256": "e3b56f084c9cfb6dd12119535c6334aa6037847724e27c33b43fd91cfac586e3"
+          },
+          {
+            "gameweek": 30,
+            "label_available_at": "2024-04-02T12:33:00+00:00",
+            "label_source_sha256": "2f9a48646650d9538bba95de7220ead400f0faae2f594d646e0c1c37c5661243"
+          },
+          {
+            "gameweek": 31,
+            "label_available_at": "2024-04-06T06:21:00+00:00",
+            "label_source_sha256": "0dcd99bbde52a8a7b95054243c46b50ea2858cc1a21de078b7db77cedab7c318"
+          },
+          {
+            "gameweek": 32,
+            "label_available_at": "2024-04-13T06:17:00+00:00",
+            "label_source_sha256": "2b2c9ed73b07cae22ed02c912a1016ac6ffb037bb3f1469526cb8d140cb7b7e7"
+          },
+          {
+            "gameweek": 33,
+            "label_available_at": "2024-04-20T06:21:00+00:00",
+            "label_source_sha256": "d5b25a1e20ae52db82522feaa4dc386c5a3450ed375773802cf7e20d9c990942"
+          },
+          {
+            "gameweek": 34,
+            "label_available_at": "2024-04-27T06:23:00+00:00",
+            "label_source_sha256": "9db02c677c0a17761fda19e262a232cce17efc841ba571f3260e55ea87f59feb"
+          },
+          {
+            "gameweek": 35,
+            "label_available_at": "2024-05-03T12:32:00+00:00",
+            "label_source_sha256": "2baa009ae500f57bea658ff474945679d18e4b08fbc6016f2c401cd3f34d2f13"
+          },
+          {
+            "gameweek": 36,
+            "label_available_at": "2024-05-11T06:22:00+00:00",
+            "label_source_sha256": "e6efa35c918930b5389e0de017fafb9c378cc13cd74df0af3b0f48e69e77f744"
+          },
+          {
+            "gameweek": 37,
+            "label_available_at": "2024-05-19T12:33:00+00:00",
+            "label_source_sha256": "5c60766cc9542f403ef9ad0bdb5ee056f7d4829294acefc41417650716b0509d"
+          }
+        ],
+        "label": "Nonnegative API cumulative-minute increment before next deadline; prior revisions can add label noise; no later final histories used"
+      },
+      "source_sha256": "a5922cdbdc4f3b0021e2b44075bf69331d2c857ee2f2a940adaacf5b9fc1250d",
+      "result_sha256": "7217316587ce7bb324524d1378a2c9364d2e3a82e999cdb6cf3d54b61f47e2ed"
+    },
+    {
+      "target": "2025-26",
+      "training_season": "2024-25",
+      "calibration": {
+        "schema_version": 1,
+        "method": "chronological_platt_v1",
+        "slope": 1.011263676523504,
+        "intercept": 0.40674151345234577,
+        "probability_clip": 1e-06,
+        "training_cells": 18653,
+        "positive_labels": 10857,
+        "training_data_available_through": "2025-05-25T12:47:00+00:00",
+        "target_not_before": "2025-08-15T12:52:00+00:00",
+        "executed_at_utc": "2026-10-25T18:24:45.641007+00:00",
+        "source_hashes": {
+          "protocol": "2ebeedd02433265240595fc613052aa33fe4ef78c6dae5ce596f927c8cbae008",
+          "markets": "0e6690f1dbe5533a6bb582155e7423e1405df5111de47190cf856c7360559ffb",
+          "appearance": "a5922cdbdc4f3b0021e2b44075bf69331d2c857ee2f2a940adaacf5b9fc1250d",
+          "cohort": "800741624d6b6ea9262e63281e48be84d0fdd031489428eca750282192e7f04f"
+        },
+        "half_life_days": 730.5,
+        "approval": "Historical research only; no operational promotion"
+      },
+      "cohort_audit": {
+        "counts": {
+          "considered": 26377,
+          "negative_revision": 359,
+          "official_zero": 7159,
+          "included": 18653,
+          "zero_support": 206
+        },
+        "clocks": [
+          {
+            "gameweek": 1,
+            "label_available_at": "2024-08-23T18:26:00+00:00",
+            "label_source_sha256": "a57f8de963c6e1734198efe8e961b14d68b95b66bc66a37d7e449fc0ccec1c39"
+          },
+          {
+            "gameweek": 2,
+            "label_available_at": "2024-08-30T18:28:00+00:00",
+            "label_source_sha256": "a30247d50887acb838583381f47fd0bbd555bfdfd8c7597b9eef635cb147c007"
+          },
+          {
+            "gameweek": 3,
+            "label_available_at": "2024-09-13T18:28:00+00:00",
+            "label_source_sha256": "6be04d823e421d886159c34b2bd4a2f47f6067dc14c8ecbb5df765bf2b81ade1"
+          },
+          {
+            "gameweek": 4,
+            "label_available_at": "2024-09-20T18:29:00+00:00",
+            "label_source_sha256": "e2584dacce6256e0641c8999a187e4c6cd0a5c14a21dfb47c85b54e79b387e4f"
+          },
+          {
+            "gameweek": 5,
+            "label_available_at": "2024-09-27T18:30:00+00:00",
+            "label_source_sha256": "334ea22bc92a54ff82ea51b537916f66f15953e3051365310923591d295a9d8b"
+          },
+          {
+            "gameweek": 6,
+            "label_available_at": "2024-10-04T18:29:00+00:00",
+            "label_source_sha256": "f49a68626da893c270459604dea5c9199c5ee0db1ef8c7b92d24d4d7844a59ed"
+          },
+          {
+            "gameweek": 7,
+            "label_available_at": "2024-10-18T18:30:00+00:00",
+            "label_source_sha256": "31b1513e53432cada15501cdc24156f337d013abd39fa7d9bb6b9b192be2c15d"
+          },
+          {
+            "gameweek": 8,
+            "label_available_at": "2024-10-25T12:43:00+00:00",
+            "label_source_sha256": "a67508d5bce013ed1c616829140e588ef7bd4400a49a0f96f2c9d99225e7666a"
+          },
+          {
+            "gameweek": 9,
+            "label_available_at": "2024-11-01T18:30:00+00:00",
+            "label_source_sha256": "0fcbfbea616e9fe551bd1567ed814a8bc45a304a7c9c4b5164b8db1c48ca52c8"
+          },
+          {
+            "gameweek": 10,
+            "label_available_at": "2024-11-09T12:38:00+00:00",
+            "label_source_sha256": "324fabd726b905cde3a42dd91ea08eb57b9ec1c93b5bbd55bb7f5ac338742ec0"
+          },
+          {
+            "gameweek": 11,
+            "label_available_at": "2024-11-22T18:31:00+00:00",
+            "label_source_sha256": "96cbf6b970e573fea92651d6db17b83c2f397ce5a314cb91568e276ce0d3ff78"
+          },
+          {
+            "gameweek": 12,
+            "label_available_at": "2024-11-29T12:47:00+00:00",
+            "label_source_sha256": "ac662fba3b0b0b87b57884beeb4bdacc1cc4990ac5854e035002ee88c2b031b3"
+          },
+          {
+            "gameweek": 13,
+            "label_available_at": "2024-12-03T12:48:00+00:00",
+            "label_source_sha256": "47a84c44b18975879e8fd5c62bd0faa844618ce3f12b176b2aae69171e64a763"
+          },
+          {
+            "gameweek": 14,
+            "label_available_at": "2024-12-06T18:32:00+00:00",
+            "label_source_sha256": "6757bff8eab09ef2ddbb8142bf667147370a908ed5856ac4861a4c80bd2ae795"
+          },
+          {
+            "gameweek": 15,
+            "label_available_at": "2024-12-14T12:43:00+00:00",
+            "label_source_sha256": "b6807223f57d60f28dfe848d4cae3f22eef9961bb4f1df5c746b0195fbfdd3ef"
+          },
+          {
+            "gameweek": 16,
+            "label_available_at": "2024-12-20T18:29:00+00:00",
+            "label_source_sha256": "e7c59dc5dc0cdc63897fdef81275ad9412aa8d53bb6074c20a8b0af61a1a51cf"
+          },
+          {
+            "gameweek": 17,
+            "label_available_at": "2024-12-25T18:28:00+00:00",
+            "label_source_sha256": "1077a099bdfbde237076d3d57fb7e8e1da003819c6382cdd8463c6b9d1f3b37b"
+          },
+          {
+            "gameweek": 18,
+            "label_available_at": "2024-12-29T12:39:00+00:00",
+            "label_source_sha256": "05ca7934911c585fd51425e88baff73e03081aa0c7dd2c3e3409c4d52bd1bef8"
+          },
+          {
+            "gameweek": 19,
+            "label_available_at": "2025-01-03T18:29:00+00:00",
+            "label_source_sha256": "f3b4ca89f9de0eae5065b3d8a4f3891faa85375908d1a1e51818a9a1010a89bc"
+          },
+          {
+            "gameweek": 20,
+            "label_available_at": "2025-01-14T12:41:00+00:00",
+            "label_source_sha256": "d167faf62d41f05053bf55c4f2b97c9f58571be2fcb65eab8b1b4530e261a583"
+          },
+          {
+            "gameweek": 21,
+            "label_available_at": "2025-01-17T18:29:00+00:00",
+            "label_source_sha256": "a59071af671fe28813c1488797063ece1908f3991b2f50dbac85d9a4cea63f6d"
+          },
+          {
+            "gameweek": 22,
+            "label_available_at": "2025-01-25T12:38:00+00:00",
+            "label_source_sha256": "8b27730a0f89aaa185496f2b4478b3463672b90ac957a52df3aede0c5dad6ecf"
+          },
+          {
+            "gameweek": 23,
+            "label_available_at": "2025-01-31T18:29:00+00:00",
+            "label_source_sha256": "a67385887252c434f4307aaea489af05a557685c1c814b17cacea03e92eb9be4"
+          },
+          {
+            "gameweek": 24,
+            "label_available_at": "2025-02-14T12:43:00+00:00",
+            "label_source_sha256": "9b424eab523e3e88125f1d4e434a07eeb6b153b6011476078844460c2ba64f12"
+          },
+          {
+            "gameweek": 25,
+            "label_available_at": "2025-02-21T12:44:00+00:00",
+            "label_source_sha256": "bcb377af43c784e6a750437ece4d915451755f47fbb4c272bdff3b7bf0673835"
+          },
+          {
+            "gameweek": 26,
+            "label_available_at": "2025-02-25T12:45:00+00:00",
+            "label_source_sha256": "76a4a39d6b9b8364085e80043bf21dbbac642a080c45af99a0f71e1924bf4511"
+          },
+          {
+            "gameweek": 27,
+            "label_available_at": "2025-03-07T18:31:00+00:00",
+            "label_source_sha256": "b00e0b6c946edf510b8f1a2ab65267f7056556a8271ba6249f5863029ea0dc21"
+          },
+          {
+            "gameweek": 28,
+            "label_available_at": "2025-03-15T12:41:00+00:00",
+            "label_source_sha256": "9a3ebd94707ce3453822fe49a8bf3ae2789dbb60b31c2a993dd0811952becd97"
+          },
+          {
+            "gameweek": 29,
+            "label_available_at": "2025-04-01T12:50:00+00:00",
+            "label_source_sha256": "4e9a21ee6bc996453b31344b552e590efa5bb80dec33e473ab77a6e934d20564"
+          },
+          {
+            "gameweek": 30,
+            "label_available_at": "2025-04-04T18:32:00+00:00",
+            "label_source_sha256": "a367ade6ea313daadb1f34063122f630a1a6c973a0bf4d7180d3bf7ea9a8552d"
+          },
+          {
+            "gameweek": 31,
+            "label_available_at": "2025-04-11T18:33:00+00:00",
+            "label_source_sha256": "f0a5e1d44759e6b8f220df608c0ab1ad94bb7b4c89942b592f961289205072be"
+          },
+          {
+            "gameweek": 32,
+            "label_available_at": "2025-04-18T18:32:00+00:00",
+            "label_source_sha256": "6014a3a1e6c55b2d32fb60bf97dd2728ebcae930a815a6120c5ca415d99d3f48"
+          },
+          {
+            "gameweek": 33,
+            "label_available_at": "2025-04-25T18:33:00+00:00",
+            "label_source_sha256": "c79ee0bd5aeaed881147c19d96638f4f6cc7f94ac3f87b409cbad89e087f6c37"
+          },
+          {
+            "gameweek": 34,
+            "label_available_at": "2025-05-02T12:49:00+00:00",
+            "label_source_sha256": "75fb742cf6b256fe52f2b83bd6450addaba51da3a6a767a55977202eef512bb8"
+          },
+          {
+            "gameweek": 35,
+            "label_available_at": "2025-05-09T18:34:00+00:00",
+            "label_source_sha256": "cb5aa12a2e5ce92bb8ce5f97ae488366c34babdf421a8326c2f323334eb5904a"
+          },
+          {
+            "gameweek": 36,
+            "label_available_at": "2025-05-16T12:52:00+00:00",
+            "label_source_sha256": "7672e1df9c37b5d971abf698bd95c15c5360f2b14929834796b24c8dca26a6e7"
+          },
+          {
+            "gameweek": 37,
+            "label_available_at": "2025-05-25T12:47:00+00:00",
+            "label_source_sha256": "3c85ba3075fb54bfa6ecabff5d7291d77a2b0a9344da66b4d7543b9ff5a3227b"
+          }
+        ],
+        "label": "Nonnegative API cumulative-minute increment before next deadline; prior revisions can add label noise; no later final histories used"
+      },
+      "source_sha256": "a22fc977ad0813ca0e0720b4b7d5468b5cdc80742fa5a783b20ee9b8d612ea8f",
+      "result_sha256": "a33663dc6104448018671c8189139b7e4b879599a74a129aca32d8b468952bb2"
+    }
+  ],
+  "manifest_sha256": "cb860c2045a1fdf3f9a2a203089d474e982ebef791283c024721140b5d3caa19",
+  "point_means_modified": false,
+  "target_outcomes_read": false,
+  "model_promotion": false,
+  "source_commit": "39f19c977816794134c44c3844cc66632354a320",
+  "seconds": 6.686113165997085,
+  "sampled_rss_bytes": 639221760
+}

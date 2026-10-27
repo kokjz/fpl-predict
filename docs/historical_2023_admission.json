@@ -1,0 +1,2609 @@
+{
+  "status": "sources_rules_and_prior_only_reference_prepared_no_season_points_yet",
+  "season": "2023-24",
+  "checked_at": "2026-10-26 Asia/Singapore",
+  "training": {
+    "version": "standing-prior3-no-dc-2023-v1",
+    "training_rows": 76317,
+    "training_scope": [
+      "2020-21",
+      "2021-22",
+      "2022-23"
+    ],
+    "trained_through": "2023-05-28T18:30:00+00:00",
+    "approval": "Historical research only; reused2023/24 validation year, no deployment promotion"
+  },
+  "season_totals_reconciled": 865,
+  "fixtures": 380,
+  "markets": [
+    {
+      "gameweek": 1,
+      "captured_at": "2023-08-11T12:31:00+00:00",
+      "deadline": "2023-08-11T17:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/8/11/1231.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "78b5ff2fd8215d5e794228550c2eaf37ed1e3aeb",
+      "compressed_sha256": "3e010b2d0339bde641988eb477c5df7f02d3a2cacdf9a984fdd52a797729c7d3",
+      "sha256": "e286b101f185a4be030b8f85e16de7bdef58579e365cf4b22685fc4a73d5adb9",
+      "players": 641,
+      "capture_age_hours": 4.983333333333333,
+      "previous_event_data_checked": null,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 2,
+      "captured_at": "2023-08-18T12:31:00+00:00",
+      "deadline": "2023-08-18T17:15:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/8/18/1231.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "0871fa1ce2dcb97f9c6382be9cc9a90517f24606",
+      "compressed_sha256": "cd94da6586686c77c7516e094f1ba5f165085260612d042477b42a2bf6a8c52a",
+      "sha256": "6fe9a493f2d415667108c0dbd68f75462a7851033c8082aee80e316c53563b7b",
+      "players": 666,
+      "capture_age_hours": 4.733333333333333,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 3,
+      "captured_at": "2023-08-25T12:32:00+00:00",
+      "deadline": "2023-08-25T17:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/8/25/1232.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "e957330793bd7abbd42992e2cb30ec9a80cadc70",
+      "compressed_sha256": "f5a13892f9294c6ba8190b058b428a0db2c99e19591a630a0e8635d9dbad2304",
+      "sha256": "c287b3c83d637e0a893ec06fc0b8054be42d4e334a422c4a7e189c904e316fc6",
+      "players": 678,
+      "capture_age_hours": 4.966666666666667,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 4,
+      "captured_at": "2023-09-01T12:32:00+00:00",
+      "deadline": "2023-09-01T17:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/9/1/1232.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "a3a9d3b2ced99930a02b1c1fee617ae78425c695",
+      "compressed_sha256": "6efa3c3be23926e3f94dd31f304224e17f00ba837bc873b8a73a5299939266db",
+      "sha256": "cfbb00bb9f6ea7a19ce437faddacd8f82c61c62f2b0ab90b111b9c608e6d1887",
+      "players": 697,
+      "capture_age_hours": 4.966666666666667,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 5,
+      "captured_at": "2023-09-16T06:20:00+00:00",
+      "deadline": "2023-09-16T10:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/9/16/0620.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "d47c6322259c1d11c71eac5a2fb83de78d23069b",
+      "compressed_sha256": "43b82e90908681fa0269c2184044223932100071b0fe0d1b04a226c496dbd3d9",
+      "sha256": "56ef60c1a0dfb32bea1a9e3c22b4bbcd206eee2575da9a9085f4b52d9bc0138a",
+      "players": 714,
+      "capture_age_hours": 3.6666666666666665,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 6,
+      "captured_at": "2023-09-23T06:20:00+00:00",
+      "deadline": "2023-09-23T12:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/9/23/0620.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "27e13840f9af8ffae68a56b944af735aa19b757f",
+      "compressed_sha256": "e0f71b52dc7cc1057195f54087e0306117ee0cc85a21e13899c72fe2de832752",
+      "sha256": "7c3991fdaab2a439a0c0b8ab4e1c64c9c2cf655c9bb55ba13aca1b457f6a99e5",
+      "players": 717,
+      "capture_age_hours": 6.166666666666667,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 7,
+      "captured_at": "2023-09-30T06:21:00+00:00",
+      "deadline": "2023-09-30T10:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/9/30/0621.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "5f2df756733700f35efd277893cf621400ca1c3e",
+      "compressed_sha256": "38eb4d437476bb70c2c6d689246e13e7c0e17ee4e5fbf4be5d37e5c4b9f16896",
+      "sha256": "50197d7bf924e50a5971360b0b8c98c527d848652eae799af82f433c9eb75aa2",
+      "players": 718,
+      "capture_age_hours": 3.65,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 8,
+      "captured_at": "2023-10-07T06:21:00+00:00",
+      "deadline": "2023-10-07T10:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/10/7/0621.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "c76844aef1539279d995de0ebfa3ef7a08910f34",
+      "compressed_sha256": "9a9a762c3450020c279db8f62760a0da566601fdf13dd7d5445dc7d57bd8bb15",
+      "sha256": "ba9487963d0d3b5fa7ecd71b6b14f212295ac6c3deb30d0c1ce375fc2b7b8b5f",
+      "players": 722,
+      "capture_age_hours": 3.65,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 9,
+      "captured_at": "2023-10-21T06:21:00+00:00",
+      "deadline": "2023-10-21T10:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/10/21/0621.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "ee41a6e8d8d4878d7f22cced3ab7a27867a5988d",
+      "compressed_sha256": "e454e3f28488b4aad5eb1802307e6d1ffdb8831987f5e10ad5a62ce971ca2841",
+      "sha256": "ce88003df4e00701c44b3c6ccf9de69ad400f2cd2bff1ab34896cde7e0cab3d2",
+      "players": 726,
+      "capture_age_hours": 3.65,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 10,
+      "captured_at": "2023-10-27T12:33:00+00:00",
+      "deadline": "2023-10-27T17:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/10/27/1233.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "86493185af00a2bfa0a0304a127741d38ee76824",
+      "compressed_sha256": "5e7ebc796e7e1f4c0e759c672dc1a39fe6ceaece40472c25965ebf8eded84abe",
+      "sha256": "2f632ded9885a0346186b0f078959cea1af6c92e4412eef2099a537b3c76ce8e",
+      "players": 730,
+      "capture_age_hours": 4.95,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 11,
+      "captured_at": "2023-11-04T06:21:00+00:00",
+      "deadline": "2023-11-04T11:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/11/4/0621.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "c7252c55724f923ad85741f7486c08c3df966018",
+      "compressed_sha256": "cce06561b1cfd37a0a1c5bbad8815d02f83e25e4cbbbda3061ae5eb9a0bc633d",
+      "sha256": "c485963bce8334a57440f975af45e58484431627a84763ff2a447da29f4771cf",
+      "players": 731,
+      "capture_age_hours": 4.65,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 12,
+      "captured_at": "2023-11-11T06:21:00+00:00",
+      "deadline": "2023-11-11T11:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/11/11/0621.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "29534c9e49be6ab7a4aa2e52ad055186ae30cd65",
+      "compressed_sha256": "f873a29708e7156268db72e8aac46d700a0b6b92366eb82d41871eacaae04724",
+      "sha256": "826cd9b54fe14f21ce98c98bf22b1b530d42eefd7a2f3197a404409dea569acd",
+      "players": 733,
+      "capture_age_hours": 4.65,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 13,
+      "captured_at": "2023-11-25T06:21:00+00:00",
+      "deadline": "2023-11-25T11:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/11/25/0621.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "9a1c88d2e602c3dffa1d7bdc3c39cbeb1d73ddb2",
+      "compressed_sha256": "3f21f909cd7f745dfec71608d8dc5546e2055dce7764b8c484e38dfa3031bbf3",
+      "sha256": "80802d8869ac49798ed19a2b99aee4898ab218cff5b7ef2df0f630371416e4f8",
+      "players": 743,
+      "capture_age_hours": 4.65,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 14,
+      "captured_at": "2023-12-02T12:31:00+00:00",
+      "deadline": "2023-12-02T13:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/12/2/1231.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "50ade0f24263383e5510c8228e3a964b1b20828c",
+      "compressed_sha256": "9d5483e8a54bec0176d0e61e180775c70a1a7f20134af9c3c25d725c7fc41eb3",
+      "sha256": "6eee6eff337fa8c9dba765cffe79bb31c71551e5cd97584867899271fc797c58",
+      "players": 747,
+      "capture_age_hours": 0.9833333333333333,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 15,
+      "captured_at": "2023-12-05T12:34:00+00:00",
+      "deadline": "2023-12-05T18:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/12/5/1234.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "1c453e9be95d5b5ca494939e5712366d0127eaaa",
+      "compressed_sha256": "99c414824dbf74b93b025ed1856f9c6014bd7e24fae42e63f32c3c6761f5f823",
+      "sha256": "bb6b42b3bd78ed1585f635bd22affdc6ef531f723bc3b98bbb73c3c93b3a7da4",
+      "players": 753,
+      "capture_age_hours": 5.433333333333334,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 16,
+      "captured_at": "2023-12-09T06:21:00+00:00",
+      "deadline": "2023-12-09T11:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/12/9/0621.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "052234f7008bac9d03491ff26b4abefd9f1e4e58",
+      "compressed_sha256": "71d7dd2a01f31aac65a3d26c4048315259fec9e3a22ad654dd86efda4b700ac9",
+      "sha256": "b0cf418def8f7f468e9591d72b66745ab4cb807ecb90a1020bda4e72c49d4713",
+      "players": 757,
+      "capture_age_hours": 4.65,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 17,
+      "captured_at": "2023-12-15T18:22:00+00:00",
+      "deadline": "2023-12-15T18:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/12/15/1822.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "95b134cc468b24e523d05d170b581ce1cef418e7",
+      "compressed_sha256": "d3b3b5ff0aa35d5630c7887e968d233324f5b0d27f51831e92f532df9fb1641a",
+      "sha256": "16fe043f64c2579787ecd278b88f12826cb831d5101e1b061e5eb0a8b8804f3e",
+      "players": 758,
+      "capture_age_hours": 0.13333333333333333,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 18,
+      "captured_at": "2023-12-21T18:20:00+00:00",
+      "deadline": "2023-12-21T18:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/12/21/1820.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "d884eaeedc5bb79f00a622edb6e52198cfddfcef",
+      "compressed_sha256": "f15075d28ca8f94e5e7865de4f75a103ebf196f7f23b8a59fe9118dfc2827894",
+      "sha256": "5e8a61df629a0d72bb8432fd187d2945d93523e798acd1c6f9d097a33c1130ba",
+      "players": 765,
+      "capture_age_hours": 0.16666666666666666,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 19,
+      "captured_at": "2023-12-26T06:22:00+00:00",
+      "deadline": "2023-12-26T11:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/12/26/0622.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "9643d42f9a355747d6464316faee700d11cf360e",
+      "compressed_sha256": "8c1afb2e560104ffadf5cbfadfc931654dd15e9466319959827749a4a663b5df",
+      "sha256": "cb0b40825a48d955af3c23c0ac2992b624d53a9203f0bb19afe0ad8a58202d0e",
+      "players": 769,
+      "capture_age_hours": 4.633333333333334,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 20,
+      "captured_at": "2023-12-30T06:21:00+00:00",
+      "deadline": "2023-12-30T11:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2023/12/30/0621.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "7fe33b603912a2050f988eee22b03ae8dedfbc58",
+      "compressed_sha256": "e6e61fe6dea39797a00e210274602fbf8c1c558bbcb50fb850e8ef700f101bba",
+      "sha256": "43934a752e7884b45d94dd26d18d998a754aa8b5349bddb785b8f7ce9bda223a",
+      "players": 771,
+      "capture_age_hours": 4.65,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 21,
+      "captured_at": "2024-01-12T12:34:00+00:00",
+      "deadline": "2024-01-12T18:15:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/1/12/1234.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "22f604b8770faede36e628d33b658a4c1117cc69",
+      "compressed_sha256": "0c26466f53b3d773a656960f281ca7e60ef8b2d712900a70d8c96f45c651e57b",
+      "sha256": "40e212e7578d396a7ac7886bd6e9be0e1b6c4a2ba2e503da5128af5a6aca039b",
+      "players": 775,
+      "capture_age_hours": 5.683333333333334,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 22,
+      "captured_at": "2024-01-30T12:31:00+00:00",
+      "deadline": "2024-01-30T18:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/1/30/1231.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "46ce22fe25514e044453b026532914a5a7f43637",
+      "compressed_sha256": "dc0059444028b457256892611cd3e9e2f7fa92360291682716a84959e9280a72",
+      "sha256": "f88d462042eee0d61d7341c93dc49d0057dc09fa43c7ba84e9ca0a299ae42fe6",
+      "players": 790,
+      "capture_age_hours": 5.483333333333333,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 23,
+      "captured_at": "2024-02-03T06:20:00+00:00",
+      "deadline": "2024-02-03T11:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/2/3/0620.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "353c6040fb87a5d8cbf02c2936e2770316a3f214",
+      "compressed_sha256": "7460ee769625d84f152439016e3a21e935d29152938b808980d1eb7b07e8c90a",
+      "sha256": "158ec84175c0c8268ea3990abeaac61d64e1e385b80c27bead42404b64a6c31b",
+      "players": 808,
+      "capture_age_hours": 4.666666666666667,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 24,
+      "captured_at": "2024-02-10T06:20:00+00:00",
+      "deadline": "2024-02-10T11:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/2/10/0620.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "e6689f5a688b5e9a241747f0a93f7387bdcad61d",
+      "compressed_sha256": "6e2c636d474660ac13be1245dc9c9da036ffc229b13af353796af53a1f49eaa9",
+      "sha256": "90116bdde007a132d1ee07c96d9661d8588b2043d755fbafeb989ae936acf521",
+      "players": 809,
+      "capture_age_hours": 4.666666666666667,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 25,
+      "captured_at": "2024-02-17T06:21:00+00:00",
+      "deadline": "2024-02-17T11:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/2/17/0621.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "51d5dc4e0a30fb12788d933d13f27701318ddb7a",
+      "compressed_sha256": "68ac14b405d6de055ef217314a00ed91052c732d99301d06555fb8a0576fd8be",
+      "sha256": "5fddaf38b6cfce4060f9e74fc6e6cb39641d6b2c6954547eadccc569d29ba571",
+      "players": 815,
+      "capture_age_hours": 4.65,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 26,
+      "captured_at": "2024-02-24T12:29:00+00:00",
+      "deadline": "2024-02-24T13:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/2/24/1229.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "6420a203a42194aaade5ac5cac7359639b9e6e89",
+      "compressed_sha256": "0335f951cbf4f3d4efd6fe7867866690d5f1266c084e56d35e9e3f9c90939be8",
+      "sha256": "0a6e6f1cfa99b8ed1f6c03ebd6d89c1c7fb8c802fdf3d22c822ca511c47bfdb9",
+      "players": 823,
+      "capture_age_hours": 1.0166666666666666,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 27,
+      "captured_at": "2024-03-02T12:29:00+00:00",
+      "deadline": "2024-03-02T13:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/3/2/1229.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "005d9ee01518ac261d313cba818713669590cbaf",
+      "compressed_sha256": "dbea5d88e42b579ce06dc9a96bb02b076dd8e5ed8e12f5cc39fd3ca2015c29f4",
+      "sha256": "d30df0929530e36aad4b616d7afad0667a600f1d682a67388077e846e707a752",
+      "players": 828,
+      "capture_age_hours": 1.0166666666666666,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 28,
+      "captured_at": "2024-03-09T06:23:00+00:00",
+      "deadline": "2024-03-09T11:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/3/9/0623.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "e453f21fbcaef7574e9589fa4402c8fa5baeebc3",
+      "compressed_sha256": "3c0e98dfe91b5284f61052ce93bb0d5b9a301900380fa3ce26ec888679aa897c",
+      "sha256": "7ec1cc1ec18a1e1f457d288990eb261c1e8b10cebb004e201df961ab5fb40a70",
+      "players": 832,
+      "capture_age_hours": 4.616666666666666,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 29,
+      "captured_at": "2024-03-16T12:31:00+00:00",
+      "deadline": "2024-03-16T13:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/3/16/1231.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "c559f81770299093ec0d1161b1fff5987ca830e6",
+      "compressed_sha256": "45de01bfb4871256625ed8482b493140d0197d3a13a0ade8650976693c44893b",
+      "sha256": "db778f13023351e72d834aa719e6b60c0a45ab2494c37e1ce10dfa123c876de3",
+      "players": 838,
+      "capture_age_hours": 0.9833333333333333,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 30,
+      "captured_at": "2024-03-30T06:21:00+00:00",
+      "deadline": "2024-03-30T11:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/3/30/0621.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "e31a66e599098c197d833223ee3226ee29a87955",
+      "compressed_sha256": "e3b56f084c9cfb6dd12119535c6334aa6037847724e27c33b43fd91cfac586e3",
+      "sha256": "992e6c0fe776777e4b90bc95b8f5ef65cc0a91bde50634df25a81abc90ab394b",
+      "players": 838,
+      "capture_age_hours": 4.65,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 31,
+      "captured_at": "2024-04-02T12:33:00+00:00",
+      "deadline": "2024-04-02T17:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/4/2/1233.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "55f14244bf898ad129a8b96f755a1b58aea05922",
+      "compressed_sha256": "2f9a48646650d9538bba95de7220ead400f0faae2f594d646e0c1c37c5661243",
+      "sha256": "768054b3434745d1632ff3730097fa5215ca9b8c25b92833a797b586a0f28b5d",
+      "players": 842,
+      "capture_age_hours": 4.45,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 32,
+      "captured_at": "2024-04-06T06:21:00+00:00",
+      "deadline": "2024-04-06T10:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/4/6/0621.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "3daa067115f0364db0ea3d067df90ebf61023e55",
+      "compressed_sha256": "0dcd99bbde52a8a7b95054243c46b50ea2858cc1a21de078b7db77cedab7c318",
+      "sha256": "611934e6854855e878602aa32948a308136a2cff235bec1bafebda8aa9717e72",
+      "players": 844,
+      "capture_age_hours": 3.65,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 33,
+      "captured_at": "2024-04-13T06:17:00+00:00",
+      "deadline": "2024-04-13T10:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/4/13/0617.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "bdb1c4d0816e9a07da0c347026cdf37b9c79b913",
+      "compressed_sha256": "2b2c9ed73b07cae22ed02c912a1016ac6ffb037bb3f1469526cb8d140cb7b7e7",
+      "sha256": "7799e28d1c3eca316d9b24b68bc52476a0842467f3951a5765f54cfafdef8fb9",
+      "players": 846,
+      "capture_age_hours": 3.716666666666667,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 34,
+      "captured_at": "2024-04-20T06:21:00+00:00",
+      "deadline": "2024-04-20T12:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/4/20/0621.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "99f5c72b26c38d06cf62d198835beaf5dd51f486",
+      "compressed_sha256": "d5b25a1e20ae52db82522feaa4dc386c5a3450ed375773802cf7e20d9c990942",
+      "sha256": "c3dfcc21fe2b432a31dea56b8ec9e41de09a6f1fd53a94747c3e6a758670f0ed",
+      "players": 851,
+      "capture_age_hours": 6.15,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 35,
+      "captured_at": "2024-04-27T06:23:00+00:00",
+      "deadline": "2024-04-27T10:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/4/27/0623.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "799c12f52424730908d39ef29246213b2f281b9c",
+      "compressed_sha256": "9db02c677c0a17761fda19e262a232cce17efc841ba571f3260e55ea87f59feb",
+      "sha256": "4cc3ddd1fbdfd7c9c31c2f0f72514c9bf7b8aa1e86357e6c8880a2b99f806e09",
+      "players": 856,
+      "capture_age_hours": 3.6166666666666667,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 36,
+      "captured_at": "2024-05-03T12:32:00+00:00",
+      "deadline": "2024-05-03T17:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/5/3/1232.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "6d2e50507e58f316d58f5b16dae25a198e176d1a",
+      "compressed_sha256": "2baa009ae500f57bea658ff474945679d18e4b08fbc6016f2c401cd3f34d2f13",
+      "sha256": "98d4839c93c9ed5d55bb466dffb02c92e3f0ce450f042b44de720a5b0c9a4062",
+      "players": 859,
+      "capture_age_hours": 4.966666666666667,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 37,
+      "captured_at": "2024-05-11T06:22:00+00:00",
+      "deadline": "2024-05-11T10:00:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/5/11/0622.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "ec68367420a6bf7a6c82a37e9df67dec0c36e9a9",
+      "compressed_sha256": "e6efa35c918930b5389e0de017fafb9c378cc13cd74df0af3b0f48e69e77f744",
+      "sha256": "96ff2d85235ac2589f983422a571941a17ea207d1808a1885ffab28b879c8b79",
+      "players": 859,
+      "capture_age_hours": 3.6333333333333333,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    },
+    {
+      "gameweek": 38,
+      "captured_at": "2024-05-19T12:33:00+00:00",
+      "deadline": "2024-05-19T13:30:00Z",
+      "source_url": "https://raw.githubusercontent.com/Randdalf/fplcache/3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7/cache/2024/5/19/1233.json.xz",
+      "source_revision": "3ab1f91f61258a3e4bd27c74d5cfb3c6b72380e7",
+      "git_blob_sha": "f7467f7aca1c7c442e78d1323e1764a501508b78",
+      "compressed_sha256": "5c60766cc9542f403ef9ad0bdb5ee056f7d4829294acefc41417650716b0509d",
+      "sha256": "ced8436d1134244b561b5c3a8172eadf3c1aa1725a882caa2a4822f8df3ebed2",
+      "players": 861,
+      "capture_age_hours": 0.95,
+      "previous_event_data_checked": true,
+      "observed_settings": {
+        "transfers_cap": 20,
+        "transfers_sell_on_fee": 0.5
+      }
+    }
+  ],
+  "calendars": [
+    {
+      "gameweek": 1,
+      "as_of": "2023-08-11T12:31:00+00:00",
+      "source_clock": "2023-07-31T13:29:10+00:00",
+      "revision": "9ba09ce183b51e13c26f44295ac10803426ab24f",
+      "author_date": "2023-07-31T13:29:10Z",
+      "committer_date": "2023-07-31T13:29:10Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/9ba09ce183b51e13c26f44295ac10803426ab24f/data/2023-24/fixtures.csv",
+      "raw_sha256": "1e2a1ce0a6071601e7c46be8732d0a9e340dd43b78316d35a6e0c4188acf6d6a",
+      "git_blob_sha": "472b7143d6ce1aece2d0c4eb0dad124a7abea048",
+      "sha256": "aae87d574bf6e6c33e06356f1be00fe03d7d97a097706601d46d9933782f0b22",
+      "rows": 380,
+      "selected_fixture_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "actual_fixture_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 263.03055555555557
+    },
+    {
+      "gameweek": 2,
+      "as_of": "2023-08-18T12:31:00+00:00",
+      "source_clock": "2023-08-16T02:35:27+00:00",
+      "revision": "be15e285f106d1becc6f24c0c470ec9ada8c935a",
+      "author_date": "2023-08-16T02:35:27Z",
+      "committer_date": "2023-08-16T02:35:27Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/be15e285f106d1becc6f24c0c470ec9ada8c935a/data/2023-24/fixtures.csv",
+      "raw_sha256": "1966ce5b29a9e7934a731d16e147a6e1f2f37e778b474d16f1ef0ff4d133aabc",
+      "git_blob_sha": "a8d52376ae020ca945fc7878c1020e5c8e35b0b7",
+      "sha256": "56962b24a25262b8df2be3a918fc780b18725259ea2e4e197e0452b8e25017e5",
+      "rows": 380,
+      "selected_fixture_ids": [
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "actual_fixture_ids": [
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 57.92583333333334
+    },
+    {
+      "gameweek": 3,
+      "as_of": "2023-08-25T12:32:00+00:00",
+      "source_clock": "2023-08-23T13:08:45+00:00",
+      "revision": "2749a5964950b3b34992cebde0351ac9e09fb54f",
+      "author_date": "2023-08-23T13:08:45Z",
+      "committer_date": "2023-08-23T13:08:45Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/2749a5964950b3b34992cebde0351ac9e09fb54f/data/2023-24/fixtures.csv",
+      "raw_sha256": "5b4aef2aa20f4f1062936d92004ee10311727fae5326608ba650e46ba7dc6035",
+      "git_blob_sha": "f330a216aa545f9beed7a9969ba8a1732338f424",
+      "sha256": "c7a23da47e24e3f9bb82aa99c715fd980684c59a842258533f27c28b47b8a81c",
+      "rows": 380,
+      "selected_fixture_ids": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "actual_fixture_ids": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 47.3875
+    },
+    {
+      "gameweek": 4,
+      "as_of": "2023-09-01T12:32:00+00:00",
+      "source_clock": "2023-08-28T10:02:21+00:00",
+      "revision": "2abff9370632b3b36bbdfa0870805b60fb392ef0",
+      "author_date": "2023-08-28T10:02:21Z",
+      "committer_date": "2023-08-28T10:02:21Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/2abff9370632b3b36bbdfa0870805b60fb392ef0/data/2023-24/fixtures.csv",
+      "raw_sha256": "f4e2ef11fbaaf4dc8c17a11f267eb6d533fb164483570648db04df14f37eebf2",
+      "git_blob_sha": "66d8061c6bf638d6a428aa2d493c60e67d87538a",
+      "sha256": "c7a23da47e24e3f9bb82aa99c715fd980684c59a842258533f27c28b47b8a81c",
+      "rows": 380,
+      "selected_fixture_ids": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "actual_fixture_ids": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 98.49416666666667
+    },
+    {
+      "gameweek": 5,
+      "as_of": "2023-09-16T06:20:00+00:00",
+      "source_clock": "2023-09-06T11:00:38+00:00",
+      "revision": "b0ec80fec6916117225a6fbee11c35d8773c6f94",
+      "author_date": "2023-09-06T11:00:38Z",
+      "committer_date": "2023-09-06T11:00:38Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/b0ec80fec6916117225a6fbee11c35d8773c6f94/data/2023-24/fixtures.csv",
+      "raw_sha256": "aa54dff9b9bf48d3db40376c39e84fe9b96d356bd2ed930811203b4df7fac508",
+      "git_blob_sha": "c2f074fc6561fcc2095dafde0516d237271bec69",
+      "sha256": "440e423f8eb92e39aa192e5f5a7cc6eb15a8937afb1544ce86922cb99c14fdc8",
+      "rows": 380,
+      "selected_fixture_ids": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "actual_fixture_ids": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 235.3227777777778
+    },
+    {
+      "gameweek": 6,
+      "as_of": "2023-09-23T06:20:00+00:00",
+      "source_clock": "2023-09-20T09:22:37+00:00",
+      "revision": "b9122f8c98f10a8217e5fb67bc4de447f6c685d5",
+      "author_date": "2023-09-20T09:22:25Z",
+      "committer_date": "2023-09-20T09:22:37Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/b9122f8c98f10a8217e5fb67bc4de447f6c685d5/data/2023-24/fixtures.csv",
+      "raw_sha256": "d3903d8296c17e4706442eefac97c8993e9e1a6f46f9f03ce42575375f3833bc",
+      "git_blob_sha": "a7a7d7fa4a671521fed06df14a05d61cc6755e1e",
+      "sha256": "c3dc96e639aae531cc97919f317e7dee31ac23a5c1a21ff6824be040bf7356ef",
+      "rows": 380,
+      "selected_fixture_ids": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "actual_fixture_ids": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 68.9563888888889
+    },
+    {
+      "gameweek": 7,
+      "as_of": "2023-09-30T06:21:00+00:00",
+      "source_clock": "2023-09-25T15:34:01+00:00",
+      "revision": "8b05861fb33ee89bae34c2b6d06564449a5885db",
+      "author_date": "2023-09-25T15:34:01Z",
+      "committer_date": "2023-09-25T15:34:01Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/8b05861fb33ee89bae34c2b6d06564449a5885db/data/2023-24/fixtures.csv",
+      "raw_sha256": "1dcc0fd05aaa43b93cb3136e8907d4a6aec653ed1214abd90da370e283aa3dac",
+      "git_blob_sha": "7e085ca1941d25ec852bb1a75312c368e07653c3",
+      "sha256": "c3dc96e639aae531cc97919f317e7dee31ac23a5c1a21ff6824be040bf7356ef",
+      "rows": 380,
+      "selected_fixture_ids": [
+        15,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70
+      ],
+      "actual_fixture_ids": [
+        15,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 110.78305555555555
+    },
+    {
+      "gameweek": 8,
+      "as_of": "2023-10-07T06:21:00+00:00",
+      "source_clock": "2023-10-05T14:38:47+00:00",
+      "revision": "96fbc38ee6e36e3a7250081a787b65a1a27c944d",
+      "author_date": "2023-10-05T14:38:47Z",
+      "committer_date": "2023-10-05T14:38:47Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/96fbc38ee6e36e3a7250081a787b65a1a27c944d/data/2023-24/fixtures.csv",
+      "raw_sha256": "07b88250be0903a76b6334a7db56b9d9c148fc4a301c5e2338ce2c27dd01f367",
+      "git_blob_sha": "3b84ace42538951a3c6be6ae5188be66c07eb2ad",
+      "sha256": "c3dc96e639aae531cc97919f317e7dee31ac23a5c1a21ff6824be040bf7356ef",
+      "rows": 380,
+      "selected_fixture_ids": [
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "actual_fixture_ids": [
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 39.70361111111111
+    },
+    {
+      "gameweek": 9,
+      "as_of": "2023-10-21T06:21:00+00:00",
+      "source_clock": "2023-10-19T20:26:02+00:00",
+      "revision": "32184fc221871431d8215c5dc8385af0eda7bdde",
+      "author_date": "2023-10-19T20:26:02Z",
+      "committer_date": "2023-10-19T20:26:02Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/32184fc221871431d8215c5dc8385af0eda7bdde/data/2023-24/fixtures.csv",
+      "raw_sha256": "9c6d9430f378aa78cac4032dbe6714355431b51dd59a6c2418bf04095b7f713a",
+      "git_blob_sha": "01119e5fb5545a5e2d8a1191c978ae371f49192b",
+      "sha256": "5333f808018996db67a1932faef11568ff4c5df62ffb3a8688e62e5304cbd9c8",
+      "rows": 380,
+      "selected_fixture_ids": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "actual_fixture_ids": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 33.916111111111114
+    },
+    {
+      "gameweek": 10,
+      "as_of": "2023-10-27T12:33:00+00:00",
+      "source_clock": "2023-10-27T08:27:07+00:00",
+      "revision": "615da45c450fb13993b7e8da4c8388d7e2f57703",
+      "author_date": "2023-10-27T08:27:07Z",
+      "committer_date": "2023-10-27T08:27:07Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/615da45c450fb13993b7e8da4c8388d7e2f57703/data/2023-24/fixtures.csv",
+      "raw_sha256": "df5a8ca0ab5e023382fe7150d79da12177b1172c8a32f3f26e4a0155b6534896",
+      "git_blob_sha": "cabe7ec23891ff1d105c79dee66c8380cdc96838",
+      "sha256": "c5b97ffa5622859f693c274babc5650a335d4435b59114e455d71145f6a2219d",
+      "rows": 380,
+      "selected_fixture_ids": [
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "actual_fixture_ids": [
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 4.098055555555556
+    },
+    {
+      "gameweek": 11,
+      "as_of": "2023-11-04T06:21:00+00:00",
+      "source_clock": "2023-11-02T14:43:56+00:00",
+      "revision": "e92d9881f2ef025a7a1093e47fdf02d9aa2f8655",
+      "author_date": "2023-11-02T14:43:56Z",
+      "committer_date": "2023-11-02T14:43:56Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/e92d9881f2ef025a7a1093e47fdf02d9aa2f8655/data/2023-24/fixtures.csv",
+      "raw_sha256": "08d3c03c92c160765d1ff2b71cb8bc86fc45a1a72dfca06a08ed6988ec5764fa",
+      "git_blob_sha": "1c04f66ca11faff491b09ed200360a11ae93f8b7",
+      "sha256": "c5b97ffa5622859f693c274babc5650a335d4435b59114e455d71145f6a2219d",
+      "rows": 380,
+      "selected_fixture_ids": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110
+      ],
+      "actual_fixture_ids": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 39.617777777777775
+    },
+    {
+      "gameweek": 12,
+      "as_of": "2023-11-11T06:21:00+00:00",
+      "source_clock": "2023-11-09T20:03:21+00:00",
+      "revision": "028f925c32fabb34798e416c569070d0cae329a2",
+      "author_date": "2023-11-09T20:03:21Z",
+      "committer_date": "2023-11-09T20:03:21Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/028f925c32fabb34798e416c569070d0cae329a2/data/2023-24/fixtures.csv",
+      "raw_sha256": "c3126aa8a52413170b3d0629235d3bc84cb394f8cff7c516da56c36c61785c3b",
+      "git_blob_sha": "e50b96e9a9df270f9f84ce351d35fd262c7ee395",
+      "sha256": "c5b97ffa5622859f693c274babc5650a335d4435b59114e455d71145f6a2219d",
+      "rows": 380,
+      "selected_fixture_ids": [
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120
+      ],
+      "actual_fixture_ids": [
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 34.29416666666667
+    },
+    {
+      "gameweek": 13,
+      "as_of": "2023-11-25T06:21:00+00:00",
+      "source_clock": "2023-11-24T13:22:14+00:00",
+      "revision": "caf799bb68f58fb26ac80d8cb762c353891232f5",
+      "author_date": "2023-11-24T13:22:14Z",
+      "committer_date": "2023-11-24T13:22:14Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/caf799bb68f58fb26ac80d8cb762c353891232f5/data/2023-24/fixtures.csv",
+      "raw_sha256": "f796324b9c36732372b1d472523f9988312ac401124f15ef1669a0e32c409fa3",
+      "git_blob_sha": "e06a54e9bfb9b8e6fc8e5bfb12d1c02c59f2fd98",
+      "sha256": "c5b97ffa5622859f693c274babc5650a335d4435b59114e455d71145f6a2219d",
+      "rows": 380,
+      "selected_fixture_ids": [
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "actual_fixture_ids": [
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 16.979444444444443
+    },
+    {
+      "gameweek": 14,
+      "as_of": "2023-12-02T12:31:00+00:00",
+      "source_clock": "2023-11-30T15:40:47+00:00",
+      "revision": "acee0e28f8b201062270d709a7d72e4787680872",
+      "author_date": "2023-11-30T15:40:47Z",
+      "committer_date": "2023-11-30T15:40:47Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/acee0e28f8b201062270d709a7d72e4787680872/data/2023-24/fixtures.csv",
+      "raw_sha256": "bd1d618c7a7436d4d4222189d7a66f93dd292e98f36ec5cff4c1d0ca45e6eed7",
+      "git_blob_sha": "07539d32b5368b8a90b364a7985d07c330154d4b",
+      "sha256": "c5b97ffa5622859f693c274babc5650a335d4435b59114e455d71145f6a2219d",
+      "rows": 380,
+      "selected_fixture_ids": [
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140
+      ],
+      "actual_fixture_ids": [
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 44.83694444444444
+    },
+    {
+      "gameweek": 15,
+      "as_of": "2023-12-05T12:34:00+00:00",
+      "source_clock": "2023-12-04T13:04:03+00:00",
+      "revision": "c4f66ee30ef026bb7e8b7184b2427f9708c77d74",
+      "author_date": "2023-12-04T13:04:03Z",
+      "committer_date": "2023-12-04T13:04:03Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/c4f66ee30ef026bb7e8b7184b2427f9708c77d74/data/2023-24/fixtures.csv",
+      "raw_sha256": "c9f99615ca61bba4a8306f88131119b5539bb0862fee3178e54501111498f8f1",
+      "git_blob_sha": "f8e65f4a5e8f67d65c56242b59a2ffd419af6841",
+      "sha256": "c5b97ffa5622859f693c274babc5650a335d4435b59114e455d71145f6a2219d",
+      "rows": 380,
+      "selected_fixture_ids": [
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ],
+      "actual_fixture_ids": [
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 23.499166666666667
+    },
+    {
+      "gameweek": 16,
+      "as_of": "2023-12-09T06:21:00+00:00",
+      "source_clock": "2023-12-08T08:31:20+00:00",
+      "revision": "d54ac4c7b35ccca5fcf2d46ee62362a67efa45e8",
+      "author_date": "2023-12-08T08:31:20Z",
+      "committer_date": "2023-12-08T08:31:20Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d54ac4c7b35ccca5fcf2d46ee62362a67efa45e8/data/2023-24/fixtures.csv",
+      "raw_sha256": "42cdf2f3e48989b03fc23f6a1028c7c429073cfce16c4e67be1fd7cef041093d",
+      "git_blob_sha": "44135e2fee0993bf0a8e6c166aac7468fd9efeb6",
+      "sha256": "c5b97ffa5622859f693c274babc5650a335d4435b59114e455d71145f6a2219d",
+      "rows": 380,
+      "selected_fixture_ids": [
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160
+      ],
+      "actual_fixture_ids": [
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 21.82777777777778
+    },
+    {
+      "gameweek": 17,
+      "as_of": "2023-12-15T18:22:00+00:00",
+      "source_clock": "2023-12-11T13:35:55+00:00",
+      "revision": "392588ec1664432358f9481b81c3a8c1d53a60a3",
+      "author_date": "2023-12-11T13:35:55Z",
+      "committer_date": "2023-12-11T13:35:55Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/392588ec1664432358f9481b81c3a8c1d53a60a3/data/2023-24/fixtures.csv",
+      "raw_sha256": "d4e0453cb9467e3cdbdbb8317ca6704766e62dff5b1e82e00a56fc04c9ae7185",
+      "git_blob_sha": "f196b49432c7dbe15f8780982689b1e99ac92801",
+      "sha256": "c5b97ffa5622859f693c274babc5650a335d4435b59114e455d71145f6a2219d",
+      "rows": 380,
+      "selected_fixture_ids": [
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170
+      ],
+      "actual_fixture_ids": [
+        161,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170
+      ],
+      "only_calendar": [
+        162
+      ],
+      "only_outcome": [],
+      "source_age_hours": 100.76805555555555
+    },
+    {
+      "gameweek": 18,
+      "as_of": "2023-12-21T18:20:00+00:00",
+      "source_clock": "2023-12-21T04:22:57+00:00",
+      "revision": "62f7b7c0b2d897834613475b15d6dc3301f13e70",
+      "author_date": "2023-12-21T04:22:57Z",
+      "committer_date": "2023-12-21T04:22:57Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/62f7b7c0b2d897834613475b15d6dc3301f13e70/data/2023-24/fixtures.csv",
+      "raw_sha256": "c28c7c2435dbb2fb724a264c4855da92151cb86de4b2dffaa9c03e4ee89adc88",
+      "git_blob_sha": "32c736822869812bce943bcf16c34483e6e7f52b",
+      "sha256": "14950d3ef4af53eaf878136dd46516eec4cd8b3d59a7247a634d4aa305e51a63",
+      "rows": 380,
+      "selected_fixture_ids": [
+        171,
+        172,
+        173,
+        174,
+        175,
+        177,
+        178,
+        179,
+        180
+      ],
+      "actual_fixture_ids": [
+        171,
+        172,
+        173,
+        174,
+        175,
+        177,
+        178,
+        179,
+        180
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 13.950833333333334
+    },
+    {
+      "gameweek": 19,
+      "as_of": "2023-12-26T06:22:00+00:00",
+      "source_clock": "2023-12-25T11:59:17+00:00",
+      "revision": "d8a6fc58722beaa625195de9d51a0333dcb46439",
+      "author_date": "2023-12-25T11:59:17Z",
+      "committer_date": "2023-12-25T11:59:17Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d8a6fc58722beaa625195de9d51a0333dcb46439/data/2023-24/fixtures.csv",
+      "raw_sha256": "c13feab86ca123d646a7ea287e727e184d81d0da71ed6087dbd2bf2717fce3d4",
+      "git_blob_sha": "07a222b1d2fdd2eb5b83084f2dbfda0014c4fa38",
+      "sha256": "7b3f27dae1c60c5040d226652f0267fa4f803a2a95d44ac59e73ae1cd753a5fb",
+      "rows": 380,
+      "selected_fixture_ids": [
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190
+      ],
+      "actual_fixture_ids": [
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 18.378611111111113
+    },
+    {
+      "gameweek": 20,
+      "as_of": "2023-12-30T06:21:00+00:00",
+      "source_clock": "2023-12-29T05:12:14+00:00",
+      "revision": "2f06c2ae70511a7075d02913784ec77a5fb21aa1",
+      "author_date": "2023-12-29T05:12:14Z",
+      "committer_date": "2023-12-29T05:12:14Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/2f06c2ae70511a7075d02913784ec77a5fb21aa1/data/2023-24/fixtures.csv",
+      "raw_sha256": "277ecc65fb7e781719f07eef6210a90179e6d9731c886b34f64c2826ed41b93a",
+      "git_blob_sha": "107305ba8fbb96e307af1d1eb412f6be72b3a303",
+      "sha256": "7b3f27dae1c60c5040d226652f0267fa4f803a2a95d44ac59e73ae1cd753a5fb",
+      "rows": 380,
+      "selected_fixture_ids": [
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200
+      ],
+      "actual_fixture_ids": [
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 25.14611111111111
+    },
+    {
+      "gameweek": 21,
+      "as_of": "2024-01-12T12:34:00+00:00",
+      "source_clock": "2024-01-03T08:57:32+00:00",
+      "revision": "15783a5630abadb309ff4c3edbb3dc32e6a2b426",
+      "author_date": "2024-01-03T08:57:32Z",
+      "committer_date": "2024-01-03T08:57:32Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/15783a5630abadb309ff4c3edbb3dc32e6a2b426/data/2023-24/fixtures.csv",
+      "raw_sha256": "12234149191fde12d8aa0bc45b5ff19ef4028ade7b31ebcfbbbd6deeb8b41758",
+      "git_blob_sha": "01bdf7730f6636c3f18e4b993092a21734b33ee3",
+      "sha256": "7b3f27dae1c60c5040d226652f0267fa4f803a2a95d44ac59e73ae1cd753a5fb",
+      "rows": 380,
+      "selected_fixture_ids": [
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210
+      ],
+      "actual_fixture_ids": [
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 219.60777777777778
+    },
+    {
+      "gameweek": 22,
+      "as_of": "2024-01-30T12:31:00+00:00",
+      "source_clock": "2024-01-23T13:01:20+00:00",
+      "revision": "546143eb5d0ae6d250e074374152e8be4b15719b",
+      "author_date": "2024-01-23T13:01:20Z",
+      "committer_date": "2024-01-23T13:01:20Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/546143eb5d0ae6d250e074374152e8be4b15719b/data/2023-24/fixtures.csv",
+      "raw_sha256": "fbfd0780fd97b29fee22e35a3e826270200ab7f051654ea0f52bcea831c7025b",
+      "git_blob_sha": "e80e8d98e861176aff333e8cff7f77dbf406ff61",
+      "sha256": "ca43aeca80d8d7ab96d897c272684df07635bca42f9bef3e1477ca205a8bd19c",
+      "rows": 380,
+      "selected_fixture_ids": [
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220
+      ],
+      "actual_fixture_ids": [
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 167.49444444444444
+    },
+    {
+      "gameweek": 23,
+      "as_of": "2024-02-03T06:20:00+00:00",
+      "source_clock": "2024-02-02T20:53:13+00:00",
+      "revision": "8a0d23451ea7c07699ba903feb364e8fe0085c0e",
+      "author_date": "2024-02-02T20:53:13Z",
+      "committer_date": "2024-02-02T20:53:13Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/8a0d23451ea7c07699ba903feb364e8fe0085c0e/data/2023-24/fixtures.csv",
+      "raw_sha256": "9967958cbd986851587aab0f165512cb77648caa94fbc2387cc58bb22dd21721",
+      "git_blob_sha": "10b8640925c08fcbeb12ec089e8e94e2fd7e1d26",
+      "sha256": "c87a4ab6725adfb3c381959067c3b4618993c2cce337a0dbf426ee1f04b3f7ef",
+      "rows": 380,
+      "selected_fixture_ids": [
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230
+      ],
+      "actual_fixture_ids": [
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 9.446388888888889
+    },
+    {
+      "gameweek": 24,
+      "as_of": "2024-02-10T06:20:00+00:00",
+      "source_clock": "2024-02-06T13:02:04+00:00",
+      "revision": "5f49140e78b2052634abae57ce15e40f41dc32f7",
+      "author_date": "2024-02-06T13:02:04Z",
+      "committer_date": "2024-02-06T13:02:04Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/5f49140e78b2052634abae57ce15e40f41dc32f7/data/2023-24/fixtures.csv",
+      "raw_sha256": "95c991173deaf166379c1bc05a26d11835967f2d8fdb40ec44f22001776af32b",
+      "git_blob_sha": "f3a85adedf963fe1a06a6c40c03d9f3a69b57272",
+      "sha256": "0a15f20ea04eaed359c240b4eaa9af7f8014fdaecc2188fc5f721a9d39d1fce0",
+      "rows": 380,
+      "selected_fixture_ids": [
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240
+      ],
+      "actual_fixture_ids": [
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 89.29888888888888
+    },
+    {
+      "gameweek": 25,
+      "as_of": "2024-02-17T06:21:00+00:00",
+      "source_clock": "2024-02-14T10:42:14+00:00",
+      "revision": "73cf14c852c5bbafde20ba11ebc5acd6eff965aa",
+      "author_date": "2024-02-14T10:42:14Z",
+      "committer_date": "2024-02-14T10:42:14Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/73cf14c852c5bbafde20ba11ebc5acd6eff965aa/data/2023-24/fixtures.csv",
+      "raw_sha256": "741afeb2ee33113ea3aaa0f22fb04c664a997f986b4d57e3b5cf730f1b1e0278",
+      "git_blob_sha": "da55d7f046a49a2efaf856ed5d9be444fe1ff205",
+      "sha256": "655ae78dcf25366f539481db61032969dea86b3be0ddb8480b2d081665dc149d",
+      "rows": 380,
+      "selected_fixture_ids": [
+        176,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        257
+      ],
+      "actual_fixture_ids": [
+        176,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        257
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 67.64611111111111
+    },
+    {
+      "gameweek": 26,
+      "as_of": "2024-02-24T12:29:00+00:00",
+      "source_clock": "2024-02-22T10:23:39+00:00",
+      "revision": "f061aafa88a921dd70fd2b0f72b8020889d8e589",
+      "author_date": "2024-02-22T10:23:39Z",
+      "committer_date": "2024-02-22T10:23:39Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/f061aafa88a921dd70fd2b0f72b8020889d8e589/data/2023-24/fixtures.csv",
+      "raw_sha256": "8b3849fcba1d4bc09dc259269c7ae35a74e9f3546e67833fe2635ffdc2c4be95",
+      "git_blob_sha": "0f035f5cb1279438ac29b33f4ce22a1b23b10994",
+      "sha256": "655ae78dcf25366f539481db61032969dea86b3be0ddb8480b2d081665dc149d",
+      "rows": 380,
+      "selected_fixture_ids": [
+        251,
+        252,
+        253,
+        254,
+        256,
+        258,
+        259,
+        260
+      ],
+      "actual_fixture_ids": [
+        251,
+        252,
+        253,
+        254,
+        256,
+        258,
+        259,
+        260
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 50.089166666666664
+    },
+    {
+      "gameweek": 27,
+      "as_of": "2024-03-02T12:29:00+00:00",
+      "source_clock": "2024-02-22T10:23:39+00:00",
+      "revision": "f061aafa88a921dd70fd2b0f72b8020889d8e589",
+      "author_date": "2024-02-22T10:23:39Z",
+      "committer_date": "2024-02-22T10:23:39Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/f061aafa88a921dd70fd2b0f72b8020889d8e589/data/2023-24/fixtures.csv",
+      "raw_sha256": "8b3849fcba1d4bc09dc259269c7ae35a74e9f3546e67833fe2635ffdc2c4be95",
+      "git_blob_sha": "0f035f5cb1279438ac29b33f4ce22a1b23b10994",
+      "sha256": "655ae78dcf25366f539481db61032969dea86b3be0ddb8480b2d081665dc149d",
+      "rows": 380,
+      "selected_fixture_ids": [
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270
+      ],
+      "actual_fixture_ids": [
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 218.08916666666667
+    },
+    {
+      "gameweek": 28,
+      "as_of": "2024-03-09T06:23:00+00:00",
+      "source_clock": "2024-03-07T16:57:57+00:00",
+      "revision": "446af195d2ee324a1217f34a5a2b591189efc983",
+      "author_date": "2024-03-07T16:57:57Z",
+      "committer_date": "2024-03-07T16:57:57Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/446af195d2ee324a1217f34a5a2b591189efc983/data/2023-24/fixtures.csv",
+      "raw_sha256": "e1c58b7ca6f5fcdf5def49c844838b9a33e76ca5998e96c1ebade9a55f599d8e",
+      "git_blob_sha": "1cf3a28c996d7f19f0827aaad2b32a4fc9633c0f",
+      "sha256": "594bdec599c28afff9bd27ce792b612b6be747a6035c79e7aa253a378b2675e7",
+      "rows": 380,
+      "selected_fixture_ids": [
+        162,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280
+      ],
+      "actual_fixture_ids": [
+        162,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 37.4175
+    },
+    {
+      "gameweek": 29,
+      "as_of": "2024-03-16T12:31:00+00:00",
+      "source_clock": "2024-03-15T13:56:21+00:00",
+      "revision": "8a90a7cbf8dd336676a5d599605fe4fd5f9bcc40",
+      "author_date": "2024-03-15T13:56:21Z",
+      "committer_date": "2024-03-15T13:56:21Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/8a90a7cbf8dd336676a5d599605fe4fd5f9bcc40/data/2023-24/fixtures.csv",
+      "raw_sha256": "47a4bd33bc6a478c162774158037dcff85d0297146254b7708a0357b42d59724",
+      "git_blob_sha": "d3572f58315a52a4e79e7c46bbe9cfca76592864",
+      "sha256": "594bdec599c28afff9bd27ce792b612b6be747a6035c79e7aa253a378b2675e7",
+      "rows": 380,
+      "selected_fixture_ids": [
+        283,
+        286,
+        287,
+        289
+      ],
+      "actual_fixture_ids": [
+        283,
+        286,
+        287,
+        289
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 22.5775
+    },
+    {
+      "gameweek": 30,
+      "as_of": "2024-03-30T06:21:00+00:00",
+      "source_clock": "2024-03-20T16:55:33+00:00",
+      "revision": "cbf39345fdfa826870e37b1b2c777b543fed56d2",
+      "author_date": "2024-03-20T16:55:33Z",
+      "committer_date": "2024-03-20T16:55:33Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/cbf39345fdfa826870e37b1b2c777b543fed56d2/data/2023-24/fixtures.csv",
+      "raw_sha256": "245c43105abdfc7096d7e89f5eda603d281eab54fc92563cd02bbdc0cb45998e",
+      "git_blob_sha": "c115584c5d031134eba9a75d8dba11857b570da0",
+      "sha256": "120bf05c4d82ff090194b2187056a4c31c3c5ed0a7e95e861fe02e621e28e795",
+      "rows": 380,
+      "selected_fixture_ids": [
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300
+      ],
+      "actual_fixture_ids": [
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 229.42416666666668
+    },
+    {
+      "gameweek": 31,
+      "as_of": "2024-04-02T12:33:00+00:00",
+      "source_clock": "2024-04-01T08:08:41+00:00",
+      "revision": "4e6447daccfb053a496e4aebd37d264dfa949676",
+      "author_date": "2024-04-01T08:08:41Z",
+      "committer_date": "2024-04-01T08:08:41Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/4e6447daccfb053a496e4aebd37d264dfa949676/data/2023-24/fixtures.csv",
+      "raw_sha256": "843c6d5d5743eb683808b971d23c80212ba45ed99277b258a10cce813e455f13",
+      "git_blob_sha": "4ac59ecc3a8b87172af966233f16f09521bcc601",
+      "sha256": "892d572ae510fdd327ba51dc5472ef9815d20b9be2922a53c44e832f55e94660",
+      "rows": 380,
+      "selected_fixture_ids": [
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310
+      ],
+      "actual_fixture_ids": [
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 28.405277777777776
+    },
+    {
+      "gameweek": 32,
+      "as_of": "2024-04-06T06:21:00+00:00",
+      "source_clock": "2024-04-05T12:24:10+00:00",
+      "revision": "7d6f6aafa94a937116f308a2393fb12e86c5771f",
+      "author_date": "2024-04-05T12:24:10Z",
+      "committer_date": "2024-04-05T12:24:10Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/7d6f6aafa94a937116f308a2393fb12e86c5771f/data/2023-24/fixtures.csv",
+      "raw_sha256": "db84f0e4a4ea6b8ed4d9fe7864c091ce6134b284c0f74e7c578fdae846296037",
+      "git_blob_sha": "edc1ec0c8aa7442139b97ebd81a4c8c16dfdd2af",
+      "sha256": "892d572ae510fdd327ba51dc5472ef9815d20b9be2922a53c44e832f55e94660",
+      "rows": 380,
+      "selected_fixture_ids": [
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320
+      ],
+      "actual_fixture_ids": [
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 17.947222222222223
+    },
+    {
+      "gameweek": 33,
+      "as_of": "2024-04-13T06:17:00+00:00",
+      "source_clock": "2024-04-08T10:31:08+00:00",
+      "revision": "436f1ff2d306783d3e3892dc3d3ce21712cbc08e",
+      "author_date": "2024-04-08T10:31:08Z",
+      "committer_date": "2024-04-08T10:31:08Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/436f1ff2d306783d3e3892dc3d3ce21712cbc08e/data/2023-24/fixtures.csv",
+      "raw_sha256": "0f0f380b8ac935c9a3c2f97235172759fcd4d4c60d5488ea85bd206aaf730da3",
+      "git_blob_sha": "342f02b154054bc196d0279e88b5dfccc2cfe0c7",
+      "sha256": "93726a074951ebfb9eecf17c03d1ece05b28ce811a68e39cb1405514426d10b2",
+      "rows": 380,
+      "selected_fixture_ids": [
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330
+      ],
+      "actual_fixture_ids": [
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 115.76444444444445
+    },
+    {
+      "gameweek": 34,
+      "as_of": "2024-04-20T06:21:00+00:00",
+      "source_clock": "2024-04-16T08:22:40+00:00",
+      "revision": "d7e0beda3436c5051116e1aeef652e96119ebf92",
+      "author_date": "2024-04-16T08:22:40Z",
+      "committer_date": "2024-04-16T08:22:40Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d7e0beda3436c5051116e1aeef652e96119ebf92/data/2023-24/fixtures.csv",
+      "raw_sha256": "0d503de5d4188f5da43eb2df3085bd9eb3c4e00ec9cca60884fa3fcbd2ef5eed",
+      "git_blob_sha": "b16677f5d9c1a8b3c1dc07df2d1710f9b55e87fa",
+      "sha256": "983221f538521c7f9d89d13ff3fd1a4696f24e9ae89690a05f40f7137904abd6",
+      "rows": 380,
+      "selected_fixture_ids": [
+        281,
+        282,
+        284,
+        285,
+        288,
+        290,
+        331,
+        333,
+        334,
+        335,
+        336,
+        338,
+        340
+      ],
+      "actual_fixture_ids": [
+        281,
+        282,
+        284,
+        285,
+        288,
+        290,
+        331,
+        333,
+        334,
+        335,
+        336,
+        338,
+        340
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 93.97222222222223
+    },
+    {
+      "gameweek": 35,
+      "as_of": "2024-04-27T06:23:00+00:00",
+      "source_clock": "2024-04-16T08:22:40+00:00",
+      "revision": "d7e0beda3436c5051116e1aeef652e96119ebf92",
+      "author_date": "2024-04-16T08:22:40Z",
+      "committer_date": "2024-04-16T08:22:40Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/d7e0beda3436c5051116e1aeef652e96119ebf92/data/2023-24/fixtures.csv",
+      "raw_sha256": "0d503de5d4188f5da43eb2df3085bd9eb3c4e00ec9cca60884fa3fcbd2ef5eed",
+      "git_blob_sha": "b16677f5d9c1a8b3c1dc07df2d1710f9b55e87fa",
+      "sha256": "983221f538521c7f9d89d13ff3fd1a4696f24e9ae89690a05f40f7137904abd6",
+      "rows": 380,
+      "selected_fixture_ids": [
+        255,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348,
+        349,
+        350
+      ],
+      "actual_fixture_ids": [
+        255,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348,
+        349,
+        350
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 262.00555555555553
+    },
+    {
+      "gameweek": 36,
+      "as_of": "2024-05-03T12:32:00+00:00",
+      "source_clock": "2024-05-03T08:34:20+00:00",
+      "revision": "8f5194d666f608200916f2b62f8976e8c8beff87",
+      "author_date": "2024-05-03T08:34:20Z",
+      "committer_date": "2024-05-03T08:34:20Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/8f5194d666f608200916f2b62f8976e8c8beff87/data/2023-24/fixtures.csv",
+      "raw_sha256": "6d2c9fe16b84baa5a51c8fd92e62454a3d6a424a3ffc7925e75ee68723f13f8e",
+      "git_blob_sha": "437447538fceaaa938ebda2e2cc0dc55b2c8652b",
+      "sha256": "39057575248717879b313b9f26ec38a255cbb2b80a668c17030c273c0e011f27",
+      "rows": 380,
+      "selected_fixture_ids": [
+        351,
+        352,
+        353,
+        354,
+        355,
+        356,
+        357,
+        358,
+        359,
+        360
+      ],
+      "actual_fixture_ids": [
+        351,
+        352,
+        353,
+        354,
+        355,
+        356,
+        357,
+        358,
+        359,
+        360
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 3.9611111111111112
+    },
+    {
+      "gameweek": 37,
+      "as_of": "2024-05-11T06:22:00+00:00",
+      "source_clock": "2024-05-09T13:15:25+00:00",
+      "revision": "2981ebc1630d6e0211c5847731c8fb79cecba785",
+      "author_date": "2024-05-09T13:15:25Z",
+      "committer_date": "2024-05-09T13:15:25Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/2981ebc1630d6e0211c5847731c8fb79cecba785/data/2023-24/fixtures.csv",
+      "raw_sha256": "997ae360a5cdf6ae03b6acc628bbe6576b978dfa663a77f1451b8f8f51f3592b",
+      "git_blob_sha": "2854991d0be7144639027e3cf57d3c81a1f33dec",
+      "sha256": "39057575248717879b313b9f26ec38a255cbb2b80a668c17030c273c0e011f27",
+      "rows": 380,
+      "selected_fixture_ids": [
+        332,
+        337,
+        339,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370
+      ],
+      "actual_fixture_ids": [
+        332,
+        337,
+        339,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 41.109722222222224
+    },
+    {
+      "gameweek": 38,
+      "as_of": "2024-05-19T12:33:00+00:00",
+      "source_clock": "2024-05-19T02:36:03+00:00",
+      "revision": "5218c9f360c0415d7272775239f88ab0eb15e91d",
+      "author_date": "2024-05-19T02:36:03Z",
+      "committer_date": "2024-05-19T02:36:03Z",
+      "path": "data/2023-24/fixtures.csv",
+      "url": "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/5218c9f360c0415d7272775239f88ab0eb15e91d/data/2023-24/fixtures.csv",
+      "raw_sha256": "dfaa9fbf9005b44d2e5aa38b1d5aaabad2022ae385085a5ff7533b930abef8b0",
+      "git_blob_sha": "727572247385272baa7cc38ae6f54e5d6a54ebca",
+      "sha256": "39057575248717879b313b9f26ec38a255cbb2b80a668c17030c273c0e011f27",
+      "rows": 380,
+      "selected_fixture_ids": [
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380
+      ],
+      "actual_fixture_ids": [
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380
+      ],
+      "only_calendar": [],
+      "only_outcome": [],
+      "source_age_hours": 9.949166666666667
+    }
+  ],
+  "origin_audits": [
+    {
+      "gameweek": 1,
+      "listed": 641,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 2,
+      "listed": 666,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 3,
+      "listed": 678,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 4,
+      "listed": 697,
+      "club_changes_evaluator_only": [
+        {
+          "id": 508,
+          "origin_team": 18,
+          "evaluator_teams": [
+            14
+          ],
+          "fixtures": [
+            31
+          ]
+        }
+      ],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 5,
+      "listed": 714,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 6,
+      "listed": 717,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 7,
+      "listed": 718,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 8,
+      "listed": 722,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 9,
+      "listed": 726,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 10,
+      "listed": 730,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 11,
+      "listed": 731,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 12,
+      "listed": 733,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 13,
+      "listed": 743,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 14,
+      "listed": 747,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 15,
+      "listed": 753,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 16,
+      "listed": 757,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 17,
+      "listed": 758,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [
+        162
+      ],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 18,
+      "listed": 765,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 19,
+      "listed": 769,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 20,
+      "listed": 771,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 21,
+      "listed": 775,
+      "club_changes_evaluator_only": [
+        {
+          "id": 508,
+          "origin_team": 18,
+          "evaluator_teams": [
+            4
+          ],
+          "fixtures": [
+            203
+          ]
+        }
+      ],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 22,
+      "listed": 790,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 23,
+      "listed": 808,
+      "club_changes_evaluator_only": [
+        {
+          "id": 193,
+          "origin_team": 7,
+          "evaluator_teams": [
+            10
+          ],
+          "fixtures": [
+            225
+          ]
+        },
+        {
+          "id": 255,
+          "origin_team": 9,
+          "evaluator_teams": [
+            17
+          ],
+          "fixtures": [
+            230
+          ]
+        }
+      ],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 24,
+      "listed": 809,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 25,
+      "listed": 815,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 26,
+      "listed": 823,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 27,
+      "listed": 828,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 28,
+      "listed": 832,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 29,
+      "listed": 838,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 30,
+      "listed": 838,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 31,
+      "listed": 842,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 32,
+      "listed": 844,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 33,
+      "listed": 846,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 34,
+      "listed": 851,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 35,
+      "listed": 856,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 36,
+      "listed": 859,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 37,
+      "listed": 859,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    },
+    {
+      "gameweek": 38,
+      "listed": 861,
+      "club_changes_evaluator_only": [],
+      "forecast_only_fixtures": [],
+      "outcome_only_fixtures": []
+    }
+  ],
+  "native_preflight": {
+    "default_ast": "2c91f279211c5fdf1e3b3307f40f3d068843e64b2f13ff2967270e8c149ba54c",
+    "historical_ast": "3d8747c3835af788cae0e5944889c5b5fb45e3d47e5b4633222bcd5557f56cd9",
+    "origins": [
+      {
+        "gameweek": 1,
+        "chip": null,
+        "first_next_ft": 1
+      },
+      {
+        "gameweek": 20,
+        "chip": "freehit",
+        "first_next_ft": 1
+      },
+      {
+        "gameweek": 21,
+        "chip": "wildcard",
+        "first_next_ft": 1
+      },
+      {
+        "gameweek": 38,
+        "chip": "3xc",
+        "first_next_ft": 1
+      }
+    ],
+    "outcomes_scored": false
+  },
+  "limitations": [
+    "Archive and Git timestamps are publisher claims",
+    "Snapshots may precede deadline by several hours",
+    "Status-based purchase eligibility is an explicit older-API proxy",
+    "No historical article/news input beyond frozen official status/chance labels",
+    "GW17 abandonment unknown at origin; final void/autosubs evaluator-only",
+    "Reused validation year and retrospectively chosen model recipe; not prospective/untouched",
+    "Prior-only source-lag approximation3h; final-stat revision provenance is incomplete"
+  ],
+  "model_promotion": false,
+  "prior_reference": {
+    "model": {
+      "version": "standing-prior3-no-dc-2023-v1",
+      "training_rows": 76317,
+      "training_scope": [
+        "2020-21",
+        "2021-22",
+        "2022-23"
+      ],
+      "trained_through": "2023-05-28T18:30:00+00:00",
+      "approval": "Historical research only; reused2023/24 validation year, no deployment promotion"
+    },
+    "model_sha256": "bf0b54344bda0b44f0337b52bd38a103f944343f11e02dcd469dfbb3b03decd5",
+    "bundles": {
+      "decisions": "eeca6ea377a81f481061a702195d6c5c9a4c7a09557a041c6f154e9cd8b6058a",
+      "outcomes": "c6da284dfe2bd1a3f701dbad1f32d5a16416bda36ef89a55529613c460e2156a"
+    },
+    "fit_seconds": 26.51719441599562,
+    "total_seconds": 65.56982341600087,
+    "sampled_peak_rss_bytes": 861896704,
+    "source_commit": "46b1c84acb234a89e146582511754d56a5a40f15",
+    "model_promotion": false
+  },
+  "corroborating_preseason_rule_evidence": {
+    "url": "https://www.premierleague.com/en/news/3568527",
+    "publication_claim": "2023-07-05",
+    "retrieved": "2026-10-26 Asia/Singapore",
+    "scope": "Ordinary chip inventory; firstWC throughGW20/secondfrom21; WC/FHnextentitlementone. Confirms existing mathematical profile, no rule/experiment change.",
+    "limitations": "Current article body and publisher date, not independent historical revision certification"
+  }
+}

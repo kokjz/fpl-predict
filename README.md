@@ -49,7 +49,15 @@ Saved-artifact and changed-next-origin integration checks use entirely invented
 data. Historical evaluation uses prior-only method references rather than
 backcasting a deployment artifact trained on the evaluation season.
 
-The [fixed-work repeatability study](docs/SEARCH_REPEATABILITY_RESULTS_2026-10-25.md)
+The latest [appearance-calibration season result](docs/COHERENCE_SEASON_RESULTS_2026-10-27.md)
+fails the predeclared points criterion: calibrated minus availability-aware H6
+is **−26, −2, +5, −104**, equal-season mean **−31.75 net points**. All 44 saved
+paths are complete, including retained controls; improved appearance Brier leaves
+point means/errors unchanged and does not qualify a policy replacement. Approved
+forecaster 1.0.0 and weekly defaults remain unchanged. Source review/release
+status is tracked in the [checkpoint](docs/handover/CHECKPOINT.json).
+
+The earlier [fixed-work repeatability study](docs/SEARCH_REPEATABILITY_RESULTS_2026-10-25.md)
 compares 24 continuous season paths using fixed node/probe caps. Repeated full
 decisions match exactly on all twelve cases;
 the availability-aware policy averages **+6.50 net points versus

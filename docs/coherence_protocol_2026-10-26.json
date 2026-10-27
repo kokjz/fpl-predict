@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "base_release": "cf19ff2446da8b5b9cdd4444417e75ace9ffd642",
+  "purpose": "Diagnose appearance/return coherence and isolate selection from transfer/chip decisions before choosing at most one correction",
+  "seasons": ["2024-25", "2025-26"],
+  "inputs": "Exact prior-only forecast, appearance and outcome bundles plus immutable decisions from the released fixed-work study; no deployment-artifact backcast",
+  "paths": {
+    "policies": ["standingH6_fixedWork", "decisionH6_fixedWork", "SolioAdaptedH6_fixedWork"],
+    "opening_seeds": [20261070, 20261071],
+    "repetition": 1,
+    "reason": "Both repetitions already match exactly; use the first declared repetition, not a retrospectively best run. Twelve distinct paths are not twelve independent seasons."
+  },
+  "freeze": "Freeze source hashes, complete origin inventory and all ex-ante cohort memberships before parsing evaluator outcomes or calculating new residuals. Strip cumulative realised points; no outcome-based player eligibility.",
+  "forecast_cells": "One row per season/origin/player/target-GW. Report current-origin primary separately from leads1-5. Overlapping forecast origins and player rows are correlated, not independent season evidence.",
+  "cohorts": ["all_market", "held_before_any_current", "proposed_squad_any", "starters_any", "bench_any", "captain_or_vice_any"],
+  "cohort_details": "Role unions count a cell once per role, even when several paths own it. Also retain per-case role metrics. Future roles use only saved provisional actions at that origin. Membership unions overlap and must not be added as independent samples.",
+  "marginal_strata": {
+    "season": true,
+    "lead": [0, 1, 2, 3, 4, 5],
+    "position": [1, 2, 3, 4],
+    "probability_edges": [0, 0.2, 0.5, 0.8, 0.95, 1],
+    "implied_return_edges": [0, 2, 4, 8, 12, 20],
+    "implied_return_extra_bins": ["negative", "above20", "undefined_p0"],
+    "fixture_count": [0, 1, 2, "3plus"],
+    "status": "Frozen market status, empty/unknown separate; no post-deadline news enrichment",
+    "official_zero": [false, true],
+    "cross_products": "Marginal strata only; retain counts/empty declared numerical bins rather than search subgroup combinations."
+  },
+  "metrics": [
+    "Mean forecast/actual points, MAE, RMSE and bias over all eligible outcome-covered cells",
+    "Raw and regularised Brier, probability bias, fixed-bin reliability mean probability versus observed appearance rate and counts; Brier is not a pure calibration statistic",
+    "Implied conditional return mu/p, its fixed-bin distribution/extremes and mean; conditional residual MAE/RMSE/bias only where minutes>0 and p>0, labelled outcome-conditioned diagnosis, not an ex-ante cohort",
+    "Zero-probability played and missing-outcome counts; card-only outcomes separate. No missing results filled as zero and no unconditional means multiplied by probabilities."
+  ],
+  "appearance_assumptions": "Existing source uses per-fixture regularisation .98*p+.01 then independent-fixture union, unchanged unconditional means and independent players in selection. Implied mu/p is an assumption, not a separately calibrated conditional head. Large conditional means are diagnostic, not proof of a physical bound violation.",
+  "joint_diagnostics": {
+    "scope": "Each frozen current proposed15-player squad for every first-repetition case/origin",
+    "metrics": ["Observed no-show count, expected sum(1-p), independent variance sum(p*(1-p)) and squared count residual", "Same-club and different-club pair residual products (y_i-p_i)*(y_j-p_j), joint-event prediction p_i*p_j and observed y_i*y_j"],
+    "limits": "Overlapping squads/pairs are correlated. Marginal miscalibration can mimic dependence. No causal attribution, significance p-values, joint-model fitting or independent-season confidence intervals."
+  },
+  "resources": {"threads": 2, "memory_mib": 4096, "seconds_per_diagnostic": 300, "package_growth_mib": 256, "project_mib": 2560, "min_free_mib": 5120},
+  "following_stages": [
+    "Implement first-action-only selection wrapper; preserve mean manager's buys/sells/chips and all subsequent provisional actions, verify finances and honest changed-objective bounds/report fields",
+    "Audit nearest older season market/calendar/rules/history/prior-fit admission; add full replay only when admissible, never invent missing sources or wait for future games",
+    "From diagnosis justify at most one correction, then freeze a separate evaluation protocol before running its tests; keep fixed work, matched standing/adapted external controls and existing approval gates",
+    "Publish all results and limits through coherent tested PR/release/privacy/storage SOP; no-change conclusion is allowed only with completed diagnostics/admission/evidence"
+  ],
+  "assessment": "Expected season points remain the objective. Report observed matched mean, year/start effects, uncertainty and downside separately. Preserve all previous gates/results; no post-outcome loosening or claim that a risk-screen failure proves inferior expected value. No new production approval from diagnostic results.",
+  "sources": [
+    {"url": "https://scikit-learn.org/stable/modules/calibration.html", "checked": "2026-10-26", "use": "Reliability plots/counts alongside Brier, not treating Brier as calibration alone"},
+    {"url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html", "checked": "2026-10-26", "use": "Chronological validation; group origins/gameweeks rather than random player rows"},
+    {"url": "https://arxiv.org/abs/1710.08005v5", "checked": "2026-10-26", "use": "Motivation for downstream decision evaluation; no SPO training implementation or guarantee inferred for this nonlinear FPL problem"}
+  ],
+  "production_approved": false,
+  "forecaster_weights_changed": false
+}

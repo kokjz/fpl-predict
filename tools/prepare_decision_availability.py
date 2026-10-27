@@ -54,7 +54,7 @@ def prepare(manifest, expected, output, *, trust_local_cache=False):
     if out.exists() or out.is_relative_to(ROOT):
         raise ValueError('Require new private output directory')
     spec = json.loads(Path(manifest).read_text())
-    if spec['schema_version'] != 1 or set(spec['seasons']) != {'2024-25', '2025-26'}:
+    if spec['schema_version'] != 1 or (not spec['seasons'] or not set(spec['seasons']) <= {'2023-24', '2024-25', '2025-26'}):
         raise ValueError('Undeclared season coverage')
     for entry in spec['receipts']:
         checked(entry)

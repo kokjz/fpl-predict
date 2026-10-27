@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
-  "status": "numerical_checkpoint_complete_research_review_pending",
-  "updated": "2026-10-27 Asia/Singapore",
+  "status": "research_complete_negative_result_architect_accepted",
+  "updated": "2026-10-28 Asia/Singapore",
   "repository": "https://github.com/kokjz/fpl-predict",
   "reviewed_engine_main": "cf19ff2446da8b5b9cdd4444417e75ace9ffd642",
   "research": {
     "pr": 42,
     "branch": "feat/appearance-return-coherence",
-    "head": "747d2b33cd2c701f5135578afe2ac8aed3ded7f1",
+    "head": "0e6c525b49f2d3988166986dfcdfc5ca67870ab9",
     "numerical_source": "9e26851a92371690848e3811c6e120026dd33011",
     "declared_new_paths": 20,
     "reused_controls": 24,
     "source_and_weights_frozen": true,
-    "completion": "Numerical study and independent audits complete; PR42 review fixes, valid-state revalidation and full final research publication remain unfinished",
+    "completion": "Numerical study, R1/R2/R3 repairs, saved-state validation and negative-result publication complete; architect interpretation accepted. Final source merge/sync/cleanup recorded by PR42 and private operational release receipt.",
     "tag": "research-handover-2026-10-27",
     "new_paths_complete": 20,
     "all_paths_complete": 44,
@@ -22,7 +22,17 @@
     "criterion_pass": false,
     "primary_mean_points": -31.75,
     "all_processes_stopped": true,
-    "failed_interrupted_attempts_retained": true
+    "failed_interrupted_attempts_retained": true,
+    "head_scope": "Architect-reviewed repair/report commit; final release head and merge identity resolved from PR42",
+    "architect_review": {
+      "date": "2026-10-27",
+      "verdict": "ACCEPTED",
+      "scope": "Scientific interpretation; no material deviation; A1 comparator wording and A2 line-ending provenance closed for release",
+      "reviewed_head": "0e6c525b49f2d3988166986dfcdfc5ca67870ab9",
+      "reviewer": "Claude Opus 5.5 / Medium (verified by architect)",
+      "model_or_policy_promotion": false
+    },
+    "release_pr": 42
   },
   "approved_forecaster": {
     "version": "1.0.0",
@@ -30,13 +40,7 @@
     "binary_in_repository": false,
     "source": "Private transfer registry; not research file dates"
   },
-  "remaining_work": [
-    "Receiving host: verify private archive/restore/runtime/artifact smoke and source hashes without modifying original evidence; path-only adapters get separate provenance",
-    "Continue existing draft PR42; review private review_findings.json/post_study_review.patch and base hashes: R1 reject future-used-chip ledgers, R2 generic audit free-transfer cap, R3 explicit gross/net selection report fields; prepared patch is unapplied, not a tested release",
-    "Apply coherent fixes/tests after inspecting source; audit all frozen valid states under repaired validator, prove decisions/settings/means unchanged, run bounded affected integration/full required checks without rerunning completed numerical paths unnecessarily",
-    "Complete PR42 final results/readme/policy status and explicit negative qualification; retain all failed attempts, old gates, source9e numerical ancestry, coverage/clock/reused-year/bound limitations; no candidate/model/default promotion",
-    "Review/check/merge PR42 only when ready, safely bring main up to date and remove completed dependent branches; emit private operational handoff. Assess a new bounded package only after unfinished work is closed."
-  ],
+  "remaining_work": [],
   "privacy": "Only engine/research context is public; full private transfer remains outside repository",
   "research_links": {
     "protocol": "https://github.com/kokjz/fpl-predict/blob/747d2b33cd2c701f5135578afe2ac8aed3ded7f1/docs/appearance_calibration_protocol_2026-10-26.json",
@@ -44,11 +48,11 @@
     "reproduction": "https://github.com/kokjz/fpl-predict/blob/747d2b33cd2c701f5135578afe2ac8aed3ded7f1/docs/coherence_reproduction.md"
   },
   "handover_pr": 43,
-  "reviewed_engine_main_scope": "PR41 installed engine math; later handover releases update documentation/portable tools only, not approved weights or weekly defaults",
-  "private_transfer": "Separately supplied PRIVATE archive/manifest/receipt; origin restore proof supplied outside Git. Full archive and approved model are deliberately not public; receiving Windows qualification remains required",
+  "reviewed_engine_main_scope": "Original PR41 engine baseline retained above; PR42 adds reviewed research/validation/reporting without promoting weights or weekly defaults. Exact release commit/merge tracked by PR42.",
+  "private_transfer": "Private core/member restore and original-data integrity verified on receiving Windows host; approved artifact smoke matches in separate measured legacy and product runtimes. Private assets remain outside Git.",
   "receiving_profile": {
     "intended": "Optional architect/programmer split or one capable chat; local Windows/WSL access requires receiving-host verification",
-    "verified_on_receiving_host": false,
+    "verified_on_receiving_host": true,
     "workflow": "HYBRID_WORKFLOW.md",
     "bootstrap": "QUICK_START_PROMPT.md",
     "no_fixed_usage_entitlement_claim": true,
@@ -79,9 +83,12 @@
     "receiving_outer_folder": "fpl prediction model research",
     "source_location": "OUTER/fpl-predict only; private-handover and private-workspace are siblings",
     "manual_outer_checksum": "Optional for user; programmer automated integrity checks retained",
-    "user_checklist": "WINDOWS_HANDOVER_STEPS.md"
+    "user_checklist": "WINDOWS_HANDOVER_STEPS.md",
+    "qualification_scope": "Windows archive/path mapping, saved-state validation and exact approved-artifact smoke; full source tests on exact-head Ubuntu CI. Native Windows full collection fails on POSIX resource; local POSIX watchdog NOT qualified, WSL unnecessary for this bounded release.",
+    "exact_programmer_model_and_effort_verified": false
   },
   "review_findings_private_location": "work/appearance_return_coherence_2026-10-26/review_findings.json",
   "workflow_revision": "opus-medium-sibling-workspace-2026-10-27",
-  "latest_handover_update_pr": 46
+  "latest_handover_update_pr": 46,
+  "next_package": "No new fit, search, arm, year, start or completed-path rerun authorised. Architect may propose a bounded package for user approval after closure; no work begins without authorisation."
 }

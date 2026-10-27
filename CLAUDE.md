@@ -14,8 +14,11 @@ Keep one bounded step active, tool output concise and a durable private resume
 note updated. No automatic agents, model switches, paid overage or new searches.
 Do not sacrifice full validation/privacy/review to save tokens.
 
-Research PR42 is explicitly unfinished. Code synchronisation is not promotion;
-the approved model remains private. Preserve original evidence and failed runs.
+PR42's negative research result and architect review are complete; consult
+docs/handover/CHECKPOINT.json and PR42 for current source-release status rather
+than resuming remaining-work lists in historical prompts. Code synchronisation
+is not promotion; the approved model remains private. Preserve original evidence
+and failed runs.
 
 Confirm your architect/programmer role; use one canonical private brief/results
 packet and one implementation writer. GPT-6.1 Sol can own programming while

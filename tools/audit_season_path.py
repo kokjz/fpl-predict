@@ -1,4 +1,4 @@
-"""Independent 2024/25 restricted or 2025/26 replay audit; stdlib only.
+"""Independent admitted historical-season replay audit; stdlib only.
 
 Checks a full frozen season path and its retained provisional actions. Does not
 authenticate archive publication clocks, training recipes or native proposals.
@@ -29,7 +29,7 @@ def advance(state,market,action,blocked=()):
     """Reconstruct integer finance/resources without the engine's prepare code."""
     g=state['gameweek'];by={p['id']:p for p in market['rows']}
     season=state['season']
-    assert season in ('2024-25','2025-26') and market['season']==season and market['gameweek']==g
+    assert season in ('2023-24','2024-25','2025-26') and market['season']==season and market['gameweek']==g
     old=dict(state['holdings']);buys=set(action['buys']);sells=set(action['sells'])
     assert len(buys)==len(action['buys']) and len(sells)==len(action['sells'])
     assert sells<=set(old) and not buys&set(old) and not buys&sells
@@ -46,9 +46,10 @@ def advance(state,market,action,blocked=()):
     assert action['captain'] in xi and action['vice'] in xi and action['captain']!=action['vice']
     assert sum(by[i]['position']==1 for i in bench)==1
     chip=action['chip'];assert chip in (None,'wildcard','freehit','bboost','3xc')
-    used=set(map(tuple,state['used_chips']))
+    used=set(map(tuple,state['used_chips']));assert all(start<g for _,start in used)
     if chip:
-        start=20 if g>=20 and (season=='2025-26' or chip=='wildcard') else 2 if chip in ('wildcard','freehit') else 1
+        if season=='2023-24':start=21 if chip=='wildcard' and g>=21 else 2 if chip in ('wildcard','freehit') else 1
+        else:start=20 if g>=20 and (season=='2025-26' or chip=='wildcard') else 2 if chip in ('wildcard','freehit') else 1
         token=(chip,start)
         assert token not in used and token not in set(map(tuple,blocked))
         assert (g>1 or chip not in ('wildcard','freehit')) and not (chip==state['previous_chip']=='freehit')
@@ -58,7 +59,10 @@ def advance(state,market,action,blocked=()):
     ledger={i:q for i,q in old.items() if i not in sells};ledger.update({i:by[i]['price_tenths'] for i in buys})
     free=5 if g==16 and season=='2025-26' else state['free_transfers']
     hits=0 if g==1 or chip in ('wildcard','freehit') else 4*max(0,len(buys)-free)
-    after=1 if g==1 else free if chip in ('wildcard','freehit') else min(5,max(0,free-len(buys))+1)
+    cap=2 if season=='2023-24' else 5
+    assert 0<=free<=cap
+    chip_after=1 if season=='2023-24' else free
+    after=1 if g==1 else chip_after if chip in ('wildcard','freehit') else min(cap,max(0,free-len(buys))+1)
     result=dict(state,gameweek=g+1,holdings=sorted((old if chip=='freehit' else ledger).items()),
         bank=state['bank'] if chip=='freehit' else bank,free_transfers=after,
         used_chips=sorted(used),previous_chip=chip)
@@ -111,7 +115,7 @@ def audit(decisions,outcomes,season_dir,horizon,opening=None):
     assert decisions['schema_version']==outcomes['schema_version']==1
     weeks=decisions['weeks'];assert len(weeks)==38
     state=dict(season=weeks[0]['market']['season'],gameweek=1,holdings=[],bank=1000,free_transfers=0,used_chips=[],previous_chip=None,total_points=0.)
-    assert state['season'] in ('2024-25','2025-26')
+    assert state['season'] in ('2023-24','2024-25','2025-26')
     directory=Path(season_dir);points=hits=transfers=periods=0
     result=read(directory/'summary.json');settings=result['planner_settings']
     assert settings['bench_weight']==.1 and all(settings[k]==0 for k in ['terminal_ft_value','terminal_squad_weight','churn_cost']), 'Unsupported research objective'

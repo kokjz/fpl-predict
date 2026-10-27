@@ -45,7 +45,7 @@ def test_native_annual_tokens_and_unaudited_season_rejected():
     with pytest.raises(ValueError,match='Illegal'):validate_request(q,r)
     q['chip_schedule']={'19':'wildcard','20':'wildcard'};_,_,_,_,rules=validate_request(q,r)
     assert not rules['ft_topups'] and rules['excluded_chips']==['manager']
-    q['market']['season']=q['state']['season']='2023-24'
+    q['market']['season']=q['state']['season']='2022-23'
     with pytest.raises(ValueError,match='Unaudited'):validate_request(q,r)
 
 

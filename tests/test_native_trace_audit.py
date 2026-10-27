@@ -18,7 +18,7 @@ def case(season='2024-25',g=16):
 
 def test_independent_known_objective_and_season_specific_ft():
     m=module()
-    for season in ['2024-25','2025-26']:
+    for season in ['2023-24','2024-25','2025-26']:
         q,r=case(season);assert m.validate(q,r)==1
         r['statistics']['16']['ft']=2
         with pytest.raises(AssertionError):m.validate(q,r)
@@ -47,3 +47,14 @@ def test_explicit_paid_slack_extension_and_strict_default():
     assert m.validate(q,r,allow_dominated_paid_slack=True)==1
     r['statistics']['16']['pt']=1.5
     with pytest.raises(AssertionError):m.validate(q,r,allow_dominated_paid_slack=True)
+
+
+@pytest.mark.parametrize('chips,fts',[({'20':'wildcard','21':'wildcard'},[2,1,1]),({'20':'freehit'},[2,1,2])])
+def test_historical_native_reply_reset_and_wildcard_windows(chips,fts):
+    q,r=case('2023-24',20);q['through']=22;q['chip_schedule']=chips;q['state']['free_transfers']=2
+    q['xp']=[[g,i,2.] for g in range(20,23) for i in range(1,16)]
+    r['objective']=3*24.8;r['picks']=[dict(week=g,id=i,squad=1) for g in range(20,23) for i in range(1,16)]
+    r['statistics']={str(g):dict(ft=ft,pt=0,itb=25.) for g,ft in zip(range(20,23),fts)}
+    assert module().validate(q,r)==3
+    r['statistics']['21']['ft']=2
+    with pytest.raises(AssertionError):module().validate(q,r)

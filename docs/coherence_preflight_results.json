@@ -1,0 +1,271 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "name": "r1_2023-24_GW01_standingH6_fixedWork",
+      "repetition": 1,
+      "season": "2023-24",
+      "gameweek": 1,
+      "policy": "standingH6_fixedWork",
+      "status": "completed",
+      "seconds": 3.1085187080025207,
+      "fingerprint": "12f44dc972218dd65caf45f171ed491f5207711902690f844548bd35cb94a6f1"
+    },
+    {
+      "name": "r1_2023-24_GW01_decisionH6_fixedWork",
+      "repetition": 1,
+      "season": "2023-24",
+      "gameweek": 1,
+      "policy": "decisionH6_fixedWork",
+      "status": "completed",
+      "seconds": 5.910805250001431,
+      "fingerprint": "0f60fc35350b6d9eaff6f76428e3ee0450981966254d623cf0d0cabb997a6eb7"
+    },
+    {
+      "name": "r1_2023-24_GW01_SolioAdaptedH6_fixedWork",
+      "repetition": 1,
+      "season": "2023-24",
+      "gameweek": 1,
+      "policy": "SolioAdaptedH6_fixedWork",
+      "status": "completed",
+      "seconds": 5.945912833994953,
+      "fingerprint": "4fb8e225d7d936fbade3ecdc2876b3bb01a2f633acf1ace8ee0ff406b31d1ae4"
+    },
+    {
+      "name": "r1_2023-24_GW20_standingH6_fixedWork",
+      "repetition": 1,
+      "season": "2023-24",
+      "gameweek": 20,
+      "policy": "standingH6_fixedWork",
+      "status": "completed",
+      "seconds": 13.319253875000868,
+      "fingerprint": "8f03d38796e7bb2bab5d159e5dff4300f27eec0c5ba39cac35ca3bd8a07aa055"
+    },
+    {
+      "name": "r1_2023-24_GW20_decisionH6_fixedWork",
+      "repetition": 1,
+      "season": "2023-24",
+      "gameweek": 20,
+      "policy": "decisionH6_fixedWork",
+      "status": "completed",
+      "seconds": 16.19910133400117,
+      "fingerprint": "e51b74743f3e82bcdfca19ab0e0dcb4860229c58afc286aadbae2676a132750e"
+    },
+    {
+      "name": "r1_2023-24_GW20_SolioAdaptedH6_fixedWork",
+      "repetition": 1,
+      "season": "2023-24",
+      "gameweek": 20,
+      "policy": "SolioAdaptedH6_fixedWork",
+      "status": "completed",
+      "seconds": 23.594761166001263,
+      "fingerprint": "8f03d38796e7bb2bab5d159e5dff4300f27eec0c5ba39cac35ca3bd8a07aa055"
+    },
+    {
+      "name": "r1_2024-25_GW01_decisionH6_calibrated_fixedWork",
+      "repetition": 1,
+      "season": "2024-25",
+      "gameweek": 1,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "status": "completed",
+      "seconds": 6.168044874997577,
+      "fingerprint": "f08e808cee99ca9f66e65d5b5bef764657ada20a62a917be9402c0894474f873"
+    },
+    {
+      "name": "r1_2024-25_GW20_decisionH6_calibrated_fixedWork",
+      "repetition": 1,
+      "season": "2024-25",
+      "gameweek": 20,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "status": "completed",
+      "seconds": 28.837106334001874,
+      "fingerprint": "ac6e0599161b9e837de0ab1b93ba915b821153b0164a4de3cba3b9c6ac90d47a"
+    },
+    {
+      "name": "r1_2025-26_GW01_decisionH6_calibrated_fixedWork",
+      "repetition": 1,
+      "season": "2025-26",
+      "gameweek": 1,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "status": "completed",
+      "seconds": 4.9963864580058726,
+      "fingerprint": "b56db2381e3b973bb737a1e21bc15a2b957493033e515fe0258f36f03122b8ad"
+    },
+    {
+      "name": "r1_2025-26_GW20_decisionH6_calibrated_fixedWork",
+      "repetition": 1,
+      "season": "2025-26",
+      "gameweek": 20,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "status": "completed",
+      "seconds": 22.784887334004452,
+      "fingerprint": "15f8d5d94f949351f5a6909ed678dcd9c14216db7e3722096b3bfe033c26ffb7"
+    },
+    {
+      "name": "r2_2023-24_GW01_standingH6_fixedWork",
+      "repetition": 2,
+      "season": "2023-24",
+      "gameweek": 1,
+      "policy": "standingH6_fixedWork",
+      "status": "completed",
+      "seconds": 3.11778695799876,
+      "fingerprint": "12f44dc972218dd65caf45f171ed491f5207711902690f844548bd35cb94a6f1"
+    },
+    {
+      "name": "r2_2023-24_GW01_decisionH6_fixedWork",
+      "repetition": 2,
+      "season": "2023-24",
+      "gameweek": 1,
+      "policy": "decisionH6_fixedWork",
+      "status": "completed",
+      "seconds": 5.925686082999164,
+      "fingerprint": "0f60fc35350b6d9eaff6f76428e3ee0450981966254d623cf0d0cabb997a6eb7"
+    },
+    {
+      "name": "r2_2023-24_GW01_SolioAdaptedH6_fixedWork",
+      "repetition": 2,
+      "season": "2023-24",
+      "gameweek": 1,
+      "policy": "SolioAdaptedH6_fixedWork",
+      "status": "completed",
+      "seconds": 5.636155667001731,
+      "fingerprint": "4fb8e225d7d936fbade3ecdc2876b3bb01a2f633acf1ace8ee0ff406b31d1ae4"
+    },
+    {
+      "name": "r2_2023-24_GW20_standingH6_fixedWork",
+      "repetition": 2,
+      "season": "2023-24",
+      "gameweek": 20,
+      "policy": "standingH6_fixedWork",
+      "status": "completed",
+      "seconds": 13.355231166999147,
+      "fingerprint": "8f03d38796e7bb2bab5d159e5dff4300f27eec0c5ba39cac35ca3bd8a07aa055"
+    },
+    {
+      "name": "r2_2023-24_GW20_decisionH6_fixedWork",
+      "repetition": 2,
+      "season": "2023-24",
+      "gameweek": 20,
+      "policy": "decisionH6_fixedWork",
+      "status": "completed",
+      "seconds": 16.181005874997936,
+      "fingerprint": "e51b74743f3e82bcdfca19ab0e0dcb4860229c58afc286aadbae2676a132750e"
+    },
+    {
+      "name": "r2_2023-24_GW20_SolioAdaptedH6_fixedWork",
+      "repetition": 2,
+      "season": "2023-24",
+      "gameweek": 20,
+      "policy": "SolioAdaptedH6_fixedWork",
+      "status": "completed",
+      "seconds": 23.013888292000047,
+      "fingerprint": "8f03d38796e7bb2bab5d159e5dff4300f27eec0c5ba39cac35ca3bd8a07aa055"
+    },
+    {
+      "name": "r2_2024-25_GW01_decisionH6_calibrated_fixedWork",
+      "repetition": 2,
+      "season": "2024-25",
+      "gameweek": 1,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "status": "completed",
+      "seconds": 6.172652291999839,
+      "fingerprint": "f08e808cee99ca9f66e65d5b5bef764657ada20a62a917be9402c0894474f873"
+    },
+    {
+      "name": "r2_2024-25_GW20_decisionH6_calibrated_fixedWork",
+      "repetition": 2,
+      "season": "2024-25",
+      "gameweek": 20,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "status": "completed",
+      "seconds": 28.826077332996647,
+      "fingerprint": "ac6e0599161b9e837de0ab1b93ba915b821153b0164a4de3cba3b9c6ac90d47a"
+    },
+    {
+      "name": "r2_2025-26_GW01_decisionH6_calibrated_fixedWork",
+      "repetition": 2,
+      "season": "2025-26",
+      "gameweek": 1,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "status": "completed",
+      "seconds": 5.002545957999246,
+      "fingerprint": "b56db2381e3b973bb737a1e21bc15a2b957493033e515fe0258f36f03122b8ad"
+    },
+    {
+      "name": "r2_2025-26_GW20_decisionH6_calibrated_fixedWork",
+      "repetition": 2,
+      "season": "2025-26",
+      "gameweek": 20,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "status": "completed",
+      "seconds": 23.849576125001477,
+      "fingerprint": "15f8d5d94f949351f5a6909ed678dcd9c14216db7e3722096b3bfe033c26ffb7"
+    }
+  ],
+  "pairs": [
+    {
+      "season": "2023-24",
+      "gameweek": 1,
+      "policy": "standingH6_fixedWork",
+      "equal": true
+    },
+    {
+      "season": "2023-24",
+      "gameweek": 1,
+      "policy": "decisionH6_fixedWork",
+      "equal": true
+    },
+    {
+      "season": "2023-24",
+      "gameweek": 1,
+      "policy": "SolioAdaptedH6_fixedWork",
+      "equal": true
+    },
+    {
+      "season": "2023-24",
+      "gameweek": 20,
+      "policy": "standingH6_fixedWork",
+      "equal": true
+    },
+    {
+      "season": "2023-24",
+      "gameweek": 20,
+      "policy": "decisionH6_fixedWork",
+      "equal": true
+    },
+    {
+      "season": "2023-24",
+      "gameweek": 20,
+      "policy": "SolioAdaptedH6_fixedWork",
+      "equal": true
+    },
+    {
+      "season": "2024-25",
+      "gameweek": 1,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "equal": true
+    },
+    {
+      "season": "2024-25",
+      "gameweek": 20,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "equal": true
+    },
+    {
+      "season": "2025-26",
+      "gameweek": 1,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "equal": true
+    },
+    {
+      "season": "2025-26",
+      "gameweek": 20,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "equal": true
+    }
+  ],
+  "repeatable": true,
+  "outcomes_scored": false,
+  "source_commit": "39f19c977816794134c44c3844cc66632354a320",
+  "scope": "Twenty source-only as-of mechanical cases; two numerical repetitions, ten identical full decision fingerprints; no realised outcomes scored; not full-season evidence"
+}

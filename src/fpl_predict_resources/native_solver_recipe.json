@@ -17,7 +17,8 @@
   "season": "2025-26",
   "adaptation": "Known FT resets, registration eligibility, exact retained-original FH profit; common fixed chip schedule/objective. External code is separately obtained, never bundled or relicensed by this package.",
   "additional_seasons": [
-    "2024-25"
+    "2024-25",
+    "2023-24"
   ],
-  "additional_season_scope": "2024/25 restricted common no-Assistant-Manager track; annual FH/BB/TC inventory, no topup. Same audited FT/FH financial adapter and canonical selection, not original manager."
+  "additional_season_scope": "2024/25 restricted common no-Assistant-Manager track; annual FH/BB/TC inventory, no topup. Same audited FT/FH financial adapter and canonical selection, not original manager. 2023/24 uses a separately compiled, hash-admitted historical AST: cap2, WC/FH reset to1, first WC through20/second from21; no AFCON topup. Default newer-season AST unchanged."
 }
