@@ -52,9 +52,12 @@ Important findings to retain:
   +25/+22/−67/+46 cases; it fails the declared−38opening-loss allowance. This is
   not proof of inferior expected value or permission to relax the gate afterward.
 - The newest probability-only calibration improves component Brier while point
-  means/errors stay unchanged. Frozen-roster effects are small and mixed. Read
-  the current handover checkpoint for the final season results and unfinished
-  review; do not activate it merely because a component metric improved.
+  means/errors stay unchanged. Full matched season effects versus the existing
+  availability policy are−26/−2/+5/−104, mean−31.75; versus standing H6 mean−25.25
+  and adapted Solio mean−16.25. It fails the declared research gate and must not
+  be activated. The older uncalibrated2023/24 extension also loses−9/−65 versus
+  H6; it is not a third calibrated target year. All44paths/1,672settlements and
+  836repeated fingerprints reconcile. Research review/release PR42 is unfinished.
 - Results use reused historical years and dependent common starting cases.
   Adapted Solio/AIrsenal cores under common forecasts/outer chips are not original
   complete managers; there is no automatic new Dastan/OpenFPL forecasting win.

@@ -154,3 +154,21 @@ The private archive contains original package plans, scripts, all successful/
 failed/interrupted runs, counter cohorts, priors, frozen bundles, reports and
 context. Public PR42 protocols/results are linked from CHECKPOINT.json. The
 receiving chat should use that map, not infer status from this historical account.
+
+
+## Verified numerical stopping result —27October2026
+
+All20new paths plus24retained controls are complete. Independent audit checks
+1,672settlements,9,372retained finance periods,4,260expected-objective periods
+and12,336native periods;22repeat pairs match all836full-decision fingerprints.
+Calibration minus uncalibrated availability-H6 is−26/−2/+5/−104, equal-season mean
+−31.75. Secondary means are−25.25versus standingH6 and−16.25versus adaptedSolio.
+Component Brier improves but adaptive season points do not; research support
+fails and no model/default is promoted. The separate older uncalibrated policy
+loses−9/−65versusH6; its three-year descriptive mean is−8.00, not a third
+calibrated evaluation year. Original losses/gates/failures stay unchanged.
+760of1,672conditional bounds are unknown (expected-objective paths); global chip/
+season bounds are unknown. The numerical batch and temporary idle assertion
+exited. Review repairs R1/R2/R3 and final PR42 qualification/publication remain
+for the receiving chat. See RESEARCH_STOPPING_RESULTS.json for all compact rows
+and comparisons; full original files/locks/logs remain in the private transfer.

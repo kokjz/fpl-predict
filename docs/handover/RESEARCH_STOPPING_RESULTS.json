@@ -1,0 +1,573 @@
+{
+  "complete": true,
+  "numerical_source": "9e26851a92371690848e3811c6e120026dd33011",
+  "new_paths": 20,
+  "reused_controls": 24,
+  "all_paths": 44,
+  "new_settlements": 760,
+  "all_settlements": 1672,
+  "source_opening_pairs": 22,
+  "repeat_fingerprint_comparisons": 836,
+  "all_repeats_equal": true,
+  "averaged_rows": [
+    {
+      "season": "2024-25",
+      "seed": 20261070,
+      "policy": "standingH6_fixedWork",
+      "status": "completed",
+      "net_points": 2417.0
+    },
+    {
+      "season": "2024-25",
+      "seed": 20261070,
+      "policy": "decisionH6_fixedWork",
+      "status": "completed",
+      "net_points": 2442.0
+    },
+    {
+      "season": "2024-25",
+      "seed": 20261070,
+      "policy": "SolioAdaptedH6_fixedWork",
+      "status": "completed",
+      "net_points": 2398.0
+    },
+    {
+      "season": "2024-25",
+      "seed": 20261071,
+      "policy": "standingH6_fixedWork",
+      "status": "completed",
+      "net_points": 2423.0
+    },
+    {
+      "season": "2024-25",
+      "seed": 20261071,
+      "policy": "decisionH6_fixedWork",
+      "status": "completed",
+      "net_points": 2445.0
+    },
+    {
+      "season": "2024-25",
+      "seed": 20261071,
+      "policy": "SolioAdaptedH6_fixedWork",
+      "status": "completed",
+      "net_points": 2423.0
+    },
+    {
+      "season": "2025-26",
+      "seed": 20261070,
+      "policy": "standingH6_fixedWork",
+      "status": "completed",
+      "net_points": 2266.0
+    },
+    {
+      "season": "2025-26",
+      "seed": 20261070,
+      "policy": "decisionH6_fixedWork",
+      "status": "completed",
+      "net_points": 2199.0
+    },
+    {
+      "season": "2025-26",
+      "seed": 20261070,
+      "policy": "SolioAdaptedH6_fixedWork",
+      "status": "completed",
+      "net_points": 2225.0
+    },
+    {
+      "season": "2025-26",
+      "seed": 20261071,
+      "policy": "standingH6_fixedWork",
+      "status": "completed",
+      "net_points": 2217.0
+    },
+    {
+      "season": "2025-26",
+      "seed": 20261071,
+      "policy": "decisionH6_fixedWork",
+      "status": "completed",
+      "net_points": 2263.0
+    },
+    {
+      "season": "2025-26",
+      "seed": 20261071,
+      "policy": "SolioAdaptedH6_fixedWork",
+      "status": "completed",
+      "net_points": 2241.0
+    },
+    {
+      "season": "2023-24",
+      "seed": 20261070,
+      "policy": "standingH6_fixedWork",
+      "status": "completed",
+      "net_points": 2295.0
+    },
+    {
+      "season": "2023-24",
+      "seed": 20261070,
+      "policy": "decisionH6_fixedWork",
+      "status": "completed",
+      "net_points": 2286.0
+    },
+    {
+      "season": "2023-24",
+      "seed": 20261070,
+      "policy": "SolioAdaptedH6_fixedWork",
+      "status": "completed",
+      "net_points": 2308.0
+    },
+    {
+      "season": "2023-24",
+      "seed": 20261071,
+      "policy": "standingH6_fixedWork",
+      "status": "completed",
+      "net_points": 2252.0
+    },
+    {
+      "season": "2023-24",
+      "seed": 20261071,
+      "policy": "decisionH6_fixedWork",
+      "status": "completed",
+      "net_points": 2187.0
+    },
+    {
+      "season": "2023-24",
+      "seed": 20261071,
+      "policy": "SolioAdaptedH6_fixedWork",
+      "status": "completed",
+      "net_points": 2202.0
+    },
+    {
+      "season": "2024-25",
+      "seed": 20261070,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "status": "completed",
+      "net_points": 2416.0
+    },
+    {
+      "season": "2024-25",
+      "seed": 20261071,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "status": "completed",
+      "net_points": 2443.0
+    },
+    {
+      "season": "2025-26",
+      "seed": 20261070,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "status": "completed",
+      "net_points": 2204.0
+    },
+    {
+      "season": "2025-26",
+      "seed": 20261071,
+      "policy": "decisionH6_calibrated_fixedWork",
+      "status": "completed",
+      "net_points": 2159.0
+    }
+  ],
+  "primary_and_external_assessment": {
+    "decisionH6_fixedWork": {
+      "schema_version": 1,
+      "integrity_verified": true,
+      "comparisons": {
+        "decisionH6_fixedWork": {
+          "pairs": [
+            {
+              "season": "2024-25",
+              "seed": 20261070,
+              "difference": -26.0
+            },
+            {
+              "season": "2024-25",
+              "seed": 20261071,
+              "difference": -2.0
+            },
+            {
+              "season": "2025-26",
+              "seed": 20261070,
+              "difference": 5.0
+            },
+            {
+              "season": "2025-26",
+              "seed": 20261071,
+              "difference": -104.0
+            }
+          ],
+          "season_means": {
+            "2024-25": -14.0,
+            "2025-26": -49.5
+          },
+          "equal_season_mean": -31.75,
+          "median_opening_gain": -14.0,
+          "worst_opening_gain": -104.0,
+          "wins": 1,
+          "ties": 0,
+          "losses": 3,
+          "material_losses": 2,
+          "material_loss_definition": "opening loss exceeding 19points",
+          "material_loss_frequency": 0.5,
+          "research_support": false,
+          "interpretation": "Declared descriptive historical support only; no confidence/significance or automatic policy/model promotion"
+        },
+        "SolioAdaptedH6_fixedWork": {
+          "pairs": [
+            {
+              "season": "2024-25",
+              "seed": 20261070,
+              "difference": 18.0
+            },
+            {
+              "season": "2024-25",
+              "seed": 20261071,
+              "difference": 20.0
+            },
+            {
+              "season": "2025-26",
+              "seed": 20261070,
+              "difference": -21.0
+            },
+            {
+              "season": "2025-26",
+              "seed": 20261071,
+              "difference": -82.0
+            }
+          ],
+          "season_means": {
+            "2024-25": 19.0,
+            "2025-26": -51.5
+          },
+          "equal_season_mean": -16.25,
+          "median_opening_gain": -1.5,
+          "worst_opening_gain": -82.0,
+          "wins": 2,
+          "ties": 0,
+          "losses": 2,
+          "material_losses": 2,
+          "material_loss_definition": "opening loss exceeding 19points",
+          "material_loss_frequency": 0.5,
+          "research_support": false,
+          "interpretation": "Declared descriptive historical support only; no confidence/significance or automatic policy/model promotion"
+        }
+      },
+      "seasons": 2,
+      "openings_per_season": 2,
+      "old_zero_negative_gate_unchanged": true,
+      "policy_promotion": false,
+      "model_promotion": false,
+      "uncertainty": "Two previously inspected outcome seasons; starting cases within each season are dependent. No IID-week or opening-as-season inference."
+    },
+    "standingH6_fixedWork": {
+      "schema_version": 1,
+      "integrity_verified": true,
+      "comparisons": {
+        "standingH6_fixedWork": {
+          "pairs": [
+            {
+              "season": "2024-25",
+              "seed": 20261070,
+              "difference": -1.0
+            },
+            {
+              "season": "2024-25",
+              "seed": 20261071,
+              "difference": 20.0
+            },
+            {
+              "season": "2025-26",
+              "seed": 20261070,
+              "difference": -62.0
+            },
+            {
+              "season": "2025-26",
+              "seed": 20261071,
+              "difference": -58.0
+            }
+          ],
+          "season_means": {
+            "2024-25": 9.5,
+            "2025-26": -60.0
+          },
+          "equal_season_mean": -25.25,
+          "median_opening_gain": -29.5,
+          "worst_opening_gain": -62.0,
+          "wins": 1,
+          "ties": 0,
+          "losses": 3,
+          "material_losses": 2,
+          "material_loss_definition": "opening loss exceeding 19points",
+          "material_loss_frequency": 0.5,
+          "research_support": false,
+          "interpretation": "Declared descriptive historical support only; no confidence/significance or automatic policy/model promotion"
+        },
+        "SolioAdaptedH6_fixedWork": {
+          "pairs": [
+            {
+              "season": "2024-25",
+              "seed": 20261070,
+              "difference": 18.0
+            },
+            {
+              "season": "2024-25",
+              "seed": 20261071,
+              "difference": 20.0
+            },
+            {
+              "season": "2025-26",
+              "seed": 20261070,
+              "difference": -21.0
+            },
+            {
+              "season": "2025-26",
+              "seed": 20261071,
+              "difference": -82.0
+            }
+          ],
+          "season_means": {
+            "2024-25": 19.0,
+            "2025-26": -51.5
+          },
+          "equal_season_mean": -16.25,
+          "median_opening_gain": -1.5,
+          "worst_opening_gain": -82.0,
+          "wins": 2,
+          "ties": 0,
+          "losses": 2,
+          "material_losses": 2,
+          "material_loss_definition": "opening loss exceeding 19points",
+          "material_loss_frequency": 0.5,
+          "research_support": false,
+          "interpretation": "Declared descriptive historical support only; no confidence/significance or automatic policy/model promotion"
+        }
+      },
+      "seasons": 2,
+      "openings_per_season": 2,
+      "old_zero_negative_gate_unchanged": true,
+      "policy_promotion": false,
+      "model_promotion": false,
+      "uncertainty": "Two previously inspected outcome seasons; starting cases within each season are dependent. No IID-week or opening-as-season inference."
+    }
+  },
+  "older_extension": [
+    {
+      "method": "decisionH6_fixedWork",
+      "control": "standingH6_fixedWork",
+      "pairs": [
+        {
+          "season": "2023-24",
+          "seed": 20261070,
+          "difference": -9.0
+        },
+        {
+          "season": "2023-24",
+          "seed": 20261071,
+          "difference": -65.0
+        }
+      ],
+      "season_means": {
+        "2023-24": -37.0
+      },
+      "equal_season_mean": -37.0,
+      "worst_opening": -65.0,
+      "qualification": "Descriptive additional-year coverage only; does not replace earlier gates or add a third calibrated target year"
+    },
+    {
+      "method": "decisionH6_fixedWork",
+      "control": "SolioAdaptedH6_fixedWork",
+      "pairs": [
+        {
+          "season": "2023-24",
+          "seed": 20261070,
+          "difference": -22.0
+        },
+        {
+          "season": "2023-24",
+          "seed": 20261071,
+          "difference": -15.0
+        }
+      ],
+      "season_means": {
+        "2023-24": -18.5
+      },
+      "equal_season_mean": -18.5,
+      "worst_opening": -22.0,
+      "qualification": "Descriptive additional-year coverage only; does not replace earlier gates or add a third calibrated target year"
+    },
+    {
+      "method": "standingH6_fixedWork",
+      "control": "SolioAdaptedH6_fixedWork",
+      "pairs": [
+        {
+          "season": "2023-24",
+          "seed": 20261070,
+          "difference": -13.0
+        },
+        {
+          "season": "2023-24",
+          "seed": 20261071,
+          "difference": 50.0
+        }
+      ],
+      "season_means": {
+        "2023-24": 18.5
+      },
+      "equal_season_mean": 18.5,
+      "worst_opening": -13.0,
+      "qualification": "Descriptive additional-year coverage only; does not replace earlier gates or add a third calibrated target year"
+    }
+  ],
+  "original_policy_three_year_descriptive": [
+    {
+      "method": "decisionH6_fixedWork",
+      "control": "standingH6_fixedWork",
+      "pairs": [
+        {
+          "season": "2023-24",
+          "seed": 20261070,
+          "difference": -9.0
+        },
+        {
+          "season": "2023-24",
+          "seed": 20261071,
+          "difference": -65.0
+        },
+        {
+          "season": "2024-25",
+          "seed": 20261070,
+          "difference": 25.0
+        },
+        {
+          "season": "2024-25",
+          "seed": 20261071,
+          "difference": 22.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261070,
+          "difference": -67.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261071,
+          "difference": 46.0
+        }
+      ],
+      "season_means": {
+        "2023-24": -37.0,
+        "2024-25": 23.5,
+        "2025-26": -10.5
+      },
+      "equal_season_mean": -8.0,
+      "worst_opening": -67.0,
+      "qualification": "Descriptive additional-year coverage only; does not replace earlier gates or add a third calibrated target year"
+    },
+    {
+      "method": "decisionH6_fixedWork",
+      "control": "SolioAdaptedH6_fixedWork",
+      "pairs": [
+        {
+          "season": "2023-24",
+          "seed": 20261070,
+          "difference": -22.0
+        },
+        {
+          "season": "2023-24",
+          "seed": 20261071,
+          "difference": -15.0
+        },
+        {
+          "season": "2024-25",
+          "seed": 20261070,
+          "difference": 44.0
+        },
+        {
+          "season": "2024-25",
+          "seed": 20261071,
+          "difference": 22.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261070,
+          "difference": -26.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261071,
+          "difference": 22.0
+        }
+      ],
+      "season_means": {
+        "2023-24": -18.5,
+        "2024-25": 33.0,
+        "2025-26": -2.0
+      },
+      "equal_season_mean": 4.166666666666667,
+      "worst_opening": -26.0,
+      "qualification": "Descriptive additional-year coverage only; does not replace earlier gates or add a third calibrated target year"
+    },
+    {
+      "method": "standingH6_fixedWork",
+      "control": "SolioAdaptedH6_fixedWork",
+      "pairs": [
+        {
+          "season": "2023-24",
+          "seed": 20261070,
+          "difference": -13.0
+        },
+        {
+          "season": "2023-24",
+          "seed": 20261071,
+          "difference": 50.0
+        },
+        {
+          "season": "2024-25",
+          "seed": 20261070,
+          "difference": 19.0
+        },
+        {
+          "season": "2024-25",
+          "seed": 20261071,
+          "difference": 0.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261070,
+          "difference": 41.0
+        },
+        {
+          "season": "2025-26",
+          "seed": 20261071,
+          "difference": -24.0
+        }
+      ],
+      "season_means": {
+        "2023-24": 18.5,
+        "2024-25": 9.5,
+        "2025-26": 8.5
+      },
+      "equal_season_mean": 12.166666666666666,
+      "worst_opening": -24.0,
+      "qualification": "Descriptive additional-year coverage only; does not replace earlier gates or add a third calibrated target year"
+    }
+  ],
+  "unknown_conditional_bounds": 760,
+  "global_chip_and_season_bound": "unknown",
+  "component_gate_pass": true,
+  "candidate_historical_research_support": false,
+  "production_policy_promotion": false,
+  "model_promotion": false,
+  "scope": "Two reused calibration target years, separate older uncalibrated policy extension, two dependent common starts each. Solver repetitions are not new football evidence. Prior-only references, bounded shared planner/adapted Solio, not original full managers or a new Dastan/OpenFPL forecaster benchmark. All earlier gates/results unchanged.",
+  "audit_counts": {
+    "paths": 44,
+    "deadlines": 1672,
+    "retained_periods": 9372,
+    "expected_retained_periods": 4260,
+    "native_periods": 12336
+  },
+  "evidence_sha256": {
+    "season_comparison_aggregate.json": "0598801cbb9340b4bf62efc48853cb3281e6275c3123c59a3d190edf1b85d517",
+    "independent_all44_audit.json": "c94be7db67b636d20c10df01a9541e6d57562c806a839fc4f3e6d2c2333f7deb",
+    "independent_season-study-03_audit_20.json": "d47ecd455a54882820dcf13f50055c10ca0c2155328fa0297f34b5dadd8029bd",
+    "summary.json": "334fc51a8dc00921623ee1a7db065d28810584505b876d113ab09bd9c5be08d8"
+  },
+  "release_scope": "Numerically verified stopping checkpoint, not completed PR42 source review/research release"
+}

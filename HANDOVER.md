@@ -2,11 +2,16 @@
 
 This is the entry point for a fresh Codex or Claude chat taking over prediction-
 engine research on Windows. Read it before running models or modifying source.
-Weekly squad planning remains a separate responsibility.
+Weekly squad planning remains a separate responsibility. Claude Desktop/Code
+with Sonnet5.5 on Pro is the primary intended receiving setup. Start with the
+[short bootstrap prompt](docs/handover/QUICK_START_PROMPT.md); the full prompt and
+all evidence remain available without loading them all at once.
 
 ## Start here
 
-1. Read [project context](docs/handover/PROJECT_CONTEXT.md),
+1. Read the [staged bootstrap](docs/handover/BOOTSTRAP.md) and
+   [Claude Pro workflow](docs/handover/CLAUDE_PRO_WORKFLOW.md), then
+   [project context](docs/handover/PROJECT_CONTEXT.md),
    [operating rules](docs/handover/OPERATING_RULES.md) and the machine-readable
    [checkpoint](docs/handover/CHECKPOINT.json). The checkpoint distinguishes
    reviewed `main`, unmerged research and unchanged approved weights.
