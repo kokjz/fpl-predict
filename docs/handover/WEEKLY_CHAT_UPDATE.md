@@ -69,6 +69,16 @@ Important findings to retain:
   complete managers; there is no automatic new Dastan/OpenFPL forecasting win.
   Mean-dual/trial gaps do not certify changed expected-scoring/global chip plans.
 
+Read docs/handover/OPERATING_CADENCE.md for the full weekly routine: confirmed
+finalised-GW review; provisional multi-GW/chip planning; near-deadline fresh news
+and scenarios; pre-deadline frozen recommendations; confirmed-execution state
+update. Use actual deadlines in UK/Singapore time, not fixed weekdays. Follow
+the screenshot naming/hash/archive rules. Keep actual squad performance separate
+from fixed-squad trials. Send supported defects through private shared files or
+user transfer, without independent tuning or automatic messaging. Routine weekly
+planning needs no architect hop; research releases arrive with explicit approval/
+compatibility notes and separate private artifact transfer when needed.
+
 Read https://github.com/kokjz/fpl-predict/blob/main/HANDOVER.md and its checkpoint,
 plus local AGENTS.md, CONTEXT_MASTER.md, planning/WEEKLY_SOURCE_SYNC.md,
 planning/PROSPECTIVE_MODEL_HANDOFF.md, planning/SEASON_MANAGER_HANDOFF.md,

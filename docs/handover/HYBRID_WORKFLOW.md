@@ -41,6 +41,10 @@ not establish a Sol-versus-Sonnet cost advantage, and caches are not shared
 between vendors. No feature-engineering or tuning task is authorised by an
 outside model's illustrative example.
 
+For active research days, the complete gameweek cycle and two-way release/defect
+handoffs, read [OPERATING_CADENCE.md](OPERATING_CADENCE.md). Neither workstream
+requires daily retraining or a routine architect hop for weekly squad planning.
+
 ## Roles and boundaries
 
 | Role | Owns | Boundaries |

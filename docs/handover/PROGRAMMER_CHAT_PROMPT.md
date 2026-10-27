@@ -24,6 +24,10 @@ state and affected tests, then finish the negative research report/release.
 Prepared private patch is unapplied/unqualified. Do not rerun completed paths
 or fit another candidate merely for migration or to obtain a better result.
 
+Read OPERATING_CADENCE.md for active-day resume/ownership, package completion
+and the weekly release handoff. Publish source and transfer required approved
+private artifacts/context separately; a repository pull cannot do both.
+
 Own implementation and execution. Check private archive/source/model hashes,
 recreate and qualify receiving runtimes (WSL for current POSIX watchdog where
 available), separate legacy replay/artifact pins from product pins, then execute
