@@ -29,3 +29,8 @@ Private restored files live under private-workspace/payload/. Explicitly select
 the sibling fpl-predict/ source checkout when restoring with the current tool.
 Read source mappings and runtime setup before execution. Retrieve context in
 stages rather than importing the whole history at startup.
+
+Architect selection: Opus5.5 Medium for most work including initial setup, with
+High as needed in the same conversation. Read
+private-handover/source/ARCHITECT_MODEL_POLICY.md. Sol remains the programmer. Verify actual
+settings; no automatic model switch or new experiment is authorised.

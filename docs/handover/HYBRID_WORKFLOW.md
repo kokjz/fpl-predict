@@ -7,9 +7,11 @@ cross-chat messaging or model switching is introduced.
 
 ## Assessment and suggested allocation
 
-The split is reasonable as a workflow trial. Use Claude Sonnet5.5 for ordinary
-architecture/result interpretation, or user-selected Opus5.5 for a difficult
-design, leakage, uncertainty or causal-interpretation question. Use GPT-6.1 Sol
+The split is reasonable as a workflow trial. The user selected **Claude Opus5.5
+/ Medium**, including initial intake/setup, with **High as needed** for a
+specific harder question within that architect conversation. This supersedes
+the earlier Sonnet-first recommendation; read
+[ARCHITECT_MODEL_POLICY.md](ARCHITECT_MODEL_POLICY.md). Use GPT-6.1 Sol
 for implementation, local execution, tests, audits, documentation and Git/PR
 work. A programmer also exercises engineering judgment; an architect is not an
 oracle or a replacement for original evidence. These are assistance roles, not
@@ -49,7 +51,7 @@ requires daily retraining or a routine architect hop for weekly squad planning.
 
 | Role | Owns | Boundaries |
 |---|---|---|
-| Architect: user-selected Sonnet5.5 or Opus5.5 | Research question, origin-safe feature/data design, chronological validation, declared comparisons/gates, scope/budgets, result interpretation and next-package recommendation | Reads verified evidence; does not start an unapproved search, rewrite outcome-dependent criteria, operate a second code writer or confer production approval |
+| Architect: user-selected Opus5.5 / Medium; High as needed | Research question, origin-safe feature/data design, chronological validation, declared comparisons/gates, scope/budgets, result interpretation and next-package recommendation | Reads verified evidence; does not start an unapproved search, rewrite outcome-dependent criteria, operate a second code writer or confer production approval |
 | Programmer: user-selected GPT-6.1 Sol | Implement the authorised package; validate data/source, run bounded commands/audits, preserve failures, test, inspect diffs/privacy, commit/push/PR/review/merge/cleanup and produce evidence | Flags scientific/design conflicts; does not silently change the hypothesis, cohorts, budget, fit scope, primary comparison or approval status |
 | Weekly planner | Authorised squad/transfer/captain/bench/chip planning and finalised-GW review | Uses reviewed remote main plus approved private registry/artifact; no independent engine tuning/promotion |
 | User | Goals, permissions, model/account choice and resolution of genuinely material unresolved choices | No repeated permission request for already authorised routine work |

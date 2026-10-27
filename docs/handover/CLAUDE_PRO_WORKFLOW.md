@@ -1,8 +1,10 @@
 # Claude Desktop/Code on Pro: bounded-context workflow
 
 Guidance checked **27October2026** against Anthropic's official documentation.
-The Claude side may use Sonnet5.5 or Opus5.5 on Pro in Desktop/Code for
-architecture/interpretation, while GPT-6.1 Sol handles programming separately.
+The Claude architect uses user-selected Opus5.5 / Medium, including initial
+setup, with High as needed in that conversation; read ARCHITECT_MODEL_POLICY.md.
+This supersedes earlier Sonnet-first advice. GPT-6.1 Sol handles programming
+separately. Actual receiving settings still require verification.
 See HYBRID_WORKFLOW.md; this guide applies to the Claude side, not Codex quotas.
 Verify the actual model, effort, plan and local execution environment in the
 receiving app. An announced feature is not proof it is enabled for that account.
@@ -18,13 +20,12 @@ and reset information. [Official Pro/Code guidance](https://support.claude.com/e
 [usage versus length](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work),
 [cost/usage tools](https://code.claude.com/docs/en/costs).
 
-Anthropic documents Medium as Sonnet5.5's default effort in its apps/Code, with
-higher effort doing more reasoning/checking. This is not an instruction to
-change the user's settings. Use the selected model for scoped implementation;
-if a genuinely unresolved scientific or architectural issue warrants escalation,
-explain the exact issue, proposed model/effort and expected benefit first. Do not
-automatically choose maximum effort or a multi-agent review. Vendor benchmarks
-do not establish this project's correctness. [Model announcement](https://www.anthropic.com/claude-sonnet-5-5).
+Anthropic recommends starting Opus5.5 at Medium. The user selected Medium for
+most architect work and High as needed for a named difficult design/interpretation
+question within that conversation. Record why and the actual setting; return to
+Medium for routine work. Do not assume a UI setting changed, choose Xhigh/Max,
+create agents or change models automatically. Vendor benchmarks do not establish
+this project's correctness. [Opus effort guidance](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5).
 
 Desktop's Code tab can run inside WSL2: select an installed distribution and a
 Linux project folder. Its toolchain/Git then run in Linux. WSL1 is unsupported.

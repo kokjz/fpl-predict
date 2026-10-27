@@ -1,8 +1,11 @@
 # Update prompt for an existing model-improvement chat
 
 Update standing context: my Windows takeover may use an optional hybrid workflow.
-Claude Sonnet5.5 or Opus5.5 handles architect tasks (ML pipeline/experiment design,
-validation and result interpretation); GPT-6.1 Sol handles programmer tasks
+The user selected Claude Opus5.5 / Medium for most architect tasks including
+initial setup, with High as needed within that conversation; this supersedes
+earlier Sonnet-first advice. Read ARCHITECT_MODEL_POLICY.md and record actual
+effort/reasons for escalation. Opus handles ML pipeline/experiment design,
+validation and result interpretation; GPT-6.1 Sol handles programmer tasks
 (implementation, bounded execution, testing/audits, documentation and Git/PR work).
 Verify actual selected model/role/tools; no automatic model switch, subagent,
 cross-chat messaging, paid API router or cloud orchestration is requested.

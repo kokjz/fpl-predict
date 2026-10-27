@@ -176,8 +176,10 @@ and comparisons; full original files/locks/logs remain in the private transfer.
 
 ## Assistance workflow update —27October2026
 
-The takeover is not necessarily Claude-only. The user may use Sonnet5.5/Opus5.5
-for architecture/interpretation and GPT-6.1 Sol for implementation. The optional
+The takeover is not Claude-only. The user selected Opus5.5 / Medium for
+architecture/interpretation including initial setup, with High as needed in that
+conversation, and GPT-6.1 Sol for implementation. Earlier Sonnet-first advice is
+superseded; see ARCHITECT_MODEL_POLICY.md. The optional
 split is assessed as reasonable, not a measured superiority/cost result. Shared
 private package brief/results/decision/owner files and one writer prevent context
 or code divergence. Routine authorised fixes do not await per-commit architect

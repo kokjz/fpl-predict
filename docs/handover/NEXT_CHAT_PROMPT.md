@@ -1,8 +1,11 @@
 # Prompt for the receiving model-improvement chat
 
 I am permanently moving my FPL prediction-engine improvement work to this
-Windows workflow. I may use Claude Sonnet5.5 or Opus5.5 as architect for ML
-pipeline/experiment design and results interpretation, with GPT-6.1 Sol as the
+Windows workflow. The architect uses Claude Opus5.5 / Medium for most tasks
+including initial setup; use High for specific harder questions as needed within
+that conversation, record why/actual effort and return to Medium afterward.
+Read ARCHITECT_MODEL_POLICY.md; earlier Sonnet-first advice is superseded.
+GPT-6.1 Sol remains the
 programmer for implementation, execution, audits/tests and Git/PR work. A single
 capable chat is also allowed. Confirm your role and actual model/effort/account/
 tool access; intended selections are not proof of runtime configuration.
@@ -131,7 +134,8 @@ compatibility check as forecast accuracy or promotion.
 For Pro usage, keep one bounded step active, a durable private RESUME_CURRENT.md
 and concise tool output. Check actual context and shared plan usage separately;
 checkpoint before compaction/new sessions and revalidate after resuming. Do not
-automatically spawn agents, change model/effort or enable paid overage. The short
+automatically spawn agents, switch models or enable paid overage. The user's
+explicit Opus Medium/High architect policy applies; verify/record actual effort. The short
 QUICK_START_PROMPT.md can bootstrap this same full workflow without pasting this
 whole document; it does not reduce any scientific/Git/privacy requirement.
 

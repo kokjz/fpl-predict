@@ -6,7 +6,7 @@ authorise a new FPL experiment, feature, hyperparameter sweep or paid API system
 | Claim | Assessment for this project |
 |---|---|
 | Architect/programmer separation can help | Reasonable workflow hypothesis. It can separate scientific scrutiny from implementation loops, but coordination overhead and mistakes can erase the benefit. Measure actual work rather than promise an optimum. |
-| Sonnet3.5 is the intended architect | Version mismatch. The intended choices are Sonnet5.5 or Opus5.5. Claims about a different model do not establish these models' relative strengths. |
+| Sonnet3.5 is the intended architect | Version mismatch. The latest user selection is Opus5.5 / Medium, High as needed; earlier choices included Sonnet5.5. Claims about a different model do not establish these models' relative strengths. |
 | Claude is the superior ML/visual/planning manager | Not demonstrated for this project. Both families can reason over code, metrics and images. Role specialisation is useful without treating either as categorically better, immune to tunnel vision or an oracle. |
 | Sol's high DeepSWE ranking proves the allocation | The benchmark is real, but the inspected official board does not establish a GPT-6.1 Sol ranking or this ML-role comparison. Version, harness, effort and task evidence are needed; general code benchmarks do not measure FPL research judgment or season points. |
 | Sol's $0.10/M cached input makes repeated coding nearly free | A real eligible cache-read rate, not the price of every request. Cache writes, uncached/new input, generated output and applicable mode/length premiums remain chargeable. It is not a subscription token entitlement or a discount on local training CPU. |

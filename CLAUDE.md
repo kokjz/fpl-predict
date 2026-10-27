@@ -19,4 +19,5 @@ the approved model remains private. Preserve original evidence and failed runs.
 
 Confirm your architect/programmer role; use one canonical private brief/results
 packet and one implementation writer. GPT-6.1 Sol can own programming while
-Sonnet5.5/Opus5.5 plans/interprets. No per-commit architect permission gate.
+Opus5.5 Medium plans/interprets, including initial setup; High as needed in that
+conversation. Read docs/handover/ARCHITECT_MODEL_POLICY.md. No per-commit architect permission gate.

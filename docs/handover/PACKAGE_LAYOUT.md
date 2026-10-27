@@ -15,7 +15,7 @@ it does not include the archive, approved weights or personal context.
 README_FIRST.md                    Extract/verify sequence and precedence
 START_PROMPT.md                    Select role and enter the shared workflow
 roles/
-  architect/START_PROMPT.md         Sonnet5.5; user-selected Opus5.5 when useful
+  architect/START_PROMPT.md         Opus5.5 Medium, including setup; High as needed
   programmer/START_PROMPT.md        GPT-6.1 Sol implementation and execution
   model_improvement/UPDATE_PROMPT.md  Update an existing improvement chat
   weekly_planner/UPDATE_PROMPT.md   Update the separate weekly-planning chat

@@ -8,7 +8,7 @@ handover and restored runtime. The outer folder may be named
 
 The user-selected outer folder **must be named `fpl prediction model research`**.
 Record its actual absolute path once in the canonical private resume note. Both
-the Sonnet architect and Sol programmer must use that same physical project root.
+the Opus5.5 architect and Sol programmer must use that same physical project root.
 Clone the remote repository **only into `<OUTER>/fpl-predict/`**, never a default
 Documents, Downloads, application checkout or unrelated workspace directory.
 Inspect an existing clone instead of creating another. Any genuinely needed

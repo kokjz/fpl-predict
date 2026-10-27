@@ -1,5 +1,6 @@
-I am taking over my FPL model-improvement project. I may use Claude Sonnet5.5 or
-Opus5.5 as architect for ML pipeline/experiment design and result interpretation,
+I am taking over my FPL model-improvement project. The architect uses Claude
+Opus5.5 / Medium for most work including initial setup, with High as needed
+within that conversation (ARCHITECT_MODEL_POLICY.md),
 and GPT-6.1 Sol as programmer for implementation/execution/tests/Git. A single
 capable chat is also allowed. Verify your assigned role, actual model/effort,
 account and local tools. Repository: https://github.com/kokjz/fpl-predict.
