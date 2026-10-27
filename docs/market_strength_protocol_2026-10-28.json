@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "package": "market-implied-team-strength",
+  "brief_revision": "mits-r1",
+  "status": "frozen_admission_checkpoint; Stage B/C BLOCKED until architect resolves U definition and warm-up identity admission",
+  "base_main": "eba32263c847297da8d3055e160f7c564db00b4c",
+  "market_seasons": [
+    "2019-20",
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24"
+  ],
+  "later_download_or_scoring_prohibited": [
+    "2024-25",
+    "2025-26"
+  ],
+  "rating": {
+    "lookback_days": 730,
+    "age_half_life_days": 120,
+    "ridge_attack_defence": 2.0,
+    "unpenalised": [
+      "intercept",
+      "home_advantage"
+    ],
+    "cold_start_attack_defence": 0,
+    "lambda_bounds": [
+      0.05,
+      6.0
+    ],
+    "objective": "squared probability residuals: home-win, away-win, over2.5, independent Poisson",
+    "normalisation": "proportional reciprocal decimal odds, each complete group separately",
+    "preferred_1x2": [
+      "AvgCH",
+      "AvgCD",
+      "AvgCA"
+    ],
+    "fallback_1x2": [
+      "AvgH",
+      "AvgD",
+      "AvgA"
+    ],
+    "preferred_ou": [
+      "AvgC>2.5",
+      "AvgC<2.5"
+    ],
+    "fallback_ou": [
+      "Avg>2.5",
+      "Avg<2.5"
+    ],
+    "solver": {
+      "implementation": "scipy.optimize.least_squares",
+      "method": "trf",
+      "initial_lambda": [
+        1.35,
+        1.35
+      ],
+      "ftol": 1e-12,
+      "xtol": 1e-12,
+      "gtol": 1e-12,
+      "max_nfev": 200
+    },
+    "cutoff": "deadline minus3h; reject kickoff>=cutoff and target-match odds",
+    "calendar": "origin-known target metadata only; no target odds in projection API",
+    "features": [
+      "mkt_lambda_for",
+      "mkt_lambda_against",
+      "mkt_cs_prob"
+    ]
+  },
+  "stage_B": {
+    "status": "UNRUN",
+    "max_glm_fits": 6,
+    "folds": [
+      {
+        "train": [
+          "2020-21",
+          "2021-22"
+        ],
+        "test": "2022-23"
+      },
+      {
+        "train": [
+          "2020-21",
+          "2021-22",
+          "2022-23"
+        ],
+        "test": "2023-24"
+      }
+    ],
+    "estimator": {
+      "name": "sklearn.PoissonRegressor",
+      "alpha": 0,
+      "max_iter": 1000
+    },
+    "standardisation": "train rows only",
+    "C": "fpl_model.FeatureStore.team exact EW4/12 realised GF/GA for team and opponent",
+    "U_brief_literal": "C plus Understat team/opp EW xG for/against (I4 definition)",
+    "U_unresolved": "Frozen I4 uses arithmetic windows1/3/5/10/38, not EW4/12; ask architect for exact admitted feature definition before any fit",
+    "M": "C plus log(mkt_lambda_for), log(mkt_lambda_against)",
+    "gate": "M test mean Poisson deviance strictly lower than C and U in each fold",
+    "diagnostics": [
+      "clean-sheet Brier",
+      "calibration slope",
+      "descriptive paired4GW block intervals"
+    ],
+    "randomness": "No random lambda/ridge calculations; Stage-B interval/slope definitions still require pre-score declaration",
+    "on_pass": "Mandatory architect checkpoint before Stage C",
+    "on_fail": "Stop; no extra arm or tuning"
+  },
+  "stage_C": {
+    "status": "NOT AUTHORISED TO BEGIN before Gate B pass and architect checkpoint",
+    "max_fits": 4,
+    "protocol": "NATIVE_DEVELOPMENT_PROTOCOL.md",
+    "seed": 20260921,
+    "challenger": "market_strength only; three extra features in each head",
+    "gates_unchanged": true
+  },
+  "resources": {
+    "threads": 2,
+    "memory_bytes": 4294967296,
+    "seconds_per_fit": 900,
+    "growth_bytes": 268435456,
+    "free_bytes_min": 5368709120,
+    "serial": true
+  },
+  "approval": {
+    "model_promotion": false,
+    "registry_write": false,
+    "weekly_default_change": false
+  },
+  "unresolved_admission": [
+    "No already-held2019/20 FPL fixture/team identity source:380 exact source-row exceptions retained; do not invent IDs or silently remove the warm-up season",
+    "U operator/window/prior/reset semantics need architect clarification before Stage-B protocol can be considered execution-ready",
+    "Windows supervisor sampled launcher RSS only; worker/group memory not qualified. Correct before any Stage-B fit, no numerical rerun solely to repair telemetry."
+  ]
+}
