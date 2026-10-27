@@ -1,9 +1,10 @@
 # Small receiving-chat bootstrap
 
-The intended receiving workflow is Claude Desktop's **Code** tab, Sonnet5.5 on
-Pro, using a local WSL2 environment. This is the user's intended setup, not a
-verified receiving account/configuration. Codex or another tool-capable coding
-chat can follow the same repository/evidence procedure.
+The optional receiving workflow splits architecture/result interpretation
+(Claude Sonnet5.5 or Opus5.5) from implementation (GPT-6.1 Sol), or uses one
+capable chat. Read HYBRID_WORKFLOW.md and your role's startup prompt. Verify
+actual model/effort/account/tools and local Windows/WSL access. These are intended
+roles, not verified settings or measured superiority/cost savings.
 
 1. Inspect repository/source, open PRs and CHECKPOINT.json. Read PROJECT_CONTEXT.md
    and OPERATING_RULES.md once: they are the compact factual and standing-rule
@@ -26,7 +27,11 @@ chat can follow the same repository/evidence procedure.
    release. The full frozen numerical matrix is already complete; do not rerun
    it or fit another candidate merely to warm up the environment.
 
-Before changing code, state a short step/file/test plan grounded in that evidence.
+The architect prepares/reviews a bounded brief/results packet; the programmer
+executes the authorised scope. Use private coordination files with exact package
+revision/hash/source and one implementation writer. Existing PR42 repairs do not
+need a fresh architecture round or per-commit permission. Before changing code,
+state a short step/file/test plan grounded in that evidence.
 Continue already authorised work without asking the user to approve routine
 choices. Keep meaningful commits/PR scope, exact-source checks and promotion
 gates. No weekly squad planning is requested.

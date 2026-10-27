@@ -4,8 +4,14 @@ Please update your standing context with these changes since this weekly chat
 was originally set up. This is an instruction/context update, not a request to
 make transfers or plan a new gameweek now.
 
-Model improvement is permanently moving to a separate Windows LLM chat. Weekly
-planning and model improvement no longer necessarily share a device or checkout.
+Model improvement is permanently moving to Windows and may use an optional
+hybrid: Claude Sonnet5.5/Opus5.5 for architecture and interpretation, GPT-6.1 Sol
+for implementation/execution/tests/Git. It may also use one capable chat. This
+changes assistance roles, not the approved FPL engine/model or this weekly chat's
+role/model. Planning and improvement no longer necessarily share a device or
+checkout. Architect recommendations, programmer commits, code merges and LLM
+agreement do not promote models. Consume reviewed release/registry evidence,
+never a pending brief or unmerged worktree. See docs/handover/HYBRID_WORKFLOW.md.
 Keep your existing manager state, confirmed actions, frozen forecasts/trials,
 chip intentions and source history unchanged unless separately updated by me.
 Do not infer new team facts from engine research or repository commits.

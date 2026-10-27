@@ -1,28 +1,32 @@
-I am moving my FPL model-improvement work to this Claude Desktop Code session,
-intending Sonnet5.5 on Pro. Repository: https://github.com/kokjz/fpl-predict.
-Verify the actual model/account and local execution environment.
+I am taking over my FPL model-improvement project. I may use Claude Sonnet5.5 or
+Opus5.5 as architect for ML pipeline/experiment design and result interpretation,
+and GPT-6.1 Sol as programmer for implementation/execution/tests/Git. A single
+capable chat is also allowed. Verify your assigned role, actual model/effort,
+account and local tools. Repository: https://github.com/kokjz/fpl-predict.
 
-Fetch/inspect the repository and start with HANDOVER.md, CLAUDE.md,
-docs/handover/BOOTSTRAP.md, CHECKPOINT.json and CLAUDE_PRO_WORKFLOW.md. Read compact
-PROJECT_CONTEXT.md and OPERATING_RULES.md before edits. They index the exhaustive
-context; load only the relevant original protocols/code/evidence for each step.
-Do not ingest the full archive, master history, arrays or raw logs into chat.
+Read HANDOVER.md, docs/handover/HYBRID_WORKFLOW.md, your ARCHITECT_CHAT_PROMPT.md
+or PROGRAMMER_CHAT_PROMPT.md, BOOTSTRAP.md and CHECKPOINT.json, then compact
+PROJECT_CONTEXT.md/OPERATING_RULES.md. Claude usage guidance applies to the
+Claude side; no comparative project quality/cost saving is yet measured.
 
-I will privately supply the transfer archive location and trusted SHA256. Verify
-and restore it outside Git, read migration/PRIVATE_RESUME.md and the indexed
-current context, recreate/qualify the runtime and approved-artifact smoke oracle.
-Keep original evidence bytes/hashes; adapt old paths in separate derived files.
+I will supply the private transfer location and trusted checksum. If it is an
+outer ZIP, follow README_FIRST.md/START_PROMPT.md; restore the inner core with
+its own checksum. Read newer private context addenda/resume/index, preserving
+original bytes/hashes. Do not bulk-ingest the archive/master/logs. Recreate and
+qualify the receiving runtime/artifact; do not copy platform environments.
 
-The frozen numerical study is complete; research PR42 has review/release work
-remaining. Resume exactly that checkpoint without rerunning finished paths or
-trying a new candidate. The calibration lost season points and is not approved.
-Keep scientific gates, source freeze, privacy, coherent branch/commit/test/PR/
-review/merge/cleanup SOP and separate model-promotion approval. Weekly planning
-is a different chat; mandatory reviewed-source sync remains its prerequisite.
+Use one private package brief/revision/hash, active owner/source state, results
+packet and decision log. The programmer owns the implementation worktree;
+architect designs/interprets. Routine authorised fixes continue without
+per-commit permission; material scientific deviations are recorded/resolved
+before dependent new work. Shared files/user transfer carry handoffs, not
+unauthorised messages, agents or a paid API router.
 
-Use one bounded step at a time, concise tool output and a durable private resume
-note before compaction/new sessions. Context capacity is not Pro plan allowance.
-No automatic agents, model changes, paid overage or cloud jobs. Read the full
-NEXT_CHAT_PROMPT.md and relevant evidence as needed; this short prompt preserves
-their requirements. State verified source/model/PR/next step, then continue
-authorised work; ask only for genuinely missing external prerequisites.
+The numerical matrix is complete; PR42 review fixes/valid-state tests/final
+research publication remain. Calibration lost season points and is not approved.
+Resume that scope without a new candidate/search or rerunning completed paths.
+Preserve gates/privacy/Git/source locks and separate production promotion.
+Weekly planning remains separate and syncs reviewed source/approved artifacts
+before every analysis. Keep compact durable resume notes; no silent model
+switches/paid overage/cloud. Read NEXT_CHAT_PROMPT.md as full reference, then
+state verified role/source/model/next step and continue authorised work.

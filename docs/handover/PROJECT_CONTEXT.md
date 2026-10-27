@@ -172,3 +172,15 @@ season bounds are unknown. The numerical batch and temporary idle assertion
 exited. Review repairs R1/R2/R3 and final PR42 qualification/publication remain
 for the receiving chat. See RESEARCH_STOPPING_RESULTS.json for all compact rows
 and comparisons; full original files/locks/logs remain in the private transfer.
+
+
+## Assistance workflow update —27October2026
+
+The takeover is not necessarily Claude-only. The user may use Sonnet5.5/Opus5.5
+for architecture/interpretation and GPT-6.1 Sol for implementation. The optional
+split is assessed as reasonable, not a measured superiority/cost result. Shared
+private package brief/results/decision/owner files and one writer prevent context
+or code divergence. Routine authorised fixes do not await per-commit architect
+permission. HYBRID_WORKFLOW.md/role prompts govern this; all science, approval,
+privacy, Git, storage and weekly responsibility/source-sync rules remain intact.
+No scientific/model/team state or original numerical source changes here.

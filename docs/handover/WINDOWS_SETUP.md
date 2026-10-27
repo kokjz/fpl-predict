@@ -127,3 +127,16 @@ in its ancestry. It is not a production release or approved model. The reviewed
 handover source and tools are available on main; consult CHECKPOINT.json for the
 exact open PR and next review step. Do not rerun the finished matrix merely
 because it was produced in an unmerged research branch.
+
+
+## Optional two-chat setup
+
+Use HYBRID_WORKFLOW.md and the role-specific prompts. Claude may plan/interpret
+without command access if the user supplies versioned evidence, while a local
+GPT-6.1 Sol/Codex programmer performs execution. Prefer the same verified private
+workspace/runtime accessible to the programmer; check each application's real
+Windows/WSL file/command access before use. No model choice implies native-
+Windows benchmark support or transfers credentials between apps. One research
+worktree writer; no automatic cross-chat bridge or new API billing. Keep package
+brief/results/ownership files outside Git. If separate filesystems are used,
+transfer small hash-pinned packets through the user and revalidate them.

@@ -2,7 +2,7 @@
 
 # Receiving-chat entry point
 
-Read HANDOVER.md, docs/handover/CHECKPOINT.json and
+Read HANDOVER.md, docs/handover/HYBRID_WORKFLOW.md, docs/handover/CHECKPOINT.json and
 docs/handover/BOOTSTRAP.md first. Then read the compact PROJECT_CONTEXT.md and
 OPERATING_RULES.md before edits. Detailed context/evidence stays on disk and is
 retrieved by index as needed; do not ingest an entire private archive, context
@@ -16,3 +16,7 @@ Do not sacrifice full validation/privacy/review to save tokens.
 
 Research PR42 is explicitly unfinished. Code synchronisation is not promotion;
 the approved model remains private. Preserve original evidence and failed runs.
+
+Confirm your architect/programmer role; use one canonical private brief/results
+packet and one implementation writer. GPT-6.1 Sol can own programming while
+Sonnet5.5/Opus5.5 plans/interprets. No per-commit architect permission gate.
