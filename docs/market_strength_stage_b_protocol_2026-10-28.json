@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "package": "market-implied-team-strength",
+  "brief_revision": "mits-r2",
+  "brief_sha256": "5b829a2ac57bd4466bbbced8ea80c54b3f988ae4a13dfbb55f6466653fdb10e2",
+  "status": "execution-ready pre-calculation Stage-B declaration",
+  "admission_protocol_lf_sha256": "226eef59ef006ae8da54390230cadff2bd702a27b7033bebd6128a307ddeedff",
+  "guard_qualification_lf_sha256": "1fb43831641f2632129ce7c92d5ff568757c296abd707af1ec38fd186a0bfaea",
+  "guard_source_lf_sha256": "3e12d8d7e4d9af82d6efd28c58101de202353d146ed9e69a8458302fb3316254",
+  "stage_B_glm_fits_so_far": 0,
+  "stage_C_fits_so_far": 0,
+  "allowed_target_seasons": [
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24"
+  ],
+  "warmup": {
+    "season": "2019-20",
+    "history_only": true,
+    "key": [
+      "season",
+      "fd",
+      "date",
+      "home_canonical",
+      "away_canonical"
+    ],
+    "official_FPL_ID_claim": false,
+    "additional_download": false
+  },
+  "club_key": "canonical club name in audited NAME_MAP values across seasons; season-team IDs only target joins; no new alias unless recorded",
+  "cutoff": "FPL GW deadline minus3h; strictly prior sources only; reject target-match odds",
+  "history_clock": {
+    "2020-21..2023-24": "max(FPL kickoff UTC,CSV kickoff UTC)",
+    "2019-20": "CSV kickoff Europe/London -> UTC"
+  },
+  "target_outcome_safety": "No target-match or not-yet-prior outcome enters features. Per brief3/9 past completed matches from the current test season may enter chronological histories, never GLM/scaler training. All feature-source maxima must be strictly before that row origin.",
+  "targets": "official FPL team_h_score/team_a_score, deduplicated fixture/team, both sides, identical keys/labels/origins in all arms",
+  "cohort": "All760 team-matches in each held-out test season; all760 per train season; any nonfinite C/U/M feature or target aborts entire Stage B, no imputation/drop",
+  "operators": {
+    "C": "fpl_model.ew; goals GF/GA, half-lives4/12, prior1.35,mass4, per-club season reset",
+    "U": "C plus exact same ew operator on frozen I4 Understat team/opp xG/xGA, half-lives4/12, prior1.35,mass4, season reset; no arithmetic I4 windows",
+    "M": "C plus natural logs of fixed market lambda projections; independent of target odds",
+    "market_rating": {
+      "window_days": 730,
+      "half_life_days": 120,
+      "ridge_attack_defence": 2.0,
+      "unpenalised": [
+        "mu",
+        "home_advantage"
+      ],
+      "weights": "0.5**(age_days/120), using conservative history clock",
+      "neutral_unknown_attack_defence": 0.0,
+      "source": "the already-frozen1900 admitted probability inversions, no repeat inversion",
+      "fixed_origin_rating_fits": "one deterministic feature-transform ridge per unique origin, shared across arms/folds; not additional GLM arms"
+    }
+  },
+  "features": {
+    "C": [
+      "home",
+      "team_ew4_gf",
+      "team_ew4_ga",
+      "team_ew12_gf",
+      "team_ew12_ga",
+      "opp_ew4_gf",
+      "opp_ew4_ga",
+      "opp_ew12_gf",
+      "opp_ew12_ga"
+    ],
+    "U": [
+      "home",
+      "team_ew4_gf",
+      "team_ew4_ga",
+      "team_ew12_gf",
+      "team_ew12_ga",
+      "opp_ew4_gf",
+      "opp_ew4_ga",
+      "opp_ew12_gf",
+      "opp_ew12_ga",
+      "team_ew4_xgf",
+      "team_ew4_xga",
+      "team_ew12_xgf",
+      "team_ew12_xga",
+      "opp_ew4_xgf",
+      "opp_ew4_xga",
+      "opp_ew12_xgf",
+      "opp_ew12_xga"
+    ],
+    "M": [
+      "home",
+      "team_ew4_gf",
+      "team_ew4_ga",
+      "team_ew12_gf",
+      "team_ew12_ga",
+      "opp_ew4_gf",
+      "opp_ew4_ga",
+      "opp_ew12_gf",
+      "opp_ew12_ga",
+      "log_mkt_lambda_for",
+      "log_mkt_lambda_against"
+    ]
+  },
+  "learner": {
+    "class": "sklearn.linear_model.PoissonRegressor",
+    "alpha": 0.0,
+    "max_iter": 1000,
+    "tol": 0.0001,
+    "solver": "lbfgs",
+    "fit_intercept": true,
+    "warm_start": false,
+    "standardisation": "StandardScaler fitted only on that fold train seasons, including home; test rows never fit transforms",
+    "convergence": "ConvergenceWarning or nonfinite/nonpositive prediction aborts; no changed optimiser/refit"
+  },
+  "folds": [
+    {
+      "train": [
+        "2020-21",
+        "2021-22"
+      ],
+      "test": "2022-23"
+    },
+    {
+      "train": [
+        "2020-21",
+        "2021-22",
+        "2022-23"
+      ],
+      "test": "2023-24"
+    }
+  ],
+  "fit_order": [
+    [
+      "2022-23",
+      "C"
+    ],
+    [
+      "2022-23",
+      "U"
+    ],
+    [
+      "2022-23",
+      "M"
+    ],
+    [
+      "2023-24",
+      "C"
+    ],
+    [
+      "2023-24",
+      "U"
+    ],
+    [
+      "2023-24",
+      "M"
+    ]
+  ],
+  "max_GLM_attempts": 6,
+  "metrics": {
+    "primary": "sklearn mean_poisson_deviance on all held-out team-match rows",
+    "clean_sheet_Brier": "mean((exp(-predicted team-goals) - indicator(actual team-goals==0))**2)",
+    "calibration_slope": "Algebraic OLS rate calibration y~intercept+predicted_lambda: cov(pred,y)/var(pred), intercept=mean(y)-slope*mean(pred); no extra GLM fits. Undefined zero variance -> null, no fabricated value. This is rate-scale slope, not log-link recalibration.",
+    "intervals": "Paired M-minus-C and M-minus-U per-row Poisson deviance; fixed GW blocks1-4,5-8,...,37-38; delete-one-block jackknife SE sqrt((B-1)/B * sum((theta_leave - mean(theta_leave))**2)); interval full-row mean delta +/-1.96*SE. Descriptive only, dependent reused seasons, unequal block lengths; not a significance gate. No bootstrap seed or resampling search."
+  },
+  "Gate_B": "M mean test Poisson deviance strictly less than C AND U separately in EACH fold; no rounding before gate",
+  "stops": {
+    "pass": "Mandatory architect handover09 before any Stage C",
+    "fail": "Stop modelling, Stage E negative publication/review/CI/release then handover09",
+    "failure": "Preserve failed attempt/log/resources; do not spend more than6attempts, silently refit, impute or change scope"
+  },
+  "resources": {
+    "threads": 2,
+    "job_committed_memory_bytes": 4294967296,
+    "wall_seconds_per_fit": 900,
+    "serial": true,
+    "total_package_growth_bytes": 268435456,
+    "free_bytes_min": 5368709120,
+    "single_build_job_wall_seconds": 900,
+    "storage_scope": "All new worker outputs under private package work root; account prior package data/tests/log growth conservatively against total growth before each job; external writes prohibited by worker design, guard is not a security sandbox"
+  },
+  "no_stage_C_without_architect": true,
+  "promotion": false,
+  "registry_write": false,
+  "later_audit_seasons_forbidden": [
+    "2024-25",
+    "2025-26"
+  ],
+  "seeds": "No randomised Stage-B procedure or seed; unchanged seed20260921 reserved for separately reviewed Stage C"
+}

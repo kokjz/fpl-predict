@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "stage": "C",
+  "brief_revision": "mits-r2",
+  "authorisation": "architect handover10, StageB ACCEPTED; mandatory boundaries unchanged",
+  "references": {
+    "NATIVE_DEVELOPMENT_PROTOCOL.md": "b6b15750e9922786d22720f9c52f5cfe3d234e0b67059f2c7b4340990ed27627",
+    "market_strength_protocol_2026-10-28.json": "226eef59ef006ae8da54390230cadff2bd702a27b7033bebd6128a307ddeedff",
+    "market_strength_stage_b_protocol_2026-10-28.json": "2bff608e5cf10aadbcbfc7f01e08110c3a917c8b7e3f2bf4445d831af2e8200d"
+  },
+  "methods": [
+    "control",
+    "market_strength"
+  ],
+  "folds": [
+    {
+      "train": [
+        "2020-21",
+        "2021-22"
+      ],
+      "test": "2022-23"
+    },
+    {
+      "train": [
+        "2020-21",
+        "2021-22",
+        "2022-23"
+      ],
+      "test": "2023-24"
+    }
+  ],
+  "fit_order": [
+    {
+      "fold": "2022-23",
+      "method": "control"
+    },
+    {
+      "fold": "2022-23",
+      "method": "market_strength"
+    },
+    {
+      "fold": "2023-24",
+      "method": "control"
+    },
+    {
+      "fold": "2023-24",
+      "method": "market_strength"
+    }
+  ],
+  "max_method_fold_fits": 4,
+  "real_fits_at_declaration": 0,
+  "heads": {
+    "core_points": "Exactly I4 native_development.fit_predict control: one HGB core-points regressor. No deployed minutes/played/sixty/DC heads, participation classifier or blend is in I4 control. All existing heads (one) receive features."
+  },
+  "features": {
+    "control": [
+      "home",
+      "n_history",
+      "days_since_last",
+      "last_minutes",
+      "last_points",
+      "last5_minutes",
+      "last5_points",
+      "pos_1",
+      "pos_2",
+      "pos_3",
+      "pos_4",
+      "ew4_minutes",
+      "ew4_points_core",
+      "ew4_goals_scored",
+      "ew4_assists",
+      "ew4_clean_sheets",
+      "ew4_bonus",
+      "ew4_bps",
+      "ew4_threat",
+      "ew4_creativity",
+      "ew4_saves",
+      "ew4_expected_goals",
+      "ew4_expected_assists",
+      "ew4_expected_goals_conceded",
+      "ew4_played",
+      "ew4_sixty",
+      "ew12_minutes",
+      "ew12_points_core",
+      "ew12_goals_scored",
+      "ew12_assists",
+      "ew12_clean_sheets",
+      "ew12_bonus",
+      "ew12_bps",
+      "ew12_threat",
+      "ew12_creativity",
+      "ew12_saves",
+      "ew12_expected_goals",
+      "ew12_expected_assists",
+      "ew12_expected_goals_conceded",
+      "ew12_played",
+      "ew12_sixty",
+      "team_ew4_gf",
+      "team_ew4_ga",
+      "team_ew12_gf",
+      "team_ew12_ga",
+      "opp_ew4_gf",
+      "opp_ew4_ga",
+      "opp_ew12_gf",
+      "opp_ew12_ga"
+    ],
+    "market_strength": [
+      "home",
+      "n_history",
+      "days_since_last",
+      "last_minutes",
+      "last_points",
+      "last5_minutes",
+      "last5_points",
+      "pos_1",
+      "pos_2",
+      "pos_3",
+      "pos_4",
+      "ew4_minutes",
+      "ew4_points_core",
+      "ew4_goals_scored",
+      "ew4_assists",
+      "ew4_clean_sheets",
+      "ew4_bonus",
+      "ew4_bps",
+      "ew4_threat",
+      "ew4_creativity",
+      "ew4_saves",
+      "ew4_expected_goals",
+      "ew4_expected_assists",
+      "ew4_expected_goals_conceded",
+      "ew4_played",
+      "ew4_sixty",
+      "ew12_minutes",
+      "ew12_points_core",
+      "ew12_goals_scored",
+      "ew12_assists",
+      "ew12_clean_sheets",
+      "ew12_bonus",
+      "ew12_bps",
+      "ew12_threat",
+      "ew12_creativity",
+      "ew12_saves",
+      "ew12_expected_goals",
+      "ew12_expected_assists",
+      "ew12_expected_goals_conceded",
+      "ew12_played",
+      "ew12_sixty",
+      "team_ew4_gf",
+      "team_ew4_ga",
+      "team_ew12_gf",
+      "team_ew12_ga",
+      "opp_ew4_gf",
+      "opp_ew4_ga",
+      "opp_ew12_gf",
+      "opp_ew12_ga",
+      "mkt_lambda_for",
+      "mkt_lambda_against",
+      "mkt_cs_prob"
+    ]
+  },
+  "hgb_parameters": {
+    "categorical_features": "from_dtype",
+    "early_stopping": false,
+    "interaction_cst": null,
+    "l2_regularization": 20.0,
+    "learning_rate": 0.05,
+    "loss": "squared_error",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 60,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "quantile": null,
+    "random_state": 20260921,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_half_life_days": 730.5,
+  "weights": "fpl_model.sample_weights on train rows only",
+  "clip_final_fixture_expectation": [
+    0,
+    20
+  ],
+  "market": {
+    "operator": "market_strength.project exactly, raw three outputs, no log/blend/Understat; per own fixture before DGW aggregation",
+    "rating_operator": "same fixed StageB market operator/constants at each deadline-minus-3h cutoff; max(CSV,FPL) history clock; source_max<cutoff; no target/future identities",
+    "history_window_days": 730,
+    "neutral_cold_start": "unchanged zero team/opponent attack/defence if club absent from rating; retain/report rows"
+  },
+  "chronology": "Discard later seasons BEFORE feature construction/fit/score. Completed test-season matches may enter later origins histories as architect accepted; test-season labels never train its fold learner.",
+  "cohort": {
+    "keys": [
+      "season",
+      "gameweek",
+      "fixture",
+      "fpl_code"
+    ],
+    "candidate": "fpl_model.candidate_mask: n_history>=3 and last5_minutes>=45; deadline-based; identical within playerGW",
+    "target": "original I4 points_core=total_points, same minutes/position/deadline context",
+    "cutoff": "deadline minus 3hours",
+    "missingness": "abort on any non-finite used feature/target/prediction; no imputation/drop",
+    "proof": "identical keys/candidate/targets/cutoffs and byte-identical contiguous float64 nonmarket feature arrays before fit/score, persisted hashes; verify before each fit and aggregate",
+    "double_gameweek": "I4: predictions per fixture, sum actual/prediction by season/gameweek/fpl_code; candidate must agree within GW",
+    "empty_gws": {
+      "2022-23": [
+        7
+      ]
+    }
+  },
+  "panels": {
+    "source": "original I4 manifest-02.json panels; regenerated before fits using unchanged native_development.panels/make_squads and exact equality asserted",
+    "canonical_sha256": "917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed",
+    "count_per_fold": 20,
+    "first_eligible_gw": {
+      "2022-23": 4,
+      "2023-24": 4
+    },
+    "seed": 20260921,
+    "selection": "I4 last-observed predeadline price proxies, legal15,100m,3perclub; fixed squads, legalXI/captain, realised autosubs/vicefallback, no extra fits"
+  },
+  "metrics": [
+    "per-fold and pooled candidate/all fixture and playerGW RMSE/MAE/bias",
+    "withinGW NDCG10/Spearman",
+    "position",
+    "actualminutes",
+    "coldstart",
+    "paired4GW I4 block error diagnostics",
+    "fixedsquad totals/deltas, per-fold and pooled; every relative percent"
+  ],
+  "gate": {
+    "authority": "native_development.gate and NATIVE_DEVELOPMENT_PROTOCOL.md unchanged",
+    "pooled_candidate_player_gw_rmse_ratio_max": 0.995,
+    "pooled_candidate_fixture_rmse_ratio_max": 0.995,
+    "each_fold_both_candidate_rmse_ratio_max": 1.005,
+    "pooled_both_candidate_mae_ratio_max": 1.005,
+    "pooled_ndcg10_not_lower": true,
+    "mean_fixed_squad_delta_min": 0,
+    "one_miss": "FAIL",
+    "selection": "none, one challenger"
+  },
+  "input_manifest_original_inputs": {
+    "players": {
+      "sha256": "db737482eb814ca7d18a21d520c5ab3f4df1f6b021d61e4a700f0f45bf04bbc9"
+    },
+    "teams": {
+      "sha256": "f6fd446b1f62bc1618c8f0eb5f4990732599566735d8b02a0fd855eecb7dd1a6"
+    },
+    "control": {
+      "sha256": "3d3c2726400b03a32014826bbcd7fb67988b23627ac57b6c8b3f9c5768f6ae09"
+    },
+    "provenance": {
+      "sha256": "fc83c5fc16b3210508be757eb37712a5cb3458e2240265784b2c2312b32d6cf8"
+    }
+  },
+  "input_panel_policy_sha256": "d76092c388c3022a23b4e1568a93e4ee9f524b96bb807d4e498a15abb6502a8d",
+  "portability": {
+    "original_manifest": "immutable; receiving path/encoding/container/environment mapping recorded separately",
+    "compressed_control": "stream gzip logical contents SHA equals original90MB CSV; use gzip path without writing decompressed copy; original manifest untouched",
+    "source": "I4 native_development/metrics/replay exact LF hashes; fpl_model differs only ForecastModel dc_name none branch unused here; estimator/sample_weights/CORE_FEATURES/candidate_mask unchanged",
+    "runtime": "existing OUTER/runtimes/legacy Python3.12.16, numpy2.3.5/pandas2.2.3/sklearn1.9.1 (I4 numerical library versions), scipy1.18.1; original Python3.12.14/macOS vs receiving3.12.16/Windows; no bitwise old-prediction promise, refit both arms identically; no upgrade"
+  },
+  "wording_differences": [
+    "Handover10 multi-head terminology: I4 control is one core HGB regressor, verified actual source; reuse actual I4 rather than add deployed/participation heads.",
+    "I4 text resource envelope is 2h batch/512MiB growth/2GiB project cap; binding current brief/handovers instead impose stricter 900s perfit/256MiB package growth/4GiB native job commit and5GiB free. Gate wording agrees; enforce both pooled MAEs and both errors eachfold."
+  ],
+  "resources": {
+    "threads": 2,
+    "memory_bytes": 4294967296,
+    "wall_seconds_per_worker": 900,
+    "serial": true,
+    "max_package_growth_bytes": 268435456,
+    "min_free_bytes": 5368709120,
+    "guard": "unchanged qualified Windows inherited job object, native committedmemory cap; actualworkers+descendants, sampled wall/growth/freespace; not a security sandbox"
+  },
+  "failure": "preserve guard/time/nonfinite/I4 reproduction failure, no retry, handover11",
+  "boundaries": {
+    "pass_C": "stop mandatory architect review beforeD, newbrief anduserauthorisation required; no release",
+    "fail_C": "prepareStageEnegativepublicreport/statuspolicy,PR47READYgreenexactheadCI; STOP BEFORE MERGE forarchitectpremerge review"
+  },
+  "excluded": [
+    "later2024-25/2025-26data retrieval/scoring",
+    "nextfixture odds",
+    "extraarms/seeds/fits/retries",
+    "postoutcomeconstants/gates",
+    "seasonpaths",
+    "promotion/registrywrites/defaultchanges",
+    "settings/protectionchange",
+    "weeklyplanning",
+    "messaging/agents/modelswitch/paidusage/privateupload"
+  ]
+}

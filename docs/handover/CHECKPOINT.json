@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "research_complete_negative_result_architect_accepted",
+  "status": "market_strength_negative_result_premerge_review_pending",
   "updated": "2026-10-28 Asia/Singapore",
   "repository": "https://github.com/kokjz/fpl-predict",
   "reviewed_engine_main": "cf19ff2446da8b5b9cdd4444417e75ace9ffd642",
@@ -40,7 +40,9 @@
     "binary_in_repository": false,
     "source": "Private transfer registry; not research file dates"
   },
-  "remaining_work": [],
+  "remaining_work": [
+    "Architect pre-merge review of PR47 scientific result and source publication; no merge authorised by current handover."
+  ],
   "privacy": "Only engine/research context is public; full private transfer remains outside repository",
   "research_links": {
     "protocol": "https://github.com/kokjz/fpl-predict/blob/747d2b33cd2c701f5135578afe2ac8aed3ded7f1/docs/appearance_calibration_protocol_2026-10-26.json",
@@ -90,5 +92,35 @@
   "review_findings_private_location": "work/appearance_return_coherence_2026-10-26/review_findings.json",
   "workflow_revision": "opus-medium-sibling-workspace-2026-10-27",
   "latest_handover_update_pr": 46,
-  "next_package": "No new fit, search, arm, year, start or completed-path rerun authorised. Architect may propose a bounded package for user approval after closure; no work begins without authorisation."
+  "next_package": "StageC gate failed; no StageD, later-year scoring, new fit/search or promotion authorised. Keep approved1.0.0 and weekly defaults unchanged.",
+  "market_strength_research": {
+    "pr": 47,
+    "branch": "feat/market-implied-team-strength",
+    "status": "Stage_C_failed_no_promotion_premerge_review_pending",
+    "numerical_source": "68d89718d1656e68f7d97b28697e848ac87566ef",
+    "stage_B_numerical_source": "c2dfbe490a01d56f206d72133a3533decf41e720",
+    "stage_B_gate_pass": true,
+    "stage_C_gate_pass": false,
+    "stage_B_fits": 6,
+    "stage_C_fits": 4,
+    "failed_criteria": [
+      "pooled_player_gw_rmse_gain",
+      "pooled_fixture_rmse_gain"
+    ],
+    "pooled_player_gw_rmse_relative_percent": -0.4173668236956751,
+    "pooled_fixture_rmse_relative_percent": -0.40208459063771906,
+    "mean_fixed_squad_delta": 10.175,
+    "approved_version_unchanged": "1.0.0",
+    "weekly_defaults_unchanged": true,
+    "promotion": false,
+    "result": "docs/MARKET_STRENGTH_STAGE_C_RESULTS_2026-10-28.md",
+    "scalar_results": "docs/market_strength_stage_c_results_2026-10-28.json",
+    "architect_review": {
+      "stage_B": "ACCEPTED",
+      "panel_diagnostic": "classA_CONFIRMED",
+      "fixture_amendment": "AUTHORISED before outcome",
+      "stage_C_result": "PENDING pre-merge review"
+    },
+    "release": "STOP BEFORE MERGE; no merge/tag/cleanup authorised in current handover"
+  }
 }

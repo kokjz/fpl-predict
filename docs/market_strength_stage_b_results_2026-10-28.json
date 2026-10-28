@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "status": "Stage_B_component_gate_pass_architect_boundary_before_C",
+  "brief_revision": "mits-r2",
+  "protocol": "market_strength_stage_b_protocol_2026-10-28.json",
+  "protocol_lf_sha256": "2bff608e5cf10aadbcbfc7f01e08110c3a917c8b7e3f2bf4445d831af2e8200d",
+  "protocol_freezing_commit": "44d69f2e843edea4f056dd1d86d0d7e8a91a5923",
+  "numerical_source": "c2dfbe490a01d56f206d72133a3533decf41e720",
+  "rows": [
+    {
+      "fold": "2022-23",
+      "arm": "C",
+      "train_rows": 1520,
+      "test_rows": 760,
+      "mean_poisson_deviance": 1.2382664116844868,
+      "clean_sheet_Brier": 0.19342302130101982,
+      "calibration_rate_slope": 0.9420781008745108,
+      "calibration_rate_intercept": 0.12329702823921984,
+      "actual_mean": 1.4263157894736842,
+      "prediction_mean": 1.3831324176041244,
+      "n_iter": 17,
+      "seconds": 0.10999999998603016
+    },
+    {
+      "fold": "2022-23",
+      "arm": "U",
+      "train_rows": 1520,
+      "test_rows": 760,
+      "mean_poisson_deviance": 1.2282776462796976,
+      "clean_sheet_Brier": 0.1919941569050292,
+      "calibration_rate_slope": 0.8703535719818393,
+      "calibration_rate_intercept": 0.19114986274559942,
+      "actual_mean": 1.4263157894736842,
+      "prediction_mean": 1.4191541995002666,
+      "n_iter": 46,
+      "seconds": 0.10900000005494803
+    },
+    {
+      "fold": "2022-23",
+      "arm": "M",
+      "train_rows": 1520,
+      "test_rows": 760,
+      "mean_poisson_deviance": 1.2165492538665408,
+      "clean_sheet_Brier": 0.19035694260669603,
+      "calibration_rate_slope": 0.9376543917460967,
+      "calibration_rate_intercept": 0.12497661510750713,
+      "actual_mean": 1.4263157894736842,
+      "prediction_mean": 1.3878665591730743,
+      "n_iter": 25,
+      "seconds": 0.09399999992456287
+    },
+    {
+      "fold": "2023-24",
+      "arm": "C",
+      "train_rows": 2280,
+      "test_rows": 760,
+      "mean_poisson_deviance": 1.1358718530396024,
+      "clean_sheet_Brier": 0.1611654188600745,
+      "calibration_rate_slope": 1.0076006861482323,
+      "calibration_rate_intercept": 0.19389166016823367,
+      "actual_mean": 1.6394736842105264,
+      "prediction_mean": 1.4346774907114614,
+      "n_iter": 14,
+      "seconds": 0.10900000005494803
+    },
+    {
+      "fold": "2023-24",
+      "arm": "U",
+      "train_rows": 2280,
+      "test_rows": 760,
+      "mean_poisson_deviance": 1.1288715791565984,
+      "clean_sheet_Brier": 0.16061452530218476,
+      "calibration_rate_slope": 1.0121509218298377,
+      "calibration_rate_intercept": 0.2023169519362582,
+      "actual_mean": 1.6394736842105264,
+      "prediction_mean": 1.419903594689293,
+      "n_iter": 48,
+      "seconds": 0.10899999993853271
+    },
+    {
+      "fold": "2023-24",
+      "arm": "M",
+      "train_rows": 2280,
+      "test_rows": 760,
+      "mean_poisson_deviance": 1.0892057634849655,
+      "clean_sheet_Brier": 0.1591741363558437,
+      "calibration_rate_slope": 0.9744789476608906,
+      "calibration_rate_intercept": 0.21133925924591246,
+      "actual_mean": 1.6394736842105264,
+      "prediction_mean": 1.4655364576039986,
+      "n_iter": 24,
+      "seconds": 0.10899999993853271
+    }
+  ],
+  "paired_intervals": {
+    "2022-23": {
+      "C": {
+        "mean_delta": -0.021717157817946076,
+        "jackknife_se": 0.02055936976880545,
+        "descriptive_95_interval": [
+          -0.06201352256480476,
+          0.018579206928912604
+        ],
+        "blocks": [
+          {
+            "first_gw": 1,
+            "last_gw": 4,
+            "rows": 80,
+            "mean_delta": -0.13141727283886173
+          },
+          {
+            "first_gw": 5,
+            "last_gw": 8,
+            "rows": 54,
+            "mean_delta": -0.10763112602040872
+          },
+          {
+            "first_gw": 9,
+            "last_gw": 12,
+            "rows": 78,
+            "mean_delta": -0.07790714219932675
+          },
+          {
+            "first_gw": 13,
+            "last_gw": 16,
+            "rows": 80,
+            "mean_delta": 0.04508966584273828
+          },
+          {
+            "first_gw": 17,
+            "last_gw": 20,
+            "rows": 86,
+            "mean_delta": 0.05497338040442494
+          },
+          {
+            "first_gw": 21,
+            "last_gw": 24,
+            "rows": 84,
+            "mean_delta": -0.01880981774949921
+          },
+          {
+            "first_gw": 25,
+            "last_gw": 28,
+            "rows": 78,
+            "mean_delta": -0.040911560063673816
+          },
+          {
+            "first_gw": 29,
+            "last_gw": 32,
+            "rows": 88,
+            "mean_delta": -0.004749826944092148
+          },
+          {
+            "first_gw": 33,
+            "last_gw": 36,
+            "rows": 88,
+            "mean_delta": 0.03211700875405929
+          },
+          {
+            "first_gw": 37,
+            "last_gw": 38,
+            "rows": 44,
+            "mean_delta": -0.0017020414416534034
+          }
+        ],
+        "scope": "Fixed paired four-GW delete-one-block interval, unequal block lengths; descriptive, not independent-season significance or a gate"
+      },
+      "U": {
+        "mean_delta": -0.011728392413156685,
+        "jackknife_se": 0.022177358638005993,
+        "descriptive_95_interval": [
+          -0.05519601534364843,
+          0.03173923051733506
+        ],
+        "blocks": [
+          {
+            "first_gw": 1,
+            "last_gw": 4,
+            "rows": 80,
+            "mean_delta": -0.11605506968249976
+          },
+          {
+            "first_gw": 5,
+            "last_gw": 8,
+            "rows": 54,
+            "mean_delta": -0.04826307405963332
+          },
+          {
+            "first_gw": 9,
+            "last_gw": 12,
+            "rows": 78,
+            "mean_delta": -0.03831728768505295
+          },
+          {
+            "first_gw": 13,
+            "last_gw": 16,
+            "rows": 80,
+            "mean_delta": 0.07746719245944954
+          },
+          {
+            "first_gw": 17,
+            "last_gw": 20,
+            "rows": 86,
+            "mean_delta": 0.07193291912725647
+          },
+          {
+            "first_gw": 21,
+            "last_gw": 24,
+            "rows": 84,
+            "mean_delta": -0.07571395660697158
+          },
+          {
+            "first_gw": 25,
+            "last_gw": 28,
+            "rows": 78,
+            "mean_delta": -0.006731618111896854
+          },
+          {
+            "first_gw": 29,
+            "last_gw": 32,
+            "rows": 88,
+            "mean_delta": -0.010242714610877003
+          },
+          {
+            "first_gw": 33,
+            "last_gw": 36,
+            "rows": 88,
+            "mean_delta": 0.0543180073935591
+          },
+          {
+            "first_gw": 37,
+            "last_gw": 38,
+            "rows": 44,
+            "mean_delta": -0.07753208771834658
+          }
+        ],
+        "scope": "Fixed paired four-GW delete-one-block interval, unequal block lengths; descriptive, not independent-season significance or a gate"
+      }
+    },
+    "2023-24": {
+      "C": {
+        "mean_delta": -0.0466660895546369,
+        "jackknife_se": 0.014924388022878333,
+        "descriptive_95_interval": [
+          -0.07591789007947844,
+          -0.017414289029795367
+        ],
+        "blocks": [
+          {
+            "first_gw": 1,
+            "last_gw": 4,
+            "rows": 78,
+            "mean_delta": -0.13171253948048556
+          },
+          {
+            "first_gw": 5,
+            "last_gw": 8,
+            "rows": 82,
+            "mean_delta": -0.09857733695193945
+          },
+          {
+            "first_gw": 9,
+            "last_gw": 12,
+            "rows": 80,
+            "mean_delta": -0.011998076986236431
+          },
+          {
+            "first_gw": 13,
+            "last_gw": 16,
+            "rows": 80,
+            "mean_delta": -0.02802857244168804
+          },
+          {
+            "first_gw": 17,
+            "last_gw": 20,
+            "rows": 76,
+            "mean_delta": 0.02459525108399175
+          },
+          {
+            "first_gw": 21,
+            "last_gw": 24,
+            "rows": 80,
+            "mean_delta": -0.04741658037355552
+          },
+          {
+            "first_gw": 25,
+            "last_gw": 28,
+            "rows": 82,
+            "mean_delta": -0.027654526876072897
+          },
+          {
+            "first_gw": 29,
+            "last_gw": 32,
+            "rows": 68,
+            "mean_delta": -0.02454536054206004
+          },
+          {
+            "first_gw": 33,
+            "last_gw": 36,
+            "rows": 88,
+            "mean_delta": -0.07845424324765699
+          },
+          {
+            "first_gw": 37,
+            "last_gw": 38,
+            "rows": 46,
+            "mean_delta": -0.02483391138609217
+          }
+        ],
+        "scope": "Fixed paired four-GW delete-one-block interval, unequal block lengths; descriptive, not independent-season significance or a gate"
+      },
+      "U": {
+        "mean_delta": -0.03966581567163298,
+        "jackknife_se": 0.013122289064024996,
+        "descriptive_95_interval": [
+          -0.06538550223712197,
+          -0.013946129106143988
+        ],
+        "blocks": [
+          {
+            "first_gw": 1,
+            "last_gw": 4,
+            "rows": 78,
+            "mean_delta": -0.13632122816368872
+          },
+          {
+            "first_gw": 5,
+            "last_gw": 8,
+            "rows": 82,
+            "mean_delta": -0.030597938147432727
+          },
+          {
+            "first_gw": 9,
+            "last_gw": 12,
+            "rows": 80,
+            "mean_delta": 0.018488949857528185
+          },
+          {
+            "first_gw": 13,
+            "last_gw": 16,
+            "rows": 80,
+            "mean_delta": -0.01232380168758239
+          },
+          {
+            "first_gw": 17,
+            "last_gw": 20,
+            "rows": 76,
+            "mean_delta": -0.03079712209073581
+          },
+          {
+            "first_gw": 21,
+            "last_gw": 24,
+            "rows": 80,
+            "mean_delta": -0.043325008631967706
+          },
+          {
+            "first_gw": 25,
+            "last_gw": 28,
+            "rows": 82,
+            "mean_delta": -0.03629334835971154
+          },
+          {
+            "first_gw": 29,
+            "last_gw": 32,
+            "rows": 68,
+            "mean_delta": -0.018104329969075975
+          },
+          {
+            "first_gw": 33,
+            "last_gw": 36,
+            "rows": 88,
+            "mean_delta": -0.04980974264084786
+          },
+          {
+            "first_gw": 37,
+            "last_gw": 38,
+            "rows": 46,
+            "mean_delta": -0.06739471117256644
+          }
+        ],
+        "scope": "Fixed paired four-GW delete-one-block interval, unequal block lengths; descriptive, not independent-season significance or a gate"
+      }
+    }
+  },
+  "gate_B_per_fold": {
+    "2022-23": true,
+    "2023-24": true
+  },
+  "gate_B_pass": true,
+  "GLM_attempts": 6,
+  "Stage_C_fits": 0,
+  "cohort_rows": 3040,
+  "held_out_team_matches": 1520,
+  "rows_per_season": {
+    "2020-21": 760,
+    "2021-22": 760,
+    "2022-23": 760,
+    "2023-24": 760
+  },
+  "shared_keys_targets_origins_sha256": "d6b1469ffac9272fa5da8d4849163837e147500ac230e4dc759bdaaed5c5b034",
+  "feature_dimensions": {
+    "C": 9,
+    "U": 17,
+    "M": 11
+  },
+  "cold_start_and_promoted_counts": {
+    "2020-21": {
+      "cold_start_C": 20,
+      "cold_start_U": 20,
+      "cold_start_M": 3,
+      "cold_start_M_opponent": 3,
+      "promoted_team": 114
+    },
+    "2021-22": {
+      "cold_start_C": 20,
+      "cold_start_U": 20,
+      "cold_start_M": 1,
+      "cold_start_M_opponent": 1,
+      "promoted_team": 114
+    },
+    "2022-23": {
+      "cold_start_C": 20,
+      "cold_start_U": 20,
+      "cold_start_M": 2,
+      "cold_start_M_opponent": 2,
+      "promoted_team": 114
+    },
+    "2023-24": {
+      "cold_start_C": 20,
+      "cold_start_U": 20,
+      "cold_start_M": 2,
+      "cold_start_M_opponent": 2,
+      "promoted_team": 114
+    }
+  },
+  "rating_origins": 151,
+  "resources": {
+    "jobs": [
+      {
+        "label": "build",
+        "status": "completed",
+        "peak_job_native_memory": 257118208,
+        "elapsed_seconds": 6.23499999998603
+      },
+      {
+        "label": "2022-23_C",
+        "status": "completed",
+        "peak_job_native_memory": 262320128,
+        "elapsed_seconds": 2.702999999979511
+      },
+      {
+        "label": "2022-23_U",
+        "status": "completed",
+        "peak_job_native_memory": 263090176,
+        "elapsed_seconds": 2.7040000000270084
+      },
+      {
+        "label": "2022-23_M",
+        "status": "completed",
+        "peak_job_native_memory": 262774784,
+        "elapsed_seconds": 2.719000000040978
+      },
+      {
+        "label": "2023-24_C",
+        "status": "completed",
+        "peak_job_native_memory": 262660096,
+        "elapsed_seconds": 2.702999999979511
+      },
+      {
+        "label": "2023-24_U",
+        "status": "completed",
+        "peak_job_native_memory": 263675904,
+        "elapsed_seconds": 2.719000000040978
+      },
+      {
+        "label": "2023-24_M",
+        "status": "completed",
+        "peak_job_native_memory": 262651904,
+        "elapsed_seconds": 2.718999999924563
+      },
+      {
+        "label": "aggregate",
+        "status": "completed",
+        "peak_job_native_memory": 192757760,
+        "elapsed_seconds": 2.655999999959022
+      }
+    ],
+    "batch_started_at": "2026-10-27T20:28:18.876977+00:00",
+    "batch_finished_at": "2026-10-27T20:29:05.813620+00:00",
+    "package_bytes_including_16MiB_reserve": 122253267,
+    "free_bytes": 866477408256,
+    "native_job_memory_limit_bytes": 4294967296,
+    "threads": 2,
+    "per_job_wall_limit_seconds": 900
+  },
+  "qualification": {
+    "actual_worker_descendants_job_accounted": true,
+    "memory_denial_test": true,
+    "timeout_and_growth_termination_test": true,
+    "native_counter": "Job committed-memory peak, not launcher RSS; denied-attempt peaks invalidate a job; normal study jobs all below limit",
+    "POSIX_qualification": false
+  },
+  "approved_model": {
+    "version": "1.0.0",
+    "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+    "changed": false
+  },
+  "promotion": false,
+  "weekly_default_change": false,
+  "scope": "Two reused development folds, team-goal component signal only. No player-point, full-manager, season-points or production qualification. Stage C blocked until architect review.",
+  "evidence_sha256": {
+    "batch.json": "185a13671eea8c466560e7e0d1434f211967dbd7da1dbe23420bd689c98f4b1d",
+    "aggregate_report.json": "c7955d885a45a615c5e1bb69b8aeaef5035e32846deb6698df024c49ed131a10",
+    "Stage_B_INTEGRITY_CHECK.json": "882e674c629e737814933a4879241974480cb04994f257aebd4aaad0beffe907"
+  }
+}
