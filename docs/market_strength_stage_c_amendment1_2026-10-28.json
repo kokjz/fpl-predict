@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "amendment": "Stage C amendment1: original frozen fixed-squad fixture only",
+  "brief_revision": "mits-r2",
+  "authorisation": "architect handover14; diagnostic classA independently confirmed",
+  "references": {
+    "stage_c_protocol_lf_sha256": "27954e78cb1a0151f7facc0e3e17df95549bec19da477b24700eeb6023bbf6d2",
+    "panel_diagnostic_protocol_lf_sha256": "5cef97920b14bbc03ffcccee1d2f867427dfbbe624ce8ded2f141640b89fa14b",
+    "original_i4_panel_canonical_sha256": "917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed",
+    "regenerated_D1_D2_panel_file_sha256": "e5f64a45522ac95c0c4400e294d7f4fe463a4cdc0981092f193472ad6b5ff03c",
+    "frozen_diagnostic_comparator_lf_sha256": "2b7f5eb56de7ec584c43394de415e1864a6469771bd96507d25058b66c841732",
+    "strict_stage_c_tool_lf_sha256": "f62fff4dff9f5b9cbd1715137385b4dcd2f8ebbd0dec5b5550af483afd62802b",
+    "stage_c_numeric_module_lf_sha256": "a22f5c0e9f23de490568d6fb2daffeaf9839ff2223c911da2d1dc62f73492ef5"
+  },
+  "declared_before_real_market_rows_matrix_fit_or_score": true,
+  "stage_C_fits_at_declaration": 0,
+  "max_stage_C_method_fold_fits": 4,
+  "only_change": {
+    "fixture": "Load panels verbatim from hash-verified original I4 manifest; canonical SHA must equal917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed; use that original object as both methods shared fixed evaluation fixture.",
+    "consistency_guard": "Call unchanged i4.panels(c) exactly once; compare regenerated vs original using frozen diagnostic comparator. Require classA: exact structure/order/id/position/team/price_tenths; weight relative differences<=1e-9. Persist complete receipt before proceeding or aborting. This decides fixture admissibility only; no scoring tolerance.",
+    "failure": "Non-A or original hash mismatch is a blocker; preserve and return15, no retry."
+  },
+  "unchanged": [
+    "all original StageC protocol except source of fixed-squad fixture",
+    "I4 folds/single core-points HGB control/all hyperparameters/seed20260921/730.5day weights",
+    "same finite common candidate cohort/keys/targets/deadline-3h cutoffs and byte-identical nonmarket columns",
+    "control plus raw project mkt_lambda_for/mkt_lambda_against/mkt_cs_prob, no log/blend/Understat",
+    "StageB chronological per-cutoff rating constants and conservative clocks",
+    "perfixture projections then existing DGW aggregation",
+    "metrics, fixed20squads per fold, originalI4 native_development.gate semantics",
+    "legacy runtime build/fits, unchanged qualified inherited Windows guard"
+  ],
+  "preservation": "Keep original strict build() path, all frozen protocols, original failed run and all diagnostic/failure evidence byte-unchanged. New amended entry point; no equality tolerance added to old build.",
+  "preconditions": [
+    "new code committed/pushed, synthetic tests plus exact-head CI green BEFORE realrun",
+    "original fixture hash and classA guard receipt before market rows",
+    "shared-cohort finite/nonmarket-byte proof persisted before anyfit",
+    "four exclusive serial method-fold fit slots, no retries"
+  ],
+  "reporting": [
+    "all per-fold/pooled playerGW and fixture RMSE/MAE, NDCG10 and relativepercent",
+    "all candidate fold errors",
+    "fixed-squad mean/min/max delta per fold and pooled",
+    "each originalI4 gatecriterion verdict",
+    "market coldstarts/sharedproof/guard/commands/resources/versions/source/CI"
+  ],
+  "resources": {
+    "threads": 2,
+    "memory_bytes": 4294967296,
+    "seconds_per_worker": 900,
+    "serial": true,
+    "package_growth_limit_bytes": 268435456,
+    "min_free_bytes": 5368709120,
+    "runtime": "existing legacy Python3.12.16 numpy2.3.5 pandas2.2.3 sklearn1.9.1; no upgrade"
+  },
+  "stop": {
+    "pass_C": "Return15 mandatory architect boundary beforeD/newbrief/userauthorisation; no release",
+    "fail_C": "PrepareStageEpublicnegative/statuspolicyapproved1.0.0/PR47READYgreenCI; STOP BEFORE MERGE andreturn15 forarchitectpremerge review",
+    "any_error_or_guard_timeout": "Preserve andreturn15 blocker; no retry"
+  },
+  "excluded": [
+    "fits beyond4/retries/extraarms/seeds/log/blend",
+    "editing frozen protocols or postoutcome constants/gates",
+    "later2024-25/2025-26data/scoring/nextfixtureodds/StageD/seasonpaths",
+    "promotion/registrywrites/defaultchange",
+    "merge/tag/cleanup",
+    "weeklyplanning/messaging/agents/modelswitch/paidusage/privateupload"
+  ]
+}
