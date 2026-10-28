@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "stage": "C panel diagnostic only",
+  "brief": "mits-r2",
+  "authorisation": "architect handover12, no StageC execution authorisation",
+  "references": {
+    "stage_c_protocol_lf_sha256": "27954e78cb1a0151f7facc0e3e17df95549bec19da477b24700eeb6023bbf6d2",
+    "original_i4_panels_canonical_sha256": "917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed",
+    "verified_loader_source_commit": "d0313ab9cb1661957445475ced611fb3d9861d68",
+    "verified_loader_lf_sha256": "f62fff4dff9f5b9cbd1715137385b4dcd2f8ebbd0dec5b5550af483afd62802b"
+  },
+  "declared_before_real_diagnostic": true,
+  "diagnostic_runs_at_freeze": 0,
+  "stage_C_fits_at_freeze": 0,
+  "runs": [
+    {
+      "id": "D1",
+      "runtime": "legacy",
+      "required": true,
+      "expected": {
+        "python": "3.12.16",
+        "numpy": "2.3.5",
+        "pandas": "2.2.3",
+        "sklearn": "1.9.1"
+      }
+    },
+    {
+      "id": "D2",
+      "runtime": "product",
+      "required": false,
+      "planned": true,
+      "expected": {
+        "python": "3.12.16",
+        "numpy": "2.5.3",
+        "pandas": "3.0.6",
+        "sklearn": "1.9.1"
+      }
+    }
+  ],
+  "order": "D1 then D2, serial; one attempt each, stop on any run failure, no retry",
+  "loader": "same original I4 manifest and inputs with derived receiving paths/gzip container; verify logical control hash and original inputs/source qualification; call unchanged i4.load and i4.panels only; do not read lambdas or StageB metadata",
+  "persistence": "Persist regenerated panels BEFORE comparison as UTF8 json.dumps(sort_keys=True,separators=(comma,colon),ensure_ascii=True,allow_nan=False), no newline; SHA256 is both canonical and actual file-byte hash. Preserve original panels/manifest/failure unchanged.",
+  "comparison": {
+    "folds": "sorted union of fold keys; key presence then first_gw then squad count",
+    "squads": "same squad index and member index in list order; exact id/position/team/price_tenths; report member-ID sets and ensemble set of sorted squad-ID rosters ignoring order",
+    "scalar_fields": [
+      "id",
+      "position",
+      "team",
+      "price_tenths",
+      "weight"
+    ],
+    "weights": "count numeric inequalities, max absolute difference, max relative difference abs(regenerated-original)/abs(original); 0 vs0 =>0, original0 vsnonzero =>infinite (JSON string Infinity)",
+    "types": "report repr and type differences separately, numeric-equal type-only differences do not cause B",
+    "first_difference": "deterministic sorted-fold/squad/member/field order; complete repr plus type of both values, no truncation",
+    "missing_structure": "report unmatched folds/squads/members and classify B"
+  },
+  "classes": {
+    "A": "All fold keys, first_gw, squad counts/order, ordered member id/position/team/price_tenths numerically exact; only weight float differences <=1e-9 relative, or hash/type-only differences.",
+    "B": "Any structural/order/id/position/team/price_tenths/first_gw/count difference, missing member/field, nonfinite float, or weight float relative difference >1e-9.",
+    "C": "Cannot run: load/source qualification/runtime/guard failure; preserve receipts, no retry."
+  },
+  "relative_tolerance": 1e-09,
+  "decision": {
+    "D1_A": "Architect intends to consider original frozen panels as shared fixture, only after handover13 review and new write-once StageC amendment.",
+    "D1_B": "Architect checks possible cohort/control-feature implications, may require mits-r3 or close package; no inferred authority.",
+    "D1_C": "Blocker return; no retries or further runs.",
+    "all": "Engineer stops with handover13; no StageC market rows, feature matrix, fit, prediction, score or panel substitution. Frozen StageC equality rule untouched."
+  },
+  "cross_runtime": "Compare persisted D1 and D2 panels with same structured comparator (D1 reference); report exact hash/object equality, class equality, structural agreement and weight differences. No additional input-loading run.",
+  "resources": {
+    "threads": 2,
+    "memory_bytes": 4294967296,
+    "wall_seconds_per_job": 900,
+    "serial": true,
+    "package_growth_limit_bytes": 268435456,
+    "min_free_bytes": 5368709120,
+    "guard": "unchanged qualified Windows inherited job object; committed-memory cap, sampled wall/growth/free space; no security sandbox claim"
+  },
+  "excluded": [
+    "StageC market rows/features/fit/prediction/score/panel substitution",
+    "editing StageC protocol or failure evidence",
+    "tolerance in frozen StageC build",
+    "retries/third runtime",
+    "later2024-25/2025-26data/scoring",
+    "nextfixtureodds/StageD",
+    "promotion/registrywrite",
+    "merge/tag/cleanup",
+    "weeklyplanning/messages/agents/modelswitch/paidusage/privateupload"
+  ]
+}
