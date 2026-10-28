@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "status": "market_strength_negative_result_premerge_review_pending",
-  "updated": "2026-10-28 Asia/Singapore",
+  "status": "expected_return_targets_negative_result_premerge_review_pending",
+  "updated": "2026-10-29 Asia/Singapore",
   "repository": "https://github.com/kokjz/fpl-predict",
   "reviewed_engine_main": "cf19ff2446da8b5b9cdd4444417e75ace9ffd642",
   "research": {
@@ -41,7 +41,7 @@
     "source": "Private transfer registry; not research file dates"
   },
   "remaining_work": [
-    "Architect pre-merge review of PR47 scientific result and source publication; no merge authorised by current handover."
+    "Architect pre-merge review of PR48 negative expected-return-target result; no merge/tag/cleanup authorised at this boundary."
   ],
   "privacy": "Only engine/research context is public; full private transfer remains outside repository",
   "research_links": {
@@ -92,7 +92,7 @@
   "review_findings_private_location": "work/appearance_return_coherence_2026-10-26/review_findings.json",
   "workflow_revision": "opus-medium-sibling-workspace-2026-10-27",
   "latest_handover_update_pr": 46,
-  "next_package": "StageC gate failed; no StageD, later-year scoring, new fit/search or promotion authorised. Keep approved1.0.0 and weekly defaults unchanged.",
+  "next_package": "StageB failed; no StageD, later-year data/scoring, new fit/search or promotion authorised.",
   "market_strength_research": {
     "pr": 47,
     "branch": "feat/market-implied-team-strength",
@@ -122,5 +122,25 @@
       "stage_C_result": "PENDING pre-merge review"
     },
     "release": "STOP BEFORE MERGE; no merge/tag/cleanup authorised in current handover"
+  },
+  "expected_return_targets_research": {
+    "pr": 48,
+    "branch": "feat/expected-return-targets",
+    "numerical_source": "bf2ad93b135786cf13024f4a1a840a62e9e8e5ec",
+    "brief_revision": "ert-r2",
+    "stage_A_gate_pass": true,
+    "stage_B_gate_pass": false,
+    "stage_B_fits": 4,
+    "failed_criteria": [
+      "pooled_player_gw_rmse_gain",
+      "pooled_player_gw_mae_noninferiority",
+      "pooled_fixture_rmse_gain",
+      "pooled_fixture_mae_noninferiority"
+    ],
+    "approved_version_unchanged": "1.0.0",
+    "weekly_defaults_unchanged": true,
+    "production_approved": false,
+    "results": "docs/EXPECTED_RETURN_TARGETS_RESULTS_2026-10-29.md",
+    "architect_premerge_review": "PENDING"
   }
 }

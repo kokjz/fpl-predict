@@ -35,6 +35,12 @@ below 0.5%. Its fixed-squad mean is +10.175 points, with individual deltas
 −36 to +54; that does not override the failed error gates. **Approved 1.0.0 and
 weekly defaults remain unchanged.** No later-season scoring or season paths.
 
+The [expected-return training-target study](docs/EXPECTED_RETURN_TARGETS_RESULTS_2026-10-29.md)
+passes admission but fails development: pooled candidate RMSE improves only
+0.165%/0.146%, while MAE worsens 0.598%/0.571%, outside the fixed gates.
+Its positive fixed-squad mean does not override the failures. **Approved 1.0.0
+and weekly defaults remain unchanged.**
+
 The latest [forecaster-only qualification](docs/FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md) tests adoption independently of the expected-bench
 selector. Older-season development is nearly neutral (0.0056% RMSE gain), below
 the existing qualification threshold. The candidate retains its 2025 RMSE gain

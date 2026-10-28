@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "package_id": "expected-return-targets",
+  "amendment": 1,
+  "brief_revision": "ert-r2",
+  "brief_sha256": "268654d5d1f3589640eed9d1b62c06b247426445c34135ee528c8ed9cdc2ade4",
+  "original_protocol": {
+    "file": "expected_return_targets_protocol_2026-10-28.json",
+    "lf_sha256": "a0d8a6b621684a2ec61da4840ee41a2d416fc120b91049fcb3ed9c17ac535f22",
+    "freezing_commit": "74bd212000084f168a6b73392f2b54dc78aa830f",
+    "unchanged": true
+  },
+  "binding_section_4a_verbatim": "## 4a. Amendment 1 (ert-r2): clean-sheet source and points reconciliation\n\n**Why.** The frozen I4 `players.csv` has no `clean_sheets` column (handover 22). The ert-r1 feasibility check verified `us_xG`/`us_xA` but wrongly assumed this column. That was an architect error. No coverage, k, variance, label, fit or score had been computed when this amendment was written, so it is decided blind to any outcome.\n\n**Clean-sheet source (definitional, not a proxy).** FPL awards a clean sheet to a player who plays at least 60 minutes and whose team concedes no goal while that player is on the pitch. `players.csv` carries FPL's per-player `goals_conceded`, which counts goals conceded while the player was on the pitch. So, per fixture row:\n\n```\nclean_sheets = 1[minutes ≥ 60 and goals_conceded = 0]\n```\n\nThis replaces the missing column everywhere in section 4: the label formula, the k_CS numerator and the fallback rules. No other source (control file, alias or external data) is used.\n\n**Points reconciliation check.** This confirms the derived clean sheet and the goal and assist columns against FPL's own totals. For every training row with minutes > 0, recompute FPL points under the 2020/21–2022/23 rules from the frozen columns alone:\n- appearance: 1 if 0 < minutes < 60, 2 if minutes ≥ 60;\n- goal points gp·goals_scored; 3·assists; cs·clean_sheets (derived);\n- saves: ⌊saves / 3⌋;\n- 5·penalties_saved; −2·penalties_missed;\n- goals conceded: −⌊goals_conceded / 2⌋ for GK and DEF only;\n- −1·yellow_cards; −3·red_cards; −2·own_goals;\n- plus bonus.\n\nA row **reconciles** when the recomputed total equals `total_points` exactly.\n- A row that does not reconcile uses the fallback (y_ert = y for the whole row) and is **excluded from every k sum**.\n- Count the reconciled and unreconciled rows per season and position.\n\n**Rows must be single fixtures.** The derivation and reconciliation are per fixture, because the floor terms do not add up across matches. If `players.csv` rows are not one row per player-fixture (for example, double gameweeks already merged), stop: this is a blocker, and Sol must not adapt.\n\n**Gate A gains one criterion (fail closed):** in each training season, ≥ 99.5% of minutes > 0 rows reconcile. All ert-r1 criteria are unchanged.\n\n**Unchanged.** Constants, formula structure, folds, features, panels, the class-A guard, Gate B, the fit budget (exactly 4) and every exclusion.\n\n",
+  "schema_preflight": {
+    "before_any_other_real_computation": true,
+    "scope": [
+      "all required column names",
+      "dtypes",
+      "player-fixture and team-fixture key uniqueness"
+    ],
+    "report_all_gaps_at_once": true,
+    "no_statistics": true,
+    "on_missing_or_ambiguous": "stop, no further attempt"
+  },
+  "clean_sheets": "1[minutes >= 60 and goals_conceded == 0] per player-fixture",
+  "reconciliation": {
+    "appearance": "1 if 0 < minutes < 60; 2 if minutes >=60",
+    "goal_points": {
+      "1": 6,
+      "2": 6,
+      "3": 5,
+      "4": 4
+    },
+    "assist_points": 3,
+    "clean_sheet_points": {
+      "1": 4,
+      "2": 4,
+      "3": 1,
+      "4": 0
+    },
+    "saves": "floor(saves / 3)",
+    "penalties_saved": 5,
+    "penalties_missed": -2,
+    "goals_conceded": "-floor(goals_conceded / 2) for positions1 and2 only",
+    "yellow_cards": -1,
+    "red_cards": -3,
+    "own_goals": -2,
+    "bonus": "actual",
+    "equality": "exact against total_points for every training row with minutes >0"
+  },
+  "unreconciled": "whole-row actual-label fallback; exclude from EVERY k numerator and denominator",
+  "counts": "reconciled and unreconciled per training season and position",
+  "gate_A_addition": {
+    "reconciled_share_minimum_inclusive": 0.995,
+    "denominator": "minutes >0 per training season",
+    "old_criteria_unchanged": true
+  },
+  "per_fixture": "stop on non-player-fixture rows; do not adapt floors across matches",
+  "attempts": {
+    "amended_Stage_A": 1,
+    "Stage_A_fits": 0,
+    "Stage_B_fits_maximum": 4,
+    "fit_retry": false,
+    "old_attempt_preserved": true
+  },
+  "other_constants_gates_resources_and_exclusions": "unchanged original protocol and ert-r2"
+}
