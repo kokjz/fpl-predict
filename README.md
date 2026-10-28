@@ -28,6 +28,13 @@ It is a forecasting and decision-support engine, not a complete season optimiser
 
 Official injury percentages are retained as observations, not assigned start probabilities. A [controlled availability study](docs/INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md) reduced candidate appearance Brier error by 20.6% against the full incumbent method. A subsequent [conditional-return and selection study](docs/CONDITIONAL_SELECTION_RESULTS_2026-10-16.md) explicitly integrated those probabilities: its research challenger improved audit points RMSE by 1.23% and MAE by 0.73% versus the incumbent reference, but had lower ranking quality. The new expected bench-selection policy did not establish a realised points gain, so **v1.0.0 remains approved**. These are reused historical error measurements, not percentages of FPL points gained. The earlier [text experiment](docs/NEWS_AVAILABILITY_RESULTS_2026-10-16.md) found no extra Brier benefit from combining news text with structured labels.
 
+The [historical market-strength study](docs/MARKET_STRENGTH_STAGE_C_RESULTS_2026-10-28.md)
+passes its team-goal component test but fails the required player-development
+RMSE gains: pooled player-GW and fixture improvements are 0.417% and 0.402%,
+below 0.5%. Its fixed-squad mean is +10.175 points, with individual deltas
+−36 to +54; that does not override the failed error gates. **Approved 1.0.0 and
+weekly defaults remain unchanged.** No later-season scoring or season paths.
+
 The latest [forecaster-only qualification](docs/FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md) tests adoption independently of the expected-bench
 selector. Older-season development is nearly neutral (0.0056% RMSE gain), below
 the existing qualification threshold. The candidate retains its 2025 RMSE gain
