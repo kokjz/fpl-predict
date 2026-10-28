@@ -393,5 +393,19 @@
     "registry_written": false,
     "result": "MARKET_STRENGTH_STAGE_C_RESULTS_2026-10-28.md",
     "scope": "Player component development and fixed squads only; existing season-policy qualifications retain their original dated scope."
+  },
+  "expected_return_target_component_followup": {
+    "date": "2026-10-29",
+    "source": "bf2ad93b135786cf13024f4a1a840a62e9e8e5ec",
+    "stage_A_gate_pass": true,
+    "stage_B_gate_pass": false,
+    "status": "not_promoted_development_RMSE_gain_and_MAE_gates_failed",
+    "approved_forecaster": "1.0.0",
+    "production_approved": false,
+    "weekly_defaults_changed": false,
+    "season_paths_run": false,
+    "registry_written": false,
+    "result": "EXPECTED_RETURN_TARGETS_RESULTS_2026-10-29.md",
+    "scope": "Training-label component study on reused development seasons; historical season-policy findings unchanged."
   }
 }
