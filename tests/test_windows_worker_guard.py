@@ -25,7 +25,10 @@ def test_memory_allocation_denied_in_descendant(tmp_path):
     child="import sys;\ntry: a=bytearray(256*1024**2)\nexcept MemoryError: print('job-memory-denied',flush=True); sys.exit(42)\nsys.exit(0)"
     code="import subprocess,sys; sys.exit(subprocess.run([sys.executable,'-c',"+repr(child)+"]).returncode)"
     r=invoke(tmp_path,'memory',code,memory_bytes=96*1024**2,seconds=10)
-    assert r['status']=='failed' and r['exit_code']==42
+    # The OS peak counter can include the denied allocation. The supervisor
+    # may then terminate the job before Python's exit42 reaches the launcher.
+    assert r['status']=='failed'
+    assert r['exit_code']==42 or (r['exit_code']==125 and r['guard_reason']=='memory')
     assert 'job-memory-denied' in (tmp_path/'memory/stdout.log').read_text()
     assert r['peaks']['total_processes']>=3 and r['active_processes_after']==0
     # This host's native peak counter includes the rejected allocation attempt.
