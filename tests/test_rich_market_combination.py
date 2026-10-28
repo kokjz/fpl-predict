@@ -88,6 +88,50 @@ def test_preflight_reports_all_gaps_and_counts_later_only(tmp_path):
     assert 'total_points' in [x['name'] for x in report['tables']['players']['inventory']]
 
 
+def preflight_frames(tmp_path):
+    paths=source_inputs(tmp_path)
+    return {name:pd.read_csv(paths[name]).rename(columns={'GW':'gameweek'}) for name in ['players','teams','control']}
+
+
+def test_nullable_object_clock_without_history_passes(tmp_path):
+    frames=preflight_frames(tmp_path);c=frames['control']
+    c['source_max_ts']=c.source_max_ts.astype(object)
+    c.loc[0,'source_max_ts']=None;c.loc[0,'n_history']=0
+    report=r.schema_preflight(frames)
+    assert report['passed'] and report['control_clock_counts']==dict(missing_with_history=0,unparseable=0)
+
+
+def test_missing_clock_with_history_is_counted(tmp_path):
+    frames=preflight_frames(tmp_path);c=frames['control']
+    c['source_max_ts']=c.source_max_ts.astype(object)
+    c.loc[[0,1],'source_max_ts']=None;c.loc[0,'n_history']=0
+    report=r.schema_preflight(frames)
+    assert not report['passed'] and report['control_clock_counts']==dict(missing_with_history=1,unparseable=0)
+    assert report['gaps']==[dict(table='control',kind='missing_source_with_history',column='source_max_ts',count=1)]
+
+
+@pytest.mark.parametrize('value',['not-a-clock','2020-01-01T00:00:00'])
+def test_present_clock_uses_exact_i4_parser(tmp_path,value):
+    frames=preflight_frames(tmp_path);c=frames['control'];c['source_max_ts']=c.source_max_ts.astype(object)
+    c.loc[0,'source_max_ts']=value
+    with pytest.raises(ValueError):r.i4._timestamp(value)
+    report=r.schema_preflight(frames)
+    assert report['control_clock_counts']==dict(missing_with_history=0,unparseable=1)
+    assert report['gaps']==[dict(table='control',kind='unparseable_source_timestamp',column='source_max_ts',count=1)]
+
+
+def test_clock_gaps_accumulate_with_original_schema_gaps(tmp_path):
+    frames=preflight_frames(tmp_path);c=frames['control'];c['source_max_ts']=c.source_max_ts.astype(object)
+    c.loc[0,'source_max_ts']=None;c.loc[1,'source_max_ts']='not-a-clock'
+    frames['players']=frames['players'].drop(columns=['us_xA','starts'])
+    frames['teams']=frames['teams'].drop(columns=['xga','deep'])
+    report=r.schema_preflight(frames)
+    missing={(g['table'],g.get('column')) for g in report['gaps'] if g['kind']=='missing_column'}
+    assert missing=={('players','us_xA'),('players','starts'),('teams','xga'),('teams','deep')}
+    assert {'missing_source_with_history','unparseable_source_timestamp'}<={g['kind'] for g in report['gaps']}
+    assert report['control_clock_counts']==dict(missing_with_history=1,unparseable=1)
+
+
 def test_confirmation_masks_never_touch_2025():
     s=np.array([*r.SEASONS,'2024-25']);train,test=r.fold_masks(s,'2024-25',confirmation=True)
     assert list(s[train])==list(r.SEASONS) and list(s[test])==['2024-25']

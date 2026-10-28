@@ -54,7 +54,21 @@ def schema_preflight(frames):
         for k in sorted(numeric & set(frame)):
             if not is_numeric_dtype(frame[k]): issues.append(dict(table=name,kind='numeric_dtype_required',column=k))
         for k in sorted(text & set(frame)):
-            if not is_string_dtype(frame[k]): issues.append(dict(table=name,kind='text_dtype_required',column=k))
+            if not is_string_dtype(frame[k].dtype): issues.append(dict(table=name,kind='text_dtype_required',column=k))
+        if name=='control' and 'source_max_ts' in frame:
+            missing_clock=frame.source_max_ts.isna()
+            missing_with_history=None
+            if 'n_history' in frame and is_numeric_dtype(frame.n_history.dtype):
+                missing_with_history=int((missing_clock & frame.n_history.gt(0)).sum())
+                if missing_with_history:
+                    issues.append(dict(table=name,kind='missing_source_with_history',column='source_max_ts',count=missing_with_history))
+            unparseable=0
+            for value in frame.loc[~missing_clock,'source_max_ts']:
+                try: i4._timestamp(value)
+                except ValueError: unparseable+=1
+            if unparseable:
+                issues.append(dict(table=name,kind='unparseable_source_timestamp',column='source_max_ts',count=unparseable))
+            report['control_clock_counts']=dict(missing_with_history=missing_with_history,unparseable=unparseable)
         if name=='players' and 'home' in frame and frame.home.dtype != bool:
             issues.append(dict(table=name,kind='boolean_dtype_required',column='home'))
         unique = None
