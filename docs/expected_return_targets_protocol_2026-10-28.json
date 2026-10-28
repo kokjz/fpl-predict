@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "package_id": "expected-return-targets",
+  "brief_revision": "ert-r1",
+  "brief_sha256": "6eb612b276bd31f647708eb1430c7963b1b55fad67b574b62aa84c86ef97c892",
+  "frozen_before_real_calculation": true,
+  "binding_specification_sections_3_to_5_verbatim": "## 3. Origin and leakage safety (non-negotiable)\n- Features, cohorts, cutoffs (deadline−3h), folds, panels and evaluation targets are **byte-identical** to the I4 control path, as in market Stage C.\n- **Only the training label changes, and only on training-season rows.** Test-season labels are always actual points.\n- The scaling constants k (section 4) are computed from each fold's **training rows only**.\n- No `us_*` value from a test season enters training, features or constants for that fold.\n- No new download. The only inputs are the frozen, hash-verified I4 `players.csv` (db737482…), `teams.csv` (f6fd446b…), the control (3d3c2726…) and provenance (fc83c5fc…).\n\n## 4. Fixed target specification (no tuning)\nFor a training row with position *pos* (rules for 2020/21–2023/24):\n- goal points gp = 6 (GK), 6 (DEF), 5 (MID), 4 (FWD);\n- assist points = 3;\n- clean-sheet points cs = 4 (GK), 4 (DEF), 1 (MID), 0 (FWD).\n\n```\ny      = points_core  (= total_points in these seasons, as I4 verified)\ny_ert  = y − gp·goals_scored − 3·assists − cs·clean_sheets\n           + gp·k_G·us_xG + 3·k_A·us_xA + cs·k_CS·exp(−xGA_team)·1[minutes ≥ 60]\n```\n\n- `xGA_team` is the Understat xG of the player's opponent in that fixture, from `teams.csv` (the same source as Stage B of the market study).\n- **Fallback:** if minutes = 0, or if minutes > 0 and `us_xG` or `us_xA` is not finite, then y_ert = y for the whole row. Count these rows per season and position.\n- **Training-only scaling, per fold:**\n  - k_G = Σgoals_scored / Σus_xG;\n  - k_A = Σassists / Σus_xA.\n\n  Both sums are taken over training rows with minutes > 0 and finite `us_xG`/`us_xA`.\n  - k_CS = Σclean_sheets / Σexp(−xGA_team), over training rows with minutes ≥ 60 and pos ∈ {GK, DEF, MID}.\n- No per-position k, no clipping of y_ert, no blending of y and y_ert, no other components (bonus, saves, cards, goals conceded and appearance points stay actual).\n\n## 5. Stages, gates and stops\n**Freeze first.** Write one write-once protocol JSON, `docs/expected_return_targets_protocol_YYYY-MM-DD.json`, and commit and push it before any Stage-A calculation. It encodes sections 3–5: the constants, formula, folds, fit budget, gates, the original I4 fixture sha 917f5ca… with the class-A guard, and the stop rules.\n\n**Stage A: admission (no fit).**\n- Verify the input hashes.\n- For each season from 2020/21 to 2022/23 (the seasons used for training), report:\n  - rows, and rows with minutes > 0, by position;\n  - the share of minutes > 0 rows with finite `us_xG` and `us_xA`;\n  - the finiteness of `xGA_team` for every team-fixture.\n- For each fold, report k_G, k_A and k_CS, and the training-label variance of y and y_ert (overall and by position).\n- Report the fallback counts.\n- **Gate A (fail closed):**\n  - in each training season, ≥ 97% of minutes > 0 rows have finite `us_xG` and `us_xA`;\n  - `xGA_team` is finite for every training team-fixture;\n  - every k lies in [0.6, 1.6].\n\n  On a pass, continue to Stage B without an architect boundary unless something is ambiguous (if so, stop and hand over). On a fail, go to Stage E.\n\n**Stage B: development (H1), exactly as the I4/market Stage-C path.**\n- Folds: train 2020/21–2021/22 → test 2022/23; train through 2022/23 → test 2023/24.\n- Model: one core-points HGB with 7 leaves, 200 iterations, learning rate 0.05, L2 = 20, min leaf 60, early stopping off, seed 20260921, 730.5-day age weights and a final fixture clip to [0, 20]. Same 49 features, same cohort, deadline−3h, double-GW aggregation, metrics and legacy runtime.\n- Fixture: the original frozen I4 panels (canonical sha 917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed), with the class-A consistency guard reused from market amendment 1.\n- Methods: `control` (trained on y) and `expected_return` (trained on y_ert). One challenger, no arms.\n- **Shared proof before any fit:**\n  - identical feature bytes, keys, cohort, cutoffs, age weights and evaluation targets;\n  - training labels differ only on training rows, and exactly as section 4 specifies (prove it by recomputing).\n- **Fits:** exactly 4, serial and guarded, with no retry.\n- **Gate B = unchanged I4 (`native_development.gate` semantics):**\n  - pooled candidate player-GW and fixture RMSE ≤ 0.995 × control;\n  - pooled player-GW and fixture MAE ≤ 1.005 × control;\n  - each fold's candidate player-GW and fixture RMSE ≤ 1.005 × control;\n  - pooled NDCG@10 ≥ control;\n  - mean fixed-squad delta ≥ 0.\n- **Also report:** mean prediction bias vs actual per fold and position; RMSE by position; the descriptive paired interval.\n- **Stops:**\n  - pass: stop and hand over (Stage D needs a new brief revision and user authorisation);\n  - fail: prepare Stage E and stop before merge for the architect's pre-merge review;\n  - blocker: stop and hand over.\n\n**Stage D: not in this package.** Audit seasons (2024/25, 2025/26), stability and season paths.\n\n**Stage E: publication (always).** The public results document (positive or negative, with all failures and limits), status files keeping 1.0.0 approved, PR review and CI, and the architect's pre-merge review, then squash, the study tag `study-expected-return-targets-YYYY-MM-DD` on the release head, and cleanup.\n\n",
+  "inputs": {
+    "players": "db737482eb814ca7d18a21d520c5ab3f4df1f6b021d61e4a700f0f45bf04bbc9",
+    "teams": "f6fd446b1f62bc1618c8f0eb5f4990732599566735d8b02a0fd855eecb7dd1a6",
+    "control_logical": "3d3c2726400b03a32014826bbcd7fb67988b23627ac57b6c8b3f9c5768f6ae09",
+    "provenance": "fc83c5fc16b3210508be757eb37712a5cb3458e2240265784b2c2312b32d6cf8",
+    "original_panels_canonical": "917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed"
+  },
+  "methods": [
+    "control",
+    "expected_return"
+  ],
+  "folds": {
+    "2022-23": [
+      "2020-21",
+      "2021-22"
+    ],
+    "2023-24": [
+      "2020-21",
+      "2021-22",
+      "2022-23"
+    ]
+  },
+  "fit_order": [
+    {
+      "fold": "2022-23",
+      "method": "control"
+    },
+    {
+      "fold": "2022-23",
+      "method": "expected_return"
+    },
+    {
+      "fold": "2023-24",
+      "method": "control"
+    },
+    {
+      "fold": "2023-24",
+      "method": "expected_return"
+    }
+  ],
+  "goal_points": {
+    "1": 6,
+    "2": 6,
+    "3": 5,
+    "4": 4
+  },
+  "assist_points": 3,
+  "clean_sheet_points": {
+    "1": 4,
+    "2": 4,
+    "3": 1,
+    "4": 0
+  },
+  "k_bounds_inclusive": [
+    0.6,
+    1.6
+  ],
+  "coverage_minimum": 0.97,
+  "feature_count": 49,
+  "fixture_guard": {
+    "original_canonical_sha256": "917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed",
+    "reuse": "market_stage_c_amendment.original_fixture",
+    "relative_weight_tolerance": 1e-09,
+    "scope": "fixture admissibility only; no score tolerance"
+  },
+  "gate": "unchanged native_development.gate; both pooled RMSE <= .995 control, pooled MAE and each-fold RMSE <=1.005 control, pooled NDCG >=control, mean fixed-squad delta>=0",
+  "model": {
+    "heads": 1,
+    "recipe": "hgb7",
+    "max_leaf_nodes": 7,
+    "max_iter": 200,
+    "learning_rate": 0.05,
+    "l2_regularization": 20,
+    "min_samples_leaf": 60,
+    "early_stopping": false,
+    "random_state": 20260921,
+    "age_half_life_days": 730.5,
+    "final_fixture_prediction_clip": [
+      0,
+      20
+    ],
+    "training_label_clip": null
+  },
+  "resources": {
+    "threads": 2,
+    "memory_bytes": 4294967296,
+    "seconds_per_job": 900,
+    "serial": true,
+    "growth_bytes": 268435456,
+    "minimum_free_bytes": 5368709120,
+    "stage_A_fits": 0,
+    "stage_B_fits_maximum": 4,
+    "fit_retry": false
+  },
+  "stop_rules": {
+    "ambiguity_or_blocker": "stop and return22; do not guess",
+    "gate_A_fail": "StageE ready green PR; stop before merge; return22",
+    "gate_A_pass_unambiguous": "continue StageB",
+    "gate_B_pass": "return22 before StageD or release",
+    "gate_B_fail": "StageE ready green PR; stop before merge; return22"
+  },
+  "exclusions": [
+    "2024/25 and 2025/26 data or scoring",
+    "downloads",
+    "extra arms seeds k variants blends label clipping",
+    "post-outcome constants or gate changes",
+    "StageD seasonpaths",
+    "promotion registry default writes",
+    "merge tag cleanup before architect review",
+    "settings weeklyplanning messaging agents modelswitch paidusage privateuploads"
+  ]
+}
