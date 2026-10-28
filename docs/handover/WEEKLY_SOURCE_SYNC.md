@@ -19,7 +19,8 @@ sensitivity run, model comparison or finalised-gameweek review:
    a separate clean checkout of the fetched reviewed release. If the remote
    cannot be checked, disclose the limitation and resolve it before claiming
    analysis with the latest release.
-4. Read the current release and operational handoff, registry and model report.
+4. Read the current release and operational handoff, registry and model report;
+   read `docs/handover/CONSUMER_RELEASE_NOTES.md` at every sync.
    Resolve the **approved** champion and verify its artifact hash and runtime/
    schema compatibility. Source sync does not transfer private weights or
    promote newer experiments. Obtain a newly approved artifact through the
