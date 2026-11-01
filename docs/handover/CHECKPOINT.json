@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "status": "expected_return_targets_negative_result_premerge_review_pending",
-  "updated": "2026-10-29 Asia/Singapore",
+  "status": "rich_market_combination_confirmation_pass_premerge_review_pending",
+  "updated": "2026-11-02 Asia/Singapore",
   "repository": "https://github.com/kokjz/fpl-predict",
   "reviewed_engine_main": "cf19ff2446da8b5b9cdd4444417e75ace9ffd642",
   "research": {
@@ -41,7 +41,7 @@
     "source": "Private transfer registry; not research file dates"
   },
   "remaining_work": [
-    "Architect pre-merge review of PR48 negative expected-return-target result; no merge/tag/cleanup authorised at this boundary."
+    "Architect pre-merge review of PR50; no merge/tag/cleanup authorised at this boundary."
   ],
   "privacy": "Only engine/research context is public; full private transfer remains outside repository",
   "research_links": {
@@ -92,7 +92,7 @@
   "review_findings_private_location": "work/appearance_return_coherence_2026-10-26/review_findings.json",
   "workflow_revision": "opus-medium-sibling-workspace-2026-10-27",
   "latest_handover_update_pr": 46,
-  "next_package": "StageB failed; no StageD, later-year data/scoring, new fit/search or promotion authorised.",
+  "next_package": "No further scientific fit/data/promotion action authorised at the pre-merge boundary.",
   "market_strength_research": {
     "pr": 47,
     "branch": "feat/market-implied-team-strength",
@@ -141,6 +141,20 @@
     "weekly_defaults_unchanged": true,
     "production_approved": false,
     "results": "docs/EXPECTED_RETURN_TARGETS_RESULTS_2026-10-29.md",
+    "architect_premerge_review": "PENDING"
+  },
+  "rich_market_combination_research": {
+    "pr": 50,
+    "branch": "feat/rich-market-combination",
+    "confirmation_source": "a67db67d5f06207f3dcad8188c3754e710ead56d",
+    "stage_B_gate_pass": true,
+    "stage_C_gate_pass": true,
+    "development_fits": 4,
+    "confirmation_fits": 2,
+    "approved_forecaster": "1.0.0",
+    "weekly_defaults_unchanged": true,
+    "production_approved": false,
+    "results": "docs/RICH_MARKET_COMBINATION_RESULTS_2026-11-02.md",
     "architect_premerge_review": "PENDING"
   }
 }
