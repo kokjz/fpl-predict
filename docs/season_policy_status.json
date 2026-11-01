@@ -407,5 +407,18 @@
     "registry_written": false,
     "result": "EXPECTED_RETURN_TARGETS_RESULTS_2026-10-29.md",
     "scope": "Training-label component study on reused development seasons; historical season-policy findings unchanged."
+  },
+  "rich_market_combination_component_followup": {
+    "date": "2026-11-02",
+    "source": "a67db67d5f06207f3dcad8188c3754e710ead56d",
+    "stage_B_gate_pass": true,
+    "stage_C_gate_pass": true,
+    "status": "confirmation_pass_not_promoted",
+    "approved_forecaster": "1.0.0",
+    "production_approved": false,
+    "weekly_defaults_changed": false,
+    "season_paths_run": false,
+    "registry_written": false,
+    "result": "RICH_MARKET_COMBINATION_RESULTS_2026-11-02.md"
   }
 }

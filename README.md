@@ -41,6 +41,11 @@ passes admission but fails development: pooled candidate RMSE improves only
 Its positive fixed-squad mean does not override the failures. **Approved 1.0.0
 and weekly defaults remain unchanged.**
 
+The [rich-history and market-strength combination study](docs/RICH_MARKET_COMBINATION_RESULTS_2026-11-02.md)
+passes development; its pre-registered 2024/25 confirmation passes. The combination
+was selected adaptively on reused folds; confirmation outcomes had appeared in
+earlier policy studies. **Approved 1.0.0 and weekly defaults remain unchanged.**
+
 The latest [forecaster-only qualification](docs/FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md) tests adoption independently of the expected-bench
 selector. Older-season development is nearly neutral (0.0056% RMSE gain), below
 the existing qualification threshold. The candidate retains its 2025 RMSE gain
