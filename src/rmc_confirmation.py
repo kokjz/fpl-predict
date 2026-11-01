@@ -3,6 +3,7 @@ import csv
 from datetime import datetime, timedelta
 import io
 from pathlib import Path
+import tempfile
 from zoneinfo import ZoneInfo
 
 import numpy as np
@@ -37,7 +38,7 @@ def read_scoped(path):
     buffer.seek(0);return pd.read_csv(buffer)
 
 
-def select_control(history,features,bridges):
+def select_control(history,features,bridges,directory=None):
     """Same trusted I4 export path, selecting allowed indices before any use."""
     d=scope(history);x=features.loc[d.index].copy()
     if not d.index.equals(x.index):raise ValueError('Cache alignment')
@@ -48,11 +49,13 @@ def select_control(history,features,bridges):
     if d.fpl_code.isna().any():raise ValueError('Missing stable code')
     d['fpl_code']=d.fpl_code.astype(np.int64)
     meta=['season','GW','element','fixture','pos','team_id','value','ts','cutoff','total_points','points_core','minutes','fpl_code']
-    out=pd.concat([d[meta],x[CORE_FEATURES+['source_max_ts']]],axis=1).rename(columns={'GW':'gameweek'})
-    # Match the original CSV export/read boundary before its text-schema check.
-    for name in ['ts','cutoff','source_max_ts']:
-        out[name]=out[name].map(lambda v:pd.Timestamp(v).isoformat() if pd.notna(v) else None).astype(object)
-    return out
+    out=pd.concat([d[meta],x[CORE_FEATURES+['source_max_ts']]],axis=1)
+    # Original I4 exporter SHA2566438a587dd2fc580ec84aca538fc1a8bfe334d48aed776120c089e962ac34736.
+    # No float_format/dtype/precision override: reproduce its complete boundary.
+    with tempfile.TemporaryDirectory(prefix='rmc-control-export-',dir=directory) as temporary:
+        target=Path(temporary)/'control.csv'
+        out.to_csv(target,index=False,mode='x')
+        return pd.read_csv(target).rename(columns={'GW':'gameweek'})
 
 
 def validate_inputs(p,t,c):

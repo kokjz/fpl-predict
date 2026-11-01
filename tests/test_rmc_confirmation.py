@@ -68,6 +68,31 @@ def test_control_export_selects_only_allowed_indices(tmp_path):
     assert set(c.season)==set(s.SEASONS) and np.isfinite(c[s.CORE_FEATURES]).all().all()
 
 
+def test_full_selected_control_matches_original_export_read_bytes(tmp_path):
+    history=frames(tmp_path)['control'].rename(columns={'gameweek':'GW'});history['value']=45.
+    for name in ['ts','cutoff','source_max_ts']:history[name]=pd.to_datetime(history[name],utc=True)
+    features=history[s.CORE_FEATURES].copy();features['source_max_ts']=history.source_max_ts
+    # Values with observable CSV parser rounding; exercise every selected season.
+    features['ew4_points_core']=np.resize([.12345678901234568,2.9584653740257196,np.pi,1/3],len(features))
+    bridges={year:pd.DataFrame({'id':[11,22],'code':[11,22]}) for year in s.SEASONS}
+    actual=s.select_control(history,features,bridges,directory=tmp_path)
+    # Independent literal original export_control.py columns/order/calls.
+    d=history.loc[history.season.isin(s.SEASONS)].copy();x=features.loc[d.index].copy()
+    for season in d.season.unique():
+        bridge=bridges[season][['id','code']]
+        d.loc[d.season.eq(season),'fpl_code']=d.loc[d.season.eq(season),'element'].map(bridge.set_index('id').code)
+    d['fpl_code']=d.fpl_code.astype(int)
+    meta=['season','GW','element','fixture','pos','team_id','value','ts','cutoff','total_points','points_core','minutes','fpl_code']
+    original=pd.concat([d[meta],x[s.CORE_FEATURES+['source_max_ts']]],axis=1)
+    path=tmp_path/'original-control.csv';original.to_csv(path,index=False,mode='x')
+    expected=pd.read_csv(path).rename(columns={'GW':'gameweek'})
+    pd.testing.assert_frame_equal(actual,expected)
+    assert actual[s.CORE_FEATURES].to_numpy(np.float64).tobytes()==expected[s.CORE_FEATURES].to_numpy(np.float64).tobytes()
+    assert features[s.CORE_FEATURES].to_numpy(np.float64).tobytes()!=expected[s.CORE_FEATURES].to_numpy(np.float64).tobytes()
+    assert set(actual.season)==set(s.SEASONS)
+    assert not list(tmp_path.glob('rmc-control-export-*'))
+
+
 def market_fixture():
     rows=[];p=[]
     for i in range(380):

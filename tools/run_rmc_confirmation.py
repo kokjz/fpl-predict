@@ -26,7 +26,7 @@ def build(manifest,output):
         p=study.read_scoped(manifest['inputs']['players']['path']);t=study.read_scoped(manifest['inputs']['teams']['path'])
         # Trusted local cache hashes are the exact original I4 export provenance.
         history=pd.read_pickle(manifest['history']['path']);features=pd.read_pickle(manifest['features']['path'])
-        c=study.select_control(history,features,{season:pd.read_csv(entry['path']) for season,entry in manifest['bridges'].items()})
+        c=study.select_control(history,features,{season:pd.read_csv(entry['path']) for season,entry in manifest['bridges'].items()},directory=output)
         del history,features
         preflight=study.base.schema_preflight(dict(players=p,teams=t,control=c))
         strict.write_json(output/'schema-preflight.json',preflight)
