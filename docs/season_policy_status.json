@@ -420,5 +420,19 @@
     "season_paths_run": false,
     "registry_written": false,
     "result": "RICH_MARKET_COMBINATION_RESULTS_2026-11-02.md"
+  },
+  "rmc_promotion_evidence_followup": {
+    "date": "2026-11-02",
+    "status": "stopped_source_policy_not_a_promotion_candidate_in_this_form",
+    "reason": "Understat robots disallows all automated access; specified live RICH inputs cannot be supplied compliantly",
+    "protocol_freeze_source": "11db028648c6a12f12f2782d219e4cbf7627fecc",
+    "dataset_retrievals": 0,
+    "fits": 0,
+    "promotion_gates_2_to_8": "not_evaluated",
+    "approved_forecaster": "1.0.0",
+    "production_approved": false,
+    "registry_written": false,
+    "weekly_defaults_changed": false,
+    "result": "RMC_PROMOTION_EVIDENCE_RESULTS_2026-11-02.md"
   }
 }
