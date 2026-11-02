@@ -197,6 +197,7 @@
     ],
     "pr": 56,
     "branch": "feat/fpl-native-combination",
-    "results": "../FPL_NATIVE_COMBINATION_RESULTS_2026-11-02.md"
+    "results": "../FPL_NATIVE_COMBINATION_RESULTS_2026-11-02.md",
+    "architect_premerge_review": "ACCEPTED 2026-11-02 (handover 60)"
   }
 }
