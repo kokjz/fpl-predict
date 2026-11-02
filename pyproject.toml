@@ -14,7 +14,7 @@ dependencies = ["numpy==2.5.3", "pandas==3.0.6", "scikit-learn==1.9.1", "scipy==
 
 [project.optional-dependencies]
 dev = ["pytest==9.1.1"]
-reference = ["xgboost==3.2.0"]
+reference = ["xgboost==3.4.1"]
 
 [project.scripts]
 fpl-predict = "fpl_predict_cli:main"
