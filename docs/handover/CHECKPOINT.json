@@ -204,7 +204,7 @@
     "package_id": "fpl-native-capacity",
     "date": "2026-11-02",
     "status": "development_gate_failed_premerge",
-    "architect_premerge_review": "PENDING",
+    "architect_premerge_review": "ACCEPTED 2026-11-02 (handover 67)",
     "numerical_source": "c71ca14c3073a8741b0f4fa16532df59b41f716e",
     "freeze_commit": "48e2f6fc604ab934c47e7fdf8f1c5e4993e943c1",
     "protocol_lf_sha256": "408c348c3a3d67802521363ab2cef3afda5f08a8d1780d5cc69aea2de3f39877",
