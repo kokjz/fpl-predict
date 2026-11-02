@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "rich_market_combination_confirmation_pass_premerge_review_pending",
+  "status": "fpl_native_combination_development_fail_premerge_review_pending",
   "updated": "2026-11-02 Asia/Singapore",
   "repository": "https://github.com/kokjz/fpl-predict",
   "reviewed_engine_main": "cf19ff2446da8b5b9cdd4444417e75ace9ffd642",
@@ -41,7 +41,7 @@
     "source": "Private transfer registry; not research file dates"
   },
   "remaining_work": [
-    "Architect pre-merge review of PR50; no merge/tag/cleanup authorised at this boundary."
+    "Architect pre-merge review of PR56; no merge/tag/cleanup at this boundary."
   ],
   "privacy": "Only engine/research context is public; full private transfer remains outside repository",
   "research_links": {
@@ -156,5 +156,48 @@
     "production_approved": false,
     "results": "docs/RICH_MARKET_COMBINATION_RESULTS_2026-11-02.md",
     "architect_premerge_review": "PENDING"
+  },
+  "fpl_native_combination": {
+    "package_id": "fpl-native-combination",
+    "date": "2026-11-02",
+    "status": "development_gate_failed_premerge",
+    "numerical_source": "c0fc0b710dc7c2eef5c0725f212159273ce55b35",
+    "freeze_commit": "cc51da6b6f93d18bc9ab8e330f03bd44f99db70f",
+    "protocol_lf_sha256": "a6760823ffd6b145fc7e332d21a83ffde8bf26eea6e0448fa987525987b1d188",
+    "stage_A": true,
+    "stage_B": false,
+    "stage_C": "not_run_gate_B_failed",
+    "stage_C_gates": {
+      "2": "not_evaluated",
+      "3": "not_evaluated",
+      "4": "not_evaluated",
+      "5": "not_evaluated",
+      "6": "not_evaluated",
+      "7": "not_evaluated"
+    },
+    "fits": {
+      "B": 4,
+      "C": 0
+    },
+    "dataset_retrieval_attempts": 0,
+    "approved_forecaster": {
+      "version": "1.0.0",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233"
+    },
+    "production_approved": false,
+    "registry_changed": false,
+    "weekly_defaults_changed": false,
+    "limitations": [
+      "adaptive lineage and reused development folds",
+      "no audit-season results",
+      "no historical publication-clock guarantee",
+      "no live availability or prospective shadow evidence",
+      "fixed squads, not transfer/chip/season paths",
+      "Understat-free dependencies proved, not a source availability or deployability qualification"
+    ],
+    "pr": 56,
+    "branch": "feat/fpl-native-combination",
+    "results": "../FPL_NATIVE_COMBINATION_RESULTS_2026-11-02.md",
+    "architect_premerge_review": "ACCEPTED 2026-11-02 (handover 60)"
   }
 }
