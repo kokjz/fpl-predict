@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "fpl_native_combination_development_fail_premerge_review_pending",
+  "status": "fpl_native_capacity_development_fail_premerge_review_pending",
   "updated": "2026-11-02 Asia/Singapore",
   "repository": "https://github.com/kokjz/fpl-predict",
   "reviewed_engine_main": "cf19ff2446da8b5b9cdd4444417e75ace9ffd642",
@@ -41,7 +41,7 @@
     "source": "Private transfer registry; not research file dates"
   },
   "remaining_work": [
-    "Architect pre-merge review of PR56; no merge/tag/cleanup at this boundary."
+    "Architect pre-merge review of PR57; no merge, tag or cleanup at this boundary."
   ],
   "privacy": "Only engine/research context is public; full private transfer remains outside repository",
   "research_links": {
@@ -199,5 +199,50 @@
     "branch": "feat/fpl-native-combination",
     "results": "../FPL_NATIVE_COMBINATION_RESULTS_2026-11-02.md",
     "architect_premerge_review": "ACCEPTED 2026-11-02 (handover 60)"
+  },
+  "fpl_native_capacity": {
+    "package_id": "fpl-native-capacity",
+    "date": "2026-11-02",
+    "status": "development_gate_failed_premerge",
+    "architect_premerge_review": "ACCEPTED 2026-11-02 (handover 67)",
+    "numerical_source": "c71ca14c3073a8741b0f4fa16532df59b41f716e",
+    "freeze_commit": "48e2f6fc604ab934c47e7fdf8f1c5e4993e943c1",
+    "protocol_lf_sha256": "408c348c3a3d67802521363ab2cef3afda5f08a8d1780d5cc69aea2de3f39877",
+    "stage_A": true,
+    "stage_B": false,
+    "stage_B_criteria_passed": 7,
+    "stage_B_criteria_total": 10,
+    "stage_C": "not_run_gate_B_failed_authority_lapsed",
+    "stage_C_gates": {
+      "2": "not_evaluated",
+      "3": "not_evaluated",
+      "4": "not_evaluated",
+      "5": "not_evaluated",
+      "6": "not_evaluated",
+      "7": "not_evaluated"
+    },
+    "fits": {
+      "B": 4,
+      "C": 0
+    },
+    "dataset_retrieval_attempts": 0,
+    "approved_forecaster": {
+      "version": "1.0.0",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233"
+    },
+    "production_approved": false,
+    "registry_changed": false,
+    "weekly_defaults_changed": false,
+    "limitations": [
+      "Adaptive capacity choice after PR56 near miss",
+      "Development folds heavily reused; forking-path risk",
+      "No audit-season comparison in this package",
+      "Historical publication clocks unmodelled",
+      "Fixed squads are not transfer/chip strategy outcomes",
+      "No current-season, integrity/artifact, live ingestion or prospective shadow qualification"
+    ],
+    "pr": 57,
+    "branch": "feat/fpl-native-capacity",
+    "results": "../FPL_NATIVE_CAPACITY_RESULTS_2026-11-02.md"
   }
 }

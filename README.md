@@ -52,6 +52,8 @@ live inputs are unavailable for the combination in this form. Nothing promoted.
 
 The [FPL-native and market variant](docs/FPL_NATIVE_COMBINATION_RESULTS_2026-11-02.md) proves Understat-free feature construction but misses its 0.5% development RMSE gates (0.422% player-GW and 0.414% fixture gains). Conditional audits were not run. **Approved 1.0.0 and weekly defaults remain unchanged.**
 
+The [capacity-matched compliant combination](docs/FPL_NATIVE_CAPACITY_RESULTS_2026-11-02.md) misses its development gates (RMSE gains 0.460% player-GW and 0.454% fixture; NDCG also below control). Stage C was not run. **Approved 1.0.0 and weekly defaults remain unchanged.**
+
 The latest [forecaster-only qualification](docs/FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md) tests adoption independently of the expected-bench
 selector. Older-season development is nearly neutral (0.0056% RMSE gain), below
 the existing qualification threshold. The candidate retains its 2025 RMSE gain

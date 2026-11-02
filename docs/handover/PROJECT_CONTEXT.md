@@ -190,3 +190,7 @@ No scientific/model/team state or original numerical source changes here.
 
 ## 2 November 2026: FPL-native and market combination
 The [Understat-free variant](../FPL_NATIVE_COMBINATION_RESULTS_2026-11-02.md) passes static/ablation and exact-control/panel admission checks but fails the two pooled 0.5% development RMSE-gain gates. Four fits completed; conditional audit fits/retrieval were not triggered. PR56 awaits architect pre-merge review. Approved 1.0.0 and all weekly defaults remain unchanged; no artifact or registry write.
+
+## FPL-native capacity research (2 November 2026)
+
+Gate B failed, 7 of 10 criteria: RMSE gains 0.4604% at player-GW and 0.4537% at fixture level miss 0.5%; pooled NDCG@10 is below control. Stage C not run; four audit fits and the E0 2025/26 retrieval lapsed. The bounded no-fit export repair preserved report bytes and the four-fit ledger. [Results](../FPL_NATIVE_CAPACITY_RESULTS_2026-11-02.md). Approved 1.0.0 and weekly defaults unchanged. Architect pre-merge review PENDING; no merge, tag or cleanup.
