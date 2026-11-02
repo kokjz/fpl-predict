@@ -186,3 +186,7 @@ or code divergence. Routine authorised fixes do not await per-commit architect
 permission. HYBRID_WORKFLOW.md/role prompts govern this; all science, approval,
 privacy, Git, storage and weekly responsibility/source-sync rules remain intact.
 No scientific/model/team state or original numerical source changes here.
+
+
+## 2 November2026: FPL-native and market combination
+The [Understat-free variant](../FPL_NATIVE_COMBINATION_RESULTS_2026-11-02.md) passes static/ablation and exact-control/panel admission checks but fails the two pooled0.5% development RMSE-gain gates. Four fits completed; conditional audit fits/retrieval were not triggered. PR56 awaits architect pre-merge review. Approved1.0.0 and all weekly defaults remain unchanged; no artifact or registry write.

@@ -1,0 +1,1475 @@
+{
+  "status": {
+    "package_id": "fpl-native-combination",
+    "date": "2026-11-02",
+    "status": "development_gate_failed_premerge",
+    "numerical_source": "c0fc0b710dc7c2eef5c0725f212159273ce55b35",
+    "freeze_commit": "cc51da6b6f93d18bc9ab8e330f03bd44f99db70f",
+    "protocol_lf_sha256": "a6760823ffd6b145fc7e332d21a83ffde8bf26eea6e0448fa987525987b1d188",
+    "stage_A": true,
+    "stage_B": false,
+    "stage_C": "not_run_gate_B_failed",
+    "stage_C_gates": {
+      "2": "not_evaluated",
+      "3": "not_evaluated",
+      "4": "not_evaluated",
+      "5": "not_evaluated",
+      "6": "not_evaluated",
+      "7": "not_evaluated"
+    },
+    "fits": {
+      "B": 4,
+      "C": 0
+    },
+    "dataset_retrieval_attempts": 0,
+    "approved_forecaster": {
+      "version": "1.0.0",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233"
+    },
+    "production_approved": false,
+    "registry_changed": false,
+    "weekly_defaults_changed": false,
+    "limitations": [
+      "adaptive lineage and reused development folds",
+      "no audit-season results",
+      "no historical publication-clock guarantee",
+      "no live availability or prospective shadow evidence",
+      "fixed squads, not transfer/chip/season paths",
+      "Understat-free dependencies proved, not a source availability or deployability qualification"
+    ]
+  },
+  "admission": {
+    "rows": 106042,
+    "features": {
+      "2022-23": {
+        "control": {
+          "selected_feature_count": 49,
+          "selected_features": [
+            "home",
+            "n_history",
+            "days_since_last",
+            "last_minutes",
+            "last_points",
+            "last5_minutes",
+            "last5_points",
+            "pos_1",
+            "pos_2",
+            "pos_3",
+            "pos_4",
+            "ew4_minutes",
+            "ew4_points_core",
+            "ew4_goals_scored",
+            "ew4_assists",
+            "ew4_clean_sheets",
+            "ew4_bonus",
+            "ew4_bps",
+            "ew4_threat",
+            "ew4_creativity",
+            "ew4_saves",
+            "ew4_expected_goals",
+            "ew4_expected_assists",
+            "ew4_expected_goals_conceded",
+            "ew4_played",
+            "ew4_sixty",
+            "ew12_minutes",
+            "ew12_points_core",
+            "ew12_goals_scored",
+            "ew12_assists",
+            "ew12_clean_sheets",
+            "ew12_bonus",
+            "ew12_bps",
+            "ew12_threat",
+            "ew12_creativity",
+            "ew12_saves",
+            "ew12_expected_goals",
+            "ew12_expected_assists",
+            "ew12_expected_goals_conceded",
+            "ew12_played",
+            "ew12_sixty",
+            "team_ew4_gf",
+            "team_ew4_ga",
+            "team_ew12_gf",
+            "team_ew12_ga",
+            "opp_ew4_gf",
+            "opp_ew4_ga",
+            "opp_ew12_gf",
+            "opp_ew12_ga"
+          ],
+          "omitted_features": [],
+          "train_rows": 49812,
+          "test_rows": 26505
+        },
+        "fpl_native": {
+          "selected_feature_count": 195,
+          "selected_features": [
+            "home",
+            "n_history",
+            "days_since_last",
+            "last_minutes",
+            "last_points",
+            "last5_minutes",
+            "last5_points",
+            "pos_1",
+            "pos_2",
+            "pos_3",
+            "pos_4",
+            "ew4_minutes",
+            "ew4_points_core",
+            "ew4_goals_scored",
+            "ew4_assists",
+            "ew4_clean_sheets",
+            "ew4_bonus",
+            "ew4_bps",
+            "ew4_threat",
+            "ew4_creativity",
+            "ew4_saves",
+            "ew4_expected_goals",
+            "ew4_expected_assists",
+            "ew4_expected_goals_conceded",
+            "ew4_played",
+            "ew4_sixty",
+            "ew12_minutes",
+            "ew12_points_core",
+            "ew12_goals_scored",
+            "ew12_assists",
+            "ew12_clean_sheets",
+            "ew12_bonus",
+            "ew12_bps",
+            "ew12_threat",
+            "ew12_creativity",
+            "ew12_saves",
+            "ew12_expected_goals",
+            "ew12_expected_assists",
+            "ew12_expected_goals_conceded",
+            "ew12_played",
+            "ew12_sixty",
+            "team_ew4_gf",
+            "team_ew4_ga",
+            "team_ew12_gf",
+            "team_ew12_ga",
+            "opp_ew4_gf",
+            "opp_ew4_ga",
+            "opp_ew12_gf",
+            "opp_ew12_ga",
+            "player_fpl_points_1",
+            "player_fpl_points_3",
+            "player_fpl_points_5",
+            "player_fpl_points_10",
+            "player_fpl_points_38",
+            "player_minutes_played_1",
+            "player_minutes_played_3",
+            "player_minutes_played_5",
+            "player_minutes_played_10",
+            "player_minutes_played_38",
+            "player_influence_1",
+            "player_influence_3",
+            "player_influence_5",
+            "player_influence_10",
+            "player_influence_38",
+            "player_creativity_1",
+            "player_creativity_3",
+            "player_creativity_5",
+            "player_creativity_10",
+            "player_creativity_38",
+            "player_threat_1",
+            "player_threat_3",
+            "player_threat_5",
+            "player_threat_10",
+            "player_threat_38",
+            "player_goals_scored_1",
+            "player_goals_scored_3",
+            "player_goals_scored_5",
+            "player_goals_scored_10",
+            "player_goals_scored_38",
+            "player_penalties_missed_1",
+            "player_penalties_missed_3",
+            "player_penalties_missed_5",
+            "player_penalties_missed_10",
+            "player_penalties_missed_38",
+            "player_assists_1",
+            "player_assists_3",
+            "player_assists_5",
+            "player_assists_10",
+            "player_assists_38",
+            "player_goals_conceded_1",
+            "player_goals_conceded_3",
+            "player_goals_conceded_5",
+            "player_goals_conceded_10",
+            "player_goals_conceded_38",
+            "player_own_goals_1",
+            "player_own_goals_3",
+            "player_own_goals_5",
+            "player_own_goals_10",
+            "player_own_goals_38",
+            "player_saves_1",
+            "player_saves_3",
+            "player_saves_5",
+            "player_saves_10",
+            "player_saves_38",
+            "player_penalties_saved_1",
+            "player_penalties_saved_3",
+            "player_penalties_saved_5",
+            "player_penalties_saved_10",
+            "player_penalties_saved_38",
+            "player_yellow_cards_1",
+            "player_yellow_cards_3",
+            "player_yellow_cards_5",
+            "player_yellow_cards_10",
+            "player_yellow_cards_38",
+            "player_red_cards_1",
+            "player_red_cards_3",
+            "player_red_cards_5",
+            "player_red_cards_10",
+            "player_red_cards_38",
+            "player_bps_1",
+            "player_bps_3",
+            "player_bps_5",
+            "player_bps_10",
+            "player_bps_38",
+            "player_fpl_bonus_points_1",
+            "player_fpl_bonus_points_3",
+            "player_fpl_bonus_points_5",
+            "player_fpl_bonus_points_10",
+            "player_fpl_bonus_points_38",
+            "player_relevant_fpl_points_1",
+            "player_relevant_fpl_points_3",
+            "player_relevant_fpl_points_5",
+            "player_relevant_fpl_points_10",
+            "player_relevant_fpl_points_38",
+            "team_goals_scored_1",
+            "team_goals_scored_3",
+            "team_goals_scored_5",
+            "team_goals_scored_10",
+            "team_goals_scored_38",
+            "team_goals_conceded_1",
+            "team_goals_conceded_3",
+            "team_goals_conceded_5",
+            "team_goals_conceded_10",
+            "team_goals_conceded_38",
+            "team_league_rank_1",
+            "team_league_rank_3",
+            "team_league_rank_5",
+            "team_league_rank_10",
+            "team_league_rank_38",
+            "team_opponent_league_rank_1",
+            "team_opponent_league_rank_3",
+            "team_opponent_league_rank_5",
+            "team_opponent_league_rank_10",
+            "team_opponent_league_rank_38",
+            "opp_goals_scored_1",
+            "opp_goals_scored_3",
+            "opp_goals_scored_5",
+            "opp_goals_scored_10",
+            "opp_goals_scored_38",
+            "opp_goals_conceded_1",
+            "opp_goals_conceded_3",
+            "opp_goals_conceded_5",
+            "opp_goals_conceded_10",
+            "opp_goals_conceded_38",
+            "opp_league_rank_1",
+            "opp_league_rank_3",
+            "opp_league_rank_5",
+            "opp_league_rank_10",
+            "opp_league_rank_38",
+            "opp_opponent_league_rank_1",
+            "opp_opponent_league_rank_3",
+            "opp_opponent_league_rank_5",
+            "opp_opponent_league_rank_10",
+            "opp_opponent_league_rank_38",
+            "is_home_num",
+            "status_league_rank",
+            "opp_status_league_rank",
+            "p_any_3",
+            "p_any_5",
+            "p_any_10",
+            "p60_3",
+            "p60_5",
+            "p60_10",
+            "e_minutes_3",
+            "e_minutes_5",
+            "e_minutes_10",
+            "ar_rest_days",
+            "ar_team_matches_14d",
+            "position_1",
+            "position_2",
+            "position_3",
+            "position_4",
+            "mkt_lambda_for",
+            "mkt_lambda_against",
+            "mkt_cs_prob"
+          ],
+          "omitted_features": [
+            "ar_starts_3",
+            "ar_starts_5",
+            "ar_starts_10"
+          ],
+          "train_rows": 49812,
+          "test_rows": 26505
+        }
+      },
+      "2023-24": {
+        "control": {
+          "selected_feature_count": 49,
+          "selected_features": [
+            "home",
+            "n_history",
+            "days_since_last",
+            "last_minutes",
+            "last_points",
+            "last5_minutes",
+            "last5_points",
+            "pos_1",
+            "pos_2",
+            "pos_3",
+            "pos_4",
+            "ew4_minutes",
+            "ew4_points_core",
+            "ew4_goals_scored",
+            "ew4_assists",
+            "ew4_clean_sheets",
+            "ew4_bonus",
+            "ew4_bps",
+            "ew4_threat",
+            "ew4_creativity",
+            "ew4_saves",
+            "ew4_expected_goals",
+            "ew4_expected_assists",
+            "ew4_expected_goals_conceded",
+            "ew4_played",
+            "ew4_sixty",
+            "ew12_minutes",
+            "ew12_points_core",
+            "ew12_goals_scored",
+            "ew12_assists",
+            "ew12_clean_sheets",
+            "ew12_bonus",
+            "ew12_bps",
+            "ew12_threat",
+            "ew12_creativity",
+            "ew12_saves",
+            "ew12_expected_goals",
+            "ew12_expected_assists",
+            "ew12_expected_goals_conceded",
+            "ew12_played",
+            "ew12_sixty",
+            "team_ew4_gf",
+            "team_ew4_ga",
+            "team_ew12_gf",
+            "team_ew12_ga",
+            "opp_ew4_gf",
+            "opp_ew4_ga",
+            "opp_ew12_gf",
+            "opp_ew12_ga"
+          ],
+          "omitted_features": [],
+          "train_rows": 76317,
+          "test_rows": 29725
+        },
+        "fpl_native": {
+          "selected_feature_count": 198,
+          "selected_features": [
+            "home",
+            "n_history",
+            "days_since_last",
+            "last_minutes",
+            "last_points",
+            "last5_minutes",
+            "last5_points",
+            "pos_1",
+            "pos_2",
+            "pos_3",
+            "pos_4",
+            "ew4_minutes",
+            "ew4_points_core",
+            "ew4_goals_scored",
+            "ew4_assists",
+            "ew4_clean_sheets",
+            "ew4_bonus",
+            "ew4_bps",
+            "ew4_threat",
+            "ew4_creativity",
+            "ew4_saves",
+            "ew4_expected_goals",
+            "ew4_expected_assists",
+            "ew4_expected_goals_conceded",
+            "ew4_played",
+            "ew4_sixty",
+            "ew12_minutes",
+            "ew12_points_core",
+            "ew12_goals_scored",
+            "ew12_assists",
+            "ew12_clean_sheets",
+            "ew12_bonus",
+            "ew12_bps",
+            "ew12_threat",
+            "ew12_creativity",
+            "ew12_saves",
+            "ew12_expected_goals",
+            "ew12_expected_assists",
+            "ew12_expected_goals_conceded",
+            "ew12_played",
+            "ew12_sixty",
+            "team_ew4_gf",
+            "team_ew4_ga",
+            "team_ew12_gf",
+            "team_ew12_ga",
+            "opp_ew4_gf",
+            "opp_ew4_ga",
+            "opp_ew12_gf",
+            "opp_ew12_ga",
+            "player_fpl_points_1",
+            "player_fpl_points_3",
+            "player_fpl_points_5",
+            "player_fpl_points_10",
+            "player_fpl_points_38",
+            "player_minutes_played_1",
+            "player_minutes_played_3",
+            "player_minutes_played_5",
+            "player_minutes_played_10",
+            "player_minutes_played_38",
+            "player_influence_1",
+            "player_influence_3",
+            "player_influence_5",
+            "player_influence_10",
+            "player_influence_38",
+            "player_creativity_1",
+            "player_creativity_3",
+            "player_creativity_5",
+            "player_creativity_10",
+            "player_creativity_38",
+            "player_threat_1",
+            "player_threat_3",
+            "player_threat_5",
+            "player_threat_10",
+            "player_threat_38",
+            "player_goals_scored_1",
+            "player_goals_scored_3",
+            "player_goals_scored_5",
+            "player_goals_scored_10",
+            "player_goals_scored_38",
+            "player_penalties_missed_1",
+            "player_penalties_missed_3",
+            "player_penalties_missed_5",
+            "player_penalties_missed_10",
+            "player_penalties_missed_38",
+            "player_assists_1",
+            "player_assists_3",
+            "player_assists_5",
+            "player_assists_10",
+            "player_assists_38",
+            "player_goals_conceded_1",
+            "player_goals_conceded_3",
+            "player_goals_conceded_5",
+            "player_goals_conceded_10",
+            "player_goals_conceded_38",
+            "player_own_goals_1",
+            "player_own_goals_3",
+            "player_own_goals_5",
+            "player_own_goals_10",
+            "player_own_goals_38",
+            "player_saves_1",
+            "player_saves_3",
+            "player_saves_5",
+            "player_saves_10",
+            "player_saves_38",
+            "player_penalties_saved_1",
+            "player_penalties_saved_3",
+            "player_penalties_saved_5",
+            "player_penalties_saved_10",
+            "player_penalties_saved_38",
+            "player_yellow_cards_1",
+            "player_yellow_cards_3",
+            "player_yellow_cards_5",
+            "player_yellow_cards_10",
+            "player_yellow_cards_38",
+            "player_red_cards_1",
+            "player_red_cards_3",
+            "player_red_cards_5",
+            "player_red_cards_10",
+            "player_red_cards_38",
+            "player_bps_1",
+            "player_bps_3",
+            "player_bps_5",
+            "player_bps_10",
+            "player_bps_38",
+            "player_fpl_bonus_points_1",
+            "player_fpl_bonus_points_3",
+            "player_fpl_bonus_points_5",
+            "player_fpl_bonus_points_10",
+            "player_fpl_bonus_points_38",
+            "player_relevant_fpl_points_1",
+            "player_relevant_fpl_points_3",
+            "player_relevant_fpl_points_5",
+            "player_relevant_fpl_points_10",
+            "player_relevant_fpl_points_38",
+            "team_goals_scored_1",
+            "team_goals_scored_3",
+            "team_goals_scored_5",
+            "team_goals_scored_10",
+            "team_goals_scored_38",
+            "team_goals_conceded_1",
+            "team_goals_conceded_3",
+            "team_goals_conceded_5",
+            "team_goals_conceded_10",
+            "team_goals_conceded_38",
+            "team_league_rank_1",
+            "team_league_rank_3",
+            "team_league_rank_5",
+            "team_league_rank_10",
+            "team_league_rank_38",
+            "team_opponent_league_rank_1",
+            "team_opponent_league_rank_3",
+            "team_opponent_league_rank_5",
+            "team_opponent_league_rank_10",
+            "team_opponent_league_rank_38",
+            "opp_goals_scored_1",
+            "opp_goals_scored_3",
+            "opp_goals_scored_5",
+            "opp_goals_scored_10",
+            "opp_goals_scored_38",
+            "opp_goals_conceded_1",
+            "opp_goals_conceded_3",
+            "opp_goals_conceded_5",
+            "opp_goals_conceded_10",
+            "opp_goals_conceded_38",
+            "opp_league_rank_1",
+            "opp_league_rank_3",
+            "opp_league_rank_5",
+            "opp_league_rank_10",
+            "opp_league_rank_38",
+            "opp_opponent_league_rank_1",
+            "opp_opponent_league_rank_3",
+            "opp_opponent_league_rank_5",
+            "opp_opponent_league_rank_10",
+            "opp_opponent_league_rank_38",
+            "is_home_num",
+            "status_league_rank",
+            "opp_status_league_rank",
+            "p_any_3",
+            "p_any_5",
+            "p_any_10",
+            "p60_3",
+            "p60_5",
+            "p60_10",
+            "e_minutes_3",
+            "e_minutes_5",
+            "e_minutes_10",
+            "ar_starts_3",
+            "ar_starts_5",
+            "ar_starts_10",
+            "ar_rest_days",
+            "ar_team_matches_14d",
+            "position_1",
+            "position_2",
+            "position_3",
+            "position_4",
+            "mkt_lambda_for",
+            "mkt_lambda_against",
+            "mkt_cs_prob"
+          ],
+          "omitted_features": [],
+          "train_rows": 76317,
+          "test_rows": 29725
+        }
+      }
+    },
+    "ablation": {
+      "passed": true,
+      "player_columns": [
+        "us_shots",
+        "us_xG",
+        "us_xGChain",
+        "us_xGBuildup",
+        "us_key_passes",
+        "us_xA"
+      ],
+      "team_columns": [
+        "xg",
+        "xga",
+        "deep",
+        "deep_allowed",
+        "ppda_att",
+        "ppda_def",
+        "ppda_allowed_att",
+        "ppda_allowed_def"
+      ],
+      "feature_bytes_identical": true,
+      "array_sha256": "86966d073c33ce4a2dfdc02efa46c765324724024ae6d8a318738d50926a8882",
+      "rows": 106042,
+      "features": 146,
+      "full_union_bytes_identical": true,
+      "full_union_sha256": "8982656c751dd10b7c1e30dae1f93789d22edc45e2753ab150c0af1b79ca8990",
+      "full_features": 198
+    },
+    "original_panels_canonical_sha256": "917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed",
+    "original_fpl_projection_exact": true,
+    "exact_control_guard": [
+      "X_control",
+      "y",
+      "minutes",
+      "season",
+      "gameweek",
+      "fixture",
+      "fpl_code",
+      "cutoff_ns",
+      "ts_ns",
+      "candidate",
+      "element",
+      "pos",
+      "n_history"
+    ],
+    "control_predictions_exact": [
+      {
+        "fold": "2022-23",
+        "bytes_identical": true,
+        "rows": 26505,
+        "array_bytes_sha256": "40105a62e11bac879e0cd38440ae07655d016679cb13989e740be8fbfe96d24a"
+      },
+      {
+        "fold": "2023-24",
+        "bytes_identical": true,
+        "rows": 29725,
+        "array_bytes_sha256": "42d2e8f1316c7569bafe8556fd15cfead7f43005b563235851fd7d3fe757e272"
+      }
+    ],
+    "shared_proof_sha256": "da6526b5c3cd8cfbd4c22fb3ebf3deef1abe5b7d2d6274c4cc4ce1f2a91d2d40"
+  },
+  "resources": {
+    "jobs": 6,
+    "fits": 4,
+    "threads": 2,
+    "max_seconds": 139.15599999995902,
+    "sum_guard_seconds": 244.63999999989755,
+    "peak_job_commit_bytes": 1683148800,
+    "package_bytes_including_reserve": 71805581,
+    "free_bytes": 859355918336,
+    "limits": {
+      "memory_bytes": 4294967296,
+      "seconds": 900,
+      "growth_bytes": 268435456,
+      "min_free_bytes": 5368709120
+    },
+    "all_guards_completed": true,
+    "all_processes_after_zero": true,
+    "package_size_observed_at": "numerical_batch_completion"
+  },
+  "development": {
+    "folds": {
+      "2022-23": {
+        "control": {
+          "candidate_fixture": {
+            "n": 7685,
+            "rmse": 2.965629114390763,
+            "mae": 2.1543116468863786,
+            "bias": -0.04189283191443923
+          },
+          "all_fixture": {
+            "n": 26505,
+            "rmse": 1.965855425497952,
+            "mae": 1.057028259925666,
+            "bias": 0.00663079492779222
+          },
+          "candidate_player_gw": {
+            "n": 7222,
+            "rmse": 3.065020483423453,
+            "mae": 2.2281486372323003,
+            "bias": -0.04457856733072079
+          },
+          "all_player_gw": {
+            "n": 24957,
+            "rmse": 2.036064439592689,
+            "mae": 1.0981033813277787,
+            "bias": 0.0070420811620440305
+          },
+          "ranking_weeks": 34,
+          "mean_within_gw_spearman": 0.3760935416009044,
+          "mean_within_gw_ndcg10": 0.45655785665444754,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 704,
+              "rmse": 2.9749047071047396,
+              "mae": 2.3422951068441296,
+              "bias": -0.1088998865912917
+            },
+            "2": {
+              "n": 2871,
+              "rmse": 2.8292792241377565,
+              "mae": 2.182234115193949,
+              "bias": 0.04517605954068671
+            },
+            "3": {
+              "n": 3372,
+              "rmse": 2.929075515518481,
+              "mae": 2.003515440583224,
+              "bias": -0.060006708776397445
+            },
+            "4": {
+              "n": 738,
+              "rmse": 3.5778105536997806,
+              "mae": 2.5553672638686944,
+              "bias": -0.2339278293353597
+            }
+          }
+        },
+        "fpl_native": {
+          "candidate_fixture": {
+            "n": 7685,
+            "rmse": 2.9542581756364172,
+            "mae": 2.1249199577053304,
+            "bias": -0.08271162691120137
+          },
+          "all_fixture": {
+            "n": 26505,
+            "rmse": 1.9552729208861923,
+            "mae": 1.0458195050182935,
+            "bias": -0.0009200045633710299
+          },
+          "candidate_player_gw": {
+            "n": 7222,
+            "rmse": 3.0537028894822287,
+            "mae": 2.198070471569678,
+            "bias": -0.08801424159686826
+          },
+          "all_player_gw": {
+            "n": 24957,
+            "rmse": 2.0249198012087666,
+            "mae": 1.0864944176475642,
+            "bias": -0.0009770693974495799
+          },
+          "ranking_weeks": 34,
+          "mean_within_gw_spearman": 0.3915485065903435,
+          "mean_within_gw_ndcg10": 0.4641908176049645,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 704,
+              "rmse": 2.966012386456382,
+              "mae": 2.299073313996104,
+              "bias": -0.17990139177436684
+            },
+            "2": {
+              "n": 2871,
+              "rmse": 2.8140307109497216,
+              "mae": 2.1567411829439638,
+              "bias": 0.014149374405468856
+            },
+            "3": {
+              "n": 3372,
+              "rmse": 2.918119662967832,
+              "mae": 1.9762207425181555,
+              "bias": -0.09476218235757534
+            },
+            "4": {
+              "n": 738,
+              "rmse": 3.5745799296908496,
+              "mae": 2.514420029686807,
+              "bias": -0.31175209757694505
+            }
+          }
+        }
+      },
+      "2023-24": {
+        "control": {
+          "candidate_fixture": {
+            "n": 7638,
+            "rmse": 3.022407244624807,
+            "mae": 2.155004306975747,
+            "bias": -0.005691881845261689
+          },
+          "all_fixture": {
+            "n": 29725,
+            "rmse": 1.9088257881806183,
+            "mae": 0.9587949209612978,
+            "bias": 0.01662701413392494
+          },
+          "candidate_player_gw": {
+            "n": 7385,
+            "rmse": 3.0944000157947382,
+            "mae": 2.1998879734602452,
+            "bias": -0.0058868779328515785
+          },
+          "all_player_gw": {
+            "n": 28742,
+            "rmse": 1.9518630622880042,
+            "mae": 0.9802283394192596,
+            "bias": 0.017195671669713967
+          },
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.40361357034468387,
+          "mean_within_gw_ndcg10": 0.41749850423955953,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 703,
+              "rmse": 2.5668812579103153,
+              "mae": 2.024585210372244,
+              "bias": 0.2233624248959958
+            },
+            "2": {
+              "n": 2914,
+              "rmse": 2.8838826308837593,
+              "mae": 2.12218758402697,
+              "bias": 0.06876683660109136
+            },
+            "3": {
+              "n": 3231,
+              "rmse": 3.09265711741514,
+              "mae": 2.1103511096516616,
+              "bias": -0.0825864267733378
+            },
+            "4": {
+              "n": 790,
+              "rmse": 3.558311310164854,
+              "mae": 2.574734732468304,
+              "bias": -0.1696812597302779
+            }
+          }
+        },
+        "fpl_native": {
+          "candidate_fixture": {
+            "n": 7638,
+            "rmse": 3.0089732091257146,
+            "mae": 2.1352982230329376,
+            "bias": -0.032619151492238166
+          },
+          "all_fixture": {
+            "n": 29725,
+            "rmse": 1.893264668973415,
+            "mae": 0.9494702164044354,
+            "bias": 0.010893108627691089
+          },
+          "candidate_player_gw": {
+            "n": 7385,
+            "rmse": 3.0797531944405896,
+            "mae": 2.1805869440650496,
+            "bias": -0.033736639011200414
+          },
+          "all_player_gw": {
+            "n": 28742,
+            "rmse": 1.9355878801886648,
+            "mae": 0.9709508471933799,
+            "bias": 0.011265661887068316
+          },
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.40704180176550364,
+          "mean_within_gw_ndcg10": 0.4246538142210202,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 703,
+              "rmse": 2.5809808149954545,
+              "mae": 2.0392797395829807,
+              "bias": 0.23207565771783129
+            },
+            "2": {
+              "n": 2914,
+              "rmse": 2.8690245096841696,
+              "mae": 2.111994764675005,
+              "bias": 0.0748059865192329
+            },
+            "3": {
+              "n": 3231,
+              "rmse": 3.078729837428304,
+              "mae": 2.083536883811658,
+              "bias": -0.12794583132216264
+            },
+            "4": {
+              "n": 790,
+              "rmse": 3.532764341735756,
+              "mae": 2.5183971578991278,
+              "bias": -0.27453915213732605
+            }
+          }
+        }
+      }
+    },
+    "metrics": {
+      "control": {
+        "player_gw": {
+          "n": 14607,
+          "rmse": 3.0799092007886055,
+          "mae": 2.213860624501649,
+          "bias": -0.02501684170579683,
+          "ranking_weeks": 69,
+          "mean_within_gw_spearman": 0.39005297647093745,
+          "mean_within_gw_ndcg10": 0.43674514166138834
+        },
+        "fixture": {
+          "n": 15323,
+          "rmse": 2.994065693329274,
+          "mae": 2.154656914638294,
+          "bias": -0.023847876185901867,
+          "ranking_weeks": 69,
+          "mean_within_gw_spearman": 0.3754562640383483,
+          "mean_within_gw_ndcg10": 0.39168183233207193
+        },
+        "all_player_gw": {
+          "n": 53699,
+          "rmse": 1.9914391236958255,
+          "mae": 1.0350116206891327,
+          "bias": 0.012476716786011876,
+          "ranking_weeks": 75,
+          "mean_within_gw_spearman": 0.6806238841125397,
+          "mean_within_gw_ndcg10": 0.40595509082468034
+        },
+        "all_fixture": {
+          "n": 56230,
+          "rmse": 1.9359170364785765,
+          "mae": 1.0050989339303638,
+          "bias": 0.011915120303966771,
+          "ranking_weeks": 75,
+          "mean_within_gw_spearman": 0.6768882091299007,
+          "mean_within_gw_ndcg10": 0.36326771166188404
+        },
+        "ndcg10": 0.43674514166138834,
+        "actual_minutes_diagnostics": {
+          "0_0": {
+            "n": 33501,
+            "rmse": 0.7637673536660379,
+            "mae": 0.3994836070679141,
+            "bias": 0.3994836070679141,
+            "ranking_weeks": 7,
+            "mean_within_gw_spearman": -0.023529929874523754,
+            "mean_within_gw_ndcg10": 0.0
+          },
+          "1_59": {
+            "n": 7035,
+            "rmse": 1.7077325131235488,
+            "mae": 1.1063592921939025,
+            "bias": 0.19779972093333595,
+            "ranking_weeks": 75,
+            "mean_within_gw_spearman": 0.02427041515140265,
+            "mean_within_gw_ndcg10": 0.33105582551385815
+          },
+          "60_90": {
+            "n": 15694,
+            "rmse": 3.297785501926365,
+            "mae": 2.2524770685572864,
+            "bias": -0.8987278031385343,
+            "ranking_weeks": 75,
+            "mean_within_gw_spearman": 0.19062623643396925,
+            "mean_within_gw_ndcg10": 0.40045225203652984
+          }
+        },
+        "cold_start": {
+          "n": 4921,
+          "rmse": 2.0020399759196748,
+          "mae": 1.1601353897035844,
+          "bias": 0.0895452123403641,
+          "ranking_weeks": 44,
+          "mean_within_gw_spearman": 0.29698436098834335,
+          "mean_within_gw_ndcg10": 0.49610914796954353
+        }
+      },
+      "fpl_native": {
+        "player_gw": {
+          "n": 14607,
+          "rmse": 3.0669010457143693,
+          "mae": 2.1892311581842,
+          "bias": -0.0605725975155951,
+          "ranking_weeks": 69,
+          "mean_within_gw_spearman": 0.39940742443281607,
+          "mean_within_gw_ndcg10": 0.44413581588847095
+        },
+        "fixture": {
+          "n": 15323,
+          "rmse": 2.9816572868846944,
+          "mae": 2.130093173823079,
+          "bias": -0.057742213137786186,
+          "ranking_weeks": 69,
+          "mean_within_gw_spearman": 0.38359616542072883,
+          "mean_within_gw_ndcg10": 0.403352170502802
+        },
+        "all_player_gw": {
+          "n": 53699,
+          "rmse": 1.9776075060556946,
+          "mae": 1.0246505601829157,
+          "bias": 0.005575763664238971,
+          "ranking_weeks": 75,
+          "mean_within_gw_spearman": 0.6955639199720453,
+          "mean_within_gw_ndcg10": 0.42395536688686564
+        },
+        "all_fixture": {
+          "n": 56230,
+          "rmse": 1.9227425161056333,
+          "mae": 0.9948861490864611,
+          "bias": 0.005324789845384465,
+          "ranking_weeks": 75,
+          "mean_within_gw_spearman": 0.6916476521085546,
+          "mean_within_gw_ndcg10": 0.3868218186724078
+        },
+        "ndcg10": 0.44413581588847095,
+        "actual_minutes_diagnostics": {
+          "0_0": {
+            "n": 33501,
+            "rmse": 0.7566271734279264,
+            "mae": 0.39444790127833784,
+            "bias": 0.39444790127833784,
+            "ranking_weeks": 7,
+            "mean_within_gw_spearman": -0.022154063615709502,
+            "mean_within_gw_ndcg10": 0.0
+          },
+          "1_59": {
+            "n": 7035,
+            "rmse": 1.7023250422031428,
+            "mae": 1.1116982319951625,
+            "bias": 0.19912942989294793,
+            "ranking_weeks": 75,
+            "mean_within_gw_spearman": 0.029565922146698783,
+            "mean_within_gw_ndcg10": 0.33851866925449237
+          },
+          "60_90": {
+            "n": 15694,
+            "rmse": 3.274856985709894,
+            "mae": 2.224241873347786,
+            "bias": -0.9121869343071566,
+            "ranking_weeks": 75,
+            "mean_within_gw_spearman": 0.22126016695910886,
+            "mean_within_gw_ndcg10": 0.4189716282312654
+          }
+        },
+        "cold_start": {
+          "n": 4921,
+          "rmse": 1.9311573709898429,
+          "mae": 1.0641974418600202,
+          "bias": 0.021045494334518078,
+          "ranking_weeks": 44,
+          "mean_within_gw_spearman": 0.3420823867365111,
+          "mean_within_gw_ndcg10": 0.5397259312531971
+        }
+      }
+    },
+    "points": {
+      "2022-23": {
+        "control": {
+          "totals": [
+            1696.0,
+            1224.0,
+            1551.0,
+            1398.0,
+            1358.0,
+            1492.0,
+            1318.0,
+            1607.0,
+            1403.0,
+            1397.0,
+            1378.0,
+            1452.0,
+            1254.0,
+            1379.0,
+            1273.0,
+            1496.0,
+            1557.0,
+            1689.0,
+            1572.0,
+            1583.0
+          ],
+          "deltas": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_total": 1453.85,
+          "mean_delta": 0.0,
+          "minimum_delta": 0.0,
+          "maximum_delta": 0.0
+        },
+        "fpl_native": {
+          "totals": [
+            1704.0,
+            1242.0,
+            1511.0,
+            1440.0,
+            1360.0,
+            1504.0,
+            1320.0,
+            1618.0,
+            1392.0,
+            1422.0,
+            1394.0,
+            1482.0,
+            1277.0,
+            1443.0,
+            1285.0,
+            1505.0,
+            1567.0,
+            1703.0,
+            1602.0,
+            1637.0
+          ],
+          "deltas": [
+            8.0,
+            18.0,
+            -40.0,
+            42.0,
+            2.0,
+            12.0,
+            2.0,
+            11.0,
+            -11.0,
+            25.0,
+            16.0,
+            30.0,
+            23.0,
+            64.0,
+            12.0,
+            9.0,
+            10.0,
+            14.0,
+            30.0,
+            54.0
+          ],
+          "mean_total": 1470.4,
+          "mean_delta": 16.55,
+          "minimum_delta": -40.0,
+          "maximum_delta": 64.0
+        }
+      },
+      "2023-24": {
+        "control": {
+          "totals": [
+            1074.0,
+            1510.0,
+            1279.0,
+            1325.0,
+            1238.0,
+            1500.0,
+            1449.0,
+            1078.0,
+            1562.0,
+            1497.0,
+            1379.0,
+            1414.0,
+            1142.0,
+            1705.0,
+            1462.0,
+            1582.0,
+            1290.0,
+            1300.0,
+            1482.0,
+            1309.0
+          ],
+          "deltas": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_total": 1378.85,
+          "mean_delta": 0.0,
+          "minimum_delta": 0.0,
+          "maximum_delta": 0.0
+        },
+        "fpl_native": {
+          "totals": [
+            1106.0,
+            1551.0,
+            1287.0,
+            1358.0,
+            1296.0,
+            1501.0,
+            1472.0,
+            1059.0,
+            1600.0,
+            1547.0,
+            1353.0,
+            1437.0,
+            1169.0,
+            1692.0,
+            1486.0,
+            1637.0,
+            1305.0,
+            1306.0,
+            1508.0,
+            1345.0
+          ],
+          "deltas": [
+            32.0,
+            41.0,
+            8.0,
+            33.0,
+            58.0,
+            1.0,
+            23.0,
+            -19.0,
+            38.0,
+            50.0,
+            -26.0,
+            23.0,
+            27.0,
+            -13.0,
+            24.0,
+            55.0,
+            15.0,
+            6.0,
+            26.0,
+            36.0
+          ],
+          "mean_total": 1400.75,
+          "mean_delta": 21.9,
+          "minimum_delta": -26.0,
+          "maximum_delta": 58.0
+        }
+      }
+    },
+    "paired": {
+      "fpl_native": {
+        "scope": "descriptive fixed-prediction uncertainty, not training or selection uncertainty",
+        "difference": "left_minus_right; negative error difference favours left",
+        "samples": 1000,
+        "block_length": 4,
+        "seed": 20261015,
+        "gameweeks": 69,
+        "contiguous_segments": [
+          3,
+          31,
+          35
+        ],
+        "status": "descriptive_interval",
+        "confidence": 0.95,
+        "rmse": {
+          "delta": -0.013008155074236694,
+          "lower": -0.0267285262934999,
+          "upper": 2.5534251917464218e-05
+        },
+        "mae": {
+          "delta": -0.024629466317449476,
+          "lower": -0.03647198646548876,
+          "upper": -0.0135028113929265
+        }
+      }
+    },
+    "relative_percent": {
+      "pooled": {
+        "player_gw": {
+          "rmse": -0.42235514835650134,
+          "mae": -1.1125120545017797
+        },
+        "fixture": {
+          "rmse": -0.41443333966336704,
+          "mae": -1.140030259496727
+        },
+        "ndcg10": 1.692216700789917,
+        "fixed_squad_points": 1.357362233911119,
+        "all_player_gw": {
+          "rmse": -0.694553876920001,
+          "mae": -1.0010574083524126
+        },
+        "all_fixture": {
+          "rmse": -0.6805312482247472,
+          "mae": -1.016097470521271
+        }
+      },
+      "2022-23": {
+        "candidate_player_gw": {
+          "rmse": -0.3692501894337452,
+          "mae": -1.3499173780427864
+        },
+        "candidate_fixture": {
+          "rmse": -0.38342416788289535,
+          "mae": -1.3643192814525196
+        },
+        "ndcg10": 1.671849654816926,
+        "fixed_squad_points": 1.1383567768339375,
+        "all_player_gw": {
+          "rmse": -0.5473617714256584,
+          "mae": -1.057183128438921
+        },
+        "all_fixture": {
+          "rmse": -0.5383155075648016,
+          "mae": -1.0604025769529346
+        }
+      },
+      "2023-24": {
+        "candidate_player_gw": {
+          "rmse": -0.4733331592356116,
+          "mae": -0.8773641943610744
+        },
+        "candidate_fixture": {
+          "rmse": -0.4444813161093353,
+          "mae": -0.914433622198374
+        },
+        "ndcg10": 1.7138528422978583,
+        "fixed_squad_points": 1.5882800884795323,
+        "all_player_gw": {
+          "rmse": -0.8338280698985789,
+          "mae": -0.946462355023947
+        },
+        "all_fixture": {
+          "rmse": -0.8152194560424153,
+          "mae": -0.9725442170170573
+        }
+      }
+    },
+    "pooled_fixed_squad_delta": 19.225,
+    "pooled_fixed_squad_points": {
+      "control": 1416.35,
+      "fpl_native": 1435.575
+    },
+    "gate": {
+      "passed": false,
+      "criteria": {
+        "pooled_player_gw_rmse_gain": {
+          "candidate": 3.0669010457143693,
+          "threshold": 3.0645096547846626,
+          "passed": false
+        },
+        "pooled_player_gw_mae_noninferiority": {
+          "candidate": 2.1892311581842,
+          "threshold": 2.224929927624157,
+          "passed": true
+        },
+        "pooled_fixture_rmse_gain": {
+          "candidate": 2.9816572868846944,
+          "threshold": 2.9790953648626277,
+          "passed": false
+        },
+        "pooled_fixture_mae_noninferiority": {
+          "candidate": 2.130093173823079,
+          "threshold": 2.1654301992114853,
+          "passed": true
+        },
+        "2022-23_candidate_player_gw_rmse_noninferiority": {
+          "candidate": 3.0537028894822287,
+          "threshold": 3.0803455858405697,
+          "passed": true
+        },
+        "2022-23_candidate_fixture_rmse_noninferiority": {
+          "candidate": 2.9542581756364172,
+          "threshold": 2.9804572599627166,
+          "passed": true
+        },
+        "2023-24_candidate_player_gw_rmse_noninferiority": {
+          "candidate": 3.0797531944405896,
+          "threshold": 3.1098720158737114,
+          "passed": true
+        },
+        "2023-24_candidate_fixture_rmse_noninferiority": {
+          "candidate": 3.0089732091257146,
+          "threshold": 3.0375192808479308,
+          "passed": true
+        },
+        "pooled_ndcg10_not_lower": {
+          "candidate": 0.44413581588847095,
+          "control": 0.43674514166138834,
+          "passed": true
+        },
+        "mean_fixed_squad_delta_nonnegative": {
+          "delta": 19.225,
+          "passed": true
+        }
+      }
+    },
+    "pooled_position_candidate_fixture": {
+      "control": {
+        "1": {
+          "n": 1407,
+          "rmse": 2.7785377899799397,
+          "mae": 2.1835530619118373,
+          "bias": 0.05711319441479439,
+          "ranking_weeks": 69,
+          "mean_within_gw_spearman": 0.24778994997554268,
+          "mean_within_gw_ndcg10": 0.6010778667147588
+        },
+        "2": {
+          "n": 5785,
+          "rmse": 2.8569143097523124,
+          "mae": 2.151987686184342,
+          "bias": 0.05705912338753531,
+          "ranking_weeks": 69,
+          "mean_within_gw_spearman": 0.33166020219602665,
+          "mean_within_gw_ndcg10": 0.3926856420265895
+        },
+        "3": {
+          "n": 6603,
+          "rmse": 3.010230626259459,
+          "mae": 2.0557925944163484,
+          "bias": -0.07105548491574538,
+          "ranking_weeks": 69,
+          "mean_within_gw_spearman": 0.36216465341742804,
+          "mean_within_gw_ndcg10": 0.44567769957739906
+        },
+        "4": {
+          "n": 1528,
+          "rmse": 3.567742444584848,
+          "mae": 2.56538054933577,
+          "bias": -0.2007113437411093,
+          "ranking_weeks": 69,
+          "mean_within_gw_spearman": 0.3516655243358404,
+          "mean_within_gw_ndcg10": 0.6221982828470286
+        }
+      },
+      "fpl_native": {
+        "1": {
+          "n": 1407,
+          "rmse": 2.780306584031339,
+          "mae": 2.1692688485999243,
+          "bias": 0.02594073032443579,
+          "ranking_weeks": 69,
+          "mean_within_gw_spearman": 0.25091669583565884,
+          "mean_within_gw_ndcg10": 0.610345919259584
+        },
+        "2": {
+          "n": 5785,
+          "rmse": 2.8418650162115604,
+          "mae": 2.1342016733785796,
+          "bias": 0.04470311125931647,
+          "ranking_weeks": 69,
+          "mean_within_gw_spearman": 0.3469247638758649,
+          "mean_within_gw_ndcg10": 0.40058516468092736
+        },
+        "3": {
+          "n": 6603,
+          "rmse": 2.9977852352896606,
+          "mae": 2.028733002478675,
+          "bias": -0.11099970618077415,
+          "ranking_weeks": 69,
+          "mean_within_gw_spearman": 0.3693879575898492,
+          "mean_within_gw_ndcg10": 0.4518883873840788
+        },
+        "4": {
+          "n": 1528,
+          "rmse": 3.5530220592777844,
+          "mae": 2.5164762674405594,
+          "bias": -0.2925124202881368,
+          "ranking_weeks": 69,
+          "mean_within_gw_spearman": 0.37271066657648955,
+          "mean_within_gw_ndcg10": 0.6303620097965703
+        }
+      }
+    },
+    "protocol_lf_sha256": "a6760823ffd6b145fc7e332d21a83ffde8bf26eea6e0448fa987525987b1d188",
+    "method_fold_fits": 4,
+    "stage": "B"
+  }
+}
