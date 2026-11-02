@@ -1,0 +1,381 @@
+{
+  "schema_version": 1,
+  "package_id": "component-poisson",
+  "brief_revision": "cpo-r2",
+  "brief_sha256": "555f2a4b7b260c35a03ad3e3fd3b1dfc3feb6e2b1021c7fe044ab0b45c9b030c",
+  "base": "5d888e7f3b9fe363f255e3cf5d1525946c527b96",
+  "hypothesis": "H5: fixed component decomposition on unchanged CORE inputs passes unchanged I4 gate and audit2-7",
+  "rationale": "Input-side ideas plateau at0.42-0.46%; denoising0.165%; hgb15 adds0.038%. Five distribution-matched heads may learn rare event means efficiently, but add variance. Modest prior; adaptive selection and repeatedly inspected seasons; only prospective2026/27 untouched.",
+  "methods": [
+    "control",
+    "components"
+  ],
+  "features": {
+    "control": [
+      "home",
+      "n_history",
+      "days_since_last",
+      "last_minutes",
+      "last_points",
+      "last5_minutes",
+      "last5_points",
+      "pos_1",
+      "pos_2",
+      "pos_3",
+      "pos_4",
+      "ew4_minutes",
+      "ew4_points_core",
+      "ew4_goals_scored",
+      "ew4_assists",
+      "ew4_clean_sheets",
+      "ew4_bonus",
+      "ew4_bps",
+      "ew4_threat",
+      "ew4_creativity",
+      "ew4_saves",
+      "ew4_expected_goals",
+      "ew4_expected_assists",
+      "ew4_expected_goals_conceded",
+      "ew4_played",
+      "ew4_sixty",
+      "ew12_minutes",
+      "ew12_points_core",
+      "ew12_goals_scored",
+      "ew12_assists",
+      "ew12_clean_sheets",
+      "ew12_bonus",
+      "ew12_bps",
+      "ew12_threat",
+      "ew12_creativity",
+      "ew12_saves",
+      "ew12_expected_goals",
+      "ew12_expected_assists",
+      "ew12_expected_goals_conceded",
+      "ew12_played",
+      "ew12_sixty",
+      "team_ew4_gf",
+      "team_ew4_ga",
+      "team_ew12_gf",
+      "team_ew12_ga",
+      "opp_ew4_gf",
+      "opp_ew4_ga",
+      "opp_ew12_gf",
+      "opp_ew12_ga"
+    ],
+    "components": [
+      "home",
+      "n_history",
+      "days_since_last",
+      "last_minutes",
+      "last_points",
+      "last5_minutes",
+      "last5_points",
+      "pos_1",
+      "pos_2",
+      "pos_3",
+      "pos_4",
+      "ew4_minutes",
+      "ew4_points_core",
+      "ew4_goals_scored",
+      "ew4_assists",
+      "ew4_clean_sheets",
+      "ew4_bonus",
+      "ew4_bps",
+      "ew4_threat",
+      "ew4_creativity",
+      "ew4_saves",
+      "ew4_expected_goals",
+      "ew4_expected_assists",
+      "ew4_expected_goals_conceded",
+      "ew4_played",
+      "ew4_sixty",
+      "ew12_minutes",
+      "ew12_points_core",
+      "ew12_goals_scored",
+      "ew12_assists",
+      "ew12_clean_sheets",
+      "ew12_bonus",
+      "ew12_bps",
+      "ew12_threat",
+      "ew12_creativity",
+      "ew12_saves",
+      "ew12_expected_goals",
+      "ew12_expected_assists",
+      "ew12_expected_goals_conceded",
+      "ew12_played",
+      "ew12_sixty",
+      "team_ew4_gf",
+      "team_ew4_ga",
+      "team_ew12_gf",
+      "team_ew12_ga",
+      "opp_ew4_gf",
+      "opp_ew4_ga",
+      "opp_ew12_gf",
+      "opp_ew12_ga"
+    ]
+  },
+  "hgb_parameters": {
+    "categorical_features": "from_dtype",
+    "early_stopping": false,
+    "interaction_cst": null,
+    "l2_regularization": 20.0,
+    "learning_rate": 0.05,
+    "loss": "squared_error",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 60,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "quantile": null,
+    "random_state": 20260921,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "head_specs": {
+    "G": {
+      "target": "goals_scored",
+      "loss": "poisson"
+    },
+    "A": {
+      "target": "assists",
+      "loss": "poisson"
+    },
+    "CS": {
+      "target": "clean_sheets",
+      "loss": "poisson"
+    },
+    "B": {
+      "target": "bonus",
+      "loss": "poisson"
+    },
+    "R": {
+      "target": "points_core minus weightedG,A,CS,B",
+      "loss": "squared_error"
+    }
+  },
+  "rule_table": {
+    "goal": {
+      "1": 6,
+      "2": 6,
+      "3": 5,
+      "4": 4
+    },
+    "assist": 3,
+    "clean_sheet": {
+      "1": 4,
+      "2": 4,
+      "3": 1,
+      "4": 0
+    },
+    "bonus": 1,
+    "appearance": "2 if minutes>=60 else1 if>0 else0",
+    "saves": "floor(saves/3)",
+    "penalties_saved": 5,
+    "penalties_missed": -2,
+    "goals_conceded": "-floor(gc/2) for GK,DEF",
+    "yellow_cards": -1,
+    "red_cards": -3,
+    "own_goals": -2
+  },
+  "prediction": "mG*G+3*A+mCS*CS+B+R; then clip[0,20]",
+  "threads": 2,
+  "training_half_life_days": 730.5,
+  "clip": [
+    0,
+    20
+  ],
+  "omission": "training-only all-NaN features, same columns all heads",
+  "cohort": "unchanged I4 candidate predicate, fixture and DGW player-GW evaluation, panels",
+  "cutoff": "deadline minus3h; original source clock and training-prefix guard",
+  "sidecar": {
+    "source": "same pre-export d=scope(history) as unchanged select_control; same index/order; original bridge mapping",
+    "cache_sha256": {
+      "history": "543924f895bb82e78de64275208ad313239e105624eed91c7c00917d7255970b",
+      "features": "d62c997a9d771fa55343438ece4846545cea22236412f83e6bb7d4888a9c3c5a"
+    },
+    "accepted_receipt_sha256": "4f70c27bcac3e2a00588854f509812ef2cc47a6772b39e1b24442dcbc718c2b0",
+    "columns": [
+      "season",
+      "GW",
+      "element",
+      "fixture",
+      "fpl_code",
+      "total_points",
+      "points_core",
+      "minutes",
+      "goals_scored",
+      "assists",
+      "clean_sheets",
+      "bonus"
+    ],
+    "alignment": "after unchanged control CSV roundtrip keys,total_points,points_core,minutes exactly equal rowwise",
+    "boundary": "components carried unchanged as finite integers; FPL clean_sheets, never derived or imputed",
+    "feature_use": "none"
+  },
+  "frozen_inputs": {
+    "players": "db737482eb814ca7d18a21d520c5ab3f4df1f6b021d61e4a700f0f45bf04bbc9",
+    "teams": "f6fd446b1f62bc1618c8f0eb5f4990732599566735d8b02a0fd855eecb7dd1a6",
+    "control_logical": "3d3c2726400b03a32014826bbcd7fb67988b23627ac57b6c8b3f9c5768f6ae09",
+    "provenance": "fc83c5fc16b3210508be757eb37712a5cb3458e2240265784b2c2312b32d6cf8",
+    "original_panels_canonical": "917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed"
+  },
+  "csv_export_boundary": "unchanged rmc_confirmation.select_control original to_csv/read_csv; no extra component features",
+  "development": {
+    "seasons": [
+      "2020-21",
+      "2021-22",
+      "2022-23",
+      "2023-24"
+    ],
+    "folds": [
+      "2022-23",
+      "2023-24"
+    ],
+    "panels_canonical_sha256": "917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed",
+    "control_parity": "exact PR56 prediction bytes both folds"
+  },
+  "stage_A": {
+    "fits": 0,
+    "checks": [
+      "input/cache hashes from accepted receipts",
+      "all-gap schema preflight",
+      "finite nonnegative integer G,A,CS,B;CS in0/1 and CS1 implies minutes>=60",
+      "five weighted targets sum exactly to points_core",
+      "every played I4 row full scoring formula equals points_core",
+      "per-season/position counts and R mean/share",
+      "sidecar G/A/B equals I4; FPL CS equals I4 minutes>=60 and gc0; counts",
+      "PR56 parity references"
+    ],
+    "failure": "STOP architect; no rule-table adaptation"
+  },
+  "fit_order": [
+    {
+      "stage": "B",
+      "fold": "2022-23",
+      "method": "control"
+    },
+    {
+      "stage": "B",
+      "fold": "2022-23",
+      "method": "components"
+    },
+    {
+      "stage": "B",
+      "fold": "2023-24",
+      "method": "control"
+    },
+    {
+      "stage": "B",
+      "fold": "2023-24",
+      "method": "components"
+    },
+    {
+      "stage": "C",
+      "fold": "2024-25",
+      "method": "control"
+    },
+    {
+      "stage": "C",
+      "fold": "2024-25",
+      "method": "components"
+    },
+    {
+      "stage": "C",
+      "fold": "2025-26",
+      "method": "control"
+    },
+    {
+      "stage": "C",
+      "fold": "2025-26",
+      "method": "components"
+    }
+  ],
+  "gate_B": {
+    "pooled_player_gw_fixture_rmse_ratio_max": 0.995,
+    "pooled_player_gw_fixture_mae_ratio_max": 1.005,
+    "each_fold_player_gw_fixture_rmse_ratio_max": 1.005,
+    "ndcg10": ">=control",
+    "mean_fixed_squad_delta": ">=0",
+    "pass_next": "StageC",
+    "fail_next": "StageE"
+  },
+  "descriptive": [
+    "G/A/CS/B predicted and actual means by fold/position",
+    "each head mean points contribution",
+    "paired4GW circular block1000 seed20261015 interval"
+  ],
+  "stage_C": {
+    "folds": [
+      {
+        "train": [
+          "2020-21",
+          "2021-22",
+          "2022-23",
+          "2023-24"
+        ],
+        "test": "2024-25"
+      },
+      {
+        "train": [
+          "2020-21",
+          "2021-22",
+          "2022-23",
+          "2023-24",
+          "2024-25"
+        ],
+        "test": "2025-26"
+      }
+    ],
+    "panels_2024_canonical_sha256": "a13bd4868a27e6554c77fe91df18d7d5bb3212c5b0e6138896929a2ab9ce2afb",
+    "panels_2025": "20 points_replay.make_squads hashed before fits",
+    "admission": [
+      "local inputs only; missing=>STOP",
+      "380/380matches",
+      "points_core and component integrity/sidecar alignment",
+      "I4crosscheck where rows exist",
+      "finite dc_rate4 nonGK candidatesGW28-38"
+    ],
+    "retrievals": 0,
+    "gates": {
+      "2_audit_rmse": "pooled playerGW+fixture RMSE<=.995control",
+      "3_audit_season_stability": "each seasonRMSE<=1.005control",
+      "4_audit_mae": "pooledMAE<=1.005control",
+      "5_audit_block_interval": "4GW circular bootstrap1000seed20261015 upper95%<0; descriptive",
+      "6_fixed_squad_points": "40panel mean delta>=0",
+      "7_full_scoring": "2025/26 GW28-38 candidates target total_points; same2*dc_rate4 nonGK and0GK both methods; playerGW+fixtureRMSE<=1.005control"
+    }
+  },
+  "stage_D": "not authorised; gate8 2026/27,gate9 integrity,artifact/registry/live/shadow/weekly excluded",
+  "stage_E": "public report all gates/headspecs/limits; approved1.0.0 unchanged; READY exact-headCI; STOP beforemerge return73; explicit userapproval+architectreview for later squash/tag/cleanup; no consumer notes",
+  "resources": {
+    "threads": 2,
+    "memory_bytes": 4294967296,
+    "seconds_per_job": 900,
+    "max_growth_bytes": 268435456,
+    "min_free_bytes": 5368709120,
+    "serial": true,
+    "runtime": "legacy",
+    "guard": "windows_worker_guard.run",
+    "identity": "default sandbox"
+  },
+  "stop": "ambiguity,missing source/gaps,StageAfailure,guardfailure or unexpectedmutatingfailure=>stop; no real-runretry; es5 tooling corrections only; return73 premergeorblocker",
+  "exclusions": [
+    "us_* reads or Understat",
+    "retrieval",
+    "2026/27",
+    "otherlosses/heads/capacities/features/grid/seeds/blends/calibration",
+    "post-outcome specs/rule/gate changes",
+    "imputation/derivedCS",
+    "artifact/registry/default/promotion/product changes",
+    "helddependencies",
+    "merge/tag/cleanup beforeexplicitapproval+review",
+    "config/settings/ACL/elevation/tempdeletion/chmod",
+    "weekly/messaging/agents/model switch/paid/cloud/uploads"
+  ]
+}
