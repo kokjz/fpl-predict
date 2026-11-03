@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Raised F kicking the football bowl of P towards a goal">
+<rect width="512" height="512" fill="#17363D"/>
+<g transform="translate(23 48) scale(.8)">
+<g fill="none" stroke="#426269" stroke-width="12" stroke-linejoin="miter">
+<path d="M256 232V128H464V232"/>
+<path d="M256 128L272 112H480V216L464 232M464 128L480 112M272 112V216H480" stroke-width="6"/>
+</g>
+<g fill="none" stroke-width="24" stroke-linecap="square" stroke-linejoin="miter">
+<path d="M112 288V128H184M112 208H176L208 240" stroke="#F4F0E5"/>
+<path d="M216 272V400" stroke="#E6AE53"/>
+</g>
+<circle cx="272" cy="272" r="56" fill="#F4F0E5"/>
+<clipPath id="ball"><circle cx="272" cy="272" r="56"/></clipPath>
+<g clip-path="url(#ball)" fill="#17363D" stroke="#17363D" stroke-width="3" stroke-linejoin="round">
+<path d="M272 250L293 265L285 290H259L251 265Z"/>
+<path d="M250 219L264 229L260 244L239 248L229 235ZM315 231L311 252L326 263L340 251ZM325 300L304 301L297 321L315 337ZM255 327L250 306L229 299L218 316Z"/>
+<path d="M272 250L260 244M293 265L311 252M285 290L304 301M259 290L250 306M251 265L239 248" fill="none"/>
+</g>
+</g>
+</svg>
