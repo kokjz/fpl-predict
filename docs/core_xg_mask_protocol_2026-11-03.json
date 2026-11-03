@@ -1,0 +1,339 @@
+{
+  "package": "core-xg-mask",
+  "revision": "cxm-r1",
+  "date": "2026-11-03",
+  "hypothesis": "H7: corrected CORE does no harm",
+  "base": "3515ece9848cb8fffd0c91dca43adce9f1dca20f",
+  "approved_model_sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+  "fields": [
+    "expected_goals",
+    "expected_assists",
+    "expected_goals_conceded"
+  ],
+  "columns": [
+    "ew4_expected_goals",
+    "ew4_expected_assists",
+    "ew4_expected_goals_conceded",
+    "ew12_expected_goals",
+    "ew12_expected_assists",
+    "ew12_expected_goals_conceded"
+  ],
+  "seasons": [
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "masking": {
+    "scope": "2022-23 through 2025-26; independently per field",
+    "rule": "Every history row finite and exactly zero, including zero-minute rows, and sum(team_gf)>0; mask whole season-GW field to NaN",
+    "expected": {
+      "expected_goals": [
+        {
+          "season": "2022-23",
+          "GW": 1
+        },
+        {
+          "season": "2022-23",
+          "GW": 2
+        },
+        {
+          "season": "2022-23",
+          "GW": 3
+        },
+        {
+          "season": "2022-23",
+          "GW": 4
+        },
+        {
+          "season": "2022-23",
+          "GW": 5
+        },
+        {
+          "season": "2022-23",
+          "GW": 6
+        },
+        {
+          "season": "2022-23",
+          "GW": 8
+        },
+        {
+          "season": "2022-23",
+          "GW": 9
+        },
+        {
+          "season": "2022-23",
+          "GW": 10
+        },
+        {
+          "season": "2022-23",
+          "GW": 11
+        },
+        {
+          "season": "2022-23",
+          "GW": 12
+        },
+        {
+          "season": "2022-23",
+          "GW": 13
+        },
+        {
+          "season": "2022-23",
+          "GW": 14
+        },
+        {
+          "season": "2022-23",
+          "GW": 15
+        }
+      ],
+      "expected_assists": [
+        {
+          "season": "2022-23",
+          "GW": 1
+        },
+        {
+          "season": "2022-23",
+          "GW": 2
+        },
+        {
+          "season": "2022-23",
+          "GW": 3
+        },
+        {
+          "season": "2022-23",
+          "GW": 4
+        },
+        {
+          "season": "2022-23",
+          "GW": 5
+        },
+        {
+          "season": "2022-23",
+          "GW": 6
+        },
+        {
+          "season": "2022-23",
+          "GW": 8
+        },
+        {
+          "season": "2022-23",
+          "GW": 9
+        },
+        {
+          "season": "2022-23",
+          "GW": 10
+        },
+        {
+          "season": "2022-23",
+          "GW": 11
+        },
+        {
+          "season": "2022-23",
+          "GW": 12
+        },
+        {
+          "season": "2022-23",
+          "GW": 13
+        },
+        {
+          "season": "2022-23",
+          "GW": 14
+        },
+        {
+          "season": "2022-23",
+          "GW": 15
+        }
+      ],
+      "expected_goals_conceded": [
+        {
+          "season": "2022-23",
+          "GW": 1
+        },
+        {
+          "season": "2022-23",
+          "GW": 2
+        },
+        {
+          "season": "2022-23",
+          "GW": 3
+        },
+        {
+          "season": "2022-23",
+          "GW": 4
+        },
+        {
+          "season": "2022-23",
+          "GW": 5
+        },
+        {
+          "season": "2022-23",
+          "GW": 6
+        },
+        {
+          "season": "2022-23",
+          "GW": 8
+        },
+        {
+          "season": "2022-23",
+          "GW": 9
+        },
+        {
+          "season": "2022-23",
+          "GW": 10
+        },
+        {
+          "season": "2022-23",
+          "GW": 11
+        },
+        {
+          "season": "2022-23",
+          "GW": 12
+        },
+        {
+          "season": "2022-23",
+          "GW": 13
+        },
+        {
+          "season": "2022-23",
+          "GW": 14
+        },
+        {
+          "season": "2022-23",
+          "GW": 15
+        }
+      ]
+    },
+    "mismatch": "STOP, never adjust"
+  },
+  "rebuild": {
+    "builder": "unchanged fpl_model.FeatureStore.player",
+    "target_season": "2022-23",
+    "columns_only": 6,
+    "csv_boundary": "same rmc_confirmation.select_control to_csv/read_csv; no precision overrides",
+    "unmasked_identity": "exact control bytes before fits",
+    "non_target": "all 49 columns byte identical",
+    "prior": "existing PRIORS via ew"
+  },
+  "control": {
+    "features": "49 unchanged CORE names",
+    "estimator": "hgb7",
+    "target": "points_core",
+    "clip": [
+      0,
+      20
+    ],
+    "weights": "unchanged sample_weights",
+    "cutoff": "deadline minus 3h",
+    "parity": {
+      "2023-24": "PR56 control prediction bytes",
+      "2024-25": "accepted PR50 confirmation prediction bytes",
+      "2025-26": "record hash"
+    }
+  },
+  "folds": {
+    "B": [
+      "2023-24",
+      "2024-25"
+    ],
+    "C": [
+      "2025-26"
+    ]
+  },
+  "fit_order": [
+    {
+      "fold": "2023-24",
+      "method": "control"
+    },
+    {
+      "fold": "2023-24",
+      "method": "corrected"
+    },
+    {
+      "fold": "2024-25",
+      "method": "control"
+    },
+    {
+      "fold": "2024-25",
+      "method": "corrected"
+    },
+    {
+      "fold": "2025-26",
+      "method": "control"
+    },
+    {
+      "fold": "2025-26",
+      "method": "corrected"
+    }
+  ],
+  "gate": {
+    "pooled_rmse_ratio": 1.0,
+    "pooled_mae_ratio": 1.005,
+    "per_fold_rmse_ratio": 1.005,
+    "units": [
+      "player_gw",
+      "fixture"
+    ],
+    "ndcg10": ">= control",
+    "mean_fixed_squad_delta": ">=0",
+    "C": "same pooled criteria on 2025-26; no additional full-scoring gate"
+  },
+  "descriptive": {
+    "bootstrap": {
+      "draws": 1000,
+      "block_gameweeks": 4,
+      "seed": 20261015
+    },
+    "position_relative_rmse": true,
+    "full_scoring": "2025-26 GW28-38 total_points; same 2*dc_rate4 term both arms"
+  },
+  "frozen_inputs": {
+    "players": "db737482eb814ca7d18a21d520c5ab3f4df1f6b021d61e4a700f0f45bf04bbc9",
+    "teams": "f6fd446b1f62bc1618c8f0eb5f4990732599566735d8b02a0fd855eecb7dd1a6",
+    "control_logical": "3d3c2726400b03a32014826bbcd7fb67988b23627ac57b6c8b3f9c5768f6ae09",
+    "provenance": "fc83c5fc16b3210508be757eb37712a5cb3458e2240265784b2c2312b32d6cf8",
+    "original_panels_canonical": "917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed"
+  },
+  "admission": [
+    "hashes and per-season schema",
+    "exact detected sets per field and row counts",
+    "unmasked rebuild identity",
+    "change census: rows/share/mean absolute change/last changed GW",
+    "non-2022-23 all-feature byte identity",
+    "key and UTC cutoff alignment",
+    "control export parity",
+    "training prefix",
+    "panels and shared proof"
+  ],
+  "confirmation_admission": [
+    "380/380 local matches",
+    "points_core reconciliation",
+    "same detection and identity; no 2025-26 unpublished GW",
+    "20 make_squads panels hashed before fits"
+  ],
+  "resources": {
+    "threads": 2,
+    "memory_bytes": 4294967296,
+    "seconds": 900,
+    "growth_bytes": 268435456,
+    "min_free_bytes": 5368709120,
+    "serial": true,
+    "admission_jobs": 1,
+    "builds_per_stage": 1,
+    "fit_jobs_B": 4,
+    "fit_jobs_C": 2,
+    "retries": 0,
+    "retrievals": 0
+  },
+  "outcome": "ADOPT_FOR_RESEARCH iff B and C pass, else NOT_ADOPTED; adoption only via separately briefed package",
+  "limits": [
+    "inspected seasons, no untouched holdout claim",
+    "research only; no artifact, promotion, registry, defaults, fpl_model or control-export changes",
+    "no Understat or retrieval or 2026-27",
+    "Stage A ambiguity/failure stops",
+    "Gate B fail skips C and goes E",
+    "premerge boundary; no merge/tag/delete/force"
+  ],
+  "publication": "results and status; approved1.0.0 unchanged; architect_premerge_review PENDING; exact-head CI; PR ready; stop handover93"
+}
