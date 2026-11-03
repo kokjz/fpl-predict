@@ -1,0 +1,159 @@
+{
+  "package": "fpl-crowd-signal",
+  "revision": "fcs-r1",
+  "date": "2026-11-03",
+  "base": "7c103f3e657d52bfcdb44c5c7241f90edd5c0a7e",
+  "hypothesis": "H8: corrected CORE plus six FPL crowd features passes unchanged I4 improvement gate and audit gates 2-7",
+  "rationale": "Team-strength routes plateau; ownership/transfers/price excluded by I4 and not previously tested; moderate uncertain prior, lag loses late news; inspected seasons are not untouched holdouts",
+  "approved_model_sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+  "registry_sha256": "2c4d1e17820ea043b1207324b3f2d3316b2422acd0c236326e688b50b42804c9",
+  "seasons": [
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "fields": [
+    "selected",
+    "transfers_in",
+    "transfers_out",
+    "transfers_balance",
+    "value"
+  ],
+  "new_features": [
+    "crowd_sel_pct_last",
+    "crowd_tb_pct_last",
+    "crowd_tb_share_last",
+    "crowd_ew4_tb_pct",
+    "crowd_value",
+    "crowd_value_change"
+  ],
+  "definitions": {
+    "eligibility": "same player and season; earlier GW only; ts < target cutoff minus 3 hours, exactly FeatureStore.player timestamp eligibility; deduplicate player/season/GW after consistency check; latest eligible GW is L",
+    "percentile": "average-ties rank percentile among all deduplicated players in same season/GW (pandas rank(method=average,pct=True))",
+    "crowd_sel_pct_last": "selected percentile at L; fallback 0.5",
+    "crowd_tb_pct_last": "transfers_balance percentile at L; fallback 0.5",
+    "crowd_tb_share_last": "clip(transfers_balance/(selected+1000),-1,1) at L; fallback 0",
+    "crowd_ew4_tb_pct": "fpl_model.ew of eligible earlier-GW transfers_balance percentiles in chronological order; half-life4 prior0.5 prior_mass2; empty prior0.5",
+    "crowd_value": "target row value in tenths of million pounds; pre-deadline",
+    "crowd_value_change": "target value minus first chronological history-row value in same player/season; 0 on first row"
+  },
+  "control": {
+    "features": "49 corrected CORE using unchanged core_xg_mask tolerance identity and splice, exact PR60 corrected prediction bytes for every fold",
+    "estimator": "hgb7",
+    "target": "points_core",
+    "clip": [
+      0,
+      20
+    ],
+    "weights": "unchanged sample_weights",
+    "cohort": "unchanged I4",
+    "alignment": "key-based, CSV exporter roundtrip then UTC restoration",
+    "panels_2024_25": "a13bd4868a27e6554c77fe91df18d7d5bb3212c5b0e6138896929a2ab9ce2afb"
+  },
+  "folds": {
+    "B": [
+      "2023-24",
+      "2024-25"
+    ],
+    "C": [
+      "2025-26"
+    ]
+  },
+  "fit_order": [
+    {
+      "fold": "2023-24",
+      "method": "control"
+    },
+    {
+      "fold": "2023-24",
+      "method": "crowd"
+    },
+    {
+      "fold": "2024-25",
+      "method": "control"
+    },
+    {
+      "fold": "2024-25",
+      "method": "crowd"
+    },
+    {
+      "fold": "2025-26",
+      "method": "control"
+    },
+    {
+      "fold": "2025-26",
+      "method": "crowd"
+    }
+  ],
+  "gate": {
+    "pooled_rmse_ratio": 0.995,
+    "pooled_mae_ratio": 1.005,
+    "per_fold_rmse_ratio": 1.005,
+    "units": [
+      "player_gw",
+      "fixture"
+    ],
+    "ndcg10": ">= control",
+    "mean_fixed_squad_delta": ">=0",
+    "C": "unchanged fpl_native_combination audit_gates: 2 RMSE .995 both units; 3 fold player-GW RMSE1.005; 4 player-GW MAE1.005; 5 descriptive block interval; 6 fixed squad >=0; 7 full scoring RMSE1.005 both units, GW28-38 same DC term"
+  },
+  "admission": [
+    "all five fields numeric in every season, per-season NaN counts; no NaN used",
+    "balance=in-out, selected>=0, value35..160, all five DGW-identical; any violation STOP",
+    "synthetic own-GW exclusion; real every used row ts<cutoff-3h; within-GW value changes count",
+    "descriptive per season/position distributions, fallback shares, Spearman with points_core only reported",
+    "corrected control receipt, splice and identity; export, prefix, key/cutoff alignment, shared proof and panels; all49 CORE bytes equal between arms"
+  ],
+  "confirmation_admission": [
+    "380/380 local matches",
+    "points_core reconciliation",
+    "crowd checks",
+    "finite non-GK candidate dc_rate4 GW28-38",
+    "20 panels hashed before fits"
+  ],
+  "frozen_inputs": {
+    "players": "db737482eb814ca7d18a21d520c5ab3f4df1f6b021d61e4a700f0f45bf04bbc9",
+    "teams": "f6fd446b1f62bc1618c8f0eb5f4990732599566735d8b02a0fd855eecb7dd1a6",
+    "control_logical": "3d3c2726400b03a32014826bbcd7fb67988b23627ac57b6c8b3f9c5768f6ae09",
+    "provenance": "fc83c5fc16b3210508be757eb37712a5cb3458e2240265784b2c2312b32d6cf8",
+    "original_panels_canonical": "917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed"
+  },
+  "descriptive": {
+    "bootstrap": {
+      "draws": 1000,
+      "block_gameweeks": 4,
+      "seed": 20261015
+    },
+    "position_relative_rmse": true
+  },
+  "resources": {
+    "threads": 2,
+    "memory_bytes": 4294967296,
+    "seconds": 900,
+    "growth_bytes": 268435456,
+    "min_free_bytes": 5368709120,
+    "serial": true,
+    "admission_jobs": 1,
+    "fit_jobs_B": 4,
+    "fit_jobs_C": 2,
+    "retries": 0,
+    "retrievals": 0
+  },
+  "stops": [
+    "A failure or ambiguity STOP return100",
+    "B fail skips C -> E",
+    "C only B pass; any real worker/guard failure STOP no retry",
+    "E ready with exact-head CI, review PENDING; return100 before merge"
+  ],
+  "exclusions": [
+    "same-GW selected/transfers, extra features/lags/windows/fallbacks/news/status/chance",
+    "Understat, betting-market inputs, retrieval, 2026-27 scoring",
+    "fpl_model, core_xg_mask, control exporter or prior studies changes",
+    "artifact/registry/default/promotion/live ingestion/dependency/settings/elevation changes",
+    "merge/tag/delete/forcepush/connector publication/agents/messaging/paid/cloud/uploads"
+  ],
+  "publication": "results and status, approved1.0.0 unchanged; no consumer release notes; PR ready exact-head CI then mandatory premerge handover100"
+}
