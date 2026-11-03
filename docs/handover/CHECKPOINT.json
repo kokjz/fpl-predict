@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "status": "fpl_native_capacity_development_fail_premerge_review_pending",
-  "updated": "2026-11-02 Asia/Singapore",
+  "status": "component_poisson_development_fail_premerge_review_pending",
+  "updated": "2026-11-03 Asia/Singapore",
   "repository": "https://github.com/kokjz/fpl-predict",
   "reviewed_engine_main": "cf19ff2446da8b5b9cdd4444417e75ace9ffd642",
   "research": {
@@ -41,7 +41,7 @@
     "source": "Private transfer registry; not research file dates"
   },
   "remaining_work": [
-    "Architect pre-merge review of PR57; no merge, tag or cleanup at this boundary."
+    "Architect pre-merge review of PR58; no merge, tag or cleanup at this boundary."
   ],
   "privacy": "Only engine/research context is public; full private transfer remains outside repository",
   "research_links": {
@@ -244,5 +244,55 @@
     "pr": 57,
     "branch": "feat/fpl-native-capacity",
     "results": "../FPL_NATIVE_CAPACITY_RESULTS_2026-11-02.md"
+  },
+  "component_poisson": {
+    "package_id": "component-poisson",
+    "date": "2026-11-03",
+    "status": "development_gate_failed_premerge",
+    "architect_scientific_review": "ACCEPTED",
+    "architect_premerge_review": "ACCEPTED 2026-11-03 (handover 81 review)",
+    "numerical_source": "e495ff9d88d25e27fafe8fdfc5af959e310c8d6c",
+    "freeze_commit": "038bcf5c04372153f345f69b075fda236f3068dc",
+    "protocol_lf_sha256": "2916312d24f9fc5033edaca494adb1d4b069cbf55ca5fa154ef2420f1ff8346d",
+    "stage_A": true,
+    "stage_B": false,
+    "stage_B_criteria_passed": 7,
+    "stage_B_criteria_total": 10,
+    "stage_C": "not_run_gate_B_failed",
+    "stage_C_gates": {
+      "2": "not_evaluated",
+      "3": "not_evaluated",
+      "4": "not_evaluated",
+      "5": "not_evaluated",
+      "6": "not_evaluated",
+      "7": "not_evaluated"
+    },
+    "fits": {
+      "B": 4,
+      "C": 0
+    },
+    "numerical_heads_B": 12,
+    "refits": 0,
+    "stage_A_reruns": 0,
+    "dataset_retrieval_attempts": 0,
+    "approved_forecaster": {
+      "version": "1.0.0",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233"
+    },
+    "production_approved": false,
+    "registry_changed": false,
+    "weekly_defaults_changed": false,
+    "limitations": [
+      "Architecture selected adaptively after earlier input/capacity studies",
+      "Development seasons repeatedly inspected; forking-path risk",
+      "No candidate audit on 2024/25 or 2025/26",
+      "Historical source publication clocks unmodelled",
+      "Fixed squads are not transfer/chip strategy outcomes",
+      "Fixed-prediction bootstrap excludes training/selection uncertainty",
+      "No current-season, integrity/artifact, live ingestion or prospective shadow qualification"
+    ],
+    "pr": 58,
+    "branch": "feat/component-poisson",
+    "results": "../COMPONENT_POISSON_RESULTS_2026-11-03.md"
   }
 }
