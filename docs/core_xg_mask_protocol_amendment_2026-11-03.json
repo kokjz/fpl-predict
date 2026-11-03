@@ -1,0 +1,73 @@
+{
+  "package": "core-xg-mask",
+  "revision": "cxm-r2",
+  "date": "2026-11-03",
+  "amends": {
+    "file": "core_xg_mask_protocol_2026-11-03.json",
+    "lf_sha256": "faf466b268217634b4afce93eca879ac1ea3227ed567507673694380ea245d65",
+    "freeze_commit": "66cee8b80a2f908afb3926a7ba2bfc5ffe212aed"
+  },
+  "forensic_sha256": "987e226fa2f0573788f850eff38732b220364d5c02d439805947b80fb7cdd546",
+  "cause": "Cross-runtime floating-point last-bit cache noise; same in non-target season and unaffected columns; exact alignment; no accuracy outcome observed",
+  "identity": {
+    "boundary": "raw pre-CSV",
+    "season": "2022-23",
+    "rows": 26505,
+    "columns": [
+      "ew4_expected_goals",
+      "ew4_expected_assists",
+      "ew4_expected_goals_conceded",
+      "ew12_expected_goals",
+      "ew12_expected_assists",
+      "ew12_expected_goals_conceded",
+      "ew4_minutes",
+      "ew12_points_core"
+    ],
+    "both_finite": true,
+    "formula": "abs(cache-unmasked) <= 1e-12 * max(1,abs(cache))",
+    "tolerance": 1e-12,
+    "report": [
+      "max_absolute_difference",
+      "max_relative_difference",
+      "ULP bins0/1/2/3-8/>8"
+    ]
+  },
+  "splice": {
+    "scope": "six xG windows on2022-23 targets only",
+    "rule": "where masked == unmasked exactly, use cache bytes; otherwise use masked rebuild",
+    "boundary": "splice raw values before unchanged select_control CSV export/read"
+  },
+  "assertions": [
+    "all49 columns non-2022-23 byte-identical",
+    "other43 columns byte-identical everywhere",
+    "spliced-unchanged export bytes equal control",
+    "every changed value differs from unmasked rebuild"
+  ],
+  "census": [
+    "rows_changed",
+    "share_changed",
+    "substantive_changes abs(masked-unmasked)>1e-9",
+    "mean_absolute_change",
+    "last_GW_with_substantive_change"
+  ],
+  "budget": {
+    "new_admission_jobs": 1,
+    "new_work_directory": true,
+    "builds_per_stage": 1,
+    "fit_jobs_B": 4,
+    "fit_jobs_C": 2,
+    "C_only_on_B_pass": true,
+    "real_retries": 0,
+    "retrievals": 0
+  },
+  "unchanged": [
+    "masking rule and expected sets",
+    "folds and no-harm gates",
+    "estimator/features/target/weights/clip",
+    "fpl_model/control exporter/fpl_team_xg",
+    "approved1.0.0/registry/defaults",
+    "guard limits and runtime"
+  ],
+  "limitation": "Changed corrected rows computed in current legacy runtime; control/unchanged rows retain cache bytes. Identity bound is numerical provenance tolerance, not an accuracy gate.",
+  "stop": "admission ambiguity/failure or worker/guard failure: no retry; GateB fail skips C then StageE; premerge return97"
+}
