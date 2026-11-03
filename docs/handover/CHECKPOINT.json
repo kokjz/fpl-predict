@@ -294,5 +294,59 @@
     "pr": 58,
     "branch": "feat/component-poisson",
     "results": "../COMPONENT_POISSON_RESULTS_2026-11-03.md"
+  },
+  "fpl_team_xg": {
+    "package_id": "fpl-team-xg",
+    "date": "2026-11-03",
+    "brief_revision": "txg-r2",
+    "status": "development_gate_failed_premerge",
+    "architect_premerge_review": "PENDING",
+    "numerical_source": "014273b3f55de5edb697753161173ffabb4004ed",
+    "freeze_commit": "d1b18a6e671fb69f797533b8ba4f68b8023f7eeb",
+    "amendment_freeze_commit": "b1311b2425661129075a5d4cf09dca3870ccc97a",
+    "protocol_lf_sha256": "4a308b8666bd7e6992a856a0b0f91aba7c90eb4c4540bc3e44615f55150becb0",
+    "amendment_lf_sha256": "2c6d7ee6ae025142bc35e5f2276b8d3a7d642369c3be4174aa6c1ee39a70c4b2",
+    "stage_A": true,
+    "stage_B": false,
+    "stage_B_criteria_passed": 7,
+    "stage_B_criteria_total": 10,
+    "stage_C": {
+      "status": "not_run_gate_B_failed",
+      "gates": {
+        "2": "not_evaluated",
+        "3": "not_evaluated",
+        "4": "not_evaluated",
+        "5": "not_evaluated",
+        "6": "not_evaluated",
+        "7": "not_evaluated"
+      }
+    },
+    "fits": {
+      "B": 4,
+      "C": 0
+    },
+    "refits": 0,
+    "dataset_retrievals": 0,
+    "approved_forecaster": {
+      "version": "1.0.0",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233"
+    },
+    "production_approved": false,
+    "registry_changed": false,
+    "weekly_defaults_changed": false,
+    "limitations": [
+      "Single arm selected adaptively after earlier research; seasons repeatedly inspected, not untouched holdouts",
+      "Team xG only partially replaces unavailable advanced provider signals",
+      "2023/24 training has 2022/23 team-xG only from GW16",
+      "CORE player xG/xA/xGC windows likely retain earlier 2022/23 zeros; affects control and approved training, unchanged and out of scope",
+      "No candidate audit on 2025/26 because Gate B failed",
+      "Historical publication clocks are not reconstructed",
+      "Fixed-squad results do not evaluate transfers or chips",
+      "Bootstrap is descriptive fixed-prediction uncertainty, excludes training and selection uncertainty",
+      "No current-season qualification, artifact/integrity audit, live ingestion or prospective shadow test; no promotion"
+    ],
+    "pr": 59,
+    "branch": "feat/fpl-team-xg",
+    "results": "../FPL_TEAM_XG_RESULTS_2026-11-03.md"
   }
 }
