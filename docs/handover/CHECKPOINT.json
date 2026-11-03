@@ -348,5 +348,34 @@
     "pr": 59,
     "branch": "feat/fpl-team-xg",
     "results": "../FPL_TEAM_XG_RESULTS_2026-11-03.md"
+  },
+  "core_xg_mask": {
+    "package": "core-xg-mask",
+    "date": "2026-11-03",
+    "revision": "cxm-r2",
+    "outcome": "ADOPT_FOR_RESEARCH",
+    "numerical_source": "f0d5fddeb2d9eb70d6a7f710bcb3a168f3e6bcfe",
+    "freeze": {
+      "head": "66cee8b80a2f908afb3926a7ba2bfc5ffe212aed",
+      "protocol_lf_sha256": "faf466b268217634b4afce93eca879ac1ea3227ed567507673694380ea245d65"
+    },
+    "approved_forecaster": {
+      "version": "1.0.0",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233"
+    },
+    "production_approved": false,
+    "registry_changed": false,
+    "weekly_defaults_changed": false,
+    "architect_premerge_review": "PENDING",
+    "stage_A": true,
+    "stage_B": true,
+    "stage_C": true,
+    "fits": {
+      "B": 4,
+      "C": 2
+    },
+    "results": "../CORE_XG_MASK_RESULTS_2026-11-03.md",
+    "pr": 60,
+    "branch": "feat/core-xg-mask"
   }
 }

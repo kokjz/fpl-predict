@@ -421,3 +421,5 @@ not proof that the forecaster is inferior; see the [targeted adoption assessment
 for uncertainty; the subsequent [qualification report](docs/FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md) records the completed adoption assessment.
 
 FPL-derived team expected-goals windows failed the frozen development gate; approved 1.0.0 remains unchanged. See the [research results](docs/FPL_TEAM_XG_RESULTS_2026-11-03.md).
+
+CORE expected-statistic masking research: [results](docs/CORE_XG_MASK_RESULTS_2026-11-03.md). Outcome ADOPT_FOR_RESEARCH; approved 1.0.0 unchanged.
