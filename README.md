@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/assets/logo.svg" alt="fpl-predict logo" width="160"></p>
+
 # fpl-predict
 
 An open-source Python engine for forecasting Fantasy Premier League points and evaluating FPL decisions against historical results.
