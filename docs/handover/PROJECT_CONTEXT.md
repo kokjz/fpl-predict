@@ -204,3 +204,5 @@ Gate B failed, 7 of 10 criteria: candidate RMSE worsened by 0.0466% per player-G
 The r2 data-availability amendment masks unpublished 2022/23 gameweeks for team windows only. Admission and control parity pass, but Gate B fails with 7 of 10 criteria passing: neither pooled RMSE gain reaches 0.5%, and NDCG10 falls. Four B fits, no C fits, no promotion. CORE player-window zeros remain an out-of-scope limitation. [Results](../FPL_TEAM_XG_RESULTS_2026-11-03.md). Architect pre-merge review PENDING; approved 1.0.0 and weekly defaults unchanged.
 
 CORE xG mask research (2026-11-03, PR60): ADOPT_FOR_RESEARCH. See ../CORE_XG_MASK_RESULTS_2026-11-03.md. No model promotion or default change; architect pre-merge review PENDING.
+
+FPL crowd signal research (2026-11-03, PR62): DEVELOPMENT_GATE_FAILED. See ../FPL_CROWD_SIGNAL_RESULTS_2026-11-03.md. No model promotion or default change; architect pre-merge review PENDING.
