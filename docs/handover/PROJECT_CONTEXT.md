@@ -194,3 +194,7 @@ The [Understat-free variant](../FPL_NATIVE_COMBINATION_RESULTS_2026-11-02.md) pa
 ## FPL-native capacity research (2 November 2026)
 
 Gate B failed, 7 of 10 criteria: RMSE gains 0.4604% at player-GW and 0.4537% at fixture level miss 0.5%; pooled NDCG@10 is below control. Stage C not run; four audit fits and the E0 2025/26 retrieval lapsed. The bounded no-fit export repair preserved report bytes and the four-fit ledger. [Results](../FPL_NATIVE_CAPACITY_RESULTS_2026-11-02.md). Approved 1.0.0 and weekly defaults unchanged. Architect pre-merge review PENDING; no merge, tag or cleanup.
+
+## Component-Poisson research (3 November 2026)
+
+Gate B failed, 7 of 10 criteria: candidate RMSE worsened by 0.0466% per player-GW and 0.0606% per fixture; pooled NDCG@10 fell. Stage C was not triggered. Four B fit jobs and zero C jobs; the first saved control fit received a verified private ledger-only repair with no refit. [Results](../COMPONENT_POISSON_RESULTS_2026-11-03.md). Approved 1.0.0 and weekly defaults remain unchanged. Scientific interpretation accepted; architect pre-merge publication review PENDING. No merge, tag or cleanup.
