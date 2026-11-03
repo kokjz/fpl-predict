@@ -300,7 +300,7 @@
     "date": "2026-11-03",
     "brief_revision": "txg-r2",
     "status": "development_gate_failed_premerge",
-    "architect_premerge_review": "PENDING",
+    "architect_premerge_review": "ACCEPTED 2026-11-03 (handover 90 review)",
     "numerical_source": "014273b3f55de5edb697753161173ffabb4004ed",
     "freeze_commit": "d1b18a6e671fb69f797533b8ba4f68b8023f7eeb",
     "amendment_freeze_commit": "b1311b2425661129075a5d4cf09dca3870ccc97a",
