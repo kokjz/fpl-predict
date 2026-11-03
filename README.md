@@ -419,3 +419,5 @@ forecaster improves historical point errors, while its expected-bench selector
 does not establish better realised decisions. Its failed fixed ranking gate is
 not proof that the forecaster is inferior; see the [targeted adoption assessment](docs/CONDITIONAL_SELECTION_RESULTS_2026-10-16.md#can-a-small-improvement-justify-replacement)
 for uncertainty; the subsequent [qualification report](docs/FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md) records the completed adoption assessment.
+
+FPL-derived team expected-goals windows failed the frozen development gate; approved 1.0.0 remains unchanged. See the [research results](docs/FPL_TEAM_XG_RESULTS_2026-11-03.md).

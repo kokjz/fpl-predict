@@ -48,7 +48,7 @@ matched incumbent reference, but its unconditional points challenger failed
 MAE/ranking/decision guards. A conditional-return study improved audit point RMSE
 by1.23% andMAEby0.73%, but expected selection did not qualify. Forecaster-only
 qualification found only0.0056%older development gain, below the standing gate,
-with adverse reset/rolling results. None changed approved1.0.0. News text had no
+with adverse reset/rolling results. None changed approved 1.0.0. News text had no
 additional demonstrated Brier benefit over structured labels in its experiment.
 Further-horizon projections and coarse chip reserves remain approximations.
 
@@ -198,3 +198,7 @@ Gate B failed, 7 of 10 criteria: RMSE gains 0.4604% at player-GW and 0.4537% at 
 ## Component-Poisson research (3 November 2026)
 
 Gate B failed, 7 of 10 criteria: candidate RMSE worsened by 0.0466% per player-GW and 0.0606% per fixture; pooled NDCG@10 fell. Stage C was not triggered. Four B fit jobs and zero C jobs; the first saved control fit received a verified private ledger-only repair with no refit. [Results](../COMPONENT_POISSON_RESULTS_2026-11-03.md). Approved 1.0.0 and weekly defaults remain unchanged. Scientific interpretation accepted; architect pre-merge publication review PENDING. No merge, tag or cleanup.
+
+## FPL-derived team xG research (3 November 2026)
+
+The r2 data-availability amendment masks unpublished 2022/23 gameweeks for team windows only. Admission and control parity pass, but Gate B fails with 7 of 10 criteria passing: neither pooled RMSE gain reaches 0.5%, and NDCG10 falls. Four B fits, no C fits, no promotion. CORE player-window zeros remain an out-of-scope limitation. [Results](../FPL_TEAM_XG_RESULTS_2026-11-03.md). Architect pre-merge review PENDING; approved 1.0.0 and weekly defaults unchanged.

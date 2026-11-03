@@ -1,0 +1,390 @@
+{
+  "schema_version": 1,
+  "package_id": "fpl-team-xg",
+  "brief_revision": "txg-r1",
+  "brief_sha256": "b595a34ab15e8a25557ce49cec23917a5cbf113564e3b76e1f9a4358c0a6e665",
+  "base": "dce26215a797c6749b7b6617bef4fdb11ce5fc47",
+  "hypothesis": "H6: CORE plus eight FPL team/opponent xG windows passes unchanged I4 development gate and audit gates 2-7.",
+  "rationale": {
+    "prior": "small: team strength plateau, defensive signal overlaps player xGC",
+    "history": "xG starts 2022/23; earlier seasons use constant prior",
+    "limitations": [
+      "adaptive package selection",
+      "all scored seasons previously inspected",
+      "single audit season",
+      "only prospective 2026/27 is untouched",
+      "FPL xG only partially replaces unavailable advanced provider signals"
+    ]
+  },
+  "methods": [
+    "control",
+    "team_xg"
+  ],
+  "features": {
+    "control": [
+      "home",
+      "n_history",
+      "days_since_last",
+      "last_minutes",
+      "last_points",
+      "last5_minutes",
+      "last5_points",
+      "pos_1",
+      "pos_2",
+      "pos_3",
+      "pos_4",
+      "ew4_minutes",
+      "ew4_points_core",
+      "ew4_goals_scored",
+      "ew4_assists",
+      "ew4_clean_sheets",
+      "ew4_bonus",
+      "ew4_bps",
+      "ew4_threat",
+      "ew4_creativity",
+      "ew4_saves",
+      "ew4_expected_goals",
+      "ew4_expected_assists",
+      "ew4_expected_goals_conceded",
+      "ew4_played",
+      "ew4_sixty",
+      "ew12_minutes",
+      "ew12_points_core",
+      "ew12_goals_scored",
+      "ew12_assists",
+      "ew12_clean_sheets",
+      "ew12_bonus",
+      "ew12_bps",
+      "ew12_threat",
+      "ew12_creativity",
+      "ew12_saves",
+      "ew12_expected_goals",
+      "ew12_expected_assists",
+      "ew12_expected_goals_conceded",
+      "ew12_played",
+      "ew12_sixty",
+      "team_ew4_gf",
+      "team_ew4_ga",
+      "team_ew12_gf",
+      "team_ew12_ga",
+      "opp_ew4_gf",
+      "opp_ew4_ga",
+      "opp_ew12_gf",
+      "opp_ew12_ga"
+    ],
+    "team_xg": [
+      "home",
+      "n_history",
+      "days_since_last",
+      "last_minutes",
+      "last_points",
+      "last5_minutes",
+      "last5_points",
+      "pos_1",
+      "pos_2",
+      "pos_3",
+      "pos_4",
+      "ew4_minutes",
+      "ew4_points_core",
+      "ew4_goals_scored",
+      "ew4_assists",
+      "ew4_clean_sheets",
+      "ew4_bonus",
+      "ew4_bps",
+      "ew4_threat",
+      "ew4_creativity",
+      "ew4_saves",
+      "ew4_expected_goals",
+      "ew4_expected_assists",
+      "ew4_expected_goals_conceded",
+      "ew4_played",
+      "ew4_sixty",
+      "ew12_minutes",
+      "ew12_points_core",
+      "ew12_goals_scored",
+      "ew12_assists",
+      "ew12_clean_sheets",
+      "ew12_bonus",
+      "ew12_bps",
+      "ew12_threat",
+      "ew12_creativity",
+      "ew12_saves",
+      "ew12_expected_goals",
+      "ew12_expected_assists",
+      "ew12_expected_goals_conceded",
+      "ew12_played",
+      "ew12_sixty",
+      "team_ew4_gf",
+      "team_ew4_ga",
+      "team_ew12_gf",
+      "team_ew12_ga",
+      "opp_ew4_gf",
+      "opp_ew4_ga",
+      "opp_ew12_gf",
+      "opp_ew12_ga",
+      "team_ew4_xg",
+      "team_ew4_xga",
+      "team_ew12_xg",
+      "team_ew12_xga",
+      "opp_ew4_xg",
+      "opp_ew4_xga",
+      "opp_ew12_xg",
+      "opp_ew12_xga"
+    ]
+  },
+  "new_features": [
+    "team_ew4_xg",
+    "team_ew4_xga",
+    "team_ew12_xg",
+    "team_ew12_xga",
+    "opp_ew4_xg",
+    "opp_ew4_xga",
+    "opp_ew12_xg",
+    "opp_ew12_xga"
+  ],
+  "hgb_parameters": {
+    "categorical_features": "from_dtype",
+    "early_stopping": false,
+    "interaction_cst": null,
+    "l2_regularization": 20.0,
+    "learning_rate": 0.05,
+    "loss": "squared_error",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 60,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "quantile": null,
+    "random_state": 20260921,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "target": "points_core",
+  "clip": [
+    0,
+    20
+  ],
+  "threads": 2,
+  "training_half_life_days": 730.5,
+  "fixture_stat": {
+    "xg": "sum expected_goals across ALL player rows, all positions including zero-minute rows",
+    "xga": "opponent xg in same season and fixture",
+    "missing": "any played row missing expected_goals => team xg and reciprocal opponent xga NaN; absent 2020/21-2021/22 => NaN",
+    "source": "frozen FPL history only; no expected_goals_conceded/assists/provider/market"
+  },
+  "windows": {
+    "reset": "season and team",
+    "half_lives": [
+      4,
+      12
+    ],
+    "prior": 1.35,
+    "prior_mass": 4,
+    "eligibility": "ts < cutoff minus 3 hours; unchanged FeatureStore.team semantics",
+    "nan": "unchanged ew skips nonfinite values and retains original distance weights",
+    "opponent": "opponent team windows"
+  },
+  "frozen_inputs": {
+    "players": "db737482eb814ca7d18a21d520c5ab3f4df1f6b021d61e4a700f0f45bf04bbc9",
+    "teams": "f6fd446b1f62bc1618c8f0eb5f4990732599566735d8b02a0fd855eecb7dd1a6",
+    "control_logical": "3d3c2726400b03a32014826bbcd7fb67988b23627ac57b6c8b3f9c5768f6ae09",
+    "provenance": "fc83c5fc16b3210508be757eb37712a5cb3458e2240265784b2c2312b32d6cf8",
+    "original_panels_canonical": "917f5ca00f12ff8d9823c4b65b1da4cad7adb5f528ccc414ff8d11ce22cc4fed"
+  },
+  "cache_pins": {
+    "history": {
+      "sha256": "543924f895bb82e78de64275208ad313239e105624eed91c7c00917d7255970b"
+    },
+    "features": {
+      "sha256": "d62c997a9d771fa55343438ece4846545cea22236412f83e6bb7d4888a9c3c5a"
+    },
+    "bridges": {
+      "2020-21": {
+        "sha256": "e3aff899fc2486bd96fe5d11d8c8e8c066dea36cc71de2bf8a85e8aa7245ed32"
+      },
+      "2021-22": {
+        "sha256": "78e185fb0b5c81f58c2b89f232358b1097bededc9852d4171edaea2e9d3bd887"
+      },
+      "2022-23": {
+        "sha256": "a874c12817bbf4d454e60a5765629742b528d4ad0c2f39f56e4fc89640605f7f"
+      },
+      "2023-24": {
+        "sha256": "43d8cf5efb3d901f2499558c40b392b7f0ee22afe28030f36266ad29024c63d9"
+      },
+      "2024-25": {
+        "sha256": "75686051b265cbe7755ac71213ecaad21b26ee1cc46a8bafbba19c39ce894b05"
+      }
+    }
+  },
+  "cohort": "unchanged I4 rows, candidate predicate, keys, order, DGW aggregation, sample weights and panels",
+  "csv_boundary": "unchanged original rmc_confirmation.select_control to_csv/read_csv; training-only all-NaN omission",
+  "parity": {
+    "2023-24": "prediction bytes equal PR56 control",
+    "2024-25": "equal accepted PR50 confirmation control prediction where recorded; else hash only",
+    "2025-26": "record hash"
+  },
+  "stage_A": {
+    "fits": 0,
+    "seasons": [
+      "2020-21",
+      "2021-22",
+      "2022-23",
+      "2023-24",
+      "2024-25",
+      "2025-26"
+    ],
+    "schema": [
+      "expected_goals",
+      "team_id",
+      "opponent_team",
+      "fixture",
+      "was_home",
+      "minutes",
+      "kickoff_time/ts"
+    ],
+    "coverage": "played-row finite share per season and GW; <=1% NaN team-fixtures each 2022/23-2025/26; fully absent in 2020/21-2021/22",
+    "integrity": "380 fixtures per covered season; one opponent and reciprocal pair each team fixture",
+    "sanity": {
+      "xg_goals_ratio": [
+        0.8,
+        1.2
+      ],
+      "correlations": "team-season xG/goals and xGA/conceded descriptive"
+    },
+    "proof": [
+      "synthetic own/earlier cutoff leakage exclusion",
+      "control export/CORE/key/order/panel identity",
+      "unchanged shared proof"
+    ],
+    "failure": "STOP return architect"
+  },
+  "fit_order": [
+    {
+      "stage": "B",
+      "fold": "2023-24",
+      "method": "control"
+    },
+    {
+      "stage": "B",
+      "fold": "2023-24",
+      "method": "team_xg"
+    },
+    {
+      "stage": "B",
+      "fold": "2024-25",
+      "method": "control"
+    },
+    {
+      "stage": "B",
+      "fold": "2024-25",
+      "method": "team_xg"
+    },
+    {
+      "stage": "C",
+      "fold": "2025-26",
+      "method": "control"
+    },
+    {
+      "stage": "C",
+      "fold": "2025-26",
+      "method": "team_xg"
+    }
+  ],
+  "folds": [
+    {
+      "test": "2023-24",
+      "train": [
+        "2020-21",
+        "2021-22",
+        "2022-23"
+      ]
+    },
+    {
+      "test": "2024-25",
+      "train": [
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "test": "2025-26",
+      "train": [
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    }
+  ],
+  "gate_B": {
+    "pooled_player_gw_fixture_rmse_ratio_max": 0.995,
+    "pooled_player_gw_fixture_mae_ratio_max": 1.005,
+    "each_fold_player_gw_fixture_rmse_ratio_max": 1.005,
+    "pooled_ndcg10": ">= control",
+    "mean_fixed_squad_delta": ">= 0",
+    "fail_next": "Stage E",
+    "pass_next": "Stage C"
+  },
+  "descriptive": [
+    "paired 4-GW circular block bootstrap, 1000 draws, seed 20261015",
+    "per-position relative RMSE from existing evaluation"
+  ],
+  "stage_C": {
+    "retrievals": 0,
+    "admission": [
+      "380/380 local matches",
+      "points_core reconciliation",
+      "same xG coverage and sanity as Stage A",
+      "finite dc_rate4 non-GK GW28-38 candidates",
+      "20 points_replay.make_squads panels hashed before fits"
+    ],
+    "gates": {
+      "2_audit_rmse": "player-GW and fixture RMSE <= .995 control",
+      "3_audit_season_stability": "2025/26 RMSE <=1.005 control; 2024/25 context",
+      "4_audit_mae": "MAE <=1.005 control",
+      "5_audit_block_interval": "4-GW circular bootstrap 1000 seed20261015 95% upper bound <0; descriptive",
+      "6_fixed_squad_points": "20 panel mean delta >=0",
+      "7_full_scoring": "GW28-38 candidates total_points; same 2*dc_rate4 (0 GK) both methods; player-GW/fixture RMSE <=1.005 control"
+    }
+  },
+  "stage_D": "excluded: gate8 2026/27 terms review, gate9 integrity, artifacts/registry/live ingestion/3-deadline prospective shadow/weekly",
+  "stage_E": "all gates/specification/coverage/limits public, approved1.0.0 unchanged, ready PR and exact-head CI green, STOP before merge return84; no consumer notes",
+  "resources": {
+    "threads": 2,
+    "memory_bytes": 4294967296,
+    "seconds_per_job": 900,
+    "max_growth_bytes": 268435456,
+    "min_free_bytes": 5368709120,
+    "serial": true,
+    "runtime": "qualified legacy",
+    "guard": "windows_worker_guard.run",
+    "identity": "default sandbox"
+  },
+  "stops": [
+    "Stage A failure or scientific/data/source/specification ambiguity: return architect",
+    "missing local data: stop, no retrieval",
+    "guard failure/unexpected mutating failure: stop no real retry",
+    "es-5 tooling rules",
+    "Stage E premerge: return84"
+  ],
+  "exclusions": [
+    "Understat including us_* and I4 team advanced statistics",
+    "retrieval",
+    "2026/27 scoring",
+    "alternative features/windows/priors/capacity/grids/seeds/losses/blends/calibration",
+    "outcome-dependent specification/gate changes",
+    "artifact/registry/default/promotion/product/live/dependency changes",
+    "merge/tag/branch deletion/force push/connector publication",
+    "git config/settings/ACL/elevation/temp deletion/chmod",
+    "weekly/messaging/agents/model switch/paid/cloud/uploads"
+  ]
+}

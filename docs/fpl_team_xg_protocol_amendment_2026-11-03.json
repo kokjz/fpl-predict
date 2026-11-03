@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "package_id": "fpl-team-xg",
+  "brief_revision": "txg-r2",
+  "brief_sha256": "e70fe49628e62e1d791e17ac60df1bbbcfe2bad0d962797788e0676bf5d715c9",
+  "amends": {
+    "file": "fpl_team_xg_protocol_2026-11-03.json",
+    "lf_sha256": "4a308b8666bd7e6992a856a0b0f91aba7c90eb4c4540bc3e44615f55150becb0",
+    "freeze": "d1b18a6e671fb69f797533b8ba4f68b8023f7eeb"
+  },
+  "cause": "Stage A sanity ratio2022/23 failed; unpublished pre-restart expected statistics are stored as zeros. No fit or forecast accuracy measured before amendment.",
+  "rule": {
+    "seasons": [
+      "2022-23",
+      "2023-24",
+      "2024-25",
+      "2025-26"
+    ],
+    "group": [
+      "season",
+      "GW"
+    ],
+    "unpublished": "EVERY history row has finite expected_goals exactly0, INCLUDING zero-minute rows, AND sum team_gf>0",
+    "expected_set": "Exactly2022/23 GW<16 present in data;14 GWs, GW7 absent; anything different STOP",
+    "expected_gameweeks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "mask": "Set expected_goals NaN in a COPY used ONLY for new team-xG fixture statistics, before sums; original history/CORE/control untouched",
+    "partial_zeros": "Do not mask a partially zero GW or individual zero row",
+    "zero_goals": "GW with sum team_gf0 is not flagged"
+  },
+  "admission": {
+    "coverage": "Report detected unpublished GWs and team-fixture counts; <=1% NaN team fixtures OUTSIDE unpublished GWs per covered season",
+    "sanity": "Ratio in unchanged[0.80,1.20] over published team fixtures; also report uncorrected r1 ratio",
+    "correlation": "Same published subset",
+    "early_seasons": "2020/21-2021/22 fully NaN still required",
+    "audit": "2025/26 no unpublished GW by exact expected set"
+  },
+  "unchanged": [
+    "CORE including player-level xG windows",
+    "control CSV exporter and bytes",
+    "8 new feature names",
+    "prior1.35/mass4/halves4,12/cutoff3h/season reset",
+    "HGB7 method/target/clip/weights/rows",
+    "all folds",
+    "all forecast gates",
+    "resource limits",
+    "no retrieval/no real retries"
+  ],
+  "budget": {
+    "new_admission_jobs": 1,
+    "fit_jobs_B": 4,
+    "fit_jobs_C": 2,
+    "stage_C_requires_B_pass": true
+  },
+  "work_directory": "fpl-team-xg-r2",
+  "preserve": "r1 protocol, r1 directory and every receipt unchanged",
+  "limitations": [
+    "2023/24 fold has2022/23 team-xG history only fromGW16",
+    "CORE player xG/xA/xGC windows very likely have same pre-GW16 zeros; affects both methods and approved training, out of scope, possible later package"
+  ],
+  "publication": "Document amendment cause and no accuracy informed it, CORE-zero limitation, approved1.0.0 unchanged, PENDING architect review, exact-headCI, READY PR59 then STOP before merge return88"
+}
