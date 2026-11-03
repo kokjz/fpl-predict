@@ -250,7 +250,7 @@
     "date": "2026-11-03",
     "status": "development_gate_failed_premerge",
     "architect_scientific_review": "ACCEPTED",
-    "architect_premerge_review": "PENDING",
+    "architect_premerge_review": "ACCEPTED 2026-11-03 (handover 81 review)",
     "numerical_source": "e495ff9d88d25e27fafe8fdfc5af959e310c8d6c",
     "freeze_commit": "038bcf5c04372153f345f69b075fda236f3068dc",
     "protocol_lf_sha256": "2916312d24f9fc5033edaca494adb1d4b069cbf55ca5fa154ef2420f1ff8346d",
