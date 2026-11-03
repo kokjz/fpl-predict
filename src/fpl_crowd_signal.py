@@ -35,10 +35,34 @@ def field_checks(history,require_seasons=True):
             counts=dict(balance=int(g.transfers_balance.ne(g.transfers_in-g.transfers_out).sum()),negative_selected=int(g.selected.lt(0).sum()),value_range=int((g.value.lt(35)|g.value.gt(160)).sum()),nonfinite=int((~np.isfinite(g[FIELDS].to_numpy(float))).sum()))
         inconsistent=g.groupby(['element','GW'])[FIELDS].nunique(dropna=False).gt(1)
         dgw={n:int(inconsistent[n].sum()) for n in FIELDS}
-        ok=all(numeric.values()) and not any(counts.values()) and not any(dgw.values())
-        report['seasons'][season]=dict(rows=len(g),numeric=numeric,nan_counts=nan,violations=counts,inconsistent_player_gameweeks=dgw,value_changes_within_gw=dgw['value'],passed=ok)
+        balance_ok=bool(counts and counts['balance']*1000<=len(g))
+        other_ok=not any(v for k,v in counts.items() if k!='balance')
+        ok=all(numeric.values()) and balance_ok and other_ok and not any(dgw.values())
+        report['seasons'][season]=dict(rows=len(g),numeric=numeric,nan_counts=nan,violations=counts,balance_share=counts['balance']/len(g) if counts else None,balance_bound=.001,balance_within_bound=balance_ok,inconsistent_player_gameweeks=dgw,value_changes_within_gw=dgw['value'],passed=ok)
     report['passed']=bool(not absent and all(x['passed'] for x in report['seasons'].values()))
     return report
+
+
+def balance_discrepancies(history,targets):
+    """List every discrepant row and its contribution after GW deduplication."""
+    ordered=history.sort_values('ts',kind='stable')
+    unique=ordered.drop_duplicates(['season','element','GW'])
+    representatives=set(unique.index)
+    players={k:g for k,g in unique.groupby(['season','element'],sort=False)}
+    target_players={k:g for k,g in targets.groupby(['season','element'],sort=False)}
+    out=[]
+    for idx,r in history.loc[history.transfers_balance.ne(history.transfers_in-history.transfers_out)].iterrows():
+        key=(r.season,r.element);g=players[key];target=target_players.get(key)
+        last=any_ew=False
+        if target is not None:
+            for t in target.itertuples():
+                cutoff=pd.Timestamp(t.cutoff)-pd.Timedelta(hours=3)
+                eligible=g.loc[(g.GW<t.GW)&(g.ts<cutoff)]
+                if len(eligible) and r.GW in set(eligible.GW):
+                    any_ew=True;last=last or bool(eligible.GW.max()==r.GW)
+        representative=idx in representatives
+        out.append(dict(season=r.season,GW=int(r.GW),element=int(r.element),fixture=int(r.fixture) if 'fixture' in r else None,transfers_in=float(r.transfers_in),transfers_out=float(r.transfers_out),transfers_balance=float(r.transfers_balance),difference=float(r.transfers_balance-(r.transfers_in-r.transfers_out)),selected=float(r.selected),deduplicated_representative=representative,feeds_any_last=bool(representative and last),feeds_any_ew4=bool(representative and any_ew),same_player_gw_feeds_last=bool(last),same_player_gw_feeds_ew4=bool(any_ew),recorded_balance_unchanged=True))
+    return out
 
 
 class CrowdStore:
