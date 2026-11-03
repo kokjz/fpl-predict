@@ -8,6 +8,7 @@ fpl-predict combines recent player form, playing-time patterns and fixture conte
 
 **Project status:** experimental, with a command-line interface. Python 3.12 is required. Source, tests and evaluation protocols are included; historical datasets and trained model binaries are not distributed. A fresh installation can run the tests and reproduce training experiments. Forecasting additionally requires a trusted model artifact approved by the runtime registry; see [model setup](#model-setup).
 
+
 For a receiving model-improvement chat or a cross-device weekly workflow, start
 with the [handover index](HANDOVER.md) and its explicit checkpoint/approval scope.
 
@@ -20,177 +21,15 @@ with the [handover index](HANDOVER.md) and its explicit checkpoint/approval scop
 - Scores forecasts saved before the deadline against finalised results, with points error, playing-time diagnostics and a matched official FPL projection baseline where available.
 
 It is a forecasting and decision-support engine, not a complete season optimiser. Transfer chains, saved-transfer option value, expected automatic substitutions and joint chip scheduling are not fully optimised.
-
 ## How the engine works
 
 1. **Collect data.** Public FPL endpoints provide player metadata, fixtures and match histories. Historical training data come from the [Vaastav FPL archive](https://github.com/vaastav/Fantasy-Premier-League). Downloads retain source revisions, timestamps and file hashes.
 2. **Build features available before the deadline.** Player, team and opponent statistics use four- and twelve-match half-lives. Features include position, venue, playing time, attacking statistics, saves and team results. Player names/IDs, same-match outcomes and archived lookahead projections are excluded from model inputs. Double-gameweek fixtures share a history cutoff.
 3. **Fit pooled models.** Histogram gradient-boosted trees learn patterns shared across players. Separate estimators cover core points, minutes, participation and defensive-contribution awards. Training examples have a two-year age half-life. The core model uses shallow seven-leaf trees; no GPU or hosted inference service is required.
 4. **Forecast and evaluate.** Fixture forecasts are summed into gameweeks and optionally compared within a squad. The model registry checks approval status and artifact hashes. Evaluation uses chronological splits; a merged code change or a newer experiment does not automatically replace the approved model.
+Full engine context and caveats: [engine overview](docs/ENGINE_OVERVIEW.md).
 
-Official injury percentages are retained as observations, not assigned start probabilities. A [controlled availability study](docs/INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md) reduced candidate appearance Brier error by 20.6% against the full incumbent method. A subsequent [conditional-return and selection study](docs/CONDITIONAL_SELECTION_RESULTS_2026-10-16.md) explicitly integrated those probabilities: its research challenger improved audit points RMSE by 1.23% and MAE by 0.73% versus the incumbent reference, but had lower ranking quality. The new expected bench-selection policy did not establish a realised points gain, so **v1.0.0 remains approved**. These are reused historical error measurements, not percentages of FPL points gained. The earlier [text experiment](docs/NEWS_AVAILABILITY_RESULTS_2026-10-16.md) found no extra Brier benefit from combining news text with structured labels.
-
-The [historical market-strength study](docs/MARKET_STRENGTH_STAGE_C_RESULTS_2026-10-28.md)
-passes its team-goal component test but fails the required player-development
-RMSE gains: pooled player-GW and fixture improvements are 0.417% and 0.402%,
-below 0.5%. Its fixed-squad mean is +10.175 points, with individual deltas
-−36 to +54; that does not override the failed error gates. **Approved 1.0.0 and
-weekly defaults remain unchanged.** No later-season scoring or season paths.
-
-The [expected-return training-target study](docs/EXPECTED_RETURN_TARGETS_RESULTS_2026-10-29.md)
-passes admission but fails development: pooled candidate RMSE improves only
-0.165%/0.146%, while MAE worsens 0.598%/0.571%, outside the fixed gates.
-Its positive fixed-squad mean does not override the failures. **Approved 1.0.0
-and weekly defaults remain unchanged.**
-
-The [rich-history and market-strength combination study](docs/RICH_MARKET_COMBINATION_RESULTS_2026-11-02.md)
-passes development; its pre-registered 2024/25 confirmation passes. The combination
-was selected adaptively on reused folds; confirmation outcomes had appeared in
-earlier policy studies. **Approved 1.0.0 and weekly defaults remain unchanged.**
-
-The [promotion-evidence follow-up](docs/RMC_PROMOTION_EVIDENCE_RESULTS_2026-11-02.md)
-stops at Understat's source policy before data retrieval or fitting; compliant
-live inputs are unavailable for the combination in this form. Nothing promoted.
-
-The [FPL-native and market variant](docs/FPL_NATIVE_COMBINATION_RESULTS_2026-11-02.md) proves Understat-free feature construction but misses its 0.5% development RMSE gates (0.422% player-GW and 0.414% fixture gains). Conditional audits were not run. **Approved 1.0.0 and weekly defaults remain unchanged.**
-
-The [capacity-matched compliant combination](docs/FPL_NATIVE_CAPACITY_RESULTS_2026-11-02.md) misses its development gates (RMSE gains 0.460% player-GW and 0.454% fixture; NDCG also below control). Stage C was not run. **Approved 1.0.0 and weekly defaults remain unchanged.**
-
-The [component-Poisson study](docs/COMPONENT_POISSON_RESULTS_2026-11-03.md) fails development gates (7/10): candidate RMSE worsens by 0.047% per player-GW and 0.061% per fixture, with lower NDCG. Stage C was not triggered. **Approved 1.0.0 and weekly defaults remain unchanged.**
-
-The latest [forecaster-only qualification](docs/FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md) tests adoption independently of the expected-bench
-selector. Older-season development is nearly neutral (0.0056% RMSE gain), below
-the existing qualification threshold. The candidate retains its 2025 RMSE gain
-and small owned-squad gain, but scores fewer points in reset and rolling-transfer
-comparisons. It is saved as a research artifact; **v1.0.0 remains approved**.
-
-The optional [season-management system](docs/season_management.md) carries the
-same squad, original purchase prices, cash, free transfers and chips across all
-38 deadlines. Its [multiweek planner](docs/rolling_planner.md) looks one to eight
-gameweeks ahead, while a [coarse remaining-season calendar](docs/adaptive_planner.md)
-reserves chip opportunities. Only the immediate action is committed; refreshed
-injury evidence, fixtures, prices and results lead to a new plan at the next
-deadline. Current-only minutes sensitivities are preserved. Future actions are
-conditional plans, not commitments or foreknowledge of prices and recoveries.
-
-The [approved-artifact bridge](docs/season_policy_qualification.md) verifies the
-registry, artifact bytes, observation and source clocks before building a horizon.
-Saved-artifact and changed-next-origin integration checks use entirely invented
-data. Historical evaluation uses prior-only method references rather than
-backcasting a deployment artifact trained on the evaluation season.
-
-The latest [appearance-calibration season result](docs/COHERENCE_SEASON_RESULTS_2026-10-27.md)
-fails the predeclared points criterion: calibrated minus availability-aware H6
-is **−26, −2, +5, −104**, equal-season mean **−31.75 net points**. All 44 saved
-paths are complete, including retained controls; improved appearance Brier leaves
-point means/errors unchanged and does not qualify a policy replacement. Approved
-forecaster 1.0.0 and weekly defaults remain unchanged. Source review/release
-status is tracked in the [checkpoint](docs/handover/CHECKPOINT.json).
-
-The earlier [fixed-work repeatability study](docs/SEARCH_REPEATABILITY_RESULTS_2026-10-25.md)
-compares 24 continuous season paths using fixed node/probe caps. Repeated full
-decisions match exactly on all twelve cases;
-the availability-aware policy averages **+6.50 net points versus
-the matched H6 control**, with opening effects **+25, +22, -67, +46**. Against adapted Solio,
-its mean is **+15.50**. The primary H6 comparison fails the declared downside
-limit because one opening loses 67 points; this is a positive observed average,
-not evidence of general inferiority or sufficient support for replacement. These are two reused years and paired numerical repetitions,
-not independent new seasons or forecast-error improvements. Six-probe fixed-work
-policies differ from the earlier timed policies. Approved weights and normal weekly
-defaults remain unchanged. See the [method and source-only resource amendment](docs/search_repeatability.md).
-
-The earlier [availability-aware season study](docs/SEASON_DECISION_VALUE_RESULTS_2026-10-24.md)
-keeps point forecasts fixed and compares sixteen continuous 38-GW paths. The
-changed six-week policy averages **+57.50 net points versus current H6**
-across two starts in each of two reused seasons; the four effects are
-**+60, +105, -33, +98**. Against adapted Solio its
-mean is **+3.25**.
-The predeclared mean/downside research criterion passes versus current H6.
-The Solio comparison has two wins and two losses, a **−40-point second-season
-mean**, and fails the same downside criterion. Fresh time-limited control paths
-also vary from earlier runs; this limits causal interpretation of the gain.
-These are conditional historical management results, not a forecast-error gain,
-untouched evaluation or original full-manager superiority. The 2024/25 comparison
-excludes Assistant Manager. Weights and normal weekly defaults remain unchanged;
-read the [optional research API and limitations](docs/season_decision_value.md).
-
-The **earlier** [two-season management study](docs/EXPECTED_SEASON_POINTS_RESULTS_2026-10-24.md)
-compares twelve full-season paths from two common starting squads in each of
-2024/25 and 2025/26. H6 averages **+129.50 net points versus H1**
-with equal season weighting; its four differences are
-**+127, +244, +147, +0**. Against the adapted Solio
-planner the average is **-25.75**, with differences
-**-17, +40, +0, -126**. All outcomes and the
-[declared mean/downside criteria](docs/expected_season_points.md) are retained.
-These are observed results on two previously researched seasons, not reliable
-future-gain estimates. The 2024/25 track is explicitly a common no-Assistant-Manager
-subset. Common starts test subsequent management rather than initial squad
-construction; code merges do not approve production defaults or forecast weights.
-
-The **earlier** [full qualification results](docs/SEASON_POLICY_QUALIFICATION_RESULTS_2026-10-17.md)
-report twenty continuous 38-GW paths and 760 independently reconciled deadline
-decisions. All policies below use the same frozen five-prior-season forecast,
-information, legal chip resources and declared search limits. Points are after
-transfer hits; columns show both predeclared repetitions.
-
-| Planning policy | Own opening, runs 1 / 2 | Common opening, runs 1 / 2 |
-|---|---:|---:|
-| Standing one-week | 2,041 / 2,041 | 2,087 / 2,087 |
-| Standing six-week | 2,250 / 2,236 | 2,220 / 2,220 |
-| Solio adapted six-week | 2,224 / 2,250 | 2,239 / 2,200 |
-| AIrsenal adapted six-week | 2,012 / 1,949 | 2,141 / 2,144 |
-
-Own openings allow each manager to build its initial squad. Common openings use
-the same neutral fifteen. These are repeated solver paths from **one reused
-historical season**, not independent season replications. The full report includes
-fixed-calendar/hold controls, paired differences, every chip date, hits, computing
-costs, native failures/fallbacks and conditional-bound coverage.
-
-Read the [explicit policy status](docs/season_policy_status.json) before using a
-research planner. Passing the declared historical points/integrity/cost gates
-permits experimental status; it does not automatically change weekly defaults or
-approve forecast weights. The original native qualification profile is 2025/26; the new Solio track also
-supports the explicitly restricted 2024/25 no-Assistant-Manager profile;
-the standing planner also has 2026/27 mechanical integration. Original external
-managers, global season optimality and future superiority are not established.
-
-The [separate forecasting comparison](docs/SEASON_EXTERNAL_RESULTS_2026-10-16.md)
-tests standing-method, Dastan-architecture, OpenFPL and component adaptations under
-a common planner. Its frozen source and budgets differ from the table above;
-their scores must not be pooled or presented as a native Dastan full manager.
-Earlier [Solio](docs/NATIVE_PLANNER_RESULTS_2026-10-16.md) and
-[AIrsenal](docs/AIRSENAL_PLANNER_RESULTS_2026-10-16.md) matched planner studies retain
-their complete original results. The [preseason reference pilot](docs/PRESEASON_REFERENCE_RESULTS_2026-10-16.md)
-found no consistently better opening forecast replacement; weak cold-start
-information and longer-horizon approximation remain material limitations.
-
-For reproducible execution and independent verification, see the
-[qualification workflow](docs/season_policy_qualification.md). Raw inputs,
-private squads and trained binaries are not distributed with the source.
-
-[Retained-plan bounds](docs/solver_bounds.md) now distinguish a validated plan
-from discarded solver attempts. A switchable baseline objective cut preserves
-better solutions; its [small diagnostic](docs/SELECTED_PLAN_BOUNDS_2026-10-16.md)
-shows mixed bound availability, not a guaranteed speed or season-points gain.
-
-The [controlled integration workflow](docs/conditional_selection.md) separates conditional-return prediction, appearance probabilities and legal bench/captain decisions. It is research tooling and does not replace the approved model or production selector.
-
-The optional [participation audit](docs/participation_audit.md) checks frozen point-risk diagnostics and predeadline evidence, including sourced club/press reports, without applying overrides. Sourced minutes overrides use illustrative scaling rather than a separately validated conditional model. See the [availability workflow](docs/availability_workflow.md).
-
-The [additional-opening robustness study](docs/SEASON_ROBUSTNESS_RESULTS_2026-10-24.md)
-adds two starting squads on the same previously studied season. H6 minus H1
-returns were **+110 and −6 points**, averaging **+52** across those two cases.
-The declared no-negative-case consistency gate **failed**. That narrow failure
-does not establish that H6 is inferior: a useful policy can lose a case through
-noisy football outcomes and starting-state sensitivity. Against adapted Solio,
-the differences were −2 and −153 points. These are dependent cases on one reused
-season, not independent seasons or an estimated future gain. The original
-qualification and failed follow-up remain dated results. A separately declared
-[expected season-points framework](docs/expected_season_points.md) evaluates
-average gain and material downside for subsequent tests; it does not retroactively
-pass the old gate or automatically change production defaults.
-
-## Performance and other options
+## Performance vs competitors
 
 The published v1 historical evaluation used 163,072 player-match records from 2020/21–2025/26. On 15,308 eligible candidate records across the 2024/25 and 2025/26 expanding-window tests:
 
@@ -201,15 +40,6 @@ The published v1 historical evaluation used 163,072 player-match records from 20
 | Recency average | 2.982 | 2.108 |
 
 Eligibility uses prior history and lagged minutes, rather than selecting players by their eventual performance. Core points exclude the separately modelled defensive-contribution award. These results do not establish a captaincy or full-season points advantage. [Validation details and limitations](docs/validation.md).
-
-Related open-source projects take different approaches:
-
-| Project | Approach | Relationship to fpl-predict |
-|---|---|---|
-| [OpenFPL](https://github.com/daniegr/OpenFPL) | Position-specific tree ensembles using FPL and Understat features | A broader ensemble approach; its published test window and cohorts differ, so headline errors are not directly comparable. |
-| [Dastan](https://github.com/qazybekb/smartplayfpl-dastan) | Participation and conditional-return models blended with direct point predictions | A richer forecasting benchmark with retained historical predictions. |
-| [AIrsenal](https://github.com/alan-turing-institute/AIrsenal) | Team-scoreline and player-involvement models connected to squad/transfer optimisation | A broader team-management framework using event-based forecasting. |
-
 A separate matched retrospective comparison against Dastan covers 17,622 player-gameweeks in 2024/25 GW15–38. On the 5,145 players/gameweeks meeting fpl-predict's pre-deadline candidate criteria:
 
 | Method | Full-points RMSE ↓ | Full-points MAE ↓ |
@@ -223,65 +53,18 @@ planning-relevant historical strength: it rewards putting high-return options
 near the top, although it does not enforce squad constraints. The small lead has
 an exploratory uncertainty interval spanning zero.
 
-About **55% of Dastan's MSE advantage** comes from candidates who subsequently
-recorded zero minutes. Known unavailable players can be excluded using predeadline
-evidence, but unexpected non-appearances remain important selection errors and
-must stay in the comparison. Dastan also has lower error among 60+ minute players.
-The [decision-relevance explanation](docs/comparison_interpretation.md) gives the
-full decomposition, source limitations and distinction between measured wins and
-unproved general superiority.
-
 Dastan had about 2.9% lower RMSE on those matched records. Training policies and feature sets differ, and this is an archived retrospective comparison, not a prospective competition. Do not compare this table directly with the core-points table above: the periods and targets differ. [Comparison methods, provenance and aggregate results](docs/open_source_comparison_2026-10-14.md).
 
-A [practical selection benchmark](docs/SELECTION_BENCHMARK_RESULTS_2026-10-15.md)
-compares realised lineup points, budgeted squad construction and rolling transfers
-under one shared policy. In the 2025/26 GW28–38 window the incumbent leads the
-measured squad-reset and rolling totals against named-method adaptations; the
-primary owned-squad comparisons remain inconclusive. A separate replay of original
-Dastan forecasts shows a small, inconclusive +0.198 points/GW lead for Dastan.
-These retrospective results do not establish parity or superiority over the
-original external systems, and no model was promoted. The report includes
-coverage, uncertainty, source distinctions and measured execution cost; the
-[workflow](docs/selection_benchmark.md) explains how to test your own forecasts.
+- [OpenFPL](https://github.com/daniegr/OpenFPL) uses position-specific tree ensembles with FPL and Understat features; its published test window and cohorts differ, so headline errors are not directly comparable.
+- [AIrsenal](https://github.com/alan-turing-institute/AIrsenal) uses team-scoreline and player-involvement models connected to squad/transfer optimisation.
 
-The [availability follow-up and six-method rebenchmark](docs/INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md)
-adds a tested research challenger on the same historical market and policy. It
-improves weekly reset scores but slightly loses owned-squad and rolling-transfer
-scores against the incumbent control; it is not promoted. Original Dastan results
-above remain separate from this 2025/26 Dastan-architecture adaptation.
+The [full benchmarks](docs/BENCHMARKS.md) retain the Dastan error decomposition, selection comparisons, source distinctions and uncertainty.
 
-The [conditional-integration follow-up](docs/CONDITIONAL_SELECTION_RESULTS_2026-10-16.md)
-adds another fixed historical comparison. Its unapproved challenger has observed
-RMSE 2.94125 versus 2.95404 for the Dastan adaptation, but higher MAE; the paired
-RMSE interval crosses zero. This is not an original-Dastan or general superiority
-claim. The report also separates mean-policy forecast value from the new selector.
+## Research programme
 
-For shared-row comparisons against other systems, see the [external benchmark
-protocol](docs/BENCHMARK_PROTOCOL.md), [source readiness inventory](docs/benchmark_sources.json)
-and [local import workflow](docs/benchmark_workflow.md). The optional
-`fpl-predict benchmark` command validates local exports and produces aggregate
-coverage/error/ranking reports and [bounded evaluation diagnostics](docs/benchmark_evaluation.md).
-An explicit [resource-controlled runner](docs/experiment_runner.md) is available
-for separately authorised experiments. These tools do not promote models.
-The [reference source audit](docs/REFERENCE_SOURCE_AUDIT.md) distinguishes verified
-inputs from unresolved provenance. An explicit [retrospective reference pilot](docs/reference_pilot.md)
-can measure full-score baseline errors and fitting cost without changing the approved model.
-The optional [deadline/provenance audit](docs/deadline_provenance.md) checks
-historical bootstrap captures and player/team/opponent source-time contracts
-separately from accuracy scoring.
-See the [dated provenance findings](docs/PROVENANCE_FINDINGS_2026-10-15.md) for
-verified inputs, observed temporal concerns and remaining reference-fit gates.
-A separately named [native-window reference pilot](docs/native_reference.md)
-rebuilds histories at common deadlines under a [pre-fit protocol](docs/NATIVE_REFERENCE_PROTOCOL.md).
-It is research tooling; merged code does not replace approved forecasting weights.
-The optional [native development study](docs/native_development.md) tests a fixed
-set of richer-history challengers with chronological error and decision gates.
-An offline [availability source audit](docs/AVAILABILITY_SOURCE_AUDIT_2026-10-15.md)
-checks exact historical CSV prefixes against pre-deadline Git publication records.
-The optional [conditional architecture reference](docs/conditional_reference.md)
-uses an explicitly installed research dependency and a separately frozen protocol.
-The [prospective validation handoff](docs/PROSPECTIVE_VALIDATION_HANDOFF.md)
-describes pre-deadline comparison locks and read-only reviews of finalised trials.
+Pre-registered studies use fixed gates and publish negative results. A code merge does not promote a model: **approved 1.0.0 and weekly defaults remain unchanged**. See the [research results index](docs/RESEARCH_RESULTS.md) for dated outcomes and reports.
+
+The optional [season-management system](docs/season_management.md) carries squad state across 38 deadlines; its [results and limitations](docs/SEASON_MANAGEMENT_RESULTS.md) remain separate from forecast-error benchmarks.
 
 ## Install
 
@@ -293,105 +76,47 @@ cd fpl-predict
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -e '.[dev]'
 .venv/bin/python -m pytest -q
-```
-
-The default tests use synthetic fixtures and run offline. Integration checks that require separately prepared historical data or model artifacts are skipped on a fresh checkout. Python and numerical dependencies are pinned in [pyproject.toml](pyproject.toml).
-
-Initialise a workspace for downloaded data, model artifacts and generated reports:
-
-```sh
 export FPL_PREDICT_HOME="$PWD/var"
 .venv/bin/fpl-predict init
-.venv/bin/fpl-predict --help
 ```
 
-`FPL_PREDICT_HOME` defaults to `var/` under the current working directory. Keep the variable set when running commands from another directory. `var/` is excluded from Git; another directory can be used instead. Public FPL data retrieval does not require FPL login credentials or a paid API key.
+The default tests use synthetic fixtures and run offline. Historical datasets and trained model binaries are not distributed. [Full setup and workspace instructions](docs/USAGE.md#install).
 
 ## Model setup
 
-### Reproduce training and evaluation
-
-```sh
-.venv/bin/fpl-predict download-history
-.venv/bin/fpl-predict build-features
-.venv/bin/fpl-predict train --reproduce
-```
-
-These commands download the historical dataset, build lagged feature caches, and run the documented training/evaluation protocol. Outputs go under `$FPL_PREDICT_HOME/artifacts/`; repeats with an existing evaluated artifact use a separate reproduction directory. Training is an explicit operation, not part of a normal data refresh.
-
-**Training does not install or approve its output for forecasting.** A newly trained file is not guaranteed to match the published artifact hash. Model promotion requires evidence against the [promotion gates](src/model_registry.py), an immutable version/artifact record and a corresponding runtime registry update. There is currently no one-command promotion workflow or bundled model download.
-
-### Install a matching approved artifact
-
-If you have obtained a trusted artifact matching the approved registry entry:
+Forecasting requires a trusted artifact matching the approved registry entry:
 
 ```sh
 .venv/bin/fpl-predict install-model /path/to/trusted-model.joblib
 ```
 
-Installation verifies the expected SHA256 before copying the file. Forecasting verifies the registered artifact again before loading it. The default model version and expected hash are documented in [validation](docs/validation.md). Do not load arbitrary downloaded Joblib/Pickle model files: their deserialisation can execute code.
+Installation verifies the expected SHA256 before copying the file. Forecasting verifies the registered artifact again before loading it. Do not load arbitrary downloaded Joblib/Pickle model files: their deserialisation can execute code.
+
+**Training does not install or approve its output for forecasting.** See [reproduction and model setup](docs/USAGE.md#model-setup), [validation](docs/validation.md) and the [promotion gates](src/model_registry.py).
 
 ## Forecast for a squad
 
-Once an approved artifact is installed, refresh the public data:
+Once an approved artifact is installed, refresh the public data and supply your squad JSON:
 
 ```sh
 .venv/bin/fpl-predict refresh
-```
-
-Create your squad JSON at `$FPL_PREDICT_HOME/squad.json` with these fields:
-
-| Field | Required content |
-|---|---|
-| `players` | Exactly 15 objects, each with the current FPL `id` and `selling_price_tenths` |
-| `bank_tenths` | Available bank balance in tenths of a million; `10` means £1.0m |
-| `free_transfers` | Number of available free transfers |
-
-Use current player IDs from the bootstrap snapshot and your actual selling prices, which may differ from market prices. The squad must have two goalkeepers, five defenders, five midfielders and three forwards, with at most three players per club. Store account-specific inputs outside tracked source.
-
-```sh
 .venv/bin/fpl-predict forecast --team-state "$FPL_PREDICT_HOME/squad.json"
 ```
 
-Each run writes a new directory under `$FPL_PREDICT_HOME/forecasts/` containing:
-
-- `fixture_predictions.json` and `player_gameweek_predictions.json`: points, minutes, probabilities and baseline estimates.
-- `planning.json`: lineup and transfer/chip comparisons for the supplied squad.
-- `REPORT.md`: a readable forecast summary.
-- `manifest.json`: input/model provenance, timestamps and assumptions.
-
-`forecasts/LATEST` identifies the latest base forecast. Optional sourced scenarios use `--availability-review /path/to/review.json`; scenario runs preserve the base pointer. See the [review schema](docs/availability_workflow.md) and `forecast --help` for details.
+The [full usage guide](docs/USAGE.md#forecast-for-a-squad) documents the required 15-player squad, selling prices, bank, free transfers, output files and optional sourced scenarios. Store account-specific inputs outside tracked source.
 
 **Season support:** live forecasting currently checks the 2026/27 data schema. Another season requires a rules/schema review before use. Forecasts beyond the next gameweek are planning approximations, not equally validated multiweek predictions.
 
 ## Evaluate a saved forecast
 
-Keep the forecast created before the relevant deadline. After all results are officially finished and checked, refresh the outcomes and score that saved directory:
+Keep the forecast created before the relevant deadline. After all results are officially finished and checked:
 
 ```sh
 .venv/bin/fpl-predict refresh
 .venv/bin/fpl-predict score --forecast /path/to/saved/forecast --gw 7
 ```
 
-Replace the example directory and gameweek with the saved run being evaluated. Scoring rejects late-generated forecasts and unfinished/unchecked outcomes, and refuses to overwrite an existing outcome report for the same snapshot. Reports include points errors, minutes errors, appearance diagnostics and official-projection coverage. Missing official projections remain missing; paired methods use identical rows.
-
-Additional research commands expose their options through:
-
-```sh
-.venv/bin/fpl-predict decision-trial --help
-.venv/bin/fpl-predict search-lightweight --help
-.venv/bin/fpl-predict selection-benchmark --help
-.venv/bin/fpl-predict participation-audit --help
-.venv/bin/fpl-predict news-probe --help
-.venv/bin/fpl-predict incumbent-availability --help
-.venv/bin/fpl-predict availability-points --help
-.venv/bin/fpl-predict availability-benchmark --help
-.venv/bin/fpl-predict conditional-integration --help
-.venv/bin/fpl-predict integration-study --help
-.venv/bin/python tools/compare_dastan.py --help
-```
-
-Research and model-selection data must remain separate from later evaluation data. Previously inspected test seasons are not untouched holdouts for new adaptive experiments.
+Scoring rejects late-generated forecasts and unfinished/unchecked outcomes, and refuses to overwrite an existing outcome report for the same snapshot. [Scoring details and research commands](docs/USAGE.md#evaluate-a-saved-forecast).
 
 ## Limitations
 
@@ -399,11 +124,11 @@ Research and model-selection data must remain separate from later evaluation dat
 - Current rules, fitness, expected roles and fixture changes require review; the model does not independently verify news sources.
 - Minute scaling and double-gameweek appearance independence are approximations. Empirical point intervals do not capture every source of uncertainty.
 - Lower prediction error does not guarantee more FPL points. Transfer/chip comparisons are conditional, and the engine does not execute decisions.
-
 ## Documentation and contributing
 
+- [Research results](docs/RESEARCH_RESULTS.md), [benchmarks](docs/BENCHMARKS.md) and [season management](docs/SEASON_MANAGEMENT_RESULTS.md)
+- [Full usage](docs/USAGE.md), [engine overview](docs/ENGINE_OVERVIEW.md) and [handover / weekly workflow](HANDOVER.md)
 - [Validation](docs/validation.md), [data sources](docs/data.md) and [availability reviews](docs/availability_workflow.md)
-- [Open-source comparisons](docs/open_source_comparison_2026-10-14.md) and [bounded experiment protocol](docs/I3_PROTOCOL.md)
 - [Contributing](CONTRIBUTING.md) and [security](SECURITY.md)
 
 Source is in `src/`, offline tests in `tests/`, and repository utilities in `tools/`. Contributions should include relevant validation and preserve chronological evaluation, artifact integrity and the distinction between code changes and model approval.
@@ -411,17 +136,3 @@ Source is in `src/`, offline tests in `tests/`, and repository utilities in `too
 ## License
 
 [MIT](LICENSE) for the code. External datasets and Premier League trademarks retain their own terms. This project is unaffiliated with the Premier League.
-
-For independently fitted, bounded external-method research references, see the
-[historical comparison workflow](docs/historical_references.md). These optional
-experiments do not replace the approved forecasting model.
-
-A small credible improvement can justify model replacement. The latest conditional
-forecaster improves historical point errors, while its expected-bench selector
-does not establish better realised decisions. Its failed fixed ranking gate is
-not proof that the forecaster is inferior; see the [targeted adoption assessment](docs/CONDITIONAL_SELECTION_RESULTS_2026-10-16.md#can-a-small-improvement-justify-replacement)
-for uncertainty; the subsequent [qualification report](docs/FORECASTER_QUALIFICATION_RESULTS_2026-10-16.md) records the completed adoption assessment.
-
-FPL-derived team expected-goals windows failed the frozen development gate; approved 1.0.0 remains unchanged. See the [research results](docs/FPL_TEAM_XG_RESULTS_2026-11-03.md).
-
-CORE expected-statistic masking research: [results](docs/CORE_XG_MASK_RESULTS_2026-11-03.md). Outcome ADOPT_FOR_RESEARCH; approved 1.0.0 unchanged.
