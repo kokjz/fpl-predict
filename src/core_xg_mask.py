@@ -47,14 +47,40 @@ def schema_preflight(history):
         if not history.season.eq(s).any():gaps.append(dict(season=s))
     return dict(passed=not gaps,gaps=gaps,required=required)
 
-def rebuild(history,targets):
+def rebuild(history,targets,columns=None):
     """Call the unchanged player builder, preserving season reset and priors."""
     if not targets.season.eq('2022-23').all():raise ValueError('Only 2022-23 targets')
     if not set(history.season)<=set(SEASONS):raise ValueError('Excluded season')
+    columns=COLUMNS if columns is None else list(columns)
+    if not set(columns)<=set(COLUMNS+['ew4_minutes','ew12_points_core']):raise ValueError('Undeclared rebuild column')
     store=FeatureStore(history)
-    rows=[{n:z[n] for n in COLUMNS} for r in targets.itertuples()
+    rows=[{n:z[n] for n in columns} for r in targets.itertuples()
           for z in [store.player(r.season,r.element,r.cutoff)]]
-    return pd.DataFrame(rows,index=targets.index,columns=COLUMNS)
+    return pd.DataFrame(rows,index=targets.index,columns=columns)
+
+def tolerance_identity(cache,unmasked):
+    """Frozen r2 identity, raw before CSV; every pair finite and within bound."""
+    if not cache.index.equals(unmasked.index) or list(cache)!=list(unmasked):raise ValueError('Identity alignment')
+    stats={};passed=True
+    for name in cache:
+        x=cache[name].to_numpy(float);y=unmasked[name].to_numpy(float)
+        finite=np.isfinite(x)&np.isfinite(y);delta=np.abs(x[finite]-y[finite])
+        scale=np.maximum(1.,np.abs(x[finite]));ok=bool(finite.all() and (delta<=1e-12*scale).all())
+        rel=np.divide(delta,np.abs(x[finite]),out=np.zeros_like(delta),where=x[finite]!=0)
+        with np.errstate(over='ignore',invalid='ignore'):
+            units=np.ceil(delta/np.minimum(np.abs(np.spacing(x[finite])),np.abs(np.spacing(y[finite]))))
+        stats[name]=dict(passed=ok,rows=len(x),nonfinite_pairs=int((~finite).sum()),max_absolute_difference=float(delta.max()) if len(delta) else None,max_relative_difference=None if ((x[finite]==0)&(delta!=0)).any() else (float(rel.max()) if len(rel) else None),max_scaled_difference=float((delta/scale).max()) if len(delta) else None,ulp_distribution={k:int(v.sum()) for k,v in {'0':units==0,'1':units==1,'2':units==2,'3-8':(units>=3)&(units<=8),'>8':units>8}.items()})
+        passed=passed and ok
+    return dict(passed=passed,tolerance=1e-12,boundary='raw pre-CSV',columns=stats)
+
+def splice(cache,unmasked,masked):
+    """Keep exact cache bytes wherever masking leaves the rebuild unchanged."""
+    if not cache.index.equals(unmasked.index) or not cache.index.equals(masked.index) or list(cache)!=COLUMNS or list(unmasked)!=COLUMNS or list(masked)!=COLUMNS:raise ValueError('Splice alignment')
+    x=cache.to_numpy(float);u=unmasked.to_numpy(float);m=masked.to_numpy(float)
+    if not all(np.isfinite(v).all() for v in (x,u,m)):raise ValueError('Nonfinite splice')
+    changed=m!=u;out=x.copy();out[changed]=m[changed]
+    if out[~changed].tobytes()!=x[~changed].tobytes() or not (out[changed]!=u[changed]).all():raise ValueError('Splice identity')
+    return pd.DataFrame(out,index=cache.index,columns=COLUMNS),pd.DataFrame(changed,index=cache.index,columns=COLUMNS)
 
 def correction_proof(control,corrected,seasons):
     x=np.ascontiguousarray(control);z=np.ascontiguousarray(corrected)
