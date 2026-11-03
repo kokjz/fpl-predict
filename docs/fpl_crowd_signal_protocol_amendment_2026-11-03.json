@@ -1,0 +1,58 @@
+{
+  "package": "fpl-crowd-signal",
+  "revision": "fcs-r2",
+  "date": "2026-11-03",
+  "brief_sha256": "ff49b24d70ec3256e9bc4283e0dbf21410997e44224a379e9adfd0b23f5870e4",
+  "original_protocol": {
+    "file": "fpl_crowd_signal_protocol_2026-11-03.json",
+    "lf_sha256": "9e41d51b1aa295d1cfa8ac8259642de21ecc93fea194351f43b158b554610b28",
+    "commit": "a771bf528c862ae83c119468540d26d395bce8ce"
+  },
+  "prior_admission": {
+    "crowd_field_checks_sha256": "529524e774335a0d2e74125eb66af4647be5af0564a5fdeac12e0cc8d6acb9b0",
+    "balance_discrepancies_by_season": [
+      1,
+      4,
+      2,
+      3,
+      4,
+      0
+    ],
+    "accuracy_seen": false
+  },
+  "amendment": {
+    "transfers_balance": "Use exactly as recorded, never recompute, impute or correct",
+    "bound": {
+      "max_share_each_season": 0.001,
+      "inclusive": true,
+      "integer_check": "discrepant_rows * 1000 <= season_rows"
+    },
+    "report_columns": [
+      "season",
+      "GW",
+      "element",
+      "transfers_in",
+      "transfers_out",
+      "transfers_balance",
+      "difference",
+      "selected",
+      "feeds_any_last",
+      "feeds_any_ew4"
+    ],
+    "reason": "Published/live field; percentile and clipped share features remain bounded",
+    "other_integrity_checks": "All original checks stay hard stops, unchanged",
+    "feature_lags_fallbacks_folds_gates": "unchanged"
+  },
+  "resources": {
+    "new_admission_jobs": 1,
+    "new_directory": true,
+    "fit_jobs_B": 4,
+    "fit_jobs_C": 2,
+    "stage_C_only_B_pass": true,
+    "real_retries": 0,
+    "retrievals": 0
+  },
+  "preserve": "Original protocol, failed r1 directory and evidence unchanged",
+  "stop": "Any other failure or bound breach -> return106; no repair/retry",
+  "publication": "Research only; approved1.0.0 unchanged; reviewPENDING; PR62 ready then stop before merge"
+}

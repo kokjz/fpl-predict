@@ -377,5 +377,38 @@
     "results": "../CORE_XG_MASK_RESULTS_2026-11-03.md",
     "pr": 60,
     "branch": "feat/core-xg-mask"
+  },
+  "fpl_crowd_signal": {
+    "package": "fpl-crowd-signal",
+    "revision": "fcs-r2",
+    "date": "2026-11-03",
+    "outcome": "DEVELOPMENT_GATE_FAILED",
+    "numerical_source": "1e6f21a23e98c6d6f3b1d5814aa1a44b8fc6a40d",
+    "original_protocol": {
+      "commit": "a771bf528c862ae83c119468540d26d395bce8ce",
+      "lf_sha256": "9e41d51b1aa295d1cfa8ac8259642de21ecc93fea194351f43b158b554610b28"
+    },
+    "amendment": {
+      "head": "6a1188bbc008940e971b327f79b5b33a448a3f72",
+      "lf_sha256": "76f57ffcfe30fd3b038118e47c73384bda176d34ea29ff79f3e06a4820d4e3b3"
+    },
+    "approved_forecaster": {
+      "version": "1.0.0",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233"
+    },
+    "production_approved": false,
+    "registry_changed": false,
+    "weekly_defaults_changed": false,
+    "architect_premerge_review": "ACCEPTED 2026-11-03 (handover 106 review)",
+    "stage_A": true,
+    "stage_B": false,
+    "stage_C": "NOT_RUN_GATE_B_FAILED",
+    "fits": {
+      "B": 4,
+      "C": 0
+    },
+    "results": "../FPL_CROWD_SIGNAL_RESULTS_2026-11-03.md",
+    "pr": 62,
+    "branch": "feat/fpl-crowd-signal"
   }
 }
