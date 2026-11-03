@@ -86,3 +86,52 @@ def test_gate_formulas_at_boundary():
     assert t.gate_details(candidate,control,fn,fc,0)['passed']
     candidate['fixture']['rmse']=9.95001
     assert not t.gate_details(candidate,control,fn,fc,0)['passed']
+
+def test_unpublished_mask_prior_and_unchanged_source_bytes():
+    d=history();d.loc[d.GW.eq(1),'expected_goals']=0.
+    before=d.to_csv(index=False).encode();masked,detected=t.mask_unpublished_gameweeks(d)
+    assert detected==[('2022-23',1)] and masked.loc[masked.GW.eq(1),'expected_goals'].isna().all()
+    assert d.to_csv(index=False).encode()==before
+    f=t.fixture_statistics(masked);store=t.TeamXGStore(f)
+    values=store.team('2022-23',1,d.ts.max())
+    assert set(values.values())=={1.35}
+    # The actual CORE builder receives the unchanged source, not the masked copy.
+    from fpl_model import normalise
+    source=d.assign(pos=2,total_points=2.,kickoff_time=d.ts.astype(str))
+    x=FeatureStore(normalise(source)).transform(source.assign(cutoff=d.ts+pd.Timedelta(days=1)))
+    t.mask_unpublished_gameweeks(source)
+    y=FeatureStore(normalise(source)).transform(source.assign(cutoff=d.ts+pd.Timedelta(days=1)))
+    assert x[CORE_FEATURES].to_numpy().tobytes()==y[CORE_FEATURES].to_numpy().tobytes()
+
+@pytest.mark.parametrize('kind',['partial','zero_minute_nonzero','nan','zero_goals'])
+def test_unpublished_rule_does_not_mask_other_zero_rows(kind):
+    d=history();d['expected_goals']=0.
+    if kind=='partial':d.loc[0,'expected_goals']=.1
+    elif kind=='zero_minute_nonzero':d.loc[1,'expected_goals']=.1
+    elif kind=='nan':d.loc[1,'expected_goals']=np.nan
+    else:d['team_gf']=0
+    # Only inspect GW1; GW2 is a separate fully-zero positive-goal group.
+    d=d.loc[d.GW.eq(1)];masked,detected=t.mask_unpublished_gameweeks(d)
+    assert detected==[]
+    pd.testing.assert_frame_equal(masked,d)
+
+def test_expected_unpublished_set_rejects_extras_missing_and_other_seasons():
+    d=pd.DataFrame(dict(season=['2022-23']*14,GW=[g for _,g in t.EXPECTED_UNPUBLISHED]))
+    assert t.validate_unpublished_set(d,t.EXPECTED_UNPUBLISHED)['passed']
+    for bad in [t.EXPECTED_UNPUBLISHED[:-1],t.EXPECTED_UNPUBLISHED+[('2023-24',1)],t.EXPECTED_UNPUBLISHED+[('2022-23',16)]]:
+        with pytest.raises(ValueError,match='Unexpected unpublished'):t.validate_unpublished_set(d,bad)
+    with pytest.raises(ValueError):t.validate_unpublished_set(d.iloc[:-1],t.EXPECTED_UNPUBLISHED[:-1])
+
+def test_admission_uses_published_subset_and_retains_r1_ratio():
+    frames=[];hist=[];raw=[]
+    for s in t.SEASONS:
+        f=pd.DataFrame(dict(season=s,fixture=np.repeat(np.arange(380),2),team_id=np.tile([1,2],380),GW=np.repeat(np.arange(1,39),20),team_gf=1.,team_ga=1.,xg=1.,xga=1.))
+        if s<'2022-23':f[['xg','xga']]=np.nan
+        r=f.copy()
+        if s=='2022-23':
+            rows=f.GW.isin([g for _,g in t.EXPECTED_UNPUBLISHED]);f.loc[rows,['xg','xga']]=np.nan;r.loc[rows,['xg','xga']]=0.
+        frames.append(f);raw.append(r);hist.append(f.rename(columns={'xg':'expected_goals'}).assign(minutes=90))
+    report=t.admission(pd.concat(hist),pd.concat(frames),t.EXPECTED_UNPUBLISHED,pd.concat(raw))
+    x=report['seasons']['2022-23']
+    assert report['passed'] and x['xg_goals_ratio']==1. and x['r1_xg_goals_ratio']<.8
+    assert x['unpublished_team_fixtures']==280 and x['published_team_fixtures']==480 and x['nan_team_fixtures']==0

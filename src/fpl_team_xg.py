@@ -21,6 +21,27 @@ NEW_FEATURES=[f'{s}_ew{h}_{v}' for s in ('team','opp') for h in (4,12) for v in 
 FEATURES=dict(control=CORE_FEATURES,team_xg=CORE_FEATURES+NEW_FEATURES)
 HISTORY_COLUMNS=['season','GW','element','fixture','team_id','opponent_team','was_home','minutes','ts','expected_goals','team_gf','team_ga']
 read_scoped=source_tools.read_scoped
+EXPECTED_UNPUBLISHED=[('2022-23',g) for g in (1,2,3,4,5,6,8,9,10,11,12,13,14,15)]
+
+def unpublished_gameweeks(history):
+    """Detect the frozen all-row zero rule, including zero-minute records."""
+    out=[]
+    for (season,gw),g in history.loc[history.season.isin(SEASONS[2:])].groupby(['season','GW']):
+        values=g.expected_goals.to_numpy(float)
+        if np.isfinite(values).all() and (values==0).all() and g.team_gf.sum()>0:
+            out.append((season,int(gw)))
+    return sorted(out)
+
+def validate_unpublished_set(history,detected):
+    present=sorted(('2022-23',int(g)) for g in history.loc[history.season.eq('2022-23') & history.GW.lt(16),'GW'].unique())
+    if present!=EXPECTED_UNPUBLISHED or sorted(detected)!=present:raise ValueError('Unexpected unpublished season-gameweeks; STOP')
+    return dict(passed=True,detected=[dict(season=s,GW=g) for s,g in detected],expected=[dict(season=s,GW=g) for s,g in present])
+
+def mask_unpublished_gameweeks(history):
+    """Return an independent team-statistics copy; never alter CORE inputs."""
+    detected=unpublished_gameweeks(history);d=history.copy()
+    for season,gw in detected:d.loc[d.season.eq(season)&d.GW.eq(gw),'expected_goals']=np.nan
+    return d,detected
 
 def fold_masks(seasons,fold):
     if fold not in (*DEVELOPMENT,*AUDITS) or not set(seasons)<=set(SEASONS):raise ValueError('Excluded season/fold')
@@ -77,28 +98,31 @@ class TeamXGStore:
             out.append({f'{side}_{k}':v for side,team in [('team',r.team_id),('opp',r.opponent_team)] for k,v in self.team(r.season,team,r.cutoff).items()})
         return pd.DataFrame(out,index=targets.index,columns=NEW_FEATURES)
 
-def admission(history,fixtures):
+def admission(history,fixtures,unpublished=(),r1_fixtures=None):
     """All-season admission, including per-GW coverage and hard sanity bounds."""
     seasons={};passed=True
     for season in SEASONS:
-        d=history.loc[history.season.eq(season)];f=fixtures.loc[fixtures.season.eq(season)]
+        d=history.loc[history.season.eq(season)];all_f=fixtures.loc[fixtures.season.eq(season)]
+        excluded=[g for s,g in unpublished if s==season];f=all_f.loc[~all_f.GW.isin(excluded)]
         coverage={}
         for gw,g in d.groupby('GW'):
             p=g.loc[g.minutes.gt(0),'expected_goals'];finite=int(np.isfinite(p.to_numpy(float)).sum())
-            coverage[str(int(gw))]=dict(played=len(p),finite=finite,share=finite/len(p) if len(p) else None)
+            coverage[str(int(gw))]=dict(played=len(p),finite=finite,share=finite/len(p) if len(p) else None,unpublished=int(gw) in excluded)
         p=d.loc[d.minutes.gt(0),'expected_goals'];finite=int(np.isfinite(p.to_numpy(float)).sum())
         missing=int(f.xg.isna().sum());ratio=None;correlation={}
-        count=int(f.fixture.nunique());early=season<'2022-23'
-        ok=count==380 and len(f)==760
+        count=int(all_f.fixture.nunique());early=season<'2022-23'
+        ok=count==380 and len(all_f)==760 and len(f)>0
         if early:ok=ok and not np.isfinite(d.expected_goals.to_numpy(float)).any() and missing==len(f)
         else:
             ratio=float(f.xg.sum()/f.team_gf.sum())
             totals=f.groupby('team_id')[['xg','xga','team_gf','team_ga']].sum()
             correlation=dict(xg_goals=float(totals.xg.corr(totals.team_gf)),xga_conceded=float(totals.xga.corr(totals.team_ga)))
             ok=ok and missing/len(f)<=.01 and .80<=ratio<=1.20
-        seasons[season]=dict(passed=bool(ok),fixtures=count,team_fixtures=len(f),nan_team_fixtures=missing,nan_share=missing/len(f) if len(f) else None,played=len(p),finite=finite,finite_share=finite/len(p) if len(p) else None,coverage_by_gw=coverage,xg_goals_ratio=ratio,correlations=correlation)
+        raw=r1_fixtures.loc[r1_fixtures.season.eq(season)] if r1_fixtures is not None else all_f
+        r1_ratio=None if early else float(raw.xg.sum()/raw.team_gf.sum())
+        seasons[season]=dict(passed=bool(ok),fixtures=count,team_fixtures=len(all_f),published_team_fixtures=len(f),unpublished_gameweeks=excluded,unpublished_team_fixtures=len(all_f)-len(f),nan_team_fixtures=missing,nan_share=missing/len(f) if len(f) else None,played=len(p),finite=finite,finite_share=finite/len(p) if len(p) else None,coverage_by_gw=coverage,xg_goals_ratio=ratio,r1_xg_goals_ratio=r1_ratio,correlations=correlation)
         passed=passed and ok
-    return dict(passed=bool(passed),seasons=seasons,reciprocal_integrity=True)
+    return dict(passed=bool(passed),seasons=seasons,reciprocal_integrity=True,unpublished=[dict(season=s,GW=g) for s,g in unpublished],bounds_apply_to='published team-fixtures only')
 
 def shared_proof(a,folds):
     n=len(a['y']);x=a['X_control'];z=a['X_team_xg'];width=len(CORE_FEATURES)
@@ -157,7 +181,7 @@ def analyse(a,predictions,panels,folds):
 
 def static_audit():
     assert not any(n.startswith('us_') for n in HISTORY_COLUMNS+CORE_FEATURES)
-    source=inspect.getsource(fixture_statistics)+inspect.getsource(TeamXGStore)
+    source=inspect.getsource(fixture_statistics)+inspect.getsource(TeamXGStore)+inspect.getsource(unpublished_gameweeks)+inspect.getsource(mask_unpublished_gameweeks)
     for node in ast.walk(ast.parse(source)):
         if isinstance(node,ast.Attribute):assert not node.attr.startswith('us_')
         if isinstance(node,ast.Constant) and isinstance(node.value,str):assert not node.value.startswith('us_')
