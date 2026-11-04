@@ -410,5 +410,36 @@
     "results": "../FPL_CROWD_SIGNAL_RESULTS_2026-11-03.md",
     "pr": 62,
     "branch": "feat/fpl-crowd-signal"
+  },
+  "compliant_union": {
+    "package": "compliant-union",
+    "revision": "cun-r1",
+    "date": "2026-11-04",
+    "outcome": "AUDIT_GATE_FAILED",
+    "numerical_source": "d1effc46e2253691aba73e7e7b3782eab613f8c9",
+    "protocol": {
+      "head": "9448636ca31acd6340c3a71d06fade9efda86193",
+      "lf_sha256": "d85042d01f590098d8d8f0a667b8e374528156fef0af252a6810bf9a104d4cc7",
+      "feature_sha256": "a6e08585b87997d8b0d7385a2a136e5bebf6ea3dd5e4c057c116f51007ce8bf0",
+      "features": 204
+    },
+    "approved_forecaster": {
+      "version": "1.0.0",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233"
+    },
+    "production_approved": false,
+    "registry_changed": false,
+    "weekly_defaults_changed": false,
+    "architect_premerge_review": "PENDING",
+    "stage_A": true,
+    "stage_B": true,
+    "stage_C": false,
+    "fits": {
+      "B": 4,
+      "C": 2
+    },
+    "results": "../COMPLIANT_UNION_RESULTS_2026-11-04.md",
+    "pr": 64,
+    "branch": "feat/compliant-union"
   }
 }

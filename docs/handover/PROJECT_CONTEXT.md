@@ -206,3 +206,5 @@ The r2 data-availability amendment masks unpublished 2022/23 gameweeks for team 
 CORE xG mask research (2026-11-03, PR60): ADOPT_FOR_RESEARCH. See ../CORE_XG_MASK_RESULTS_2026-11-03.md. No model promotion or default change; architect pre-merge review PENDING.
 
 FPL crowd signal research (2026-11-03, PR62): DEVELOPMENT_GATE_FAILED. See ../FPL_CROWD_SIGNAL_RESULTS_2026-11-03.md. No model promotion or default change; architect pre-merge review PENDING.
+
+Compliant signal union research (2026-11-04, PR64): AUDIT_GATE_FAILED. See ../COMPLIANT_UNION_RESULTS_2026-11-04.md. Approved1.0.0 and weekly defaults unchanged; architect pre-merge review PENDING.
