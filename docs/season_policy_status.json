@@ -434,5 +434,38 @@
     "registry_written": false,
     "weekly_defaults_changed": false,
     "result": "RMC_PROMOTION_EVIDENCE_RESULTS_2026-11-02.md"
+  },
+  "availability_prospective_followup": {
+    "package": "availability-prospective",
+    "revision": "avp-r2",
+    "date": "2026-11-04",
+    "outcome": "SANITY_GATE_FAILED",
+    "numerical_source": "0b83e318865eb2573df956ae12565573057f324c",
+    "protocol": {
+      "head": "8541a64182bac745a78864fd0d1336a4b9b7c2f8",
+      "lf_sha256": "5d6a3fce13a1ce1c8baacbfb6724ae375b329d63be0c3086ba541d8fb95feab5",
+      "feature_sha256": {
+        "control": "3a81a8d37e56558d09297aaa562b1315d56d49f7813c69e81063f0d0b3f40453",
+        "availability": "f99485e88251dd6b0e2494befeb224387ef6747acc14c76c242b5c59b55cad92"
+      }
+    },
+    "approved_forecaster": {
+      "version": "1.0.0",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233"
+    },
+    "production_approved": false,
+    "registry_changed": false,
+    "weekly_defaults_changed": false,
+    "architect_premerge_review": "PENDING",
+    "stage_A": true,
+    "stage_B": false,
+    "stage_F": "NOT_RUN_GATE_B_FAILED",
+    "fits": {
+      "B": 2,
+      "F": 0
+    },
+    "results": "../AVAILABILITY_PROSPECTIVE_RESULTS_2026-11-04.md",
+    "pr": 65,
+    "branch": "feat/availability-prospective"
   }
 }
