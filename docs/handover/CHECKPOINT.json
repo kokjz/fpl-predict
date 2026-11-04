@@ -463,7 +463,7 @@
     "production_approved": false,
     "registry_changed": false,
     "weekly_defaults_changed": false,
-    "architect_premerge_review": "PENDING",
+    "architect_premerge_review": "ACCEPTED 2026-11-04 (handover 124 review)",
     "stage_A": true,
     "stage_B": false,
     "stage_F": "NOT_RUN_GATE_B_FAILED",
