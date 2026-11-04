@@ -467,5 +467,49 @@
     "results": "../AVAILABILITY_PROSPECTIVE_RESULTS_2026-11-04.md",
     "pr": 65,
     "branch": "feat/availability-prospective"
+  },
+  "conditional_prospective": {
+    "package": "conditional-prospective",
+    "revision": "cpr-r1",
+    "date": "2026-11-05",
+    "outcome": "SANITY_PASS_FROZEN_FOR_PROSPECTIVE_TEST",
+    "numerical_source": "487f0f127dd3b1cc761f114ec55c635960c5f0dd",
+    "protocol": {
+      "commit": "0f4124619f074f706c49d16f6b8676faace53daf",
+      "lf_sha256": "080ae509da85dd471b6040b7c6df1f2d8470261e6dc0bc5057a2eaf72de7f1ab"
+    },
+    "approved_forecaster": {
+      "version": "1.0.0",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+      "unchanged": true
+    },
+    "production_approved": false,
+    "registry_changed": false,
+    "weekly_defaults_changed": false,
+    "architect_premerge_review": "PENDING",
+    "stage_A": true,
+    "stage_B": true,
+    "stage_F": true,
+    "fits": {
+      "B": 2,
+      "F": 2
+    },
+    "freeze_record": "conditional_prospective_freeze_2026-11-05.json",
+    "first_prospective": {
+      "gameweek": 10,
+      "deadline": "2026-11-06T18:30:00+00:00",
+      "freeze_push_time": "2026-11-04T16:35:10.588041+00:00",
+      "freeze_record_commit": "1b5991d75a6aa7456b2c26f264e3df17b506e68f",
+      "push_time_basis": "successful git push completion receipt, conservative upper bound on remote acceptance",
+      "deadline_source": {
+        "official_url": "https://fantasy.premierleague.com/api/bootstrap-static/",
+        "retrieved_utc": "2026-10-23T15:42:30.936207+00:00",
+        "bootstrap_sha256": "14277c02079a4a0f339f3bfba8d754a3b75656c5ae7cc5105f460f6f162e88d1",
+        "selection": "already-admitted official snapshot; id/deadline fields only; no new retrieval"
+      }
+    },
+    "results": "CONDITIONAL_PROSPECTIVE_RESULTS_2026-11-05.md",
+    "pr": 66,
+    "branch": "feat/conditional-prospective"
   }
 }

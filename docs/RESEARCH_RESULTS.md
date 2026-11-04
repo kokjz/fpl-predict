@@ -4,6 +4,7 @@ Pre-registered studies use fixed gates and publish negative results. Approved 1.
 
 | Date | Study / idea | Recorded outcome or scope | Results | Study tag |
 |---|---|---|---|---|
+| 2026-11-05 | Conditional-prospective phase1 | SANITY_PASS_FROZEN; first prospective GW10; 1.0.0 unchanged | [Report](CONDITIONAL_PROSPECTIVE_RESULTS_2026-11-05.md) | — |
 | 2026-11-04 | Availability-prospective phase1 | SANITY_GATE_FAILED (MAE); no frozen candidates; 1.0.0 unchanged | [Report](AVAILABILITY_PROSPECTIVE_RESULTS_2026-11-04.md) | study-availability-prospective-phase1-2026-11-04 |
 | 2026-11-04 | Compliant signal union | AUDIT_GATE_FAILED; 1.0.0 unchanged | [Report](COMPLIANT_UNION_RESULTS_2026-11-04.md) | study-compliant-union-2026-11-04 |
 | 2026-11-03 | FPL crowd signals | DEVELOPMENT_GATE_FAILED; 1.0.0 unchanged | [Report](FPL_CROWD_SIGNAL_RESULTS_2026-11-03.md) | study-fpl-crowd-signal-2026-11-03 |
