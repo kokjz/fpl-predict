@@ -1,0 +1,2622 @@
+{
+  "package": "compliant-union",
+  "revision": "cun-r1",
+  "date": "2026-11-04",
+  "outcome": "AUDIT_GATE_FAILED",
+  "numerical_source": "d1effc46e2253691aba73e7e7b3782eab613f8c9",
+  "protocol": {
+    "head": "9448636ca31acd6340c3a71d06fade9efda86193",
+    "lf_sha256": "d85042d01f590098d8d8f0a667b8e374528156fef0af252a6810bf9a104d4cc7",
+    "feature_sha256": "a6e08585b87997d8b0d7385a2a136e5bebf6ea3dd5e4c057c116f51007ce8bf0",
+    "features": 204
+  },
+  "features": {
+    "count": 204,
+    "canonical_sha256": "a6e08585b87997d8b0d7385a2a136e5bebf6ea3dd5e4c057c116f51007ce8bf0"
+  },
+  "stage_A": {
+    "identity": {
+      "passed": true,
+      "tolerance": 1e-12,
+      "boundary": "raw pre-CSV",
+      "columns": {
+        "ew4_expected_goals": {
+          "passed": true,
+          "rows": 26505,
+          "nonfinite_pairs": 0,
+          "max_absolute_difference": 1.1102230246251565e-16,
+          "max_relative_difference": 3.9061319489797037e-16,
+          "max_scaled_difference": 1.1102230246251565e-16,
+          "ulp_distribution": {
+            "0": 25589,
+            "1": 764,
+            "2": 150,
+            "3-8": 2,
+            ">8": 0
+          }
+        },
+        "ew4_expected_assists": {
+          "passed": true,
+          "rows": 26505,
+          "nonfinite_pairs": 0,
+          "max_absolute_difference": 5.551115123125783e-17,
+          "max_relative_difference": 4.450247888168557e-16,
+          "max_scaled_difference": 5.551115123125783e-17,
+          "ulp_distribution": {
+            "0": 25230,
+            "1": 1166,
+            "2": 108,
+            "3-8": 1,
+            ">8": 0
+          }
+        },
+        "ew4_expected_goals_conceded": {
+          "passed": true,
+          "rows": 26505,
+          "nonfinite_pairs": 0,
+          "max_absolute_difference": 4.440892098500626e-16,
+          "max_relative_difference": 3.9187381393302194e-16,
+          "max_scaled_difference": 3.7429993296619604e-16,
+          "ulp_distribution": {
+            "0": 24630,
+            "1": 1644,
+            "2": 229,
+            "3-8": 2,
+            ">8": 0
+          }
+        },
+        "ew12_expected_goals": {
+          "passed": true,
+          "rows": 26505,
+          "nonfinite_pairs": 0,
+          "max_absolute_difference": 1.1102230246251565e-16,
+          "max_relative_difference": 4.697164015404474e-16,
+          "max_scaled_difference": 1.1102230246251565e-16,
+          "ulp_distribution": {
+            "0": 25409,
+            "1": 870,
+            "2": 216,
+            "3-8": 10,
+            ">8": 0
+          }
+        },
+        "ew12_expected_assists": {
+          "passed": true,
+          "rows": 26505,
+          "nonfinite_pairs": 0,
+          "max_absolute_difference": 5.551115123125783e-17,
+          "max_relative_difference": 5.353897925330262e-16,
+          "max_scaled_difference": 5.551115123125783e-17,
+          "ulp_distribution": {
+            "0": 24882,
+            "1": 1356,
+            "2": 259,
+            "3-8": 8,
+            ">8": 0
+          }
+        },
+        "ew12_expected_goals_conceded": {
+          "passed": true,
+          "rows": 26505,
+          "nonfinite_pairs": 0,
+          "max_absolute_difference": 4.440892098500626e-16,
+          "max_relative_difference": 4.290461151685383e-16,
+          "max_scaled_difference": 4.290461151685383e-16,
+          "ulp_distribution": {
+            "0": 24300,
+            "1": 1912,
+            "2": 291,
+            "3-8": 2,
+            ">8": 0
+          }
+        },
+        "ew4_minutes": {
+          "passed": true,
+          "rows": 26505,
+          "nonfinite_pairs": 0,
+          "max_absolute_difference": 2.842170943040401e-14,
+          "max_relative_difference": 4.334683842172904e-16,
+          "max_scaled_difference": 4.334683842172904e-16,
+          "ulp_distribution": {
+            "0": 23199,
+            "1": 3112,
+            "2": 194,
+            "3-8": 0,
+            ">8": 0
+          }
+        },
+        "ew12_points_core": {
+          "passed": true,
+          "rows": 26505,
+          "nonfinite_pairs": 0,
+          "max_absolute_difference": 1.7763568394002505e-15,
+          "max_relative_difference": 4.680246229221015e-16,
+          "max_scaled_difference": 4.680246229221015e-16,
+          "ulp_distribution": {
+            "0": 22614,
+            "1": 3156,
+            "2": 706,
+            "3-8": 29,
+            ">8": 0
+          }
+        }
+      }
+    },
+    "splice": {
+      "passed": true,
+      "raw_unchanged_cache_bytes": true,
+      "export_unchanged_control_bytes": true,
+      "changed_values_differ_from_unmasked": true,
+      "non_target_seasons_all49_identical": true,
+      "other43_columns_identical": true,
+      "keys_aligned": true,
+      "raw_mask_changed_cells": 143742
+    },
+    "pr60_correction_parity": {
+      "passed": true,
+      "reference_sha256": "9cb6f21a0773578e7620c64ce332da0f18de328083761968d230c05c930fea48"
+    },
+    "crowd_checks": {
+      "passed": true,
+      "missing_columns": [],
+      "missing_seasons": [],
+      "seasons": {
+        "2020-21": {
+          "rows": 24365,
+          "numeric": {
+            "selected": true,
+            "transfers_in": true,
+            "transfers_out": true,
+            "transfers_balance": true,
+            "value": true
+          },
+          "nan_counts": {
+            "selected": 0,
+            "transfers_in": 0,
+            "transfers_out": 0,
+            "transfers_balance": 0,
+            "value": 0
+          },
+          "violations": {
+            "balance": 1,
+            "negative_selected": 0,
+            "value_range": 0,
+            "nonfinite": 0
+          },
+          "balance_share": 4.104247896572953e-05,
+          "balance_bound": 0.001,
+          "balance_within_bound": true,
+          "inconsistent_player_gameweeks": {
+            "selected": 0,
+            "transfers_in": 0,
+            "transfers_out": 0,
+            "transfers_balance": 0,
+            "value": 0
+          },
+          "value_changes_within_gw": 0,
+          "passed": true
+        },
+        "2021-22": {
+          "rows": 25447,
+          "numeric": {
+            "selected": true,
+            "transfers_in": true,
+            "transfers_out": true,
+            "transfers_balance": true,
+            "value": true
+          },
+          "nan_counts": {
+            "selected": 0,
+            "transfers_in": 0,
+            "transfers_out": 0,
+            "transfers_balance": 0,
+            "value": 0
+          },
+          "violations": {
+            "balance": 4,
+            "negative_selected": 0,
+            "value_range": 0,
+            "nonfinite": 0
+          },
+          "balance_share": 0.00015718945258773136,
+          "balance_bound": 0.001,
+          "balance_within_bound": true,
+          "inconsistent_player_gameweeks": {
+            "selected": 0,
+            "transfers_in": 0,
+            "transfers_out": 0,
+            "transfers_balance": 0,
+            "value": 0
+          },
+          "value_changes_within_gw": 0,
+          "passed": true
+        },
+        "2022-23": {
+          "rows": 26505,
+          "numeric": {
+            "selected": true,
+            "transfers_in": true,
+            "transfers_out": true,
+            "transfers_balance": true,
+            "value": true
+          },
+          "nan_counts": {
+            "selected": 0,
+            "transfers_in": 0,
+            "transfers_out": 0,
+            "transfers_balance": 0,
+            "value": 0
+          },
+          "violations": {
+            "balance": 2,
+            "negative_selected": 0,
+            "value_range": 0,
+            "nonfinite": 0
+          },
+          "balance_share": 7.545746085644218e-05,
+          "balance_bound": 0.001,
+          "balance_within_bound": true,
+          "inconsistent_player_gameweeks": {
+            "selected": 0,
+            "transfers_in": 0,
+            "transfers_out": 0,
+            "transfers_balance": 0,
+            "value": 0
+          },
+          "value_changes_within_gw": 0,
+          "passed": true
+        },
+        "2023-24": {
+          "rows": 29725,
+          "numeric": {
+            "selected": true,
+            "transfers_in": true,
+            "transfers_out": true,
+            "transfers_balance": true,
+            "value": true
+          },
+          "nan_counts": {
+            "selected": 0,
+            "transfers_in": 0,
+            "transfers_out": 0,
+            "transfers_balance": 0,
+            "value": 0
+          },
+          "violations": {
+            "balance": 3,
+            "negative_selected": 0,
+            "value_range": 0,
+            "nonfinite": 0
+          },
+          "balance_share": 0.00010092514718250631,
+          "balance_bound": 0.001,
+          "balance_within_bound": true,
+          "inconsistent_player_gameweeks": {
+            "selected": 0,
+            "transfers_in": 0,
+            "transfers_out": 0,
+            "transfers_balance": 0,
+            "value": 0
+          },
+          "value_changes_within_gw": 0,
+          "passed": true
+        },
+        "2024-25": {
+          "rows": 27283,
+          "numeric": {
+            "selected": true,
+            "transfers_in": true,
+            "transfers_out": true,
+            "transfers_balance": true,
+            "value": true
+          },
+          "nan_counts": {
+            "selected": 0,
+            "transfers_in": 0,
+            "transfers_out": 0,
+            "transfers_balance": 0,
+            "value": 0
+          },
+          "violations": {
+            "balance": 4,
+            "negative_selected": 0,
+            "value_range": 0,
+            "nonfinite": 0
+          },
+          "balance_share": 0.00014661144302312794,
+          "balance_bound": 0.001,
+          "balance_within_bound": true,
+          "inconsistent_player_gameweeks": {
+            "selected": 0,
+            "transfers_in": 0,
+            "transfers_out": 0,
+            "transfers_balance": 0,
+            "value": 0
+          },
+          "value_changes_within_gw": 0,
+          "passed": true
+        },
+        "2025-26": {
+          "rows": 29747,
+          "numeric": {
+            "selected": true,
+            "transfers_in": true,
+            "transfers_out": true,
+            "transfers_balance": true,
+            "value": true
+          },
+          "nan_counts": {
+            "selected": 0,
+            "transfers_in": 0,
+            "transfers_out": 0,
+            "transfers_balance": 0,
+            "value": 0
+          },
+          "violations": {
+            "balance": 0,
+            "negative_selected": 0,
+            "value_range": 0,
+            "nonfinite": 0
+          },
+          "balance_share": 0.0,
+          "balance_bound": 0.001,
+          "balance_within_bound": true,
+          "inconsistent_player_gameweeks": {
+            "selected": 0,
+            "transfers_in": 0,
+            "transfers_out": 0,
+            "transfers_balance": 0,
+            "value": 0
+          },
+          "value_changes_within_gw": 0,
+          "passed": true
+        }
+      }
+    },
+    "native": {
+      "2020-21": {
+        "player_rows": 24365,
+        "team_rows": 760,
+        "player_all_gap": [
+          "starts"
+        ],
+        "team_all_gap": []
+      },
+      "2021-22": {
+        "player_rows": 25447,
+        "team_rows": 760,
+        "player_all_gap": [
+          "starts"
+        ],
+        "team_all_gap": []
+      },
+      "2022-23": {
+        "player_rows": 26505,
+        "team_rows": 760,
+        "player_all_gap": [],
+        "team_all_gap": []
+      },
+      "2023-24": {
+        "player_rows": 29725,
+        "team_rows": 760,
+        "player_all_gap": [],
+        "team_all_gap": []
+      },
+      "2024-25": {
+        "player_rows": 27283,
+        "team_rows": 760,
+        "player_all_gap": [],
+        "team_all_gap": []
+      }
+    },
+    "finiteness": {
+      "2020-21": {
+        "control": {
+          "rows": 24365,
+          "finite": 1193885,
+          "nan": 0,
+          "features": 49
+        },
+        "native": {
+          "rows": 24365,
+          "finite": 3397360,
+          "nan": 159930,
+          "features": 146
+        },
+        "market": {
+          "rows": 24365,
+          "finite": 73095,
+          "nan": 0,
+          "features": 3
+        },
+        "crowd": {
+          "rows": 24365,
+          "finite": 146190,
+          "nan": 0,
+          "features": 6
+        }
+      },
+      "2021-22": {
+        "control": {
+          "rows": 25447,
+          "finite": 1246903,
+          "nan": 0,
+          "features": 49
+        },
+        "native": {
+          "rows": 25447,
+          "finite": 3609766,
+          "nan": 105496,
+          "features": 146
+        },
+        "market": {
+          "rows": 25447,
+          "finite": 76341,
+          "nan": 0,
+          "features": 3
+        },
+        "crowd": {
+          "rows": 25447,
+          "finite": 152682,
+          "nan": 0,
+          "features": 6
+        }
+      },
+      "2022-23": {
+        "control": {
+          "rows": 26505,
+          "finite": 1298745,
+          "nan": 0,
+          "features": 49
+        },
+        "native": {
+          "rows": 26505,
+          "finite": 3838678,
+          "nan": 31052,
+          "features": 146
+        },
+        "market": {
+          "rows": 26505,
+          "finite": 79515,
+          "nan": 0,
+          "features": 3
+        },
+        "crowd": {
+          "rows": 26505,
+          "finite": 159030,
+          "nan": 0,
+          "features": 6
+        }
+      },
+      "2023-24": {
+        "control": {
+          "rows": 29725,
+          "finite": 1456525,
+          "nan": 0,
+          "features": 49
+        },
+        "native": {
+          "rows": 29725,
+          "finite": 4312603,
+          "nan": 27247,
+          "features": 146
+        },
+        "market": {
+          "rows": 29725,
+          "finite": 89175,
+          "nan": 0,
+          "features": 3
+        },
+        "crowd": {
+          "rows": 29725,
+          "finite": 178350,
+          "nan": 0,
+          "features": 6
+        }
+      },
+      "2024-25": {
+        "control": {
+          "rows": 27283,
+          "finite": 1336867,
+          "nan": 0,
+          "features": 49
+        },
+        "native": {
+          "rows": 27283,
+          "finite": 3963800,
+          "nan": 19518,
+          "features": 146
+        },
+        "market": {
+          "rows": 27283,
+          "finite": 81849,
+          "nan": 0,
+          "features": 3
+        },
+        "crowd": {
+          "rows": 27283,
+          "finite": 163698,
+          "nan": 0,
+          "features": 6
+        }
+      }
+    },
+    "ablation": {
+      "union": {
+        "passed": true,
+        "player_columns": [
+          "us_shots",
+          "us_xG",
+          "us_xGChain",
+          "us_xGBuildup",
+          "us_key_passes",
+          "us_xA"
+        ],
+        "team_columns": [
+          "xg",
+          "xga",
+          "deep",
+          "deep_allowed",
+          "ppda_att",
+          "ppda_def",
+          "ppda_allowed_att",
+          "ppda_allowed_def"
+        ],
+        "feature_bytes_identical": true,
+        "array_sha256": "e76d90f97c7b62850840b232000ee9ce87accf25b790da08c7a0d5bae9bb6fbb",
+        "rows": 133325,
+        "features": 204
+      },
+      "full_union_bytes_identical": true
+    },
+    "export_parity": {
+      "passed": true,
+      "rows": 106042,
+      "core_sha256": "163f98cb0764e27b7f574ba4c75c1fe3138de862f660830aba732a1a6218b7fa",
+      "training_prefix_identical": true,
+      "keys_order_identical": true,
+      "original_csv_boundary_unchanged": true,
+      "points_core_reconciled": true,
+      "correction_alignment": {
+        "passed": true,
+        "rows": 133325,
+        "keys": [
+          "season",
+          "fixture",
+          "element"
+        ],
+        "row_keys_equal": true,
+        "cutoffs_equal": true,
+        "feature_index_equal": true
+      }
+    },
+    "features": {
+      "2023-24": {
+        "control": {
+          "omitted_features": [],
+          "selected_feature_count": 49
+        },
+        "union": {
+          "omitted_features": [],
+          "selected_feature_count": 204
+        }
+      },
+      "2024-25": {
+        "control": {
+          "omitted_features": [],
+          "selected_feature_count": 49
+        },
+        "union": {
+          "omitted_features": [],
+          "selected_feature_count": 204
+        }
+      }
+    }
+  },
+  "stage_B": {
+    "folds": {
+      "2023-24": {
+        "control": {
+          "candidate_fixture": {
+            "n": 7638,
+            "rmse": 3.0223140018259094,
+            "mae": 2.160268828304022,
+            "bias": 0.004765218148723123
+          },
+          "all_fixture": {
+            "n": 29725,
+            "rmse": 1.9085041685847512,
+            "mae": 0.9611611982121856,
+            "bias": 0.02123549998301673
+          },
+          "candidate_player_gw": {
+            "n": 7385,
+            "rmse": 3.09404969898239,
+            "mae": 2.2052011103011053,
+            "bias": 0.004928468005409243
+          },
+          "all_player_gw": {
+            "n": 28742,
+            "rmse": 1.951493665683372,
+            "mae": 0.9826653965731958,
+            "bias": 0.021961771518863415
+          },
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.4023466025584984,
+          "mean_within_gw_ndcg10": 0.4222245631413018,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 703,
+              "rmse": 2.56974559326972,
+              "mae": 2.0227148800900787,
+              "bias": 0.2169279384927586
+            },
+            "2": {
+              "n": 2914,
+              "rmse": 2.884569978388668,
+              "mae": 2.1400154548115857,
+              "bias": 0.1074367968146478
+            },
+            "3": {
+              "n": 3231,
+              "rmse": 3.0923824179514576,
+              "mae": 2.1120886944836843,
+              "bias": -0.0797308556463808
+            },
+            "4": {
+              "n": 790,
+              "rmse": 3.5546253022006407,
+              "mae": 2.5544318261836114,
+              "bias": -0.2171696656517586
+            }
+          }
+        },
+        "union": {
+          "candidate_fixture": {
+            "n": 7638,
+            "rmse": 3.006256420846606,
+            "mae": 2.1316748422426794,
+            "bias": -0.03445628303720427
+          },
+          "all_fixture": {
+            "n": 29725,
+            "rmse": 1.8900985157591152,
+            "mae": 0.9433561329334302,
+            "bias": 0.004430492676031293
+          },
+          "candidate_player_gw": {
+            "n": 7385,
+            "rmse": 3.0763165225633546,
+            "mae": 2.1762297623286933,
+            "bias": -0.0356367081703678
+          },
+          "all_player_gw": {
+            "n": 28742,
+            "rmse": 1.9322441748664836,
+            "mae": 0.9645862912669396,
+            "bias": 0.004582019163420438
+          },
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.4071049756485391,
+          "mean_within_gw_ndcg10": 0.4408643685495338,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 703,
+              "rmse": 2.5809313281139734,
+              "mae": 2.0408507223498202,
+              "bias": 0.24237340345747527
+            },
+            "2": {
+              "n": 2914,
+              "rmse": 2.8627405231357557,
+              "mae": 2.1189719402353897,
+              "bias": 0.10178810768798603
+            },
+            "3": {
+              "n": 3231,
+              "rmse": 3.078779960867787,
+              "mae": 2.0737086264381555,
+              "bias": -0.15315667487739135
+            },
+            "4": {
+              "n": 790,
+              "rmse": 3.5290572628181915,
+              "mae": 2.4964273181899466,
+              "bias": -0.29788217942115364
+            }
+          }
+        }
+      },
+      "2024-25": {
+        "control": {
+          "candidate_fixture": {
+            "n": 7683,
+            "rmse": 2.9317880049412834,
+            "mae": 2.1278701710819155,
+            "bias": -0.01899643481476208
+          },
+          "all_fixture": {
+            "n": 27283,
+            "rmse": 1.920350195882609,
+            "mae": 1.0086856496306202,
+            "bias": 0.007845988755427769
+          },
+          "candidate_player_gw": {
+            "n": 7574,
+            "rmse": 2.9620099329532534,
+            "mae": 2.136408715152828,
+            "bias": -0.019269818943994856
+          },
+          "all_player_gw": {
+            "n": 26919,
+            "rmse": 1.9395819365597158,
+            "mae": 1.0151164785010098,
+            "bias": 0.00795208258903881
+          },
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.37113562044298015,
+          "mean_within_gw_ndcg10": 0.47191555592229195,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 697,
+              "rmse": 2.8414862874157993,
+              "mae": 2.1109102370584223,
+              "bias": -0.0696051010682561
+            },
+            "2": {
+              "n": 2828,
+              "rmse": 2.7733786979267565,
+              "mae": 2.0864731164527703,
+              "bias": -0.029145931342640145
+            },
+            "3": {
+              "n": 3434,
+              "rmse": 2.9258079333203804,
+              "mae": 2.0190491330958937,
+              "bias": 0.04300532495127283
+            },
+            "4": {
+              "n": 724,
+              "rmse": 3.576806361943201,
+              "mae": 2.822046122669751,
+              "bias": -0.22471055978304852
+            }
+          }
+        },
+        "union": {
+          "candidate_fixture": {
+            "n": 7683,
+            "rmse": 2.9180162816185224,
+            "mae": 2.1080927873465694,
+            "bias": -0.03248264957672415
+          },
+          "all_fixture": {
+            "n": 27283,
+            "rmse": 1.901431071121698,
+            "mae": 0.9920563054240369,
+            "bias": 0.00316213137925238
+          },
+          "candidate_player_gw": {
+            "n": 7574,
+            "rmse": 2.9484850818779536,
+            "mae": 2.1176084668265105,
+            "bias": -0.03295011839159911
+          },
+          "all_player_gw": {
+            "n": 26919,
+            "rmse": 1.92095801081698,
+            "mae": 0.9984836347662663,
+            "bias": 0.003204889870357098
+          },
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.37769852547258054,
+          "mean_within_gw_ndcg10": 0.476650713191365,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 697,
+              "rmse": 2.835311116553851,
+              "mae": 2.10223507985734,
+              "bias": -0.07888074708168191
+            },
+            "2": {
+              "n": 2828,
+              "rmse": 2.761407970570391,
+              "mae": 2.064396128731143,
+              "bias": -0.03341399142545345
+            },
+            "3": {
+              "n": 3434,
+              "rmse": 2.9138860072238804,
+              "mae": 1.9967198569014082,
+              "bias": 0.010476698747260482
+            },
+            "4": {
+              "n": 724,
+              "rmse": 3.5442056362774856,
+              "mae": 2.812666842364662,
+              "bias": -0.1879371985206485
+            }
+          }
+        }
+      }
+    },
+    "metrics": {
+      "control": {
+        "player_gw": {
+          "n": 14959,
+          "rmse": 3.027915396341139,
+          "mae": 2.1703703327856925,
+          "bias": -0.007323542513661997,
+          "ranking_weeks": 70,
+          "mean_within_gw_spearman": 0.3867411115007392,
+          "mean_within_gw_ndcg10": 0.44707005953179685
+        },
+        "fixture": {
+          "n": 15321,
+          "rmse": 2.9772621405705353,
+          "mae": 2.144021919914397,
+          "bias": -0.0071505040442444885,
+          "ranking_weeks": 70,
+          "mean_within_gw_spearman": 0.37631072384625475,
+          "mean_within_gw_ndcg10": 0.4226557091298719
+        },
+        "all_player_gw": {
+          "n": 55661,
+          "rmse": 1.9457419722420655,
+          "mae": 0.9983595212639995,
+          "bias": 0.01518634857816978,
+          "ranking_weeks": 76,
+          "mean_within_gw_spearman": 0.6799639582687064,
+          "mean_within_gw_ndcg10": 0.41733933987314614
+        },
+        "all_fixture": {
+          "n": 57008,
+          "rmse": 1.9141826104023612,
+          "mae": 0.9839055430067611,
+          "bias": 0.014827521544511443,
+          "ranking_weeks": 76,
+          "mean_within_gw_spearman": 0.6781510447132107,
+          "mean_within_gw_ndcg10": 0.3941249281791051
+        },
+        "ndcg10": 0.44707005953179685,
+        "actual_minutes_diagnostics": {
+          "0_0": {
+            "n": 34058,
+            "rmse": 0.7458171634146198,
+            "mae": 0.3793143308157209,
+            "bias": 0.3793143308157209,
+            "ranking_weeks": 5,
+            "mean_within_gw_spearman": -0.006880585008851495,
+            "mean_within_gw_ndcg10": 0.0
+          },
+          "1_59": {
+            "n": 7278,
+            "rmse": 1.726994719387741,
+            "mae": 1.122058024260859,
+            "bias": 0.19644243179070212,
+            "ranking_weeks": 76,
+            "mean_within_gw_spearman": 0.03126712530032853,
+            "mean_within_gw_ndcg10": 0.30983339849751035
+          },
+          "60_90": {
+            "n": 15672,
+            "rmse": 3.276358595153157,
+            "mae": 2.2336307692851634,
+            "bias": -0.8616072070753603,
+            "ranking_weeks": 76,
+            "mean_within_gw_spearman": 0.20848356399160703,
+            "mean_within_gw_ndcg10": 0.4331356342741456
+          }
+        },
+        "cold_start": {
+          "n": 4938,
+          "rmse": 1.9408729440808812,
+          "mae": 1.1070252340640834,
+          "bias": 0.1004882586323399,
+          "ranking_weeks": 43,
+          "mean_within_gw_spearman": 0.28768413299402057,
+          "mean_within_gw_ndcg10": 0.5227917153117198
+        }
+      },
+      "union": {
+        "player_gw": {
+          "n": 14959,
+          "rmse": 3.0122713210970686,
+          "mae": 2.14654878819048,
+          "bias": -0.03427644137550224,
+          "ranking_weeks": 70,
+          "mean_within_gw_spearman": 0.39240175056055987,
+          "mean_within_gw_ndcg10": 0.45875754087044945
+        },
+        "fixture": {
+          "n": 15321,
+          "rmse": 2.962335334636606,
+          "mae": 2.119849182836191,
+          "bias": -0.03346656788304536,
+          "ranking_weeks": 70,
+          "mean_within_gw_spearman": 0.3829035287900594,
+          "mean_within_gw_ndcg10": 0.43490892950795884
+        },
+        "all_player_gw": {
+          "n": 55661,
+          "rmse": 1.9267941688621864,
+          "mae": 0.9809798628818653,
+          "bias": 0.003916006273965127,
+          "ranking_weeks": 76,
+          "mean_within_gw_spearman": 0.6982000316220679,
+          "mean_within_gw_ndcg10": 0.4476076850532634
+        },
+        "all_fixture": {
+          "n": 57008,
+          "rmse": 1.895530525774915,
+          "mae": 0.966663156615391,
+          "bias": 0.003823477848989138,
+          "ranking_weeks": 76,
+          "mean_within_gw_spearman": 0.6964145481605476,
+          "mean_within_gw_ndcg10": 0.4268956654237084
+        },
+        "ndcg10": 0.45875754087044945,
+        "actual_minutes_diagnostics": {
+          "0_0": {
+            "n": 34058,
+            "rmse": 0.7323333009940307,
+            "mae": 0.3623294166931122,
+            "bias": 0.3623294166931122,
+            "ranking_weeks": 5,
+            "mean_within_gw_spearman": -0.020952645511909163,
+            "mean_within_gw_ndcg10": 0.0
+          },
+          "1_59": {
+            "n": 7278,
+            "rmse": 1.7221488218006102,
+            "mae": 1.1278348568091632,
+            "bias": 0.19701392937982612,
+            "ranking_weeks": 76,
+            "mean_within_gw_spearman": 0.044568416286910585,
+            "mean_within_gw_ndcg10": 0.3157339547331501
+          },
+          "60_90": {
+            "n": 15672,
+            "rmse": 3.2445522247760215,
+            "mae": 2.2051388381022914,
+            "bias": -0.8649893967933395,
+            "ranking_weeks": 76,
+            "mean_within_gw_spearman": 0.24152907859769096,
+            "mean_within_gw_ndcg10": 0.45441866616714266
+          }
+        },
+        "cold_start": {
+          "n": 4938,
+          "rmse": 1.8200634537572922,
+          "mae": 0.971796002811285,
+          "bias": 0.03355517492241669,
+          "ranking_weeks": 43,
+          "mean_within_gw_spearman": 0.37176011008475873,
+          "mean_within_gw_ndcg10": 0.6011952238191762
+        }
+      }
+    },
+    "points": {
+      "2023-24": {
+        "control": {
+          "totals": [
+            1067.0,
+            1529.0,
+            1294.0,
+            1335.0,
+            1274.0,
+            1522.0,
+            1466.0,
+            1071.0,
+            1577.0,
+            1534.0,
+            1373.0,
+            1425.0,
+            1142.0,
+            1682.0,
+            1485.0,
+            1584.0,
+            1296.0,
+            1304.0,
+            1501.0,
+            1312.0
+          ],
+          "deltas": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_total": 1388.65,
+          "mean_delta": 0.0,
+          "minimum_delta": 0.0,
+          "maximum_delta": 0.0
+        },
+        "union": {
+          "totals": [
+            1079.0,
+            1568.0,
+            1273.0,
+            1357.0,
+            1288.0,
+            1518.0,
+            1486.0,
+            1046.0,
+            1599.0,
+            1557.0,
+            1363.0,
+            1450.0,
+            1160.0,
+            1709.0,
+            1516.0,
+            1601.0,
+            1307.0,
+            1320.0,
+            1483.0,
+            1354.0
+          ],
+          "deltas": [
+            12.0,
+            39.0,
+            -21.0,
+            22.0,
+            14.0,
+            -4.0,
+            20.0,
+            -25.0,
+            22.0,
+            23.0,
+            -10.0,
+            25.0,
+            18.0,
+            27.0,
+            31.0,
+            17.0,
+            11.0,
+            16.0,
+            -18.0,
+            42.0
+          ],
+          "mean_total": 1401.7,
+          "mean_delta": 13.05,
+          "minimum_delta": -25.0,
+          "maximum_delta": 42.0
+        }
+      },
+      "2024-25": {
+        "control": {
+          "totals": [
+            1290.0,
+            1478.0,
+            1524.0,
+            1784.0,
+            1857.0,
+            1478.0,
+            1326.0,
+            1377.0,
+            1321.0,
+            1296.0,
+            1458.0,
+            1515.0,
+            1427.0,
+            1051.0,
+            1826.0,
+            1314.0,
+            1309.0,
+            1305.0,
+            1409.0,
+            1435.0
+          ],
+          "deltas": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_total": 1439.0,
+          "mean_delta": 0.0,
+          "minimum_delta": 0.0,
+          "maximum_delta": 0.0
+        },
+        "union": {
+          "totals": [
+            1301.0,
+            1496.0,
+            1504.0,
+            1781.0,
+            1837.0,
+            1459.0,
+            1350.0,
+            1385.0,
+            1339.0,
+            1304.0,
+            1437.0,
+            1490.0,
+            1396.0,
+            1035.0,
+            1828.0,
+            1342.0,
+            1310.0,
+            1319.0,
+            1403.0,
+            1426.0
+          ],
+          "deltas": [
+            11.0,
+            18.0,
+            -20.0,
+            -3.0,
+            -20.0,
+            -19.0,
+            24.0,
+            8.0,
+            18.0,
+            8.0,
+            -21.0,
+            -25.0,
+            -31.0,
+            -16.0,
+            2.0,
+            28.0,
+            1.0,
+            14.0,
+            -6.0,
+            -9.0
+          ],
+          "mean_total": 1437.1,
+          "mean_delta": -1.9,
+          "minimum_delta": -31.0,
+          "maximum_delta": 28.0
+        }
+      }
+    },
+    "paired": {
+      "union": {
+        "scope": "descriptive fixed-prediction uncertainty, not training or selection uncertainty",
+        "difference": "left_minus_right; negative error difference favours left",
+        "samples": 1000,
+        "block_length": 4,
+        "seed": 20261015,
+        "gameweeks": 70,
+        "contiguous_segments": [
+          35,
+          35
+        ],
+        "status": "descriptive_interval",
+        "confidence": 0.95,
+        "rmse": {
+          "delta": -0.015644075244070077,
+          "lower": -0.024113132345256517,
+          "upper": -0.007478717823673954
+        },
+        "mae": {
+          "delta": -0.023821544595212546,
+          "lower": -0.0323523868478811,
+          "upper": -0.016151606046386255
+        }
+      }
+    },
+    "relative_percent": {
+      "pooled": {
+        "player_gw": {
+          "rmse": -0.5166615706295619,
+          "mae": -1.09757971878639
+        },
+        "fixture": {
+          "rmse": -0.5013601500024056,
+          "mae": -1.1274482249309825
+        },
+        "ndcg10": 2.6142393321737067,
+        "fixed_squad_points": 0.39432037204039094,
+        "all_player_gw": {
+          "rmse": -0.9738086370232213,
+          "mae": -1.7408216190626602
+        },
+        "all_fixture": {
+          "rmse": -0.9744151120213873,
+          "mae": -1.7524432618479135
+        }
+      },
+      "2023-24": {
+        "candidate_player_gw": {
+          "rmse": -0.5731380599628855,
+          "mae": -1.3137735074174817
+        },
+        "candidate_fixture": {
+          "rmse": -0.5313008830188481,
+          "mae": -1.3236309151297254
+        },
+        "ndcg10": 4.414666278426349,
+        "fixed_squad_points": 0.9397616390019126,
+        "all_player_gw": {
+          "rmse": -0.9863978118600514,
+          "mae": -1.8398027822392748
+        },
+        "all_fixture": {
+          "rmse": -0.9644020237736584,
+          "mae": -1.852453606312221
+        }
+      },
+      "2024-25": {
+        "candidate_player_gw": {
+          "rmse": -0.4566105915051799,
+          "mae": -0.8799930553069601
+        },
+        "candidate_fixture": {
+          "rmse": -0.46973803356687993,
+          "mae": -0.9294450387116515
+        },
+        "ndcg10": 1.003390799402415,
+        "fixed_squad_points": -0.1320361362057043,
+        "all_player_gw": {
+          "rmse": -0.9602030928257399,
+          "mae": -1.6385157848392562
+        },
+        "all_fixture": {
+          "rmse": -0.985191388605855,
+          "mae": -1.6486151272869787
+        }
+      }
+    },
+    "pooled_fixed_squad_delta": 5.575,
+    "pooled_fixed_squad_points": {
+      "control": 1413.825,
+      "union": 1419.4
+    },
+    "gate": {
+      "passed": true,
+      "criteria": {
+        "pooled_player_gw_rmse_gain": {
+          "candidate": 3.0122713210970686,
+          "threshold": 3.0127758193594336,
+          "passed": true
+        },
+        "pooled_player_gw_mae_noninferiority": {
+          "candidate": 2.14654878819048,
+          "threshold": 2.181222184449621,
+          "passed": true
+        },
+        "pooled_fixture_rmse_gain": {
+          "candidate": 2.962335334636606,
+          "threshold": 2.9623758298676828,
+          "passed": true
+        },
+        "pooled_fixture_mae_noninferiority": {
+          "candidate": 2.119849182836191,
+          "threshold": 2.1547420295139688,
+          "passed": true
+        },
+        "2023-24_candidate_player_gw_rmse_noninferiority": {
+          "candidate": 3.0763165225633546,
+          "threshold": 3.109519947477301,
+          "passed": true
+        },
+        "2023-24_candidate_fixture_rmse_noninferiority": {
+          "candidate": 3.006256420846606,
+          "threshold": 3.0374255718350387,
+          "passed": true
+        },
+        "2024-25_candidate_player_gw_rmse_noninferiority": {
+          "candidate": 2.9484850818779536,
+          "threshold": 2.9768199826180193,
+          "passed": true
+        },
+        "2024-25_candidate_fixture_rmse_noninferiority": {
+          "candidate": 2.9180162816185224,
+          "threshold": 2.9464469449659894,
+          "passed": true
+        },
+        "pooled_ndcg10_not_lower": {
+          "candidate": 0.45875754087044945,
+          "control": 0.44707005953179685,
+          "passed": true
+        },
+        "mean_fixed_squad_delta_nonnegative": {
+          "delta": 5.575,
+          "passed": true
+        }
+      }
+    },
+    "pooled_position_candidate_fixture": {
+      "control": {
+        "1": {
+          "n": 1400,
+          "rmse": 2.70844372278205,
+          "mae": 2.066623568523604,
+          "bias": 0.07427541808273914,
+          "ranking_weeks": 70,
+          "mean_within_gw_spearman": 0.25777085321703236,
+          "mean_within_gw_ndcg10": 0.5878998798075749
+        },
+        "2": {
+          "n": 5742,
+          "rmse": 2.8303529671606698,
+          "mae": 2.113645247065377,
+          "bias": 0.040168257067380246,
+          "ranking_weeks": 70,
+          "mean_within_gw_spearman": 0.3352071776425974,
+          "mean_within_gw_ndcg10": 0.38664745134888545
+        },
+        "3": {
+          "n": 6665,
+          "rmse": 3.0077107594444743,
+          "mae": 2.064152032247274,
+          "bias": -0.016493639716546958,
+          "ranking_weeks": 70,
+          "mean_within_gw_spearman": 0.36319873959615107,
+          "mean_within_gw_ndcg10": 0.47338634477336594
+        },
+        "4": {
+          "n": 1514,
+          "rmse": 3.5652495782371356,
+          "mae": 2.682405901914104,
+          "bias": -0.22077574712537415,
+          "ranking_weeks": 70,
+          "mean_within_gw_spearman": 0.29936258173217717,
+          "mean_within_gw_ndcg10": 0.5961853883465873
+        }
+      },
+      "union": {
+        "1": {
+          "n": 1400,
+          "rmse": 2.7105618297219913,
+          "mae": 2.0714113631946356,
+          "bias": 0.082434729939052,
+          "ranking_weeks": 70,
+          "mean_within_gw_spearman": 0.24921918066420146,
+          "mean_within_gw_ndcg10": 0.5950280195399286
+        },
+        "2": {
+          "n": 5742,
+          "rmse": 2.8132892687846853,
+          "mae": 2.0920927352660397,
+          "bias": 0.035199543373669276,
+          "ranking_weeks": 70,
+          "mean_within_gw_spearman": 0.351106821347334,
+          "mean_within_gw_ndcg10": 0.3944206364041638
+        },
+        "3": {
+          "n": 6665,
+          "rmse": 2.994955833174051,
+          "mae": 2.034041794541803,
+          "bias": -0.06884804696635541,
+          "ranking_weeks": 70,
+          "mean_within_gw_spearman": 0.3708158677981882,
+          "mean_within_gw_ndcg10": 0.47993612624644033
+        },
+        "4": {
+          "n": 1514,
+          "rmse": 3.536309362954376,
+          "mae": 2.647654144809824,
+          "bias": -0.24530611193636784,
+          "ranking_weeks": 70,
+          "mean_within_gw_spearman": 0.30977323198606826,
+          "mean_within_gw_ndcg10": 0.6011567582341666
+        }
+      }
+    },
+    "protocol_lf_sha256": "d85042d01f590098d8d8f0a667b8e374528156fef0af252a6810bf9a104d4cc7",
+    "stage": "B",
+    "method_fold_fit_jobs": 4
+  },
+  "stage_C": {
+    "folds": {
+      "2025-26": {
+        "control": {
+          "candidate_fixture": {
+            "n": 7625,
+            "rmse": 2.865657271225377,
+            "mae": 2.074207250679243,
+            "bias": -0.02327697786152926
+          },
+          "all_fixture": {
+            "n": 29747,
+            "rmse": 1.838347633680499,
+            "mae": 0.9251137465198762,
+            "bias": -0.008600880348656487
+          },
+          "candidate_player_gw": {
+            "n": 7515,
+            "rmse": 2.8828110600403263,
+            "mae": 2.0891286430307456,
+            "bias": -0.02361769210833807
+          },
+          "all_player_gw": {
+            "n": 29338,
+            "rmse": 1.851267663249857,
+            "mae": 0.9330380976798436,
+            "bias": -0.008720784911428334
+          },
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.3664084474346247,
+          "mean_within_gw_ndcg10": 0.4013422448290046,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 701,
+              "rmse": 2.5988537322458285,
+              "mae": 1.9762493735783773,
+              "bias": -0.029541879894094788
+            },
+            "2": {
+              "n": 2917,
+              "rmse": 2.8376073008781426,
+              "mae": 2.1270620328336913,
+              "bias": -0.032156891497339996
+            },
+            "3": {
+              "n": 3242,
+              "rmse": 2.834289648051824,
+              "mae": 1.9616667655608713,
+              "bias": 0.017542599272586206
+            },
+            "4": {
+              "n": 765,
+              "rmse": 3.303889123774379,
+              "mae": 2.439367152714464,
+              "bias": -0.15666608200311605
+            }
+          }
+        },
+        "union": {
+          "candidate_fixture": {
+            "n": 7625,
+            "rmse": 2.856125936026098,
+            "mae": 2.092424771879922,
+            "bias": 0.059519388575883965
+          },
+          "all_fixture": {
+            "n": 29747,
+            "rmse": 1.8243604698574638,
+            "mae": 0.9192961842302128,
+            "bias": 0.014164033690366758
+          },
+          "candidate_player_gw": {
+            "n": 7515,
+            "rmse": 2.874354042278918,
+            "mae": 2.1074152971691205,
+            "bias": 0.060390597191099814
+          },
+          "all_player_gw": {
+            "n": 29338,
+            "rmse": 1.8377146329045846,
+            "mae": 0.9269987652525382,
+            "bias": 0.01436149397325448
+          },
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.3766170558612834,
+          "mean_within_gw_ndcg10": 0.39339608821471495,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 701,
+              "rmse": 2.598710518971486,
+              "mae": 1.9856019872308919,
+              "bias": -0.00526979791469569
+            },
+            "2": {
+              "n": 2917,
+              "rmse": 2.8157451545622276,
+              "mae": 2.1349787800320223,
+              "bias": 0.0549378066172142
+            },
+            "3": {
+              "n": 3242,
+              "rmse": 2.8301744447218935,
+              "mae": 1.9882203194192396,
+              "bias": 0.1044091496326435
+            },
+            "4": {
+              "n": 765,
+              "rmse": 3.307997454544136,
+              "mae": 2.4696581903594317,
+              "bias": -0.05388049514003551
+            }
+          }
+        }
+      }
+    },
+    "metrics": {
+      "control": {
+        "player_gw": {
+          "n": 7515,
+          "rmse": 2.8828110600403263,
+          "mae": 2.089128643030745,
+          "bias": -0.023617692108338063,
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.3664084474346247,
+          "mean_within_gw_ndcg10": 0.4013422448290046
+        },
+        "fixture": {
+          "n": 7625,
+          "rmse": 2.865657271225377,
+          "mae": 2.074207250679243,
+          "bias": -0.02327697786152926,
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.35920796543747624,
+          "mean_within_gw_ndcg10": 0.3807549843226912
+        },
+        "all_player_gw": {
+          "n": 29338,
+          "rmse": 1.851267663249857,
+          "mae": 0.9330380976798434,
+          "bias": -0.008720784911428336,
+          "ranking_weeks": 38,
+          "mean_within_gw_spearman": 0.6955819417855169,
+          "mean_within_gw_ndcg10": 0.3708880320539812
+        },
+        "all_fixture": {
+          "n": 29747,
+          "rmse": 1.838347633680499,
+          "mae": 0.9251137465198762,
+          "bias": -0.008600880348656487,
+          "ranking_weeks": 38,
+          "mean_within_gw_spearman": 0.6944209806513646,
+          "mean_within_gw_ndcg10": 0.35366858651113675
+        },
+        "ndcg10": 0.4013422448290046,
+        "actual_minutes_diagnostics": {
+          "0_0": {
+            "n": 18255,
+            "rmse": 0.7014618074978807,
+            "mae": 0.338421928456496,
+            "bias": 0.338421928456496,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": -0.03226198779210696,
+            "mean_within_gw_ndcg10": 0.0
+          },
+          "1_59": {
+            "n": 3679,
+            "rmse": 1.628824392923344,
+            "mae": 1.1108683109356032,
+            "bias": 0.26996568743874405,
+            "ranking_weeks": 38,
+            "mean_within_gw_spearman": 0.03200608545595099,
+            "mean_within_gw_ndcg10": 0.3149106053463651
+          },
+          "60_90": {
+            "n": 7813,
+            "rmse": 3.2354519902708567,
+            "mae": 2.2084451296328345,
+            "bias": -0.9505883086896145,
+            "ranking_weeks": 38,
+            "mean_within_gw_spearman": 0.16085388043434565,
+            "mean_within_gw_ndcg10": 0.40097293699935543
+          }
+        },
+        "cold_start": {
+          "n": 2520,
+          "rmse": 2.0474343828789943,
+          "mae": 1.1779547034913855,
+          "bias": -0.005680407492019024,
+          "ranking_weeks": 23,
+          "mean_within_gw_spearman": 0.37380091588667463,
+          "mean_within_gw_ndcg10": 0.6048693958594704
+        }
+      },
+      "union": {
+        "player_gw": {
+          "n": 7515,
+          "rmse": 2.874354042278918,
+          "mae": 2.1074152971691205,
+          "bias": 0.060390597191099835,
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.3766170558612834,
+          "mean_within_gw_ndcg10": 0.39339608821471495
+        },
+        "fixture": {
+          "n": 7625,
+          "rmse": 2.856125936026098,
+          "mae": 2.092424771879922,
+          "bias": 0.059519388575883965,
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.3689749456735041,
+          "mean_within_gw_ndcg10": 0.3811665196204915
+        },
+        "all_player_gw": {
+          "n": 29338,
+          "rmse": 1.8377146329045846,
+          "mae": 0.9269987652525381,
+          "bias": 0.01436149397325448,
+          "ranking_weeks": 38,
+          "mean_within_gw_spearman": 0.7145589949458522,
+          "mean_within_gw_ndcg10": 0.3707814323727488
+        },
+        "all_fixture": {
+          "n": 29747,
+          "rmse": 1.8243604698574638,
+          "mae": 0.9192961842302128,
+          "bias": 0.014164033690366758,
+          "ranking_weeks": 38,
+          "mean_within_gw_spearman": 0.7133045630060437,
+          "mean_within_gw_ndcg10": 0.3622095102179961
+        },
+        "ndcg10": 0.39339608821471495,
+        "actual_minutes_diagnostics": {
+          "0_0": {
+            "n": 18255,
+            "rmse": 0.7051121514910224,
+            "mae": 0.32481921905323097,
+            "bias": 0.32481921905323097,
+            "ranking_weeks": 1,
+            "mean_within_gw_spearman": -0.036190618974660436,
+            "mean_within_gw_ndcg10": 0.0
+          },
+          "1_59": {
+            "n": 3679,
+            "rmse": 1.6594501557965293,
+            "mae": 1.149305533861035,
+            "bias": 0.31561214132156035,
+            "ranking_weeks": 38,
+            "mean_within_gw_spearman": 0.04250429045206824,
+            "mean_within_gw_ndcg10": 0.3382790290914028
+          },
+          "60_90": {
+            "n": 7813,
+            "rmse": 3.1958844200707026,
+            "mae": 2.199978713606126,
+            "bias": -0.8536252913799324,
+            "ranking_weeks": 38,
+            "mean_within_gw_spearman": 0.17926756967103943,
+            "mean_within_gw_ndcg10": 0.40727234444945837
+          }
+        },
+        "cold_start": {
+          "n": 2520,
+          "rmse": 1.9653795452410185,
+          "mae": 1.0467635715770294,
+          "bias": -0.050879213020353614,
+          "ranking_weeks": 23,
+          "mean_within_gw_spearman": 0.4769842545695307,
+          "mean_within_gw_ndcg10": 0.6511205271334655
+        }
+      }
+    },
+    "points": {
+      "2025-26": {
+        "control": {
+          "totals": [
+            1434.0,
+            1433.0,
+            1200.0,
+            1123.0,
+            1437.0,
+            1532.0,
+            1514.0,
+            1545.0,
+            1445.0,
+            1357.0,
+            1317.0,
+            1555.0,
+            1333.0,
+            1539.0,
+            1408.0,
+            1390.0,
+            1460.0,
+            1181.0,
+            1135.0,
+            1286.0
+          ],
+          "deltas": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_total": 1381.2,
+          "mean_delta": 0.0,
+          "minimum_delta": 0.0,
+          "maximum_delta": 0.0
+        },
+        "union": {
+          "totals": [
+            1420.0,
+            1488.0,
+            1206.0,
+            1106.0,
+            1435.0,
+            1498.0,
+            1521.0,
+            1532.0,
+            1476.0,
+            1368.0,
+            1346.0,
+            1542.0,
+            1359.0,
+            1550.0,
+            1413.0,
+            1390.0,
+            1466.0,
+            1171.0,
+            1118.0,
+            1266.0
+          ],
+          "deltas": [
+            -14.0,
+            55.0,
+            6.0,
+            -17.0,
+            -2.0,
+            -34.0,
+            7.0,
+            -13.0,
+            31.0,
+            11.0,
+            29.0,
+            -13.0,
+            26.0,
+            11.0,
+            5.0,
+            0.0,
+            6.0,
+            -10.0,
+            -17.0,
+            -20.0
+          ],
+          "mean_total": 1383.55,
+          "mean_delta": 2.35,
+          "minimum_delta": -34.0,
+          "maximum_delta": 55.0
+        }
+      }
+    },
+    "paired": {
+      "union": {
+        "scope": "descriptive fixed-prediction uncertainty, not training or selection uncertainty",
+        "difference": "left_minus_right; negative error difference favours left",
+        "samples": 1000,
+        "block_length": 4,
+        "seed": 20261015,
+        "gameweeks": 35,
+        "contiguous_segments": [
+          35
+        ],
+        "status": "descriptive_interval",
+        "confidence": 0.95,
+        "rmse": {
+          "delta": -0.008457017761408281,
+          "lower": -0.01771243734484561,
+          "upper": 0.0011591872955047258
+        },
+        "mae": {
+          "delta": 0.01828665413837541,
+          "lower": 0.009168540706089981,
+          "upper": 0.02781871684773415
+        }
+      }
+    },
+    "relative_percent": {
+      "pooled": {
+        "player_gw": {
+          "rmse": -0.2933601122402374,
+          "mae": 0.8753244659862824
+        },
+        "fixture": {
+          "rmse": -0.332605552484766,
+          "mae": 0.8782883771480954
+        },
+        "ndcg10": -1.9798953926903895,
+        "fixed_squad_points": 0.17014190558932718,
+        "all_player_gw": {
+          "rmse": -0.7320945865537554,
+          "mae": -0.6472760804004718
+        },
+        "all_fixture": {
+          "rmse": -0.7608552140397906,
+          "mae": -0.6288483239545561
+        }
+      },
+      "2025-26": {
+        "candidate_player_gw": {
+          "rmse": -0.2933601122402374,
+          "mae": 0.8753244659862602
+        },
+        "candidate_fixture": {
+          "rmse": -0.332605552484766,
+          "mae": 0.8782883771480954
+        },
+        "ndcg10": -1.9798953926903895,
+        "fixed_squad_points": 0.17014190558932718,
+        "all_player_gw": {
+          "rmse": -0.7320945865537554,
+          "mae": -0.6472760804004829
+        },
+        "all_fixture": {
+          "rmse": -0.7608552140397906,
+          "mae": -0.6288483239545561
+        }
+      }
+    },
+    "pooled_fixed_squad_delta": 2.35,
+    "pooled_fixed_squad_points": {
+      "control": 1381.2,
+      "union": 1383.55
+    },
+    "gate": {
+      "passed": false,
+      "criteria": {
+        "2_audit_rmse": {
+          "passed": false
+        },
+        "3_audit_season_stability": {
+          "passed": true
+        },
+        "4_audit_mae": {
+          "passed": false
+        },
+        "5_audit_block_interval": {
+          "passed": false,
+          "interval": {
+            "scope": "descriptive fixed-prediction uncertainty, not training or selection uncertainty",
+            "difference": "left_minus_right; negative error difference favours left",
+            "samples": 1000,
+            "block_length": 4,
+            "seed": 20261015,
+            "gameweeks": 35,
+            "contiguous_segments": [
+              35
+            ],
+            "status": "descriptive_interval",
+            "confidence": 0.95,
+            "rmse": {
+              "delta": -0.008457017761408281,
+              "lower": -0.01771243734484561,
+              "upper": 0.0011591872955047258
+            },
+            "mae": {
+              "delta": 0.01828665413837541,
+              "lower": 0.009168540706089981,
+              "upper": 0.02781871684773415
+            }
+          },
+          "descriptive": true
+        },
+        "6_fixed_squad_points": {
+          "passed": true,
+          "mean_delta": 2.35
+        },
+        "7_full_scoring": {
+          "passed": true,
+          "criteria": {
+            "player_gw": {
+              "candidate": 2.9924393482453278,
+              "threshold": 3.0051250244482217,
+              "passed": true
+            },
+            "fixture": {
+              "candidate": 2.9366298038971888,
+              "threshold": 2.951536918586032,
+              "passed": true
+            }
+          }
+        }
+      }
+    },
+    "pooled_position_candidate_fixture": {
+      "control": {
+        "1": {
+          "n": 701,
+          "rmse": 2.5988537322458285,
+          "mae": 1.9762493735783773,
+          "bias": -0.029541879894094788,
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.33279621626514183,
+          "mean_within_gw_ndcg10": 0.6316003913770069
+        },
+        "2": {
+          "n": 2917,
+          "rmse": 2.8376073008781426,
+          "mae": 2.1270620328336913,
+          "bias": -0.032156891497339996,
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.3248040341361108,
+          "mean_within_gw_ndcg10": 0.3914058977997714
+        },
+        "3": {
+          "n": 3242,
+          "rmse": 2.834289648051824,
+          "mae": 1.9616667655608713,
+          "bias": 0.017542599272586206,
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.3382510538586402,
+          "mean_within_gw_ndcg10": 0.4188848942147754
+        },
+        "4": {
+          "n": 765,
+          "rmse": 3.303889123774379,
+          "mae": 2.439367152714464,
+          "bias": -0.15666608200311605,
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.26904338743068706,
+          "mean_within_gw_ndcg10": 0.60038420160495
+        }
+      },
+      "union": {
+        "1": {
+          "n": 701,
+          "rmse": 2.598710518971486,
+          "mae": 1.9856019872308919,
+          "bias": -0.00526979791469569,
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.3451070038107718,
+          "mean_within_gw_ndcg10": 0.6373181040513034
+        },
+        "2": {
+          "n": 2917,
+          "rmse": 2.8157451545622276,
+          "mae": 2.1349787800320223,
+          "bias": 0.0549378066172142,
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.35569274526933486,
+          "mean_within_gw_ndcg10": 0.4239891205202034
+        },
+        "3": {
+          "n": 3242,
+          "rmse": 2.8301744447218935,
+          "mae": 1.9882203194192396,
+          "bias": 0.1044091496326435,
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.34580713333209573,
+          "mean_within_gw_ndcg10": 0.4320426394079506
+        },
+        "4": {
+          "n": 765,
+          "rmse": 3.307997454544136,
+          "mae": 2.4696581903594317,
+          "bias": -0.05388049514003551,
+          "ranking_weeks": 35,
+          "mean_within_gw_spearman": 0.27141802711391894,
+          "mean_within_gw_ndcg10": 0.6186977314304158
+        }
+      }
+    },
+    "full_scoring": {
+      "metrics": {
+        "control": {
+          "player_gw": {
+            "n": 2312,
+            "rmse": 2.9901741536798228,
+            "mae": 2.240332867844442,
+            "bias": -0.007251270139465757,
+            "ranking_weeks": 11,
+            "mean_within_gw_spearman": 0.3815902339878728,
+            "mean_within_gw_ndcg10": 0.4388802306821061
+          },
+          "fixture": {
+            "n": 2403,
+            "rmse": 2.936852655309485,
+            "mae": 2.1967405017473065,
+            "bias": -0.006976669397605024,
+            "ranking_weeks": 11,
+            "mean_within_gw_spearman": 0.36393599306636853,
+            "mean_within_gw_ndcg10": 0.3675223264643838
+          }
+        },
+        "union": {
+          "player_gw": {
+            "n": 2312,
+            "rmse": 2.9924393482453278,
+            "mae": 2.2656640372420203,
+            "bias": 0.09694530880727883,
+            "ranking_weeks": 11,
+            "mean_within_gw_spearman": 0.37794956217254416,
+            "mean_within_gw_ndcg10": 0.3950472014826447
+          },
+          "fixture": {
+            "n": 2403,
+            "rmse": 2.9366298038971888,
+            "mae": 2.2220430441062895,
+            "bias": 0.09327405491570061,
+            "ranking_weeks": 11,
+            "mean_within_gw_spearman": 0.3585732824281116,
+            "mean_within_gw_ndcg10": 0.35439730905791295
+          }
+        }
+      },
+      "criteria": {
+        "player_gw": {
+          "candidate": 2.9924393482453278,
+          "threshold": 3.0051250244482217,
+          "passed": true
+        },
+        "fixture": {
+          "candidate": 2.9366298038971888,
+          "threshold": 2.951536918586032,
+          "passed": true
+        }
+      },
+      "passed": true,
+      "rows": 2403,
+      "positions": {
+        "1": {
+          "control": {
+            "n": 218,
+            "rmse": 2.4520288361097533,
+            "mae": 1.9628294509572255,
+            "bias": 0.026294433159769058,
+            "ranking_weeks": 11,
+            "mean_within_gw_spearman": 0.3424999556591544,
+            "mean_within_gw_ndcg10": 0.6381610845791008
+          },
+          "union": {
+            "n": 218,
+            "rmse": 2.464247619594539,
+            "mae": 1.9783144978541733,
+            "bias": 0.055075540583285225,
+            "ranking_weeks": 11,
+            "mean_within_gw_spearman": 0.3090203876973227,
+            "mean_within_gw_ndcg10": 0.6320677831957905
+          }
+        },
+        "2": {
+          "control": {
+            "n": 918,
+            "rmse": 2.9927101015711433,
+            "mae": 2.271894591401407,
+            "bias": -0.05375495837247801,
+            "ranking_weeks": 11,
+            "mean_within_gw_spearman": 0.35214585256012326,
+            "mean_within_gw_ndcg10": 0.4472751122773223
+          },
+          "union": {
+            "n": 918,
+            "rmse": 2.962828845295836,
+            "mae": 2.27468996890844,
+            "bias": 0.055556505297502994,
+            "ranking_weeks": 11,
+            "mean_within_gw_spearman": 0.3672356933659987,
+            "mean_within_gw_ndcg10": 0.48130729594622595
+          }
+        },
+        "3": {
+          "control": {
+            "n": 1002,
+            "rmse": 2.8141551868456287,
+            "mae": 2.0813110952493172,
+            "bias": 0.0935729499029267,
+            "ranking_weeks": 11,
+            "mean_within_gw_spearman": 0.3894851066112637,
+            "mean_within_gw_ndcg10": 0.47083162624511044
+          },
+          "union": {
+            "n": 1002,
+            "rmse": 2.8332891367313677,
+            "mae": 2.125545869422991,
+            "bias": 0.20737383723214647,
+            "ranking_weeks": 11,
+            "mean_within_gw_spearman": 0.37617266947795047,
+            "mean_within_gw_ndcg10": 0.42901453161873904
+          }
+        },
+        "4": {
+          "control": {
+            "n": 265,
+            "rmse": 3.50643950857569,
+            "mae": 2.5652741624294135,
+            "bias": -0.2524911962568763,
+            "ranking_weeks": 11,
+            "mean_within_gw_spearman": 0.15260087396186134,
+            "mean_within_gw_ndcg10": 0.5057237769607236
+          },
+          "union": {
+            "n": 265,
+            "rmse": 3.5272833169130364,
+            "mae": 2.6050359314544105,
+            "bias": -0.17606932322432498,
+            "ranking_weeks": 11,
+            "mean_within_gw_spearman": 0.14782999230475433,
+            "mean_within_gw_ndcg10": 0.5436222330171663
+          }
+        }
+      }
+    },
+    "protocol_lf_sha256": "d85042d01f590098d8d8f0a667b8e374528156fef0af252a6810bf9a104d4cc7",
+    "stage": "C",
+    "method_fold_fit_jobs": 2
+  },
+  "stage_C_admission": {
+    "market": {
+      "rows": 380,
+      "fpl_available": 380,
+      "fpl_matched": 380,
+      "complete_odds": 380,
+      "exceptions": 0,
+      "name_equivalences": {
+        "Ipswich": "Ipswich",
+        "Sunderland": "Sunderland"
+      },
+      "name_map": {
+        "Arsenal": "Arsenal",
+        "Aston Villa": "Aston Villa",
+        "Bournemouth": "Bournemouth",
+        "Brentford": "Brentford",
+        "Brighton": "Brighton",
+        "Burnley": "Burnley",
+        "Chelsea": "Chelsea",
+        "Crystal Palace": "Crystal Palace",
+        "Everton": "Everton",
+        "Fulham": "Fulham",
+        "Leeds": "Leeds",
+        "Leicester": "Leicester",
+        "Liverpool": "Liverpool",
+        "Luton": "Luton",
+        "Man City": "Man City",
+        "Newcastle": "Newcastle",
+        "Norwich": "Norwich",
+        "Nott'm Forest": "Nott'm Forest",
+        "Southampton": "Southampton",
+        "Watford": "Watford",
+        "West Brom": "West Brom",
+        "West Ham": "West Ham",
+        "Wolves": "Wolves",
+        "Man United": "Man Utd",
+        "Sheffield United": "Sheffield Utd",
+        "Tottenham": "Spurs",
+        "Ipswich": "Ipswich",
+        "Sunderland": "Sunderland"
+      },
+      "selected_columns": {
+        "one_x_two:AvgCH,AvgCD,AvgCA": 380,
+        "over_under:AvgC>2.5,AvgC<2.5": 380
+      }
+    },
+    "native": {
+      "2020-21": {
+        "player_rows": 24365,
+        "team_rows": 760,
+        "player_all_gap": [
+          "starts"
+        ],
+        "team_all_gap": []
+      },
+      "2021-22": {
+        "player_rows": 25447,
+        "team_rows": 760,
+        "player_all_gap": [
+          "starts"
+        ],
+        "team_all_gap": []
+      },
+      "2022-23": {
+        "player_rows": 26505,
+        "team_rows": 760,
+        "player_all_gap": [],
+        "team_all_gap": []
+      },
+      "2023-24": {
+        "player_rows": 29725,
+        "team_rows": 760,
+        "player_all_gap": [],
+        "team_all_gap": []
+      },
+      "2024-25": {
+        "player_rows": 27283,
+        "team_rows": 760,
+        "player_all_gap": [],
+        "team_all_gap": []
+      },
+      "2025-26": {
+        "player_rows": 29747,
+        "team_rows": 760,
+        "player_all_gap": [],
+        "team_all_gap": []
+      }
+    },
+    "finiteness": {
+      "2020-21": {
+        "control": {
+          "rows": 24365,
+          "finite": 1193885,
+          "nan": 0,
+          "features": 49
+        },
+        "native": {
+          "rows": 24365,
+          "finite": 3397360,
+          "nan": 159930,
+          "features": 146
+        },
+        "market": {
+          "rows": 24365,
+          "finite": 73095,
+          "nan": 0,
+          "features": 3
+        },
+        "crowd": {
+          "rows": 24365,
+          "finite": 146190,
+          "nan": 0,
+          "features": 6
+        }
+      },
+      "2021-22": {
+        "control": {
+          "rows": 25447,
+          "finite": 1246903,
+          "nan": 0,
+          "features": 49
+        },
+        "native": {
+          "rows": 25447,
+          "finite": 3609766,
+          "nan": 105496,
+          "features": 146
+        },
+        "market": {
+          "rows": 25447,
+          "finite": 76341,
+          "nan": 0,
+          "features": 3
+        },
+        "crowd": {
+          "rows": 25447,
+          "finite": 152682,
+          "nan": 0,
+          "features": 6
+        }
+      },
+      "2022-23": {
+        "control": {
+          "rows": 26505,
+          "finite": 1298745,
+          "nan": 0,
+          "features": 49
+        },
+        "native": {
+          "rows": 26505,
+          "finite": 3838678,
+          "nan": 31052,
+          "features": 146
+        },
+        "market": {
+          "rows": 26505,
+          "finite": 79515,
+          "nan": 0,
+          "features": 3
+        },
+        "crowd": {
+          "rows": 26505,
+          "finite": 159030,
+          "nan": 0,
+          "features": 6
+        }
+      },
+      "2023-24": {
+        "control": {
+          "rows": 29725,
+          "finite": 1456525,
+          "nan": 0,
+          "features": 49
+        },
+        "native": {
+          "rows": 29725,
+          "finite": 4312603,
+          "nan": 27247,
+          "features": 146
+        },
+        "market": {
+          "rows": 29725,
+          "finite": 89175,
+          "nan": 0,
+          "features": 3
+        },
+        "crowd": {
+          "rows": 29725,
+          "finite": 178350,
+          "nan": 0,
+          "features": 6
+        }
+      },
+      "2024-25": {
+        "control": {
+          "rows": 27283,
+          "finite": 1336867,
+          "nan": 0,
+          "features": 49
+        },
+        "native": {
+          "rows": 27283,
+          "finite": 3963800,
+          "nan": 19518,
+          "features": 146
+        },
+        "market": {
+          "rows": 27283,
+          "finite": 81849,
+          "nan": 0,
+          "features": 3
+        },
+        "crowd": {
+          "rows": 27283,
+          "finite": 163698,
+          "nan": 0,
+          "features": 6
+        }
+      },
+      "2025-26": {
+        "control": {
+          "rows": 29747,
+          "finite": 1457603,
+          "nan": 0,
+          "features": 49
+        },
+        "native": {
+          "rows": 29747,
+          "finite": 4319563,
+          "nan": 23499,
+          "features": 146
+        },
+        "market": {
+          "rows": 29747,
+          "finite": 89241,
+          "nan": 0,
+          "features": 3
+        },
+        "crowd": {
+          "rows": 29747,
+          "finite": 178482,
+          "nan": 0,
+          "features": 6
+        }
+      }
+    },
+    "ablation": {
+      "union": {
+        "passed": true,
+        "player_columns": [
+          "us_shots",
+          "us_xG",
+          "us_xGChain",
+          "us_xGBuildup",
+          "us_key_passes",
+          "us_xA"
+        ],
+        "team_columns": [
+          "xg",
+          "xga",
+          "deep",
+          "deep_allowed",
+          "ppda_att",
+          "ppda_def",
+          "ppda_allowed_att",
+          "ppda_allowed_def"
+        ],
+        "feature_bytes_identical": true,
+        "array_sha256": "d8b7315f9a26668144455b52d4426bedbd24b2c7fdd03c075e77bac410b8f017",
+        "rows": 163072,
+        "features": 204
+      },
+      "full_union_bytes_identical": true
+    },
+    "export_parity": {
+      "passed": true,
+      "rows": 106042,
+      "core_sha256": "163f98cb0764e27b7f574ba4c75c1fe3138de862f660830aba732a1a6218b7fa",
+      "training_prefix_identical": true,
+      "keys_order_identical": true,
+      "original_csv_boundary_unchanged": true,
+      "points_core_reconciled": true,
+      "correction_alignment": {
+        "passed": true,
+        "rows": 163072,
+        "keys": [
+          "season",
+          "fixture",
+          "element"
+        ],
+        "row_keys_equal": true,
+        "cutoffs_equal": true,
+        "feature_index_equal": true
+      }
+    },
+    "features": {
+      "2025-26": {
+        "control": {
+          "omitted_features": [],
+          "selected_feature_count": 49
+        },
+        "union": {
+          "omitted_features": [],
+          "selected_feature_count": 204
+        }
+      }
+    },
+    "proof": {
+      "rows": 163072,
+      "core_bytes_identical": true,
+      "shared_keys_cohort_cutoffs_weights_evaluation_targets": true,
+      "hashes": {
+        "X_control": "371ccab06026f982ff5e7f6e56b082e310ff73509d0b503c87dca389b405b5fb",
+        "X_fpl_native": "d8b7315f9a26668144455b52d4426bedbd24b2c7fdd03c075e77bac410b8f017",
+        "X_union": "d8b7315f9a26668144455b52d4426bedbd24b2c7fdd03c075e77bac410b8f017",
+        "candidate": "0adacc0c576b40893bf2031dab7ef8a70aff9c1fe89ee71788fe80ef2e4447d2",
+        "cutoff_ns": "529da5bb541b93dfbab4f145ed2c12909d21693f0d3bad1b85e2410d5df5cbd3",
+        "dc_rate4": "f4d139b2dc8384729dade8c496d13a78ab46443e6ed17424bd16c49e427fa710",
+        "element": "88b6a7af86e80e278b186d5eec6a4c0895149104c6bbaf198093f2483b1f4745",
+        "fixture": "9eb8db26d008b860c9c59147a7fe9046e2353c55d2cd47b96b392c8d8a5fc70d",
+        "fpl_code": "c149c951a21144327f28f18b343fde9ca72e01c615f9147ada9c7f32c3cf9baa",
+        "gameweek": "743fc6356bef365cfe4b11e9095e1586b6f26042ea1008c2597cb1884bed4332",
+        "minutes": "99241b84bf74d0b59a8d1ca102c1b30e62c0be84a313354c6e6a9137310363b7",
+        "n_history": "7fd32af7067c7785644ab34fe6c9f4c3a4ac2236be1707a27f03617bae6627b6",
+        "pos": "e6a55dc90ff56890186057f11c2465f613014b6f68bbc8964d7e73f8158e5cd7",
+        "season": "683394a48e296163e0e7844b68503406f46f523949040e519ba45f34c405e487",
+        "total_points": "671b306752062cae0facde0aacdf049f7d1e763286da61d8c92e2fc6df293f32",
+        "ts_ns": "8ae780497f93cce68417041d2f204f2cc9a3ae5e69d65bbd26f94662a55a6b5d",
+        "weights_2025-26": "f0242d11006747e7b9180d37f9ab5e49b6771af5d5065a04a83097f4fd602259",
+        "y": "97cfd32937fc88fe412c1231416dec80d0f9d1ea1796091537e45a7694f77dcb"
+      },
+      "proof_sha256": "9a0858d1da8bcce2d7d4f5ca40b838f99dc9abc06278f037049dba744144309d"
+    },
+    "panel_file_sha256": "8d6b1bb898ae02b67a5b54c1a52de420928a452d408d0c430c36d7b636f5f4cb",
+    "panels_created_before_fits": true
+  },
+  "control_parity": {
+    "2023-24": {
+      "array_sha256": "5c2a7087d62eb45b712eb06ca2f648a4a22366b3c1b56a0212b4cf11acff03d9",
+      "rows": 29725,
+      "reference_recorded": true,
+      "passed": true,
+      "reference_sha256": "1bfe176c94153f8886a048085ca35e8ca0220a68029080e45e6320128fd0978f"
+    },
+    "2024-25": {
+      "array_sha256": "04d08acc5e0c8060b5e916e6234f65665cf3000ec6b871422d4d004937a7c272",
+      "rows": 27283,
+      "reference_recorded": true,
+      "passed": true,
+      "reference_sha256": "e6ed62819c317e412d44aee47d34be7bfb2e0341532637e4d2d2e75f4d7ea356"
+    },
+    "2025-26": {
+      "array_sha256": "8ae7dc49afcf49f9f224474053b7c08349e54a8cae86a4704c4c508b3aef33ce",
+      "rows": 29747,
+      "reference_recorded": true,
+      "passed": true,
+      "reference_sha256": "4f440d0ea1544e7af2329cee5a775995a9a3de7aaf7daf7f60beb71ed31da3a2"
+    }
+  },
+  "download": {
+    "status": 200,
+    "bytes": 203438,
+    "sha256": "3e3a8352f9ada6789c508d6ca184424421fed56a30400904a4a327c583407e62",
+    "rows": 380,
+    "request_count": 2,
+    "successful_files": 1,
+    "redirects_followed": 0,
+    "retries": 0
+  },
+  "resources": {
+    "guard_jobs": 10,
+    "admission_jobs": 1,
+    "fit_jobs_B": 4,
+    "fit_jobs_C": 2,
+    "threads": 2,
+    "retries": 0,
+    "total_HTTP_requests": 2,
+    "successful_market_files": 1,
+    "escalated_local_copies": 1,
+    "historical_guard_limit_violations": 1,
+    "C2_guard_limit_violations": 0,
+    "peak_job_commit_bytes": 2671828992,
+    "sum_guard_seconds": 973.6560000006575,
+    "max_guard_seconds": 468.25,
+    "active_work_bytes_C": 342802832,
+    "C_growth_limit_bytes_per_job": 2147483648,
+    "prior_failed_guard_jobs": 1,
+    "total_guard_jobs": 11,
+    "jobs": [
+      {
+        "label": "Stage-A",
+        "seconds": 468.25,
+        "peak_job_commit_bytes": 2272755712,
+        "processes_after": 0
+      },
+      {
+        "label": "2023-24_control",
+        "seconds": 18.29700000002049,
+        "peak_job_commit_bytes": 958750720,
+        "processes_after": 0
+      },
+      {
+        "label": "2023-24_union",
+        "seconds": 36.063000000081956,
+        "peak_job_commit_bytes": 958156800,
+        "processes_after": 0
+      },
+      {
+        "label": "2024-25_control",
+        "seconds": 22.469000000040978,
+        "peak_job_commit_bytes": 957538304,
+        "processes_after": 0
+      },
+      {
+        "label": "2024-25_union",
+        "seconds": 47.53099999995902,
+        "peak_job_commit_bytes": 958144512,
+        "processes_after": 0
+      },
+      {
+        "label": "aggregate-B",
+        "seconds": 11.202999999979511,
+        "peak_job_commit_bytes": 961449984,
+        "processes_after": 0
+      },
+      {
+        "label": "build-C2",
+        "seconds": 278.3430000001099,
+        "peak_job_commit_bytes": 2671828992,
+        "processes_after": 0
+      },
+      {
+        "label": "2025-26_control",
+        "seconds": 25.781000000191852,
+        "peak_job_commit_bytes": 1125830656,
+        "processes_after": 0
+      },
+      {
+        "label": "2025-26_union",
+        "seconds": 56.39100000006147,
+        "peak_job_commit_bytes": 1125609472,
+        "processes_after": 0
+      },
+      {
+        "label": "aggregate-C2",
+        "seconds": 9.328000000212342,
+        "peak_job_commit_bytes": 1125761024,
+        "processes_after": 0
+      }
+    ]
+  },
+  "approved_forecaster": {
+    "version": "1.0.0",
+    "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233"
+  },
+  "production_approved": false,
+  "registry_changed": false,
+  "weekly_defaults_changed": false,
+  "architect_premerge_review": "PENDING"
+}

@@ -4,6 +4,7 @@ Pre-registered studies use fixed gates and publish negative results. Approved 1.
 
 | Date | Study / idea | Recorded outcome or scope | Results | Study tag |
 |---|---|---|---|---|
+| 2026-11-04 | Compliant signal union | AUDIT_GATE_FAILED; 1.0.0 unchanged | [Report](COMPLIANT_UNION_RESULTS_2026-11-04.md) | study-compliant-union-2026-11-04 |
 | 2026-11-03 | FPL crowd signals | DEVELOPMENT_GATE_FAILED; 1.0.0 unchanged | [Report](FPL_CROWD_SIGNAL_RESULTS_2026-11-03.md) | study-fpl-crowd-signal-2026-11-03 |
 | 2026-10-16 | Availability / structured labels | 20.6% appearance Brier reduction; no promotion | [Report](INCUMBENT_AVAILABILITY_RESULTS_2026-10-16.md) | — |
 | 2026-10-16 | News text | No extra Brier benefit | [Report](NEWS_AVAILABILITY_RESULTS_2026-10-16.md) | — |
