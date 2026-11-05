@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "package": "conditional-prospective",
+  "addendum": "execution-a2",
+  "date": "2026-11-05",
+  "status": "PRE_REGISTERED_BEFORE_FIRST_PROSPECTIVE_DEADLINE",
+  "author": "architect (Claude Opus 5.5, Medium), user-approved 2026-11-05",
+  "amends_nothing": "The frozen protocol, frozen models, blend addendum, candidates, window and gates are unchanged. This record only fixes phase 2 execution details that the protocol left open, before any 2026/27 prediction, outcome or availability content has been read.",
+  "references": {
+    "protocol": "conditional_prospective_protocol_2026-11-04.json",
+    "protocol_sha256": "f946b1760eabe65bafd46951f12f0acdc584fdb856e7db06b9b15beda8318688",
+    "protocol_lf_sha256": "080ae509da85dd471b6040b7c6df1f2d8470261e6dc0bc5057a2eaf72de7f1ab",
+    "freeze_record": "conditional_prospective_freeze_2026-11-05.json",
+    "freeze_record_sha256": "ffeda703188298fb5465c0cb171d2a0ff1c0927df9188063e1a9b1b0bba121cd",
+    "blend_addendum": "conditional_prospective_blend_addendum_2026-11-05.json",
+    "blend_addendum_lf_sha256": "c3fb27d06e1211808d5cb0fd724cbe94a6435c359db7dacc9e144514d2f5cfd7",
+    "private_model_sha256": {
+      "control": "e57bd69bf0ef024efde93cb8922c1077323241280244de505e4d6189415a58fe",
+      "conditional": "8c930b6e81ba66294bae121ae85e644f6551c4aecb4d2531c323f765a3d74c2c"
+    },
+    "fplcache_protocol": "fplcache_availability_protocol_2026-11-05.json",
+    "fplcache_amendment_2_lf_sha256": "61e317e24869da086432c0be3789cc8b7c00e6a238e679d087d21b9127d53bed",
+    "fplcache_release": "5927716bd14773797a9df8476c31427dc5797473",
+    "first_prospective_gameweek": 10,
+    "first_prospective_deadline": "2026-11-06T18:30:00+00:00"
+  },
+  "timing_rule": "Intended to be first pushed before the GW10 deadline. If the first push is later, every rule below still applies unchanged and the phase 2 report must state the push time.",
+  "gaps_closed": {
+    "fixed_squad": "Protocol gate 6 (mean fixed-squad delta >= 0) gives no 2026/27 squad specification; the phase 1 selector is hard-wired to 2025/26 GW20.",
+    "label_path": "The protocol's unchanged incumbent_availability.augment is hard-wired to 2025/26, and fplcache_availability refuses seasons after 2025/26, so no admitted code path attaches 2026/27 labels.",
+    "label_fallback": "The protocol names AIrsenal 2026/27 as the only label source and gives no rule for a gameweek it does not cover.",
+    "runtime": "The freeze record does not state the runtime in which the frozen models must be loaded."
+  },
+  "fixed_squad": {
+    "method": "fplcache_availability.fixed_squad as released in 5927716 (selector, legality, autosubstitution and replay unchanged; its 2025/26 GW20 replica reproduced the PR66 totals and squad hash exactly), applied to season 2026-27 through a new module that only widens the season scope",
+    "season": "2026-27",
+    "opening_gameweek": "the first prospective gameweek (10)",
+    "count": 20,
+    "seed": 20260921,
+    "budget_tenths": 1000,
+    "pool": "unchanged: opening-gameweek rows with n_history >= 3 and last5_minutes >= 45; price = latest history value strictly more than 3 hours before the opening cutoff; draw weight = max(ew4_points_core, 0.1)",
+    "horizon": "opening gameweek through GW38, realised points via the unchanged points_replay",
+    "candidates": "the same 20 squads for control, conditional and blend_equal; each arm picks its XI each gameweek with the unchanged select_xi from its own forecasts",
+    "gate_6_statistic": "mean over the 20 squads of (candidate total - control total)",
+    "shortfall": "If fewer than 20 legal unique squads are found within the unchanged 10,000 draws, stop; do not change the seed, pool or count."
+  },
+  "labels": {
+    "primary_source": "AIrsenal 2026/27 under the protocol's exact-prefix commit-time and identity rule, labels for each gameweek's own next round only",
+    "identity": "join by (season, gameweek, fpl_code), as fplcache amendment 2; positions must match; history rows with no source code stay unknown and are counted",
+    "encoding": "unchanged SIGNALS: finite label -> chance = label/100, missing = 0; null label or no observation -> chance 0, missing 1",
+    "code_path": "a new module generalising fplcache_availability.augment to 2026-27 with identical encoding; before use it must reproduce the incumbent 2025/26 SIGNALS bytes exactly, as the fplcache package did",
+    "fallback": "For any 2026/27 gameweek with no admissible AIrsenal observation, use the fplcache snapshot selected under fplcache-r2 rules (last snapshot strictly before the deadline, at most 24 hours old, adding commit pinned, published_at = max(path time, commit time), Assistant Managers excluded) with amendment 2 identity. Fallback is per gameweek, never per player. If neither source covers a gameweek, its rows stay unknown.",
+    "fallback_basis": "fplcache and AIrsenal agreed on 99.84% of shared 2025/26 keys (minimum 99.03% per gameweek).",
+    "coverage_not_checked": "No 2026/27 listing, existence check or content read of either archive has been made before this record.",
+    "report": "per-gameweek source (AIrsenal, fplcache fallback, none) and known-label counts"
+  },
+  "calendar": {
+    "no_fixture_gameweeks": "a gameweek with no fixtures has no rows and is reported as no_fixtures",
+    "double_gameweeks": "fixture rows are kept; player-GW values are sums over fixtures, as in benchmark_metrics.evaluate",
+    "deadlines": "re-verified from the official event deadlines at phase 2; a first prospective gameweek other than GW10 stops"
+  },
+  "runtime": {
+    "requirement": "load and predict with the frozen models only in the runtime that fitted them: Python 3.12.16, scikit-learn 1.9.1, NumPy 2.3.5, pandas 2.2.3",
+    "canary": "before phase 2, a separately authorised readiness package records the full package list and a prediction hash of both frozen models on a fixed historical row set; phase 2 must reproduce that hash before scoring",
+    "on_mismatch": "stop; never refit, re-save or convert a frozen model"
+  },
+  "remaining_ambiguity": "Any further gap found at phase 2 stops the package. Its resolution must be mechanical, decided without computing any candidate metric, and disclosed in the report as post-registration.",
+  "not_authorised": [
+    "any 2026/27 prediction, outcome or availability read before the phase 2 package",
+    "refitting or modifying either frozen model",
+    "any change to the frozen protocol, freeze record or blend addendum",
+    "new candidates, arms, weights or gates"
+  ]
+}
