@@ -4,7 +4,7 @@ Pre-registered studies use fixed gates and publish negative results. Approved 1.
 
 | Date | Study / idea | Recorded outcome or scope | Results | Study tag |
 |---|---|---|---|---|
-| 2026-11-05 | Conditional-prospective readiness | READINESS_RECORDED; historical parity + repeated canary; no fit or prospective metric; 1.0.0 unchanged | [Record](conditional_prospective_readiness_2026-11-05.md) | — |
+| 2026-11-05 | Conditional-prospective readiness | READINESS_RECORDED; historical parity + repeated canary; no fit or prospective metric; 1.0.0 unchanged | [Record](conditional_prospective_readiness_2026-11-05.md) | study-phase2-readiness-2026-11-05 |
 | 2026-11-05 | Conditional-prospective gate 7 clarification | PRE_REGISTERED full-scoring forecast per arm for phase 2 gate 7; no fit; 1.0.0 unchanged | [Clarification](CONDITIONAL_PROSPECTIVE_GATE7_CLARIFICATION_2026-11-05.md) | — |
 | 2026-11-05 | Conditional-prospective execution addendum | PRE_REGISTERED phase 2 execution details (fixed squads, labels, fallback, runtime); no fit; 1.0.0 unchanged | [Addendum](CONDITIONAL_PROSPECTIVE_EXECUTION_ADDENDUM_2026-11-05.md) | — |
 | 2026-11-05 | Fplcache availability | RETROSPECTIVE_GATES_PASS; 1.0.0 unchanged | [Report](FPLCACHE_AVAILABILITY_RESULTS_2026-11-05.md) | study-fplcache-availability-2026-11-05 |
