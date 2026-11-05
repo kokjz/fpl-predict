@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "package": "in-season-refit",
+  "hypothesis": "H13: 1.0.0 recipe refit at GW19 versus annual on GW20-38",
+  "brief_revision": "isr-r1",
+  "brief_sha256": "ea81b965167fdd24a31d71e7e71b9851166fc2de194405cfe57de239bb3d433c",
+  "clarification_sha256": "dd90040f86323ec2f2ab59402e8806cd4b159c00ca36830c2524f6c510a59317",
+  "seasons": [
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "test_gameweeks": [
+    20,
+    38
+  ],
+  "recipe": {
+    "source": "hash-verified approved 1.0.0 artifact core_name and blend only; read at Stage A, never reselect",
+    "artifact_sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+    "features": "original uncorrected CORE_FEATURES from pinned features.pkl",
+    "target": "points_core",
+    "fit": "fpl_model.fit_estimator with sample_weights (730.5-day half life, each training latest ts)",
+    "prediction": "blend * clip(core, 0, 20) + (1-blend) * ew4_points_core",
+    "auxiliary_heads": false,
+    "save_model": false
+  },
+  "arms": {
+    "annual": "season < S",
+    "refit19": "season < S OR (season == S AND ts < min(S GW20 cutoff))"
+  },
+  "leakage": "max(train.ts) < min(test.cutoff); match time, never GW label; postponed fixtures after deadline excluded",
+  "stage_A": {
+    "jobs": 1,
+    "fits": 0,
+    "checks": [
+      "pinned input hashes",
+      "reference hash",
+      "recipe metadata",
+      "train/test counts both arms, rows added",
+      "leakage each arm/season",
+      "2026-27 refusal",
+      "receipt model decimal sample before fitting"
+    ]
+  },
+  "stage_B": {
+    "fits": 6,
+    "aggregate_jobs": 1,
+    "order": [
+      "annual 2024-25",
+      "annual 2025-26",
+      "parity gate before any further fit",
+      "annual 2023-24",
+      "refit19 2023-24",
+      "refit19 2024-25",
+      "refit19 2025-26",
+      "aggregate"
+    ],
+    "parity": {
+      "seasons": [
+        "2024-25",
+        "2025-26"
+      ],
+      "scope": "GW20-38 for each season, matching tested forecast windows",
+      "reference": "heldout_predictions.jsonl column model",
+      "keys": [
+        "season",
+        "element",
+        "fixture"
+      ],
+      "key_sets": "identical counts; no missing, extra or duplicate keys",
+      "precision_sample": "first 1000 permitted receipt records, parse numeric model tokens as Decimal; record max decimal places",
+      "rule_if_max_decimals_le_10": "absolute error <= 1e-9 every key",
+      "otherwise": "original relative error <= 1e-12 every key, stored zero requires exact zero",
+      "record": [
+        "max absolute difference",
+        "key counts",
+        "full precision new prediction array sha256"
+      ],
+      "failure": "stop before any further fit; no runtime switch"
+    }
+  },
+  "scoring": {
+    "candidate": "fpl_model.candidate_mask",
+    "evaluate": "benchmark_metrics.evaluate",
+    "units": [
+      "candidate_player_gw",
+      "candidate_fixture"
+    ],
+    "metrics": [
+      "rmse",
+      "mae",
+      "bias",
+      "within-GW NDCG@10",
+      "within-GW Spearman"
+    ],
+    "fixed_squad": {
+      "function": "phase2_execution.fixed_squad unchanged, historical season",
+      "opening_gw": 20,
+      "count": 20,
+      "seed": 20260921,
+      "selection": "each arm uses its own core forecast; unchanged squad replay and realised total_points"
+    },
+    "block_interval": {
+      "function": "benchmark_evaluation.paired_block_errors",
+      "samples": 1000,
+      "block_length": 4,
+      "seed": 20261015,
+      "scope": "descriptive, both candidate units, refit19 minus annual"
+    }
+  },
+  "gates": {
+    "BENEFIT": {
+      "pooled_rmse_ratio_max": 0.995,
+      "pooled_mae_ratio_max": 1.005,
+      "each_season_rmse_ratio_max": 1.005,
+      "mean_fixed_squad_delta_min": 0
+    },
+    "NO_HARM": {
+      "requires": "not BENEFIT",
+      "pooled_rmse_ratio_max": 1.0,
+      "pooled_mae_ratio_max": 1.0,
+      "each_season_rmse_ratio_max": 1.005,
+      "mean_fixed_squad_delta_min": 0
+    },
+    "HARM": "anything else",
+    "units": "both candidate player-GW and fixture"
+  },
+  "descriptives": [
+    "per-season",
+    "per-position",
+    "GW20-28 versus GW29-38",
+    "refit19 added rows",
+    "2025-26 inspected-season caveat"
+  ],
+  "resources": {
+    "threads": 2,
+    "memory_bytes": 4294967296,
+    "seconds": 900,
+    "growth_bytes": 2147483648,
+    "free_bytes_min": 5368709120,
+    "serial": true,
+    "guard": "windows_worker_guard",
+    "runtime": "legacy",
+    "real_retries": 0
+  },
+  "stops": [
+    "hash mismatch",
+    "parity failure",
+    "leakage failure",
+    "guard failure",
+    "write failure",
+    "real job failure",
+    "CI failure subject to one new-code fix iteration",
+    "specification ambiguity",
+    "recurring tooling error",
+    "need protected module or 2026-27 content"
+  ],
+  "exclusions": [
+    "2026-27 reads",
+    "retrieval",
+    "operational or saved refreshed artifacts",
+    "promotion/default/registry changes",
+    "protected/frozen/runtime writes",
+    "extra arms fits seeds or recipe changes",
+    "merge tag delete forcepush",
+    "settings agents messaging paid cloud uploads"
+  ],
+  "interpretation": {
+    "BENEFIT": "eligible for separately authorised operational brief",
+    "NO_HARM": "adoption is user choice under separate authority",
+    "HARM": "retain annual fits"
+  },
+  "boundary": "Stage E report and JSON without individual forecasts, study row, CHECKPOINT review PENDING, 1.0.0 unchanged, PR ready and exact-head CI green; stop before merge"
+}
