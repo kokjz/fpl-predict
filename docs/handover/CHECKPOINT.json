@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "in_season_refit_premerge_review_pending",
+  "status": "in_season_refit_accepted",
   "updated": "2026-11-06 Asia/Singapore",
   "repository": "https://github.com/kokjz/fpl-predict",
   "reviewed_engine_main": "179438b05e268c4c3db17996cd1738d48a48aa35",
@@ -580,7 +580,8 @@
     "production_approved": false,
     "registry_changed": false,
     "weekly_defaults_changed": false,
-    "architect_premerge_review": "PENDING",
+    "architect_premerge_review": "ACCEPTED 2026-11-06 (handover 156 review)",
+    "user_decision": "2026-11-06: no mid-season refresh; the once-a-year fit is retained",
     "stage_A": "PASS",
     "stage_B": "NO_HARM",
     "fits": 6,
