@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "package": "conditional-prospective",
+  "addendum": "gate7-a3",
+  "date": "2026-11-05",
+  "status": "PRE_REGISTERED_BEFORE_FIRST_PROSPECTIVE_DEADLINE",
+  "author": "architect (Claude Opus 5.5, Medium), user-approved 2026-11-05",
+  "trigger": "Engineer specification stop (phase2-readiness handover 145, 2026-11-05T11:51Z): gate 7 needs a full-scoring forecast for every judged candidate, but the protocol does not name the full forecast of each arm and the blend addendum defines only blend_core_xp.",
+  "amends_nothing": "The frozen protocol, frozen models, blend addendum, execution addendum, candidates, window, thresholds and decision rule are unchanged. This record only names the forecast that enters gate 7 for each arm.",
+  "references": {
+    "protocol": "conditional_prospective_protocol_2026-11-04.json",
+    "protocol_lf_sha256": "080ae509da85dd471b6040b7c6df1f2d8470261e6dc0bc5057a2eaf72de7f1ab",
+    "blend_addendum_lf_sha256": "c3fb27d06e1211808d5cb0fd724cbe94a6435c359db7dacc9e144514d2f5cfd7",
+    "execution_addendum": "conditional_prospective_execution_addendum_2026-11-05.json",
+    "first_prospective_deadline": "2026-11-06T18:30:00+00:00"
+  },
+  "gate7_full_forecast": {
+    "control": "the frozen control's core prediction (it has no defensive-contribution head), as in the fplcache study (PR68)",
+    "conditional": "the frozen conditional model's expected_points = core_xp + dc_xp, as in the fplcache study (PR68)",
+    "blend_equal": "0.5 * control full forecast + 0.5 * conditional expected_points, per fixture row; that is, the same equal weight applied to each arm's own gate 7 forecast",
+    "truth": "official total_points",
+    "statistic": "RMSE over player-gameweek sums (fixture values summed per season, gameweek and player) on the phase 2 window, as in the fplcache study"
+  },
+  "rule": "Every gate input for blend_equal is the equal-weight average of the two frozen models' inputs for that same gate. Gates 2-4 and 6 already use core forecasts (blend_core_xp); gate 7 uses each arm's full forecast.",
+  "information_used": "No blend full-scoring value has been computed on any data. The fplcache study (PR68) reported full-scoring RMSE for control and conditional only, on 2022/23-2024/25, before this record; no 2026/27 data has been read.",
+  "timing_rule": "Intended to be first pushed before the GW10 deadline. If the first push is later, the rule still applies and the phase 2 report must state the push time.",
+  "not_authorised": [
+    "any 2026/27 prediction, outcome or availability read before the phase 2 package",
+    "refitting or modifying either frozen model",
+    "any change to earlier frozen records",
+    "new candidates, arms, weights or gates"
+  ]
+}
