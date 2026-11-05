@@ -19,7 +19,7 @@ def test_representation_and_id_drift_cases():
     s['code'] = s.code.astype(str)
     report = m.diagnostic(h, b, s)
     assert report['id_code_mismatch_rows'] == 2 and report['int64_code_mismatch_rows'] == 0
-    assert report['snapshot_code_dtype'] == 'object' and m.classify([report]) == 1
+    assert report['snapshot_code_dtype'] == str(s.code.dtype) and m.classify([report]) == 1
     s['code'] = [102, 101]
     s['element_type'] = [3, 2]
     report = m.diagnostic(h, b, s)
