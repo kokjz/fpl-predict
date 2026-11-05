@@ -1,0 +1,58 @@
+{
+  "package": "conditional-prospective",
+  "revision": "cpr-r1",
+  "phase": 1,
+  "status": "FROZEN_RESEARCH_ONLY",
+  "protocol": "conditional_prospective_protocol_2026-11-04.json",
+  "protocol_lf_sha256": "080ae509da85dd471b6040b7c6df1f2d8470261e6dc0bc5057a2eaf72de7f1ab",
+  "protocol_commit": "0f4124619f074f706c49d16f6b8676faace53daf",
+  "numerical_source": "487f0f127dd3b1cc761f114ec55c635960c5f0dd",
+  "training": "2020-21 through 2025-26, all rows",
+  "training_rows": 163072,
+  "training_row_sha256": "07965cddc261e1fc612a078e7761c0b8670ba9561e506cc181dce1e5944a7988",
+  "feature_sha256": {
+    "control": "3a81a8d37e56558d09297aaa562b1315d56d49f7813c69e81063f0d0b3f40453",
+    "conditional_core": "3a81a8d37e56558d09297aaa562b1315d56d49f7813c69e81063f0d0b3f40453",
+    "conditional_played": "f99485e88251dd6b0e2494befeb224387ef6747acc14c76c242b5c59b55cad92",
+    "conditional_minutes": "3a81a8d37e56558d09297aaa562b1315d56d49f7813c69e81063f0d0b3f40453",
+    "conditional_sixty": "3a81a8d37e56558d09297aaa562b1315d56d49f7813c69e81063f0d0b3f40453",
+    "conditional_dc": "d325a5ee8ce793f92bd51815c7370c2726fdb000c1e068717f2a7f368ee3b0da"
+  },
+  "training_feature_sha256": {
+    "control": "371ccab06026f982ff5e7f6e56b082e310ff73509d0b503c87dca389b405b5fb",
+    "conditional": "0f2dd526687dd7b1db31cf8db0aa31eaae52511a6cf6e4a94c7f8af01f659af2"
+  },
+  "learner_sha256": {
+    "control": {
+      "control": "e57bd69bf0ef024efde93cb8922c1077323241280244de505e4d6189415a58fe"
+    },
+    "conditional": {
+      "core": "8136244138a8256017280a0cc6819a55a6c76aed96f29d45ac57fbe4b8f82bc0",
+      "played": "8363c149421ab9e8e49e90dfc77d97bd89348a1bd470a94a512a3f76199de3fe",
+      "minutes": "df35c1d420e3dd6061458948fb2c80e61cafcef4bc404ab9977321be60262318",
+      "sixty": "5b6a655bd63f51685ec6341ca3a9bb4226d365b4d26d45f8b70fb53d72b3485a",
+      "dc": "8629f5ca0010aae2793a9760604524476c2de99eadc3187e16079494b895c632"
+    }
+  },
+  "private_model_sha256": {
+    "control": "e57bd69bf0ef024efde93cb8922c1077323241280244de505e4d6189415a58fe",
+    "conditional": "8c930b6e81ba66294bae121ae85e644f6551c4aecb4d2531c323f765a3d74c2c"
+  },
+  "card_prior": {
+    "nonappearance_rows": 96407,
+    "card_only_rows": 11,
+    "rate": 0.00010256300620266959,
+    "mean_return": -1.14527578859975
+  },
+  "training_label_complete": "2026-05-24T18:00:00+00:00",
+  "approved_forecaster": {
+    "version": "1.0.0",
+    "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+    "unchanged": true
+  },
+  "first_prospective_rule": "first deadline strictly after successful push time of the first commit publishing these hashes; timestamp and selected deadline recorded subsequently",
+  "prospective_predictions_generated": false,
+  "prospective_outcomes_or_availability_inspected": false,
+  "promotion": false,
+  "architect_premerge_review": "PENDING"
+}
