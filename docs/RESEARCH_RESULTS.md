@@ -4,6 +4,7 @@ Pre-registered studies use fixed gates and publish negative results. Approved 1.
 
 | Date | Study / idea | Recorded outcome or scope | Results | Study tag |
 |---|---|---|---|---|
+| 2026-11-05 | Fplcache availability | RETROSPECTIVE_GATES_PASS; 1.0.0 unchanged | [Report](FPLCACHE_AVAILABILITY_RESULTS_2026-11-05.md) | study-fplcache-availability-2026-11-05 |
 | 2026-11-05 | Conditional-prospective blend addendum | PRE_REGISTERED secondary candidate for phase 2; no fit; 1.0.0 unchanged | [Addendum](CONDITIONAL_PROSPECTIVE_BLEND_ADDENDUM_2026-11-05.md) | — |
 | 2026-11-05 | Conditional-prospective phase1 | SANITY_PASS_FROZEN; first prospective GW10; 1.0.0 unchanged | [Report](CONDITIONAL_PROSPECTIVE_RESULTS_2026-11-05.md) | study-conditional-prospective-phase1-2026-11-05 |
 | 2026-11-04 | Availability-prospective phase1 | SANITY_GATE_FAILED (MAE); no frozen candidates; 1.0.0 unchanged | [Report](AVAILABILITY_PROSPECTIVE_RESULTS_2026-11-04.md) | study-availability-prospective-phase1-2026-11-04 |

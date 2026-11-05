@@ -1,0 +1,37 @@
+{
+  "package": "fplcache-availability",
+  "revision": "fca-r2",
+  "date": "2026-11-05",
+  "amendment": 2,
+  "protocol": "fplcache_availability_protocol_2026-11-05.json",
+  "protocol_lf_sha256": "71032c32b725570d27403b0ef1c5f45ee090a613a41d91f7cb8d46fd606afb25",
+  "first_amendment": "fplcache_availability_protocol_amendment_2026-11-05.json",
+  "first_amendment_lf_sha256": "027e71bfb4effedb1f3b907939dc33423a9dc7da6c9ba206efd703eae35cc821",
+  "decision": "pre-registered case2: code-keyed identity criteria hold on all189 snapshots; case1 fails",
+  "evidence": {
+    "snapshots": 189,
+    "history_rows": 138707,
+    "id_code_mismatch_rows": 2,
+    "int64_code_mismatch_rows": 2,
+    "duplicate_snapshot_codes": 0,
+    "code_position_mismatch_rows": 0,
+    "bridge_missing_history_rows": 0,
+    "code_matched_rows": 137959,
+    "code_unmatched_rows": 748,
+    "matched_code_id_drift_rows": 0
+  },
+  "identity": {
+    "key": [
+      "season",
+      "gameweek",
+      "fpl_code"
+    ],
+    "history_code": "unchanged pinned season bridge maps history element to code",
+    "snapshot_code": "finite integer code normalized to int64; duplicate codes refused",
+    "position": "source position must equal history pos under the code key; unchanged hard check",
+    "unmatched": "count rows with absent snapshot code and leave availability unknown; preserve every row",
+    "census": "add id_drift_rows: same matched code with a different snapshot element id; descriptive only"
+  },
+  "limits": "No change to chance encoding, features, targets, arms, folds, gates, source policy, budgets or guards; no position waiver, bridge/history edit or model promotion",
+  "interpretation": "The two numeric mismatches are both2022-23 GW1; the missing expected codes become unknown under this rule. Zero matched-code id-drift rows is an observed count, not a required positive result."
+}

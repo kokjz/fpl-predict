@@ -1,0 +1,27 @@
+{
+  "package": "fplcache-availability",
+  "revision": "fca-r2",
+  "date": "2026-11-05",
+  "amends_protocol": "fplcache_availability_protocol_2026-11-05.json",
+  "protocol_lf_sha256": "71032c32b725570d27403b0ef1c5f45ee090a613a41d91f7cb8d46fd606afb25",
+  "reason": "2022-23 GW7 has no fixture rows in pinned calendars",
+  "no_fixtures": {
+    "season": "2022-23",
+    "gameweek": 7,
+    "status": "no_fixtures",
+    "deadline": null,
+    "select_or_retrieve_snapshot": false,
+    "label_rows": 0,
+    "counts_toward_no_source_limit": false
+  },
+  "planning_calendar": "Use pinned row-based calendars: each season/GW row cutoff for the other 189 keys; any other missing key stops; selected snapshots own deadlines still verified by unchanged extract_bootstrap",
+  "census": {
+    "rows": 190,
+    "statuses": [
+      "admitted",
+      "no_source",
+      "no_fixtures"
+    ]
+  },
+  "everything_else_unchanged": true
+}

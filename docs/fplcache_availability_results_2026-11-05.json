@@ -1,0 +1,2340 @@
+{
+  "package": "fplcache-availability",
+  "revision": "fca-r2",
+  "date": "2026-11-05",
+  "outcome": "RETROSPECTIVE_GATES_PASS",
+  "numerical_source": "0d3f854800d3ae69215f882e9449f895c69db18f",
+  "fit_source": "631de4d00c8779ea7c29b8aa8b89ff3cb5aba9ac",
+  "protocol": "fplcache_availability_protocol_2026-11-05.json",
+  "protocol_lf_sha256": "71032c32b725570d27403b0ef1c5f45ee090a613a41d91f7cb8d46fd606afb25",
+  "amendment": "fplcache_availability_protocol_amendment_2026-11-05.json",
+  "identity_amendment": "fplcache_availability_protocol_amendment_2_2026-11-05.json",
+  "stage_D": {
+    "case": 2,
+    "snapshots": 189,
+    "overall": {
+      "history_rows": 138707,
+      "id_matched_rows": 137961,
+      "id_unmatched_rows": 746,
+      "id_code_mismatch_rows": 2,
+      "int64_code_mismatch_rows": 2,
+      "id_position_mismatch_rows": 0,
+      "code_matched_rows": 137959,
+      "code_unmatched_rows": 748,
+      "code_position_mismatch_rows": 0,
+      "duplicate_codes": 0,
+      "duplicate_ids": 0,
+      "id_drift_rows": 0,
+      "bridge_missing_history_rows": 0,
+      "invalid_snapshot_codes": 0,
+      "invalid_bridge_codes": 0,
+      "invalid_snapshot_ids": 0,
+      "invalid_bridge_ids": 0,
+      "invalid_history_ids": 0,
+      "invalid_positions": 0,
+      "duplicate_bridge_ids": 0,
+      "duplicate_bridge_codes": 0
+    },
+    "per_season": {
+      "2021-22": {
+        "history_rows": 25447,
+        "id_matched_rows": 25257,
+        "id_unmatched_rows": 190,
+        "id_code_mismatch_rows": 0,
+        "int64_code_mismatch_rows": 0,
+        "id_position_mismatch_rows": 0,
+        "code_matched_rows": 25257,
+        "code_unmatched_rows": 190,
+        "code_position_mismatch_rows": 0,
+        "duplicate_codes": 0,
+        "duplicate_ids": 0,
+        "id_drift_rows": 0,
+        "bridge_missing_history_rows": 0,
+        "invalid_snapshot_codes": 0,
+        "invalid_bridge_codes": 0,
+        "invalid_snapshot_ids": 0,
+        "invalid_bridge_ids": 0,
+        "invalid_history_ids": 0,
+        "invalid_positions": 0,
+        "duplicate_bridge_ids": 0,
+        "duplicate_bridge_codes": 0
+      },
+      "2022-23": {
+        "history_rows": 26505,
+        "id_matched_rows": 26352,
+        "id_unmatched_rows": 153,
+        "id_code_mismatch_rows": 2,
+        "int64_code_mismatch_rows": 2,
+        "id_position_mismatch_rows": 0,
+        "code_matched_rows": 26350,
+        "code_unmatched_rows": 155,
+        "code_position_mismatch_rows": 0,
+        "duplicate_codes": 0,
+        "duplicate_ids": 0,
+        "id_drift_rows": 0,
+        "bridge_missing_history_rows": 0,
+        "invalid_snapshot_codes": 0,
+        "invalid_bridge_codes": 0,
+        "invalid_snapshot_ids": 0,
+        "invalid_bridge_ids": 0,
+        "invalid_history_ids": 0,
+        "invalid_positions": 0,
+        "duplicate_bridge_ids": 0,
+        "duplicate_bridge_codes": 0
+      },
+      "2023-24": {
+        "history_rows": 29725,
+        "id_matched_rows": 29546,
+        "id_unmatched_rows": 179,
+        "id_code_mismatch_rows": 0,
+        "int64_code_mismatch_rows": 0,
+        "id_position_mismatch_rows": 0,
+        "code_matched_rows": 29546,
+        "code_unmatched_rows": 179,
+        "code_position_mismatch_rows": 0,
+        "duplicate_codes": 0,
+        "duplicate_ids": 0,
+        "id_drift_rows": 0,
+        "bridge_missing_history_rows": 0,
+        "invalid_snapshot_codes": 0,
+        "invalid_bridge_codes": 0,
+        "invalid_snapshot_ids": 0,
+        "invalid_bridge_ids": 0,
+        "invalid_history_ids": 0,
+        "invalid_positions": 0,
+        "duplicate_bridge_ids": 0,
+        "duplicate_bridge_codes": 0
+      },
+      "2024-25": {
+        "history_rows": 27283,
+        "id_matched_rows": 27162,
+        "id_unmatched_rows": 121,
+        "id_code_mismatch_rows": 0,
+        "int64_code_mismatch_rows": 0,
+        "id_position_mismatch_rows": 0,
+        "code_matched_rows": 27162,
+        "code_unmatched_rows": 121,
+        "code_position_mismatch_rows": 0,
+        "duplicate_codes": 0,
+        "duplicate_ids": 0,
+        "id_drift_rows": 0,
+        "bridge_missing_history_rows": 0,
+        "invalid_snapshot_codes": 0,
+        "invalid_bridge_codes": 0,
+        "invalid_snapshot_ids": 0,
+        "invalid_bridge_ids": 0,
+        "invalid_history_ids": 0,
+        "invalid_positions": 0,
+        "duplicate_bridge_ids": 0,
+        "duplicate_bridge_codes": 0
+      },
+      "2025-26": {
+        "history_rows": 29747,
+        "id_matched_rows": 29644,
+        "id_unmatched_rows": 103,
+        "id_code_mismatch_rows": 0,
+        "int64_code_mismatch_rows": 0,
+        "id_position_mismatch_rows": 0,
+        "code_matched_rows": 29644,
+        "code_unmatched_rows": 103,
+        "code_position_mismatch_rows": 0,
+        "duplicate_codes": 0,
+        "duplicate_ids": 0,
+        "id_drift_rows": 0,
+        "bridge_missing_history_rows": 0,
+        "invalid_snapshot_codes": 0,
+        "invalid_bridge_codes": 0,
+        "invalid_snapshot_ids": 0,
+        "invalid_bridge_ids": 0,
+        "invalid_history_ids": 0,
+        "invalid_positions": 0,
+        "duplicate_bridge_ids": 0,
+        "duplicate_bridge_codes": 0
+      }
+    },
+    "source": "8ea3252a4cf5669d71ef1161b3e04b0f28c39956",
+    "runtime": {
+      "python": "3.12.16",
+      "pandas": "2.2.3",
+      "numpy": "2.3.5"
+    },
+    "resources": {
+      "seconds": 114.04699999978766,
+      "work_growth_bytes": 306574,
+      "evidence_growth_bytes": 22645,
+      "combined_growth_bytes": 329219,
+      "peak_job_commit_bytes": 287649792,
+      "processes_after": 0
+    }
+  },
+  "source": {
+    "repository": "https://github.com/Randdalf/fplcache",
+    "listing_revision": "30ff880dd60a54917b3ee0befcb8c8b7fd3b9eea",
+    "licence": {
+      "spdx_id": "Unlicense",
+      "sha": "fdddb29aa445bf3d6a5d843d6dd77e10a9f99657",
+      "url": "https://github.com/Randdalf/fplcache/blob/main/LICENSE"
+    }
+  },
+  "retrieval": {
+    "metadata_requests": 574,
+    "downloads": 190,
+    "total_bytes": 21597064,
+    "retries": 0,
+    "re_selections": 2,
+    "before_resume": {
+      "metadata_requests": 167,
+      "downloads": 54,
+      "total_bytes": 4262720,
+      "retries": 0,
+      "re_selections": 1
+    },
+    "after_resume": {
+      "metadata_requests": 407,
+      "downloads": 136,
+      "total_bytes": 17334344,
+      "retries": 0,
+      "re_selections": 1
+    }
+  },
+  "stage_A": {
+    "passed": true,
+    "census_status_counts": {
+      "2021-22": {
+        "admitted": 38,
+        "no_source": 0,
+        "no_fixtures": 0
+      },
+      "2022-23": {
+        "admitted": 37,
+        "no_source": 0,
+        "no_fixtures": 1
+      },
+      "2023-24": {
+        "admitted": 38,
+        "no_source": 0,
+        "no_fixtures": 0
+      },
+      "2024-25": {
+        "admitted": 38,
+        "no_source": 0,
+        "no_fixtures": 0
+      },
+      "2025-26": {
+        "admitted": 38,
+        "no_source": 0,
+        "no_fixtures": 0
+      }
+    },
+    "census_details": {
+      "2021-22": {
+        "capture_age_hours_min": 0.049166666666666664,
+        "capture_age_hours_max": 6.0275,
+        "assistant_managers_excluded": 0,
+        "unmatched_history_rows": 190,
+        "id_drift_rows": 0
+      },
+      "2022-23": {
+        "capture_age_hours_min": 0.07361111111111111,
+        "capture_age_hours_max": 6.139166666666667,
+        "assistant_managers_excluded": 0,
+        "unmatched_history_rows": 155,
+        "id_drift_rows": 0
+      },
+      "2023-24": {
+        "capture_age_hours_min": 0.12,
+        "capture_age_hours_max": 6.150555555555556,
+        "assistant_managers_excluded": 0,
+        "unmatched_history_rows": 179,
+        "id_drift_rows": 0
+      },
+      "2024-25": {
+        "capture_age_hours_min": 0.33805555555555555,
+        "capture_age_hours_max": 5.971388888888889,
+        "assistant_managers_excluded": 320,
+        "unmatched_history_rows": 121,
+        "id_drift_rows": 0
+      },
+      "2025-26": {
+        "capture_age_hours_min": 0.36027777777777775,
+        "capture_age_hours_max": 5.572777777777778,
+        "assistant_managers_excluded": 0,
+        "unmatched_history_rows": 103,
+        "id_drift_rows": 0
+      }
+    },
+    "unknown_shares": {
+      "2020-21": {
+        "rows": 24365,
+        "known": 0,
+        "unknown_share": 1.0
+      },
+      "2021-22": {
+        "rows": 25447,
+        "known": 16484,
+        "unknown_share": 0.35222226588595906
+      },
+      "2022-23": {
+        "rows": 26505,
+        "known": 16242,
+        "unknown_share": 0.3872099603848331
+      },
+      "2023-24": {
+        "rows": 29725,
+        "known": 19575,
+        "unknown_share": 0.34146341463414637
+      },
+      "2024-25": {
+        "rows": 27283,
+        "known": 17058,
+        "unknown_share": 0.37477550122787084
+      },
+      "2025-26": {
+        "rows": 29747,
+        "known": 18099,
+        "unknown_share": 0.39156889770397013
+      }
+    },
+    "cross_check": {
+      "shared_keys": 27553,
+      "agreements": 27508,
+      "agreement": 0.9983667840162596,
+      "per_gw": [
+        {
+          "gameweek": 4,
+          "shared_keys": 738,
+          "agreements": 738,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 5,
+          "shared_keys": 740,
+          "agreements": 740,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 6,
+          "shared_keys": 741,
+          "agreements": 741,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 7,
+          "shared_keys": 742,
+          "agreements": 739,
+          "agreement": 0.9959568733153639
+        },
+        {
+          "gameweek": 8,
+          "shared_keys": 743,
+          "agreements": 743,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 9,
+          "shared_keys": 745,
+          "agreements": 743,
+          "agreement": 0.9973154362416108
+        },
+        {
+          "gameweek": 10,
+          "shared_keys": 746,
+          "agreements": 746,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 11,
+          "shared_keys": 748,
+          "agreements": 748,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 12,
+          "shared_keys": 752,
+          "agreements": 752,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 13,
+          "shared_keys": 755,
+          "agreements": 755,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 14,
+          "shared_keys": 755,
+          "agreements": 755,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 15,
+          "shared_keys": 758,
+          "agreements": 758,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 16,
+          "shared_keys": 759,
+          "agreements": 759,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 17,
+          "shared_keys": 760,
+          "agreements": 760,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 18,
+          "shared_keys": 770,
+          "agreements": 770,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 19,
+          "shared_keys": 775,
+          "agreements": 775,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 20,
+          "shared_keys": 780,
+          "agreements": 780,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 21,
+          "shared_keys": 790,
+          "agreements": 786,
+          "agreement": 0.9949367088607595
+        },
+        {
+          "gameweek": 22,
+          "shared_keys": 796,
+          "agreements": 796,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 23,
+          "shared_keys": 802,
+          "agreements": 802,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 24,
+          "shared_keys": 808,
+          "agreements": 808,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 25,
+          "shared_keys": 817,
+          "agreements": 812,
+          "agreement": 0.9938800489596084
+        },
+        {
+          "gameweek": 26,
+          "shared_keys": 817,
+          "agreements": 811,
+          "agreement": 0.99265605875153
+        },
+        {
+          "gameweek": 27,
+          "shared_keys": 817,
+          "agreements": 817,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 28,
+          "shared_keys": 818,
+          "agreements": 814,
+          "agreement": 0.9951100244498777
+        },
+        {
+          "gameweek": 29,
+          "shared_keys": 819,
+          "agreements": 816,
+          "agreement": 0.9963369963369964
+        },
+        {
+          "gameweek": 30,
+          "shared_keys": 820,
+          "agreements": 819,
+          "agreement": 0.998780487804878
+        },
+        {
+          "gameweek": 31,
+          "shared_keys": 822,
+          "agreements": 819,
+          "agreement": 0.9963503649635036
+        },
+        {
+          "gameweek": 32,
+          "shared_keys": 825,
+          "agreements": 825,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 33,
+          "shared_keys": 826,
+          "agreements": 826,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 34,
+          "shared_keys": 829,
+          "agreements": 821,
+          "agreement": 0.9903498190591074
+        },
+        {
+          "gameweek": 35,
+          "shared_keys": 830,
+          "agreements": 824,
+          "agreement": 0.9927710843373494
+        },
+        {
+          "gameweek": 36,
+          "shared_keys": 832,
+          "agreements": 832,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 37,
+          "shared_keys": 838,
+          "agreements": 838,
+          "agreement": 1.0
+        },
+        {
+          "gameweek": 38,
+          "shared_keys": 840,
+          "agreements": 840,
+          "agreement": 1.0
+        }
+      ]
+    },
+    "control_parity": {
+      "passed": true,
+      "rows": 163072,
+      "array_sha256": "371ccab06026f982ff5e7f6e56b082e310ff73509d0b503c87dca389b405b5fb",
+      "basis": "Hash-pinned corrected CORE PR66 export through original to_csv/read_csv boundary; retained parsed array reused byte-identically; unchanged attach_loader adds targets/DC extras by key"
+    },
+    "augmentation_parity": {
+      "passed": true,
+      "rows": 163072,
+      "observations": 27553,
+      "observation_key_sha256": "1fc437d1d35c5ca608901e332066b29434c39a92074bdf1cd12246268555a12b",
+      "signals_sha256": "7d27cc03aeed24ac8d6b5348e65024880fd9c33e0e2f083c4bcf4e774a40c548"
+    },
+    "fixed_squad_replica": {
+      "passed": true,
+      "squad_sha256": "a4e748d7393977eb33391a213c44742c0f12ec9a5215a5b0069825d1eb2c0085"
+    }
+  },
+  "stage_B": {
+    "pooled": {
+      "control": {
+        "candidate_fixture": {
+          "n": 19358,
+          "rmse": 2.969460742462648,
+          "mae": 2.148483693359147,
+          "bias": -0.018944868968725725
+        },
+        "all_fixture": {
+          "n": 66643,
+          "rmse": 1.901853804486265,
+          "mae": 0.9770238253049439,
+          "bias": 0.01062259487400771
+        },
+        "candidate_player_gw": {
+          "n": 18553,
+          "rmse": 3.047631777277737,
+          "mae": 2.1968110567584342,
+          "bias": -0.01976687185342492
+        },
+        "all_player_gw": {
+          "n": 63830,
+          "rmse": 1.9549750730656885,
+          "mae": 1.0026685652918665,
+          "bias": 0.011090734610504398
+        },
+        "ranking_weeks": 87,
+        "mean_within_gw_spearman": 0.3867560046878636,
+        "mean_within_gw_ndcg10": 0.4529677628688374,
+        "position_candidate_fixture": {
+          "1": {
+            "n": 1766,
+            "rmse": 2.79938546639664,
+            "mae": 2.1716830266154616,
+            "bias": 0.0165374996227057
+          },
+          "2": {
+            "n": 7229,
+            "rmse": 2.8344870337388444,
+            "mae": 2.135891738540704,
+            "bias": 0.03079658799999571
+          },
+          "3": {
+            "n": 8473,
+            "rmse": 2.985713165277322,
+            "mae": 2.0473036317191182,
+            "bias": -0.040690534367581105
+          },
+          "4": {
+            "n": 1890,
+            "rmse": 3.5066924835689766,
+            "mae": 2.6285661701463625,
+            "bias": -0.14486647343161121
+          }
+        }
+      },
+      "conditional": {
+        "candidate_fixture": {
+          "n": 19358,
+          "rmse": 2.920388901242687,
+          "mae": 2.082077125842704,
+          "bias": -0.029300572442777825
+        },
+        "all_fixture": {
+          "n": 66643,
+          "rmse": 1.8664742906359535,
+          "mae": 0.9301885216801488,
+          "bias": 0.0060047370520065575
+        },
+        "candidate_player_gw": {
+          "n": 18553,
+          "rmse": 2.994130550020416,
+          "mae": 2.1269647494469948,
+          "bias": -0.030571901112881644
+        },
+        "all_player_gw": {
+          "n": 63830,
+          "rmse": 1.9158596288441698,
+          "mae": 0.9531490140692236,
+          "bias": 0.006269366933367895
+        },
+        "ranking_weeks": 87,
+        "mean_within_gw_spearman": 0.4485631876261624,
+        "mean_within_gw_ndcg10": 0.4506584670260786,
+        "position_candidate_fixture": {
+          "1": {
+            "n": 1766,
+            "rmse": 2.775553995449735,
+            "mae": 2.143461478921165,
+            "bias": 0.02584041631200003
+          },
+          "2": {
+            "n": 7229,
+            "rmse": 2.7974056377071284,
+            "mae": 2.0805443031649147,
+            "bias": 0.033291660622709794
+          },
+          "3": {
+            "n": 8473,
+            "rmse": 2.927885595998071,
+            "mae": 1.9688698963352085,
+            "bias": -0.06191500963512952
+          },
+          "4": {
+            "n": 1890,
+            "rmse": 3.4340337722461145,
+            "mae": 2.53809874659307,
+            "bias": -0.17401809235841376
+          }
+        }
+      },
+      "conditional_unlabelled": {
+        "candidate_fixture": {
+          "n": 19358,
+          "rmse": 2.9706182010117965,
+          "mae": 2.1450923395956973,
+          "bias": -0.017672146783885855
+        },
+        "all_fixture": {
+          "n": 66643,
+          "rmse": 1.9006268818126197,
+          "mae": 0.9722952741047765,
+          "bias": 0.012228315488180925
+        },
+        "candidate_player_gw": {
+          "n": 18553,
+          "rmse": 3.0484347498396103,
+          "mae": 2.193455026089481,
+          "bias": -0.018438927259336088
+        },
+        "all_player_gw": {
+          "n": 63830,
+          "rmse": 1.953355984003815,
+          "mae": 0.9977231237106232,
+          "bias": 0.012767219631503072
+        },
+        "ranking_weeks": 87,
+        "mean_within_gw_spearman": 0.3841381662932215,
+        "mean_within_gw_ndcg10": 0.4410345778827267,
+        "position_candidate_fixture": {
+          "1": {
+            "n": 1766,
+            "rmse": 2.80787117254159,
+            "mae": 2.1824625972638976,
+            "bias": 0.042816092231313524
+          },
+          "2": {
+            "n": 7229,
+            "rmse": 2.8371247704214877,
+            "mae": 2.1381920566315675,
+            "bias": 0.04655903489044234
+          },
+          "3": {
+            "n": 8473,
+            "rmse": 2.985298630446521,
+            "mae": 2.0352414470933424,
+            "bias": -0.056173494082460695
+          },
+          "4": {
+            "n": 1890,
+            "rmse": 3.5038162119071514,
+            "mae": 2.6290356637640073,
+            "bias": -0.1472634307858625
+          }
+        }
+      },
+      "blend_equal": {
+        "candidate_fixture": {
+          "n": 19358,
+          "rmse": 2.935633653329921,
+          "mae": 2.1127122975598733,
+          "bias": -0.024122720705751773
+        },
+        "all_fixture": {
+          "n": 66643,
+          "rmse": 1.8767131757678093,
+          "mae": 0.9514155909009266,
+          "bias": 0.008313665963007135
+        },
+        "candidate_player_gw": {
+          "n": 18553,
+          "rmse": 3.0108262338512497,
+          "mae": 2.159023684206346,
+          "bias": -0.025169386483153283
+        },
+        "all_player_gw": {
+          "n": 63830,
+          "rmse": 1.9272649995329505,
+          "mae": 0.9755014045569343,
+          "bias": 0.008680050771936149
+        },
+        "ranking_weeks": 87,
+        "mean_within_gw_spearman": 0.43282164886898206,
+        "mean_within_gw_ndcg10": 0.45244543759787764,
+        "position_candidate_fixture": {
+          "1": {
+            "n": 1766,
+            "rmse": 2.7818485618699893,
+            "mae": 2.1556997731289793,
+            "bias": 0.021188957967352873
+          },
+          "2": {
+            "n": 7229,
+            "rmse": 2.8079448805368723,
+            "mae": 2.1064663782527897,
+            "bias": 0.032044124311352756
+          },
+          "3": {
+            "n": 8473,
+            "rmse": 2.946734521318421,
+            "mae": 2.0047273827012146,
+            "bias": -0.05130277200135531
+          },
+          "4": {
+            "n": 1890,
+            "rmse": 3.4571521957651488,
+            "mae": 2.5805387803182223,
+            "bias": -0.15944228289501247
+          }
+        }
+      }
+    },
+    "folds": {
+      "2022-23": {
+        "control": {
+          "candidate_fixture": {
+            "n": 6651,
+            "rmse": 2.9333142618257404,
+            "mae": 2.13902444347792,
+            "bias": -0.03002981142032705
+          },
+          "all_fixture": {
+            "n": 21848,
+            "rmse": 1.916126080703073,
+            "mae": 1.019258096223694,
+            "bias": 0.011136742242252879
+          },
+          "candidate_player_gw": {
+            "n": 6188,
+            "rmse": 3.0478880546100506,
+            "mae": 2.2240555955626213,
+            "bias": -0.03227670907508002
+          },
+          "all_player_gw": {
+            "n": 20300,
+            "rmse": 2.0005614412793653,
+            "mae": 1.0668760071311756,
+            "bias": 0.011985987414223694
+          },
+          "ranking_weeks": 29,
+          "mean_within_gw_spearman": 0.38658174622912844,
+          "mean_within_gw_ndcg10": 0.4652594492169004,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 609,
+              "rmse": 3.0162566085653113,
+              "mae": 2.374289003972861,
+              "bias": -0.13076829462118814
+            },
+            "2": {
+              "n": 2475,
+              "rmse": 2.8133332232224384,
+              "mae": 2.1638980266094534,
+              "bias": 0.03913273047276027
+            },
+            "3": {
+              "n": 2920,
+              "rmse": 2.8995227237671317,
+              "mae": 1.991219181757361,
+              "bias": -0.04434265647123603
+            },
+            "4": {
+              "n": 647,
+              "rmse": 3.4156873468764806,
+              "mae": 2.4894929575924025,
+              "bias": -0.1351828985415211
+            }
+          }
+        },
+        "conditional": {
+          "candidate_fixture": {
+            "n": 6651,
+            "rmse": 2.90300493999226,
+            "mae": 2.0959445144594935,
+            "bias": -0.031991146690803086
+          },
+          "all_fixture": {
+            "n": 21848,
+            "rmse": 1.8906382382820697,
+            "mae": 0.9831767410311247,
+            "bias": 0.018158581842706908
+          },
+          "candidate_player_gw": {
+            "n": 6188,
+            "rmse": 3.0116572242549324,
+            "mae": 2.1769838294408386,
+            "bias": -0.03438479583718994
+          },
+          "all_player_gw": {
+            "n": 20300,
+            "rmse": 1.9698848482470017,
+            "mae": 1.026953515195822,
+            "bias": 0.01954328552214091
+          },
+          "ranking_weeks": 29,
+          "mean_within_gw_spearman": 0.4276622995615249,
+          "mean_within_gw_ndcg10": 0.451924124742406,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 609,
+              "rmse": 3.001902952973183,
+              "mae": 2.3460495507548003,
+              "bias": -0.14605077401162256
+            },
+            "2": {
+              "n": 2475,
+              "rmse": 2.7974356385493735,
+              "mae": 2.1491140886662397,
+              "bias": 0.09290302228242969
+            },
+            "3": {
+              "n": 2920,
+              "rmse": 2.858985716371341,
+              "mae": 1.922835582959645,
+              "bias": -0.08919566291434232
+            },
+            "4": {
+              "n": 647,
+              "rmse": 3.365192353579906,
+              "mae": 2.438401109071577,
+              "bias": -0.14422231793908363
+            }
+          }
+        },
+        "conditional_unlabelled": {
+          "candidate_fixture": {
+            "n": 6651,
+            "rmse": 2.942716299837155,
+            "mae": 2.1464176204889167,
+            "bias": -0.01788040185045172
+          },
+          "all_fixture": {
+            "n": 21848,
+            "rmse": 1.9192252712479407,
+            "mae": 1.0216709155360135,
+            "bias": 0.02499366899251093
+          },
+          "candidate_player_gw": {
+            "n": 6188,
+            "rmse": 3.0569842464981036,
+            "mae": 2.2317870203138748,
+            "bias": -0.01921825350797581
+          },
+          "all_player_gw": {
+            "n": 20300,
+            "rmse": 2.00313843687932,
+            "mae": 1.0691965262146077,
+            "bias": 0.026899590155092547
+          },
+          "ranking_weeks": 29,
+          "mean_within_gw_spearman": 0.3768133959053694,
+          "mean_within_gw_ndcg10": 0.4437781279134559,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 609,
+              "rmse": 3.026169671300915,
+              "mae": 2.384451366788495,
+              "bias": -0.1138758784362337
+            },
+            "2": {
+              "n": 2475,
+              "rmse": 2.824948174019862,
+              "mae": 2.1865553154454096,
+              "bias": 0.09318110599275745
+            },
+            "3": {
+              "n": 2920,
+              "rmse": 2.9056832408186346,
+              "mae": 1.9804239033429643,
+              "bias": -0.07144736909104765
+            },
+            "4": {
+              "n": 647,
+              "rmse": 3.43023931264604,
+              "mae": 2.517976055654938,
+              "bias": -0.11061678875719257
+            }
+          }
+        },
+        "blend_equal": {
+          "candidate_fixture": {
+            "n": 6651,
+            "rmse": 2.9102123492188023,
+            "mae": 2.114718761606562,
+            "bias": -0.03101047905556506
+          },
+          "all_fixture": {
+            "n": 21848,
+            "rmse": 1.8960926341371718,
+            "mae": 0.9983738746178537,
+            "bias": 0.014647662042479888
+          },
+          "candidate_player_gw": {
+            "n": 6188,
+            "rmse": 3.0206284127419143,
+            "mae": 2.197259123438487,
+            "bias": -0.03333075245613498
+          },
+          "all_player_gw": {
+            "n": 20300,
+            "rmse": 1.9767978265022375,
+            "mae": 1.043728184153553,
+            "bias": 0.015764636468182294
+          },
+          "ranking_weeks": 29,
+          "mean_within_gw_spearman": 0.4189513542416543,
+          "mean_within_gw_ndcg10": 0.46257601015500494,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 609,
+              "rmse": 3.0039426199850765,
+              "mae": 2.358557274591037,
+              "bias": -0.1384095343164053
+            },
+            "2": {
+              "n": 2475,
+              "rmse": 2.7978981064326334,
+              "mae": 2.1543736617775817,
+              "bias": 0.066017876377595
+            },
+            "3": {
+              "n": 2920,
+              "rmse": 2.870880313419631,
+              "mae": 1.953595326222167,
+              "bias": -0.06676915969278917
+            },
+            "4": {
+              "n": 647,
+              "rmse": 3.3802667825215926,
+              "mae": 2.4606799656121474,
+              "bias": -0.13970260824030234
+            }
+          }
+        }
+      },
+      "2023-24": {
+        "control": {
+          "candidate_fixture": {
+            "n": 6338,
+            "rmse": 3.033346473084085,
+            "mae": 2.1678355797514537,
+            "bias": -0.0009028225843487637
+          },
+          "all_fixture": {
+            "n": 23390,
+            "rmse": 1.8866942440818673,
+            "mae": 0.9304281116378375,
+            "bias": 0.016210912377643865
+          },
+          "candidate_player_gw": {
+            "n": 6105,
+            "rmse": 3.116009027414807,
+            "mae": 2.2175745403018112,
+            "bias": -0.0009372792038660921
+          },
+          "all_player_gw": {
+            "n": 22489,
+            "rmse": 1.938128281371188,
+            "mae": 0.9540872115090674,
+            "bias": 0.016860386878611314
+          },
+          "ranking_weeks": 29,
+          "mean_within_gw_spearman": 0.4024734495366867,
+          "mean_within_gw_ndcg10": 0.4150027634934535,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 582,
+              "rmse": 2.5997308544968964,
+              "mae": 2.0393475002004684,
+              "bias": 0.21907536350199003
+            },
+            "2": {
+              "n": 2415,
+              "rmse": 2.8757100623327934,
+              "mae": 2.130557810270254,
+              "bias": 0.11055844488392053
+            },
+            "3": {
+              "n": 2697,
+              "rmse": 3.114782778168542,
+              "mae": 2.12490481893413,
+              "bias": -0.09609893889875226
+            },
+            "4": {
+              "n": 644,
+              "rmse": 3.5783918744387604,
+              "mae": 2.6035345510559447,
+              "bias": -0.21901204546971095
+            }
+          }
+        },
+        "conditional": {
+          "candidate_fixture": {
+            "n": 6338,
+            "rmse": 2.9730308109429444,
+            "mae": 2.0814022149027736,
+            "bias": -0.04012915678369892
+          },
+          "all_fixture": {
+            "n": 23390,
+            "rmse": 1.845385733224434,
+            "mae": 0.870764022823552,
+            "bias": -0.008861617840416409
+          },
+          "candidate_player_gw": {
+            "n": 6105,
+            "rmse": 3.0514633803105777,
+            "mae": 2.1269122215376433,
+            "bias": -0.04166070363555836
+          },
+          "all_player_gw": {
+            "n": 22489,
+            "rmse": 1.8924690512194702,
+            "mae": 0.8912795433276108,
+            "bias": -0.009216649974980645
+          },
+          "ranking_weeks": 29,
+          "mean_within_gw_spearman": 0.4755849103157118,
+          "mean_within_gw_ndcg10": 0.43196161024860047,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 582,
+              "rmse": 2.570644012830689,
+              "mae": 2.0019540386986865,
+              "bias": 0.2160843666151634
+            },
+            "2": {
+              "n": 2415,
+              "rmse": 2.8283365562229257,
+              "mae": 2.042267623623795,
+              "bias": 0.054921738586273146
+            },
+            "3": {
+              "n": 2697,
+              "rmse": 3.04501982177787,
+              "mae": 2.0363412019626486,
+              "bias": -0.12817754078806573
+            },
+            "4": {
+              "n": 644,
+              "rmse": 3.4911839320616163,
+              "mae": 2.488666855258408,
+              "bias": -0.25938023019494594
+            }
+          }
+        },
+        "conditional_unlabelled": {
+          "candidate_fixture": {
+            "n": 6338,
+            "rmse": 3.030389442166752,
+            "mae": 2.1564731051750643,
+            "bias": -0.012612923672743321
+          },
+          "all_fixture": {
+            "n": 23390,
+            "rmse": 1.8839222186835134,
+            "mae": 0.920947890356467,
+            "bias": 0.008944965984564167
+          },
+          "candidate_player_gw": {
+            "n": 6105,
+            "rmse": 3.112366421865872,
+            "mae": 2.2058334250234317,
+            "bias": -0.013094301431260795
+          },
+          "all_player_gw": {
+            "n": 22489,
+            "rmse": 1.9346245801807929,
+            "mae": 0.9441693063350846,
+            "bias": 0.009303337381784684
+          },
+          "ranking_weeks": 29,
+          "mean_within_gw_spearman": 0.4015516196663922,
+          "mean_within_gw_ndcg10": 0.4212260865583388,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 582,
+              "rmse": 2.6091655516743812,
+              "mae": 2.0451985839887916,
+              "bias": 0.24154726915311345
+            },
+            "2": {
+              "n": 2415,
+              "rmse": 2.8756437959292587,
+              "mae": 2.1165716643990273,
+              "bias": 0.09021949722729583
+            },
+            "3": {
+              "n": 2697,
+              "rmse": 3.110934295842917,
+              "mae": 2.1132864369016113,
+              "bias": -0.10821052407009167
+            },
+            "4": {
+              "n": 644,
+              "rmse": 3.5617099702286614,
+              "mae": 2.587526203215503,
+              "bias": -0.22757379390037494
+            }
+          }
+        },
+        "blend_equal": {
+          "candidate_fixture": {
+            "n": 6338,
+            "rmse": 2.9937532793703645,
+            "mae": 2.122380376277139,
+            "bias": -0.02051598968402385
+          },
+          "all_fixture": {
+            "n": 23390,
+            "rmse": 1.8587555444049753,
+            "mae": 0.8989762042113629,
+            "bias": 0.003674647268613729
+          },
+          "candidate_player_gw": {
+            "n": 6105,
+            "rmse": 3.07363624427468,
+            "mae": 2.169882952745491,
+            "bias": -0.021298991419712216
+          },
+          "all_player_gw": {
+            "n": 22489,
+            "rmse": 1.9073976283276062,
+            "mae": 0.920897294718874,
+            "bias": 0.00382186845181534
+          },
+          "ranking_weeks": 29,
+          "mean_within_gw_spearman": 0.4553520129231046,
+          "mean_within_gw_ndcg10": 0.42155390894616096,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 582,
+              "rmse": 2.579147295596797,
+              "mae": 2.0184326688349685,
+              "bias": 0.2175798650585767
+            },
+            "2": {
+              "n": 2415,
+              "rmse": 2.8437278875355974,
+              "mae": 2.08477089074371,
+              "bias": 0.08274009173509683
+            },
+            "3": {
+              "n": 2697,
+              "rmse": 3.069488979767141,
+              "mae": 2.0777638402188803,
+              "bias": -0.112138239843409
+            },
+            "4": {
+              "n": 644,
+              "rmse": 3.523026541625939,
+              "mae": 2.5442053313139392,
+              "bias": -0.23919613783232854
+            }
+          }
+        }
+      },
+      "2024-25": {
+        "control": {
+          "candidate_fixture": {
+            "n": 6369,
+            "rmse": 2.942597771087037,
+            "mae": 2.1391040756806428,
+            "bias": -0.02532334875182836
+          },
+          "all_fixture": {
+            "n": 21405,
+            "rmse": 1.9037299282587739,
+            "mae": 0.9848322528518151,
+            "bias": 0.003991254621194351
+          },
+          "candidate_player_gw": {
+            "n": 6260,
+            "rmse": 2.979177369263531,
+            "mae": 2.1496305019417217,
+            "bias": -0.025764282460126974
+          },
+          "all_player_gw": {
+            "n": 21041,
+            "rmse": 1.928226927396714,
+            "mae": 0.9926469406487132,
+            "bias": 0.004060301562029608
+          },
+          "ranking_weeks": 29,
+          "mean_within_gw_spearman": 0.3712128182977759,
+          "mean_within_gw_ndcg10": 0.4786410758961584,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 575,
+              "rmse": 2.7553253047469948,
+              "mae": 2.0910434373334974,
+              "bias": -0.03244999269592411
+            },
+            "2": {
+              "n": 2339,
+              "rmse": 2.8138401293059343,
+              "mae": 2.1117642797134213,
+              "bias": -0.060377775828465464
+            },
+            "3": {
+              "n": 2856,
+              "rmse": 2.9478039654523633,
+              "mae": 2.031363923024947,
+              "bias": 0.015367120941676972
+            },
+            "4": {
+              "n": 599,
+              "rmse": 3.5257887979330316,
+              "mae": 2.805695938454612,
+              "bias": -0.07561025400148096
+            }
+          }
+        },
+        "conditional": {
+          "candidate_fixture": {
+            "n": 6369,
+            "rmse": 2.8854213698541424,
+            "mae": 2.0682673572521906,
+            "bias": -0.015714989639139264
+          },
+          "all_fixture": {
+            "n": 21405,
+            "rmse": 1.864563639711897,
+            "mae": 0.9410389029871182,
+            "bias": 0.009844346486556986
+          },
+          "candidate_player_gw": {
+            "n": 6260,
+            "rmse": 2.9193729036667264,
+            "mae": 2.077572196073942,
+            "bias": -0.015988621247871874
+          },
+          "all_player_gw": {
+            "n": 21041,
+            "rmse": 1.887641968336811,
+            "mae": 0.9480708882500222,
+            "bias": 0.01001464932963035
+          },
+          "ranking_weeks": 29,
+          "mean_within_gw_spearman": 0.4424423530012512,
+          "mean_within_gw_ndcg10": 0.4680896660872294,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 575,
+              "rmse": 2.7253400200228475,
+              "mae": 2.072124425812988,
+              "bias": 0.015335643843556747
+            },
+            "2": {
+              "n": 2339,
+              "rmse": 2.765074558896123,
+              "mae": 2.047507946592031,
+              "bias": -0.052118667889394614
+            },
+            "3": {
+              "n": 2856,
+              "rmse": 2.8843512292707443,
+              "mae": 1.9522207660058812,
+              "bias": 0.02855052051009821
+            },
+            "4": {
+              "n": 599,
+              "rmse": 3.4456718000484616,
+              "mae": 2.698930982813318,
+              "bias": -0.11442652187858032
+            }
+          }
+        },
+        "conditional_unlabelled": {
+          "candidate_fixture": {
+            "n": 6369,
+            "rmse": 2.9393756731019898,
+            "mae": 2.13238300760279,
+            "bias": -0.02248926903709542
+          },
+          "all_fixture": {
+            "n": 21405,
+            "rmse": 1.899724043555275,
+            "mae": 0.9780068504599878,
+            "bias": 0.002786601006844502
+          },
+          "candidate_player_gw": {
+            "n": 6260,
+            "rmse": 2.976111319874507,
+            "mae": 2.1434920060012517,
+            "bias": -0.022880855351000113
+          },
+          "all_player_gw": {
+            "n": 21041,
+            "rmse": 1.924424912264889,
+            "mae": 0.9860060821312121,
+            "bias": 0.002834807972601426
+          },
+          "ranking_weeks": 29,
+          "mean_within_gw_spearman": 0.374049483307903,
+          "mean_within_gw_ndcg10": 0.4580995191763855,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 575,
+              "rmse": 2.7612988719563965,
+              "mae": 2.1074651974128225,
+              "bias": 0.007622814262702485
+            },
+            "2": {
+              "n": 2339,
+              "rmse": 2.80980964376746,
+              "mae": 2.109339633235811,
+              "bias": -0.04785295421675353
+            },
+            "3": {
+              "n": 2856,
+              "rmse": 2.944191938374228,
+              "mae": 2.0175873470366907,
+              "bias": 0.008582663096010825
+            },
+            "4": {
+              "n": 599,
+              "rmse": 3.519661570765844,
+              "mae": 2.793622740625116,
+              "bias": -0.10050300265030898
+            }
+          }
+        },
+        "blend_equal": {
+          "candidate_fixture": {
+            "n": 6369,
+            "rmse": 2.9034802442793053,
+            "mae": 2.1009959723464076,
+            "bias": -0.020519169195483817
+          },
+          "all_fixture": {
+            "n": 21405,
+            "rmse": 1.876359531076495,
+            "mae": 0.960787825052829,
+            "bias": 0.006917800553875666
+          },
+          "candidate_player_gw": {
+            "n": 6260,
+            "rmse": 2.938355085340065,
+            "mae": 2.1106376247175342,
+            "bias": -0.020876451853999434
+          },
+          "all_player_gw": {
+            "n": 21041,
+            "rmse": 1.8997917999933904,
+            "mae": 0.9680392212166358,
+            "bias": 0.007037475445829982
+          },
+          "ranking_weeks": 29,
+          "mean_within_gw_spearman": 0.4241615794421874,
+          "mean_within_gw_ndcg10": 0.47320639369246686,
+          "position_candidate_fixture": {
+            "1": {
+              "n": 575,
+              "rmse": 2.734523610175058,
+              "mae": 2.0797854014919728,
+              "bias": -0.008557174426183712
+            },
+            "2": {
+              "n": 2339,
+              "rmse": 2.781248800960504,
+              "mae": 2.078173977915281,
+              "bias": -0.056248221858930046
+            },
+            "3": {
+              "n": 2856,
+              "rmse": 2.9046549705158125,
+              "mae": 1.988034903357262,
+              "bias": 0.021958820725887597
+            },
+            "4": {
+              "n": 599,
+              "rmse": 3.467761055329861,
+              "mae": 2.749065314998671,
+              "bias": -0.09501838794003066
+            }
+          }
+        }
+      }
+    },
+    "gate": {
+      "passed": true,
+      "criteria": {
+        "2": true,
+        "3": true,
+        "4": true,
+        "6": true,
+        "7": true
+      },
+      "gate5": {
+        "descriptive": true,
+        "block_interval": [
+          -0.061054754320433224,
+          -0.04695038597112157
+        ]
+      },
+      "stability": {
+        "2022-23": {
+          "player_gw": true,
+          "fixture": true
+        },
+        "2023-24": {
+          "player_gw": true,
+          "fixture": true
+        },
+        "2024-25": {
+          "player_gw": true,
+          "fixture": true
+        }
+      }
+    },
+    "fixed_squads": {
+      "2022-23": {
+        "totals": {
+          "control": [
+            1185.0,
+            1231.0,
+            1199.0,
+            1270.0,
+            1427.0,
+            1273.0,
+            1173.0,
+            1112.0,
+            1261.0,
+            1136.0,
+            1216.0,
+            1206.0,
+            1365.0,
+            1286.0,
+            1347.0,
+            1242.0,
+            1286.0,
+            1172.0,
+            1013.0,
+            1366.0
+          ],
+          "conditional": [
+            1196.0,
+            1217.0,
+            1210.0,
+            1272.0,
+            1438.0,
+            1296.0,
+            1152.0,
+            1094.0,
+            1262.0,
+            1138.0,
+            1211.0,
+            1199.0,
+            1363.0,
+            1282.0,
+            1357.0,
+            1268.0,
+            1330.0,
+            1174.0,
+            1007.0,
+            1326.0
+          ],
+          "conditional_unlabelled": [
+            1190.0,
+            1220.0,
+            1198.0,
+            1249.0,
+            1421.0,
+            1287.0,
+            1152.0,
+            1098.0,
+            1263.0,
+            1136.0,
+            1217.0,
+            1198.0,
+            1361.0,
+            1277.0,
+            1375.0,
+            1252.0,
+            1327.0,
+            1175.0,
+            995.0,
+            1333.0
+          ],
+          "blend_equal": [
+            1195.0,
+            1240.0,
+            1199.0,
+            1258.0,
+            1433.0,
+            1299.0,
+            1170.0,
+            1110.0,
+            1260.0,
+            1144.0,
+            1218.0,
+            1207.0,
+            1364.0,
+            1287.0,
+            1372.0,
+            1269.0,
+            1321.0,
+            1173.0,
+            1003.0,
+            1339.0
+          ]
+        },
+        "deltas": {
+          "conditional": [
+            11.0,
+            -14.0,
+            11.0,
+            2.0,
+            11.0,
+            23.0,
+            -21.0,
+            -18.0,
+            1.0,
+            2.0,
+            -5.0,
+            -7.0,
+            -2.0,
+            -4.0,
+            10.0,
+            26.0,
+            44.0,
+            2.0,
+            -6.0,
+            -40.0
+          ],
+          "conditional_unlabelled": [
+            5.0,
+            -11.0,
+            -1.0,
+            -21.0,
+            -6.0,
+            14.0,
+            -21.0,
+            -14.0,
+            2.0,
+            0.0,
+            1.0,
+            -8.0,
+            -4.0,
+            -9.0,
+            28.0,
+            10.0,
+            41.0,
+            3.0,
+            -18.0,
+            -33.0
+          ],
+          "blend_equal": [
+            10.0,
+            9.0,
+            0.0,
+            -12.0,
+            6.0,
+            26.0,
+            -3.0,
+            -2.0,
+            -1.0,
+            8.0,
+            2.0,
+            1.0,
+            -1.0,
+            1.0,
+            25.0,
+            27.0,
+            35.0,
+            1.0,
+            -10.0,
+            -27.0
+          ]
+        },
+        "squad_sha256": "d68cb20f665c88e9cd55e300cec3fa3afc898cc16fe7a3c4ccdcbcc84d523467",
+        "count": 20,
+        "first_gw": 10,
+        "season": "2022-23"
+      },
+      "2023-24": {
+        "totals": {
+          "control": [
+            1301.0,
+            1191.0,
+            1272.0,
+            1336.0,
+            957.0,
+            1080.0,
+            1059.0,
+            1273.0,
+            1380.0,
+            1110.0,
+            1178.0,
+            1116.0,
+            988.0,
+            1003.0,
+            1258.0,
+            1386.0,
+            1211.0,
+            986.0,
+            1190.0,
+            1151.0
+          ],
+          "conditional": [
+            1322.0,
+            1177.0,
+            1266.0,
+            1331.0,
+            965.0,
+            1052.0,
+            1052.0,
+            1252.0,
+            1385.0,
+            1098.0,
+            1168.0,
+            1138.0,
+            981.0,
+            1012.0,
+            1266.0,
+            1410.0,
+            1232.0,
+            1017.0,
+            1190.0,
+            1150.0
+          ],
+          "conditional_unlabelled": [
+            1322.0,
+            1183.0,
+            1241.0,
+            1307.0,
+            947.0,
+            1058.0,
+            1053.0,
+            1272.0,
+            1398.0,
+            1085.0,
+            1167.0,
+            1151.0,
+            975.0,
+            1010.0,
+            1258.0,
+            1396.0,
+            1226.0,
+            1006.0,
+            1188.0,
+            1139.0
+          ],
+          "blend_equal": [
+            1322.0,
+            1181.0,
+            1265.0,
+            1333.0,
+            950.0,
+            1072.0,
+            1052.0,
+            1282.0,
+            1372.0,
+            1096.0,
+            1174.0,
+            1134.0,
+            990.0,
+            1019.0,
+            1260.0,
+            1399.0,
+            1220.0,
+            1015.0,
+            1190.0,
+            1150.0
+          ]
+        },
+        "deltas": {
+          "conditional": [
+            21.0,
+            -14.0,
+            -6.0,
+            -5.0,
+            8.0,
+            -28.0,
+            -7.0,
+            -21.0,
+            5.0,
+            -12.0,
+            -10.0,
+            22.0,
+            -7.0,
+            9.0,
+            8.0,
+            24.0,
+            21.0,
+            31.0,
+            0.0,
+            -1.0
+          ],
+          "conditional_unlabelled": [
+            21.0,
+            -8.0,
+            -31.0,
+            -29.0,
+            -10.0,
+            -22.0,
+            -6.0,
+            -1.0,
+            18.0,
+            -25.0,
+            -11.0,
+            35.0,
+            -13.0,
+            7.0,
+            0.0,
+            10.0,
+            15.0,
+            20.0,
+            -2.0,
+            -12.0
+          ],
+          "blend_equal": [
+            21.0,
+            -10.0,
+            -7.0,
+            -3.0,
+            -7.0,
+            -8.0,
+            -7.0,
+            9.0,
+            -8.0,
+            -14.0,
+            -4.0,
+            18.0,
+            2.0,
+            16.0,
+            2.0,
+            13.0,
+            9.0,
+            29.0,
+            0.0,
+            -1.0
+          ]
+        },
+        "squad_sha256": "c492082188791b708debf580d77c44aa5eca4e3b45570c20d0ec485ff926d75d",
+        "count": 20,
+        "first_gw": 10,
+        "season": "2023-24"
+      },
+      "2024-25": {
+        "totals": {
+          "control": [
+            1162.0,
+            1108.0,
+            1246.0,
+            1329.0,
+            1151.0,
+            1568.0,
+            1290.0,
+            951.0,
+            1186.0,
+            1069.0,
+            1625.0,
+            1132.0,
+            1088.0,
+            1075.0,
+            1225.0,
+            1223.0,
+            1196.0,
+            1215.0,
+            1316.0,
+            1484.0
+          ],
+          "conditional": [
+            1185.0,
+            1142.0,
+            1236.0,
+            1328.0,
+            1154.0,
+            1563.0,
+            1298.0,
+            935.0,
+            1201.0,
+            1083.0,
+            1615.0,
+            1116.0,
+            1092.0,
+            1068.0,
+            1243.0,
+            1240.0,
+            1199.0,
+            1233.0,
+            1305.0,
+            1488.0
+          ],
+          "conditional_unlabelled": [
+            1181.0,
+            1118.0,
+            1237.0,
+            1334.0,
+            1156.0,
+            1570.0,
+            1281.0,
+            944.0,
+            1215.0,
+            1080.0,
+            1620.0,
+            1119.0,
+            1088.0,
+            1075.0,
+            1246.0,
+            1245.0,
+            1203.0,
+            1231.0,
+            1315.0,
+            1508.0
+          ],
+          "blend_equal": [
+            1184.0,
+            1116.0,
+            1254.0,
+            1332.0,
+            1152.0,
+            1562.0,
+            1294.0,
+            947.0,
+            1207.0,
+            1084.0,
+            1625.0,
+            1122.0,
+            1092.0,
+            1076.0,
+            1250.0,
+            1246.0,
+            1224.0,
+            1225.0,
+            1303.0,
+            1497.0
+          ]
+        },
+        "deltas": {
+          "conditional": [
+            23.0,
+            34.0,
+            -10.0,
+            -1.0,
+            3.0,
+            -5.0,
+            8.0,
+            -16.0,
+            15.0,
+            14.0,
+            -10.0,
+            -16.0,
+            4.0,
+            -7.0,
+            18.0,
+            17.0,
+            3.0,
+            18.0,
+            -11.0,
+            4.0
+          ],
+          "conditional_unlabelled": [
+            19.0,
+            10.0,
+            -9.0,
+            5.0,
+            5.0,
+            2.0,
+            -9.0,
+            -7.0,
+            29.0,
+            11.0,
+            -5.0,
+            -13.0,
+            0.0,
+            0.0,
+            21.0,
+            22.0,
+            7.0,
+            16.0,
+            -1.0,
+            24.0
+          ],
+          "blend_equal": [
+            22.0,
+            8.0,
+            8.0,
+            3.0,
+            1.0,
+            -6.0,
+            4.0,
+            -4.0,
+            21.0,
+            15.0,
+            0.0,
+            -10.0,
+            4.0,
+            1.0,
+            25.0,
+            23.0,
+            28.0,
+            10.0,
+            -13.0,
+            13.0
+          ]
+        },
+        "squad_sha256": "6f04f4d1c4135ae072f0286c36f82e62bde82d12b11fca7d85db17475c2e280c",
+        "count": 20,
+        "first_gw": 10,
+        "season": "2024-25"
+      }
+    },
+    "full_player_gw_rmse": {
+      "control": 1.9549750730656885,
+      "conditional": 1.9158596288441698,
+      "conditional_unlabelled": 1.953355984003815
+    },
+    "block_interval": {
+      "scope": "descriptive fixed-prediction uncertainty, not training or selection uncertainty",
+      "difference": "left_minus_right; negative error difference favours left",
+      "samples": 1000,
+      "block_length": 4,
+      "seed": 20261015,
+      "gameweeks": 87,
+      "contiguous_segments": [
+        29,
+        29,
+        29
+      ],
+      "status": "descriptive_interval",
+      "confidence": 0.95,
+      "rmse": {
+        "delta": -0.05350122725732076,
+        "lower": -0.061054754320433224,
+        "upper": -0.04695038597112157
+      },
+      "mae": {
+        "delta": -0.0698463073114396,
+        "lower": -0.07949309815995434,
+        "upper": -0.060320783757224654
+      }
+    },
+    "label_history_scaling": {
+      "2022-23": {
+        "labelled_training_seasons": [
+          "2021-22"
+        ],
+        "training_known_rows": 16484
+      },
+      "2023-24": {
+        "labelled_training_seasons": [
+          "2021-22",
+          "2022-23"
+        ],
+        "training_known_rows": 32726
+      },
+      "2024-25": {
+        "labelled_training_seasons": [
+          "2021-22",
+          "2022-23",
+          "2023-24"
+        ],
+        "training_known_rows": 52301
+      }
+    },
+    "mean_fixed_squad_delta": 2.4833333333333334
+  },
+  "aggregate_recovery": {
+    "source": "0d3f854800d3ae69215f882e9449f895c69db18f",
+    "bundles": 9,
+    "bundle_hashes_verified_before_load": true,
+    "allow_pickle": false,
+    "season_array_loaded": false,
+    "season_provenance": "fold constant checked against result.json and SHA-bound completed fit ledger",
+    "ordered_keys_validated": true,
+    "retained_bundles_unchanged": true
+  },
+  "control_prediction_parity": {
+    "2023-24": {
+      "season": "2023-24",
+      "rows": 29725,
+      "exact": true,
+      "max_absolute_difference": 0.0,
+      "max_scaled_difference": 0.0,
+      "passed": true
+    },
+    "2024-25": {
+      "season": "2024-25",
+      "rows": 27283,
+      "exact": true,
+      "max_absolute_difference": 0.0,
+      "max_scaled_difference": 0.0,
+      "passed": true
+    },
+    "2022-23": {
+      "prediction_sha256": "f943829bb2679e0333ac5ee3543d4827d5703e2d34d135374b8d4a58d4d98728",
+      "new_reference": true
+    }
+  },
+  "resources": {
+    "jobs": [
+      {
+        "label": "original_failed_admission",
+        "status": "failed",
+        "seconds": 33.061999999918044,
+        "baseline_bytes": 22858674,
+        "growth_bytes": 34846,
+        "peak_job_commit_bytes": 1079676928,
+        "processes_after": 0,
+        "guard_reason": null
+      },
+      {
+        "label": "identity_diagnostic",
+        "status": "completed",
+        "seconds": 114.04699999978766,
+        "baseline_bytes": 1731,
+        "work_growth_bytes": 306574,
+        "evidence_growth_bytes": 22645,
+        "combined_growth_bytes": 329219,
+        "peak_job_commit_bytes": 287649792,
+        "processes_after": 0,
+        "guard_reason": null,
+        "exit_code": 0,
+        "source": "8ea3252a4cf5669d71ef1161b3e04b0f28c39956",
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      },
+      {
+        "label": "Stage-A",
+        "status": "completed",
+        "seconds": 76.25,
+        "baseline_bytes": 312902,
+        "growth_bytes": 49277510,
+        "evidence_growth_bytes": 20838,
+        "combined_growth_bytes": 49298348,
+        "peak_job_commit_bytes": 1077202944,
+        "processes_after": 0,
+        "guard_reason": null,
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      },
+      {
+        "label": "2022-23_control",
+        "status": "completed",
+        "seconds": 15.218000000109896,
+        "baseline_bytes": 49592105,
+        "growth_bytes": 344946,
+        "evidence_growth_bytes": 0,
+        "combined_growth_bytes": 344946,
+        "peak_job_commit_bytes": 520732672,
+        "processes_after": 0,
+        "guard_reason": null,
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      },
+      {
+        "label": "2022-23_conditional",
+        "status": "completed",
+        "seconds": 34.0,
+        "baseline_bytes": 49938286,
+        "growth_bytes": 818004,
+        "evidence_growth_bytes": 0,
+        "combined_growth_bytes": 818004,
+        "peak_job_commit_bytes": 529539072,
+        "processes_after": 0,
+        "guard_reason": null,
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      },
+      {
+        "label": "2022-23_conditional_unlabelled",
+        "status": "completed",
+        "seconds": 33.92200000002049,
+        "baseline_bytes": 50757501,
+        "growth_bytes": 855358,
+        "evidence_growth_bytes": 0,
+        "combined_growth_bytes": 855358,
+        "peak_job_commit_bytes": 605720576,
+        "processes_after": 0,
+        "guard_reason": null,
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      },
+      {
+        "label": "2023-24_control",
+        "status": "completed",
+        "seconds": 21.016000000061467,
+        "baseline_bytes": 51614107,
+        "growth_bytes": 365164,
+        "evidence_growth_bytes": 0,
+        "combined_growth_bytes": 365164,
+        "peak_job_commit_bytes": 554651648,
+        "processes_after": 0,
+        "guard_reason": null,
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      },
+      {
+        "label": "2023-24_conditional",
+        "status": "completed",
+        "seconds": 49.01600000006147,
+        "baseline_bytes": 51980506,
+        "growth_bytes": 907896,
+        "evidence_growth_bytes": 0,
+        "combined_growth_bytes": 907896,
+        "peak_job_commit_bytes": 570511360,
+        "processes_after": 0,
+        "guard_reason": null,
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      },
+      {
+        "label": "2023-24_conditional_unlabelled",
+        "status": "completed",
+        "seconds": 49.375,
+        "baseline_bytes": 52889639,
+        "growth_bytes": 923746,
+        "evidence_growth_bytes": 0,
+        "combined_growth_bytes": 923746,
+        "peak_job_commit_bytes": 652541952,
+        "processes_after": 0,
+        "guard_reason": null,
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      },
+      {
+        "label": "2024-25_control",
+        "status": "completed",
+        "seconds": 25.641000000061467,
+        "baseline_bytes": 53814611,
+        "growth_bytes": 347562,
+        "evidence_growth_bytes": 0,
+        "combined_growth_bytes": 347562,
+        "peak_job_commit_bytes": 601133056,
+        "processes_after": 0,
+        "guard_reason": null,
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      },
+      {
+        "label": "2024-25_conditional",
+        "status": "completed",
+        "seconds": 62.46900000004098,
+        "baseline_bytes": 54163408,
+        "growth_bytes": 885821,
+        "evidence_growth_bytes": 0,
+        "combined_growth_bytes": 885821,
+        "peak_job_commit_bytes": 622419968,
+        "processes_after": 0,
+        "guard_reason": null,
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      },
+      {
+        "label": "2024-25_conditional_unlabelled",
+        "status": "completed",
+        "seconds": 58.98399999993853,
+        "baseline_bytes": 55050466,
+        "growth_bytes": 863565,
+        "evidence_growth_bytes": 0,
+        "combined_growth_bytes": 863565,
+        "peak_job_commit_bytes": 710565888,
+        "processes_after": 0,
+        "guard_reason": null,
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      },
+      {
+        "label": "aggregate-B",
+        "status": "failed",
+        "seconds": 6.656999999890104,
+        "baseline_bytes": 55915279,
+        "growth_bytes": 1261,
+        "evidence_growth_bytes": 0,
+        "combined_growth_bytes": 1261,
+        "peak_job_commit_bytes": 522940416,
+        "processes_after": 0,
+        "guard_reason": null,
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      },
+      {
+        "label": "aggregate_recovery",
+        "status": "completed",
+        "seconds": 12.25,
+        "baseline_bytes": 55918777,
+        "work_growth_bytes": 45562,
+        "evidence_growth_bytes": 0,
+        "combined_growth_bytes": 45562,
+        "peak_job_commit_bytes": 591626240,
+        "processes_after": 0,
+        "guard_reason": null,
+        "exit_code": 0,
+        "source": "0d3f854800d3ae69215f882e9449f895c69db18f",
+        "runtime": {
+          "python": "3.12.16",
+          "pandas": "2.2.3",
+          "numpy": "2.3.5"
+        }
+      }
+    ],
+    "threads": 2,
+    "fit_jobs": 9,
+    "admission_attempts": 2,
+    "diagnostic_jobs": 1,
+    "aggregate_attempts": 2,
+    "cumulative_guard_jobs": 14,
+    "completed_jobs": 12,
+    "failed_jobs": 2,
+    "sum_guard_seconds": 591.9069999998901,
+    "peak_job_commit_bytes": 1079676928,
+    "maximum_growth_bytes": 49298348,
+    "free_bytes": 849788592128,
+    "real_job_retries": 0,
+    "recovery_authorized_by": "handover141; one aggregate only; no refit, admission or retrieval"
+  },
+  "approved_forecaster": {
+    "version": "1.0.0",
+    "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+    "unchanged": true
+  },
+  "production_approved": false,
+  "registry_changed": false,
+  "weekly_defaults_changed": false,
+  "models_frozen": false,
+  "phase2_unchanged": true,
+  "architect_premerge_review": "PENDING",
+  "limitations": [
+    "Retrospective reused historical windows; no independent prospective accuracy guarantee",
+    "Phase2 remains the deciding prospective test; no scoring or changes to frozen material",
+    "Official syndicated chance labels are learned covariates, not calibrated appearance probabilities",
+    "Fixed squads test selection without transfers or chips; historical gains are not guaranteed future FPL points",
+    "Earlier interrupted retrieval and receipt-routing defect preserved; no counters reset or raw files overwritten",
+    "Numerical legacy runtime NumPy2.3.5; Ubuntu CI NumPy2.5.4; no cross-runtime fitted-model portability claim"
+  ],
+  "descriptive_error_differences": {
+    "conditional_unlabelled_vs_control": {
+      "player_gw": {
+        "rmse": 0.0008029725618734496,
+        "mae": -0.0033560306689532915
+      },
+      "fixture": {
+        "rmse": 0.0011574585491485045,
+        "mae": -0.0033913537634497892
+      }
+    },
+    "conditional_unlabelled_vs_conditional": {
+      "player_gw": {
+        "rmse": 0.05430419981919421,
+        "mae": 0.06649027664248619
+      },
+      "fixture": {
+        "rmse": 0.05022929976910939,
+        "mae": 0.06301521375299313
+      }
+    },
+    "blend_equal_vs_control": {
+      "player_gw": {
+        "rmse": -0.03680554342648712,
+        "mae": -0.03778737255208808
+      },
+      "fixture": {
+        "rmse": -0.03382708913272703,
+        "mae": -0.0357713957992738
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "status": "conditional_prospective_phase1_frozen_premerge_review_pending",
+  "status": "fplcache_availability_premerge_review_pending",
   "updated": "2026-11-05 Asia/Singapore",
   "repository": "https://github.com/kokjz/fpl-predict",
-  "reviewed_engine_main": "26e8f7a432bee3b07bb7285e1ee0a85cefb9504b",
+  "reviewed_engine_main": "28f336b17c08ba6d5661489b6111af365710941c",
   "research": {
     "pr": 42,
     "branch": "feat/appearance-return-coherence",
@@ -518,5 +518,30 @@
     "results": "../CONDITIONAL_PROSPECTIVE_RESULTS_2026-11-05.md",
     "pr": 66,
     "branch": "feat/conditional-prospective"
+  },
+  "fplcache_availability": {
+    "package": "fplcache-availability",
+    "revision": "fca-r2",
+    "date": "2026-11-05",
+    "outcome": "RETROSPECTIVE_GATES_PASS",
+    "numerical_source": "0d3f854800d3ae69215f882e9449f895c69db18f",
+    "fit_source": "631de4d00c8779ea7c29b8aa8b89ff3cb5aba9ac",
+    "approved_forecaster": {
+      "version": "1.0.0",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+      "unchanged": true
+    },
+    "production_approved": false,
+    "registry_changed": false,
+    "weekly_defaults_changed": false,
+    "architect_premerge_review": "ACCEPTED 2026-11-05 (handover 142 review)",
+    "stage_A": true,
+    "stage_B": true,
+    "fits": 9,
+    "models_frozen": false,
+    "phase2_unchanged": true,
+    "results": "../FPLCACHE_AVAILABILITY_RESULTS_2026-11-05.md",
+    "pr": 68,
+    "branch": "feat/fplcache-availability"
   }
 }
