@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "status": "phase2_readiness_premerge_review_pending",
-  "updated": "2026-11-05 Asia/Singapore",
+  "status": "in_season_refit_premerge_review_pending",
+  "updated": "2026-11-06 Asia/Singapore",
   "repository": "https://github.com/kokjz/fpl-predict",
   "reviewed_engine_main": "179438b05e268c4c3db17996cd1738d48a48aa35",
   "research": {
@@ -564,5 +564,28 @@
     "record": "../conditional_prospective_readiness_record_2026-11-05.json",
     "pr": 70,
     "branch": "feat/phase2-readiness"
+  },
+  "in_season_refit": {
+    "package": "in-season-refit",
+    "revision": "isr-r1",
+    "date": "2026-11-06",
+    "outcome": "NO_HARM",
+    "numerical_source": "a1f665616a90a53c84c6eb8dbf1e7cff5e2cefb0",
+    "protocol": "../in_season_refit_protocol_2026-11-06.json",
+    "approved_forecaster": {
+      "version": "1.0.0",
+      "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+      "unchanged": true
+    },
+    "production_approved": false,
+    "registry_changed": false,
+    "weekly_defaults_changed": false,
+    "architect_premerge_review": "PENDING",
+    "stage_A": "PASS",
+    "stage_B": "NO_HARM",
+    "fits": 6,
+    "results": "../IN_SEASON_REFIT_RESULTS_2026-11-06.md",
+    "pr": 72,
+    "branch": "feat/in-season-refit"
   }
 }
