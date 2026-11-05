@@ -95,6 +95,24 @@ def player_payload(payload):
     return result, excluded
 
 
+def integer_codes(values):
+    """Normalize finite integral identities without float rounding or coercion."""
+    result = []
+    for value in values:
+        if isinstance(value, (bool, np.bool_)) or pd.isna(value):
+            raise ValueError('Missing or noninteger identity code')
+        if isinstance(value, str) and not re.fullmatch(r'[+-]?\d+', value):
+            raise ValueError('Noninteger identity code')
+        try:
+            integer = int(value)
+        except (ValueError, TypeError, OverflowError) as exc:
+            raise ValueError('Noninteger identity code') from exc
+        if (not isinstance(value, str) and value != integer) or not 0 < integer <= np.iinfo(np.int64).max:
+            raise ValueError('Noninteger or out-of-range identity code')
+        result.append(integer)
+    return np.asarray(result, dtype='int64')
+
+
 def admit_snapshot(entry, bridge, history):
     scope([entry['season']])
     path_time(entry['path'])  # refuse forbidden paths before opening any bytes
@@ -118,13 +136,17 @@ def admit_snapshot(entry, bridge, history):
     codes = h.element.map(bridge.set_index('id').code)
     if codes.isna().any():
         raise ValueError('Missing history bridge')
-    roster = identities.set_index('element')
-    matched = h.element.isin(roster.index)
-    used = roster.loc[h.loc[matched, 'element']]
-    if not np.array_equal(used.fpl_code.to_numpy(), codes.loc[matched].to_numpy()):
-        raise ValueError('Snapshot stable code mismatch')
+    codes = pd.Series(integer_codes(codes), index=h.index)
+    identities = identities.copy()
+    identities['fpl_code'] = integer_codes(identities.fpl_code)
+    if identities.fpl_code.duplicated().any():
+        raise ValueError('Duplicate normalized snapshot code')
+    roster = identities.set_index('fpl_code')
+    matched = codes.isin(roster.index)
+    used = roster.loc[codes.loc[matched].to_numpy()]
     if not np.array_equal(used.position.to_numpy(), h.loc[matched, 'pos'].to_numpy()):
         raise ValueError('Snapshot position mismatch')
+    id_drift = int(np.count_nonzero(used.element.to_numpy() != h.loc[matched, 'element'].to_numpy()))
     observations = []
     for p in payload['elements']:
         row = dict(season=entry['season'], gameweek=int(entry['gameweek']), element=p['id'],
@@ -140,7 +162,8 @@ def admit_snapshot(entry, bridge, history):
     report.update(status='admitted', assistant_managers_excluded=excluded,
                   known_labels=int(np.isfinite(chance).sum()), commit_time=entry['commit_time'],
                   path_time=path_time(entry['path']).isoformat(), published_at=published.isoformat(),
-                  unmatched_history_rows=int((~matched).sum()))
+                  unmatched_history_rows=int((~matched).sum()), id_drift_rows=id_drift,
+                  identity_key='season/gameweek/fpl_code')
     return report, obs
 
 

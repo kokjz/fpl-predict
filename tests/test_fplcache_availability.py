@@ -98,11 +98,48 @@ def test_admission_am_identity_and_hash(tmp_path):
     got, _ = m.augment(d, x, {'2025-26': b}, obs)
     assert got.availability_missing.tolist() == [0, 1, 1]
     b.loc[0, 'code'] = 1000
-    with pytest.raises(ValueError, match='code mismatch'):
-        m.admit_snapshot(e, b, d)
+    report, _ = m.admit_snapshot(e, b, d)
+    assert report['unmatched_history_rows'] == 2  # absent stable code stays unknown
     payload['elements'][0]['element_type'] = 6
     with pytest.raises(ValueError, match='element type'):
         m.player_payload(payload)
+
+
+@pytest.mark.parametrize('kind', ['drift', 'duplicate', 'position'])
+def test_code_keyed_identity_remedy(tmp_path, kind):
+    d, x, b, o = example()
+    payload = bootstrap()
+    if kind == 'drift':
+        payload['elements'][0]['id'] = 91
+        payload['elements'][1]['id'] = 92
+    elif kind == 'duplicate':
+        payload['elements'][1]['code'] = payload['elements'][0]['code']
+    else:
+        payload['elements'][0]['element_type'] = 4
+    raw = lzma.compress(json.dumps(payload).encode())
+    local = tmp_path/'remedy.json.xz'
+    local.write_bytes(raw)
+    e = dict(entry(), local_path=str(local), season='2025-26', gameweek=4,
+             deadline='2025-09-12T10:00Z', sha256=hashlib.sha256(raw).hexdigest(),
+             blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest())
+    if kind == 'duplicate':
+        with pytest.raises(ValueError):
+            m.admit_snapshot(e, b, d)
+    elif kind == 'position':
+        with pytest.raises(ValueError, match='position mismatch'):
+            m.admit_snapshot(e, b, d)
+    else:
+        report, obs = m.admit_snapshot(e, b, d)
+        assert report['id_drift_rows'] == 2 and report['unmatched_history_rows'] == 1
+        got, _ = m.augment(d, x, {'2025-26': b}, obs)
+        assert got.availability_missing.tolist() == [0, 1, 1]
+        assert got.availability_chance.tolist() == [0, 0, 0]
+
+
+@pytest.mark.parametrize('value', [None, 1.5, np.inf, True, '1.5'])
+def test_noninteger_codes_refused(value):
+    with pytest.raises(ValueError):
+        m.integer_codes([value])
 
 
 def test_calendar_no_fixtures_and_other_missing():
