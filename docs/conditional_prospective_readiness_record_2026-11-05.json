@@ -1,0 +1,212 @@
+{
+  "package": "phase2-readiness",
+  "revision": "p2r-r1",
+  "date": "2026-11-05",
+  "outcome": "READINESS_RECORDED",
+  "module_source_commit": "bec34ac972f6600d5b15f4df794655eda676d655",
+  "module_lf_sha256": "411130c0a76260568126066d26549c467d86261baba71283aa2622d78fa4eb14",
+  "runtime": {
+    "pins": {
+      "python": "3.12.16",
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.9.1"
+    },
+    "canonical_list_sha256": "c73e42674de740e6b92accdf57ec7348533c5bfa7898c9ca4dee83e5293c4049",
+    "distributions": 19,
+    "canonical_encoding": "UTF-8 JSON, sorted keys, compact separators, sorted by (name.casefold(),version), no newline"
+  },
+  "canary": {
+    "key_sha256": "9d4cfb81e06f5607baf0493947bcb9462e36bf7e634a8df58e33eaf313b759d9",
+    "rows": 15572,
+    "prediction_sha256": {
+      "control": "4545ed12d6cccc1e4dd2b90dec7e1a43b11441da1a6688c18ce1b9f5adbb2db9",
+      "core_xp": "94207c48b79ea2d2d554ae469a5f91753dcd3d1c5028eaf10d9ec61a39f0d044",
+      "expected_points": "58e79d983d502f6c4aa8cdd0fb8c2246916718f5b723ad389815e729f2fd160b",
+      "p_play": "e35ba9443e1be12f7aed959be3aef28c1a366c87c197c5314275332103fafc0b"
+    },
+    "outcomes_read": false,
+    "metrics_computed": false,
+    "fits": 0,
+    "scope": "2025-26 GW20-38 fixed PR66 Stage-A parsed features; in-sample mechanics only",
+    "runs": 2,
+    "identical": true,
+    "not_performance_evidence": true
+  },
+  "parity": {
+    "augment": {
+      "passed": true,
+      "rows": 163072,
+      "observations": 27553,
+      "signals_sha256": "7d27cc03aeed24ac8d6b5348e65024880fd9c33e0e2f083c4bcf4e774a40c548",
+      "observation_key_label_sha256": "1fc437d1d35c5ca608901e332066b29434c39a92074bdf1cd12246268555a12b"
+    },
+    "fixed_squad": {
+      "passed": true,
+      "totals": {
+        "control": [
+          839.0,
+          816.0,
+          781.0,
+          748.0,
+          900.0,
+          736.0,
+          955.0,
+          829.0,
+          865.0,
+          841.0,
+          779.0,
+          566.0,
+          816.0,
+          702.0,
+          838.0,
+          772.0,
+          804.0,
+          831.0,
+          762.0,
+          861.0
+        ],
+        "conditional": [
+          830.0,
+          798.0,
+          761.0,
+          745.0,
+          904.0,
+          725.0,
+          957.0,
+          839.0,
+          873.0,
+          858.0,
+          770.0,
+          549.0,
+          815.0,
+          688.0,
+          838.0,
+          776.0,
+          798.0,
+          837.0,
+          758.0,
+          867.0
+        ]
+      },
+      "deltas": {
+        "conditional": [
+          -9.0,
+          -18.0,
+          -20.0,
+          -3.0,
+          4.0,
+          -11.0,
+          2.0,
+          10.0,
+          8.0,
+          17.0,
+          -9.0,
+          -17.0,
+          -1.0,
+          -14.0,
+          0.0,
+          4.0,
+          -6.0,
+          6.0,
+          -4.0,
+          6.0
+        ]
+      },
+      "squad_sha256": "a4e748d7393977eb33391a213c44742c0f12ec9a5215a5b0069825d1eb2c0085",
+      "count": 20,
+      "first_gw": 20,
+      "season": "2025-26"
+    },
+    "airsenal": {
+      "passed": true,
+      "observations": 27553,
+      "key_label_sha256": "1fc437d1d35c5ca608901e332066b29434c39a92074bdf1cd12246268555a12b"
+    },
+    "fplcache": {
+      "passed": true,
+      "observations": 29645,
+      "key_label_sha256": "e4e975654fe3113274ffa4e2954067e2e3007874d32d1126cff06bc30521f270",
+      "gameweeks": 38
+    }
+  },
+  "synthetic_tests": {
+    "local_passed": 46,
+    "local_failed": 0,
+    "full_suite": "exact implementation-head CI passed before real jobs",
+    "scope": [
+      "guard before IO",
+      "historical SIGNALS encoding",
+      "code-keyed ID drift and position refusal",
+      "per-GW primary/fallback/none/no_fixtures",
+      "DGW fixture aggregation",
+      "missing cutoff and mismatching cutoff",
+      "canary mismatch refusal before outcomes",
+      "a3 blend full forecast and missing conditional expected_points refusal",
+      "decision priority: conditional/blend-only/neither",
+      "explicit evidence-root writes"
+    ]
+  },
+  "gate7_clarification": {
+    "main_commit": "179438b05e268c4c3db17996cd1738d48a48aa35",
+    "lf_sha256": "39be06b65ef810f620ccdf888daa64459b1d8ca93eaf452d27754733b3256c28",
+    "verified_before_implementation": true
+  },
+  "resources": {
+    "jobs": [
+      {
+        "label": "stage-A",
+        "status": "completed",
+        "seconds": 54.125,
+        "baseline_bytes": 0,
+        "growth_bytes": 21899,
+        "peak_job_commit_bytes": 1079767040,
+        "processes_after": 0,
+        "guard_reason": null,
+        "exit_code": 0
+      },
+      {
+        "label": "canary-1",
+        "status": "completed",
+        "seconds": 4.672000000020489,
+        "baseline_bytes": 22630,
+        "growth_bytes": 1566,
+        "peak_job_commit_bytes": 272506880,
+        "processes_after": 0,
+        "guard_reason": null,
+        "exit_code": 0
+      },
+      {
+        "label": "canary-2",
+        "status": "completed",
+        "seconds": 4.609000000171363,
+        "baseline_bytes": 24819,
+        "growth_bytes": 1566,
+        "peak_job_commit_bytes": 272494592,
+        "processes_after": 0,
+        "guard_reason": null,
+        "exit_code": 0
+      }
+    ],
+    "threads": 2,
+    "memory_limit_bytes": 4294967296,
+    "seconds_limit_per_job": 900,
+    "growth_limit_per_job_bytes": 2147483648,
+    "min_free_bytes": 5368709120,
+    "fits": 0,
+    "retrievals": 0,
+    "retries": 0
+  },
+  "approved_forecaster": {
+    "version": "1.0.0",
+    "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+    "unchanged": true
+  },
+  "frozen_models_unchanged": true,
+  "prospective_content_read": false,
+  "models_scored_against_outcomes": false,
+  "production_approved": false,
+  "registry_changed": false,
+  "weekly_defaults_changed": false,
+  "architect_premerge_review": "PENDING"
+}
