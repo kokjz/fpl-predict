@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "package": "conditional-prospective",
+  "addendum": "blend-a1",
+  "date": "2026-11-05",
+  "status": "PRE_REGISTERED_BEFORE_FIRST_PROSPECTIVE_DEADLINE",
+  "author": "architect (Claude Opus 5.5, Medium), user-approved 2026-11-05",
+  "amends_nothing": "The frozen protocol, models, window and gates are unchanged. This adds one secondary candidate derived only from the two frozen models.",
+  "references": {
+    "protocol": "conditional_prospective_protocol_2026-11-04.json",
+    "protocol_sha256": "f946b1760eabe65bafd46951f12f0acdc584fdb856e7db06b9b15beda8318688",
+    "protocol_lf_sha256": "080ae509da85dd471b6040b7c6df1f2d8470261e6dc0bc5057a2eaf72de7f1ab",
+    "freeze_record": "conditional_prospective_freeze_2026-11-05.json",
+    "freeze_record_sha256": "ffeda703188298fb5465c0cb171d2a0ff1c0927df9188063e1a9b1b0bba121cd",
+    "private_model_sha256": {
+      "control": "e57bd69bf0ef024efde93cb8922c1077323241280244de505e4d6189415a58fe",
+      "conditional": "8c930b6e81ba66294bae121ae85e644f6551c4aecb4d2531c323f765a3d74c2c"
+    },
+    "first_prospective_gameweek": 10,
+    "first_prospective_deadline": "2026-11-06T18:30:00+00:00"
+  },
+  "timing_rule": "Valid only if this file is first pushed to the public repository before the GW10 deadline. If the first push is later, the blend window starts at the first gameweek whose deadline is strictly after that push; the primary candidate's window is unchanged.",
+  "rationale": "Phase 1 sanity (inspected 2025/26 GW20-38): conditional RMSE -1.38% and MAE -1.60% versus control, but fixed-squad -2.75. An equal-weight average of two frozen models is a pre-specified hedge against the conditional candidate's selection risk. The weight is fixed a priori, not fitted; no blend metric has been computed on any data.",
+  "blend": {
+    "name": "blend_equal",
+    "definition": "blend_core_xp = 0.5 * control_points_core_prediction + 0.5 * conditional_core_xp, per fixture row, from the frozen models with no refit, after each model's own clipping; player-GW values are sums over fixtures as for the other arms",
+    "weight": 0.5,
+    "fitted_parameters": 0,
+    "inputs": "exactly the phase 2 inputs of the two frozen models; availability enters only through the conditional model"
+  },
+  "phase2": {
+    "window": "same as primary: first prospective gameweek through GW38",
+    "gates": "registry gates 2-7 exactly as in the protocol phase2.gates, blend_equal versus control",
+    "fixed_squad": "same squads, seed and selector as the primary comparison, selecting on blend_core_xp",
+    "descriptive": [
+      "NDCG@10",
+      "blend versus conditional",
+      "approved 1.0.0 own forecasts on same rows where reproducible",
+      "blend on the inspected 2025/26 GW20-38 Stage B predictions (sanity only, computed in phase 2, never used for any decision)"
+    ]
+  },
+  "decision_rule": {
+    "primary": "H11 (conditional) is unchanged and is judged first.",
+    "if_conditional_passes_all": "conditional is the only promotion-eligible candidate; blend is descriptive.",
+    "if_conditional_fails_and_blend_passes_all": "blend_equal becomes eligible for a separately authorised promotion brief.",
+    "if_both_fail": "no candidate is eligible.",
+    "no_post_hoc_choice": "No choice between candidates by comparing their phase 2 metrics; no other weights, blends or arms."
+  },
+  "multiplicity": "Two pre-specified candidates share one window and one control. The fixed-threshold gates are not adjusted; the report must state that two candidates were tested.",
+  "promotion_note": "Any promotion brief, for either candidate, must change the weekly planner so availability is not counted twice.",
+  "not_authorised": [
+    "any 2026/27 prediction, outcome or availability read before the phase 2 package",
+    "refitting or modifying either frozen model",
+    "any change to the frozen protocol"
+  ]
+}
