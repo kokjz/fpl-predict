@@ -534,7 +534,7 @@
     "production_approved": false,
     "registry_changed": false,
     "weekly_defaults_changed": false,
-    "architect_premerge_review": "PENDING",
+    "architect_premerge_review": "ACCEPTED 2026-11-05 (handover 142 review)",
     "stage_A": true,
     "stage_B": true,
     "fits": 9,
