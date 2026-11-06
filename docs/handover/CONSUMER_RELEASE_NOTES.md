@@ -45,3 +45,12 @@ gates. Approved **1.0.0** and weekly defaults are unchanged.
 Released in commit `8f8bfed6b086e5a41b6d1f2257af24b39c705724`.
 Research only; no consumer action. Admission passed, but the challenger failed
 four development gates. Approved **1.0.0** and weekly defaults are unchanged.
+
+## 2026-11-06 — PR73: conditional promotion groundwork
+
+No action now; inert until a conditional champion is registered by a separately approved promotion.
+Approved **1.0.0**, its registry and weekly outputs are unchanged. A future conditional champion
+uses official next-GW labels only as learned covariates and refuses next-GW manual availability/minutes
+output scaling. Sourced replacement labels are recorded with the original labels; later-GW sensitivity
+remains available. No real conditional artifact was loaded in this package; historical dry run infeasible.
+See [adapter rules](../champion_availability.md) and [results](../PROMOTION_GROUNDWORK_RESULTS_2026-11-06.md).
