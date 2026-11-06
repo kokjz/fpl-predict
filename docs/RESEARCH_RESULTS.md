@@ -4,7 +4,7 @@ Pre-registered studies use fixed gates and publish negative results. Approved 1.
 
 | Date | Study / idea | Recorded outcome or scope | Results | Study tag |
 |---|---|---|---|---|
-| 2026-11-06 | Conditional promotion groundwork | GROUNDWORK_READY_NO_DRY_RUN; synthetic parity and P6; 1.0.0 unchanged | [Report](PROMOTION_GROUNDWORK_RESULTS_2026-11-06.md) | — |
+| 2026-11-06 | Conditional promotion groundwork | GROUNDWORK_READY_NO_DRY_RUN; synthetic parity and P6; 1.0.0 unchanged | [Report](PROMOTION_GROUNDWORK_RESULTS_2026-11-06.md) | study-promotion-groundwork-2026-11-06 |
 | 2026-11-06 | Annual versus GW19 refits | NO_HARM; research only; 1.0.0 unchanged | [Report](IN_SEASON_REFIT_RESULTS_2026-11-06.md) | study-in-season-refit-2026-11-06 |
 | 2026-11-05 | Conditional-prospective readiness | READINESS_RECORDED; historical parity + repeated canary; no fit or prospective metric; 1.0.0 unchanged | [Record](conditional_prospective_readiness_2026-11-05.md) | study-phase2-readiness-2026-11-05 |
 | 2026-11-05 | Conditional-prospective gate 7 clarification | PRE_REGISTERED full-scoring forecast per arm for phase 2 gate 7; no fit; 1.0.0 unchanged | [Clarification](CONDITIONAL_PROSPECTIVE_GATE7_CLARIFICATION_2026-11-05.md) | — |
