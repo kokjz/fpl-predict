@@ -57,6 +57,13 @@ def test_sourced_override_applies_only_to_reviewed_gw_and_preserves_base_pointer
     monkeypatch.setattr(forecast,'resolve_champion',lambda _: (artifact,'synthetic',{}))
     monkeypatch.setattr(SyntheticModel,'requires_availability',conditional,raising=False)
     monkeypatch.setattr(forecast.joblib,'load',lambda _: SyntheticModel())
+    if conditional:
+        # P6 supersedes next-GW manual scaling for a conditional champion.
+        with pytest.raises(ValueError,match='P6 refuses'):
+            run(argparse.Namespace(snapshot='synthetic',through_gw=8,team_state=str(state),overrides=None,availability_review=str(review)))
+        assert (root/'forecasts/LATEST').read_text()=='preserved-base'
+        assert not any(p.is_dir() for p in (root/'forecasts').iterdir())
+        return
     run(argparse.Namespace(snapshot='synthetic',through_gw=8,team_state=str(state),overrides=None,availability_review=str(review)))
     output=next(p for p in (root/'forecasts').iterdir() if p.is_dir())
     rows=json.loads((output/'player_gameweek_predictions.json').read_text())
