@@ -40,7 +40,7 @@ class Horizon:
     def values(self):return {(r['gameweek'],r['id']):float(r['expected_points']) for r in self.forecasts}
 
 
-def project(model,history,market,fixtures,*,through,trained_through,source_as_of,model_id,source_hashes=None,availability_overrides=None,override_gameweek=None):
+def project(model,history,market,fixtures,*,through,trained_through,source_as_of,model_id,source_hashes=None,availability_overrides=None,override_gameweek=None,bootstrap=None,bootstrap_as_of=None,label_review=None):
     """All future fixtures share origin form; later actual form is never fed back.
 
     Fixtures must come from the hash-verified as-of calendar adapter. Current
@@ -49,10 +49,15 @@ def project(model,history,market,fixtures,*,through,trained_through,source_as_of
     excluded until a subsequent origin actually lists them.
     """
     if through<market.gameweek or through>min(38,market.gameweek+7):raise ValueError('Invalid forecast horizon')
-    if getattr(model,'requires_availability',False):raise ValueError('Conditional experimental models need separately admitted availability adapters')
+    conditional=getattr(model,'requires_availability',False)
+    if conditional:
+        from champion_availability import admit_market,prepare,predict as predict_champion,POLICY_KEY,POLICY_SHA256
+        admit_market(market,bootstrap,bootstrap_as_of)
+    elif label_review is not None:raise ValueError('Replacement labels require a conditional champion')
     origin=utc(market.as_of)
     overrides=dict(availability_overrides or {})
-    if overrides and (override_gameweek!=market.gameweek or not set(overrides)<={p['id'] for p in market.players}):raise ValueError('Manual overrides must target known players in the origin gameweek')
+    allowed_gws=range(market.gameweek,through+1) if conditional else (market.gameweek,)
+    if overrides and (override_gameweek not in allowed_gws or not set(overrides)<={p['id'] for p in market.players}):raise ValueError('Manual overrides must target known players in the origin gameweek')
     if utc(trained_through)>=origin or utc(source_as_of)>origin:raise ValueError('Late training/calendar')
     required={'id','event','team_h','team_a','kickoff_time'}
     if required-set(fixtures):raise ValueError('Missing calendar fields')
@@ -75,7 +80,10 @@ def project(model,history,market,fixtures,*,through,trained_through,source_as_of
         ts=pd.to_datetime(x.source_max_ts,utc=True)
         if (ts.notna()&ts.ge(origin-pd.Timedelta(hours=3))).any():raise ValueError('Future feature source')
         source_max=ts.max().isoformat() if ts.notna().any() else None
-        prediction=model.predict(x,t.pos)
+        if conditional:
+            prediction,learned=predict_champion(model,x,t.pos,t,bootstrap,bootstrap_as_of,review=label_review,
+                generated_at=market.as_of,overrides=overrides,override_gameweek=override_gameweek)
+        else:prediction=model.predict(x,t.pos)
         if not prediction.index.equals(x.index):raise ValueError('Invalid model predictions')
         if overrides:
             prediction=prediction.copy()
@@ -85,9 +93,19 @@ def project(model,history,market,fixtures,*,through,trained_through,source_as_of
                     for key,value in adjusted.items():prediction.loc[row.Index,key]=value
         if not prediction.index.equals(x.index) or not np.isfinite(prediction.expected_points).all():raise ValueError('Invalid model predictions')
         for row,value in zip(t.itertuples(),prediction.expected_points):out[(int(row.GW),int(row.element))]+=float(value)
+    if conditional:
+        if not targets:
+            _,learned=prepare(pd.DataFrame(),pd.DataFrame(columns=['element','GW','pos','cutoff']),
+                bootstrap,bootstrap_as_of,review=label_review,generated_at=market.as_of,overrides=overrides,override_gameweek=override_gameweek)
+        source_hashes=dict(source_hashes or {})
+        source_hashes.update({POLICY_KEY:POLICY_SHA256,'availability_bootstrap_canonical_json':learned['bootstrap_canonical_sha256']})
+        if label_review is not None:
+            import hashlib,json
+            source_hashes['availability_label_review_canonical_json']=hashlib.sha256(json.dumps(label_review,sort_keys=True,allow_nan=False).encode()).hexdigest()
     rows=[dict(gameweek=g,id=i,expected_points=v) for (g,i),v in out.items()]
     horizon=Horizon.create(market,rows,trained_through=trained_through,feature_cutoff=market.as_of,source_as_of=source_as_of,model_id=model_id,source_hashes=source_hashes)
     report=dict(fixture_rows=len(targets),player_gw_rows=len(rows),source_max_ts=source_max,
         zero_fixture_scope='Zero means no fixture in the origin-known calendar; future rearrangements are unknown, not guaranteed actual blanks',
         approximation='Origin form/roster/availability held fixed; multiweek projections not independently validated')
+    if conditional:report['learned_availability']=learned
     return horizon,report

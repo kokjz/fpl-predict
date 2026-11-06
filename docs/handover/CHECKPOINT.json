@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "in_season_refit_accepted",
+  "status": "promotion_groundwork_accepted",
   "updated": "2026-11-06 Asia/Singapore",
   "repository": "https://github.com/kokjz/fpl-predict",
   "reviewed_engine_main": "179438b05e268c4c3db17996cd1738d48a48aa35",
@@ -41,7 +41,7 @@
     "source": "Private transfer registry; not research file dates"
   },
   "remaining_work": [
-    "Architect pre-merge review of PR58; no merge, tag or cleanup at this boundary."
+    "Architect pre-merge review of PR73; merge, tag and branch deletion require explicit user approval."
   ],
   "privacy": "Only engine/research context is public; full private transfer remains outside repository",
   "research_links": {
@@ -588,5 +588,28 @@
     "results": "../IN_SEASON_REFIT_RESULTS_2026-11-06.md",
     "pr": 72,
     "branch": "feat/in-season-refit"
+  },
+  "promotion_groundwork": {
+    "outcome": "GROUNDWORK_READY_NO_DRY_RUN",
+    "architect_premerge_review": "ACCEPTED 2026-11-06 (handover 161 review)",
+    "user_release_approval": "2026-11-06: Yes, you run it",
+    "pr": 73,
+    "branch": "feat/promotion-groundwork",
+    "base_main": "2a2212a84296a6d8e2e2771e35019a2fbbcc398b",
+    "implementation_source": "24f23f0ebdcd31fbbe65722f517adc5d17e35b0e",
+    "policy_freeze": {
+      "head": "b20ed76eaf08609b0e9ec1306f8fbf5444b8bc14",
+      "json_lf_sha256": "d1e9a416e9ef66c3a2c122774088506613bfed274218f46152548b32cf4f867c",
+      "md_lf_sha256": "f6da1714f9569ecd468fa1f470b988592633f6f266c78531d7a3235f85849488"
+    },
+    "harness_source": "e643ae0135bdfa433c92eb9638e45fcdf0711613",
+    "results": "docs/PROMOTION_GROUNDWORK_RESULTS_2026-11-06.json",
+    "stage_A_attempts": 2,
+    "stage_A_completed": 1,
+    "stage_C": "DRY_RUN_INFEASIBLE; budgets withdrawn, 0 fits/0 dry runs",
+    "fits": 0,
+    "real_conditional_artifact_adapter_load_verified": false,
+    "approved_1_0_0_unchanged": true,
+    "phase2_unchanged": true
   }
 }

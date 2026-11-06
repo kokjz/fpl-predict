@@ -45,6 +45,9 @@ def scenario(base,market,adjustments):
         for g in a['gameweeks']:
             key=(g,a['id'])
             if key not in xp or key in seen:raise ValueError('Unknown/duplicate scenario cell')
+            if 'champion_availability_p6' in base.provenance['source_hashes']:
+                from champion_availability import refuse_next_scenario
+                refuse_next_scenario(base,g)
             seen.add(key);xp[key]*=scale
         evidence.append(dict(a))
     h=Horizon.create(market,[dict(gameweek=g,id=i,expected_points=v) for (g,i),v in xp.items()],

@@ -90,12 +90,20 @@ def run(args):
         if not source or source.get('sha256')!=hashlib.sha256((root/'bootstrap.json').read_bytes()).hexdigest():
             raise ValueError('Conditional availability bootstrap checksum mismatch')
         if pd.Timestamp(source['retrieved_utc'])!=now:raise ValueError('Bootstrap and snapshot clocks differ')
-    pred,learned_availability=predict_current(model,x,target.pos,target,b,manifest['retrieved_utc'])
+    conditional=getattr(model,'requires_availability',False)
+    if not conditional:
+        pred,learned_availability=predict_current(model,x,target.pos,target,b,manifest['retrieved_utc'])
     overrides=json.loads(Path(args.overrides).read_text()) if args.overrides else {}
     review_path=getattr(args,'availability_review',None)
     review=json.loads(Path(review_path).read_text()) if review_path else None
     scoped={};review_gw=None
-    if review:
+    if conditional:
+        from champion_availability import predict as predict_champion
+        pred,learned_availability=predict_champion(model,x,target.pos,target,b,manifest['retrieved_utc'],
+            review=review,generated_at=dt.datetime.now(dt.timezone.utc),overrides={int(k):v for k,v in overrides.items()})
+        if learned_availability.get('review_recorded_at_utc'):
+            now=max(now,pd.Timestamp(learned_availability['review_recorded_at_utc']))
+    if review and not conditional:
         review_gw,recorded,scoped=scoped_overrides(review,b,dt.datetime.now(dt.timezone.utc))
         if review_gw!=nextgw:raise ValueError('Availability review must target the next gameweek')
         if set(map(int,overrides))&set(scoped):raise ValueError('Conflicting legacy and reviewed overrides')
@@ -142,7 +150,8 @@ def run(args):
     provenance['learned_availability']=learned_availability
     if learned_availability:
         provenance['source_sha256']['conditional_forecaster.py']=hashlib.sha256((Path(__file__).resolve().parent/'conditional_forecaster.py').read_bytes()).hexdigest()
-        provenance['caveats'][2]='Official next-GW chance labels enter the learned appearance head; manual news/role review remains necessary. Later horizons use missing availability.'
+        provenance['source_sha256']['champion_availability.py']=hashlib.sha256((Path(__file__).resolve().parent/'champion_availability.py').read_bytes()).hexdigest()
+        provenance['caveats'][2]='Official or sourced replacement next-GW labels enter only as learned covariates. Next-GW availability/minutes output scaling is refused; later horizons use missing availability.'
     provenance['snapshot_as_of_utc']=manifest['retrieved_utc']
     provenance['timing_note']='as_of_utc includes any recorded availability review; snapshot_as_of_utc dates API inputs; created_at_utc dates generation.'
     provenance['official_ep_next_scope']='Unadjusted official next-GW projection only; no extrapolation or missing-value imputation.'

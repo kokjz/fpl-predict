@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "package": "promotion-groundwork",
+  "brief_revision": "pg-r1",
+  "date": "2026-11-06",
+  "outcome": "GROUNDWORK_READY_NO_DRY_RUN",
+  "architect_premerge_review": "PENDING",
+  "base_main": "2a2212a84296a6d8e2e2771e35019a2fbbcc398b",
+  "policy_freeze": {
+    "head": "b20ed76eaf08609b0e9ec1306f8fbf5444b8bc14",
+    "json_lf_sha256": "d1e9a416e9ef66c3a2c122774088506613bfed274218f46152548b32cf4f867c",
+    "md_lf_sha256": "f6da1714f9569ecd468fa1f470b988592633f6f266c78531d7a3235f85849488"
+  },
+  "harness_source": "e643ae0135bdfa433c92eb9638e45fcdf0711613",
+  "implementation_source": "24f23f0ebdcd31fbbe65722f517adc5d17e35b0e",
+  "implementation_ci": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-06T04:05:42Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/kokjz/fpl-predict/actions/runs/42160240945/job/127703926221",
+      "name": "test",
+      "startedAt": "2026-11-06T04:04:01Z",
+      "status": "COMPLETED",
+      "workflowName": "tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-06T04:05:42Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/kokjz/fpl-predict/actions/runs/42160235456/job/127703908582",
+      "name": "test",
+      "startedAt": "2026-11-06T04:03:57Z",
+      "status": "COMPLETED",
+      "workflowName": "tests"
+    }
+  ],
+  "parity": {
+    "passed": true,
+    "scope": "Canonical bytes of synthetic forecast fixture/player-GW/planning outputs, horizon means and approved decision means/appearance rows",
+    "base_source": "2a2212a84296a6d8e2e2771e35019a2fbbcc398b",
+    "reference_sha256": "8e1c98046fcb5e2ed4d063156a2a26bfb54f99a8b77993df184a7a16d387b23c"
+  },
+  "standin": {
+    "basis": "Assertions passed in tests/test_champion_availability.py under adapter-tests-3; source SHA pins the interface and every check. No fitted conditional artifact loaded.",
+    "test_source_sha256": "568fa8101c542ba517ffa7166392405976b565335d7536c6e73661bc90e2706e",
+    "interface": "predict(x,pos); CORE_FEATURES, DC_FEATURES and availability_chance/availability_missing columns",
+    "horizon_fixture_rows": {
+      "next_known": 2,
+      "later_missing": 4
+    },
+    "forecast_fixture_rows": {
+      "next_known": 15,
+      "later_missing": 15
+    },
+    "double_fixture_rows": {
+      "next": 4,
+      "replaced_target": 2
+    },
+    "checks": {
+      "nonconditional_byte_parity": true,
+      "label_replacement_target_only": true,
+      "both_labels_in_provenance": true,
+      "next_availability_and_minutes_refused": true,
+      "later_sensitivity_unchanged": true,
+      "postdeadline_and_identity_refused": true,
+      "approved_mean_appearance_equal": true,
+      "rolling": true,
+      "adaptive": true,
+      "season_prepare": true,
+      "cli": true,
+      "decision_trial_saved_forecast": true
+    },
+    "note": "Synthetic plumbing checks only; the label-output relation of the stand-in is not a calibration claim"
+  },
+  "stage_A": {
+    "attempts": 2,
+    "failed_preserved": 1,
+    "completed": 1,
+    "inventory_groups": 7,
+    "inventory_and_feasibility_identical": true,
+    "completed_job": {
+      "seconds": 3.25,
+      "peak_job_commit_bytes": 234278912,
+      "baseline_bytes": 0,
+      "package_bytes": 53394,
+      "free_bytes": 849489145856,
+      "processes_after": 0,
+      "threads": 2,
+      "memory_limit_bytes": 4294967296,
+      "seconds_limit": 900,
+      "growth_limit_bytes": 2147483648
+    }
+  },
+  "stage_C": {
+    "status": "DRY_RUN_INFEASIBLE",
+    "fit_budget": 0,
+    "dry_run_budget": 0,
+    "fits": 0,
+    "dry_runs": 0,
+    "reason": "Current forecast entry point has no admitted historical source adapter and requires the current-season sentinel/per-player files; newly fitted scratch artifacts cannot have a truthful pre-origin existence observation."
+  },
+  "local_tests": {
+    "passed": 142,
+    "skipped": 4,
+    "scope": "Targeted legacy suite; optional local-data integration skipped"
+  },
+  "approved_forecaster": {
+    "version": "1.0.0",
+    "sha256": "789e8849922116d989584ccfcb912082bb96201cb5af80ce9e70823e047fe233",
+    "unchanged": true
+  },
+  "registry_unchanged": true,
+  "protected_modules_unchanged": true,
+  "phase2_unchanged": true,
+  "prospective_data_read": false,
+  "network_retrievals": 0,
+  "fits": 0,
+  "real_run_retries": 0,
+  "not_verified": [
+    "No real conditional artifact loaded through champion_availability; deferred to P4 pre-season smoke at promotion",
+    "No historical conditional dry run",
+    "No accuracy metrics or prospective scoring",
+    "No promotion or production registry/default change"
+  ],
+  "publication": "PR73 premerge; merge/tag/deletion not authorised"
+}
