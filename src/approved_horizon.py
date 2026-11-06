@@ -26,7 +26,7 @@ def observe_approved(root,destination):
 
 
 def project_approved(root,history,market,fixtures,*,through,receipt_path,receipt_sha256,
-        source_as_of,source_hashes=None,review=None,bootstrap=None,bootstrap_as_of=None):
+        source_as_of,source_hashes=None,review=None,bootstrap=None,bootstrap_as_of=None,label_review=None):
     """Load only verified approved bytes after origin/receipt admission.
 
     Source history/calendar admission belongs to their timestamped input adapter.
@@ -59,9 +59,14 @@ def project_approved(root,history,market,fixtures,*,through,receipt_path,receipt
     if hashlib.sha256(artifact_raw).hexdigest()!=record['sha256']:raise ValueError('Model bytes changed before loading')
     model=joblib.load(io.BytesIO(artifact_raw))
     if model.metadata.get('version')!=version:raise ValueError('Registry/model version mismatch')
+    conditional_args={}
+    if getattr(model,'requires_availability',False):
+        if review is not None and label_review is not None:raise ValueError('Conflicting sensitivity and replacement reviews')
+        conditional_args=dict(bootstrap=bootstrap,bootstrap_as_of=bootstrap_as_of,label_review=label_review)
+    elif label_review is not None:raise ValueError('Replacement labels require a conditional champion')
     horizon,report=project(model,history,market,fixtures,through=through,
         trained_through=observed.isoformat(),source_as_of=latest.isoformat(),model_id='approved-'+version,
-        source_hashes=hashes,availability_overrides=overrides,override_gameweek=review_gw)
+        source_hashes=hashes,availability_overrides=overrides,override_gameweek=review_gw,**conditional_args)
     return horizon,dict(report,champion=version,artifact_sha256=record['sha256'],
         model_observed_by=observed.isoformat(),training_clock_scope='Conservative observation upper bound; not original fit time',
         review_gameweek=review_gw,applied_overrides=overrides,

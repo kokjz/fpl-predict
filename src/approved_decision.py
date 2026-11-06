@@ -16,19 +16,22 @@ from model_registry import resolve_champion
 
 def project_decision_approved(root, history, market, fixtures, *, through,
         receipt_path, receipt_sha256, source_as_of, source_hashes=None, review=None,
-        bootstrap=None, bootstrap_as_of=None, allow_research_policy=False):
+        bootstrap=None, bootstrap_as_of=None, allow_research_policy=False, label_review=None):
     if not allow_research_policy:
         raise ValueError('Explicit research-policy opt-in required')
+    label_args={'label_review':label_review} if label_review is not None else {}
     horizon, report = project_approved(root, history, market, fixtures, through=through,
         receipt_path=receipt_path, receipt_sha256=receipt_sha256, source_as_of=source_as_of,
-        source_hashes=source_hashes, review=review, bootstrap=bootstrap, bootstrap_as_of=bootstrap_as_of)
+        source_hashes=source_hashes, review=review, bootstrap=bootstrap, bootstrap_as_of=bootstrap_as_of, **label_args)
     artifact, version, record = resolve_champion(root)
     raw = artifact.read_bytes()
     if hashlib.sha256(raw).hexdigest() != report['artifact_sha256'] or record['sha256'] != report['artifact_sha256']:
         raise ValueError('Approved model changed between mean and appearance views')
     model = joblib.load(io.BytesIO(raw))
-    if model.metadata.get('version') != version or getattr(model, 'requires_availability', False):
+    if model.metadata.get('version') != version:
         raise ValueError('Unadmitted approved appearance-head interface')
+    conditional=getattr(model,'requires_availability',False)
+    conditional_targets=[]
     targets = []
     for player in market.players:
         team = int(player['team'])
@@ -36,6 +39,9 @@ def project_decision_approved(root, history, market, fixtures, *, through,
             if pd.isna(f.event) or f.event not in horizon.gameweeks or team not in (f.team_h, f.team_a):
                 continue
             targets.append((player['id'], int(f.event)))
+            if conditional:
+                home=team==f.team_h
+                conditional_targets.append(dict(element=player['id'],GW=int(f.event),pos=player['position'],cutoff=market.as_of))
     overrides = report['applied_overrides']
 
     class View:
@@ -45,6 +51,12 @@ def project_decision_approved(root, history, market, fixtures, *, through,
                         approval='Research appearance view of verified approved weights')
 
         def predict(self, x, pos):
+            if conditional:
+                from champion_availability import predict as predict_champion
+                t=pd.DataFrame(conditional_targets,index=x.index)
+                if len(t)!=len(targets):raise ValueError('Approved mean/appearance target order differs')
+                values,_=predict_champion(model,x,pos,t,bootstrap,bootstrap_as_of,review=label_review,generated_at=market.as_of)
+                return values.copy()
             values = model.predict(x, pos).copy()
             if len(values) != len(targets):
                 raise ValueError('Approved mean/appearance target order differs')
